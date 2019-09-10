@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "consumption-components": [
+        "dist/consumption-components"
+      ],
+      "consumption-components/*": [
+        "dist/consumption-components/*"
+      ]
+    }
   }
 }
