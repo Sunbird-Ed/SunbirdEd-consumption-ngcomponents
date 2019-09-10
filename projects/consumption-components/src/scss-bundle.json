@@ -1,0 +1,4 @@
+{
+    "entry": "./projects/consumption-components/src/assets/variables.scss",
+    "dest": "./dist/consumption-components/theme.scss"
+}
