@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { staticContent } from './library-card.data';
 
 @Component({
   selector: 'sb-library-card',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibraryCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() content = staticContent;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
