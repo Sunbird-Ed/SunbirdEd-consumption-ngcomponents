@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { staticContent } from './library-card.data';
 
 @Component({
@@ -6,15 +6,10 @@ import { staticContent } from './library-card.data';
   templateUrl: './library-card.component.html',
   styleUrls: ['./library-card.component.scss']
 })
-export class LibraryCardComponent implements OnInit {
+export class LibraryCardComponent {
 
   @Input() content = staticContent;
-
-  constructor() {
-
-  }
-
-  ngOnInit() {
-  }
+  @Input() defaultImage;
+  @Input() isOnline = false;
 
 }

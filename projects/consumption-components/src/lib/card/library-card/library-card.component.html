@@ -2,7 +2,7 @@
 <div class="sbcard sbcard--resource sbcard--course">
   <div class="sbcard__main-area">
     <!-- card img -->
-    <div class="sbcard__img"><img [src]="content.appIcon" alt="alt" title="title"></div>
+    <div class="sbcard__img"><img [src]="isOnline ? content.appIcon: defaultImage" alt="alt" title="title"></div>
     <!-- card mobile view details -->
     <div class="sbcard__info">
       <h4 class="sbcard__title sb__ellipsis sb__ellipsis--two">{{content?.name}}</h4>
