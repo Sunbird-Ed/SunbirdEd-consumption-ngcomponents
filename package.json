@@ -4,9 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build consumptionComponents",
     "build_lib": "npm i && ng build consumptionComponents",
-    "post_build": "scss-bundle -c ./projects/consumption-components/src/scss-bundle.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

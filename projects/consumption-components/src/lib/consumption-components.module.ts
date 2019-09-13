@@ -6,6 +6,6 @@ import { CardModule } from './card/card.module';
   imports: [
     CardModule
   ],
-  exports: []
+  exports: [CardModule]
 })
 export class ConsumptionComponentsModule { }
