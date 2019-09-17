@@ -2,12 +2,12 @@
 
 /* sb card component css */
 
-.sb__DesktopOnly {
-  display: none;
-  @include respond-above(sm) {
-    display: block;
-  }
-}
+// .sb__DesktopOnly {
+//   display: none;
+//   @include respond-above(sm) {
+//     display: block;
+//   }
+// }
 
 // sb card css
 .sbcard {
@@ -19,6 +19,7 @@
   cursor: pointer;
   position: relative;
   border-bottom: 1px solid $gray-0;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.16);
   @include respond-above(sm) {
     border-radius: 2px;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
