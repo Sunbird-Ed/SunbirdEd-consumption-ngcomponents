@@ -2,7 +2,10 @@
 <div class="sbcard sbcard--resource sbcard--course">
   <div class="sbcard__main-area">
     <!-- card img -->
-    <div class="sbcard__img"><img [src]="isOnline ? content.appIcon: defaultImage" alt="alt" title="title"></div>
+    <div class="sbcard__img">
+      <img *ngIf="!isOffline" [src]="content.appIcon || defaultImg" alt="Card Image">
+      <img *ngIf="isOffline" [src]="offlineImg || defaultImg" alt="Card Image">
+    </div>
     <!-- card mobile view details -->
     <div class="sbcard__info">
       <h4 class="sbcard__title sb__ellipsis sb__ellipsis--two">{{content?.name}}</h4>
@@ -12,7 +15,7 @@
   </div>
 
   <!-- content for only desktop -->
-  <div class="sb__DesktopOnly">
+  <div *ngIf="!isMobile" class="sb__DesktopOnly">
     <div class="sbcard__moreinfo">
       <!-- other meta info Medium, Organization etc -->
       <div class="sbcard__meta2">
