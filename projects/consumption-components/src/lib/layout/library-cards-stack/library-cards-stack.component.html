@@ -1,3 +1,13 @@
 <div class="card-list-container">
-    <sb-library-card *ngFor="let content of contentList" [content]="content" [isMobile]="true"></sb-library-card>
+  <div class="header">
+    <div class="title">
+      {{title}}
+    </div>
   </div>
+  <sb-library-card
+    *ngFor="let content of contentList | slice:0:(cardDisplayCount ? cardDisplayCount : contentList?.length)"
+    [content]="content" [isMobile]="true">
+  </sb-library-card>
+  <button *ngIf="cardDisplayCount" class="sbbtn full flat full-width sbbtn--primary"
+    (click)="showAllList($event)">{{viewMoreButtonText}}</button>
+</div>
