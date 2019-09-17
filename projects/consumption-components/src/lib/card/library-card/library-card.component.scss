@@ -33,7 +33,7 @@
     flex-direction: row;
     align-items: center;
     padding: $base-block-space;
-    height: $base-block-space * 11;    
+    height: $base-block-space * 11;
     border-bottom: 1px solid var(--gray-0);
   }
   &__img {
@@ -43,6 +43,8 @@
     margin-right: $base-block-space;
     flex: inherit;
     flex: 0 0 76px;
+    display: flex;
+    align-items: center;
     img {
       width: 100%;
     }
@@ -143,13 +145,8 @@
   display: block;
   height: 100%;
   background-color: rgb(43, 194, 83);
-  background-image: -webkit-gradient(
-    center bottom,
-    rgb(43, 194, 83) 37%,
-    rgb(84, 240, 84) 69%
-  );
-  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
-    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  background-image: -webkit-gradient(center bottom, rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -206,13 +203,7 @@
 }
 .red > span {
   background-color: $red-0;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0, $red-100),
-    color-stop(1, $red-400)
-  );
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $red-100), color-stop(1, $red-400));
   background-image: -webkit-linear-gradient($red-100, $red-400);
 }
 
@@ -224,11 +215,14 @@
 }
 
 .sb__ellipsis {
-  -webkit-line-clamp: 1;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
+  /* autoprefixer: off */
   -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
   &--two {
     -webkit-line-clamp: 2;
   }
