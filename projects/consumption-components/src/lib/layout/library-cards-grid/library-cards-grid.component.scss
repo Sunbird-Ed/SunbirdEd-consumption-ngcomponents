@@ -1,3 +1,4 @@
+@import "../../../../../../node_modules/sb-styles/assets/styles.scss";
 :host{
     .layout-library{
         display: flex;
@@ -8,15 +9,20 @@
     .header{
         display: flex;
         flex-direction: row;
-        margin-bottom: 16px;
+        margin: 15px 0;
         padding: 10px 0;
         .title{
-          font-size: 16px;
-          font-family: inherit;	
-          text-overflow: ellipsis;
-          overflow: hidden;
-          padding: 0 8px;
-          flex: 1;
+            font-family: inherit;	
+            text-overflow: ellipsis;
+            overflow: hidden;
+            // padding: 0 8px;
+            flex: 1;
+            height: ($base-block-space * 3);	
+            color: #024F9D;	
+            font-size: 18px;	
+            font-weight: bold;
+            text-transform: capitalize;
+            line-height: ($base-block-space * 3)
         }
     }
       
@@ -24,16 +30,32 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        // justify-content: space-between;
+        margin: 0 -15px;
         .item {
-          flex: 0 0 1;
-          margin-bottom: 2%;
+            padding: 0 15px;
+            box-sizing: border-box;
+            &.show-3{
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+            
+            &.show-4{
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            &.show-5{
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
         }
     }
     @media (max-width: 768px){
         .cards-container {
             .item {
-            flex: 0 100%;
+                flex: 0 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 15px;
             }
         }
     };
