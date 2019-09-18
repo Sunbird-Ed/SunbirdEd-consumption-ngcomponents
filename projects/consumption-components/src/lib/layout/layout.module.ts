@@ -10,6 +10,6 @@ import { LibraryCardsGridComponent } from './library-cards-grid/library-cards-gr
     CommonModule,
     CardModule
   ],
-  exports: [LibraryCardsStackComponent]
+  exports: [LibraryCardsStackComponent, LibraryCardsGridComponent]
 })
 export class LayoutModule { }
