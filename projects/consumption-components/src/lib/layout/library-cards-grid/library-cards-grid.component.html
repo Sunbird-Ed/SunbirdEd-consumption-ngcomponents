@@ -1,3 +1,15 @@
-<p>
-  library-cards-grid works!
-</p>
+<div class="layout-library">
+  <div class="header">
+    <div class="title">
+      {{title}}
+    </div>
+    <button class="sbbtn sbbtn--primary" *ngIf="cardDisplayCount && contentList.length >cardDisplayCount" (click)="onShowAllList($event)">
+      {{viewMoreButtonText}}
+    </button>
+  </div>
+  <div class="cards-container">
+    <div class="item" *ngFor="let content of contentList | slice:0:(cardDisplayCount ? cardDisplayCount : contentList?.length)">
+      <sb-library-card [content]="content" [isMobile]="false" (click)="onCardClick($event)"></sb-library-card>
+    </div>
+  </div>
+</div>
