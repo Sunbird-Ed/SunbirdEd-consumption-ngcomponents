@@ -55,7 +55,7 @@ Import the NgModule for each component you want to use:
 
 
 
-## LibraryCardsGrid
+## LibraryCardsGridComponent
 
 Can be used in the courses page for all consumption platforms
 
@@ -67,10 +67,10 @@ Exported as:  `SbLibraryCardsGrid`
 ### Properties
 |Name| Description |
 |--|--|
-|@Input() title: boolean| adasdo ijoaisdoias doi |
-|@Input() contentList: boolean| adasdo ijoaisdoias doi |
-|@Input() cardDisplayCount: boolean| adasdo ijoaisdoias doi |
-|@Input() viewMoreButtonText: boolean| adasdo ijoaisdoias doi |
+|@Input() title: boolean| Name that represents the section |
+|@Input() contentList: collection<content>| Collection of contents, where each content is a object from server API |
+|@Input() cardDisplayCount: Number| Number of  |
+|@Input() viewMoreButtonText: string| adasdo ijoaisdoias doi |
 
 
 onText
