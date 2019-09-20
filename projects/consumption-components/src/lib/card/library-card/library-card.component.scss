@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/sb-styles/assets/styles.scss";
+@import "../../../../../../node_modules/sb-styles/assets/styles";
 
 /* sb card component css */
 
@@ -20,6 +20,7 @@
   position: relative;
   border-bottom: 1px solid $gray-0;
   box-shadow: 0 2px 7px rgba(0,0,0,0.16);
+  contain: content;
   @include respond-above(sm) {
     border-radius: 2px;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
