@@ -1,7 +1,7 @@
-@import "../../../../../../node_modules/sb-styles/assets/styles.scss";
+@import "../../../../../../node_modules/sb-styles/assets/styles";
 :host {
   .card-list-container {
-    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
+    // box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
   }
   .header {
     display: flex;
@@ -13,11 +13,29 @@
       font-weight: bold;
       color: $primary-color;
       text-overflow: ellipsis;
+      text-transform: capitalize;
       overflow: hidden;
       padding: 0 8px;
       flex: 1;
       display: flex;
       align-items: center;
+
+      img {
+        margin-right: 8px;
+      }
     }
+  }
+
+  .body {
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  .stack-btn {
+    background-color: #edf4f9;
+    padding: 16px;
+    color: var(--primary-color);
+    font-weight: bold;
+    border-style: none;
+    text-transform: uppercase;
   }
 }

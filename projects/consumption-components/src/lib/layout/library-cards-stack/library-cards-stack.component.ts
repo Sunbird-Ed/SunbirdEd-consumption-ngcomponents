@@ -10,8 +10,9 @@ export class LibraryCardsStackComponent implements OnInit {
   @Input() contentList;
   @Input() title: string;
   @Input() isOffline = false;
-  @Input() viewMoreButtonText = 'View All';
+  @Input() viewMoreButtonText = 'View More';
   @Input() cardDisplayCount: number;
+  @Input() defaultImg = '';
 
 
   @Output() buttonClick = new EventEmitter();

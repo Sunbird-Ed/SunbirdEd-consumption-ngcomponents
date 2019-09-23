@@ -1,14 +1,20 @@
 <div class="card-list-container">
+
   <div class="header">
     <div class="title">
-      <img alt="" style="margin-right: 8px;" width="24" height="24" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjZTU1YTI4Ij48cGF0aCBkPSJNMTU0LjcgNDY0aDI2Ni43YzIzLjUgMCA0Mi43LTE5LjIgNDIuNy00Mi43VjE1NC43YzAtMjMuNS0xOS4yLTQyLjctNDIuNy00Mi43SDE1NC43Yy0yMy41IDAtNDIuNyAxOS4yLTQyLjcgNDIuN3YyNjYuN2MwIDIzLjQgMTkuMiA0Mi42IDQyLjcgNDIuNnoiLz48cGF0aCBkPSJNOTAuNyA0OGgyNjYuN2MyMy41IDAgNDIuNyAxOS4yIDQyLjcgNDIuN1Y5NkgxMzguN0MxMTUuMiA5NiA5NiAxMTUuMiA5NiAxMzguN1Y0MDBoLTUuM0M2Ny4yIDQwMCA0OCAzODAuOCA0OCAzNTcuM1Y5MC43QzQ4IDY3LjIgNjcuMiA0OCA5MC43IDQ4eiIvPjwvc3ZnPg==" />
+      <img alt="" width="24" height="24"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjZTU1YTI4Ij48cGF0aCBkPSJNMTU0LjcgNDY0aDI2Ni43YzIzLjUgMCA0Mi43LTE5LjIgNDIuNy00Mi43VjE1NC43YzAtMjMuNS0xOS4yLTQyLjctNDIuNy00Mi43SDE1NC43Yy0yMy41IDAtNDIuNyAxOS4yLTQyLjcgNDIuN3YyNjYuN2MwIDIzLjQgMTkuMiA0Mi42IDQyLjcgNDIuNnoiLz48cGF0aCBkPSJNOTAuNyA0OGgyNjYuN2MyMy41IDAgNDIuNyAxOS4yIDQyLjcgNDIuN1Y5NkgxMzguN0MxMTUuMiA5NiA5NiAxMTUuMiA5NiAxMzguN1Y0MDBoLTUuM0M2Ny4yIDQwMCA0OCAzODAuOCA0OCAzNTcuM1Y5MC43QzQ4IDY3LjIgNjcuMiA0OCA5MC43IDQ4eiIvPjwvc3ZnPg==" />
       {{title}}
     </div>
   </div>
-  <sb-library-card
-    *ngFor="let content of contentList | slice:0:(cardDisplayCount ? cardDisplayCount : contentList?.length)"
-    [content]="content" [isMobile]="true">
-  </sb-library-card>
-  <button *ngIf="cardDisplayCount" class="sbbtn full flat full-width sbbtn--primary"
-    (click)="showAllList($event)">{{viewMoreButtonText}}</button>
+
+  <div class="body">
+    <sb-library-card
+      *ngFor="let content of contentList | slice:0:(cardDisplayCount ? cardDisplayCount : contentList?.length)"
+      [content]="content" [isMobile]="true" [defaultImg]="defaultImg">
+    </sb-library-card>
+    <button *ngIf="cardDisplayCount" class="sbbtn flat stack-btn full-width"
+      (click)="showAllList($event)">{{viewMoreButtonText}}</button>
+  </div>
+
 </div>
