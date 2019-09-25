@@ -1,0 +1,21 @@
+{
+    "name": "@project-sunbird/common-consumption",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents.git"
+    },
+    "keywords": [
+        "angular",
+        "components",
+        "sunbird"
+    ],
+    "bugs": {
+        "url": "https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents/issues"
+    },
+    "homepage": "https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents.git#readme",
+    "peerDependencies": {
+        "@angular/common": "^7.1.0",
+        "@angular/core": "^7.1.0"
+    }
+}
