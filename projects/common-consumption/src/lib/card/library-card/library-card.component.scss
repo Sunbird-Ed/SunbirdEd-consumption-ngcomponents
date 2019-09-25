@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/sb-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 
 /* sb card component css */
 
@@ -50,6 +50,7 @@
     img {
       width: 100%;
     }
+    background-color: $gray-100;
   }
   &__info {
   }
@@ -75,12 +76,13 @@
   }
   &__moreinfo {
     border-radius: 0 0 2px 2px;
-    background-color: $gray-0;
+    // background-color: $gray-0;
+    background-color: #FAFAFA;
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
-    padding: $base-block-space;
+    // padding: $base-block-space;
     min-height: 56px;
   }
 
@@ -92,6 +94,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: $base-block-space;
   }
   &__medium {
     span {
@@ -117,7 +120,7 @@
     height: 20px;
     padding: 0 8px 0px 4px;
     color: #fff;
-    margin-right: -8px;
+    // margin-right: -8px;
     font-size: $font-size-xs;
     display: flex;
     align-items: center;

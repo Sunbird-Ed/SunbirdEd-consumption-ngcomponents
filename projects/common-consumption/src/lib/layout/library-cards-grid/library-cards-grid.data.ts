@@ -1,6 +1,6 @@
 export const defaultLibraryCardsGrid = {
     title: 'Biology',
-    cardDisplayCount: 3,
+    cardDisplayCount: 4,
     viewMoreButtonText: 'View all',
     contentList: [
         {
