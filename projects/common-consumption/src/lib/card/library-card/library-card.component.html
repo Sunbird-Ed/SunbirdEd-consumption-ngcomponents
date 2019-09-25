@@ -9,7 +9,7 @@
     <!-- card mobile view details -->
     <div class="sbcard__info">
       <h4 class="sbcard__title sb__ellipsis sb__ellipsis--two">{{content?.name}}</h4>
-      <div class="sbcard__meta1">
+      <div class="sbcard__meta1" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
         <span class="sb__ellipsis">{{content?.subject}}</span>
         <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
         <span class="sb__ellipsis">{{content?.gradeLevel}}</span>
@@ -18,7 +18,7 @@
   </div>
 
   <!-- content for only desktop -->
-  <div *ngIf="!isMobile" class="">
+  <div *ngIf="!isMobile">
     <div class="sbcard__moreinfo">
       <!-- other meta info Medium, Organization etc -->
       <div class="sbcard__meta2">
