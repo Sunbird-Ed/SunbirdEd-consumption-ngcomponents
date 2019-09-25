@@ -3,33 +3,33 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "consumptionComponents": {
-      "root": "projects/consumption-components",
-      "sourceRoot": "projects/consumption-components/src",
+    "commonConsumption": {
+      "root": "projects/common-consumption",
+      "sourceRoot": "projects/common-consumption/src",
       "projectType": "library",
       "prefix": "sb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/consumption-components/tsconfig.lib.json",
-            "project": "projects/consumption-components/ng-package.json"
+            "tsConfig": "projects/common-consumption/tsconfig.lib.json",
+            "project": "projects/common-consumption/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/consumption-components/src/test.ts",
-            "tsConfig": "projects/consumption-components/tsconfig.spec.json",
-            "karmaConfig": "projects/consumption-components/karma.conf.js"
+            "main": "projects/common-consumption/src/test.ts",
+            "tsConfig": "projects/common-consumption/tsconfig.spec.json",
+            "karmaConfig": "projects/common-consumption/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/consumption-components/tsconfig.lib.json",
-              "projects/consumption-components/tsconfig.spec.json"
+              "projects/common-consumption/tsconfig.lib.json",
+              "projects/common-consumption/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -44,5 +44,5 @@
       }
     }
   },
-  "defaultProject": "consumptionComponents"
+  "defaultProject": "commonConsumption"
 }

@@ -12,7 +12,7 @@ export class LibraryFiltersComponent implements OnInit {
 
     @Input() list: Array<ILibraryList>;
     @Input() layout: LibraryFiltersLayout;
-    @Output() getSelectedPill = new EventEmitter();
+    @Output() getSelectedPill: EventEmitter<any> = new EventEmitter();
     constructor() { }
 
     ngOnInit() {

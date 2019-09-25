@@ -19,4 +19,4 @@ import { LibraryFiltersModule } from './library-filters/library-filters.module';
     LibraryFiltersModule
   ]
 })
-export class ConsumptionComponentsModule { }
+export class CommonConsumptionModule { }

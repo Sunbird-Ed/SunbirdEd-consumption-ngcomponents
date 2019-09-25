@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build consumptionComponents",
-    "build_lib": "npm i && ng build consumptionComponents",
+    "build": "ng build commonConsumption",
+    "build_lib": "npm i && ng build commonConsumption",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -44,6 +44,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
+    "sb-styles": "file:../sb-styles/sb-styles-1.0.0.tgz",
     "scss-bundle": "^3.0.1",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",

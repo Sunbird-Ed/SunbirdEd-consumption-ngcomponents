@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "consumption-components": [
-        "dist/consumption-components"
+      "common-consumption": [
+        "dist/common-consumption"
       ],
-      "consumption-components/*": [
-        "dist/consumption-components/*"
+      "common-consumption/*": [
+        "dist/common-consumption/*"
       ]
     }
   }
