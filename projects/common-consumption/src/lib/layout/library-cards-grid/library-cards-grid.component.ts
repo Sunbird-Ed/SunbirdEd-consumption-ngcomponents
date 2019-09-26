@@ -9,7 +9,7 @@ import { defaultLibraryCardsGrid } from './library-cards-grid.data';
 export class LibraryCardsGridComponent implements OnInit {
   @Input() title = defaultLibraryCardsGrid.title;
   @Input() contentList = defaultLibraryCardsGrid.contentList;
-  @Input() cardDisplayCount = defaultLibraryCardsGrid.cardDisplayCount;
+  @Input() maxCardCount = defaultLibraryCardsGrid.maxCardCount;
   @Input() viewMoreButtonText = defaultLibraryCardsGrid.viewMoreButtonText;
 
   @Output() buttonClick = new EventEmitter();

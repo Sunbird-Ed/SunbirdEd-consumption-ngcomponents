@@ -11,7 +11,7 @@ export class LibraryCardsStackComponent implements OnInit {
   @Input() title: string;
   @Input() isOffline = false;
   @Input() viewMoreButtonText = 'View More';
-  @Input() cardDisplayCount: number;
+  @Input() maxCardCount: number;
   @Input() defaultImg = '';
 
 

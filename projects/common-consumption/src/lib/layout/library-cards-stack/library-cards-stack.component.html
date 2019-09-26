@@ -10,10 +10,10 @@
 
   <div class="body">
     <sb-library-card
-      *ngFor="let content of contentList | slice:0:(cardDisplayCount ? cardDisplayCount : contentList?.length)"
+      *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)"
       [content]="content" [isMobile]="true" [defaultImg]="defaultImg">
     </sb-library-card>
-    <button *ngIf="cardDisplayCount" class="sbbtn flat stack-btn full-width"
+    <button *ngIf="maxCardCount" class="sbbtn flat stack-btn full-width"
       (click)="showAllList($event)">{{viewMoreButtonText}}</button>
   </div>
 
