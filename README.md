@@ -54,10 +54,7 @@ Can be used in the library page for all consumption platforms.
 |`Optional` @Input() isMobile: boolean| Flag to distinguish mobile platform |  
 |`Optional` @Input() isOffline: boolean| Flag to handle offline scenarios|  
 |`Optional` @Input() offlineImg: string| Image path to show when the device is offline(Applicable when `isOffline = true`) |onText  
-### Events
-|Name| Description |  
-|--|--|  
-@Output() cardClick | Emmits this event when user clicks on the card
+
 ## LibraryCardsGrid
 Can be used in the library page for all consumption platforms targetting web platform
     import { SbLibraryCardsGrid } form '@sunbird/components/SbLibraryCardsGrid'
