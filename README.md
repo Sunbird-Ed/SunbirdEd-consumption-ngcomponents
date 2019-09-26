@@ -5,8 +5,12 @@ For help getting started with a new Angular app, check out the Angular CLI.
 For existing apps, follow these steps to begin using .
 ## Step 1: Install the package
     npm install  @project-sunbird/common-consumption --save
-## Step 2: Install the styles library from sunbird
-    npm install @sunbird/styles --save
+    npm install common-consumption-styles
+## Step 2: Include the common consumption styles in angular.json
+    "styles": [
+             ...
+             "./node_modules/common-consumption-styles/assets/_styles.scss"
+           ],
 ## Step 3: Import the modules and components
 Import the NgModule for each component you want to use:
     import { CommonConsumptionModule} from '@project-sunbird/common-consumption';
