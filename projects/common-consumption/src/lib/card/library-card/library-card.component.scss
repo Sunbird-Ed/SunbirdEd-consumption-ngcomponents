@@ -59,12 +59,15 @@
     font-size: $font-size-normal;
     margin: 0px;
     line-height: normal;
+    line-height: 20px;
+    word-break: break-word;
   }
   &__meta1 {
     color: $gray-300;
     font-size: $font-size-sm;
     display: inline-flex;
     align-items: center;
+    line-height: 20px;
   }
   .dot-divider {
     width: 4px;
@@ -84,6 +87,7 @@
     justify-content: space-between;
     // padding: $base-block-space;
     min-height: 56px;
+    box-shadow: 0 -0.25px 0 0 rgba(0,0,0,0.5);
   }
 
   &__meta2 {
@@ -101,6 +105,7 @@
     }
   }
   &__org {
+    color: $gray-200;
   }
   &__tags {
     display: flex;
@@ -110,7 +115,8 @@
   &__badge {
     display: flex;
     img {
-      width: 16px;
+      width: 20px;
+      height: 20px;
     }
   }
   &__type {
