@@ -16,6 +16,7 @@ export class LibraryCardsStackComponent implements OnInit {
 
 
   @Output() buttonClick = new EventEmitter();
+  @Output() cardClick = new EventEmitter();
 
   constructor() { }
 
@@ -24,6 +25,11 @@ export class LibraryCardsStackComponent implements OnInit {
 
   showAllList(event) {
     this.buttonClick.emit(event);
+  }
+
+  emitCardClick(event, index) {
+    console.log('inside library emit card click', event);
+    this.cardClick.emit({'data': event.data, 'index': index});
   }
 
 }
