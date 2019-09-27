@@ -101,8 +101,8 @@ Exported as: `SbLibraryCardsGrid`
 |--|--|
 |@Input() title: boolean| Name that represents the section |
 |@Input() contentList: collection<content>| Collection of contents, where each content is a object from server API |
-|`Optional` @Input() cardDisplayCount: Number| Number of cards to display the viewing area `Default value is 3`|
-|`Optional` @Input() viewMoreButtonText: string| custom text to show in place of view all button, if there are more number of cards than "cardDisplayCount" then a button needs to be displayed. `Default value is "View All"`|
+|`Optional` @Input() maxCardCount: Number| Number of cards to display the viewing area `Default value is 3`|
+|`Optional` @Input() viewMoreButtonText: string| custom text to show in place of view all button, if there are more number of cards than "maxCardCount" then a button needs to be displayed. `Default value is "View All"`|
 
 ### Events
 
@@ -127,8 +127,8 @@ Exported as: `LibraryCardsStackComponent`
 |--|--|
 |@Input() title: boolean| Name that represents the section |
 |@Input() contentList: collection<content>| Collection of contents, where each content is a object from server API |
-|`Optional` @Input() cardDisplayCount: Number| Number of cards to display the viewing area `Default value is 3`|
-|`Optional` @Input() viewMoreButtonText: string| custom text to show in place of view all button, if there are more number of cards than "cardDisplayCount" then a button needs to be displayed. `Default value is "View All"`|
+|`Optional` @Input() maxCardCount: Number| Number of cards to display the viewing area `Default value is 3`|
+|`Optional` @Input() viewMoreButtonText: string| custom text to show in place of view all button, if there are more number of cards than "maxCardCount" then a button needs to be displayed. `Default value is "View All"`|
 |`Optional` @Input() isOffline: boolean|Flag to handle offline scenarios `Default value is "False"`|
 
 ### Events

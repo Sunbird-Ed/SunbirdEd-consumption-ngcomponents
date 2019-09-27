@@ -6,13 +6,13 @@
       {{title}}
       <span class="badge">{{contentList?.length}}</span>
     </div>
-    <button class="sbbtn sbbtn--link-gray" *ngIf="cardDisplayCount && contentList?.length >cardDisplayCount" (click)="onShowAllList($event)">
+    <button class="sbbtn sbbtn--link-gray" *ngIf="maxCardCount && contentList?.length >maxCardCount" (click)="onShowAllList($event)">
       {{viewMoreButtonText}}
       <span>></span>
     </button>
   </div>
   <div class="cards-container">
-    <div class="item" [ngClass]="cardDisplayCount ? 'show-' + cardDisplayCount: ''" *ngFor="let content of contentList | slice:0:(cardDisplayCount ? cardDisplayCount : contentList?.length)">
+    <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)">
       <sb-library-card [content]="content" [isMobile]="false" (click)="onCardClick($event)"></sb-library-card>
     </div>
   </div>
