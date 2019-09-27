@@ -99,6 +99,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding: $base-block-space;
+    flex:1 0 60%;
   }
   &__medium {
     span {
@@ -111,6 +112,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
+    flex:1;
   }
   &__badge {
     display: flex;

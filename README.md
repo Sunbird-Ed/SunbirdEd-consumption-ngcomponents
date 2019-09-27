@@ -12,9 +12,9 @@ For existing apps, follow these steps to begin using .
 ## Step 1: Install the package
 
     npm install @project-sunbird/common-consumption --save
-	npm install common-consumption-styles
+	npm install common-consumption-styles --save
 
-## Step 2: Include the common consumption styles in angular.json
+## Step 2: Include the common-consumption-styles in angular.json
 
     "styles": [
 	    ...
@@ -38,9 +38,9 @@ Import the NgModule for each component you want to use:
 
 Alternatively, you can create a separate NgModule that imports and then re-exports all of the Angular components that you will use in your application. By exporting them again, other modules can simply include your CustomSunbirdComponentsModule wherever components are needed, and automatically get all of the exported modules. A good place for importing/exporting the application-wide modules is the SharedModule.
 
-    import {CardsModule} from '@project-sunbird/common-consumption/card';
+    import { CardsModule } from '@project-sunbird/common-consumption/card';
 
-    import {PopoverModule} from '@project-sunbird/common-consumption/popover';
+    import { PopoverModule } from '@project-sunbird/common-consumption/popover';
 
     @NgModule({
 	    ...
@@ -58,7 +58,7 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [LibraryCard]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the library page for all consumption platforms| sb-library-card|
 | [CourseCard]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms| sb-course-card|
 | [LibraryCardsGrid]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
-| [LibraryCardsStackComponent]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
+| [LibraryCardsStack]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
 | [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
 | [LibraryFilters]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the library page for all consumption platforms. |sb-library-filters|
 
@@ -89,7 +89,7 @@ Can be used in the library page for all consumption platforms.
 
 Can be used in the library page for all consumption platforms targetting web platform
 
-    import { SbLibraryCardsGrid } form '@sunbird/components/SbLibraryCard`sGrid'
+    import { SbLibraryCardsGrid } form '@project-sunbird/common-consumption/layout/gridcards';
 
 Selector: `sb-library-cards-grid`
 
@@ -115,7 +115,7 @@ Exported as: `SbLibraryCardsGrid`
 
 Can be used in the library page for mobile consumption
 
-    import { LibraryCardsStackComponent} form '@sunbird/components/LibraryCardsStackComponent'
+`import { LibraryCardsStackComponent } form '@project-sunbird/common-consumption/layout/stackcards';`
 
 Selector: `sb-library-cards-stack`
 
@@ -142,7 +142,7 @@ Exported as: `LibraryCardsStackComponent`
 
 Can be used in the library page for all consumption platforms.
 
-`import { LibraryFiltersComponent } from '@Sunbird/components/library-filters'`
+  `import { LibraryFiltersComponent } from '@project-sunbird/common-consumption/library-filters';`
 
 **Selector**: `sb-library-filters`
 
