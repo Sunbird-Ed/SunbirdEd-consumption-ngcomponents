@@ -1,31 +1,32 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { defaultLibraryCardsGrid } from './library-cards-grid.data';
+import { defaultLibraryCardsGrid } from '../library-cards.data';
 
 @Component({
-  selector: 'sb-library-cards-grid',
-  templateUrl: './library-cards-grid.component.html',
-  styleUrls: ['./library-cards-grid.component.scss']
+    selector: 'sb-library-cards-grid',
+    templateUrl: './library-cards-grid.component.html',
+    styleUrls: ['./library-cards-grid.component.scss']
 })
 export class LibraryCardsGridComponent implements OnInit {
-  @Input() title = defaultLibraryCardsGrid.title;
-  @Input() contentList = defaultLibraryCardsGrid.contentList;
-  @Input() maxCardCount = defaultLibraryCardsGrid.maxCardCount;
-  @Input() viewMoreButtonText = defaultLibraryCardsGrid.viewMoreButtonText;
+    @Input() title = defaultLibraryCardsGrid.title;
+    @Input() contentList = defaultLibraryCardsGrid.contentList;
+    @Input() maxCardCount = defaultLibraryCardsGrid.maxCardCount;
+    @Input() viewMoreButtonText = defaultLibraryCardsGrid.viewMoreButtonText;
 
-  @Output() buttonClick = new EventEmitter();
-  @Output() cardClick = new EventEmitter();
+    @Output() buttonClick = new EventEmitter();
+    @Output() cardClick = new EventEmitter();
 
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  onShowAllList(event) {
-    this.buttonClick.emit(event);
-  }
-  onCardClick(event) {
-    this.cardClick.emit(event);
-  }
+    onShowAllList(event) {
+        this.buttonClick.emit(event);
+    }
+
+    onCardClick(event) {
+        this.cardClick.emit(event);
+    }
 
 }
