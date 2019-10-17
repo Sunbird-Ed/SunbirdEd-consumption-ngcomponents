@@ -3,6 +3,7 @@ import { CardModule } from './card/card.module';
 import { LayoutModule } from './layout/layout.module';
 import { ModalModule } from './modal/modal.module';
 import { LibraryFiltersModule } from './library-filters/library-filters.module';
+import { ContentDetailsModule } from './content-details/content-details.module';
 
 @NgModule({
   declarations: [],
@@ -10,13 +11,15 @@ import { LibraryFiltersModule } from './library-filters/library-filters.module';
     CardModule,
     ModalModule,
     LayoutModule,
-    LibraryFiltersModule
+    LibraryFiltersModule,
+    ContentDetailsModule
   ],
   exports: [
     CardModule,
     ModalModule,
     LayoutModule,
-    LibraryFiltersModule
+    LibraryFiltersModule,
+    ContentDetailsModule
   ]
 })
 export class CommonConsumptionModule { }
