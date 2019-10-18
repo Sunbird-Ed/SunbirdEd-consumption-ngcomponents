@@ -72,6 +72,10 @@
   .dot-divider {
     width: 4px;
     height: 4px;
+    min-width: 4px;
+    max-width: 4px;
+    min-height: 4px;
+    max-height: 4px;
     border-radius: 100%;
     background-color: $gray-100;
     display: inline-block;
@@ -123,7 +127,7 @@
     }
   }
   &__type {
-    margin-left: 24px;
+    margin-left: 16px;
     background: #999;
     position: relative;
     height: 20px;
