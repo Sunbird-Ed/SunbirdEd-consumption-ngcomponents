@@ -1,9 +1,9 @@
-export enum LibraryFiltersLayout {
+export enum  LibraryFiltersLayout {
     ROUND = 'round',
     SQUARE = 'square'
 }
 
-export interface ILibraryList {
+export interface IFilterItem {
     text: string;
-    active: boolean;
+    selected: boolean;
 }

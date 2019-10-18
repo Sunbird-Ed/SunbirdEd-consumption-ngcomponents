@@ -1,14 +1,14 @@
 <div class="fixed-container">
-    <div *ngIf="layout === 'square'" class="sb-slider-pills-container">
+    <div *ngIf="layout === LibraryFiltersLayout.SQUARE" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-medium-pills-container">
-            <div class="pill" *ngFor="let item of list; let i = index;" [ngClass]="{'active': item?.active}"
+            <div class="pill" *ngFor="let item of filterList; let i = index;" [ngClass]="{'active': item?.selected}"
                 (click)="selectPill($event, i)">{{item.text}}
             </div>
         </div>
     </div>
-    <div *ngIf="layout === 'round'" class="sb-slider-pills-container">
+    <div *ngIf="layout === LibraryFiltersLayout.ROUND" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-grade-pills-container">
-            <div class="pill" *ngFor="let item of list; let i = index;" [ngClass]="{'active': item?.active}"
+            <div class="pill" *ngFor="let item of filterList; let i = index;" [ngClass]="{'active': item?.selected}"
                 (click)="selectPill($event, i)">
                 {{item.text}}</div>
         </div>
