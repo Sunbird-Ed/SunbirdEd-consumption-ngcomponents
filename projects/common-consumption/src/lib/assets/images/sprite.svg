@@ -1,0 +1,34 @@
+  <!-- SVG Sprite -->
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 357" id="close-button">
+        <path d="M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z"></path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="close">
+        <path d="M505.943 6.058c-8.077-8.077-21.172-8.077-29.249 0L6.058 476.693c-8.077 8.077-8.077 21.172 0 29.249A20.612 20.612 0 0 0 20.683 512a20.614 20.614 0 0 0 14.625-6.059L505.943 35.306c8.076-8.076 8.076-21.171 0-29.248z"></path>
+        <path d="M505.942 476.694L35.306 6.059c-8.076-8.077-21.172-8.077-29.248 0-8.077 8.076-8.077 21.171 0 29.248l470.636 470.636a20.616 20.616 0 0 0 14.625 6.058 20.615 20.615 0 0 0 14.624-6.057c8.075-8.078 8.075-21.173-.001-29.25z"></path>
+      </symbol>
+ <symbol viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" id="arrow-round-right">
+   <path d="M7 0C3.1 0 0 3.1 0 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zM5.9 10.1l-.7-.7L7.4 7 5.2 4.6l.7-.7 3 3.1-3 3.1z"></path>
+  </symbol>
+  <symbol viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg" id="arrow-up">
+    <polygon points="12,6.2 10.6,7.5 6,3.2 1.4,7.5 0,6.2 6,0.5 "/>
+  </symbol>
+  <symbol viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg" id="doc">
+  <path d="M7.5 0h-6C.7 0 0 .6 0 1.4v11.2c0 .8.7 1.4 1.5 1.4h9c.8 0 1.5-.6 1.5-1.4V4.2L7.5 0zM9 11.2H3V9.8h6v1.4zm0-2.8H3V7h6v1.4zM6.7 4.9V1l4.1 3.8H6.7v.1z"></path>
+  </symbol>
+  <symbol viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg" id="arrow-down">
+    <polygon class="st0" points="0,1.8 1.4,0.5 6,4.8 10.6,0.5 12,1.8 6,7.5 "/>
+  </symbol>
+  <symbol viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" id="play">
+  <path d="M7 0C3.1 0 0 3.1 0 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zM5.6 10.1V3.8l4.2 3.1-4.2 3.2z" ></path>
+  </symbol>
+  <symbol viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg" id="rating-star">
+    <path d="M22.5 8.5l-7.9-.7L11.5.4 8.4 7.8l-8 .7 6 5.3-1.8 7.8 6.8-4.2 6.8 4.2-1.8-7.8 6.1-5.3zm-11 7l-4.1 2.6 1.1-4.9-3.6-3.3 4.8-.4 1.9-4.6 1.9 4.6 4.8.4-3.6 3.3 1.1 4.9-4.3-2.6z" fill="#024f9d"></path>
+  </symbol>
+  <symbol viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" id="arrow-long-right">
+    <path d="M6 0L4.942 1.057 9.127 5.25H0v1.5h9.127l-4.185 4.192L6 12l6-6z"></path>
+  </symbol>
+  <symbol viewBox="0 0 10 14" xmlns="http://www.w3.org/2000/svg" id="touch">
+    <path d="M2.8 5.5V3c0-.9.7-1.7 1.7-1.7S6.2 2 6.2 3v2.5C7 5 7.5 4 7.5 3c0-1.7-1.3-3-3-3s-3 1.3-3 3c0 1 .5 2 1.3 2.5zm6.6 3.1l-3-1.5C6.3 7 6.1 7 6 7h-.5V3c0-.6-.4-1-1-1s-1 .4-1 1v7.2l-2.3-.5H1c-.2 0-.4.1-.5.2l-.5.5 3.3 3.3c.2.2.4.3.7.3h4.5c.5 0 .9-.4 1-.9l.5-3.5v-.1c0-.4-.3-.8-.6-.9z"></path>
+  </symbol>
+</svg>
