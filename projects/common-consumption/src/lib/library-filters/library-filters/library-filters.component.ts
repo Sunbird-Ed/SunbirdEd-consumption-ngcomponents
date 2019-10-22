@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { LibraryFiltersLayout, ILibraryList } from './models';
-
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { LibraryFiltersLayout, IFilterItem, ISelectedFilter } from './models';
 
 @Component({
     selector: 'sb-library-filters',
@@ -8,22 +7,35 @@ import { LibraryFiltersLayout, ILibraryList } from './models';
     styleUrls: ['./library-filters.component.scss']
 })
 
-export class LibraryFiltersComponent implements OnInit {
+export class LibraryFiltersComponent implements OnChanges {
 
-    @Input() list: Array<ILibraryList>;
+    @Input() list: string[];
+    @Input() selectedItems: number[];
     @Input() layout: LibraryFiltersLayout;
-    @Output() getSelectedPill: EventEmitter<any> = new EventEmitter();
-    constructor() { }
+    @Output() selectedFilter: EventEmitter<ISelectedFilter> = new EventEmitter<ISelectedFilter>();
 
-    ngOnInit() {
-        console.log("input", this.layout);
-        console.log("list", this.list);
+    filterList: IFilterItem[];
+
+    get LibraryFiltersLayout() { return LibraryFiltersLayout; }
+
+    ngOnChanges(changes) {
+        if (this.list) {
+            this.filterList = this.list.map((item, index) => {
+                if (this.selectedItems && this.selectedItems.includes(index)) {
+                    return ({ text: item, selected: true });
+                } else {
+                    return ({ text: item, selected: false });
+                }
+            });
+        }
     }
 
+    selectPill(event: MouseEvent, index: number) {
+        this.filterList = this.filterList.map(e => ({ ...e, selected: false }));
 
-    selectPill($event, index) {
-        this.list = this.list.map(e => ({ ...e, active: false }));
-        this.list[index].active = true;
-        this.getSelectedPill.emit({ event, data: this.list[index] });
+        if (index) {
+            this.filterList[index].selected = true;
+            this.selectedFilter.emit({ event: event, data: { ...this.filterList[index], index } });
+        }
     }
 }
