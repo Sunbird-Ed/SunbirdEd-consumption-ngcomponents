@@ -6,7 +6,7 @@
       {{title}}
       <span class="badge">{{contentList?.length}}</span>
     </div>
-    <button class="sbbtn sbbtn--link-gray" *ngIf="maxCardCount && contentList?.length >maxCardCount" (click)="onShowAllList($event)">
+    <button class="sbbtn sbbtn--sm sbbtn--ol-secondary" *ngIf="maxCardCount && contentList?.length >maxCardCount" (click)="onShowAllList($event)">
       {{viewMoreButtonText}}
       <span>></span>
     </button>

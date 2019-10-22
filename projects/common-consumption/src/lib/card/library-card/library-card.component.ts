@@ -13,6 +13,7 @@ export class LibraryCardComponent implements OnInit {
     @Input() isOffline = false;
     @Input() defaultImg = '';
     @Input() offlineImg = 'assets/images/offline.svg';
+    @Input() isRecentlyViewed = false;
 
     @Output() cardClick = new EventEmitter();
 
