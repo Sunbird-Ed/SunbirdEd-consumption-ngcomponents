@@ -13,7 +13,7 @@
   </div>
   <div class="cards-container">
     <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)">
-      <sb-library-card [content]="content" [isMobile]="false" (click)="onCardClick($event)"></sb-library-card>
+      <sb-library-card [content]="content" [isMobile]="false" (click)="onCardClick($event, content)"></sb-library-card>
     </div>
   </div>
 </div>

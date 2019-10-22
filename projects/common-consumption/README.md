@@ -108,7 +108,7 @@ Exported as: `SbLibraryCardsGrid`
 
 |Name| Description |
 |--|--|
-|@Output() buttonClick| Emits this event when view all button is clicked |
+|@Output() viewMoreClick| Emits this event when view all button is clicked |
 |@Output() cardClick| Emits this event when card is clicked |
 
 ## LibraryCardsStackComponent
@@ -135,7 +135,7 @@ Exported as: `LibraryCardsStackComponent`
 
 |Name| Description |
 |--|--|
-|@Output() buttonClick| Emits this event when view all button is clicked |
+|@Output() viewMoreClick| Emits this event when view all button is clicked |
 |@Output() cardClick| Emits this event when card is clicked |
 
 ## LibraryFilters

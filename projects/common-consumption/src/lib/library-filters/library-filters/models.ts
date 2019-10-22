@@ -3,7 +3,16 @@ export enum LibraryFiltersLayout {
     SQUARE = 'square'
 }
 
-export interface ILibraryList {
+export interface IFilterItem {
     text: string;
-    active: boolean;
+    selected: boolean;
+}
+
+export interface ISelectedFilter {
+    event: MouseEvent;
+    data: {
+        index: number;
+        selected: boolean;
+        text: string;
+    };
 }

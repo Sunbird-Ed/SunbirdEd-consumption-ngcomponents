@@ -108,7 +108,7 @@ Exported as: `SbLibraryCardsGrid`
 
 |Name| Description |
 |--|--|
-|@Output() buttonClick| Emits this event when view all button is clicked |
+|@Output() viewMoreClick| Emits this event when view all button is clicked |
 |@Output() cardClick| Emits this event when card is clicked |
 
 ## LibraryCardsStackComponent
@@ -135,7 +135,7 @@ Exported as: `LibraryCardsStackComponent`
 
 |Name| Description |
 |--|--|
-|@Output() buttonClick| Emits this event when view all button is clicked |
+|@Output() viewMoreClick| Emits this event when view all button is clicked |
 |@Output() cardClick| Emits this event when card is clicked |
 
 ## LibraryFilters
@@ -152,14 +152,15 @@ Can be used in the library page for all consumption platforms.
 
 |Name| Description |
 |--|--|
-|@Input() list: Array<<ILibraryList>ILibraryList>| Collection of text and active |
+|@Input() list: Array<<string>string>| Collection of text and active |
 |@Input() layout: LibraryFiltersLayout| Pill Layout to show(Round, Square)
+|@Input() selectedItems: Array<<number>number> | Pill Layout to show(Round, Square)
 
 ### Events
 
 |Name| Description |
 |--|--|
-@Output() getSelectedPill | Emmits this event when user clicks on the card
+@Output() selectedFilter | Emmits this event when user clicks on the filter item
 
 
 

@@ -6,26 +6,21 @@ import { defaultLibraryCardsGrid } from '../library-cards.data';
     templateUrl: './library-cards-stack.component.html',
     styleUrls: ['./library-cards-stack.component.scss']
 })
-export class LibraryCardsStackComponent implements OnInit {
 
+export class LibraryCardsStackComponent {
     @Input() contentList = defaultLibraryCardsGrid.contentList;
-    @Input() title = defaultLibraryCardsGrid.title;
+    @Input() title: string = defaultLibraryCardsGrid.title;
     @Input() isOffline = false;
-    @Input() viewMoreButtonText = defaultLibraryCardsGrid.viewMoreButtonText;
-    @Input() maxCardCount = defaultLibraryCardsGrid.maxCardCount;
+    @Input() viewMoreButtonText: string = defaultLibraryCardsGrid.viewMoreButtonText;
+    @Input() maxCardCount: number = defaultLibraryCardsGrid.maxCardCount;
     @Input() defaultImg: string;
 
 
-    @Output() buttonClick = new EventEmitter();
-    @Output() cardClick = new EventEmitter();
-
-    constructor() { }
-
-    ngOnInit() {
-    }
+    @Output() viewMoreClick: EventEmitter<MouseEvent> = new EventEmitter();
+    @Output() cardClick: EventEmitter<any> = new EventEmitter();
 
     showAllList(event) {
-        this.buttonClick.emit(event);
+        this.viewMoreClick.emit(event);
     }
 
     emitCardClick(event, index) {
