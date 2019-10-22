@@ -1,10 +1,12 @@
 <!-- card component -->
-<div class="sbcard sbcard--resource sbcard--course" (click)="onClick($event)">
+<div class="sbcard sbcard--resource sbcard--course" [ngClass]="{'sbcard--recently-viewed': isRecentlyViewed}" (click)="onClick($event)" >
   <div class="sbcard__main-area">
     <!-- card img -->
     <div class="sbcard__img">
-      <img *ngIf="!isOffline" [src]="content?.appIcon || defaultImg" alt="">
-      <img *ngIf="isOffline" [src]="offlineImg || defaultImg" alt="">
+      <div class="img-container">
+        <img *ngIf="!isOffline" [src]="content?.appIcon || defaultImg" alt="">
+        <img *ngIf="isOffline" [src]="offlineImg || defaultImg" alt="">
+      </div>
     </div>
     <!-- card mobile view details -->
     <div class="sbcard__info">
