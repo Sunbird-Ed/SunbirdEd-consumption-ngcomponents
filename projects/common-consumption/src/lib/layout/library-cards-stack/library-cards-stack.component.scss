@@ -21,8 +21,12 @@
       display: flex;
       align-items: center;
 
-      img {
+      i {
         margin-right: 8px;
+        vertical-align: middle;
+        height: 17px;
+        width: 14px;
+        top: -2px;
       }
     }
   }
@@ -38,5 +42,63 @@
     font-weight: bold;
     border-style: none;
     text-transform: uppercase;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  .icon-svg {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    opacity: 1;
+    svg.icon {
+      width: 100%;
+      height: inherit;
+    }
+    //sizes
+    &--xs {
+      width: var(--icon-svg-xs);
+      height: var(--icon-svg-xs);
+    }
+    &--sm {
+      width: var(--icon-svg-sm);
+      height: var(--icon-svg-sm);
+    }
+    &--md {
+      width: var(--icon-svg-md);
+      height: var(--icon-svg-md);
+    }
+    &--lg {
+      width: var(--icon-svg-lg);
+      height: var(--icon-svg-lg);
+    }
+    &--xl {
+      width: var(--icon-svg-xl);
+      height: var(--icon-svg-xl);
+    }
+
+    //colors
+    &--white {
+      fill: var(--white);
+    }
+    &--primary {
+      fill: var(--primary-color);
+    }
+    &--secondary {
+      fill: var(--secondary-color);
+    }
+    &--tertiary {
+      fill: var(--tertiary-color);
+    }
+    &--red {
+      fill: var(--red-400);
+    }
+    &--gray {
+      fill: var(--gray-800);
+    }
   }
 }
