@@ -33,9 +33,11 @@ export class LibraryFiltersComponent implements OnChanges {
     selectPill(event: MouseEvent, index: number) {
         this.filterList = this.filterList.map(e => ({ ...e, selected: false }));
 
-        if (index) {
+        try {
             this.filterList[index].selected = true;
             this.selectedFilter.emit({ event: event, data: { ...this.filterList[index], index } });
+        } catch (error) {
+            console.log('Error in selectPill method');
         }
     }
 }
