@@ -4,7 +4,7 @@
     <!-- card img -->
     <div class="sbcard__img">
       <div class="img-container">
-        <img *ngIf="!isOffline" [src]="content?.appIcon || defaultImg" alt="">
+            <img *ngIf="!isOffline" [src]="content?.appIcon || defaultImg" alt="">
         <img *ngIf="isOffline" [src]="offlineImg || defaultImg" alt="">
       </div>
     </div>
