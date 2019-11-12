@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { defaultLibraryCardsGrid } from '../library-cards.data';
-import { IContent } from '../../card/models';
+import { IContent, LibraryCardTypes } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
@@ -20,6 +20,8 @@ export class LibraryCardsGridComponent {
 
     @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
+
+    get LibraryCardTypes() { return LibraryCardTypes; }
 
     /**
      * Triggers event on `View More` Click
