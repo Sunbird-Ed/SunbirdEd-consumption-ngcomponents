@@ -4,6 +4,7 @@ import { LayoutModule } from './layout/layout.module';
 import { ModalModule } from './modal/modal.module';
 import { LibraryFiltersModule } from './library-filters/library-filters.module';
 import { ContentDetailsModule } from './content-details/content-details.module';
+import {FaqModule} from './faq/faq.module';
 
 @NgModule({
   declarations: [],
@@ -12,14 +13,16 @@ import { ContentDetailsModule } from './content-details/content-details.module';
     ModalModule,
     LayoutModule,
     LibraryFiltersModule,
-    ContentDetailsModule
+    ContentDetailsModule,
+    FaqModule
   ],
   exports: [
     CardModule,
     ModalModule,
     LayoutModule,
     LibraryFiltersModule,
-    ContentDetailsModule
+    ContentDetailsModule,
+    FaqModule
   ]
 })
 export class CommonConsumptionModule { }
