@@ -1,11 +1,6 @@
-import { IContent } from './../models';
+import { IContent, LibraryCardTypes, ICardClick } from './../models';
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { staticContent } from './library-card.data';
-
-export interface ICardClick {
-    event: MouseEvent;
-    data: IContent;
-}
 
 @Component({
     selector: 'sb-library-card',
@@ -20,8 +15,12 @@ export class LibraryCardComponent implements OnInit {
     @Input() defaultImg = '';
     @Input() offlineImg = '';
     @Input() isRecentlyViewed = false;
+    @Input() type: LibraryCardTypes = LibraryCardTypes.DESKTOP_TEXTBOOK;
+    @Input() medium_label = 'Medium';
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
+
+    get LibraryCardTypes() { return LibraryCardTypes; }
 
     ngOnInit() {
         console.log('content', this.content);

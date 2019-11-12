@@ -1,3 +1,14 @@
+export interface ICardClick {
+    event: MouseEvent;
+    data: IContent;
+}
+
+export enum LibraryCardTypes {
+    RECENTLY_VIEWED = 'recently_viewed',
+    MOBILE_TEXTBOOK = 'mobile_textbook',
+    DESKTOP_TEXTBOOK = 'desktop_textbook'
+}
+
 export interface IBadge {
     issuerId: string;
     assertionId: string;
