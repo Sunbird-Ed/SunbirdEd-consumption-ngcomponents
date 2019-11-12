@@ -36,6 +36,19 @@ export class LibraryFiltersComponent implements OnChanges {
         try {
             this.filterList[index].selected = true;
             this.selectedFilter.emit({ event: event, data: { ...this.filterList[index], index } });
+
+            // animation code
+            let el: HTMLElement | null = document.getElementById('class' + index);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+            } else {
+                setTimeout(() => {
+                    el = document.getElementById('class' + index);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+                    }
+                }, 1000);
+            }
         } catch (error) {
             console.log('Error in selectPill method');
         }
