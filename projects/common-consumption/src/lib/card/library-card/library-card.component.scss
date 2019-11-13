@@ -58,7 +58,7 @@
     padding-right: 8px;
   }
   &__title {
-    color: $gray-800;
+    color: $primary-color;
     font-size: $font-size-normal;
     margin: 0px;
     line-height: normal;
@@ -66,7 +66,7 @@
     word-break: break-word;
   }
   &__meta1 {
-    color: $gray-300;
+    color: $gray-800;
     font-size: $font-size-sm;
     display: inline-flex;
     align-items: center;
@@ -80,7 +80,7 @@
     min-height: 4px;
     max-height: 4px;
     border-radius: 100%;
-    background-color: $gray-100;
+    background-color: $gray-200;
     display: inline-block;
     margin: 0px 8px;
   }
@@ -98,7 +98,7 @@
   }
 
   &__meta2 {
-    color: $gray-400;
+    color: $gray-800;
     font-size: $font-size-sm;
     line-height: $font-size-normal;
     display: flex;
