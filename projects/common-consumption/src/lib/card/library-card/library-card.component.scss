@@ -176,10 +176,29 @@
       padding: 8px;
     }
   }
+  &.offline{
+    .sbcard__img {
+      .img-container {
+        display: flex;
+        align-items: center;
+        background-color: $tertiary-color;	
+        opacity: 0.5;
+        img{
+          margin: auto;
+          font-size: ($font-size-base + 10);
+          color: var(--white);
+        }
+      }
+    }
+    .sbcard__info, .sbcard__moreinfo {
+      opacity: 0.5;
+    }
+  }
   // &:hover{
   //   transform: translate(0,-3px);
   //   box-shadow: 0 3px 7px 0 rgba(0,0,0,.16);
   // }
+
 }
 .sbcard__progressbar {
   height: 4px;

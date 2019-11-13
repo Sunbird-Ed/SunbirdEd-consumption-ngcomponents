@@ -1,6 +1,6 @@
 <!-- card component -->
-<div class="sbcard sbcard--resource sbcard--course"
-  [ngClass]="{'sbcard--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED}" (click)="onClick($event)">
+<div class="sbcard sbcard--resource"
+  [ngClass]="{'sbcard--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" (click)="onClick($event)">
   <div class="sbcard__main-area">
     <!-- card img -->
     <div class="sbcard__img">

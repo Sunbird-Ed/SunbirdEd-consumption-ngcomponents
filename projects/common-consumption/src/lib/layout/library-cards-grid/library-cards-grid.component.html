@@ -17,7 +17,7 @@
     <div class="cards-container">
         <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
             *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)">
-            <sb-library-card [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK" (click)="onCardClick($event, content)">
+            <sb-library-card [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg">
             </sb-library-card>
         </div>
     </div>
