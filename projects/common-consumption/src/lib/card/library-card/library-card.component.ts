@@ -15,6 +15,7 @@ export class LibraryCardComponent implements OnInit {
     @Input() defaultImg = '';
     @Input() offlineImg = '';
     @Input() isRecentlyViewed = false;
+    @Input() cardImg = '';
     @Input() type: LibraryCardTypes = LibraryCardTypes.DESKTOP_TEXTBOOK;
     @Input() medium_label = 'Medium';
 

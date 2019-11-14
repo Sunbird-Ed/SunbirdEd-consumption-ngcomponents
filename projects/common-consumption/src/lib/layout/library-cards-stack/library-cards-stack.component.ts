@@ -15,6 +15,7 @@ export class LibraryCardsStackComponent {
     @Input() viewMoreButtonText: string = defaultLibraryCardsGrid.viewMoreButtonText;
     @Input() maxCardCount: number = defaultLibraryCardsGrid.maxCardCount;
     @Input() defaultImg: string;
+    @Input() cardImg;
 
 
     @Output() viewMoreClick: EventEmitter<MouseEvent> = new EventEmitter();
