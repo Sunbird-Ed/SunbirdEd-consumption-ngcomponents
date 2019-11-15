@@ -28,7 +28,7 @@
     <div class="sbcard__moreinfo">
       <!-- other meta info Medium, Organization etc -->
       <div class="sbcard__meta2">
-        <div class="sbcard__medium" *ngIf="content?.medium"><span class="medium">{{medium_label}}:
+        <div class="sbcard__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
             {{content.medium}}</span></div>
         <div class="sbcard__org sb__ellipsis" *ngIf="content?.organisation">{{content.organisation}}</div>
       </div>
@@ -37,6 +37,18 @@
         <span class="sbcard__badge" *ngIf="content?.badgeAssertions"><img
             [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
         <span class="sbcard__type" *ngIf="content?.resourceType">{{content.resourceType}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
+    <div class="sbcard__moreinfo">
+      <!-- other meta info Medium, Organization etc -->
+      <div class="sbcard__meta2">
+        <div class="sbcard__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="content?.medium">
+          <span class="label">{{moreInfoLabel}}: </span>
+          <span class="value">{{content.medium}}</span>
+        </div>
       </div>
     </div>
   </div>

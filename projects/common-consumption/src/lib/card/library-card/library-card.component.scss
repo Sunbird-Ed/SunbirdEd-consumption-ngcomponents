@@ -108,9 +108,13 @@
     padding: $base-block-space;
     flex: 1 0 60%;
   }
-  &__medium {
-    span {
-    }
+  &__meta2_data {
+    .label{
+      font-weight:normal;
+    };
+    .value{
+      font-weight:bold;
+    };
   }
   &__org {
     color: $gray-200;
