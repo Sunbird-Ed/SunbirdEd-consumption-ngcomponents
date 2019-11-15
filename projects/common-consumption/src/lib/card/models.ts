@@ -3,6 +3,11 @@ export interface ICardClick {
     data: IContent;
 }
 
+export interface IClick {
+    event: MouseEvent;
+    data: any;
+}
+
 export enum LibraryCardTypes {
     RECENTLY_VIEWED = 'recently_viewed',
     MOBILE_TEXTBOOK = 'mobile_textbook',

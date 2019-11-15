@@ -1,13 +1,5 @@
-<!-- <div class="help-header">
-  <h4>{{data?.constants?.help }}</h4>
-  <p>{{data?.constants?.faqMsg}}</p>
-</div>
-<div class="info-msg">
-  <p> {{ data?.constants?.resolveMsg}}</p>
-</div>
-
 <div class="panel panel-default" *ngFor="let faq of faqs; let i = index">
-  <div data-toggle="collapse" (click)="toggleGroup(i)">
+  <div data-toggle="collapse" (click)="toggleGroup(i,$event)">
     <div class="panel-heading">
       <div [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">{{ faq?.topic}}
         <img class="btn-arrow" src="../../assets/faq/resources/images/Arrow.png" *ngIf="!isGroupShown(i)">
@@ -21,8 +13,8 @@
     </div>
     <div class="panel-interact"  *ngIf="!isNoClicked && !isYesClicked">
       <p class="panelText">{{data?.constants?.helpMsg}} </p>
-      <button type="button" class="btn" id="btn-no" (click)="noClicked(i)">{{data?.constants?.noMsg}}</button>
-      <button type="button" class="yesBtn"  id="btn-yes" (click)="yesClicked(i)">{{data?.constants?.yesMsg}}</button>
+      <button type="button" class="btn" id="btn-no" (click)="noClicked(i,$event)">{{data?.constants?.noMsg}}</button>
+      <button type="button" class="yesBtn"  id="btn-yes" (click)="yesClicked(i,$event)">{{data?.constants?.yesMsg}}</button>
     </div>
     <div class="panel-interact" *ngIf="isYesClicked || isSubmitted"> <p class="yes-clicked"> {{data?.constants?.thanksMsg}}</p></div>
     <div class="panel-info" *ngIf="!isSubmitted && isNoClicked">
@@ -31,12 +23,9 @@
       <form action="#" id="know-more-form" class="know-more-form" *ngIf="!isSubmitted">
         <textarea type="text" name="moreInfo" placeholder="{{constants?.typeHere}}" class="input-text"
           maxlength="1000" [(ngModel)]="textValue"></textarea>
-        <input type="submit" value="{{constants?.submitButton}}" class="submit-button" (click)="submitClicked(textValue,i)">
+        <input type="submit" value="{{constants?.submitButton}}" class="submit-button" (click)="submitClicked(textValue,i,$event)">
       </form>
       <p class="no-clicked" hidden="true" *ngIf="isSubmitted"> {{data?.constants?.thanksMsg}} </p>
     </div>
   </div>
 </div>
-<div class="send-email">
- <button class="report-button" (click)="navigateToReportIssue()"><img src="../../assets/faq/resources/images/Report.png"> <span class="report-text">{{ data?.constants?.reportIssueMsg }}</span></button>
-</div> -->
