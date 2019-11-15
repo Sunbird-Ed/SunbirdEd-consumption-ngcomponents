@@ -17,7 +17,7 @@ export class LibraryCardComponent implements OnInit {
     @Input() isRecentlyViewed = false;
     @Input() cardImg = '';
     @Input() type: LibraryCardTypes = LibraryCardTypes.DESKTOP_TEXTBOOK;
-    @Input() medium_label = 'Medium';
+    @Input() moreInfoLabel = 'Medium';
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
