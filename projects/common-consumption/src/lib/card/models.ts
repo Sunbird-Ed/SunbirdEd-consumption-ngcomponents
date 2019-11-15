@@ -11,7 +11,8 @@ export interface IClick {
 export enum LibraryCardTypes {
     RECENTLY_VIEWED = 'recently_viewed',
     MOBILE_TEXTBOOK = 'mobile_textbook',
-    DESKTOP_TEXTBOOK = 'desktop_textbook'
+    DESKTOP_TEXTBOOK = 'desktop_textbook',
+    QRCODE_RESULT = 'qrcode_result'
 }
 
 export interface IBadge {
