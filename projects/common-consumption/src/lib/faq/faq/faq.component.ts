@@ -46,19 +46,27 @@ export class FaqComponent implements OnInit {
     }
   }
 
-  toggleGroup(group,event:MouseEvent) {
+  toggleGroup(i,event:MouseEvent) {
     this.isNoClicked = false;
     this.isYesClicked = false;
     this.isSubmitted = false;
     let isCollapsed = true;
-    if (this.isGroupShown(group)) {
+    this.value = {};
+    this.value.action = 'toggle-clicked';
+    this.value.position = i;
+    this.value.value = {};
+    this.value.value.topic = this.data.faqs[i].topic;
+    this.value.value.description = this.data.faqs[i].description;
+    if (this.isGroupShown(i)) {
       isCollapsed = false;
       this.shownGroup = null;
+      this.value.isOpened = false;
     } else {
       isCollapsed = false;
-      this.shownGroup = group;
+      this.shownGroup = i;
+      this.value.isOpened = true;
     }
-    this.toggleGroupEvent.emit({event: event,data: {}});
+    this.toggleGroupEvent.emit({event: event,data: this.value});
   }
 
   // to check whether the card is toggled or not
@@ -76,7 +84,6 @@ noClicked(i,event:MouseEvent) {
     this.value.value = {};
     this.value.value.topic = this.data.faqs[i].topic;
     this.value.value.description = this.data.faqs[i].description;
-    console.log('this.value, noclicked', this.value);
     window.parent.postMessage(this.value, '*');
     this.noClickedEvent.emit({event: event,data: this.value});
 
@@ -99,7 +106,8 @@ yesClicked(i,event:MouseEvent) {
 
 submitClicked(textValue, i,event:MouseEvent) {
   this.isSubmitted = true;
-  this.value.action = 'no-clicked';
+  this.value = {};
+  this.value.action = 'submit-clicked';
   this.value.position = i;
   this.value.value = {};
   this.value.value.topic = this.data.faqs[i].topic;
