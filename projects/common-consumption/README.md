@@ -160,7 +160,7 @@ Can be used in the library page for all consumption platforms.
 
 |Name| Description |
 |--|--|
-@Output() getSelectedPill | Emmits this event when user clicks on the card
+|@Output() getSelectedPill | Emmits this event when user clicks on the card |
 
 ## FAQ Component
 
