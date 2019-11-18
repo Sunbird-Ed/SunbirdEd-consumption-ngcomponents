@@ -126,7 +126,7 @@ p{
         }
       
       }
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-width : 768px) {
 
     .info-msg-send-email>p,.info-msg>p{
         margin: 0;
@@ -136,7 +136,7 @@ p{
     }
    
 }
-@media only screen and (min-width : 1025px) {
+@media only screen and (min-width : 768px) {
 
     .info-msg-send-email>p,.info-msg>p{
         margin: 0;
@@ -247,7 +247,7 @@ p{
     outline: none;
 }
 
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-width : 768px) {
    
     .report-button{
         min-width: 90vw;
@@ -282,7 +282,7 @@ p{
     padding: 0px 16px;
     }
 }
-@media only screen and (min-width : 1025px) {
+@media only screen and (min-width : 768px) {
     .report-button{
         min-width: 1024px;
         color: #fff;
@@ -323,7 +323,7 @@ img>.report-button{
  #know-more-form{
         margin: 0px 16px;
     }
-@media only screen and (min-width : 1025px) {
+@media only screen and (min-width : 768px) {
     .send-email-form{
         max-width: 1025px;
         margin: auto;
