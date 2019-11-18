@@ -1,5 +1,4 @@
 
-
 .contentPadding{
     --padding-bottom: 0px;
 }
@@ -17,6 +16,7 @@ iframe {
 }
 .panelText{
     font-size: 14px;
+    padding: 16px;
 }
 .rotate{
     -webkit-transform: rotate(180deg);  /* Chrome, Safari, Opera */
@@ -31,6 +31,9 @@ iframe {
 }
 .yesBtn{
     color: #008840;
+}
+.btn{
+    cursor: pointer;
 }
 p{
     font-size: 14px;
@@ -164,6 +167,7 @@ p{
 
 .panel-heading {
     padding: 16px 16px;
+    cursor: pointer;
 }
 .panel-group{
     margin: 0 auto;
@@ -183,7 +187,7 @@ p{
 .panel-interact{
     text-align: center; 
     padding: 20px;
-    height: 100px;
+    // height: 100px;
 }
 .panel-interact>button{
     margin: 10px 5px 0px 5px;
