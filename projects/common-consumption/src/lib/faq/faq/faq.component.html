@@ -27,7 +27,7 @@
     <div class="panel-interact"  *ngIf="!isNoClicked && !isYesClicked">
       <p class="panelText">{{data?.constants?.helpMsg}} </p>
       <button type="button" class="btn" id="btn-no" (click)="noClicked(i,$event)">{{data?.constants?.noMsg}}</button>
-      <button type="button" class="yesBtn"  id="btn-yes" (click)="yesClicked(i,$event)">{{data?.constants?.yesMsg}}</button>
+      <button type="button" class="btn yesBtn"  id="btn-yes" (click)="yesClicked(i,$event)">{{data?.constants?.yesMsg}}</button>
     </div>
     <div class="panel-interact" *ngIf="isYesClicked || isSubmitted"> <p class="yes-clicked"> {{data?.constants?.thanksMsg}}</p></div>
     <div class="panel-info" *ngIf="!isSubmitted && isNoClicked">
