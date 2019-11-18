@@ -91,7 +91,7 @@ For existing apps, follow these steps to begin using .
 
   
 
-    Import the NgModule for each component you want to use:
+Import the NgModule for each component you want to use:
        
     import { CommonConsumptionModule} from '@project-sunbird/common-consumption';
     
