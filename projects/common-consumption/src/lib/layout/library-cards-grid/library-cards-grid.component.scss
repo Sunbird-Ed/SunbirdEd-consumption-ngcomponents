@@ -11,6 +11,7 @@
     flex-direction: row;
     margin: 15px 0;
     padding: 10px 0;
+    align-items: center;
     .title {
       font-family: inherit;
       text-overflow: ellipsis;
@@ -55,8 +56,10 @@
     // justify-content: space-between;
     margin: 0 -15px;
     .item {
-      padding: 0 15px;
+      padding: 0 8px 0 16px;
       box-sizing: border-box;
+      margin-bottom: 24px;
+
       &.show-3 {
         flex: 0 0 33.33%;
         max-width: 33.33%;

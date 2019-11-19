@@ -24,7 +24,6 @@ export class LibraryCardComponent implements OnInit {
     get LibraryCardTypes() { return LibraryCardTypes; }
 
     ngOnInit() {
-        console.log('content', this.content);
     }
 
     onClick(event: MouseEvent) {
