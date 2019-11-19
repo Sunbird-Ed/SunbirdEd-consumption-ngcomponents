@@ -1,15 +1,14 @@
-<div class="sb-modalWrapper sb-modal--md sb-modal--isNotClosable" [ngClass]="data?.class">
-
+<div class="sb-modalWrapper sb-modal-md sb-modal-isNotClosable" [ngClass]="data?.class">
   <!-- modal component -->
   <div class="sb-modal">
     <!-- modal header area -->
     <div class="sb-modal__header">
       <h4>{{data?.title}}</h4>
     <a href="javascript:void(0)" title="Close" class="i-link sb-btn-close" *ngIf="!data?.hideCloseButton" (click)="modalActionHandler()">
-        <svg class="sbicon sbicon--close sbicon--white" *ngIf="!data?.closeButtonText">
+        <svg class="sb-icon sb-icon--close sb-icon--white" *ngIf="!data?.closeButtonText">
           <use xlink:href="../../../../assets/images/sprite.svg#close"></use>
         </svg>
-        <span class="sbicon sbicon--close sbicon--white">{{data?.closeButtonText}}</span>
+        <span class="sb-icon sb-icon--close sb-icon--white">{{data?.closeButtonText}}</span>
       </a>
     </div>
     <!-- modal body area -->
