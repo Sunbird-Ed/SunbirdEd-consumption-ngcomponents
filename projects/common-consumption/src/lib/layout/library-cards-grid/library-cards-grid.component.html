@@ -1,19 +1,24 @@
 <div class="layout-library">
-  <div class="header">
-    <div class="title">
-        <img alt="" width="24" height="24"
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjZTU1YTI4Ij48cGF0aCBkPSJNMTU0LjcgNDY0aDI2Ni43YzIzLjUgMCA0Mi43LTE5LjIgNDIuNy00Mi43VjE1NC43YzAtMjMuNS0xOS4yLTQyLjctNDIuNy00Mi43SDE1NC43Yy0yMy41IDAtNDIuNyAxOS4yLTQyLjcgNDIuN3YyNjYuN2MwIDIzLjQgMTkuMiA0Mi42IDQyLjcgNDIuNnoiLz48cGF0aCBkPSJNOTAuNyA0OGgyNjYuN2MyMy41IDAgNDIuNyAxOS4yIDQyLjcgNDIuN1Y5NkgxMzguN0MxMTUuMiA5NiA5NiAxMTUuMiA5NiAxMzguN1Y0MDBoLTUuM0M2Ny4yIDQwMCA0OCAzODAuOCA0OCAzNTcuM1Y5MC43QzQ4IDY3LjIgNjcuMiA0OCA5MC43IDQ4eiIvPjwvc3ZnPg==" />
-      {{title}}
-      <span class="badge">{{contentList?.length}}</span>
+    <div class="header">
+        <div class="title">
+            <i class="icon-svg icon-svg--sm">
+                <svg class="icon">
+                    <use xlink:href="assets/common-consumption/images/sprite.svg#book"></use>
+                </svg>
+            </i>
+            {{title}}
+            <span class="badge">{{contentList?.length}}</span>
+        </div>
+        <button class="sbbtn sbbtn--sm sbbtn--ol-secondary" *ngIf="maxCardCount && contentList?.length >maxCardCount"
+            (click)="onViewMoreClick($event)">
+            {{viewMoreButtonText}}
+        </button>
     </div>
-    <button class="sb-btn sb-btn-sm sb-btn-outline-secondary" *ngIf="maxCardCount && contentList?.length >maxCardCount" (click)="onViewMoreClick($event)">
-      {{viewMoreButtonText}}
-      <span>></span>
-    </button>
-  </div>
-  <div class="cards-container">
-    <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)">
-      <sb-library-card [content]="content" [isMobile]="false" (click)="onCardClick($event, content)"></sb-library-card>
+    <div class="cards-container">
+        <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
+            *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)">
+            <sb-library-card [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg">
+            </sb-library-card>
+        </div>
     </div>
-  </div>
 </div>

@@ -1,3 +1,20 @@
+export interface ICardClick {
+    event: MouseEvent;
+    data: IContent;
+}
+
+export interface IClick {
+    event: MouseEvent;
+    data: any;
+}
+
+export enum LibraryCardTypes {
+    RECENTLY_VIEWED = 'recently_viewed',
+    MOBILE_TEXTBOOK = 'mobile_textbook',
+    DESKTOP_TEXTBOOK = 'desktop_textbook',
+    QRCODE_RESULT = 'qrcode_result'
+}
+
 export interface IBadge {
     issuerId: string;
     assertionId: string;

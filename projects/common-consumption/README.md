@@ -61,6 +61,7 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [LibraryCardsStackComponent]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
 | [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
 | [LibraryFilters]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the library page for all consumption platforms. |sb-library-filters|
+| [FAQ Component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Faq for Consumption Clients with interactable events. |sb-faq|
 
 ## LibraryCard
 
@@ -159,4 +160,30 @@ Can be used in the library page for all consumption platforms.
 
 |Name| Description |
 |--|--|
-@Output() getSelectedPill | Emmits this event when user clicks on the card
+|@Output() getSelectedPill | Emmits this event when user clicks on the card |
+
+## FAQ Component
+
+Consumption Clients intend to use this component for FAQ in their apps.
+
+`import { FaqComponent } from '@Sunbird/components/faq'`
+
+**Selector**: `sb-faq`
+
+**Exported as** : `FaqComponent`
+
+### Properties
+
+|Name| Description |
+|--|--|
+|@Input() data: json| Please refer to faq Spec File for More details in the library |
+|@Input() appName: string| Name of your app
+
+### Events
+
+|Name| Description |
+|--|--|
+|@Output() toggleGroupEvent | Emmits this event when user clicks on the faq accordion |
+|@Output() yesClickedEvent | Emmits this event when user clicks on the option yes inside faq |
+|@Output() noClickedEvent | Emmits this event when user clicks on the option yes inside faq |
+|@Output() submitClickedEvent | Emmits this event when user clicks on the option submit inside faq |
