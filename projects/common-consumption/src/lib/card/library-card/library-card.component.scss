@@ -161,7 +161,7 @@
   &--course {
   }
   &--recently-viewed {
-    .sbcard__img {
+    .sb-card__img {
       height: 88px;
       width: 88px;
       flex: 0 0 88px;
@@ -181,7 +181,7 @@
     }
   }
   &.offline {
-    .sbcard__img {
+    .sb-card__img {
       .img-container {
         display: flex;
         align-items: center;
@@ -194,8 +194,8 @@
         }
       }
     }
-    .sbcard__info,
-    .sbcard__moreinfo {
+    .sb-card__info,
+    .sb-card__moreinfo {
       opacity: 0.5;
     }
   }
