@@ -1,5 +1,11 @@
+import { IContent } from './../models';
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { staticContent } from './library-card.data';
+
+export interface ICardClick {
+    event: MouseEvent;
+    data: IContent;
+}
 
 @Component({
     selector: 'sb-library-card',
@@ -8,19 +14,20 @@ import { staticContent } from './library-card.data';
 })
 export class LibraryCardComponent implements OnInit {
 
-    @Input() content = staticContent;
+    @Input() content: IContent = staticContent;
     @Input() isMobile = false;
     @Input() isOffline = false;
     @Input() defaultImg = '';
-    @Input() offlineImg = 'assets/images/offline.svg';
+    @Input() offlineImg = '';
+    @Input() isRecentlyViewed = false;
 
-    @Output() cardClick = new EventEmitter();
+    @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
     ngOnInit() {
         console.log('content', this.content);
     }
 
-    onClick(event) {
-        this.cardClick.emit({ 'action': 'onImage', 'data': this.content });
+    onClick(event: MouseEvent) {
+        this.cardClick.emit({ event: event, data: this.content });
     }
 }

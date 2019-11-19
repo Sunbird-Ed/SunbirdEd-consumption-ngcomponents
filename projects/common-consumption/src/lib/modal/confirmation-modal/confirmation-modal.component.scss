@@ -77,7 +77,7 @@ $sb-modal-corner-radius: 8px;
 }
 
 /* sb modal wrapper  */
-.sbmodalWrapper {
+.sb-modalWrapper {
   background: rgba(0, 0, 0, 0.35);
   position: fixed;
   transform-origin: center center;
@@ -100,17 +100,17 @@ $sb-modal-corner-radius: 8px;
     background: none;
   }
 
-  //sbbtn-close sbicon sbicon--xs sbicon--white
+  //sb-btn-close sbicon sbicon--xs sbicon--white
   // sizes
-  &.sbmodal--sm {
-    .sbmodal {
+  &.sb-modal--sm {
+    .sb-modal {
       max-width: $sb-modal-small-width;
     }
   }
-  &.sbmodal--md {
-    .sbmodal {
+  &.sb-modal--md {
+    .sb-modal {
       max-width: $sb-modal-normal-width;
-      .sbmodal__content {
+      .sb-modal__content {
         max-height: calc(100vh - 124px);
         &.o-y-visible {
           max-height: inherit;
@@ -118,19 +118,19 @@ $sb-modal-corner-radius: 8px;
       }
     }
   }
-  &.sbmodal--lg {
-    .sbmodal {
+  &.sb-modal--lg {
+    .sb-modal {
       max-width: $sb-modal-large-width;
-      .sbbtn-close .sbicon{
-        @extend .sbbtn--lg;
+      .sb-btn-close .sbicon{
+        @extend .sb-btn-lg;
     }
       .sb-modal-content {
         max-height: calc(100vh - 124px);
       }
     }
   }
-  &.sbmodal--full {
-    .sbmodal {
+  &.sb-modal--full {
+    .sb-modal {
       @include position(fixed, 0 0 0 0); //bourbon
       width: 100%;
       height:100vh;
@@ -139,18 +139,18 @@ $sb-modal-corner-radius: 8px;
       overflow-y: auto;
       overflow-x: hidden;
       border-radius: 0 0 0px 0px;
-      .sbbtn-close .sbicon{
+      .sb-btn-close .sbicon{
         height:32px;width:32px;
     }
-      .sbmodal__header {
+      .sb-modal__header {
         height: $sb-modal-fs-header-height;
         width: auto;
         border-radius: 0 0 0px 0px;
       }
-      .sbmodal__content {
+      .sb-modal__content {
         height: calc(100vh - 112px);
       }
-      .sbmodal__actions {
+      .sb-modal__actions {
         border-radius: 0 0 0px 0px;
       }
       .close {
@@ -160,29 +160,29 @@ $sb-modal-corner-radius: 8px;
   }
 
   // is closable
-  &.sbmodal--isNotClosable {
-    .sbmodal {
-      .sbbtn-close {
+  &.sb-modal--isNotClosable {
+    .sb-modal {
+      .sb-btn-close {
         display: block;
       }
     }
   }
 
-  //sbmodal type warning,success,error,default
-  &.sbmodal--primary {
-    .sbmodal {
-      .sbmodal__header {
+  //sb-modal type warning,success,error,default
+  &.sb-modal--primary {
+    .sb-modal {
+      .sb-modal__header {
         background-color: $sb-modal-header-bg;
       }
-      .sbmodal__actions {
+      .sb-modal__actions {
         button:nth-child(1) {
-          @extend .sbbtn--primary;
+          @extend .sb-btn-primary;
         }
         button:nth-child(2) {
-          @extend .sbbtn--ol-primary;
+          @extend .sb-btn-outline-primary;
         }
         button:nth-child(3) {
-          @extend .sbbtn--ol-primary;
+          @extend .sb-btn-outline-primary;
           @include respond-above(sm) {
             margin-right: auto !important;
           }
@@ -190,21 +190,21 @@ $sb-modal-corner-radius: 8px;
       }
     }
   }
-  &.sbmodal--warning,
-  &.sbmodal--tertiary {
-    .sbmodal {
-      .sbmodal__header {
+  &.sb-modal--warning,
+  &.sb-modal--tertiary {
+    .sb-modal {
+      .sb-modal__header {
         background-color: $sb-modal-header-bg-warning;
       }
-      .sbmodal__actions {
+      .sb-modal__actions {
         button:nth-child(1) {
-          @extend .sbbtn--warning;
+          @extend .sb-btn-warning;
         }
         button:nth-child(2) {
-          @extend .sbbtn--ol-warning;
+          @extend .sb-btn-outline-warning;
         }
         button:nth-child(3) {
-          @extend .sbbtn--ol-warning;
+          @extend .sb-btn-outline-warning;
           @include respond-above(sm) {
             margin-right: auto !important;
           }
@@ -212,21 +212,21 @@ $sb-modal-corner-radius: 8px;
       }
     }
   }
-  &.sbmodal--success,
-  &.sbmodal--secondary {
-    .sbmodal {
-      .sbmodal__header {
+  &.sb-modal--success,
+  &.sb-modal--secondary {
+    .sb-modal {
+      .sb-modal__header {
         background-color: $sb-modal-header-bg-success;
       }
-      .sbmodal__actions {
+      .sb-modal__actions {
         button:nth-child(1) {
-          @extend .sbbtn--success;
+          @extend .sb-btn-success;
         }
         button:nth-child(2) {
-          @extend .sbbtn--ol-success;
+          @extend .sb-btn-outline-success;
         }
         button:nth-child(3) {
-          @extend .sbbtn--ol-success;
+          @extend .sb-btn-outline-success;
           @include respond-above(sm) {
             margin-right: auto !important;
           }
@@ -234,20 +234,20 @@ $sb-modal-corner-radius: 8px;
       }
     }
   }
-  &.sbmodal--error {
-    .sbmodal {
-      .sbmodal__header {
+  &.sb-modal--error {
+    .sb-modal {
+      .sb-modal__header {
         background-color: $sb-modal-header-bg-error;
       }
-      .sbmodal__actions {
+      .sb-modal__actions {
         button:nth-child(1) {
-          @extend .sbbtn--error;
+          @extend .sb-btn-error;
         }
         button:nth-child(2) {
-          @extend .sbbtn--ol-error;
+          @extend .sb-btn-outline-error;
         }
         button:nth-child(3) {
-          @extend .sbbtn--ol-error;
+          @extend .sb-btn-outline-error;
           @include respond-above(sm) {
             margin-right: auto !important;
           }
@@ -259,7 +259,7 @@ $sb-modal-corner-radius: 8px;
 /* sb modal wrapper ends */
 
 /* sb modal component */
-.sbmodal {
+.sb-modal {
   // modal box
   margin: 0px auto;
   position: fixed;
@@ -331,7 +331,7 @@ $sb-modal-corner-radius: 8px;
       justify-content: inherit;
       border-radius: 0px 0px 4px 4px;
     }
-    .sbbtn + .sbbtn {
+    .sb-btn + .sb-btn {
       @include margin(0 $base-block-space 0 0);
     }
   }

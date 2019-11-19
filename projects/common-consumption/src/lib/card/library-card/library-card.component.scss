@@ -10,7 +10,7 @@
 // }
 
 // sb card css
-.sbcard {
+.sb-card {
   width: 100%;
   border-radius: 0px;
   background-color: var(--white);
@@ -26,33 +26,35 @@
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
     border-bottom: 0px solid $gray-0;
   }
-  &--resource {
-  }
-  &--course {
-  }
   &__main-area {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: $base-block-space;
+    // padding: $base-block-space;
     height: $base-block-space * 11;
-    border-bottom: 1px solid var(--gray-0);
+    // border-bottom: 1px solid var(--gray-0);
   }
   &__img {
-    height: 76px;
-    width: 76px;
+    height: 72px;
+    width: 72px;
     overflow: hidden;
-    margin-right: $base-block-space;
-    flex: inherit;
-    flex: 0 0 76px;
-    display: flex;
-    align-items: center;
-    img {
-      width: 100%;
+    /* margin-right: 8px; */
+    flex: 0 0 72px;
+    padding: 8px;
+    .img-container{
+      display: flex;
+      align-items: center;
+      background-color: $gray-100;
+      height: $base-block-space * 9;
+      width: $base-block-space * 9;
+      img {
+        width: 100%;
+        backdrop-filter: brightness(93%) opacity(85%) blur(3px) contrast(110%);
+      }
     }
-    background-color: $gray-100;
   }
   &__info {
+    
   }
   &__title {
     color: $gray-800;
@@ -72,6 +74,10 @@
   .dot-divider {
     width: 4px;
     height: 4px;
+    min-width: 4px;
+    max-width: 4px;
+    min-height: 4px;
+    max-height: 4px;
     border-radius: 100%;
     background-color: $gray-100;
     display: inline-block;
@@ -123,7 +129,7 @@
     }
   }
   &__type {
-    margin-left: 24px;
+    margin-left: 16px;
     background: #999;
     position: relative;
     height: 20px;
@@ -144,8 +150,26 @@
       left: -10px;
     }
   }
+
+  &--resource {
+  }
+  &--course {
+  }
+  &--recently-viewed{
+    .sb-card__img  .img-container{
+      display: flex;
+      align-items: center;
+      background-color: $gray-100;
+      margin: -8px;
+      height: $base-block-space * 11;
+      width: $base-block-space * 11;
+    }
+    .sb-card__info {
+      padding: 8px;
+    }
+  }
 }
-.sbcard__progressbar {
+.sb-card__progressbar {
   height: 4px;
   position: absolute;
   margin: 0px 0 0px;
@@ -155,7 +179,7 @@
   width: 100%;
   bottom: 0px;
 }
-.sbcard__progressbar > span {
+.sb-card__progressbar > span {
   display: block;
   height: 100%;
   background-color: rgb(43, 194, 83);
@@ -164,7 +188,7 @@
   position: relative;
   overflow: hidden;
 }
-.sbcard__progressbar > span:after,
+.sb-card__progressbar > span:after,
 .animate > span > span {
   content: "";
   position: absolute;
