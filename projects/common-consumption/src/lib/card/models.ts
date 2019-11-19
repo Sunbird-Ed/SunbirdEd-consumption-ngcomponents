@@ -15,6 +15,14 @@ export enum LibraryCardTypes {
     QRCODE_RESULT = 'qrcode_result'
 }
 
+export enum LibraryCardGridTypes {
+    INFINITE_CARD_GRID = 'infinite_card_grid'
+}
+
+export enum LibraryCardStackTypes {
+    INFINITE_CARD_STACK = 'infinite_card_stack'
+}
+
 export interface IBadge {
     issuerId: string;
     assertionId: string;

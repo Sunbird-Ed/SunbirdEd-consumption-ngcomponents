@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { defaultLibraryCardsGrid } from '../library-cards.data';
-import { IContent, LibraryCardTypes } from '../../card/models';
+import { IContent, LibraryCardTypes, LibraryCardGridTypes } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
@@ -13,15 +13,18 @@ export class LibraryCardsGridComponent {
     /* Title for the grid */
     @Input() title: string = defaultLibraryCardsGrid.title;
     @Input() contentList: Array<IContent> = defaultLibraryCardsGrid.contentList;
+    @Input() type: LibraryCardGridTypes;
 
     /* Max card count to be shown */
     @Input() maxCardCount = defaultLibraryCardsGrid.maxCardCount;
     @Input() viewMoreButtonText = defaultLibraryCardsGrid.viewMoreButtonText;
 
+
     @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
 
     get LibraryCardTypes() { return LibraryCardTypes; }
+    get LibraryCardGridTypes() { return LibraryCardGridTypes; }
 
     /**
      * Triggers event on `View More` Click
