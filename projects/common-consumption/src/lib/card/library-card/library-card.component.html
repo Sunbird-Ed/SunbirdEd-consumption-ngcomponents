@@ -13,9 +13,9 @@
       </div>
     </div>
     <!-- card mobile view details -->
-    <div class="sbcard__info">
-      <h4 class="sbcard__title sb__ellipsis sb__ellipsis--two">{{content?.name}}</h4>
-      <div class="sbcard__meta1" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
+    <div class="sb-card__info">
+      <h4 class="sb-card__title sb__ellipsis sb__ellipsis--two">{{content?.name}}</h4>
+      <div class="sb-card__meta1" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
         <span class="sb__ellipsis">{{content?.subject}}</span>
         <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
         <span class="sb__ellipsis">{{content?.gradeLevel}}</span>
