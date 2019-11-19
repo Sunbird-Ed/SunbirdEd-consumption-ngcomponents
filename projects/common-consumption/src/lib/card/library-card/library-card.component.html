@@ -1,9 +1,9 @@
 <!-- card component -->
-<div class="sbcard sbcard--resource"
-  [ngClass]="{'sbcard--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" (click)="onClick($event)">
-  <div class="sbcard__main-area">
+<div class="sb-card sb-card--resource"
+  [ngClass]="{'sb-card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" (click)="onClick($event)">
+  <div class="sb-card__main-area">
     <!-- card img -->
-    <div class="sbcard__img">
+    <div class="sb-card__img">
       <!-- <div class="img-container">
         <img *ngIf="!isOffline" [src]="content?.appIcon || defaultImg" alt="">
         <img *ngIf="isOffline" [src]="offlineImg || defaultImg" alt="">
@@ -25,27 +25,27 @@
 
   <!-- content for only desktop -->
   <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK">
-    <div class="sbcard__moreinfo">
+    <div class="sb-card__moreinfo">
       <!-- other meta info Medium, Organization etc -->
-      <div class="sbcard__meta2">
-        <div class="sbcard__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
+      <div class="sb-card__meta2">
+        <div class="sb-card__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
             {{content.medium}}</span></div>
-        <div class="sbcard__org sb__ellipsis" *ngIf="content?.organisation">{{content.organisation}}</div>
+        <div class="sb-card__org sb__ellipsis" *ngIf="content?.organisation">{{content.organisation}}</div>
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
-      <div class="sbcard__tags">
-        <span class="sbcard__badge" *ngIf="content?.badgeAssertions"><img
+      <div class="sb-card__tags">
+        <span class="sb-card__badge" *ngIf="content?.badgeAssertions"><img
             [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
-        <span class="sbcard__type" *ngIf="content?.resourceType">{{content.resourceType}}</span>
+        <span class="sb-card__type" *ngIf="content?.resourceType">{{content.resourceType}}</span>
       </div>
     </div>
   </div>
 
   <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
-    <div class="sbcard__moreinfo">
+    <div class="sb-card__moreinfo">
       <!-- other meta info Medium, Organization etc -->
-      <div class="sbcard__meta2">
-        <div class="sbcard__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="content?.medium">
+      <div class="sb-card__meta2">
+        <div class="sb-card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="content?.medium">
           <span class="label">{{moreInfoLabel}}: </span>
           <span class="value">{{content.medium}}</span>
         </div>
