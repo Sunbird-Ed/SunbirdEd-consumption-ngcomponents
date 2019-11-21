@@ -8,7 +8,7 @@
     </div>
     <div *ngIf="layout === LibraryFiltersLayout.ROUND" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-grade-pills-container" id="gradeScroll">
-            <div class="pill" *ngFor="let item of filterList; let i = index;" [ngClass]="{'active': item?.selected}" attr.id="class{{i}}"
+            <div class="pill rounded" *ngFor="let item of filterList; let i = index;" [ngClass]="{'active': item?.selected}" attr.id="class{{i}}"
                 (click)="selectPill($event, i)">
                 {{item.text}}</div>
         </div>
