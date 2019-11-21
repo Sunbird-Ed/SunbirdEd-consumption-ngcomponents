@@ -18,8 +18,9 @@
   flex-direction: column;
   cursor: pointer;
   position: relative;
-  // border-bottom: 1px solid $gray-0;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);
+  /*border-bottom: 1px solid $gray-0;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);*/
+  border:0px;
   contain: content;
   @include respond-above(sm) {
     border-radius: 2px;
