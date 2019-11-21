@@ -26,7 +26,7 @@
         @include margin(null, ($base-block-space * 1), null, null);
         @include padding(($base-block-space * 0.5), ($base-block-space * 1));
 
-        border-radius: 5px;
+        border-radius: 2px;
         text: {
           transform: capitalize;
           decoration: none;
@@ -36,10 +36,12 @@
           weight: normal;
           style: normal;
           stretch: normal;
+          size: 12px;
         }
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        line-height: ($base-block-space * 2);
         &:last-child {
           @include margin(null, ($base-block-space * 0), null, null);
         }
@@ -82,6 +84,12 @@
         &.active {
           background-color: $primary-color;
           color: $white;
+        }
+
+        &.rounded {
+          font: {
+            size: 14px;
+          }
         }
       }
     }
