@@ -41,13 +41,14 @@
     </div>
   </div>
 
+  <!-- Qr code card -->
   <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
-    <div class="sb-card__moreinfo">
-      <!-- other meta info Medium, Organization etc -->
+    <!-- Section area if not available it will be hidden -->
+    <div class="sb-card__moreinfo" *ngIf="section">
       <div class="sb-card__meta2">
-        <div class="sb-card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="content?.medium">
+        <div class="sb-card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="section">
           <span class="label">{{moreInfoLabel}}: </span>
-          <span class="value">{{content.medium}}</span>
+          <span class="value">{{section}}</span>
         </div>
       </div>
     </div>

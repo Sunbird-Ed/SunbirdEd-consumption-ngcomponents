@@ -18,6 +18,7 @@ export class LibraryCardComponent implements OnInit {
     @Input() cardImg = '';
     @Input() type: LibraryCardTypes = LibraryCardTypes.DESKTOP_TEXTBOOK;
     @Input() moreInfoLabel = 'Medium';
+    @Input() section = '';
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
