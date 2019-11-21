@@ -9,7 +9,7 @@
             {{title}}
             <span class="badge">{{contentList?.length}}</span>
         </div>
-        <button class="sb-btn sb-btn-sm sb-btn-ol-secondary" *ngIf="type !== LibraryCardGridTypes.INFINITE_CARD_GRID && maxCardCount && contentList?.length >maxCardCount"
+        <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white" *ngIf="type !== LibraryCardGridTypes.INFINITE_CARD_GRID && maxCardCount && contentList?.length >maxCardCount"
             (click)="onViewMoreClick($event)">
             {{viewMoreButtonText}}
         </button>
