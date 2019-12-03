@@ -1,5 +1,5 @@
 import { IContent, LibraryCardTypes, ICardClick } from './../models';
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output, TemplateRef, AfterViewInit } from '@angular/core';
 import { staticContent } from './library-card.data';
 
 @Component({
@@ -7,18 +7,19 @@ import { staticContent } from './library-card.data';
     templateUrl: './library-card.component.html',
     styleUrls: ['./library-card.component.scss']
 })
-export class LibraryCardComponent implements OnInit {
+export class LibraryCardComponent implements OnInit, AfterViewInit {
 
     @Input() content: IContent = staticContent;
     @Input() isMobile = false;
     @Input() isOffline = false;
-    @Input() defaultImg = '';
-    @Input() offlineImg = '';
-    @Input() isRecentlyViewed = false;
+    // @Input() defaultImg = '';
+    // @Input() offlineImg = '';
     @Input() cardImg = '';
     @Input() type: LibraryCardTypes = LibraryCardTypes.DESKTOP_TEXTBOOK;
     @Input() moreInfoLabel = 'Medium';
     @Input() section = '';
+    // @Input() hoverData;
+    @Input('hover-template') gridTemplate: TemplateRef<any>;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
@@ -27,7 +28,14 @@ export class LibraryCardComponent implements OnInit {
     ngOnInit() {
     }
 
+    ngAfterViewInit(): void {
+    }
+
     onClick(event: MouseEvent) {
         this.cardClick.emit({ event: event, data: this.content });
+    }
+
+    test() {
+
     }
 }

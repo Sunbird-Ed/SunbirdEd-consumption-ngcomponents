@@ -1,0 +1,51 @@
+
+<!-- <div class="card-hover"> -->
+    <div class="action-container">
+        <ng-container *ngFor="let item of hoverData?.actions">
+            <div class="action-item" *ngIf="item.type === 'save'">
+                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, $event);">
+                    <i class="icon-svg icon-svg--md">
+                        <svg class="icon">
+                            <use xlink:href="assets/common-consumption/images/sprite.svg#pendrive"></use>
+                        </svg>
+                    </i>
+                  <span>{{item.label}}</span>
+                </button>
+            </div>
+            <div class="action-item" *ngIf="item.type === 'download'">
+                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, $event);">
+                    <i class="icon-svg icon-svg--md">
+                        <svg class="icon">
+                            <use xlink:href="assets/common-consumption/images/sprite.svg#outline-cloud_download"></use>
+                        </svg>
+                    </i>
+                    <span>{{item.label}}</span>
+                  </button>
+            </div>
+            <div class="action-item" *ngIf="item.type === 'open'">
+                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, $event);">
+                    <i class="icon-svg icon-svg--md">
+                        <svg class="icon">
+                            <use xlink:href="assets/common-consumption/images/sprite.svg#book-open"></use>
+                        </svg>
+                    </i>
+                    <span>{{item.label}}</span>
+                  </button>
+            </div>
+        </ng-container>
+        
+        <!-- <div class="action-item">
+            <button class="sb-btn sb-btn-link sb-btn-link- sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="test('button3'); $event.stopPropagation()">
+                <i class="icon-svg icon-svg--sm">
+                    <svg class="icon">
+                        <use xlink:href="assets/common-consumption/images/sprite.svg#book"></use>
+                    </svg>
+                </i>
+                <span>{{text}}</span>
+              </button>
+        </div> -->
+    </div>
+    <div class="hover-meta-info" *ngIf="hoverData?.note">
+        {{hoverData?.note}}
+    </div>
+<!-- </div> -->

@@ -53,4 +53,10 @@
       </div>
     </div>
   </div>
+  <!-- <ng-content select=".card-hover">
+    
+  </ng-content> -->
+  <ng-container *ngTemplateOutlet="gridTemplate; context: {$implicit: content.hoverData, hoverData: content.hoverData}" class="card-hover">    
+
+  </ng-container>
 </div>

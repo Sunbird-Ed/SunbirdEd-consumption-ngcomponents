@@ -58,9 +58,8 @@ For existing apps, follow these steps to begin using .
     
 		    "assets": [
 		    
-			    "src/favicon.ico",
-			    
-			    "src/assets",
+			   ...
+			   ...
 			    
 			    {
 				    "glob": "**/*.*",
@@ -72,15 +71,13 @@ For existing apps, follow these steps to begin using .
     
 	    "styles": [
 	    
-	    "src/styles.scss",
+	    ...
 	    
 	    "./node_modules/common-consumption-styles/assets/_styles.scss"
 	    
 	    ],
 	    
-	    "scripts": [],
-	    
-	    "preserveSymlinks": true
+	    ...
 	    ...
     
     },
@@ -148,6 +145,7 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
 | [LibraryFilters]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the library page for all consumption platforms. |sb-library-filters|
 | [FAQ Component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Faq for Consumption Clients with interactable events. |sb-faq|
+| [Card hover component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used with library card to add over lay on card with action items . |sb-card-hover|
 
   
 
@@ -184,6 +182,9 @@ Can be used in the library page for all consumption platforms.
 |@Input() moreInfoLabel:string|Label to be displayed in the meta data. *`Example: Medium, Section`* |
 |`Optional` @Input() isMobile: boolean| Flag to distinguish mobile platform |
 |`Optional` @Input() isOffline: boolean| Flag to handle offline scenarios|
+|`Optional` @Input() section: string| In case of QR code results cards, there is a need to show section|
+|`Optional` @Input('hover-template') gridTemplate: TemplateRef<any>;| When card has **hover data**, the template reference of the hover component needs to be injected|
+
 
   
 
@@ -220,6 +221,8 @@ Exported as: `SbLibraryCardsGrid`
 |@Input() contentList: collection<content>| Collection of contents, where each content is a object from server API. **` Note: Add cardImg property for each item in list before passing contentList`** |
 |`Optional` @Input() maxCardCount: Number| Number of cards to display the viewing area `Default value is 3`|
 |`Optional` @Input() viewMoreButtonText: string| custom text to show in place of view all button, if there are more number of cards than "maxCardCount" then a button needs to be displayed. `Default value is "View All"`|
+|`Optional` @Input('hover-template') gridTemplate: TemplateRef<any>;| When card has **hover data**, the template reference of the hover component needs to be injected|
+
 
   
 
@@ -265,6 +268,7 @@ Exported as: `LibraryCardsStackComponent`
 |`Optional` @Input() maxCardCount: Number| Number of cards to display the viewing area `Default value is 3`|
 |`Optional` @Input() viewMoreButtonText: string| custom text to show in place of view all button, if there are more number of cards than "maxCardCount" then a button needs to be displayed. `Default value is "View All"`|
 |`Optional` @Input() isOffline: boolean|Flag to handle offline scenarios `Default value is "False"`|
+
 
   
 
@@ -362,4 +366,41 @@ Consumption Clients intend to use this component for FAQ in their apps.
 |@Output() noClickedEvent | Emmits this event when user clicks on the option yes inside faq |
 |@Output() submitClickedEvent | Emmits this event when user clicks on the option submit inside faq |
 
+  
 
+## Card hover Component
+
+  
+
+Card hover component is intended to be used with Library card component. On hover of the card, this component adds an overlay with actions to be shows passed as input to it.
+
+  
+
+`import { CardHoverComponent } from '@Sunbird/components/card-hover'`
+
+  
+
+**Selector**: `sb-card-hover`
+
+  
+
+**Exported as** : `CardHoverComponent`
+
+  
+
+### Properties
+
+  
+
+|Name| Description |
+|--|--|
+|@Input() hoverData: json| Please refer to faq Spec File for More details in the library |
+  
+
+### Events
+
+  
+
+|Name| Description |
+|--|--|
+|@Output() hoverActionClick | Emmits this event when user clicks on the any action item |

@@ -14,7 +14,7 @@
     <div class="body">
         <sb-library-card
             *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let i= index"
-            [content]="content" [type]="LibraryCardTypes.MOBILE_TEXTBOOK" [defaultImg]="defaultImg" (cardClick)="emitCardClick($event, i)" [cardImg]="content?.cardImg">
+            [content]="content" [type]="LibraryCardTypes.MOBILE_TEXTBOOK" (cardClick)="emitCardClick($event, i)" [cardImg]="content?.cardImg">
         </sb-library-card>
         <button *ngIf="maxCardCount && contentList?.length >maxCardCount" class="sbbtn flat stack-btn full-width"
             (click)="showAllList($event)">{{viewMoreButtonText}}</button>

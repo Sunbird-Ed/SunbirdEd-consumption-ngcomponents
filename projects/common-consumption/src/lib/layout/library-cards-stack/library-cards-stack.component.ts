@@ -14,7 +14,7 @@ export class LibraryCardsStackComponent {
     @Input() isOffline = false;
     @Input() viewMoreButtonText: string = defaultLibraryCardsGrid.viewMoreButtonText;
     @Input() maxCardCount: number = defaultLibraryCardsGrid.maxCardCount;
-    @Input() defaultImg: string;
+    // @Input() defaultImg: string;
     @Input() cardImg;
 
 
