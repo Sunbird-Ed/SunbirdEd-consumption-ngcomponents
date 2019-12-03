@@ -204,6 +204,61 @@
   //   transform: translate(0,-3px);
   //   box-shadow: 0 3px 7px 0 rgba(0,0,0,.16);
   // }
+  ::ng-deep .card-hover{
+      display: none;
+      transition: all .2s ease-in;
+  }
+  &:hover {
+    ::ng-deep .card-hover {
+        // background: #ddd;
+        // .child-content {
+        color: #fff;
+        display: block;
+        position: absolute;
+        left: 0;
+        right:0;
+        top:0;
+        bottom: 0;
+        opacity: 0.95;	
+        border-radius: 2px;	
+        background-color: #024F9D;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        transition: .2s ease-in;
+        flex-direction: column;
+        justify-content: space-evenly;
+        // }
+      .action-container{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-self: center;
+        justify-self: center;
+        flex: 1;
+        align-items: center;
+      }
+
+      .action-item {
+        padding: 0 16px;
+        flex: 1;
+        text-align: center;
+      }
+            
+      .action-item:not(:last-child) {
+        border-right: 1px solid rgba(255,255,255,0.5);
+       }
+
+      .hover-meta-info{
+        font-size: 10px;
+        opacity: 0.8;
+        color: #FFFFFF;
+        font-size: 10px;
+        line-height: 12px;
+        flex: 0 0 25%;
+      }
+    }
+  }
 }
 .sb-card__progressbar {
   height: 4px;

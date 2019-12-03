@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { defaultLibraryCardsGrid } from '../library-cards.data';
 import { IContent, LibraryCardTypes, LibraryCardGridTypes } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
@@ -14,14 +14,18 @@ export class LibraryCardsGridComponent {
     @Input() title: string = defaultLibraryCardsGrid.title;
     @Input() contentList: Array<IContent> = defaultLibraryCardsGrid.contentList;
     @Input() type: LibraryCardGridTypes;
+    @Input() hoverData = [];
 
     /* Max card count to be shown */
     @Input() maxCardCount = defaultLibraryCardsGrid.maxCardCount;
     @Input() viewMoreButtonText = defaultLibraryCardsGrid.viewMoreButtonText;
+    @Input('hover-template') gridTemplate: TemplateRef<any>;
 
 
     @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
+    @Output() hoverActionClick: EventEmitter<any> = new EventEmitter<any>();
+
 
     get LibraryCardTypes() { return LibraryCardTypes; }
     get LibraryCardGridTypes() { return LibraryCardGridTypes; }
@@ -41,5 +45,9 @@ export class LibraryCardsGridComponent {
      */
     onCardClick(event: MouseEvent, data: IContent) {
         this.cardClick.emit({ event, data });
+    }
+
+    hoverActionClicked(event) {
+        this.hoverActionClick.emit(event);
     }
 }
