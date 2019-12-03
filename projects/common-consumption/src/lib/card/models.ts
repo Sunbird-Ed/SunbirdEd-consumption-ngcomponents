@@ -16,7 +16,8 @@ export enum LibraryCardTypes {
 }
 
 export enum LibraryCardGridTypes {
-    INFINITE_CARD_GRID = 'infinite_card_grid'
+    INFINITE_CARD_GRID = 'infinite_card_grid',
+    INFINITE_CARD_GRID_WITH_HOVER = 'infinite_card_grid_with_hover'
 }
 
 export enum LibraryCardStackTypes {
@@ -75,4 +76,11 @@ export interface IContent {
     userName?: string;
     pkgVersion?: string;
     visibility?: string;
+    hoverData?: any; // for card hover data
+}
+
+export interface IHoverData {
+    note?: string;
+    actions: any;
+    hoverData: any;
 }
