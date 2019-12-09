@@ -3,7 +3,7 @@
     <div class="action-container">
         <ng-container *ngFor="let item of hoverData?.actions">
             <div class="action-item" *ngIf="item.type === 'save'">
-                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, $event);">
+                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, content, $event);" [disabled]="item.disabled">
                     <i class="icon-svg icon-svg--md">
                         <svg class="icon">
                             <use xlink:href="assets/common-consumption/images/sprite.svg#pendrive"></use>
@@ -13,7 +13,7 @@
                 </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'download'">
-                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, $event);">
+                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, content, $event);" [disabled]="item.disabled">
                     <i class="icon-svg icon-svg--md">
                         <svg class="icon">
                             <use xlink:href="assets/common-consumption/images/sprite.svg#outline-cloud_download"></use>
@@ -23,7 +23,7 @@
                   </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'open'">
-                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, $event);">
+                <button class="sb-btn sb-btn-primary sb-btn-normal sb-btn-square sb-color-white w-auto" (click)="actionClick(item, content, $event);" [disabled]="item.disabled">
                     <i class="icon-svg icon-svg--md">
                         <svg class="icon">
                             <use xlink:href="assets/common-consumption/images/sprite.svg#book-open"></use>

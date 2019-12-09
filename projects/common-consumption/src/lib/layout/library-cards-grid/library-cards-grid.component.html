@@ -36,7 +36,7 @@
                 [hover-template]="hoverTemplate" >
 
                 <ng-template #hoverTemplate let-hoverData="hoverData">
-                    <sb-card-hover class="card-hover" [hoverData]="hoverData" (hoverActionClick)="hoverActionClicked($event)">
+                    <sb-card-hover class="card-hover" [hoverData]="hoverData" [content]="content" (hoverActionClick)="hoverActionClicked($event)">
                     </sb-card-hover>
                 </ng-template>
             </sb-library-card>

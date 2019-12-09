@@ -8,6 +8,7 @@ import { Component, OnInit, Input, AfterViewInit, Output, EventEmitter } from '@
 export class CardHoverComponent implements OnInit, AfterViewInit {
 
   @Input() hoverData;
+  @Input() content;
   @Output() hoverActionClick: EventEmitter<any> = new EventEmitter();
 
   public text = 'click';
@@ -23,8 +24,8 @@ export class CardHoverComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
   }
 
-  actionClick(item, event) {
-    this.hoverActionClick.emit({ event: event, data: item });
+  actionClick(item, content, event) {
+    this.hoverActionClick.emit({ event: event, hover: item, content: content });
     event.stopPropagation();
   }
 
