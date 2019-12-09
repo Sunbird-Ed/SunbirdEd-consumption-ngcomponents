@@ -243,6 +243,12 @@
         padding: 0 16px;
         flex: 1;
         text-align: center;
+        .sb-btn.sb-btn-primary[disabled] {
+          background-color: transparent;
+          opacity: 0.5;
+          border: 0;
+          color: #fff;
+        }
       }
             
       .action-item:not(:last-child) {

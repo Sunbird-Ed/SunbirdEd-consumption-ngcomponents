@@ -394,7 +394,7 @@ Card hover component is intended to be used with Library card component. On hove
 
 |Name| Description |
 |--|--|
-|@Input() hoverData: json| Please refer to faq Spec File for More details in the library |
+|@Input() hoverData: json| Please refer example for More details in the library |
   
 
 ### Events
@@ -403,4 +403,39 @@ Card hover component is intended to be used with Library card component. On hove
 
 |Name| Description |
 |--|--|
-|@Output() hoverActionClick | Emmits this event when user clicks on the any action item |
+|@Output() hoverActionClick | Emmits this event when user clicks on the any action item, this will also have the card information on which the action is clicked  |
+
+Sample hover data : 
+```json
+"hoverData": {
+        "note": "Go to “My Downloads” to find this textbook",
+        "actions": [
+          {
+            "type": "save",
+            "label": "Save to pendrive",
+            "disabled": true
+          },
+          {
+            "type": "open",
+            "label": "Open"
+          }
+        ]
+      }
+```
+
+Example :
+```html
+<sb-library-card [content]="content" [type]="recentlyViewedCard"
+                    (click)="cardClick($event)" [cardImg]="content?.appIcon"
+                    [hover-template]="hoverTemplate">
+
+                    <ng-template #hoverTemplate let-hoverData="hoverData" 
+					let-content="content">
+                        <sb-card-hover class="card-hover" [hoverData]="hoverData"
+						[content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                        </sb-card-hover>
+                    </ng-template>
+	
+</sb-library-card>
+```
+
