@@ -1,6 +1,7 @@
 <!-- card component -->
 <div class="sb-card sb-card--resource"
-  [ngClass]="{'sb-card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" (click)="onClick($event)">
+  [ngClass]="{'sb-card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
+  (click)="onClick($event)">
   <div class="sb-card__main-area">
     <!-- card img -->
     <div class="sb-card__img">
@@ -56,7 +57,9 @@
   <!-- <ng-content select=".card-hover">
     
   </ng-content> -->
-  <ng-container *ngTemplateOutlet="gridTemplate; context: {$implicit: content.hoverData, hoverData: content.hoverData, content:content}" class="card-hover">    
+  <ng-container
+    *ngTemplateOutlet="gridTemplate; context: {$implicit: content.hoverData, hoverData: content.hoverData, content:content}"
+    class="card-hover">
 
   </ng-container>
 </div>
