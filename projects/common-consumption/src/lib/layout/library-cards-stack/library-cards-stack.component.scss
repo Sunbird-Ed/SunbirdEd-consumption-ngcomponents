@@ -22,7 +22,7 @@
       align-items: center;
 
       i {
-        margin-right: 8px;
+        @include margin(null, 8px, null, null);
         vertical-align: middle;
         height: 17px;
         width: 14px;
