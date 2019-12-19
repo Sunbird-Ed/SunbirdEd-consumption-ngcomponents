@@ -1,0 +1,12 @@
+<div class="sbaccordion__panel-header" click="toggleHeader()">
+  <h4 class="sbaccordion__panel-header__title">
+    <ng-content select=".title">
+
+    </ng-content>
+  </h4>
+  <i class="icon-svg icon-svg--xs icon-arrow-up expansion-indicator" [@expansionIndicator]="state" >
+    <svg class="icon icon-svg--primary">
+      <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-down"></use>
+    </svg>
+  </i>
+</div>
