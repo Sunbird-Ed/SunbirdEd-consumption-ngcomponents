@@ -1,0 +1,45 @@
+.sbchapter {
+    &__item {
+        background: var(--white);
+        border: 1px solid #ddd;
+        box-shadow: 0 3px 4px 0 rgba(2, 79, 157, 0.1);
+        border: 0.5px solid rgba(35, 97, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        padding: var(--base-block-space);
+        cursor: pointer;
+        min-height: 56px;
+        transition: all .2s ease-in;
+        &__title {
+          font-size: 12px;
+          color: var(--primary-400);
+          margin: 0px;
+          padding: 0px;
+          font-weight: normal;
+        }
+        
+        .sbchapter__img {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+            display: flex;
+            align-items: center;
+            background: #ddd;
+            img {
+                width: 100%;
+            }
+        }
+        &:last-child {
+            margin-bottom: 8px;
+        }
+        &:hover,
+        &--active {
+          background: var(--primary-100);
+          .sbchapter__item__title {
+            font-weight: bold;
+          }
+        }
+    }
+}

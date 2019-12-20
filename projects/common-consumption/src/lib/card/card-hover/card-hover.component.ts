@@ -14,11 +14,9 @@ export class CardHoverComponent implements OnInit, AfterViewInit {
   public text = 'click';
 
   constructor() {
-    console.log('constructor  ', this.hoverData);
   }
 
   ngOnInit() {
-    console.log('on init  ', this.hoverData);
   }
 
   ngAfterViewInit(): void {
