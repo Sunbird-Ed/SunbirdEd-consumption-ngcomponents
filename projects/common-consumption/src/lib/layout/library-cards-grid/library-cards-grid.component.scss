@@ -9,7 +9,7 @@
   .header {
     display: flex;
     flex-direction: row;
-    margin: 1.5rem 0 1rem 0;
+    @include margin(1.5rem 0 1rem 0);
     padding: 0px 0;
     align-items: center;
     .title {
@@ -27,24 +27,24 @@
       align-items: center;
 
       i {
-        margin-right: 8px;
+        @include margin(null, 8px, null, null);
         vertical-align: middle;
         height: 17px;
         width: 14px;
-        // top: -2px;
+        top: -2px;
       }
 
       .badge {
         display: inline-block;
         background: var(--gray-100);
         color: black;
-        margin-left: 8px;
         font-size: 16px;
         line-height: 24px;
         text-align: center;
         padding: 1px 8px;
         border-radius: 4px;
         height: 24px;
+        @include margin(null, null, null, 8px);
       }
     }
   }
