@@ -1,0 +1,19 @@
+<ng-container *ngIf="childData | hasMimeType: activeMimeTypeFilter">
+  <div *ngIf="childData?.mimeType === 'application/vnd.ekstep.content-collection' && childData?.children">
+    <h4 class="sbchapter__title">{{childData?.name}}</h4>
+  </div>
+</ng-container>
+
+<ng-container
+  *ngIf="childData?.mimeType !== 'application/vnd.ekstep.content-collection' && hasMimeType(activeMimeTypeFilter, childData?.mimeType, childData)">
+  <sb-toc-card [content]="childData" (tocCardClick)="tocCardClickHandler($event)" [activeContent]="activeContent">
+  </sb-toc-card>
+</ng-container>
+
+<div class="">
+  <div class="" *ngFor="let child of childData?.children; let j = index;">
+    <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)" [activeMimeTypeFilter]="activeMimeTypeFilter" >
+
+    </sb-toc-child-item>
+  </div>
+</div>
