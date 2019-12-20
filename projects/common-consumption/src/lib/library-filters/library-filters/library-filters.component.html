@@ -1,16 +1,51 @@
 <div class="fixed-container">
+    <!-- Library medium filter -->
     <div *ngIf="layout === LibraryFiltersLayout.SQUARE" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-medium-pills-container" id="mediumScroll">
-            <div class="pill" *ngFor="let item of filterList; let i = index;" [ngClass]="{'active': item?.selected}" attr.id="medium{{i}}"
-                (click)="selectPill($event, i)">{{item.text}} medium
+            <div class="pill" *ngFor="let item of filterList; let i = index;" [ngClass]="{'active': item?.selected}"
+                attr.id="medium{{i}}" (click)="selectPill($event, i)">{{item.text}} medium
             </div>
         </div>
     </div>
+    <!-- Library class/grade filter -->
     <div *ngIf="layout === LibraryFiltersLayout.ROUND" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-grade-pills-container" id="gradeScroll">
-            <div class="pill rounded" *ngFor="let item of filterList; let i = index;" [ngClass]="{'active': item?.selected}" attr.id="class{{i}}"
-                (click)="selectPill($event, i)">
+            <div class="pill rounded" *ngFor="let item of filterList; let i = index;"
+                [ngClass]="{'active': item?.selected}" attr.id="class{{i}}" (click)="selectPill($event, i)">
                 {{item.text}}</div>
         </div>
     </div>
-</div>  
+    <!-- Player page content filters -->
+    <div *ngIf="layout === LibraryFiltersLayout.ROUND_WITH_ICONS" class="sb-slider-pills-container">
+        <div class="sb-pills-container sb-grade-pills-container" id="gradeScroll">
+            <div class="pill rounded rounded-with-icon" *ngFor="let item of filterList; let i = index;"
+                [ngClass]="{'active': item?.selected}" attr.id="mimeType{{i}}" (click)="selectMimeFilter($event, i)">
+                <ng-container *ngIf="item?.type === TocMimeTypes.VIDEO ">
+                    <i class="icon-svg icon-svg--xs icon-videos" >
+                        <svg class="icon icon-svg--primary">
+                            <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
+                        </svg>
+                    </i>
+
+                </ng-container>
+                <ng-container *ngIf="item?.type === TocMimeTypes.DOCS ">
+                    <i class="icon-svg icon-svg--xs icon-videos" >
+                        <svg class="icon icon-svg--primary">
+                            <use xlink:href="assets/common-consumption/images/sprite.svg#doc"></use>
+                        </svg>
+                    </i>
+
+                </ng-container>
+                <ng-container *ngIf="item?.type === TocMimeTypes.INTERACTION ">
+                    <i class="icon-svg icon-svg--xs icon-videos" >
+                        <svg class="icon icon-svg--primary">
+                            <use xlink:href="assets/common-consumption/images/sprite.svg#touch"></use>
+                        </svg>
+                    </i>
+
+                </ng-container>
+                <span class="name">{{item.text}}</span>
+            </div>
+        </div>
+    </div>
+</div>
