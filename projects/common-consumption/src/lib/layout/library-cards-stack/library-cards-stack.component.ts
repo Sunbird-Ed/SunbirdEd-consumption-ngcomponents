@@ -28,7 +28,6 @@ export class LibraryCardsStackComponent {
     }
 
     emitCardClick(event, index) {
-        console.log('inside library emit card click', event);
         this.cardClick.emit({ 'data': event.data, 'index': index });
     }
 

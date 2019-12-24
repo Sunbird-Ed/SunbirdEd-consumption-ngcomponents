@@ -1,0 +1,5 @@
+<div class="sbchapter__item " (click)="tocCardclick($event)" [ngClass]="{'sbchapter__item--active': activeContent?.identifier=== content?.identifier}">
+  <h4 class="sbchapter__item__title">{{content?.name}}</h4>
+  <div class="sbchapter__img"><img [src]="content?.appIcon" title="Chapter Title" />
+  </div>
+</div>
