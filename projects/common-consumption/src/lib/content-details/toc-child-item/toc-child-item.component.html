@@ -10,8 +10,8 @@
   </sb-toc-card>
 </ng-container>
 
-<div class="">
-  <div class="" *ngFor="let child of childData?.children; let j = index;">
+<div *ngIf="childData?.children">
+  <div *ngFor="let child of childData?.children; let j = index;">
     <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)" [activeMimeTypeFilter]="activeMimeTypeFilter" >
 
     </sb-toc-child-item>

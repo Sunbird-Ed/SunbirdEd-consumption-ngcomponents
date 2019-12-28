@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef,
-OnChanges, ViewChild, ElementRef, AfterViewChecked, QueryList, ViewChildren } from '@angular/core';
-import { IContent } from '../../card/models';
+import {
+  Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren
+} from '@angular/core';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
 
 @Component({
@@ -9,20 +9,24 @@ import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
   styleUrls: ['./toc-item.component.scss'],
   providers: [MimeTypePipe]
 })
-export class TocItemComponent implements OnInit, OnChanges, AfterViewChecked {
+export class TocItemComponent implements OnInit {
   @Input() tocData;
   @Input() activeMimeTypeFilter = ['all'];
-  private _activeMimeTypeFilter = ['all'];
+  @Input() noContentMessage = 'No content available';
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
   @Input() activeContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
 
-  constructor(
-    private changeDetectionRef: ChangeDetectorRef,
-    private mimeTypePipe: MimeTypePipe
-  ) { }
+  private isSameMimeTypeInChildren = ((mimeTypesCount, activeMimeType) => {
+    const contentMimeType = Object.keys(JSON.parse(mimeTypesCount));
+    return Boolean(activeMimeType.filter(value => contentMimeType.includes(value)).length);
+  });
+  private isSameMimeType = (currentContent) => this.activeMimeTypeFilter.find(mimeType => mimeType === currentContent.mimeType);
+  private isChildrenPresent = (currentContent) => Boolean(currentContent.children && currentContent.children.length);
+
+  constructor() { }
 
   ngOnInit() {
     if (!this.activeContent) {
@@ -30,71 +34,68 @@ export class TocItemComponent implements OnInit, OnChanges, AfterViewChecked {
     }
   }
 
-  ngOnChanges(changes) {
-  }
-
-  ngAfterViewChecked() {
-    // this.checkForChildren();
-  }
-
-  checkForChildren() {
-    this.chapterContainer.changes.subscribe((changes) => {
-      let chapterElements = this.divs.toArray();
-      if (chapterElements && chapterElements.length) {
-        for (const item of chapterElements) {
-          console.log(item);
-          if (item.nativeElement.innerHTML.indexOf('sbchapter__item') < 0) {
-            item.nativeElement.remove();
-          }
-        }
+  public filterChildren(content) {
+    // Check for the ActiveMimeType
+    if (this.activeMimeTypeFilter.includes('all')) {
+      if (content.mimeType === MimeTypeMasterData.COLLECTION) {
+        return this.isShowContent(content, true);
       }
-    });
-  }
-
-  hasMimeType(activeMimeType: string[], mimeType: string, content): boolean {
-    if (!activeMimeType) {
+      return true; // Return true for all the content except collection mimeType
+    } else if (content.mimeType && this.isSameMimeType(content)) {
       return true;
+    } else if (content.mimeType === MimeTypeMasterData.COLLECTION) {
+      return this.isShowContent(content, false);
     } else {
-      if (activeMimeType.indexOf('all') > -1) {
-        // if (content.contentData.mimeType === MimeType.COLLECTION && !content.children) {
-        //     return false;
-        // }
-        return true;
-      }
-      return !!activeMimeType.find(m => m === mimeType);
+      return false;
     }
   }
 
-  filterChildren(content) {
-    console.log('filterChildren : ');
-    console.log('content: ', content);
-    console.log(content.children.filter((c) => this.mimeTypePipe.transform(c, this.activeMimeTypeFilter)));
-    if (content.mimeType === MimeTypeMasterData.COLLECTION && content.children && content.children.length){
-      return content.children.filter((c) => this.mimeTypePipe.transform(c, this.activeMimeTypeFilter));
+  private isShowContent(content, isActiveFilterAll) {
+    if (content.mimeTypesCount && !isActiveFilterAll) {
+      return this.isSameMimeTypeInChildren(content.mimeTypesCount, this.activeMimeTypeFilter);
+    } else if (this.isChildrenPresent(content)) {
+      const contentList = this.flattenDeep(content.children);
+      return isActiveFilterAll ? contentList.some((c) => c.mimeType !== MimeTypeMasterData.COLLECTION) :
+        contentList.some((c) => this.isSameMimeType(c));
+    } else {
+      return false;
     }
-    // return content.children.filter((c) => this.mimeTypePipe.transform(c, this.activeMimeTypeFilter));
   }
 
-  onTocCardClick(event) {
+  public onTocCardClick(event) {
     this.tocCardClick.emit({ ...event });
   }
 
-  collapsedChangeHandler(event) {
+  public collapsedChangeHandler(event) {
   }
 
   private firstNonCollectionContent(content, filter?: string[]) {
-      if (!content.children || !content.children.length) {
-        return undefined;
+    if (!content.children || !content.children.length) {
+      return undefined;
+    }
+
+    for (const c of content.children) {
+      if (c.mimeType === MimeTypeMasterData.COLLECTION) {
+        return this.firstNonCollectionContent(c, filter);
+      } else if (filter && !filter.includes(c.mimeType)) {
+        continue;
       }
 
-      for (const c of content.children) {
-        if (c.mimeType === MimeTypeMasterData.COLLECTION) {
-          return this.firstNonCollectionContent(c, filter);
-        } else if (filter && !filter.includes(c.mimeType)) {
-          continue;
-        }
-
-        return c;
-      }
+      return c;
+    }
   }
+
+  private flattenDeep(contents) {
+    if (contents) {
+      return contents.reduce((acc, val) => {
+        if (val.children) {
+          acc.push(val);
+          return acc.concat(this.flattenDeep(val.children));
+        } else {
+          return acc.concat(val);
+        }
+      }, []);
+    }
+  }
+
 }

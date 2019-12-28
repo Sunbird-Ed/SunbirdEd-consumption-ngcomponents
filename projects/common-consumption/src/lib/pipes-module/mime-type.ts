@@ -25,7 +25,6 @@ export class MimeTypeMasterData {
 export class MimeTypePipe implements PipeTransform {
   transform(item: any, mimeTypes: string[] = ['all'], isTextbookTocPage: boolean = false): boolean {
     if (mimeTypes.indexOf('all') > -1) {
-      console.log('----------- : ', mimeTypes);
       if (item.mimeType !== MimeTypeMasterData.COLLECTION && !item.children) {
         return true;
       } else {
@@ -55,13 +54,9 @@ export class MimeTypePipe implements PipeTransform {
     if (contents) {
       return contents.reduce((acc, val) => {
         if (val.children) {
-          // const newVal = { ...val };
-          // delete newVal['children'];
           acc.push(val);
-          console.log('flattenDeep if--', acc.concat(this.flattenDeep(val.children)));
           return acc.concat(this.flattenDeep(val.children));
         } else {
-          console.log('flattenDeep else--', acc.concat(val));
           return acc.concat(val);
         }
       }, []);
