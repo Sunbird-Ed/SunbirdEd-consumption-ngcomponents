@@ -144,8 +144,9 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [LibraryCardsStack]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
 | [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
 | [LibraryFilters]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the library page for all consumption platforms. |sb-library-filters|
-| [FAQ Component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Faq for Consumption Clients with interactable events. |sb-faq|
-| [Card hover component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used with library card to add over lay on card with action items . |sb-card-hover|
+| [FAQ Component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Faq for Consumption Clients with intractable events. |sb-faq|
+| [Card hover component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used with library card to add overlay on card with action items . |sb-card-hover|
+| [TOCItem component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](./src/lib/content-details/toc-item/toc-item.md)) | Shows given  array of Items with accordion structure. |sb-toc-item|
 
   
 
@@ -194,7 +195,7 @@ Can be used in the library page for all consumption platforms.
 
   
 
-Can be used in the library page for all consumption platforms targetting web platform
+Can be used in the library page for all consumption platforms targeting web platform
 
   
 
@@ -320,7 +321,8 @@ Can be used in the library page for all consumption platforms.
 
 |Name| Description |
 |--|--|
-@Output() selectedFilter | Emmits this event when user clicks on the filter item. `Example: event.data = {text: "english", selected: true, index: 0}`
+@Output() selectedFilter | Emits this event when user clicks on the filter item. `Example: event.data = {text: "english", selected: true, index: 0}`
+@Output() selectedMimeType | Emits this event when user clicks on the mimeType filter item. `Example: event.data = {value: ["video/mp4", "video/x-youtube", "video/webm], text: "video", selected: true, type: "video", index: 1}`
 
   
 
@@ -359,12 +361,12 @@ Consumption Clients intend to use this component for FAQ in their apps.
 
   
 
-|Name| Description |
-|--|--|
-|@Output() toggleGroupEvent | Emmits this event when user clicks on the faq accordion |
-|@Output() yesClickedEvent | Emmits this event when user clicks on the option yes inside faq |
-|@Output() noClickedEvent | Emmits this event when user clicks on the option yes inside faq |
-|@Output() submitClickedEvent | Emmits this event when user clicks on the option submit inside faq |
+| Name                         | Description |
+|------------------------------|-------------|
+| @Output() toggleGroupEvent   | Emits this event when user clicks on the faq accordion |
+| @Output() yesClickedEvent    | Emits this event when user clicks on the option yes inside faq |
+| @Output() noClickedEvent     | Emits this event when user clicks on the option yes inside faq |
+| @Output() submitClickedEvent | Emits this event when user clicks on the option submit inside faq |
 
   
 
@@ -403,7 +405,7 @@ Card hover component is intended to be used with Library card component. On hove
 
 |Name| Description |
 |--|--|
-|@Output() hoverActionClick | Emmits this event when user clicks on the any action item, this will also have the card information on which the action is clicked  |
+|@Output() hoverActionClick | Emits this event when user clicks on the any action item, this will also have the card information on which the action is clicked  |
 
 Sample hover data : 
 ```json
@@ -412,7 +414,7 @@ Sample hover data :
         "actions": [
           {
             "type": "save",
-            "label": "Save to pendrive",
+            "label": "Save to pen-drive",
             "disabled": true
           },
           {
