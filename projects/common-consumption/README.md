@@ -101,8 +101,8 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [LibraryCardsGrid](./src/lib/layout/library-cards-grid/library-cards-grid.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
 | [LibraryCardsStack](./src/lib/layout/library-cards-stack/library-cards-stack.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
 | [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
-| [LibraryFilters](./src/lib/layout/library-filters/library-filters/library-filters.md) | Can be used in the library page for all consumption platforms. |sb-library-filters|
-| [FAQ Component](./src/lib/layout/faq/faq/faq.md) | Faq for Consumption Clients with intractable events. |sb-faq|
+| [LibraryFilters](./src/lib/library-filters/library-filters/library-filters.md) | Can be used in the library page for all consumption platforms. |sb-library-filters|
+| [FAQ Component](./src/lib/faq/faq/faq.md) | Faq for Consumption Clients with intractable events. |sb-faq|
 | [Card hover component](./src/lib/card/card-hover/card-hover.md) | Can be used with library card to add overlay on card with action items . |sb-card-hover|
 | [TOCItem component](./src/lib/content-details/toc-item/toc-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|
 
