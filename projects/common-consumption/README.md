@@ -146,7 +146,7 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [LibraryFilters]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the library page for all consumption platforms. |sb-library-filters|
 | [FAQ Component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Faq for Consumption Clients with intractable events. |sb-faq|
 | [Card hover component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used with library card to add overlay on card with action items . |sb-card-hover|
-| [TOCItem component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](./src/lib/content-details/toc-item/toc-item.md)) | Shows given  array of Items with accordion structure. |sb-toc-item|
+| [TOCItem component](./src/lib/content-details/toc-item/toc-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|
 
   
 
