@@ -1,39 +1,15 @@
-  
-
 # Common angular components for Sunbird consumption!
-
-  
-
 Contains common UI components powered by angular. These components are designed to be used in sunbird consumption platforms *(mobile app, web portal, offline desktop app)* to drive reusability, maintainability hence reducing the redundant development effort significantly.
 
-  
-
 # Getting Started
-
-  
-
 For help getting started with a new Angular app, check out the Angular CLI.
-
-  
-
 For existing apps, follow these steps to begin using .
 
-  
-
 ## Step 1: Install the package
-
-  
-
     npm install @project-sunbird/common-consumption --save
-
     npm install common-consumption-styles --save
 
-  
-
 ## Step 2: Include the common-consumption-styles and assets in angular.json
-
-  
-
     "styles": [
     
     ...
@@ -57,20 +33,15 @@ For existing apps, follow these steps to begin using .
 		    ...
     
 		    "assets": [
-		    
 			   ...
 			   ...
-			    
 			    {
 				    "glob": "**/*.*",
 				    "input": "./node_modules/@project-sunbird/common-consumption/assets",
 				    "output": "./assets/common-consumption"
 			    }
-		    
 		    ],
-    
 	    "styles": [
-	    
 	    ...
 	    
 	    "./node_modules/common-consumption-styles/assets/_styles.scss"
@@ -82,17 +53,11 @@ For existing apps, follow these steps to begin using .
     
     },
 
-  
-
 ## Step 3: Import the modules and components
-
-  
-
 Import the NgModule for each component you want to use:
        
     import { CommonConsumptionModule} from '@project-sunbird/common-consumption';
     
-        
     @NgModule({
 	    ...
 	    
@@ -100,20 +65,13 @@ Import the NgModule for each component you want to use:
 	    
 	    ...
     })
-
-  
     export class TestAppModule { }
 
-  
-
 Alternatively, you can create a separate NgModule that imports and then re-exports all of the Angular components that you will use in your application. By exporting them again, other modules can simply include your CustomSunbirdComponentsModule wherever components are needed, and automatically get all of the exported modules. A good place for importing/exporting the application-wide modules is the SharedModule.
-
-  
 
     import { CardsModule } from '@project-sunbird/common-consumption/card';
 
     import { PopoverModule } from '@project-sunbird/common-consumption/popover';
-
 
     @NgModule({
     
@@ -130,50 +88,32 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 
     export class MyOwnCustomSunbirdComponentsModule { }
 
-  
-
 ## Available components
-
-  
 
 |Feature| Notes| Selector|
 |--|--|--|
-| [LibraryCard]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the library page for all consumption platforms| sb-library-card|
-| [CourseCard]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms| sb-course-card|
-| [LibraryCardsGrid]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
-| [LibraryCardsStack]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
-| [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
-| [LibraryFilters]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in the library page for all consumption platforms. |sb-library-filters|
-| [FAQ Component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Faq for Consumption Clients with interactable events. |sb-faq|
-| [Card hover component]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used with library card to add over lay on card with action items . |sb-card-hover|
-
-  
+| [LibraryCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the library page for all consumption platforms| sb-library-card|
+| [CourseCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the courses page for all consumption platforms| sb-course-card|
+| [LibraryCardsGrid](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
+| [LibraryCardsStack](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
+| [Confirmation Modal](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
+| [LibraryFilters](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the library page for all consumption platforms. |sb-library-filters|
+| [FAQ Component](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Faq for Consumption Clients with intractable events. |sb-faq|
+| [Card hover component](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used with library card to add overlay on card with action items . |sb-card-hover|
+| [TOCItem component](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Shows given  array of Items with accordion structure. |sb-toc-item|
 
 ## LibraryCard
 
-  
-
 Can be used in the library page for all consumption platforms.
-
-  
-  
 
     import { LibraryCardComponent } from '@project-sunbird/common-consumption/card/LibraryCardComponent'
 
   
 
 **Selector**: `sb-library-card`
-
-  
-
 **Exported as** : `LibraryCardComponent `
 
-  
-
 ### Properties
-
-  
-
 |Name| Description |
 |--|--|
 |@Input() content: IContent| Content Object |
@@ -185,34 +125,15 @@ Can be used in the library page for all consumption platforms.
 |`Optional` @Input() section: string| In case of QR code results cards, there is a need to show section|
 |`Optional` @Input('hover-template') gridTemplate: TemplateRef<any>;| When card has **hover data**, the template reference of the hover component needs to be injected|
 
-
-  
-
-  
-
 ## LibraryCardsGrid
-
-  
-
-Can be used in the library page for all consumption platforms targetting web platform
-
-  
+Can be used in the library page for all consumption platforms targeting web platform
 
     import { SbLibraryCardsGrid } form '@project-sunbird/common-consumption/layout/gridcards';
 
-  
-
-Selector: `sb-library-cards-grid`
-
-  
-
-Exported as: `SbLibraryCardsGrid`
-
-  
+**Selector:** `sb-library-cards-grid`
+**Exported as:** `SbLibraryCardsGrid`
 
 ### Properties
-
-  
 
 |Name| Description |
 |--|--|
@@ -223,43 +144,22 @@ Exported as: `SbLibraryCardsGrid`
 |`Optional` @Input() viewMoreButtonText: string| custom text to show in place of view all button, if there are more number of cards than "maxCardCount" then a button needs to be displayed. `Default value is "View All"`|
 |`Optional` @Input('hover-template') gridTemplate: TemplateRef<any>;| When card has **hover data**, the template reference of the hover component needs to be injected|
 
-
-  
-
 ### Events
-
-  
 
 |Name| Description |
 |--|--|
 |@Output() viewMoreClick| Emits this event when view all button is clicked |
 |@Output() cardClick| Emits this event when card is clicked |
 
-  
-
 ## LibraryCardsStackComponent
-
-  
-
 Can be used in the library page for mobile consumption
-
-  
 
 `import { LibraryCardsStackComponent } form '@project-sunbird/common-consumption/layout/stackcards';`
 
-  
-
-Selector: `sb-library-cards-stack`
-
-  
-
-Exported as: `LibraryCardsStackComponent`
-
-  
+**Selector:** `sb-library-cards-stack`
+**Exported as:** `LibraryCardsStackComponent`
 
 ### Properties
-
-  
 
 |Name| Description |
 |--|--|
@@ -269,43 +169,22 @@ Exported as: `LibraryCardsStackComponent`
 |`Optional` @Input() viewMoreButtonText: string| custom text to show in place of view all button, if there are more number of cards than "maxCardCount" then a button needs to be displayed. `Default value is "View All"`|
 |`Optional` @Input() isOffline: boolean|Flag to handle offline scenarios `Default value is "False"`|
 
-
-  
-
 ### Events
-
-  
 
 |Name| Description |
 |--|--|
 |@Output() viewMoreClick| Emits this event when view all button is clicked |
 |@Output() cardClick| Emits this event when card is clicked |
 
-  
-
 ## LibraryFilters
-
-  
-
 Can be used in the library page for all consumption platforms.
-
-  
 
 `import { LibraryFiltersComponent } from '@project-sunbird/common-consumption/library-filters';`
 
-  
-
 **Selector**: `sb-library-filters`
-
-  
-
 **Exported as** : `LibraryFiltersComponent`
 
-  
-
 ### Properties
-
-  
 
 |Name| Description |
 |--|--|
@@ -316,94 +195,52 @@ Can be used in the library page for all consumption platforms.
 
 ### Events
 
-  
-
 |Name| Description |
 |--|--|
-@Output() selectedFilter | Emmits this event when user clicks on the filter item. `Example: event.data = {text: "english", selected: true, index: 0}`
-
-  
+@Output() selectedFilter | Emits this event when user clicks on the filter item. `Example: event.data = {text: "english", selected: true, index: 0}`
+@Output() selectedMimeType | Emits this event when user clicks on the mimeType filter item. `Example: event.data = {value: ["video/mp4", "video/x-youtube", "video/webm], text: "video", selected: true, type: "video", index: 1}`
 
 ## FAQ Component
-
-  
-
 Consumption Clients intend to use this component for FAQ in their apps.
 
-  
-
 `import { FaqComponent } from '@Sunbird/components/faq'`
-
-  
-
 **Selector**: `sb-faq`
-
-  
-
 **Exported as** : `FaqComponent`
 
-  
-
 ### Properties
-
-  
 
 |Name| Description |
 |--|--|
 |@Input() data: json| Please refer to faq Spec File for More details in the library |
 |@Input() appName: string| Name of your app
 
-  
-
 ### Events
 
-  
-
-|Name| Description |
-|--|--|
-|@Output() toggleGroupEvent | Emmits this event when user clicks on the faq accordion |
-|@Output() yesClickedEvent | Emmits this event when user clicks on the option yes inside faq |
-|@Output() noClickedEvent | Emmits this event when user clicks on the option yes inside faq |
-|@Output() submitClickedEvent | Emmits this event when user clicks on the option submit inside faq |
-
-  
+| Name                         | Description |
+|------------------------------|-------------|
+| @Output() toggleGroupEvent   | Emits this event when user clicks on the faq accordion |
+| @Output() yesClickedEvent    | Emits this event when user clicks on the option yes inside faq |
+| @Output() noClickedEvent     | Emits this event when user clicks on the option yes inside faq |
+| @Output() submitClickedEvent | Emits this event when user clicks on the option submit inside faq |
 
 ## Card hover Component
-
-  
-
 Card hover component is intended to be used with Library card component. On hover of the card, this component adds an overlay with actions to be shows passed as input to it.
-
-  
 
 `import { CardHoverComponent } from '@Sunbird/components/card-hover'`
 
-  
-
 **Selector**: `sb-card-hover`
-
-  
-
 **Exported as** : `CardHoverComponent`
 
-  
-
 ### Properties
-
-  
-
 |Name| Description |
 |--|--|
 |@Input() hoverData: json| Please refer example for More details in the library |
   
-
 ### Events
-
-  
 
 |Name| Description |
 |--|--|
-|@Output() hoverActionClick | Emmits this event when user clicks on the any action item, this will also have the card information on which the action is clicked  |
+|@Output() hoverActionClick | Emits this event when user clicks on the any action item, this will also have the card information on which the action is clicked  |
 
 Sample hover data : 
 ```json
@@ -412,7 +249,7 @@ Sample hover data :
         "actions": [
           {
             "type": "save",
-            "label": "Save to pendrive",
+            "label": "Save to pen-drive",
             "disabled": true
           },
           {

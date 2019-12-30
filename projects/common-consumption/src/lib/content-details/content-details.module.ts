@@ -8,8 +8,6 @@ import { CardModule } from '../card/card.module';
 import { TocChildItemComponent } from './toc-child-item/toc-child-item.component';
 import { PipesModule } from '../pipes-module/pipes-module.module';
 
-
-
 @NgModule({
   declarations: [
     PlayerActionsComponent,
