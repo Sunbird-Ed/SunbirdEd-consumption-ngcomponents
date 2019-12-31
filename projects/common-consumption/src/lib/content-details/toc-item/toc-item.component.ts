@@ -70,7 +70,7 @@ export class TocItemComponent implements OnInit {
   }
 
   private firstNonCollectionContent(content, filter?: string[]) {
-    if (!content.children || !content.children.length) {
+    if (content === undefined || (content && !content.children) || (content && content.children && !content.children.length)) {
       return undefined;
     }
 
