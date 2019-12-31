@@ -1,3 +1,27 @@
-<p>
-  player-actions works!
-</p>
+<div class="d-flex flex-w-wrap content-video__player__tools">
+  <div *ngFor="let item of actionButtons">
+    <button class="sb-btn sb-btn-link sb-btn-link-gray sb-btn-sm sb-btn-square"
+      [class.sb-btn-link-disabled]="item?.disabled" [disabled]="item?.disabled" (click)="onButtonClick($event, item)">
+      <i class="icon-svg icon-svg--sm icon-back">
+        <svg class="icon icon-svg--primary">
+          <use [attr.xlink:href]="item?.iconPath"></use>
+        </svg>
+      </i>
+      <span class="fxsmall">{{item?.label}}</span>
+    </button>
+  </div>
+
+  <div class="d-flex flex-ai-center content-video__player__screenpart" *ngIf="showFullscreen">
+    <div class="separator"></div>
+    <button class="sb-btn sb-btn-link sb-btn-link-gray sb-btn-sm sb-btn-square"
+      [class.sb-btn-link-disabled]="fullscreenButton?.disabled" [disabled]="fullscreenButton?.disabled"
+      (click)="onButtonClick($event, fullscreenButton)">
+      <i class="icon-svg icon-svg--sm icon-back">
+        <svg class="icon icon-svg--primary">
+          <use [attr.xlink:href]="fullscreenButton?.iconPath"></use>
+        </svg>
+      </i>
+      <span class="fxsmall">{{fullscreenButton?.label}}</span>
+    </button>
+  </div>
+</div>

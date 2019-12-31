@@ -23,7 +23,6 @@ import { PipesModule } from './pipes-module/pipes-module.module';
 
   ],
   exports: [
-    BrowserAnimationsModule,
     CardModule,
     ModalModule,
     LayoutModule,
@@ -32,7 +31,6 @@ import { PipesModule } from './pipes-module/pipes-module.module';
     FaqModule,
     AccordionModule,
     PipesModule
-
   ]
 })
 export class CommonConsumptionModule { }
