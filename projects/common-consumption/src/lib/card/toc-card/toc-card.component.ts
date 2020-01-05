@@ -11,13 +11,15 @@ export class TocCardComponent implements OnInit {
   @Input() activeContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
 
-
-  constructor(private renderer: Renderer2) { }
-
   ngOnInit() {
+    setTimeout(() => {
+      if (this.activeContent && this.activeContent.identifier === this.content.identifier) {
+        this.tocCardClick.emit({ event: {}, data: { ...this.content } });
+      }
+    });
   }
 
-  public async tocCardclick(event) {
-    this.tocCardClick.emit({event: event, data: {...this.content}});
+  public async onTocCardClick(event) {
+    this.tocCardClick.emit({ event: event, data: { ...this.content } });
   }
 }

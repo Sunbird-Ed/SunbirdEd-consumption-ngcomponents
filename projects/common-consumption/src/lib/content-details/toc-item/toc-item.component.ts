@@ -19,6 +19,8 @@ export class TocItemComponent implements OnInit {
   @Input() activeContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
 
+  get MimeTypeMasterData() { return MimeTypeMasterData; }
+
   private isSameMimeTypeInChildren = ((mimeTypesCount, activeMimeType) => {
     const contentMimeType = Object.keys(JSON.parse(mimeTypesCount));
     return Boolean(activeMimeType.filter(value => contentMimeType.includes(value)).length);
@@ -29,8 +31,9 @@ export class TocItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (!this.activeContent) {
-      this.activeContent = this.firstNonCollectionContent(this.tocData);
+    if (!this.activeContent && this.tocData && this.tocData.children) {
+      const flattenDeepContents = this.flattenDeep(this.tocData.children);
+      this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
     }
   }
 
@@ -69,20 +72,8 @@ export class TocItemComponent implements OnInit {
   public collapsedChangeHandler(event) {
   }
 
-  private firstNonCollectionContent(content, filter?: string[]) {
-    if (content === undefined || (content && !content.children) || (content && content.children && !content.children.length)) {
-      return undefined;
-    }
-
-    for (const c of content.children) {
-      if (c.mimeType === MimeTypeMasterData.COLLECTION) {
-        return this.firstNonCollectionContent(c, filter);
-      } else if (filter && !filter.includes(c.mimeType)) {
-        continue;
-      }
-
-      return c;
-    }
+  private firstNonCollectionContent(contents) {
+    return contents.find((content) => content.mimeType !== 'application/vnd.ekstep.content-collection');
   }
 
   private flattenDeep(contents) {
@@ -96,6 +87,10 @@ export class TocItemComponent implements OnInit {
         }
       }, []);
     }
+  }
+
+  isExpanded(index: number, item) {
+    return Boolean(index === 0 || item && item.mimeType !== MimeTypeMasterData.COLLECTION);
   }
 
 }
