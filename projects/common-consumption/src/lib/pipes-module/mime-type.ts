@@ -28,16 +28,23 @@ export class MimeTypePipe implements PipeTransform {
       if (item.mimeType !== MimeTypeMasterData.COLLECTION && !item.children) {
         return true;
       } else {
-         if (item.children && item.children.length) {
+        if (item.mimeType === MimeTypeMasterData.COLLECTION && item.children && !item.children.length) {
+          return false;
+        }
+        if (item.children && item.children.length) {
           return this.getFilteredItems(item.children, MimeTypeMasterData.ALL);
         } else {
+          console.log('here3');
           return true;
         }
       }
     }
-    if (item.mimeType !== MimeTypeMasterData.COLLECTION && !item.children) {
+    if (item.mimeType !== MimeTypeMasterData.COLLECTION && (!item.children || !item.children.length)) {
+      console.log('here', this.getFilteredItems([item], mimeTypes));
+
       return this.getFilteredItems([item], mimeTypes);
     }
+    console.log('here1', this.getFilteredItems(item.children, mimeTypes));
     return this.getFilteredItems(item.children, mimeTypes);
   }
 

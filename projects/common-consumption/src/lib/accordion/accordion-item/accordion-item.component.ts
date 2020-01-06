@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding, Host, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, Host, Output, EventEmitter } from '@angular/core';
 import { AccordionComponent } from '../accordion.component';
 import { takeUntil } from 'rxjs/operators';
 
@@ -39,7 +39,7 @@ export class AccordionItemComponent implements OnInit {
 
   @Output() collapsedChange = new EventEmitter<boolean>();
 
-  constructor(@Host() private accordion: AccordionComponent, private cd: ChangeDetectorRef) {
+  constructor(@Host() private accordion: AccordionComponent) {
   }
 
   ngOnInit() {

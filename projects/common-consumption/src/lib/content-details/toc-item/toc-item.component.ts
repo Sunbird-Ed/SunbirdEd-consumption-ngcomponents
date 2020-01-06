@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren
+  Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren, OnChanges
 } from '@angular/core';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
 
@@ -9,7 +9,7 @@ import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
   styleUrls: ['./toc-item.component.scss'],
   providers: [MimeTypePipe]
 })
-export class TocItemComponent implements OnInit {
+export class TocItemComponent implements OnInit, OnChanges {
   @Input() tocData;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
@@ -21,6 +21,8 @@ export class TocItemComponent implements OnInit {
 
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
+  flag = false;
+
   private isSameMimeTypeInChildren = ((mimeTypesCount, activeMimeType) => {
     const contentMimeType = Object.keys(JSON.parse(mimeTypesCount));
     return Boolean(activeMimeType.filter(value => contentMimeType.includes(value)).length);
@@ -31,11 +33,21 @@ export class TocItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("tocData", this.tocData);
     if (!this.activeContent && this.tocData && this.tocData.children) {
       const flattenDeepContents = this.flattenDeep(this.tocData.children);
       this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
     }
   }
+
+  ngOnChanges(changes) {
+    if (changes.activeMimeTypeFilter) {
+      this.flag = false;
+    }
+
+  }
+
+
 
   public filterChildren(content) {
     // Check for the ActiveMimeType
@@ -93,4 +105,27 @@ export class TocItemComponent implements OnInit {
     return Boolean(index === 0 || item && item.mimeType !== MimeTypeMasterData.COLLECTION);
   }
 
+
+  isShowBody(item, index) {
+
+    if (this.tocData && this.activeMimeTypeFilter.indexOf('all') > -1) {
+      this.flag = true;
+      return true;
+    } else if (item && item.mimeType === MimeTypeMasterData.COLLECTION) {
+      this.flag = true;
+      return true;
+    } else if (item && this.activeMimeTypeFilter.indexOf(item.mimeType) > -1) {
+      this.flag = true;
+      return true;
+    } else if (item && this.activeMimeTypeFilter.indexOf(item.mimeType) < 0 && this.tocData.children.length !== index + 1) {
+      return false;
+    } else if (item && this.activeMimeTypeFilter.indexOf(item.mimeType) < 0 && this.tocData.children.length === index + 1) {
+      if (this.flag) {
+        return false;
+      }
+      console.log('this.flag', this.flag);
+      this.flag = false;
+      return true;
+    }
+  }
 }

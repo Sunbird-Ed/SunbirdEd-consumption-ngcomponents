@@ -4,9 +4,9 @@
     <sb-accordion-header *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
       <span class="title">{{item?.name}}</span>
     </sb-accordion-header>
-    <sb-accordion-body>
-      <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter); else noContent" #chapterContainer>
-        <ng-container *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length">
+    <sb-accordion-body *ngIf="isShowBody(item, index)">
+      <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
+        <ng-container *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length" >
           <div class="child-content-padding">
             <sb-toc-card [content]="item" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
             </sb-toc-card>

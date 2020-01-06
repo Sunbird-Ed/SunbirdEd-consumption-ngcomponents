@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, Host, HostListener, HostBinding, Input } from '@angular/core';
+import { Component, Host, HostListener, HostBinding, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { AccordionItemComponent } from '../accordion-item/accordion-item.component';
 
@@ -19,7 +19,7 @@ import { AccordionItemComponent } from '../accordion-item/accordion-item.compone
     ]),
   ],
 })
-export class AccordionHeaderComponent implements OnInit {
+export class AccordionHeaderComponent {
   @Input() title = '';
 
   @HostBinding('class.accordion-item-header-collapsed')
@@ -49,12 +49,7 @@ export class AccordionHeaderComponent implements OnInit {
     }
   }
 
-  constructor(@Host() private accordionItem: AccordionItemComponent, private cd: ChangeDetectorRef) {
-
-  }
-
-  ngOnInit() {
-  }
+  constructor(@Host() private accordionItem: AccordionItemComponent) { }
 
 
 }
