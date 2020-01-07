@@ -21,7 +21,7 @@ export class TocItemComponent implements OnInit, OnChanges {
 
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
-  flag = false;
+  isMimeTypeFilterChanged = false;
 
   private isSameMimeTypeInChildren = ((mimeTypesCount, activeMimeType) => {
     const contentMimeType = Object.keys(JSON.parse(mimeTypesCount));
@@ -42,7 +42,7 @@ export class TocItemComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes) {
     if (changes.activeMimeTypeFilter) {
-      this.flag = false;
+      this.isMimeTypeFilterChanged = false;
     }
 
   }
@@ -108,24 +108,26 @@ export class TocItemComponent implements OnInit, OnChanges {
 
   isShowBody(item, index) {
 
-    if (this.tocData && this.activeMimeTypeFilter.indexOf('all') > -1) {
-      this.flag = true;
-      return true;
-    } else if (item && item.mimeType === MimeTypeMasterData.COLLECTION) {
-      this.flag = true;
-      return true;
-    } else if (item && this.activeMimeTypeFilter.indexOf(item.mimeType) > -1) {
-      this.flag = true;
-      return true;
-    } else if (item && this.activeMimeTypeFilter.indexOf(item.mimeType) < 0 && this.tocData.children.length !== index + 1) {
-      return false;
-    } else if (item && this.activeMimeTypeFilter.indexOf(item.mimeType) < 0 && this.tocData.children.length === index + 1) {
-      if (this.flag) {
+    if (item) {
+      const isShowAllMimeType = () => this.activeMimeTypeFilter.indexOf('all') > -1;
+      const isCollection = () => item.mimeType === MimeTypeMasterData.COLLECTION;
+      const isMathchesMimeType = () => this.activeMimeTypeFilter.indexOf(item.mimeType) > -1;
+      const isLastContent = () => this.tocData.children.length === index + 1;
+
+      if (this.tocData && isShowAllMimeType() || (isCollection() || isMathchesMimeType())) {
+        this.isMimeTypeFilterChanged = true;
+        return true;
+      } else if (this.activeMimeTypeFilter.indexOf(item.mimeType) < 0 && !isLastContent()) {
         return false;
+      } else if (this.activeMimeTypeFilter.indexOf(item.mimeType) < 0 && isLastContent()) {
+        if (this.isMimeTypeFilterChanged) {
+          return false;
+        }
+        this.isMimeTypeFilterChanged = false;
+        return true;
       }
-      console.log('this.flag', this.flag);
-      this.flag = false;
-      return true;
     }
+
+    return false;
   }
 }
