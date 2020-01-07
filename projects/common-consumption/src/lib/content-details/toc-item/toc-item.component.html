@@ -1,13 +1,13 @@
 <sb-accordion [multi]="false">
-  <sb-accordion-item *ngFor="let item of tocData?.children; let index = index" [expanded]="index===0"
+  <sb-accordion-item *ngFor="let item of tocData?.children; let index = index" [expanded]="isExpanded(index, item)"
     (collapsedChange)="collapsedChangeHandler($event);">
-    <sb-accordion-header>
+    <sb-accordion-header *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
       <span class="title">{{item?.name}}</span>
     </sb-accordion-header>
-    <sb-accordion-body>
-      <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter); else noContent" #chapterContainer>
-        <ng-container *ngIf="item?.mimeType !== 'application/vnd.ekstep.content-collection' && !item?.children?.length">
-          <div>
+    <sb-accordion-body *ngIf="isShowBody(item, index)">
+      <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
+        <ng-container *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length" >
+          <div class="child-content-padding">
             <sb-toc-card [content]="item" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
             </sb-toc-card>
           </div>

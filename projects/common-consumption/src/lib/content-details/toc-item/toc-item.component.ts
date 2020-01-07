@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren
+  Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren, OnChanges
 } from '@angular/core';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
 
@@ -9,7 +9,7 @@ import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
   styleUrls: ['./toc-item.component.scss'],
   providers: [MimeTypePipe]
 })
-export class TocItemComponent implements OnInit {
+export class TocItemComponent implements OnInit, OnChanges {
   @Input() tocData;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
@@ -18,6 +18,10 @@ export class TocItemComponent implements OnInit {
 
   @Input() activeContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
+
+  get MimeTypeMasterData() { return MimeTypeMasterData; }
+
+  isMimeTypeFilterChanged = false;
 
   private isSameMimeTypeInChildren = ((mimeTypesCount, activeMimeType) => {
     const contentMimeType = Object.keys(JSON.parse(mimeTypesCount));
@@ -29,10 +33,21 @@ export class TocItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (!this.activeContent) {
-      this.activeContent = this.firstNonCollectionContent(this.tocData);
+    console.log("tocData", this.tocData);
+    if (!this.activeContent && this.tocData && this.tocData.children) {
+      const flattenDeepContents = this.flattenDeep(this.tocData.children);
+      this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
     }
   }
+
+  ngOnChanges(changes) {
+    if (changes.activeMimeTypeFilter) {
+      this.isMimeTypeFilterChanged = false;
+    }
+
+  }
+
+
 
   public filterChildren(content) {
     // Check for the ActiveMimeType
@@ -69,20 +84,8 @@ export class TocItemComponent implements OnInit {
   public collapsedChangeHandler(event) {
   }
 
-  private firstNonCollectionContent(content, filter?: string[]) {
-    if (content === undefined || (content && !content.children) || (content && content.children && !content.children.length)) {
-      return undefined;
-    }
-
-    for (const c of content.children) {
-      if (c.mimeType === MimeTypeMasterData.COLLECTION) {
-        return this.firstNonCollectionContent(c, filter);
-      } else if (filter && !filter.includes(c.mimeType)) {
-        continue;
-      }
-
-      return c;
-    }
+  private firstNonCollectionContent(contents) {
+    return contents.find((content) => content.mimeType !== 'application/vnd.ekstep.content-collection');
   }
 
   private flattenDeep(contents) {
@@ -98,4 +101,33 @@ export class TocItemComponent implements OnInit {
     }
   }
 
+  isExpanded(index: number, item) {
+    return Boolean(index === 0 || item && item.mimeType !== MimeTypeMasterData.COLLECTION);
+  }
+
+
+  isShowBody(item, index) {
+
+    if (item) {
+      const isShowAllMimeType = () => this.activeMimeTypeFilter.indexOf('all') > -1;
+      const isCollection = () => item.mimeType === MimeTypeMasterData.COLLECTION;
+      const isMathchesMimeType = () => this.activeMimeTypeFilter.indexOf(item.mimeType) > -1;
+      const isLastContent = () => this.tocData.children.length === index + 1;
+
+      if (this.tocData && isShowAllMimeType() || (isCollection() || isMathchesMimeType())) {
+        this.isMimeTypeFilterChanged = true;
+        return true;
+      } else if (this.activeMimeTypeFilter.indexOf(item.mimeType) < 0 && !isLastContent()) {
+        return false;
+      } else if (this.activeMimeTypeFilter.indexOf(item.mimeType) < 0 && isLastContent()) {
+        if (this.isMimeTypeFilterChanged) {
+          return false;
+        }
+        this.isMimeTypeFilterChanged = false;
+        return true;
+      }
+    }
+
+    return false;
+  }
 }
