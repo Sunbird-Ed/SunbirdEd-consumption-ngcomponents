@@ -20,6 +20,8 @@ export class TocCardComponent implements OnInit {
   }
 
   public async onTocCardClick(event) {
-    this.tocCardClick.emit({ event: event, data: { ...this.content } });
+    if (this.activeContent && this.activeContent.identifier !== this.content.identifier) {
+      this.tocCardClick.emit({ event: event, data: { ...this.content } });
+    }
   }
 }
