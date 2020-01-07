@@ -18,6 +18,7 @@ export class TocItemComponent implements OnInit, OnChanges {
 
   @Input() activeContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
+  @Output() noContent: EventEmitter<any> = new EventEmitter();
 
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
@@ -33,10 +34,13 @@ export class TocItemComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    console.log("tocData", this.tocData);
     if (!this.activeContent && this.tocData && this.tocData.children) {
       const flattenDeepContents = this.flattenDeep(this.tocData.children);
       this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
+
+      if (!this.activeContent) {
+        this.noContent.emit({ message: 'No Content Available' });
+      }
     }
   }
 
