@@ -82,7 +82,11 @@ export class TocItemComponent implements OnInit, OnChanges {
   }
 
   public onTocCardClick(event) {
-    this.tocCardClick.emit({ ...event });
+    const rollup = this.getRollup(this.tocData, event.data.identifier);
+    if (rollup.length) {
+      rollup.pop();
+    }
+    this.tocCardClick.emit({ ...event, rollup });
   }
 
   public collapsedChangeHandler(event) {
@@ -133,5 +137,31 @@ export class TocItemComponent implements OnInit, OnChanges {
     }
 
     return false;
+  }
+
+  getRollup(tree, identifier) {
+    let rollup = [tree.identifier];
+    if (tree.identifier === identifier) {
+      return rollup;
+    }
+    if (!tree.children || !tree.children.length) {
+      return [];
+    }
+    let notDone = true;
+    let childRollup: any;
+    let index = 0;
+    while (notDone && tree.children[index]) {
+      childRollup = this.getRollup(tree.children[index], identifier);
+      if (childRollup && childRollup.length) {
+        notDone = false;
+      }
+      index++;
+    }
+    if (childRollup && childRollup.length) {
+      rollup.push(...childRollup);
+      return rollup;
+    } else {
+      return [];
+    }
   }
 }
