@@ -5,14 +5,14 @@
         {{ faq?.topic}}
         <span>
           <i class="icon-svg icon-svg--xs" *ngIf="!isGroupShown(i)">
-              <svg class="icon icon-svg--primary">
-                <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-down"></use>
-              </svg>
+            <svg class="icon icon-svg--primary">
+              <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-down"></use>
+            </svg>
           </i>
           <i class="icon-svg icon-svg--xs" *ngIf="isGroupShown(i)">
-              <svg class="icon icon-svg--primary">
-                <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-up"></use>
-              </svg>
+            <svg class="icon icon-svg--primary">
+              <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-up"></use>
+            </svg>
           </i>
         </span>
         <!--<img class="btn-arrow" src="../../assets/faq/resources/images/Arrow.png" *ngIf="!isGroupShown(i)">
@@ -24,19 +24,24 @@
     <div class="panel-body">
       <p class="panelText" [innerHtml]="faq.description"></p>
     </div>
-    <div class="panel-interact"  *ngIf="!isNoClicked && !isYesClicked">
+    <div class="panel-interact" *ngIf="!isNoClicked && !isYesClicked">
       <p class="panelText">{{data?.constants?.helpMsg}} </p>
-      <button type="button" class="btn" id="btn-no" (click)="noClicked(i,$event)">{{data?.constants?.noMsg}}</button>
-      <button type="button" class="btn yesBtn"  id="btn-yes" (click)="yesClicked(i,$event)">{{data?.constants?.yesMsg}}</button>
+      <button type="button" class="sb-btn sb-btn-normal sb-btn-outline-primary" id="btn-no"
+        (click)="noClicked(i,$event)">{{data?.constants?.noMsg}}</button>
+      <button type="button" class="sb-btn sb-btn-normal sb-btn-success" id="btn-yes"
+        (click)="yesClicked(i,$event)">{{data?.constants?.yesMsg}}</button>
     </div>
-    <div class="panel-interact" *ngIf="isYesClicked || isSubmitted"> <p class="yes-clicked"> {{data?.constants?.thanksMsg}}</p></div>
+    <div class="panel-interact" *ngIf="isYesClicked || isSubmitted">
+      <p class="yes-clicked"> {{data?.constants?.thanksMsg}}</p>
+    </div>
     <div class="panel-info" *ngIf="!isSubmitted && isNoClicked">
       <h6>{{data?.constants?.sorryMsg}}</h6>
       <p>{{data?.constants?.knowMoreMsg}}</p>
       <form action="#" id="know-more-form" class="know-more-form" *ngIf="!isSubmitted">
-        <textarea type="text" name="moreInfo" placeholder="{{constants?.typeHere}}" class="input-text"
-          maxlength="1000" [(ngModel)]="textValue"></textarea>
-        <input type="submit" value="{{constants?.submitButton}}" class="submit-button" (click)="submitClicked(textValue,i,$event)">
+        <textarea type="text" name="moreInfo" placeholder="{{constants?.typeHere}}" class="input-text" maxlength="1000"
+          [(ngModel)]="textValue"></textarea>
+        <input type="submit" value="{{constants?.submitButton}}" class="submit-button"
+          (click)="submitClicked(textValue,i,$event)">
       </form>
       <p class="no-clicked" hidden="true" *ngIf="isSubmitted"> {{data?.constants?.thanksMsg}} </p>
     </div>

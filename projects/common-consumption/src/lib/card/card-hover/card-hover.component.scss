@@ -1,59 +1,22 @@
-.icon-svg {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    opacity: 1;
-    svg.icon {
-      width: 100%;
-      height: inherit;
-    }
-    //sizes
-    &--xs {
-      width: var(--icon-svg-xs);
-      height: var(--icon-svg-xs);
-    }
-    &--sm {
-      width: var(--icon-svg-sm);
-      height: var(--icon-svg-sm);
-    }
-    &--md {
-      width: var(--icon-svg-md);
-      height: var(--icon-svg-md);
-    }
-    &--lg {
-      width: var(--icon-svg-lg);
-      height: var(--icon-svg-lg);
-    }
-    &--xl {
-      width: var(--icon-svg-xl);
-      height: var(--icon-svg-xl);
-    }
-
-    //colors
-    &--white {
-      fill: var(--white);
-    }
-    &--primary {
-      fill: var(--primary-color);
-    }
-    &--secondary {
-      fill: var(--secondary-color);
-    }
-    &--tertiary {
-      fill: var(--tertiary-color);
-    }
-    &--red {
-      fill: var(--red-400);
-    }
-    &--gray {
-      fill: var(--gray-800);
-    }
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+.sb-btn-grow {
+  background: none;
+  border:0px solid transparent;
+  font-size:calculateRem(12px);
+  color: var(--white);
+  cursor: pointer;
+  outline:0px !important;
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
   }
-  
+  transition: all .2s ease-in-out;
+  &:hover:not([disabled]) {
+    background: none;
+    transform: scale(1.15);
+  }
+}
+
 
 //   .child-content {
 //       width: 100%;

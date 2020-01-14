@@ -5,7 +5,6 @@
     flex-wrap: wrap;
     flex-direction: column;
   }
-
   .header {
     display: flex;
     flex-direction: row;
@@ -17,38 +16,35 @@
       text-overflow: ellipsis;
       overflow: hidden;
       flex: 1;
-      height: ($base-block-space * 3);
+      height: calculateRem(24px);
       color: var(--primary-color);
-      font-size: 16px;
+      font-size: $h5-font-size;
       font-weight: bold;
       text-transform: capitalize;
-      line-height: ($base-block-space * 3);
+      line-height: calculateRem(24px);
       display: flex;
       align-items: center;
-
       i {
-        @include margin(null, 8px, null, null);
+        @include margin(null, calculateRem(8px), null, null);
         vertical-align: middle;
-        height: 17px;
-        width: 14px;
-        top: -2px;
+        height: calculateRem(17px);
+        width: calculateRem(14px);
+        top: -calculateRem(2px);
       }
-
       .badge {
         display: inline-block;
         background: var(--gray-100);
-        color: black;
-        font-size: 16px;
-        line-height: 24px;
+        color:var(--black);
+        font-size: $h5-font-size;
+        line-height: calculateRem(24px);
         text-align: center;
-        padding: 1px 8px;
-        border-radius: 4px;
-        height: 24px;
-        @include margin(null, null, null, 8px);
+        padding: calculateRem(1px) calculateRem(8px);
+        border-radius: calculateRem(4px);
+        height: calculateRem(24px);
+        @include margin(null, null, null, calculateRem(8px));
       }
     }
   }
-
   .cards-container {
     display: flex;
     flex-direction: row;
@@ -56,13 +52,13 @@
     // justify-content: space-between;
     margin: 0 0px;
     .item {
-      @include padding(0, 16px, 0, 0);
+      @include padding(0, calculateRem(16px), 0, 0);
       box-sizing: border-box;
-      margin-bottom: 24px;
+      margin-bottom: calculateRem(24px);
       @media (max-width: 640px) {
         flex: 0 100% !important;
         max-width: 100% !important;
-        margin-bottom: 15px;
+        margin-bottom: calculateRem(15px);
       }
       &.show-2 {
         flex: 0 0 50%;
@@ -94,60 +90,5 @@
       }
     }
   }
-
-  .icon-svg {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    opacity: 1;
-    svg.icon {
-      width: 100%;
-      height: inherit;
-    }
-    //sizes
-    &--xs {
-      width: var(--icon-svg-xs);
-      height: var(--icon-svg-xs);
-    }
-    &--sm {
-      width: var(--icon-svg-sm);
-      height: var(--icon-svg-sm);
-    }
-    &--md {
-      width: var(--icon-svg-md);
-      height: var(--icon-svg-md);
-    }
-    &--lg {
-      width: var(--icon-svg-lg);
-      height: var(--icon-svg-lg);
-    }
-    &--xl {
-      width: var(--icon-svg-xl);
-      height: var(--icon-svg-xl);
-    }
-
-    //colors
-    &--white {
-      fill: var(--white);
-    }
-    &--primary {
-      fill: var(--primary-color);
-    }
-    &--secondary {
-      fill: var(--secondary-color);
-    }
-    &--tertiary {
-      fill: var(--tertiary-color);
-    }
-    &--red {
-      fill: var(--red-400);
-    }
-    &--gray {
-      fill: var(--gray-800);
-    }
-  }
+  
 }
