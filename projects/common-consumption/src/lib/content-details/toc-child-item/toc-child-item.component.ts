@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {MimeTypePipe} from '../../pipes-module/mime-type';
+import { MimeTypePipe } from '../../pipes-module/mime-type';
 
 @Component({
   selector: 'sb-toc-child-item',
@@ -33,7 +33,11 @@ export class TocChildItemComponent implements OnInit {
   }
 
   tocCardClickHandler(event) {
-    this.tocCardClick.emit({...event});
+    this.tocCardClick.emit({ ...event });
+  }
+
+  createUniqueId(tocData, item) {
+    item['sbUniqueIdentifier'] = tocData.identifier + '_' + item.identifier;
   }
 
 }

@@ -82,7 +82,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   }
 
   public onTocCardClick(event) {
-    const rollup = this.getRollup(this.tocData, event.data.identifier);
+    const rollup = this.getRollup(this.tocData, event.data.sbUniqueIdentifier);
     if (rollup.length) {
       rollup.pop();
     }
@@ -141,7 +141,7 @@ export class TocItemComponent implements OnInit, OnChanges {
 
   getRollup(tree, identifier) {
     let rollup = [tree.identifier];
-    if (tree.identifier === identifier) {
+    if (tree.sbUniqueIdentifier === identifier) {
       return rollup;
     }
     if (!tree.children || !tree.children.length) {
@@ -164,4 +164,9 @@ export class TocItemComponent implements OnInit, OnChanges {
       return [];
     }
   }
+
+  createUniqueId(tocData, item) {
+    item['sbUniqueIdentifier'] = tocData.identifier + '_' + item.identifier;
+  }
+
 }

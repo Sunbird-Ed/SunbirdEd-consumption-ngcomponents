@@ -1,5 +1,5 @@
-<div class="sbchapter__item " (click)="onTocCardClick($event)" [ngClass]="{'sbchapter__item--active': activeContent?.identifier=== content?.identifier}">
+<div class="sbchapter__item " (click)="onTocCardClick($event)" [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier=== content?.sbUniqueIdentifier}">
   <h4 class="sbchapter__item__title">{{content?.name}}</h4>
-  <div class="sbchapter__img"><img [src]="content?.appIcon" />
+  <div class="sbchapter__img"><img [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" #img />
   </div>
 </div>

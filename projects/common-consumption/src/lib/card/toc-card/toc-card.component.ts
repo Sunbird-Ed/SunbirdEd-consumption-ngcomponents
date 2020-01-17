@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output, QueryList, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import {COMMON_CONSUMPTION} from '../../common-consumption.constants';
 
 @Component({
   selector: 'sb-toc-card',
@@ -10,17 +11,18 @@ export class TocCardComponent implements OnInit {
   @Input() content;
   @Input() activeContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
+  fallbackImg = COMMON_CONSUMPTION.CONSTANTS.TOC_CARD_FALLBACK_IMG ;
 
   ngOnInit() {
     setTimeout(() => {
-      if (this.activeContent && this.activeContent.identifier === this.content.identifier) {
-        this.tocCardClick.emit({ event: {}, data: { ...this.content } });
+      if (this.activeContent && this.activeContent.sbUniqueIdentifier === this.content.sbUniqueIdentifier) {
+        this.tocCardClick.emit({ event: {}, data: { ...this.content }});
       }
     });
   }
 
   public async onTocCardClick(event) {
-    if (this.activeContent && this.activeContent.identifier !== this.content.identifier) {
+    if (this.activeContent && this.activeContent.sbUniqueIdentifier !== this.content.sbUniqueIdentifier) {
       this.tocCardClick.emit({ event: event, data: { ...this.content } });
     }
   }
