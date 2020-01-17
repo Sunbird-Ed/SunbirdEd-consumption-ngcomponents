@@ -1,5 +1,5 @@
 <!-- card component -->
-<div class="sb-card sb-card--resource"
+<div class="sb-card"
   [ngClass]="{'sb-card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)">
   <div class="sb-card__main-area">
@@ -15,11 +15,11 @@
     </div>
     <!-- card mobile view details -->
     <div class="sb-card__info">
-      <h4 class="sb-card__title sb__ellipsis sb__ellipsis--two">{{content?.name}}</h4>
+      <h4 class="sb-card__title sb-card__title--ellipsis" title="{{content?.name}}">{{content?.name}}</h4>
       <div class="sb-card__meta1" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-        <span class="sb__ellipsis">{{content?.subject}}</span>
+        <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
         <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
-        <span class="sb__ellipsis">{{content?.gradeLevel}}</span>
+        <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
       </div>
     </div>
   </div>

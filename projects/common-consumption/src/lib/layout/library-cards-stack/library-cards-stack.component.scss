@@ -6,38 +6,35 @@
   .header {
     display: flex;
     flex-direction: row;
-    padding: 8px 0;
+    padding: calculateRem(8px) 0;
     // border-bottom: 1px solid var(--gray-0);
-    margin-bottom: 8px;
+    margin-bottom: calculateRem(8px);
     .title {
-      font-size: 16px;
+      font-size: $h5-font-size;
       font-weight: bold;
       color: $primary-color;
       text-overflow: ellipsis;
       text-transform: capitalize;
       overflow: hidden;
-      // padding: 0 8px;
+      // padding: 0 calculateRem(8px);
       flex: 1;
       display: flex;
       align-items: center;
-
       i {
-        @include margin(null, 8px, null, null);
+        @include margin(null, calculateRem(8px), null, null);
         vertical-align: middle;
-        height: 17px;
-        width: 14px;
-        top: -2px;
+        height: calculateRem(17px);
+        width: calculateRem(14px);
+        top: -calculateRem(2px);
       }
     }
   }
-
   .body {
-    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 calculateRem(2px) calculateRem(7px) 0 rgba(0, 0, 0, 0.16);
   }
-
   .stack-btn {
     background-color: #edf4f9;
-    padding: 16px;
+    padding: calculateRem(16px);
     color: var(--primary-color);
     font-weight: bold;
     border-style: none;
@@ -47,59 +44,5 @@
     width: 100%;
   }
 
-  .icon-svg {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    opacity: 1;
-    svg.icon {
-      width: 100%;
-      height: inherit;
-    }
-    //sizes
-    &--xs {
-      width: var(--icon-svg-xs);
-      height: var(--icon-svg-xs);
-    }
-    &--sm {
-      width: var(--icon-svg-sm);
-      height: var(--icon-svg-sm);
-    }
-    &--md {
-      width: var(--icon-svg-md);
-      height: var(--icon-svg-md);
-    }
-    &--lg {
-      width: var(--icon-svg-lg);
-      height: var(--icon-svg-lg);
-    }
-    &--xl {
-      width: var(--icon-svg-xl);
-      height: var(--icon-svg-xl);
-    }
-
-    //colors
-    &--white {
-      fill: var(--white);
-    }
-    &--primary {
-      fill: var(--primary-color);
-    }
-    &--secondary {
-      fill: var(--secondary-color);
-    }
-    &--tertiary {
-      fill: var(--tertiary-color);
-    }
-    &--red {
-      fill: var(--red-400);
-    }
-    &--gray {
-      fill: var(--gray-800);
-    }
-  }
+  
 }

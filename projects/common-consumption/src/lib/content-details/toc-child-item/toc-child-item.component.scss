@@ -1,4 +1,6 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+
 .sbchapter__title {
-    font-size: 12px;
+    font-size: calculateRem(12px);
 }
 

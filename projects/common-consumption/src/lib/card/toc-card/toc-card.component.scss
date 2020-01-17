@@ -1,19 +1,20 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 .sbchapter {
     &__item {
         background: var(--white);
-        border: 1px solid #ddd;
-        box-shadow: 0 3px 4px 0 rgba(2, 79, 157, 0.1);
-        border: 0.5px solid rgba(35, 97, 255, 0.5);
+        border: calculateRem(1px) solid #ddd;
+        box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(2, 79, 157, 0.1);
+        border: calculateRem(0.5px) solid rgba(35, 97, 255, 0.5);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 8px;
-        padding: var(--base-block-space);
+        margin-bottom: calculateRem(8px);
+        padding: calculateRem(8px);
         cursor: pointer;
-        min-height: 56px;
+        min-height: calculateRem(56px);
         transition: all .2s ease-in;
         &__title {
-          font-size: 12px;
+          font-size: $font-size-sm;
           color: var(--primary-400);
           margin: 0px;
           padding: 0px;
@@ -21,9 +22,9 @@
         }
         
         .sbchapter__img {
-            width: 40px;
-            height: 40px;
-            flex: 0 0 40px;
+            width: calculateRem(40px);
+            height: calculateRem(40px);
+            flex: 0 0 calculateRem(40px);
             display: flex;
             align-items: center;
             background: #ddd;
@@ -34,7 +35,7 @@
             }
         }
         &:last-child {
-            margin-bottom: 8px;
+            margin-bottom: calculateRem(8px);
         }
         &:hover,
         &--active {
