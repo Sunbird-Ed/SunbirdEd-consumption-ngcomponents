@@ -34,7 +34,19 @@ export class TocItemComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    if (!this.activeContent && this.tocData && this.tocData.children) {
+    this.setActiveContent();
+  }
+
+  ngOnChanges(changes) {
+    if (changes.activeMimeTypeFilter) {
+      this.isMimeTypeFilterChanged = false;
+    } else if (changes.tocData) {
+      this.setActiveContent();
+    }
+  }
+
+  setActiveContent() {
+    if (this.tocData && this.tocData.children) {
       const flattenDeepContents = this.flattenDeep(this.tocData.children);
       this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
 
@@ -43,15 +55,6 @@ export class TocItemComponent implements OnInit, OnChanges {
       }
     }
   }
-
-  ngOnChanges(changes) {
-    if (changes.activeMimeTypeFilter) {
-      this.isMimeTypeFilterChanged = false;
-    }
-
-  }
-
-
 
   public filterChildren(content) {
     // Check for the ActiveMimeType
@@ -113,9 +116,7 @@ export class TocItemComponent implements OnInit, OnChanges {
     return Boolean(index === 0 || item && item.mimeType !== MimeTypeMasterData.COLLECTION);
   }
 
-
   isShowBody(item, index) {
-
     if (item) {
       const isShowAllMimeType = () => this.activeMimeTypeFilter.indexOf('all') > -1;
       const isCollection = () => item.mimeType === MimeTypeMasterData.COLLECTION;
