@@ -23,7 +23,7 @@ It receives toc data and mimeType filter too. And emits card click event.
 | Name     |  Description  |
 |----------|:-------------:|
 | @Input() tocData |  Textbook or collection object |
-| @Input() activeMimeTypeFilter: Array<<string>string> |    MimeType filter - accepts following mimeTypes *`Example: ALL, DOCS, INTERACTION, VIDEO and COLLECTION`* |
+| @Input() activeMimeTypeFilter: Array<<string>string> |    MimeType filter - accepts following mimeTypes *`Example: ALL, DOCS, INTERACTIVE, VIDEO and COLLECTION`* |
 | @Input() noContentMessage: string | Message to show when there is no content available. Default is in English as  *`No content available`* |
 | @Input() activeContent: IContent | Content data for the selected card. 
 
