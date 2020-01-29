@@ -1,10 +1,10 @@
 <!-- card component -->
-<div class="sb-card"
-  [ngClass]="{'sb-card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
+<div class="sb--card"
+  [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)">
-  <div class="sb-card__main-area">
+  <div class="sb--card__main-area">
     <!-- card img -->
-    <div class="sb-card__img">
+    <div class="sb--card__img">
       <!-- <div class="img-container">
         <img *ngIf="!isOffline" [src]="content?.appIcon || defaultImg" alt="">
         <img *ngIf="isOffline" [src]="offlineImg || defaultImg" alt="">
@@ -14,9 +14,9 @@
       </div>
     </div>
     <!-- card mobile view details -->
-    <div class="sb-card__info">
-      <h4 class="sb-card__title sb-card__title--ellipsis" title="{{content?.name}}">{{content?.name}}</h4>
-      <div class="sb-card__meta1" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
+    <div class="sb--card__info">
+      <h4 class="sb--card__title sb--card__title--ellipsis" title="{{content?.name}}">{{content?.name}}</h4>
+      <div class="sb--card__meta1" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
         <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
         <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
         <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
@@ -26,18 +26,18 @@
 
   <!-- content for only desktop -->
   <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK">
-    <div class="sb-card__moreinfo">
+    <div class="sb--card__moreinfo">
       <!-- other meta info Medium, Organization etc -->
-      <div class="sb-card__meta2">
-        <div class="sb-card__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
+      <div class="sb--card__meta2">
+        <div class="sb--card__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
             {{content.medium}}</span></div>
-        <div class="sb-card__org sb__ellipsis" *ngIf="content?.organisation">{{content.organisation}}</div>
+        <div class="sb--card__org sb__ellipsis" *ngIf="content?.organisation">{{content.organisation}}</div>
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
-      <div class="sb-card__tags">
-        <span class="sb-card__badge" *ngIf="content?.badgeAssertions"><img
+      <div class="sb--card__tags">
+        <span class="sb--card__badge" *ngIf="content?.badgeAssertions"><img
             [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
-        <span class="sb-card__type" *ngIf="content?.resourceType">{{content.resourceType}}</span>
+        <span class="sb--card__type" *ngIf="content?.resourceType">{{content.resourceType}}</span>
       </div>
     </div>
   </div>
@@ -45,9 +45,9 @@
   <!-- Qr code card -->
   <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
     <!-- Section area if not available it will be hidden -->
-    <div class="sb-card__moreinfo" *ngIf="section">
-      <div class="sb-card__meta2">
-        <div class="sb-card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="section">
+    <div class="sb--card__moreinfo" *ngIf="section">
+      <div class="sb--card__meta2">
+        <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="section">
           <span class="label">{{moreInfoLabel}}: </span>
           <span class="value">{{section}}</span>
         </div>
