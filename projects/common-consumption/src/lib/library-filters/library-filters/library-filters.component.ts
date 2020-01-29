@@ -24,7 +24,7 @@ export class LibraryFiltersComponent implements OnChanges {
           name: 'docs', value: ['application/pdf', 'application/epub', 'application/msword']
         },
         {
-          name: 'interaction',
+          name: 'interactive',
           value: ['application/vnd.ekstep.ecml-archive', 'application/vnd.ekstep.h5p-archive', 'application/vnd.ekstep.html-archive'],
         },
         // { name: 'AUDIOS', value: MimeType.AUDIO, iconNormal: './assets/imgs/audio.svg', iconActive: './assets/imgs/audio-active.svg'},
@@ -49,7 +49,7 @@ export class LibraryFiltersComponent implements OnChanges {
                             break;
                         case TocMimeTypes.DOCS: type = TocMimeTypes.DOCS;
                             break;
-                        case TocMimeTypes.INTERACTION: type = TocMimeTypes.INTERACTION;
+                        case TocMimeTypes.INTERACTIVE: type = TocMimeTypes.INTERACTIVE;
                             break;
                         case TocMimeTypes.VIDEO: type = TocMimeTypes.VIDEO;
                             break;

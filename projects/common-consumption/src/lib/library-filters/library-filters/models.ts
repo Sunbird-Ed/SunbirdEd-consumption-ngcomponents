@@ -8,7 +8,7 @@ export enum TocMimeTypes {
     COLLECTION= 'collection',
     VIDEO= 'video',
     AUDIO= 'audio',
-    INTERACTION= 'interaction',
+    INTERACTIVE= 'interactive',
     DOCS= 'docs',
     ALL= 'all'
 }
