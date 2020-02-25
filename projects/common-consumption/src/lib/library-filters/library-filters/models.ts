@@ -16,6 +16,7 @@ export enum TocMimeTypes {
 export interface IFilterItem {
     text: string;
     selected: boolean;
+    type?: string;
 }
 
 export interface ISelectedFilter {
@@ -24,5 +25,7 @@ export interface ISelectedFilter {
         index: number;
         selected: boolean;
         text: string;
+        type?: string;
     };
 }
+

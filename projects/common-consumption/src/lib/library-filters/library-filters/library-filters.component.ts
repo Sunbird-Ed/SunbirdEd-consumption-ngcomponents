@@ -10,6 +10,7 @@ import { LibraryFiltersLayout, IFilterItem, ISelectedFilter, TocMimeTypes } from
 export class LibraryFiltersComponent implements OnChanges {
 
     @Input() list: string[];
+    @Input() tocList;
     @Input() selectedItems: number[];
     @Input() layout: LibraryFiltersLayout;
     @Output() selectedFilter: EventEmitter<ISelectedFilter> = new EventEmitter<ISelectedFilter>();
@@ -37,10 +38,10 @@ export class LibraryFiltersComponent implements OnChanges {
 
     ngOnChanges(changes) {
         if (this.layout === LibraryFiltersLayout.ROUND_WITH_ICONS) {
-            if (this.list) {
-                this.filterList = this.list.map((item, index) => {
+            if (this.tocList) {
+                this.filterList = this.tocList.map((item, index) => {
                     let type = '';
-                    switch (item) {
+                    switch (item.value) {
                         case TocMimeTypes.ALL: type = TocMimeTypes.ALL;
                             break;
                         case TocMimeTypes.AUDIO: type = TocMimeTypes.AUDIO;
@@ -56,11 +57,11 @@ export class LibraryFiltersComponent implements OnChanges {
                     }
 
                     if (this.selectedItems && this.selectedItems.includes(index)) {
-                        return ({ text: item, selected: true, type: type });
+                        return ({ text: item.text, selected: true, type: type });
                     } else if (!this.selectedItems && item === TocMimeTypes.ALL) {
-                        return ({ text: item, selected: true, type: type });
+                        return ({ text: item.text, selected: true, type: type });
                     } else {
-                        return ({ text: item, selected: false, type: type });
+                        return ({ text: item.text, selected: false, type: type });
                     }
                 });
             }
@@ -107,7 +108,7 @@ export class LibraryFiltersComponent implements OnChanges {
         try {
             this.filterList[index].selected = true;
             this.TocMimeTypesMaster.map(mimeType => {
-                if (mimeType.name === this.filterList[index].text) {
+                if (mimeType.name === this.filterList[index].type) {
                     outputType = {
                         event: event,
                         data: {
