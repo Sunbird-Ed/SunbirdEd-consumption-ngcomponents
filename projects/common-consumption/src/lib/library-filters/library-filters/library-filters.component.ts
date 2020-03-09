@@ -10,6 +10,7 @@ import { LibraryFiltersLayout, IFilterItem, ISelectedFilter, TocMimeTypes } from
 export class LibraryFiltersComponent implements OnChanges {
 
     @Input() list: string[];
+    @Input() tocList;
     @Input() selectedItems: number[];
     @Input() layout: LibraryFiltersLayout;
     @Output() selectedFilter: EventEmitter<ISelectedFilter> = new EventEmitter<ISelectedFilter>();
@@ -24,7 +25,7 @@ export class LibraryFiltersComponent implements OnChanges {
           name: 'docs', value: ['application/pdf', 'application/epub', 'application/msword']
         },
         {
-          name: 'interaction',
+          name: 'interactive',
           value: ['application/vnd.ekstep.ecml-archive', 'application/vnd.ekstep.h5p-archive', 'application/vnd.ekstep.html-archive'],
         },
         // { name: 'AUDIOS', value: MimeType.AUDIO, iconNormal: './assets/imgs/audio.svg', iconActive: './assets/imgs/audio-active.svg'},
@@ -37,10 +38,10 @@ export class LibraryFiltersComponent implements OnChanges {
 
     ngOnChanges(changes) {
         if (this.layout === LibraryFiltersLayout.ROUND_WITH_ICONS) {
-            if (this.list) {
-                this.filterList = this.list.map((item, index) => {
+            if (this.tocList) {
+                this.filterList = this.tocList.map((item, index) => {
                     let type = '';
-                    switch (item) {
+                    switch (item.value) {
                         case TocMimeTypes.ALL: type = TocMimeTypes.ALL;
                             break;
                         case TocMimeTypes.AUDIO: type = TocMimeTypes.AUDIO;
@@ -49,18 +50,18 @@ export class LibraryFiltersComponent implements OnChanges {
                             break;
                         case TocMimeTypes.DOCS: type = TocMimeTypes.DOCS;
                             break;
-                        case TocMimeTypes.INTERACTION: type = TocMimeTypes.INTERACTION;
+                        case TocMimeTypes.INTERACTIVE: type = TocMimeTypes.INTERACTIVE;
                             break;
                         case TocMimeTypes.VIDEO: type = TocMimeTypes.VIDEO;
                             break;
                     }
 
                     if (this.selectedItems && this.selectedItems.includes(index)) {
-                        return ({ text: item, selected: true, type: type });
+                        return ({ text: item.text, selected: true, type: type });
                     } else if (!this.selectedItems && item === TocMimeTypes.ALL) {
-                        return ({ text: item, selected: true, type: type });
+                        return ({ text: item.text, selected: true, type: type });
                     } else {
-                        return ({ text: item, selected: false, type: type });
+                        return ({ text: item.text, selected: false, type: type });
                     }
                 });
             }
@@ -107,7 +108,7 @@ export class LibraryFiltersComponent implements OnChanges {
         try {
             this.filterList[index].selected = true;
             this.TocMimeTypesMaster.map(mimeType => {
-                if (mimeType.name === this.filterList[index].text) {
+                if (mimeType.name === this.filterList[index].type) {
                     outputType = {
                         event: event,
                         data: {

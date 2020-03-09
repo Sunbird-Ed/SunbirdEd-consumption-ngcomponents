@@ -3,7 +3,7 @@
 /* sb card component css */
 :host {
   // sb card css
-  .sb-card {
+  .sb--card {
     width: 100%;
     border-radius: 0px;
     background-color: var(--white);
@@ -11,8 +11,8 @@
     flex-direction: column;
     cursor: pointer;
     position: relative;
-    /*border-bottom: 1px solid $gray-0;
-    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);*/
+    border-bottom: 1px solid $gray-0;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);
     margin-top: 0px;
     border: 0px;
     contain: content;
@@ -204,7 +204,7 @@
     }
 
     &--recently-viewed {
-      .sb-card__img {
+      .sb--card__img {
         height: calculateRem(88px);
         width: calculateRem(88px);
         flex: 0 0 calculateRem(88px);
@@ -218,13 +218,15 @@
           width: calculateRem(88px);
         }
       }
-      .sb-card__info {
+      .sb--card__info {
         padding: calculateRem(8px);
         flex:1;
       }
+      // @include padding(0);
+      // @include margin(0);
     }
     &.offline {
-      .sb-card__img {
+      .sb--card__img {
         .img-container {
           display: flex;
           align-items: center;
@@ -237,8 +239,8 @@
           }
         }
       }
-      .sb-card__info,
-      .sb-card__moreinfo {
+      .sb--card__info,
+      .sb--card__moreinfo {
         opacity: 0.5;
       }
     }
@@ -308,7 +310,7 @@
       }
     }
   }
-  .sb-card__progressbar {
+  .sb--card__progressbar {
     height: calculateRem(4px);
     position: absolute;
     margin: 0px 0 0px;
@@ -318,7 +320,7 @@
     width: 100%;
     bottom: 0px;
   }
-  .sb-card__progressbar > span {
+  .sb--card__progressbar > span {
     display: block;
     height: 100%;
     background-color: rgb(43, 194, 83);
@@ -332,7 +334,7 @@
     position: relative;
     overflow: hidden;
   }
-  .sb-card__progressbar > span:after,
+  .sb--card__progressbar > span:after,
   .animate > span > span {
     content: "";
     position: absolute;

@@ -1,4 +1,5 @@
 
+  
 ## LibraryFilters
 Can be used in the library page for all consumption platforms.
 
@@ -12,7 +13,7 @@ Can be used in the library page for all consumption platforms.
 |Name| Description |
 |--|--|
 |@Input() list: Array<<string>string>| Array of strings |
-|@Input() layout: LibraryFiltersLayout| import the interface **LibraryFiltersLayout**, to know different possible values of filter types.*`Example: round, square`* OR *`Example: LibraryFiltersLayout.ROUND, LibraryFiltersLayout.SQUARE`*
+|@Input() layout: LibraryFiltersLayout| import the interface **LibraryFiltersLayout**, to know different possible values of filter types.*`Example: round, square, round-with-icon`* OR *`Example: LibraryFiltersLayout.ROUND, LibraryFiltersLayout.SQUARE, LibraryFiltersLayout.ROUND_WITH_ICONS`*
 |@Input() selectedItems: Array<<number>number> | Array of indexes to select
   
 ### Events
