@@ -29,7 +29,7 @@
         vertical-align: middle;
         height: calculateRem(17px);
         width: calculateRem(14px);
-        top: -calculateRem(2px);
+        top: calculateRem(-2px);
       }
       .badge {
         display: inline-block;
