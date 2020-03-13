@@ -26,7 +26,7 @@
   .sbtoc-filter {
     height: calculateRem(48px);
     padding: calculateRem(8px) calculateRem(16px);
-    box-shadow: 0px calculateRem(2px) calculateRem(10px) -calculateRem(5px) rgba(0, 0, 0, 0.25);
+    box-shadow: 0px calculateRem(2px) calculateRem(10px) calculateRem(-5px) rgba(0, 0, 0, 0.25);
     display: inline-flex;
     align-items: center;
     width: 100%;
