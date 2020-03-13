@@ -59,6 +59,7 @@
 
   </ng-container>
 </div>
+
   <div class="sb--card" *ngIf="isLoading">
       <div class="sb--card__main-area">
           <!-- card img -->
@@ -72,17 +73,32 @@
             <h4 class="sb--card--title loading-animation sb--card--highlighter"></h4>
             <div class="sb--card__meta1">
               <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
-              <span class="dot-divider loading-animation"></span>
-              <span class="data_2 ellipsis loading-animation sb--card--highlighter"></span>
+              <span class="data_2 ellipsis loading-animation sb--card--highlighter" style="width:80%;"></span>
             </div>
           </div>
         </div>
         <div class="sb--card__moreinfo" style="display:block;" *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.QRCODE_RESULT">
-            <div class="sb--card__meta2">
+            <!--<div class="sb--card__meta2">
                 <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two">
                   <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
                   <div class="value loading-animation sb--card--highlighter" style="width:60%;"></div>
                 </div>
               </div>
+              <div class="sb--card__tags">
+                <div class="sb--card__meta2">
+                  <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two">
+                    <span class="label loading-animation sb--card--highlighter"> </span>
+                    <span class="value loading-animation sb--card--highlighter"></span>
+                  </div>
+                </div>
+              </div>-->
+              <div style="float:left;width:60%">
+                <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
+                <div class="value loading-animation sb--card--highlighter" style="width:60%;"></div>
+              </div>
+              <div style="float:right;width:30%">
+                <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
+              </div>
+              <div style="clear:both;"></div>
         </div>
   </div>
