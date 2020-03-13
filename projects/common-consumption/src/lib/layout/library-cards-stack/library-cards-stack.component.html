@@ -1,6 +1,6 @@
 <div class="card-list-container">
 
-    <div class="header">
+    <div class="header" *ngIf="!isLoading">
         <div class="title">
             <i class="icon-svg icon-svg--sm">
                 <svg class="icon">
@@ -11,10 +11,17 @@
         </div>
     </div>
 
+    <!--Loading Indicator for header-->
+    <div class="header" *ngIf="isLoading">
+            <div class="loading-animation sb--card--highlighter" style="width:100px;height:20px;">
+                    <i class="icon-svg icon-svg--sm"></i>
+            </div>
+    </div>
+
     <div class="body">
         <sb-library-card
             *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let i= index" [isOffline]="!content?.isAvailableLocally && isOffline"
-            [content]="content" [type]="LibraryCardTypes.MOBILE_TEXTBOOK" (cardClick)="emitCardClick($event, i)" [cardImg]="content?.cardImg">
+            [content]="content" [type]="LibraryCardTypes.MOBILE_TEXTBOOK" [isLoading]="isLoading" (cardClick)="emitCardClick($event, i)" [cardImg]="content?.cardImg">
         </sb-library-card>
         <button *ngIf="maxCardCount && contentList?.length >maxCardCount" class="sbbtn flat stack-btn full-width"
             (click)="showAllList($event)">{{viewMoreButtonText}}</button>

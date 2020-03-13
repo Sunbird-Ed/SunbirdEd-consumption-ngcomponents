@@ -18,6 +18,7 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     @Input() type: LibraryCardTypes = LibraryCardTypes.DESKTOP_TEXTBOOK;
     @Input() moreInfoLabel = 'Medium';
     @Input() section = '';
+    @Input() isLoading:boolean;
     // @Input() hoverData;
     @Input('hover-template') gridTemplate: TemplateRef<any>;
 
