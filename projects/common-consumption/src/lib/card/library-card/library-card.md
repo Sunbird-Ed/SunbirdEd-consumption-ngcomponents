@@ -15,5 +15,6 @@ Can be used in the library page for all consumption platforms.
 |@Input() moreInfoLabel:string|Label to be displayed in the meta data. *`Example: Medium, Section`* |
 |`Optional` @Input() isMobile: boolean| Flag to distinguish mobile platform |
 |`Optional` @Input() isOffline: boolean| Flag to handle offline scenarios|
+|`Optional` @Input() isLoading: boolean| Flag to handle Lazy Loading `Default value is false`|
 |`Optional` @Input() section: string| In case of QR code results cards, there is a need to show section|
 |`Optional` @Input('hover-template') gridTemplate: TemplateRef<any>;| When card has **hover data**, the template reference of the hover component needs to be injected|
