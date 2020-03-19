@@ -59,7 +59,7 @@
         </div>
 </div>
 <div class="cards-container" *ngIf="maxCardCount > 0">
-    <div class="item"
+    <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
         *ngFor="let element of range(maxCardCount); let i=index">
         <sb-library-card [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
         </sb-library-card>
