@@ -58,12 +58,19 @@
                 <i class="icon-svg icon-svg--sm"></i>
         </div>
 </div>
-<div class="cards-container">
-        <div class="item"
-            *ngFor="let number of [0,1,2]">
-            <sb-library-card [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
-            </sb-library-card>
-        </div>
+<div class="cards-container" *ngIf="maxCardCount > 0">
+    <div class="item"
+        *ngFor="let element of range(maxCardCount); let i=index">
+        <sb-library-card [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
+        </sb-library-card>
+    </div>    
+</div>
+<div class="cards-container" *ngIf="maxCardCount <= 0">
+    <div class="item"
+        *ngFor="let number of [0,1,2]">
+        <sb-library-card [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
+        </sb-library-card>
     </div>
+</div>
 
 </div>

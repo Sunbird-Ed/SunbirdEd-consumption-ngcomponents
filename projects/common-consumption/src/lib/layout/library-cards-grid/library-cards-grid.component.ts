@@ -52,4 +52,7 @@ export class LibraryCardsGridComponent {
     hoverActionClicked(event) {
         this.hoverActionClick.emit(event);
     }
+    range(maxCardCounter) {
+        return  new Array(maxCardCounter);
+    }
 }
