@@ -1,0 +1,103 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+:host {
+  .layout-library {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .sb--scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5em;
+  }
+  .sb--card--container {
+    flex: 0 0 auto;
+    width: 280px;
+    margin: 0 1rem 0 0;
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    @include margin(1.5rem 0 1rem 0);
+    padding: 0px 0;
+    align-items: center;
+    .title {
+      font-family: inherit;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      flex: 1;
+      height: calculateRem(24px);
+      color: var(--primary-color);
+      font-size: $h5-font-size;
+      font-weight: bold;
+      text-transform: capitalize;
+      line-height: calculateRem(24px);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+//Some Refactoring of Code required to SB-style
+$background: #f6f7f8;
+$grey-nuance-lighter: #eeeeee;
+$grey-nuance-darker: #dddddd;
+$fade-grey: #e8e8e8;
+
+  .sb--card--highlighter {
+    height: 12px;
+    width: 100%;
+    margin-top:5px;
+    min-width: 35px;
+  }
+  .loading-animation {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: placeload;
+    animation-name: placeload;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background: $background;
+    background: $grey-nuance-lighter;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(8%, $grey-nuance-lighter),
+      color-stop(18%, $grey-nuance-darker),
+      color-stop(33%, $grey-nuance-lighter)
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #eeeeee 8%,
+      #dddddd 18%,
+      #eeeeee 33%
+    );
+    background: linear-gradient(to right, $grey-nuance-lighter 8%, $grey-nuance-darker 18%, $grey-nuance-lighter 33%);
+    -webkit-background-size: 800px 104px;
+    background-size: 1200px 104px;
+    position: relative;
+  }
+  @-webkit-keyframes placeload{
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  @keyframes placeload {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  
+}

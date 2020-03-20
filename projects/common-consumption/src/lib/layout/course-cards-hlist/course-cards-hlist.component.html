@@ -1,0 +1,16 @@
+<div class="layout-course" *ngIf="!isLoading">
+    <div class="header">
+        <div class="title">
+            {{title}}
+        </div>
+        <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
+            (click)="onViewMoreClick($event)">
+            {{viewMoreButtonText}}
+        </button>
+    </div>
+<div class="sb--scrolling-wrapper-flexbox">
+  <div *ngFor="let content of contentList; let index = index" class="sb--card--container">
+    <sb-course-card [course]="content"></sb-course-card>
+  </div>
+</div>
+</div>

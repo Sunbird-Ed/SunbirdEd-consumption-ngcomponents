@@ -1,1 +1,52 @@
 <!-- card component -->
+<div class="sb--card"
+  (click)="onClick($event)" *ngIf="!isLoading">
+  <div class="sb--card__main-area">
+    <!-- card img -->
+    <div class="sb--card__img">
+      <div class="img-container">
+        <img [src]="cardImg" alt="">
+      </div>
+    </div>
+    <!-- card mobile view details -->
+    <div class="sb--card__info">
+      <h4 class="sb--card__title sb--card__title--ellipsis" title="{{course?.name}}">{{course?.name}}</h4>
+      <div class="sb--card__meta1 text-left">
+        <span class="data_1 sb__ellipsis" title="{{course?.board}}">{{course?.board}}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- content for only desktop -->
+  <div class="sb--card__progressbar">
+    <span></span>
+  </div>
+  <div>
+    <div class="sb--card__meta_c_data">
+        <span>Last Date to Join on {{course?.lastUpdatedOn}}</span>
+    </div>
+  </div>
+
+</div>
+
+  <div class="sb--card" *ngIf="isLoading">
+      <div class="sb--card__main-area">
+          <!-- card img -->
+          <div class="sb--card__img">
+            <div class="img-container loading-animation">
+              
+            </div>
+          </div>
+          <!-- card mobile view details -->
+          <div class="sb--card__info">
+            <h4 class="sb--card--title loading-animation sb--card--highlighter"></h4>
+            <div class="sb--card__meta1">
+              <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
+              <span class="data_2 ellipsis loading-animation sb--card--highlighter" style="width:80%;"></span>
+            </div>
+          </div>
+        </div>
+        <div class="sb--card__moreinfo" style="display:block;">
+            <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
+        </div>
+  </div>

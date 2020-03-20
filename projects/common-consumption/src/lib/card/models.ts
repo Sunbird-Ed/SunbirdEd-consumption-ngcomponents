@@ -82,6 +82,7 @@ export interface IContent {
 export interface ICourse {
         ownershipType: string[];
         copyright: string;
+        board?: string;
         channel: string;
         downloadUrl: string;
         organisation: string[];
