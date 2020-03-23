@@ -15,6 +15,11 @@ export enum LibraryCardTypes {
     QRCODE_RESULT = 'qrcode_result'
 }
 
+export enum CourseCardGridTypes {
+    MY_COURSE_CARD_GRID = "my_course_card_grid",
+    COURSE_CARD_GRID = "course_card_grid"
+}
+
 export enum LibraryCardGridTypes {
     INFINITE_CARD_GRID = 'infinite_card_grid',
     INFINITE_CARD_GRID_WITH_HOVER = 'infinite_card_grid_with_hover'

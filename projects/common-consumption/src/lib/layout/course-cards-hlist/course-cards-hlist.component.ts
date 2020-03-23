@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { courseSection } from './course-section-data';
-import { ICourse } from '../../card/models';
+import { myCourses } from './my-courses-data';
+import { ICourse, CourseCardGridTypes } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
@@ -21,11 +22,14 @@ export class CourseCardsHlistComponent implements OnInit {
    @Input() maxCardCount = 10;
    @Input() viewMoreButtonText = 'View More';
    @Input() isLoading:boolean;
+   @Input() type:any = CourseCardGridTypes.COURSE_CARD_GRID;
 
 
    @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
    @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
    @Output() hoverActionClick: EventEmitter<any> = new EventEmitter<any>();
+
+   get CourseCardGridTypes() { return CourseCardGridTypes; }
 
    /**
     * Triggers event on `View More` Click
