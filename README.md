@@ -98,7 +98,10 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 |Feature| Notes| Selector|
 |--|--|--|
 | [LibraryCard](./projects/common-consumption/src/lib/card/library-card/library-card.md) | Can be used in the library page for all consumption platforms| sb-library-card|
+| [CourseCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents/course-card/course-card.md) | Can be used in the courses page for all consumption platforms| sb-course-card|
+| [MyCourseCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents/my-course-card/my-course-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card|
 | [LibraryCardsGrid](./projects/common-consumption/src/lib/layout/library-cards-grid/library-cards-grid.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
+| [CourseCardsGrid](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the course page for all consumption platforms|sb-course-cards-hlist|
 | [LibraryCardsStack](./projects/common-consumption/src/lib/layout/library-cards-stack/library-cards-stack.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
 | [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
 | [LibraryFilters](./projects/common-consumption/src/lib/library-filters/library-filters/library-filters.md) | Can be used in the library page for all consumption platforms. |sb-library-filters|
