@@ -23,7 +23,6 @@ export class CourseCardsHlistComponent implements OnInit {
 
    @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
    @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
-   @Output() hoverActionClick: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
@@ -69,9 +68,6 @@ export class CourseCardsHlistComponent implements OnInit {
        this.cardClick.emit({ event, data });
    }
 
-   hoverActionClicked(event) {
-       this.hoverActionClick.emit(event);
-   }
    range(maxCardCounter) {
        return  new Array(maxCardCounter);
    }
