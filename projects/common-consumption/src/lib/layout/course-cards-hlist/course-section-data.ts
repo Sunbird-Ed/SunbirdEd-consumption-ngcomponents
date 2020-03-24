@@ -63,7 +63,7 @@ export const courseSection = {
       "prevState": "Review",
       "size": 115773,
       "lastPublishedOn": "2019-02-15T05:32:05.767+0000",
-      "name": "15 Feb course nadiya",
+      "name": "15 Feb course nadiya asdjh slkfjslkdf slkfjsklfdm slkdfkjs;ldfk",
       "status": "Live",
       "code": "org.sunbird.MwO5RC",
       "description": "Enter description for Course",
