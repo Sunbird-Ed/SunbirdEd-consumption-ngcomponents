@@ -12,14 +12,13 @@
     <div class="sb--card__info">
       <h4 class="sb--card__title sb__ellipsis  sb__ellipsis--two" title="{{course?.name}}">{{course?.name}}</h4>
       <div class="sb--card__meta1 text-left">
-        <span class="data_1 sb__ellipsis" title="{{course?.board}}">{{course?.board}}</span>
+        <span class="data_1 sb__ellipsis" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName}}</span>
       </div>
     </div>
   </div>
   
   <div>
-    <div class="sb--card__meta_c_data">
-        <span>Last Date to Join on {{course?.lastUpdatedOn}}</span>
+    <div class="sb--card__meta_c_data" [innerHTML]="section">
     </div>
   </div>
 
@@ -38,7 +37,6 @@
             <h4 class="sb--card--title loading-animation sb--card--highlighter"></h4>
             <div class="sb--card__meta1">
               <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
-              <span class="data_2 ellipsis loading-animation sb--card--highlighter" style="width:80%;"></span>
             </div>
           </div>
         </div>

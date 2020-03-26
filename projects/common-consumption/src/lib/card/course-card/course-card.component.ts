@@ -6,11 +6,11 @@ import { ICourse, ICardClick } from '../models';
 @Component({
   selector: 'sb-course-card',
   templateUrl: './course-card.component.html',
-  styleUrls: ['./course-card.component.scss']
+  styleUrls: ['./course-card.component.scss','../library-card/library-card.component.scss']
 })
 export class CourseCardComponent implements OnInit {
 
-  @Input() course: ICourse = courseData;
+  @Input() course: ICourse|any = courseData;
   @Input() isMobile = false;
   @Input() isOffline = false;
   @Input() cardImg = courseData.appIcon;

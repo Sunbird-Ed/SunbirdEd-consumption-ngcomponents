@@ -1,5 +1,6 @@
 <!-- card component -->
 <div class="sb--card"
+  [ngClass]="{'sb--card--recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)" *ngIf="!isLoading">
   <div class="sb--card__main-area">
     <!-- card img -->
@@ -9,27 +10,33 @@
       </div>
     </div>
     <!-- card mobile view details -->
-    <div class="sb--card__info">
-      <h4 class="sb--card__title sb--card__title--ellipsis" title="{{course?.courseName}}">{{course?.courseName}}</h4>
-      <div class="sb--card__meta1 text-left">
-        <span class="data_1 sb__ellipsis" title="{{course?.board}}">{{course?.board}}</span>
+    <div class="sb--container-box">
+      <div class="sb--card__info">
+        <div class="sb--holder">
+          <h4 class="sb--card__title sb--card__title sb__ellipsis  sb__ellipsis--two" title="{{course?.courseName}}">{{course?.courseName}}</h4>
+          <div class="sb--card__meta1 text-left">
+            <span class="data_1 sb__ellipsis" title="{{course?.content?.orgDetails?.orgName}}">{{course?.content?.orgDetails?.orgName}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="sb--card__progressbar" *ngIf="type === CourseCardTypes.RECENTLY_VIEWED">
+        <span [ngStyle]="fetchProgress()"></span>
       </div>
     </div>
   </div>
 
   <!-- content for only desktop -->
-  <div class="sb--card__progressbar" [ngStyle]="fetchProgress()">
-    <span></span>
-  </div>
   <div>
-    <div class="sb--card__meta_c_data">
-        <span>Last Date to Join on {{course?.lastUpdatedOn}}</span>
+    <div class="sb--card__meta_c_data" [innerHTML]="section">
     </div>
   </div>
+  <div class="sb--card__progressbar" *ngIf="type != CourseCardTypes.RECENTLY_VIEWED">
+      <span [ngStyle]="fetchProgress()"></span>
+    </div>
 
 </div>
 
-  <div class="sb--card" *ngIf="isLoading">
+  <div class="sb--card" [ngClass]="{'sb--card--recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" *ngIf="isLoading">
       <div class="sb--card__main-area">
           <!-- card img -->
           <div class="sb--card__img">
@@ -42,7 +49,6 @@
             <h4 class="sb--card--title loading-animation sb--card--highlighter"></h4>
             <div class="sb--card__meta1">
               <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
-              <span class="data_2 ellipsis loading-animation sb--card--highlighter" style="width:80%;"></span>
             </div>
           </div>
         </div>

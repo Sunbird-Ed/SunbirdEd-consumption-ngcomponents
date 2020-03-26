@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { courseSection } from './course-section-data';
 import { myCourses } from './my-courses-data';
-import { ICourse, CourseCardGridTypes } from '../../card/models';
+import { ICourse, CourseCardGridTypes, CourseCardTypes } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
@@ -11,25 +11,47 @@ import { IViewMoreClick, ICardClick } from '../models';
 })
 export class CourseCardsHlistComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-   /* Title for the grid */
+    /* Title for the grid */
    @Input() title: string = courseSection.name;
-   @Input() contentList: any = courseSection.contents;
+   @Input() contentList: any;
    /* Max card count to be shown */
    @Input() maxCardCount = 10;
    @Input() viewMoreButtonText = 'View More';
    @Input() isLoading:boolean;
-   @Input() type:any = CourseCardGridTypes.COURSE_CARD_GRID;
+   @Input() type:CourseCardGridTypes;
 
 
    @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
    @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
-   @Output() hoverActionClick: EventEmitter<any> = new EventEmitter<any>();
+
+  constructor() {
+  }
+
+  ngOnInit() {
+    if(this.type!=null) {
+        if(this.type == CourseCardGridTypes.MY_COURSE_CARD_GRID || 
+            this.type == CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID) {
+            if(!(this.contentList!=null)) {
+                this.contentList = myCourses.courses;
+            }
+            
+        } else {
+            if(!(this.contentList!=null)) {
+                this.contentList = courseSection.contents;
+            }
+        }
+    } else {
+        this.type = CourseCardGridTypes.COURSE_CARD_GRID;
+        if(!(this.contentList!=null)) {
+            this.contentList = courseSection.contents;
+        }
+    }
+  }
+  ngOnChanges(changes) {
+ }
 
    get CourseCardGridTypes() { return CourseCardGridTypes; }
+   get CourseCardTypes() { return CourseCardTypes; }s
 
    /**
     * Triggers event on `View More` Click
@@ -48,9 +70,6 @@ export class CourseCardsHlistComponent implements OnInit {
        this.cardClick.emit({ event, data });
    }
 
-   hoverActionClicked(event) {
-       this.hoverActionClick.emit(event);
-   }
    range(maxCardCounter) {
        return  new Array(maxCardCounter);
    }

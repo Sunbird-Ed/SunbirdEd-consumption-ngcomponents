@@ -17,7 +17,13 @@ export enum LibraryCardTypes {
 
 export enum CourseCardGridTypes {
     MY_COURSE_CARD_GRID = "my_course_card_grid",
-    COURSE_CARD_GRID = "course_card_grid"
+    COURSE_CARD_GRID = "course_card_grid",
+    MY_COURSE_RECENTLY_VIEWED_CARD_GRID = "my_course_recently_viewed_card_grid"
+}
+
+export enum CourseCardTypes {
+    RECENTLY_VIEWED = 'recently_viewed',
+    MY_COURSE_CARD = 'my_course_card'
 }
 
 export enum LibraryCardGridTypes {
