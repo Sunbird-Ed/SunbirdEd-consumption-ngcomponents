@@ -1,0 +1,29 @@
+<div class="layout-course" *ngIf="!isLoading">
+    <div class="header">
+        <div class="title">
+            {{title}}
+        </div>
+        <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
+            (click)="onViewMoreClick($event)">
+            {{viewMoreButtonText}}
+        </button>
+    </div>
+    <div class="sb--scrolling-wrapper-flexbox">
+      <div *ngFor="let content of contentList; let index = index" class="sb--card--container">
+        <sb-course-card [course]="content" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
+        <sb-my-course-card [course]="content" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
+      </div>
+    </div>
+</div>
+<div class="layout-course" *ngIf="isLoading">
+    <div class="header" style="width:120px;">
+        <div class="title loading-animation sb--card--highlighter">
+            
+        </div>
+    </div>
+    <div class="sb--scrolling-wrapper-flexbox">
+        <div *ngFor="let content of contentList; let index = index" class="sb--card--container">
+          <sb-course-card [isLoading]="true"></sb-course-card>
+        </div>
+      </div>
+</div>

@@ -68,7 +68,7 @@ export const courseData = {
     "lastPublishedOn": "2020-03-04T10:42:13.067+0000",
     "size": 263697,
     "IL_FUNC_OBJECT_TYPE": "Content",
-    "name": "Dashboard Loadtest",
+    "name": "Dashboard Loadtest kjhsdf kjsnf lisjefs lisf sflsjlkg",
     "topic": [
       "Social Science"
     ],
