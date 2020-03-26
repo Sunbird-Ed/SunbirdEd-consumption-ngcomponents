@@ -4,9 +4,16 @@
   .sb--card {
     &__title {
       color: #000 !important;
+      font-size: 12px !important;
+      line-height: 1rem !important;
     }
     &__title--ellipsis{
       padding-right: 1rem !important;
+    }
+    &__meta1 {
+      color: #979797;
+      font-size: 12px !important;
+      line-height: 1rem !important;
     }
     &__meta_c_data {
         min-height: 2rem;
@@ -18,8 +25,6 @@
       max-width:80% !important;
     }
   }
-  .sb--card__progressbar {
-    background: #cccccc !important;
-  }
 }
+
 
