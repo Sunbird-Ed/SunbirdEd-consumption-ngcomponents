@@ -10,7 +10,7 @@ import { ICourse, ICardClick } from '../models';
 })
 export class CourseCardComponent implements OnInit {
 
-  @Input() course: ICourse = courseData;
+  @Input() course: ICourse|any = courseData;
   @Input() isMobile = false;
   @Input() isOffline = false;
   @Input() cardImg = courseData.appIcon;
