@@ -36,7 +36,7 @@
 
 </div>
 
-  <div class="sb--card sb--card--recently-viewed" *ngIf="isLoading">
+  <div class="sb--card" [ngClass]="{'sb--card--recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" *ngIf="isLoading">
       <div class="sb--card__main-area">
           <!-- card img -->
           <div class="sb--card__img">
