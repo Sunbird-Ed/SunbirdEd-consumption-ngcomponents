@@ -1,6 +1,6 @@
 {
     "name": "@project-sunbird/common-consumption",
-    "version": "2.8.4",
+    "version": "2.9.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents.git"
