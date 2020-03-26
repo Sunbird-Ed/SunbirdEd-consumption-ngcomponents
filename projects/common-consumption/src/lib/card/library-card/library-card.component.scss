@@ -323,13 +323,12 @@
   }
   .sb--card__progressbar {
     height: calculateRem(4px);
-    position: absolute;
     margin: 0px 0 0px;
     background: $gray-200;
     border-radius: 0px;
     box-shadow: inset 0 calculateRem(-1px) calculateRem(1px) rgba(255, 255, 255, 0.3);
     width: 100%;
-    bottom: 0px;
+    background: #cccccc;
   }
   .sb--card__progressbar > span {
     display: block;
