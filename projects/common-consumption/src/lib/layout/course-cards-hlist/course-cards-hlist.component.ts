@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { courseSection } from './course-section-data';
 import { myCourses } from './my-courses-data';
-import { ICourse, CourseCardGridTypes } from '../../card/models';
+import { ICourse, CourseCardGridTypes, CourseCardTypes } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
@@ -29,7 +29,8 @@ export class CourseCardsHlistComponent implements OnInit {
 
   ngOnInit() {
     if(this.type!=null) {
-        if(this.type == CourseCardGridTypes.MY_COURSE_CARD_GRID) {
+        if(this.type == CourseCardGridTypes.MY_COURSE_CARD_GRID || 
+            this.type == CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID) {
             if(!(this.contentList!=null)) {
                 this.contentList = myCourses.courses;
             }
@@ -50,6 +51,7 @@ export class CourseCardsHlistComponent implements OnInit {
  }
 
    get CourseCardGridTypes() { return CourseCardGridTypes; }
+   get CourseCardTypes() { return CourseCardTypes; }s
 
    /**
     * Triggers event on `View More` Click

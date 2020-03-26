@@ -20,7 +20,7 @@
   .header {
     display: flex;
     flex-direction: row;
-    @include margin(1.5rem 0 1rem 0);
+    @include margin(1.5rem 0 0.5rem 0);
     padding: 0px 0;
     align-items: center;
     .title {
@@ -29,7 +29,7 @@
       overflow: hidden;
       flex: 1;
       height: calculateRem(24px);
-      color: #000;
+      color: #29a704;
       font-size: $h5-font-size;
       font-weight: bold;
       text-transform: capitalize;

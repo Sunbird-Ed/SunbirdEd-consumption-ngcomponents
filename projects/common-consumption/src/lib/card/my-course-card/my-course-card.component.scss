@@ -1,0 +1,15 @@
+.sb--card--recently-viewed .sb--holder {
+    position: relative;
+}
+.sb--card--recently-viewed .sb--card__progressbar {
+    position: absolute;
+    bottom: 2em;
+    width: 60% !important;
+}
+.sb--card--recently-viewed .sb--container-box {
+    flex: 1;
+    padding: 0.5em;
+}
+.sb--card__meta_c_data {
+    min-height: 2.5em;
+}

@@ -148,7 +148,6 @@
       justify-content: space-between;
       // padding: $base-block-space;
       min-height: calculateRem(56px);
-      box-shadow: 0 calculateRem(-0.25px) 0 0 rgba(0, 0, 0, 0.5);
     }
 
     &__meta2 {
@@ -171,7 +170,6 @@
       }
     }
     &__meta_c_data {
-        box-shadow: 0 calculateRem(-0.25px) 0 0 rgba(0, 0, 0, 0.5);
         font-size: .7em;
         padding: 0.2em 0.7em;
         background-color: #fafafa;
@@ -330,7 +328,8 @@
     }
   }
   .sb--card__progressbar {
-    height: calculateRem(2px);
+    height: calculateRem(4px);
+    background: #cccccc;
     margin: 0px 0 0px;
     background: $gray-200;
     border-radius: 0px;
