@@ -94,7 +94,8 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 |--|--|--|
 | [LibraryCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the library page for all consumption platforms| sb-library-card|
 | [CourseCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the courses page for all consumption platforms| sb-course-card|
-| [LibraryCardsGrid](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
+| [LibraryCardHList](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the library page for all consumption platforms|sb-library-cards-grid|
+| [CourseCardsGrid](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the course page for all consumption platforms|sb-course-cards-hlist|
 | [LibraryCardsStack](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
 | [Confirmation Modal](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
 | [LibraryFilters](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the library page for all consumption platforms. |sb-library-filters|
@@ -124,6 +125,7 @@ Can be used in the library page for all consumption platforms.
 |`Optional` @Input() isOffline: boolean| Flag to handle offline scenarios|
 |`Optional` @Input() section: string| In case of QR code results cards, there is a need to show section|
 |`Optional` @Input('hover-template') gridTemplate: TemplateRef<any>;| When card has **hover data**, the template reference of the hover component needs to be injected|
+
 
 ## LibraryCardsGrid
 Can be used in the library page for all consumption platforms targeting web platform
