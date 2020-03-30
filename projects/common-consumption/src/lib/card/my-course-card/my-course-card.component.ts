@@ -38,9 +38,9 @@ export class MyCourseCardComponent implements OnInit {
     var bgColor = "#024f9d";
     var endDate = (this.course.batch!=null && this.course.batch.endDate!=null)?new Date(this.course.batch.endDate):null;
     if(this.course.completionPercentage == "100") {
-      bgColor = "green";
+      bgColor = "#07bc81"; // green
     } else if (endDate!=null && endDate < new Date()) {
-      bgColor = "red";
+      bgColor = "#ff4558"; // red
     }
     let widthStyle = this.course.completionPercentage+"%";
     return {

@@ -1,6 +1,5 @@
 <!-- card component -->
-<div class="sb--card"
-  (click)="onClick($event)" *ngIf="!isLoading">
+<div class="sb--card sb--card--course" (click)="onClick($event)" *ngIf="!isLoading">
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">
@@ -10,7 +9,7 @@
     </div>
     <!-- card mobile view details -->
     <div class="sb--card__info">
-      <h4 class="sb--card__title sb__ellipsis  sb__ellipsis--two" title="{{course?.name}}">{{course?.name}}</h4>
+      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two" title="{{course?.name}}">{{course?.name}}</h4>
       <div class="sb--card__meta1 text-left">
         <span class="data_1 sb__ellipsis" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName}}</span>
       </div>

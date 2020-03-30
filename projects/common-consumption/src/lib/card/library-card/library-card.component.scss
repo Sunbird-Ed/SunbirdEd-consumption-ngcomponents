@@ -119,6 +119,7 @@
       align-items: center;
       flex: 1;
       line-height: calculateRem(20px);
+      margin-top:calculateRem(4px);
     }
     .data_1 {
       max-width:50%;
@@ -150,7 +151,6 @@
       // padding: $base-block-space;
       min-height: calculateRem(56px);
     }
-
     &__meta2 {
       color: $gray-800;
       font-size: $font-size-sm;
@@ -215,7 +215,7 @@
         }
       }
     }
-
+    /* recently viewed card css */
     &--recently-viewed {
       .sb--card__img {
         height: calculateRem(88px);
@@ -235,9 +235,9 @@
         padding: calculateRem(8px);
         flex:1;
       }
-      // @include padding(0);
-      // @include margin(0);
     }
+   
+    /* offline card css */
     &.offline {
       .sb--card__img {
         .img-container {
@@ -257,10 +257,7 @@
         opacity: 0.5;
       }
     }
-    // &:hover{
-    //   transform: translate(0,-3px);
-    //   box-shadow: 0 3px 7px 0 rgba(0,0,0,.16);
-    // }
+
     ::ng-deep .card-hover {
       display: none;
       transition: all 0.2s ease-in;
@@ -323,60 +320,46 @@
       }
     }
   }
+
   .sb--card__progressbar {
     height: calculateRem(4px);
     margin: 0px 0 0px;
-    background: $gray-200;
+    background: var(--gray-200);
     border-radius: 0px;
     box-shadow: inset 0 calculateRem(-1px) calculateRem(1px) rgba(255, 255, 255, 0.3);
     width: 100%;
-    background: #cccccc;
+    background:var(--gray-100);
+    & > span {
+      display: block;
+      height: 100%;
+      background-color: var(--secondary-200);
+      background-image: -webkit-gradient(center bottom, var(--secondary-400), var(--secondary-200));
+      box-shadow: inset 0 calculateRem(2px) calculateRem(9px) var(--gray-100),
+        inset 0 calculateRem(-2px) calculateRem(6px) rgba(var(--black), 0.4);
+      position: relative;
+      overflow: hidden;
+    }
   }
-  .sb--card__progressbar > span {
-    display: block;
-    height: 100%;
-    background-color: rgb(43, 194, 83);
-    background-image: -webkit-gradient(
-      center bottom,
-      rgb(43, 194, 83) 37%,
-      rgb(84, 240, 84) 69%
-    );
-    box-shadow: inset 0 calculateRem(2px) calculateRem(9px) rgba(255, 255, 255, 0.3),
-      inset 0 calculateRem(-2px) calculateRem(6px) rgba(0, 0, 0, 0.4);
-    position: relative;
-    overflow: hidden;
-  }
-  .sb--card__progressbar > span:after,
-  .animate > span > span {
+ 
+  .animate > span:after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background-image: -webkit-gradient(
-      linear,
-      0 0,
-      100% 100%,
-      color-stop(0.25, rgba(255, 255, 255, 0.2)),
-      color-stop(0.25, transparent),
+    background-image: -webkit-gradient(linear,
+      0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent),
       color-stop(0.5, transparent),
-      color-stop(0.5, rgba(255, 255, 255, 0.2)),
-      color-stop(0.75, rgba(255, 255, 255, 0.2)),
-      color-stop(0.75, transparent),
-      to(transparent)
-    );
+      color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
     z-index: 1;
     background-size: calculateRem(50px) calculateRem(50px);
-    -webkit-animation: move 2s linear infinite;
     border-top-right-radius: calculateRem(8px);
     border-bottom-right-radius: calculateRem(8px);
     border-top-left-radius: calculateRem(20px);
     border-bottom-left-radius: calculateRem(20px);
     overflow: hidden;
-  }
-  .animate > span:after {
-    display: none;
+    -webkit-animation: move 2s linear infinite;
   }
   @-webkit-keyframes move {
     0% {
@@ -386,30 +369,41 @@
       background-position: 50px 50px;
     }
   }
-  .orange > span {
-    background-color: $tertiary-0;
+  .completed > span {
+    background-color: var(--secondary-color);
     background-image: -webkit-gradient(
       linear,
       left top,
       left bottom,
-      color-stop(0, $tertiary-100),
-      color-stop(1, $tertiary-400)
+      color-stop(0, var(--secondary-100)),
+      color-stop(1, var(--secondary-400))
     );
-    background-image: -webkit-linear-gradient($tertiary-100, $tertiary-400);
+    background-image: -webkit-linear-gradient(var(--secondary-100), var(--secondary-400));
   }
-  .red > span {
-    background-color: $red-0;
+  .inprogress > span {
+    background-color: var(--tertiary-color);
     background-image: -webkit-gradient(
       linear,
       left top,
       left bottom,
-      color-stop(0, $red-100),
-      color-stop(1, $red-400)
+      color-stop(0, var(--tertiary-100)),
+      color-stop(1, var(--tertiary-400))
     );
-    background-image: -webkit-linear-gradient($red-100, $red-400);
+    background-image: -webkit-linear-gradient(var(--tertiary-100), var(--tertiary-400));
+  }
+  .notcompleted > span {
+    background-color: var(--red-100);
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, var(--red-100)),
+      color-stop(1, var(--red-400))
+    );
+    background-image: -webkit-linear-gradient( var(--red-100),  var(--red-400));
   }
 
-  .nostripes > span > span,
+  .nostripes > span,
   .nostripes > span:after {
     -webkit-animation: none;
     -moz-animation: none;
