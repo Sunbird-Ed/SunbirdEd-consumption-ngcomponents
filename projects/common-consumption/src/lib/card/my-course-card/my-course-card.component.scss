@@ -1,16 +1,28 @@
-.sb--card--recently-viewed .sb--holder {
-    position: relative;
-}
-.sb--card--recently-viewed .sb--card__progressbar {
-    position: absolute;
-    bottom: 1.2em;
-    width: 60% !important;
-}
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+
+.sb--card--course {
 .sb--container-box {
-    flex: 1;
-    padding: 0.5em;
+        flex: 1;
+        padding: 0em;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .sb--card__info {
+            padding: 0rem;
+            display: flex; 
+            align-items: center;
+        }
+        .sb--holder {
+            flex:1;
+        }
+    }
 }
-.sb--card--recently-viewed .sb--card__meta_c_data {
-    min-height: 1rem !important;
-    padding: .42px 0 0.58px 0 !important;
+.sb--card--recently-viewed {
+    .sb--container-box {
+        padding: 0.5rem;
+    }
+    .sb--card__meta_c_data {
+        min-height: 1rem !important;
+    }
 }
