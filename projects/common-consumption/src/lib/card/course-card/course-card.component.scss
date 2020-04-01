@@ -1,29 +1,28 @@
-/* sb card component css */
-:host {
-  // sb card css
-  .sb--card {
-    &__title {
-      color: #000 !important;
-      font-size: 12px !important;
-      line-height: 1rem !important;
-    }
-    &__title--ellipsis{
-      padding-right: 1rem !important;
-    }
-    &__meta1 {
-      color: #979797;
-      font-size: 12px !important;
-      line-height: 1rem !important;
-    }
-    &__meta_c_data {
-        min-height: 2rem;
-        font-size: .8rem;
-        padding: 0.5rem;
-        background-color: #fafafa;
-    } 
-    .data_1 {
-      max-width:80% !important;
-    }
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+
+
+.sb--card--course {
+  .sb--card__title {
+    color: var(--black);
+    font-size: calculateRem(12px);
+    line-height: calculateRem(16px);
+  }
+  .sb--card__title--ellipsis{
+    padding-right: calculateRem(16px);
+  }
+  .sb--card__meta1 {
+    color: #979797;
+    font-size: calculateRem(12px);
+    line-height: calculateRem(16px);
+  }
+  .sb--card__meta_c_data {
+      min-height: calculateRem(32px);
+      padding: 0.5rem;
+      background-color: #fafafa;
+      font-size: .8rem;
+  } 
+  .data_1 {
+    max-width:100%;
   }
 }
 
