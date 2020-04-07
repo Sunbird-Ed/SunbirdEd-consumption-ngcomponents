@@ -35,27 +35,32 @@ export class LibraryFiltersComponent implements OnChanges {
 
     get LibraryFiltersLayout() { return LibraryFiltersLayout; }
     get TocMimeTypes() { return TocMimeTypes; }
+    
+    fetchCorrespondingTypes(input:String) {
+        let type = '';
+        switch (input) {
+            case TocMimeTypes.ALL: type = TocMimeTypes.ALL;
+                break;
+            case TocMimeTypes.AUDIO: type = TocMimeTypes.AUDIO;
+                break;
+            case TocMimeTypes.COLLECTION: type = TocMimeTypes.COLLECTION;
+                break;
+            case TocMimeTypes.DOCS: type = TocMimeTypes.DOCS;
+                break;
+            case TocMimeTypes.INTERACTIVE: type = TocMimeTypes.INTERACTIVE;
+                break;
+            case TocMimeTypes.VIDEO: type = TocMimeTypes.VIDEO;
+                break;
+        }
+        console.log(type);
+        return type;
+    }
 
     ngOnChanges(changes) {
         if (this.layout === LibraryFiltersLayout.ROUND_WITH_ICONS) {
             if (this.tocList) {
                 this.filterList = this.tocList.map((item, index) => {
-                    let type = '';
-                    switch (item.value) {
-                        case TocMimeTypes.ALL: type = TocMimeTypes.ALL;
-                            break;
-                        case TocMimeTypes.AUDIO: type = TocMimeTypes.AUDIO;
-                            break;
-                        case TocMimeTypes.COLLECTION: type = TocMimeTypes.COLLECTION;
-                            break;
-                        case TocMimeTypes.DOCS: type = TocMimeTypes.DOCS;
-                            break;
-                        case TocMimeTypes.INTERACTIVE: type = TocMimeTypes.INTERACTIVE;
-                            break;
-                        case TocMimeTypes.VIDEO: type = TocMimeTypes.VIDEO;
-                            break;
-                    }
-
+                    let type = this.fetchCorrespondingTypes(item.value);
                     if (this.selectedItems && this.selectedItems.includes(index)) {
                         return ({ text: item.text, selected: true, type: type });
                     } else if (!this.selectedItems && item === TocMimeTypes.ALL) {
@@ -64,6 +69,19 @@ export class LibraryFiltersComponent implements OnChanges {
                         return ({ text: item.text, selected: false, type: type });
                     }
                 });
+                console.log(this.filterList);
+            } else if(this.list) {
+                this.filterList = this.list.map((item, index) => {
+                    let type = this.fetchCorrespondingTypes(item);
+                    if (this.selectedItems && this.selectedItems.includes(index)) {
+                        return ({ text: item, selected: true, type: type });
+                    } else if (!this.selectedItems && item === TocMimeTypes.ALL) {
+                        return ({ text: item, selected: true, type: type });
+                    } else {
+                        return ({ text: item, selected: false, type: type });
+                    }
+                });
+                console.log(this.filterList);
             }
         } else {
             if (this.list) {
