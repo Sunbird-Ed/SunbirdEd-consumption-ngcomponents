@@ -25,7 +25,7 @@
   </div>
 
   <!-- content for only desktop -->
-  <div>
+  <div *ngIf="type != CourseCardTypes.RECENTLY_VIEWED">
     <div class="sb--card__meta_c_data" [innerHTML]="section">
     </div>
   </div>
@@ -33,6 +33,10 @@
       <span [ngStyle]="fetchProgress()"></span>
     </div>
 
+</div>
+<div *ngIf="type == CourseCardTypes.RECENTLY_VIEWED">
+  <div class="sb--card__meta_c_data_external" [innerHTML]="section">
+  </div>
 </div>
 
   <div class="sb--card" [ngClass]="{'sb--card--recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" *ngIf="isLoading">
