@@ -1,6 +1,8 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 
-
+.sb--card {
+  border-radius: calculateRem(2px);
+}
 .sb--card--course {
   .sb--card__title {
     color: var(--black);
