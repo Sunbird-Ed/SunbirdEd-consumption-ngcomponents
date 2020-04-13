@@ -11,8 +11,8 @@
     flex-direction: column;
     cursor: pointer;
     position: relative;
-    border-bottom: 1px solid $gray-0;
-    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);
+    border-bottom: calculateRem(1px) solid $gray-0;
+    box-shadow: 0 calculateRem(2px) calculateRem(7px) rgba(0, 0, 0, 0.16);
     margin-top: 0px;
     border: 0px;
     contain: content;
@@ -206,7 +206,7 @@
         border-style: solid;
         border-color: $gray-200 $gray-200 $gray-200 transparent;
         position: absolute;
-        left: -10px;
+        left: calculateRem(-10px);
         html[dir="rtl"] & {
           right: calculateRem(-10px);
           left: inherit;
@@ -226,7 +226,7 @@
           display: flex;
           align-items: center;
           background-color: $gray-100;
-          //   margin: -8px;
+          //   margin: calculateRem(-8px);
           height: calculateRem(88px);
           width: calculateRem(88px);
         }
@@ -310,11 +310,11 @@
         }
 
         .hover-meta-info {
-          font-size: 10px;
+          font-size: calculateRem(10px);
           opacity: 0.8;
           color: #ffffff;
-          font-size: 10px;
-          line-height: 12px;
+          font-size: calculateRem(10px);
+          line-height: calculateRem(12px);
           flex: 0 0 25%;
         }
       }
@@ -416,10 +416,10 @@
   $fade-grey: #e8e8e8;
   
     .sb--card--highlighter {
-      height: 12px;
+      height: calculateRem(12px);
       width: 100%;
-      margin-top:5px;
-      min-width: 65px;
+      margin-top:calculateRem(5px);
+      min-width: calculateRem(65px);
     }
     .loading-animation {
       -webkit-animation-duration: 1s;
@@ -449,24 +449,24 @@
         #eeeeee 33%
       );
       background: linear-gradient(to right, $grey-nuance-lighter 8%, $grey-nuance-darker 18%, $grey-nuance-lighter 33%);
-      -webkit-background-size: 800px 104px;
-      background-size: 1200px 104px;
+      -webkit-background-size: calculateRem(800px) calculateRem(104px);
+      background-size: calculateRem(1200px) calculateRem(104px);
       position: relative;
     }
     @-webkit-keyframes placeload{
       0% {
-        background-position: -468px 0;
+        background-position: calculateRem(-468px) 0;
       }
       100% {
-        background-position: 468px 0;
+        background-position: calculateRem(468px) 0;
       }
     }
     @keyframes placeload {
       0% {
-        background-position: -468px 0;
+        background-position: calculateRem(-468px) 0;
       }
       100% {
-        background-position: 468px 0;
+        background-position: calculateRem(468px) 0;
       }
     }
 
