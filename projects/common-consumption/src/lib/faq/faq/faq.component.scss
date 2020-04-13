@@ -187,7 +187,7 @@ p{
 .panel-interact{
     text-align: center; 
     padding: calculateRem(20px);
-    // height: 100px;
+    // height: calculateRem(100px);
 }
 .panel-interact>button{
     margin: calculateRem(10px) calculateRem(5px) 0px calculateRem(5px);

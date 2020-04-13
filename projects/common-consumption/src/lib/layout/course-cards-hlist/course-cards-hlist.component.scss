@@ -14,7 +14,7 @@
   }
   .sb--card--container {
     flex: 0 0 auto;
-    width: 280px;
+    width: calculateRem(280px);
     margin: 0 1rem 0 0;
   }
   .header {
@@ -46,10 +46,10 @@ $grey-nuance-darker: #dddddd;
 $fade-grey: #e8e8e8;
 
   .sb--card--highlighter {
-    height: 12px;
+    height: calculateRem(12px);
     width: 100%;
-    margin-top:5px;
-    min-width: 35px;
+    margin-top:calculateRem(5px);
+    min-width: calculateRem(35px);
   }
   .loading-animation {
     -webkit-animation-duration: 1s;
@@ -79,24 +79,24 @@ $fade-grey: #e8e8e8;
       #eeeeee 33%
     );
     background: linear-gradient(to right, $grey-nuance-lighter 8%, $grey-nuance-darker 18%, $grey-nuance-lighter 33%);
-    -webkit-background-size: 800px 104px;
-    background-size: 1200px 104px;
+    -webkit-background-size: calculateRem(800px) calculateRem(104px);
+    background-size: calculateRem(1200px) calculateRem(104px);
     position: relative;
   }
   @-webkit-keyframes placeload{
     0% {
-      background-position: -468px 0;
+      background-position: calculateRem(-468px) 0;
     }
     100% {
-      background-position: 468px 0;
+      background-position: calculateRem(468px) 0;
     }
   }
   @keyframes placeload {
     0% {
-      background-position: -468px 0;
+      background-position: calculateRem(-468px) 0;
     }
     100% {
-      background-position: 468px 0;
+      background-position: calculateRem(468px) 0;
     }
   }
   

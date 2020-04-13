@@ -57,7 +57,7 @@
         &.active {
           color: $white;
           background-color: $secondary-color;
-          box-shadow: 0 0 calculateRem(4px) 0 rgba(21, 18, 18, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 0 calculateRem(4px) 0 rgba(21, 18, 18, 0.24), 0 calculateRem(2px) calculateRem(4px) 0 rgba(0, 0, 0, 0.12);
         }
       }
     }
@@ -69,7 +69,7 @@
       .pill {
         border-radius: calculateRem(16px);
         @include padding(calculateRem(4px), calculateRem(16px));
-        // box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.19);
+        // box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(0, 0, 0, 0.19);
         color: $primary-color;
         min-height: calculateRem(32px);
         &:active,
