@@ -12,7 +12,7 @@
     <div class="sb--container-box">
       <div class="sb--card__info">
         <div class="sb--holder">
-          <h4 class="sb--card__title sb--card__title sb__ellipsis  sb__ellipsis--two" title="{{course?.courseName}}">{{course?.courseName}}</h4>
+          <h4 class="sb--card__title sb--card__title sb__ellipsis  sb__ellipsis--three" title="{{course?.courseName}}">{{course?.courseName}}</h4>
           <div class="sb--card__meta1 text-left">
             <span class="data_1 sb__ellipsis" title="{{course?.content?.orgDetails?.orgName}}">{{course?.content?.orgDetails?.orgName}}</span>
           </div>
@@ -25,7 +25,7 @@
   </div>
 
   <!-- content for only desktop -->
-  <div>
+  <div *ngIf="type != CourseCardTypes.RECENTLY_VIEWED">
     <div class="sb--card__meta_c_data" [innerHTML]="section">
     </div>
   </div>
@@ -33,6 +33,10 @@
       <span [ngStyle]="fetchProgress()"></span>
     </div>
 
+</div>
+<div *ngIf="type == CourseCardTypes.RECENTLY_VIEWED">
+  <div class="sb--card__meta_c_data_external" [innerHTML]="section">
+  </div>
 </div>
 
   <div class="sb--card" [ngClass]="{'sb--card--recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" *ngIf="isLoading">

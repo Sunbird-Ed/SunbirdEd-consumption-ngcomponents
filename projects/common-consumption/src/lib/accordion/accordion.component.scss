@@ -53,7 +53,7 @@
     
   // }
   // ::ng-deep .sbchapter-open {
-  //   border-bottom: 1px solid #e0e0e0;
+  //   border-bottom: calculateRem(1px) solid #e0e0e0;
   //   padding-bottom: var(--base-block-space);
   //   &__title {
   //     //@extend .sbaccordion__panel-header__tilte;

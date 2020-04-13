@@ -132,7 +132,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 8px;
+      margin-bottom: calculateRem(8px);
       padding: calculateRem(8px);
       cursor: pointer;
       min-height: calculateRem(56px);
@@ -230,5 +230,5 @@
   }  
 
   .child-content-padding {
-    padding: 16px 16px 8px 16px
+    padding: calculateRem(16px) calculateRem(16px) calculateRem(8px) calculateRem(16px)
   }

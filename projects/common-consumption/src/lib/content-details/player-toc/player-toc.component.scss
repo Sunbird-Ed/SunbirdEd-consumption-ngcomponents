@@ -204,7 +204,7 @@
   }
   // &:hover{
   //   &::-webkit-scrollbar{
-  //     height:5px;
+  //     height:calculateRem(5px);
   //   }
   //   &::-webkit-scrollbar-thumb{
   //     background-color: var(--gray-400);
