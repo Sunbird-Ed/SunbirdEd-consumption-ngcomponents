@@ -26,3 +26,8 @@
         min-height: 1rem !important;
     }
 }
+.sb--card__meta_c_data_external {
+    min-height: calculateRem(16px);
+    padding: 0.1rem;
+    font-size: .8rem;
+} 

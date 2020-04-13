@@ -11,7 +11,7 @@
     </div>
     <div class="sb--scrolling-wrapper-flexbox">
       <div *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let index = index" class="sb--card--container">
-        <sb-course-card [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
+        <sb-course-card [course]="content" (click)="onCardClick($event, content)"  [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
         <sb-my-course-card [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
         <sb-my-course-card [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
       </div>
