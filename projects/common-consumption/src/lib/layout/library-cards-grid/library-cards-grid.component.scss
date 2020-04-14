@@ -21,10 +21,10 @@
       flex: 1;
       height: calculateRem(24px);
       color: var(--primary-color);
-      font-size: $h5-font-size;
+      font-size: calculateRem(18px);
       font-weight: bold;
       text-transform: capitalize;
-      line-height: calculateRem(24px);
+      line-height: calculateRem(26px);
       display: flex;
       align-items: center;
 
@@ -33,19 +33,20 @@
         vertical-align: middle;
         height: calculateRem(17px);
         width: calculateRem(14px);
-        top: calculateRem(-2px);
+        top: calculateRem(0px);
       }
 
       .badge {
         display: inline-block;
-        background: var(--gray-100);
-        color: var(--black);
-        font-size: $h5-font-size;
-        line-height: calculateRem(24px);
+        background: #D4D3D3;
+        color: var(--gray-800);
         text-align: center;
-        padding: calculateRem(1px) calculateRem(8px);
+        padding: calculateRem(0px) calculateRem(12px);
         border-radius: calculateRem(4px);
         height: calculateRem(24px);
+        line-height: calculateRem(24px);
+        font-size: calculateRem(16px);
+        font-weight: normal;
         @include margin(null, null, null, calculateRem(8px));
       }
     }

@@ -1,44 +1,44 @@
 
 @import "../../../../../node_modules/common-consumption-styles/assets/styles";
+ 
+  // .sbaccordion {
+  //   width: 100%;
+  //   &--toc {
+  //   }
+  //   &__panel {
+  //     margin-bottom: calculateRem(8px);
+  //     box-shadow: 0 calculateRem(4px) calculateRem(7px) 0 rgba(0, 0, 0, 0.1);
+  //   }
+  //   &__panel-header {
+  //     background: var(--white);
 
-  ::ng-deep .sbaccordion {
-    width: 100%;
-    &--toc {
-    }
-    &__panel {
-      margin-bottom: calculateRem(8px);
-      box-shadow: 0 calculateRem(4px) calculateRem(7px) 0 rgba(0, 0, 0, 0.1);
-    }
-    &__panel-header {
-      background: var(--white);
-
-      padding: calculateRem(8px) calculateRem(16px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      height: calculateRem(48px);
-    }
-    &__panel-header__title {
-      font-size: calculateRem(14px);
-      font-weight: bold;
-      color: var(--primary-400);
-      margin: 0px;
-      padding: 0px;
-      width: 100%;
-    }
-    &__panel-content {
-      border-top: calculateRem(1px) solid #e0e0e0;
-      background: var(--gray-0);
-      min-height: calculateRem(32px);
-      overflow: hidden;
-      overflow-y: auto;
-      max-height: 60vh;
-    }
-    .accordion-item-header-collapsed &__panel-header__title{
-      font-weight: normal;
-    }
-  }
+  //     padding: calculateRem(8px) calculateRem(16px);
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: space-between;
+  //     cursor: pointer;
+  //     height: calculateRem(48px);
+  //   }
+  //   &__panel-header__title {
+  //     font-size: calculateRem(14px);
+  //     font-weight: bold;
+  //     color: var(--primary-400);
+  //     margin: 0px;
+  //     padding: 0px;
+  //     width: 100%;
+  //   }
+  //   &__panel-content {
+  //     border-top: calculateRem(1px) solid #e0e0e0;
+  //     background: var(--gray-0);
+  //     min-height: calculateRem(32px);
+  //     overflow: hidden;
+  //     overflow-y: auto;
+  //     max-height: 60vh;
+  //   }
+  //   .accordion-item-header-collapsed &__panel-header__title{
+  //     font-weight: normal;
+  //   }
+  // }
   
   //sbchapter css
   // ::ng-deep .sbchapter {

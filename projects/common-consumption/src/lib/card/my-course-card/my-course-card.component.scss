@@ -2,6 +2,7 @@
 
 .sb--card--course {
 .sb--container-box {
+        min-width: 0;
         flex: 1;
         padding: 0em;
         height: 100%;
@@ -9,12 +10,13 @@
         justify-content: center;
         flex-direction: column;
         .sb--card__info {
-            padding: 0rem;
+            padding: 0rem 0rem 0rem 0rem;
             display: flex; 
             align-items: center;
         }
         .sb--holder {
             flex:1;
+            min-width: 0;
         }
     }
 }

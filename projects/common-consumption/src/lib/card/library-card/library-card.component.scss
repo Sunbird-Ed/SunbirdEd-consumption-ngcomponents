@@ -11,18 +11,19 @@
     flex-direction: column;
     cursor: pointer;
     position: relative;
-    border-bottom: calculateRem(1px) solid $gray-0;
-    box-shadow: 0 calculateRem(2px) calculateRem(7px) rgba(0, 0, 0, 0.16);
     margin-top: 0px;
     border: 0px;
     contain: content;
+    border-radius: calculateRem(2px);
     &:hover { 
       transform: translate(0, 0px);
+      box-shadow: 0 2px 7px 0 rgba(0,0,0,0.16);
+    }
+    @include respond-below(sm) {
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);
     }
     @include respond-above(sm) {
-      border-radius: calculateRem(2px);
-      box-shadow: 0 calculateRem(2px) calculateRem(7px) 0 rgba(0, 0, 0, 0.16);
-      border-bottom: 0px solid $gray-0;
+      
     }
     &__main-area {
       display: flex;
@@ -63,54 +64,8 @@
       margin: 0px;
       line-height: normal;
       line-height: calculateRem(20px);
-    /*  display: -webkit-box;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      word-break: break-word;
-       autoprefixer: off 
-      -webkit-box-orient: vertical;
-      /* autoprefixer: on */
     }
-    &__title--ellipsis{
-      --max-lines:2;
-      --lh:1.25rem;
-      position: relative;
-      max-height: calc(var(--lh) * var(--max-lines));
-      overflow: hidden;
-      // display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp:2;
-      word-break: break-all;
-      display: flex;
-      padding-right: 1rem;  
-      html[dir="rtl"] & {
-        padding-left: 1rem;
-        padding-right: inherit;
-       }
-      &::before {
-        position: absolute;
-        content: "...";
-        bottom: 0;
-        right: 0;
-        html[dir="rtl"] & {
-          left: 0;
-          right: inherit;
-         }
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        width: 1rem;
-        height: 1rem;
-        background: var(--white);
-        html[dir="rtl"] & {
-          left: 0;
-          right: inherit;
-         }
-      }
-    }
+    
     &__meta1 {
       color: $gray-800;
       font-size: $font-size-sm;
@@ -123,10 +78,20 @@
     }
     .data_1 {
       max-width:50%;
+      // text-align: left;
+      // html[dir="rtl"] & {
+      //   text-align: inherit;
+      //   text-align: right;
+      // }
     }
     .data_2 {
-      // max-width:50%;
+      max-width:50%;
       flex:1;
+      // text-align: left;
+      // html[dir="rtl"] & {
+      //   text-align: inherit;
+      //   text-align: right;
+      // }
     }
     .dot-divider {
       width: calculateRem(4px);
@@ -150,6 +115,7 @@
       justify-content: space-between;
       // padding: $base-block-space;
       min-height: calculateRem(56px);
+      border-top: 1px solid #cacbce;
     }
     &__meta2 {
       color: $gray-800;
@@ -206,7 +172,7 @@
         border-style: solid;
         border-color: $gray-200 $gray-200 $gray-200 transparent;
         position: absolute;
-        left: calculateRem(-10px);
+        left: -10px;
         html[dir="rtl"] & {
           right: calculateRem(-10px);
           left: inherit;
@@ -217,6 +183,51 @@
     }
     /* recently viewed card css */
     &--recently-viewed {
+      .sb--card__title--ellipsis{
+        --max-lines:2;
+        --lh:1.25rem;
+        position: relative;
+        max-height: calc(var(--lh) * var(--max-lines));
+        overflow: hidden;
+        // display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp:2;
+        word-break: break-word;
+        display: flex;
+        padding-right: 1rem;  
+        html[dir="rtl"] & {
+          padding-left: 1rem;
+          padding-right: inherit;
+         }
+        &--three{
+        --max-lines:3;
+        --lh:1.25rem;
+          max-height: calc(var(--lh) * var(--max-lines));
+          -webkit-line-clamp:3;
+        }
+        &::before {
+          position: absolute;
+          content: "...";
+          bottom: 0;
+          right: 0;
+          html[dir="rtl"] & {
+            left: 0;
+            right: inherit;
+           }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 1.25rem;
+          height: 1.25rem;
+          background: var(--white);
+          html[dir="rtl"] & {
+            left: 0;
+            right: inherit;
+           }
+        }
+      }
       .sb--card__img {
         height: calculateRem(88px);
         width: calculateRem(88px);
@@ -226,7 +237,7 @@
           display: flex;
           align-items: center;
           background-color: $gray-100;
-          //   margin: calculateRem(-8px);
+          //   margin: -8px;
           height: calculateRem(88px);
           width: calculateRem(88px);
         }
@@ -310,11 +321,11 @@
         }
 
         .hover-meta-info {
-          font-size: calculateRem(10px);
+          font-size: 10px;
           opacity: 0.8;
           color: #ffffff;
-          font-size: calculateRem(10px);
-          line-height: calculateRem(12px);
+          font-size: 10px;
+          line-height: 12px;
           flex: 0 0 25%;
         }
       }
@@ -416,10 +427,10 @@
   $fade-grey: #e8e8e8;
   
     .sb--card--highlighter {
-      height: calculateRem(12px);
+      height: 12px;
       width: 100%;
-      margin-top:calculateRem(5px);
-      min-width: calculateRem(65px);
+      margin-top:5px;
+      min-width: 65px;
     }
     .loading-animation {
       -webkit-animation-duration: 1s;
@@ -449,24 +460,24 @@
         #eeeeee 33%
       );
       background: linear-gradient(to right, $grey-nuance-lighter 8%, $grey-nuance-darker 18%, $grey-nuance-lighter 33%);
-      -webkit-background-size: calculateRem(800px) calculateRem(104px);
-      background-size: calculateRem(1200px) calculateRem(104px);
+      -webkit-background-size: 800px 104px;
+      background-size: 1200px 104px;
       position: relative;
     }
     @-webkit-keyframes placeload{
       0% {
-        background-position: calculateRem(-468px) 0;
+        background-position: -468px 0;
       }
       100% {
-        background-position: calculateRem(468px) 0;
+        background-position: 468px 0;
       }
     }
     @keyframes placeload {
       0% {
-        background-position: calculateRem(-468px) 0;
+        background-position: -468px 0;
       }
       100% {
-        background-position: calculateRem(468px) 0;
+        background-position: 468px 0;
       }
     }
 

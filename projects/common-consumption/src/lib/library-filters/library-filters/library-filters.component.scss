@@ -91,6 +91,10 @@
         &.rounded-with-icon{
           .icon-svg{
             margin-right: calculateRem(4px);
+            html[dir="rtl"] & {
+              margin-left: calculateRem(4px);
+              margin-right: inherit;
+            }
             top: 0;
           }
           .name {

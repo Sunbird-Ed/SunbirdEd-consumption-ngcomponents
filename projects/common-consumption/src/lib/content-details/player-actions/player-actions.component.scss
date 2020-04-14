@@ -4,11 +4,12 @@
   .content-video {
     &__player {
       &__screenpart {
-        padding-left: calculateRem(8px);
+        padding-left: calculateRem(0px);
         .separator {
           border-left: calculateRem(0.5px) solid var(--gray-100);
           height: calculateRem(40px);
-          width: $base-block-space;
+          width: calculateRem(1px);
+          @include margin(0 0.5rem 0 0.5rem);
         }
       }
     }
