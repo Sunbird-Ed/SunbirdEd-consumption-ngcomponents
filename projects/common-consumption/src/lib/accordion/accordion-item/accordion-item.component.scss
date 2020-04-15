@@ -1,3 +1,4 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 
 .sbaccordion {
     width: 100%;
@@ -9,7 +10,6 @@
     }
     &__panel-header {
       background: var(--white);
-  
       padding: calculateRem(8px) calculateRem(16px);
       display: flex;
       align-items: center;
