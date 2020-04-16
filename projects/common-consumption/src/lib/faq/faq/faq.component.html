@@ -4,12 +4,12 @@
       <div [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
         {{ faq?.topic}}
         <span>
-          <i class="icon-svg icon-svg--xs" *ngIf="!isGroupShown(i)">
+          <i class="icon-svg icon-svg--xs ml-4" *ngIf="!isGroupShown(i)">
             <svg class="icon icon-svg--primary">
               <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-down"></use>
             </svg>
           </i>
-          <i class="icon-svg icon-svg--xs" *ngIf="isGroupShown(i)">
+          <i class="icon-svg icon-svg--xs ml-4" *ngIf="isGroupShown(i)">
             <svg class="icon icon-svg--primary">
               <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-up"></use>
             </svg>

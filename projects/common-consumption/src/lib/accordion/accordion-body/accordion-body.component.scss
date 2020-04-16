@@ -1,0 +1,15 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+
+.sbaccordion {
+    &__panel-content {
+      border-top: calculateRem(1px) solid #e0e0e0;
+      background: var(--gray-0);
+      min-height: calculateRem(32px);
+      overflow: hidden;
+      overflow-y: auto;
+      max-height: 60vh;
+    }
+    .accordion-item-header-collapsed &__panel-header__title{
+      font-weight: normal;
+    }
+  }

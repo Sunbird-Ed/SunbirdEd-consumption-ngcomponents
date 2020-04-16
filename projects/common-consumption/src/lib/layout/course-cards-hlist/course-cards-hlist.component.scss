@@ -2,7 +2,7 @@
 :host {
   .layout-library {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     flex-direction: column;
   }
   .sb--scrolling-wrapper-flexbox {
@@ -15,7 +15,12 @@
   .sb--card--container {
     flex: 0 0 auto;
     width: calculateRem(280px);
-    margin: 0 1rem 0 0;
+    margin: 0 0 0 0;
+    margin-right:1rem;
+    html[dir="rtl"] & {
+      margin-right:inherit;
+      margin-left:1rem;
+    }
   }
   .header {
     display: flex;
@@ -30,10 +35,10 @@
       flex: 1;
       height: calculateRem(24px);
       color: #008840;
-      font-size: $h5-font-size;
+      font-size: calculateRem(18px);
       font-weight: bold;
       text-transform: capitalize;
-      line-height: calculateRem(24px);
+      line-height: calculateRem(26px);
       display: flex;
       align-items: center;
     }

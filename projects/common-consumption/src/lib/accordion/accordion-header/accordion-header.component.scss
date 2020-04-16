@@ -1,5 +1,28 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 
+.sbaccordion {
+  &__panel-header {
+    background: var(--white);
+    padding: calculateRem(8px) calculateRem(16px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    height: calculateRem(48px);
+  }
+  &__panel-header__title {
+    font-size: calculateRem(14px);
+    font-weight: bold;
+    color: var(--primary-400);
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+  .accordion-item-header-collapsed &__panel-header__title{
+    font-weight: normal;
+  }
+}
+
 .icon-svg {
     position: relative;
     top: calculateRem(1px);

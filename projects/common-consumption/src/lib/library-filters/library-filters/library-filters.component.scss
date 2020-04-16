@@ -46,7 +46,6 @@
     // medium filter pill styles
     .sb-medium-pills-container {
       min-height: calculateRem(64px);
-      // min-height: 64px;
       background: $white;
       min-width: 100%;
       .pill {
@@ -57,7 +56,7 @@
         &.active {
           color: $white;
           background-color: $secondary-color;
-          box-shadow: 0 0 calculateRem(4px) 0 rgba(21, 18, 18, 0.24), 0 calculateRem(2px) calculateRem(4px) 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 3px 4px 0 rgba(0,0,0,0.19);
         }
       }
     }
@@ -77,6 +76,7 @@
         &.active {
           background-color: $primary-color;
           color: $white;
+          box-shadow: 0 3px 4px 0 rgba(0,0,0,0.19);
           .icon-svg {
             svg {
               fill: var(--white);
@@ -91,6 +91,10 @@
         &.rounded-with-icon{
           .icon-svg{
             margin-right: calculateRem(4px);
+            html[dir="rtl"] & {
+              margin-left: calculateRem(4px);
+              margin-right: inherit;
+            }
             top: 0;
           }
           .name {

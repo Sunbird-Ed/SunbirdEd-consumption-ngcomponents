@@ -11,18 +11,19 @@
     flex-direction: column;
     cursor: pointer;
     position: relative;
-    border-bottom: calculateRem(1px) solid $gray-0;
-    box-shadow: 0 calculateRem(2px) calculateRem(7px) rgba(0, 0, 0, 0.16);
     margin-top: 0px;
     border: 0px;
     contain: content;
+    border-radius: calculateRem(2px);
     &:hover { 
       transform: translate(0, 0px);
+      box-shadow: 0 2px 7px 0 rgba(0,0,0,0.16);
+    }
+    @include respond-below(sm) {
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);
     }
     @include respond-above(sm) {
-      border-radius: calculateRem(2px);
-      box-shadow: 0 calculateRem(2px) calculateRem(7px) 0 rgba(0, 0, 0, 0.16);
-      border-bottom: 0px solid $gray-0;
+      
     }
     &__main-area {
       display: flex;
@@ -63,54 +64,8 @@
       margin: 0px;
       line-height: normal;
       line-height: calculateRem(20px);
-    /*  display: -webkit-box;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      word-break: break-word;
-       autoprefixer: off 
-      -webkit-box-orient: vertical;
-      /* autoprefixer: on */
     }
-    &__title--ellipsis{
-      --max-lines:2;
-      --lh:1.25rem;
-      position: relative;
-      max-height: calc(var(--lh) * var(--max-lines));
-      overflow: hidden;
-      // display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp:2;
-      word-break: break-all;
-      display: flex;
-      padding-right: 1rem;  
-      html[dir="rtl"] & {
-        padding-left: 1rem;
-        padding-right: inherit;
-       }
-      &::before {
-        position: absolute;
-        content: "...";
-        bottom: 0;
-        right: 0;
-        html[dir="rtl"] & {
-          left: 0;
-          right: inherit;
-         }
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        width: 1rem;
-        height: 1rem;
-        background: var(--white);
-        html[dir="rtl"] & {
-          left: 0;
-          right: inherit;
-         }
-      }
-    }
+    
     &__meta1 {
       color: $gray-800;
       font-size: $font-size-sm;
@@ -123,10 +78,20 @@
     }
     .data_1 {
       max-width:50%;
+      // text-align: left;
+      // html[dir="rtl"] & {
+      //   text-align: inherit;
+      //   text-align: right;
+      // }
     }
     .data_2 {
       // max-width:50%;
       flex:1;
+      // text-align: left;
+      // html[dir="rtl"] & {
+      //   text-align: inherit;
+      //   text-align: right;
+      // }
     }
     .dot-divider {
       width: calculateRem(4px);
@@ -142,7 +107,6 @@
     }
     &__moreinfo {
       border-radius: 0 0 calculateRem(2px) calculateRem(2px);
-      // background-color: $gray-0;
       background-color: #fafafa;
       display: flex;
       flex-direction: row;
@@ -150,6 +114,7 @@
       justify-content: space-between;
       // padding: $base-block-space;
       min-height: calculateRem(56px);
+      border-top: 0px solid #cacbce;
     }
     &__meta2 {
       color: $gray-800;
@@ -189,12 +154,11 @@
     }
     &__type {
       @include margin(null, null, null, calculateRem(16px));
-      background: #999;
+      background: var(--gray-200);
       position: relative;
       height: calculateRem(20px);
       @include padding(null, calculateRem(8px), null, calculateRem(4px));
-      color: #fff;
-      // margin-right: -8px;
+      color: var(--white);
       font-size: $font-size-xs;
       display: flex;
       align-items: center;
@@ -206,7 +170,7 @@
         border-style: solid;
         border-color: $gray-200 $gray-200 $gray-200 transparent;
         position: absolute;
-        left: calculateRem(-10px);
+        left: -10px;
         html[dir="rtl"] & {
           right: calculateRem(-10px);
           left: inherit;
@@ -226,7 +190,7 @@
           display: flex;
           align-items: center;
           background-color: $gray-100;
-          //   margin: calculateRem(-8px);
+          //   margin: -8px;
           height: calculateRem(88px);
           width: calculateRem(88px);
         }
@@ -312,8 +276,7 @@
         .hover-meta-info {
           font-size: calculateRem(10px);
           opacity: 0.8;
-          color: #ffffff;
-          font-size: calculateRem(10px);
+          color: var(--white);
           line-height: calculateRem(12px);
           flex: 0 0 25%;
         }
@@ -366,7 +329,7 @@
       background-position: 0 0;
     }
     100% {
-      background-position: 50px 50px;
+      background-position: calculateRem(50px) calculateRem(50px);
     }
   }
   .completed > span {

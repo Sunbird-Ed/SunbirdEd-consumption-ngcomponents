@@ -10,7 +10,8 @@
     // border-bottom: 1px solid var(--gray-0);
     margin-bottom: calculateRem(8px);
     .title {
-      font-size: $h5-font-size;
+      font-size: calculateRem(18px);
+      line-height: calculateRem(26px);
       font-weight: bold;
       color: $primary-color;
       text-overflow: ellipsis;

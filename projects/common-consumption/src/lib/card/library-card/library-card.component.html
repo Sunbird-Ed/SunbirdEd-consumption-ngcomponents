@@ -11,11 +11,11 @@
     </div>
     <!-- card mobile view details -->
     <div class="sb--card__info">
-      <h4 class="sb--card__title sb--card__title--ellipsis" title="{{content?.name}}">{{content?.name}}</h4>
+      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
       <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-        <span class="data_1 sb__ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
+        <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
         <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
-        <span class="data_2 sb__ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
+        <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
       </div>
     </div>
   </div>
@@ -24,10 +24,10 @@
   <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK">
     <div class="sb--card__moreinfo">
       <!-- other meta info Medium, Organization etc -->
-      <div class="sb--card__meta2">
+      <div class="sb--card__meta2 text-left">
         <div class="sb--card__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
             {{content.medium}}</span></div>
-        <div class="sb--card__org sb__ellipsis text-left" *ngIf="content?.organisation">{{content.organisation}}</div>
+        <div class="sb--card__org sb__ellipsis" *ngIf="content?.organisation"><bdi>{{content.organisation}}</bdi></div>
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
       <div class="sb--card__tags">
@@ -42,7 +42,7 @@
   <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
     <!-- Section area if not available it will be hidden -->
     <div class="sb--card__moreinfo" *ngIf="section">
-      <div class="sb--card__meta2">
+      <div class="sb--card__meta2 text-left">
         <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="section">
           <span class="label">{{moreInfoLabel}}: </span>
           <span class="value">{{section}}</span>
@@ -71,13 +71,13 @@
           <!-- card mobile view details -->
           <div class="sb--card__info">
             <h4 class="sb--card--title loading-animation sb--card--highlighter"></h4>
-            <div class="sb--card__meta1">
+            <div class="sb--card__meta1 text-left">
               <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
             </div>
           </div>
         </div>
         <div class="sb--card__moreinfo" style="display:block;" *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.QRCODE_RESULT">
-              <div class="sb--card__meta2" style="float:left;width:60%">
+              <div class="sb--card__meta2 text-left" style="float:left;width:60%">
                 <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
                 <div class="value loading-animation sb--card--highlighter" style="width:60%;"></div>
               </div>
