@@ -9,7 +9,7 @@
         <img [src]="cardImg" alt="">
       </div>
     </div>
-    <!-- card mobile view details *ngIf="type != CourseCardTypes.RECENTLY_VIEWED" -->
+    <!-- card mobile view details -->
     <div class="sb--card__info">
       <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
       <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
