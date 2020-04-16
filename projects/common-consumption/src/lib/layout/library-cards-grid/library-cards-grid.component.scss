@@ -3,7 +3,7 @@
 :host {
   .layout-library {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     flex-direction: column;
   }
 
@@ -51,49 +51,81 @@
       }
     }
   }
+/* using grid instead flex */
+  .cards-containers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+    &--show-1 {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100%/1.5), 1fr));
+      }
+    &--show-2 {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100%/2.5), 1fr));
+      }
+    &--show-3 {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100%/3.5), 1fr));
+      }
+    &--show-4 {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100%/4.5), 1fr));
+      }
+    &--show-5 {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100%/5.5), 1fr));
+      }
+    @include respond-below(md) {
+      &--show-3, &--show-4, &--show-5 {
+        grid-template-columns: repeat(auto-fill, minmax(calc(100%/2.5), 1fr));
+      }
+    }
+    @include respond-below(xs) {
+      &--show-2,&--show-3, &--show-4, &--show-5 {
+        grid-template-columns: repeat(auto-fill, minmax(calc(100%/1.5), 1fr));
+      }
+    }
+    @include respond-between(md, lg) {
+      &--show-4, &--show-5 {
+        grid-template-columns: repeat(auto-fill, minmax(calc(100%/3.5), 1fr));
+      }
+    }
+    grid-gap: 1rem;
+    grid-row-gap: 1.5rem;
+    .item {
+    }
+  }
 
   .cards-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     // justify-content: space-between;
-    margin: 0 -0.5rem;
-
+    margin: -1.5rem -.5rem 0 -.5rem;
     .item {
       @include padding(0, calculateRem(8px), 0, calculateRem(8px));
       box-sizing: border-box;
-      margin-bottom: calculateRem(24px);
-
+      margin-top: calculateRem(24px);
       @include respond-below(sm) {
-        margin-bottom: calculateRem(16px);
+        margin-top: calculateRem(16px);
       }
-
+      &.show-1 {
+        max-width: 100%;
+      }
       &.show-2 {
         flex: 0 0 50%;
         max-width: 50%;
       }
-
       &.show-3 {
         flex: 0 0 33.33%;
         max-width: 33.33%;
       }
-
       &.show-4 {
         flex: 0 0 25%;
         max-width: 25%;
       }
-
       &.show-5 {
         flex: 0 0 20%;
         max-width: 20%;
       }
-
     }
-  }
 
   @include respond-below(md) {
-    .cards-container {
-
       .item.show-2,
       .item.show-3,
       .item.show-4,
@@ -102,32 +134,25 @@
         max-width: 50%;
       }
     }
-  }
 
   @include respond-below(xs) {
-    .cards-container {
-
-      .item.show-2,
-      .item.show-3,
-      .item.show-4,
-      .item.show-5 {
-        flex: 0 0 100%;
-        max-width: 100%;
+  
+        .item.show-2,
+        .item.show-3,
+        .item.show-4,
+        .item.show-5 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
-    }
+      @include respond-between(md, lg) {
+          .item.show-4,
+          .item.show-5 {
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+          }
+        }
   }
-
-  @include respond-between(md, lg) {
-    .cards-container {
-
-      .item.show-4,
-      .item.show-5 {
-        flex: 0 0 33.33%;
-        max-width: 33.33%;
-      }
-    }
-  }
-
   //Some Refactoring of Code required to SB-style
   $background: #f6f7f8;
   $grey-nuance-lighter: #eeeeee;

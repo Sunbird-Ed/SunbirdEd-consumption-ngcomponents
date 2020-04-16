@@ -12,8 +12,7 @@
     <div class="sb--container-box">
       <div class="sb--card__info">
         <div class="sb--holder">
-          <h4 class="sb--card__title sb__ellipsis  sb__ellipsis--three text-left" *ngIf="type != CourseCardTypes.RECENTLY_VIEWED" title="{{course?.courseName}}">{{course?.courseName}}</h4>
-          <h4 class="sb--card__title sb--card__title--ellipsis sb--card__title--ellipsis--three text-left" *ngIf="type === CourseCardTypes.RECENTLY_VIEWED" title="{{course?.courseName}}">{{course?.courseName}}</h4>
+          <h4 class="sb--card__title sb__ellipsis  sb__ellipsis--three text-left" title="{{course?.courseName}}">{{course?.courseName}}</h4>
           <div class="sb--card__meta1 text-left">
             <span class="data_1 ellipsis" title="{{course?.content?.orgDetails?.orgName}}">{{course?.content?.orgDetails?.orgName}}</span>
           </div>

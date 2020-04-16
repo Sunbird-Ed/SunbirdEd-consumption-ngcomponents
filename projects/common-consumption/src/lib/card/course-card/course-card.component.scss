@@ -5,17 +5,6 @@
 }
 .sb--card--course {
   &.sb--card--recently-viewed {
-    .sb--card__title--ellipsis{
-      --max-lines:2 !important;
-      --lh:1rem !important;
-      max-height: calc(var(--lh) * var(--max-lines));
-      padding-right: calculateRem(16px);
-      &--three{
-        --max-lines:3 !important;
-        --lh:1rem !important;
-        max-height: calc(var(--lh) * var(--max-lines));
-      }
-    }
   }
   .sb--card__title {
     color: var(--black);

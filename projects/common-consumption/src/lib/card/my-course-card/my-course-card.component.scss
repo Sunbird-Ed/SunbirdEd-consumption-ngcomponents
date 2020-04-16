@@ -1,31 +1,42 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 
+:host {
 .sb--card--course {
-.sb--container-box {
-        min-width: 0;
-        flex: 1;
-        padding: 0em;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        .sb--card__info {
-            padding: 0rem 0rem 0rem 0rem;
-            display: flex; 
-            align-items: center;
-        }
-        .sb--holder {
-            flex:1;
+    & .sb--container-box {
             min-width: 0;
+            flex: 1;
+            padding-right: 8px;
+            // @include padding(null, calculateRem(8px), null, null);
+            // @include padding(null calculateRem(8px) null null);
+            html[dir="rtl"] & {
+                padding-right:inherit;
+                padding-left: 8px;
+            }
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            .sb--card__info {
+                padding: 0rem 0rem 0rem 0rem;
+                display: flex; 
+                align-items: center;
+            }
+            .sb--holder {
+                flex:1;
+                min-width: 0;
+            }
         }
-    }
 }
-.sb--card--recently-viewed {
-    .sb--container-box {
-        padding: 0.5rem;
-    }
-    .sb--card__meta_c_data {
-        min-height: 1rem !important;
+}
+
+.sb--card--course {
+    &.sb--card--recently-viewed {
+        .sb--container-box {
+            padding: 0.5rem !important;
+        }
+        .sb--card__meta_c_data {
+            min-height: 1rem !important;
+        }
     }
 }
 .sb--card__meta_c_data_external {
