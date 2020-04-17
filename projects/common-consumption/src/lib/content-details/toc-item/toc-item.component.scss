@@ -123,7 +123,6 @@
       font-size: $font-size-xs;
       line-height:calculateRem(18px);
       color: var(--gray-800);
-      @include margin(null null null calculateRem(16px));
       margin-bottom:calculateRem(8px);
     }
     &__item {
