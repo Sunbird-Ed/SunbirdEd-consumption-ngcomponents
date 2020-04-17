@@ -11,7 +11,7 @@
       display: inline-flex;
       align-items: center;
       box-sizing: border-box;
-      @include padding(calculateRem(8px) calculateRem(8px));
+      @include padding(calculateRem(16px) calculateRem(16px));
       .pill {
         background-color: $white;
         white-space: nowrap;

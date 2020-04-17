@@ -5,8 +5,8 @@
     &--toc {
     }
     &__panel {
-      margin-bottom: calculateRem(8px);
-      box-shadow: 0 calculateRem(4px) calculateRem(7px) 0 rgba(0, 0, 0, 0.1);
+      margin-bottom: calculateRem(4px);
+      box-shadow: 0 0 calculateRem(10px) 0 rgba(0,0,0,0.25);
     }
     &__panel-header {
       background: var(--white);
