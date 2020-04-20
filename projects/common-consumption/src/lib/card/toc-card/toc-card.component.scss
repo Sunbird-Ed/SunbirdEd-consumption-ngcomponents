@@ -14,7 +14,8 @@
         min-height: calculateRem(56px);
         transition: all .2s ease-in;
         &__title {
-          font-size: $font-size-sm;
+          font-size: calculateRem(12px);
+          line-height:calculateRem(20px);
           color: var(--primary-400);
           margin: 0px;
           padding: 0px;
@@ -37,9 +38,13 @@
         &:last-child {
             margin-bottom: calculateRem(8px);
         }
-        &:hover,
-        &--active {
+        &:hover{
+          background: var(--gray-0);
+        }
+        &--active{
           background: var(--primary-100);
+        }
+        &:hover, &--active {
           .sbchapter__item__title {
             font-weight: bold;
           }
