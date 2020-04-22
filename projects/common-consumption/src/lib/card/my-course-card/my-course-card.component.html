@@ -26,7 +26,7 @@
 
   <!-- content for only desktop -->
   <div *ngIf="type != CourseCardTypes.RECENTLY_VIEWED">
-    <div class="sb--card__meta_c_data" [innerHTML]="section">
+    <div class="sb--card__meta_c_data" *ngIf="section!=null" [innerHTML]="section">
     </div>
   </div>
   <div class="sb--card__progressbar" *ngIf="type != CourseCardTypes.RECENTLY_VIEWED">
@@ -35,7 +35,7 @@
 
 </div>
 <div *ngIf="type == CourseCardTypes.RECENTLY_VIEWED">
-  <div class="sb--card__meta_c_data_external" [innerHTML]="section">
+  <div class="sb--card__meta_c_data_external" *ngIf="section!=null" [innerHTML]="section">
   </div>
 </div>
 
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-        <div class="sb--card__meta_c_data" style="display:block;">
+        <div class="sb--card__meta_c_data" style="display:none;">
             <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
         </div>
   </div>
