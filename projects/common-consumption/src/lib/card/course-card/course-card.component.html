@@ -17,7 +17,7 @@
   </div>
   
   <div>
-    <div class="sb--card__meta_c_data" [innerHTML]="section">
+    <div class="sb--card__meta_c_data" *ngIf="section!=null" [innerHTML]="section">
     </div>
   </div>
 
@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-        <div class="sb--card__meta_c_data" style="display:block;">
+        <div class="sb--card__meta_c_data" style="display:none;">
             <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
         </div>
   </div>
