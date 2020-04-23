@@ -63,7 +63,7 @@ export class LibraryFiltersComponent implements OnChanges {
                     let type = this.fetchCorrespondingTypes(item.value);
                     if (this.selectedItems && this.selectedItems.includes(index)) {
                         return ({ text: item.text, selected: true, type: type });
-                    } else if (!this.selectedItems && item === TocMimeTypes.ALL) {
+                    } else if (!this.selectedItems && type === TocMimeTypes.ALL) {
                         return ({ text: item.text, selected: true, type: type });
                     } else {
                         return ({ text: item.text, selected: false, type: type });
