@@ -19,6 +19,7 @@ export class CourseCardsHlistComponent implements OnInit {
    @Input() viewMoreButtonText = 'View More';
    @Input() isLoading:boolean;
    @Input() type:CourseCardGridTypes;
+   @Input() multiRow:boolean;
 
 
    @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
@@ -51,7 +52,7 @@ export class CourseCardsHlistComponent implements OnInit {
  }
 
    get CourseCardGridTypes() { return CourseCardGridTypes; }
-   get CourseCardTypes() { return CourseCardTypes; }s
+   get CourseCardTypes() { return CourseCardTypes; }
 
    /**
     * Triggers event on `View More` Click

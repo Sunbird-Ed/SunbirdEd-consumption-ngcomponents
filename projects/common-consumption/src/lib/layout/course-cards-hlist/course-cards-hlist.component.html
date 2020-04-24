@@ -9,12 +9,24 @@
             {{viewMoreButtonText}}
         </button>
     </div>
-    <div class="sb--scrolling-wrapper-flexbox">
-      <div *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let index = index" class="sb--card--container">
+    <div class="sb--scrolling-wrapper-flexbox" *ngIf="!multiRow">
+      <div  *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let index = index" class="sb--card--container">
         <sb-course-card [course]="content" (click)="onCardClick($event, content)"  [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
         <sb-my-course-card [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
         <sb-my-course-card [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
       </div>
+    </div>
+    <div class="sb--scrolling-wrapper-flexbox" *ngIf="multiRow">
+      <span *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let index = index">
+        <div *ngIf="index%2 == 0"  class="sb--card--container">
+            <sb-course-card class="sb--card--seperator" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.COURSE_CARD_GRID" [course]="contentList[index]" (click)="onCardClick($event, content)"  [cardImg]="content?.cardImg" [section]="content?.info_to_display"></sb-course-card>
+            <sb-course-card class="sb--card--seperator" *ngIf="index+1 < contentList.length-1 && type === CourseCardGridTypes.COURSE_CARD_GRID" [course]="contentList[index+1]" (click)="onCardClick($event, content)"  [cardImg]="content?.cardImg" [section]="content?.info_to_display"></sb-course-card>
+            <sb-my-course-card class="sb--card--seperator" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.MY_COURSE_CARD_GRID" [course]="contentList[index]" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display"></sb-my-course-card>
+            <sb-my-course-card class="sb--card--seperator" *ngIf="index+1 < contentList.length-1 && type === CourseCardGridTypes.MY_COURSE_CARD_GRID" [course]="contentList[index+1]" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display"></sb-my-course-card>
+            <sb-my-course-card class="sb--card--seperator" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID" [course]="contentList[index]" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED"></sb-my-course-card>
+            <sb-my-course-card class="sb--card--seperator" *ngIf="index+1 < contentList.length-1 && type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID" [course]="contentList[index+1]" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED"></sb-my-course-card>
+        </div>
+      </span>
     </div>
 </div>
 <div class="layout-course" *ngIf="isLoading">
@@ -23,12 +35,22 @@
             
         </div>
     </div>
-    <div class="sb--scrolling-wrapper-flexbox" *ngIf="maxCardCount > 0">
+    <div class="sb--scrolling-wrapper-flexbox" *ngIf="maxCardCount > 0 && !multiRow">
         <div *ngFor="let content of range(maxCardCount); let i=index" class="sb--card--container">
           <sb-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
           <sb-my-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
           <sb-my-course-card [isLoading]="isLoading" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
         </div>
+      </div>
+      <div class="sb--scrolling-wrapper-flexbox" *ngIf="maxCardCount > 0 && multiRow">
+          <div *ngFor="let content of range(maxCardCount); let i=index" class="sb--card--container">
+              <sb-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
+              <sb-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
+              <sb-my-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
+              <sb-my-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
+              <sb-my-course-card [isLoading]="isLoading" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
+              <sb-my-course-card [isLoading]="isLoading" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
+            </div>
       </div>
 
 </div>

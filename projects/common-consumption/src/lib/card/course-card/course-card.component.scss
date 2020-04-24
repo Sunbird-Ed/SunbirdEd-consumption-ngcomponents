@@ -2,7 +2,9 @@
 
 .sb--card {
   border-radius: calculateRem(2px);
+  margin-bottom: calculateRem(8px) !important;
 }
+
 .sb--card--course {
   &.sb--card--recently-viewed {
   }
