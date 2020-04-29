@@ -6,7 +6,7 @@
     }
     &__panel {
       margin-bottom: calculateRem(4px);
-      box-shadow: 0 0 calculateRem(10px) 0 rgba(0,0,0,0.25);
+      box-shadow: 0 calculateRem(4px) calculateRem(4px) calculateRem(-4px) rgba(0,0,0,.25) 0 0 calculateRem(10px) 0 rgba(0,0,0,0.25);
     }
     &__panel-header {
       background: var(--white);

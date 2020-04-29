@@ -118,7 +118,7 @@
 //sbchapter css
 .sbchapter {
   border-bottom: calculateRem(1px) solid #ddd;
-  padding: calculateRem(16px);
+  padding: calculateRem(16px) calculateRem(16px) calculateRem(8px) calculateRem(16px);
   h4 {
     font-size: $font-size-xs;
     line-height: calculateRem(22px);
