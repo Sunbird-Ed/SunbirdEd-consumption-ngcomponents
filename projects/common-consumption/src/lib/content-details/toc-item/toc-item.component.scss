@@ -3,7 +3,7 @@
   //sbchapter css
   .sbchapter {
     border-bottom: calculateRem(1px) solid #ddd;
-    padding: calculateRem(16px) calculateRem(16px) calculateRem(8px) calculateRem(16px);
+    padding: calculateRem(16px) calculateRem(16px) calculateRem(8px);
     h4 {
       font-size: $font-size-xs;
       line-height:calculateRem(18px);
@@ -14,7 +14,7 @@
       background: var(--white);
       border: calculateRem(1px) solid #ddd;
       box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(2, 79, 157, 0.1);
-      border: calculateRem(0.5px) solid rgba(35, 97, 255, 0.5);
+      border: calculateRem(0.5px) solid rgba(47, 66, 114, 0.5);
       display: flex;
       align-items: center;
       justify-content: space-between;
