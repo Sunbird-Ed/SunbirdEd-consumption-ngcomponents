@@ -9,6 +9,7 @@
     justify-content: space-between;
     cursor: pointer;
     height: calculateRem(48px);
+    border-radius: calculateRem(4px);
   }
   &__panel-header__title {
     font-size: calculateRem(14px);

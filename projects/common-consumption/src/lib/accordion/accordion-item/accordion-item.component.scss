@@ -16,6 +16,7 @@
       justify-content: space-between;
       cursor: pointer;
       height: calculateRem(48px);
+      border-radius: calculateRem(4px);
     }
     .accordion-item-header-collapsed &__panel-header__title{
       font-weight: normal;
