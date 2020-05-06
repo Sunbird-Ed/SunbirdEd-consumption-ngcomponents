@@ -14,6 +14,7 @@
         <sb-course-card [course]="content" (click)="onCardClick($event, content)"  [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
         <sb-my-course-card [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
         <sb-my-course-card [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
+        <sb-course-curiculum-card [cardData]="content" (click)="onCardClick($event, content)" *ngIf="type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
       </div>
     </div>
     <div class="sb--scrolling-wrapper-flexbox" *ngIf="multiRow">
@@ -21,11 +22,16 @@
         <div *ngIf="index%2 == 0"  class="sb--card--container">
             <sb-course-card class="sb--card--seperator" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.COURSE_CARD_GRID" [course]="contentList[index]" (click)="onCardClick($event, contentList[index])"  [cardImg]="contentList[index]?.cardImg" [section]="contentList[index]?.info_to_display"></sb-course-card>
             <sb-course-card class="sb--card--seperator" *ngIf="index+1 < contentList.length && type === CourseCardGridTypes.COURSE_CARD_GRID" [course]="contentList[index+1]" (click)="onCardClick($event, contentList[index+1])"  [cardImg]="contentList[index+1]?.cardImg" [section]="contentList[index+1]?.info_to_display"></sb-course-card>
+
             <sb-my-course-card class="sb--card--seperator" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.MY_COURSE_CARD_GRID" [course]="contentList[index]" (click)="onCardClick($event, contentList[index])" [cardImg]="contentList[index]?.cardImg" [section]="contentList[index]?.info_to_display"></sb-my-course-card>
             <sb-my-course-card class="sb--card--seperator" *ngIf="index+1 < contentList.length && type === CourseCardGridTypes.MY_COURSE_CARD_GRID" [course]="contentList[index+1]" (click)="onCardClick($event, contentList[index+1])" [cardImg]="contentList[index+1]?.cardImg" [section]="contentList[index+1]?.info_to_display"></sb-my-course-card>
+            
             <sb-my-course-card class="sb--card--seperator" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID" [course]="contentList[index]" (click)="onCardClick($event, contentList[index])" [cardImg]="contentList[index]?.cardImg" [section]="contentList[index]?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED"></sb-my-course-card>
             <sb-my-course-card class="sb--card--seperator" *ngIf="index+1 < contentList.length && type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID" [course]="contentList[index+1]" (click)="onCardClick($event, contentList[index+1])" [cardImg]="contentList[index+1]?.cardImg" [section]="contentList[index+1]?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED"></sb-my-course-card>
-        </div>
+        
+            <sb-course-curiculum-card class="sb--card--seperator" [cardData]="contentList[index]" (click)="onCardClick($event, contentList[index])" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
+            <sb-course-curiculum-card class="sb--card--seperator" [cardData]="contentList[index+1]" (click)="onCardClick($event, contentList[index+1])" *ngIf="index+1 < contentList.length && contentList[index+1]!=null && type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
+       </div>
       </span>
     </div>
 </div>
@@ -40,6 +46,7 @@
           <sb-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID"></sb-course-card>
           <sb-my-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
           <sb-my-course-card [isLoading]="isLoading" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
+          <sb-course-curiculum-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
         </div>
       </div>
       <div class="sb--scrolling-wrapper-flexbox" *ngIf="maxCardCount > 0 && multiRow">
@@ -50,6 +57,8 @@
               <sb-my-course-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
               <sb-my-course-card [isLoading]="isLoading" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
               <sb-my-course-card [isLoading]="isLoading" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
+              <sb-course-curiculum-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
+              <sb-course-curiculum-card [isLoading]="isLoading" *ngIf="type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
             </div>
       </div>
 

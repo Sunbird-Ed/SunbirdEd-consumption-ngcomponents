@@ -5,12 +5,13 @@ import { CourseCardComponent } from './course-card/course-card.component';
 import { CardHoverComponent } from './card-hover/card-hover.component';
 import { TocCardComponent } from './toc-card/toc-card.component';
 import { MyCourseCardComponent } from './my-course-card/my-course-card.component';
+import { CourseCuriculumCardComponent } from './course-curiculum-card/course-curiculum-card.component';
 
 @NgModule({
-  declarations: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, TocCardComponent, MyCourseCardComponent],
+  declarations: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, TocCardComponent, MyCourseCardComponent, CourseCuriculumCardComponent],
   imports: [
     CommonModule
   ],
-  exports: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, TocCardComponent, MyCourseCardComponent]
+  exports: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, TocCardComponent, MyCourseCardComponent, CourseCuriculumCardComponent]
 })
 export class CardModule { }

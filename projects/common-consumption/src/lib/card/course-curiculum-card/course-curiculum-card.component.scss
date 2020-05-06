@@ -1,0 +1,13 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+
+.sb--card--course--curiculum {
+    .sb--card__meta1, .sb--card__title {
+        color: #ffffff;
+    }
+    .img-container {
+        background-color: transparent !important;
+    }
+}
+.sb--card {
+    margin-bottom: calculateRem(8px) !important;
+  }
