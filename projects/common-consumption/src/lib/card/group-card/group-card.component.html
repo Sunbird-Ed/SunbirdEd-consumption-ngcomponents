@@ -1,0 +1,38 @@
+<!-- card component -->
+<div class="sb--card sb--card--course--curiculum" (click)="onClick($event)" *ngIf="!isLoading">
+  <div class="sb--card__main-area">
+    <!-- card img -->
+    <div class="sb--card__img">
+      <div class="img-container">
+        <img [src]="cardImg" alt="">
+      </div>
+    </div>
+    <!-- card mobile view details -->
+    <div class="sb--card__info">
+      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" title="{{group?.name}}">{{group?.name}}</h4>
+      <div class="sb--card__meta1 text-left" *ngIf="group?.subject?.length || group?.gradeLevel?.length">
+        <span class="data_1 ellipsis" title="{{group?.subject}}">{{group?.subject}}</span>
+        <span *ngIf="group?.subject?.length && group?.gradeLevel?.length" class="dot-divider"></span>
+        <span class="data_2 ellipsis" title="{{group?.gradeLevel}}">{{group?.gradeLevel}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="sb--card" *ngIf="isLoading">
+      <div class="sb--card__main-area">
+          <!-- card img -->
+          <div class="sb--card__img">
+            <div class="img-container loading-animation">
+              
+            </div>
+          </div>
+          <!-- card mobile view details -->
+          <div class="sb--card__info">
+            <h4 class="sb--card__title loading-animation sb--card--highlighter"></h4>
+            <div class="sb--card__meta1 text-left">
+              <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
+            </div>
+          </div>
+        </div>
+  </div>
