@@ -1,0 +1,15 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+
+.sb--chapter {
+    border-radius: calculateRem(4px);
+    border: 1px solid;
+    height: 140px;
+    width : 140px;
+    padding: calculateRem(4px);
+    .title {
+        font-size: calculateRem(10px);
+    }
+}
+.sb--curiculum-holder {
+    margin: calculateRem(8px);
+}
