@@ -110,5 +110,5 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [Card hover component](./projects/common-consumption/src/lib/card/card-hover/card-hover.md) | Can be used with library card to add overlay on card with action items . |sb-card-hover|
 | [TOCItem component](./projects/common-consumption/src/lib/content-details/toc-item/toc-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|
 | [TOCChildItem component](./projects/common-consumption/src/lib/content-details/toc-child-item/toc-child-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|
-| [Member Card component](./projects/common-consumption/src/lib/layout/member-card/member-card.md) | Member Card With Menu. |sb-member-card|
+| [Member Card component](./projects/common-consumption/src/lib/card/member-card/member-card.md) | Member Card With Menu. |sb-member-card|
 | [Member List component](./projects/common-consumption/src/lib/layout/member-list/member-list.md) | Member List With Cards. |sb-member-list|
