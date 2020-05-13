@@ -10,6 +10,7 @@ export class TocChildItemComponent implements OnInit {
   @Input() childData;
   @Input() activeContent;
   @Input() activeMimeTypeFilter = ['all'];
+  @Input() isCourseContent;
 
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
 

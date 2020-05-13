@@ -10,6 +10,7 @@ export class TocCardComponent implements OnInit {
   @ViewChild('card') card: ElementRef;
   @Input() content;
   @Input() activeContent;
+  @Input() isCourseContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   fallbackImg = COMMON_CONSUMPTION_CONSTANTS.TOC_CARD_FALLBACK_IMG ;
 
