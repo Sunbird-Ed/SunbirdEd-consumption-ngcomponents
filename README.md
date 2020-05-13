@@ -98,17 +98,25 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 |Feature| Notes| Selector|Code|
 |--|--|--|--|
 | [LibraryCard](./projects/common-consumption/src/lib/card/library-card/library-card.md) | Can be used in the library page for all consumption platforms| sb-library-card| *`<sb-library-card></sb-library-card>`*|
-| [CourseCard](./projects/common-consumption/src/lib/card/course-card/course-card.md) | Can be used in the courses page for all consumption platforms| sb-course-card||
-| [MyCourseCard](./projects/common-consumption/src/lib/card/my-course-card/my-course-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card|
-| [TocCard](./projects/common-consumption/src/lib/card/toc-card/toc-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card|
+| [CourseCard](./projects/common-consumption/src/lib/card/course-card/course-card.md) | Can be used in the courses page for all consumption platforms| sb-course-card| *`<sb-course-card></sb-course-card>`*|
+| [MyCourseCard](./projects/common-consumption/src/lib/card/my-course-card/my-course-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card| *`<sb-my-course-card></sb-my-course-card>`*|
+| [TocCard](./projects/common-consumption/src/lib/card/toc-card/toc-card.md) | Can be used in the TOC card| sb-toc-card||
 | [LibraryCardsGrid](./projects/common-consumption/src/lib/layout/library-cards-grid/library-cards-grid.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
+*`<sb-library-cards-grid [title]="Grid Title" [isLoading]="isLoading" [maxCardCount]="3"></sb-library-cards-grid>`*|
 | [CourseCardsGrid](./projects/common-consumption/src/lib/layout/course-cards-hlist/course-cards-hlist.md) | Can be used in the course page for all consumption platforms|sb-course-cards-hlist|
+*`<sb-course-cards-hlist [multiRow]="true" [contentList]="range(15)" [type]="'curiculum_course_card_grid'" [title]="'Courses'" [isLoading]="isLoading"></sb-course-cards-hlist>`*|
 | [LibraryCardsStack](./projects/common-consumption/src/lib/layout/library-cards-stack/library-cards-stack.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
-| [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal|
-| [LibraryFilters](./projects/common-consumption/src/lib/library-filters/library-filters/library-filters.md) | Can be used in the library page for all consumption platforms. |sb-library-filters|
-| [FAQ Component](./projects/common-consumption/src/lib/faq/faq/faq.md) | Faq for Consumption Clients with intractable events. |sb-faq|
-| [Card hover component](./projects/common-consumption/src/lib/card/card-hover/card-hover.md) | Can be used with library card to add overlay on card with action items . |sb-card-hover|
-| [TOCItem component](./projects/common-consumption/src/lib/content-details/toc-item/toc-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|
-| [TOCChildItem component](./projects/common-consumption/src/lib/content-details/toc-child-item/toc-child-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|
+*`<sb-library-cards-stack [title]="Stack Title"[contentList]="range(15)" [maxCardCount]="3" [isLoading]="isLoading"></sb-library-cards-stack>`*|
+| [Confirmation Modal]([https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents)) | Can be used in places where a popup is needed with user prompt|sb-confirmation-modal||
+| [LibraryFilters](./projects/common-consumption/src/lib/library-filters/library-filters/library-filters.md) | Can be used in the library page for all consumption platforms. |sb-library-filters||
+| [FAQ Component](./projects/common-consumption/src/lib/faq/faq/faq.md) | Faq for Consumption Clients with intractable events. |sb-faq||
+| [Card hover component](./projects/common-consumption/src/lib/card/card-hover/card-hover.md) | Can be used with library card to add overlay on card with action items . |sb-card-hover||
+| [TOCItem component](./projects/common-consumption/src/lib/content-details/toc-item/toc-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item||
+| [TOCChildItem component](./projects/common-consumption/src/lib/content-details/toc-child-item/toc-child-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item||
 | [Member Card component](./projects/common-consumption/src/lib/card/member-card/member-card.md) | Member Card With Menu. |sb-member-card|
+*`<sb-member-card></sb-member-card>`*|
 | [Member List component](./projects/common-consumption/src/lib/layout/member-list/member-list.md) | Member List With Cards. |sb-member-list|
+*`<sb-member-list [memberList]="range(15)" [isMenu]="true"></sb-member-list>`*|
+| [Group Card component](./projects/common-consumption/src/lib/card/group-card/group-card.md) | 
+Group Card. |sb-group-card|
+*`<sb-group-card></sb-group-card>`*|
