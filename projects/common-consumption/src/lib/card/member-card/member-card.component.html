@@ -1,7 +1,8 @@
-<div class="members-list-item" (click)="onClick($event)">
-    <div class="oval" [ngStyle]="fetchStyle()">{{initial}}</div>
-    <div class="member-name"><span>{{title}}</span></div>
-    <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
-    <div *ngIf="isAdmin" class="status">Admin</div>
+<div class="members-list">
+    <div class="members-list-item" (click)="onClick($event)">
+        <div class="oval" [ngStyle]="fetchStyle()">{{initial}}</div>
+        <div class="member-name"><span>{{title}}</span></div>
+        <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
+        <div *ngIf="isAdmin" class="status">Admin</div>
+    </div>
 </div>
-
