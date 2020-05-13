@@ -7,6 +7,7 @@ import { AccordionModule } from '../accordion/accordion.module';
 import { CardModule } from '../card/card.module';
 import { TocChildItemComponent } from './toc-child-item/toc-child-item.component';
 import { PipesModule } from '../pipes-module/pipes-module.module';
+import { TocCurriculumComponent } from './toc-curriculum/toc-curriculum.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { PipesModule } from '../pipes-module/pipes-module.module';
     PlayerTocComponent,
     TocItemComponent,
     TocChildItemComponent,
+    TocCurriculumComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { PipesModule } from '../pipes-module/pipes-module.module';
     PlayerActionsComponent,
     PlayerTocComponent,
     TocItemComponent,
+    TocCurriculumComponent
   ]
 })
 export class ContentDetailsModule { }
