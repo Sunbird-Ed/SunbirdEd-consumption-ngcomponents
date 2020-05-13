@@ -1,24 +1,7 @@
-<div class="members-list">
-    <div class="members-list-item">
-        <div class="oval" [ngStyle]="fetchStyle(0)">A</div>
-        <div class="member-name"><span>Abdul Malik</span></div>
-        <div class="menu"></div>
-        <div class="status">Admin</div>
-    </div>
-    <div class="members-list-item">
-        <div class="oval" [ngStyle]="fetchStyle(1)">A</div>
-        <div class="member-name"><span>Anand Kumar</span></div>
-        <div class="menu"></div>
-    </div>
-    <div class="members-list-item">
-        <div class="oval" [ngStyle]="fetchStyle(2)">A</div>
-        <div class="member-name"><span>Arvind Gupta</span></div>
-        <div class="menu"></div>
-        <div class="status">Teacher</div>
-    </div>
-    <div class="members-list-item">
-        <div class="oval" [ngStyle]="fetchStyle(3)">B</div>
-        <div class="member-name"><span>Babar Ali</span></div>
-        <div class="menu"></div>
-    </div>
+<div class="members-list-item" (click)="onClick($event)">
+    <div class="oval" [ngStyle]="fetchStyle()">{{initial}}</div>
+    <div class="member-name"><span>{{title}}</span></div>
+    <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
+    <div *ngIf="isAdmin" class="status">Admin</div>
 </div>
+
