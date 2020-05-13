@@ -1,53 +1,63 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 .sbchapter {
-    &__item {
-        background: var(--white);
-        border: calculateRem(1px) solid #ddd;
-        box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(2, 79, 157, 0.1);
-        border: calculateRem(0.5px) solid rgba(35, 97, 255, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: calculateRem(8px);
-        padding: calculateRem(8px);
-        cursor: pointer;
-        min-height: calculateRem(56px);
-        transition: all .2s ease-in;
-        &__title {
-          font-size: calculateRem(12px);
-          line-height:calculateRem(20px);
-          color: var(--primary-400);
-          margin: 0px;
-          padding: 0px;
-          font-weight: normal;
-        }
-        
-        .sbchapter__img {
-            width: calculateRem(40px);
-            height: calculateRem(40px);
-            flex: 0 0 calculateRem(40px);
-            display: flex;
-            align-items: center;
-            background: #ddd;
-            img {
-                width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-            }
-        }
-        &:last-child {
-            margin-bottom: calculateRem(8px);
-        }
-        &:hover{
-          background: var(--gray-0);
-        }
-        &--active{
-          background: var(--primary-100);
-        }
-        &:hover, &--active {
-          .sbchapter__item__title {
-            font-weight: bold;
-          }
-        }
+  &__item {
+    background: var(--white);
+    border: calculateRem(1px) solid #ddd;
+    box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(2, 79, 157, 0.1);
+    border: calculateRem(0.5px) solid rgba(35, 97, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: calculateRem(8px);
+    padding: calculateRem(8px);
+    cursor: pointer;
+    min-height: calculateRem(56px);
+    transition: all 0.2s ease-in;
+    &__title {
+      font-size: calculateRem(12px);
+      line-height: calculateRem(20px);
+      color: var(--primary-400);
+      margin: 0px;
+      padding: 0px;
+      font-weight: normal;
     }
+
+    .sbchapter__img {
+      width: calculateRem(40px);
+      height: calculateRem(40px);
+      flex: 0 0 calculateRem(40px);
+      display: flex;
+      align-items: center;
+      background: #ddd;
+      img {
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
+    }
+    &:last-child {
+      margin-bottom: calculateRem(8px);
+    }
+    &:hover {
+      background: var(--gray-0);
+    }
+    &--active {
+      background: var(--primary-100);
+    }
+    &:hover,
+    &--active {
+      .sbchapter__item__title {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.course-content {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.pl-8 {
+  padding-left: 8px;
 }

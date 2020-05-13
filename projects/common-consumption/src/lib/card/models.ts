@@ -36,6 +36,11 @@ export enum LibraryCardStackTypes {
     INFINITE_CARD_STACK = 'infinite_card_stack'
 }
 
+export enum TocCardType {
+    TEXTBOOK = 'textbook',
+    COURSE = 'course'
+}
+
 export interface IBadge {
     issuerId: string;
     assertionId: string;

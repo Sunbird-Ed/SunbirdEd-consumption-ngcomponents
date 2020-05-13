@@ -100,6 +100,7 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [LibraryCard](./projects/common-consumption/src/lib/card/library-card/library-card.md) | Can be used in the library page for all consumption platforms| sb-library-card|
 | [CourseCard](./projects/common-consumption/src/lib/card/course-card/course-card.md) | Can be used in the courses page for all consumption platforms| sb-course-card|
 | [MyCourseCard](./projects/common-consumption/src/lib/card/my-course-card/my-course-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card|
+| [TocCard](./projects/common-consumption/src/lib/card/toc-card/toc-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card|
 | [LibraryCardsGrid](./projects/common-consumption/src/lib/layout/library-cards-grid/library-cards-grid.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
 | [CourseCardsGrid](./projects/common-consumption/src/lib/layout/course-cards-hlist/course-cards-hlist.md) | Can be used in the course page for all consumption platforms|sb-course-cards-hlist|
 | [LibraryCardsStack](./projects/common-consumption/src/lib/layout/library-cards-stack/library-cards-stack.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
@@ -108,4 +109,4 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [FAQ Component](./projects/common-consumption/src/lib/faq/faq/faq.md) | Faq for Consumption Clients with intractable events. |sb-faq|
 | [Card hover component](./projects/common-consumption/src/lib/card/card-hover/card-hover.md) | Can be used with library card to add overlay on card with action items . |sb-card-hover|
 | [TOCItem component](./projects/common-consumption/src/lib/content-details/toc-item/toc-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|
-
+| [TOCChildItem component](./projects/common-consumption/src/lib/content-details/toc-child-item/toc-child-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|

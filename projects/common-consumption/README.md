@@ -94,6 +94,7 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 |--|--|--|
 | [LibraryCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the library page for all consumption platforms| sb-library-card|
 | [CourseCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the courses page for all consumption platforms| sb-course-card|
+| [TocCard](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents/blob/master/projects/common-consumption/src/lib/card/toc-card/toc-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card|
 | [LibraryCardHList](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the library page for all consumption platforms|sb-library-cards-grid|
 | [CourseCardsGrid](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the course page for all consumption platforms|sb-course-cards-hlist|
 | [LibraryCardsStack](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
@@ -102,7 +103,7 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [FAQ Component](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Faq for Consumption Clients with intractable events. |sb-faq|
 | [Card hover component](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used with library card to add overlay on card with action items . |sb-card-hover|
 | [TOCItem component](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Shows given  array of Items with accordion structure. |sb-toc-item|
-
+| [TOCChildItem component](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents/blob/master/projects/common-consumption/src/lib/content-details/toc-child-item/toc-child-item.md) | Shows given  array of Items with accordion structure. |sb-toc-item|
 ## LibraryCard
 
 Can be used in the library page for all consumption platforms.
