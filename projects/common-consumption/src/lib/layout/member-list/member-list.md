@@ -1,4 +1,4 @@
-## LibraryCardsGrid
+## Member List
 Can be used to display Member List for all consumption platforms
 
     import { MemberListComponent } form '@project-sunbird/common-consumption/layout/member-list';
