@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MimeTypePipe } from '../../pipes-module/mime-type';
+import { TocCardType } from '../../card/models';
 
 @Component({
   selector: 'sb-toc-child-item',
@@ -10,6 +10,7 @@ export class TocChildItemComponent implements OnInit {
   @Input() childData;
   @Input() activeContent;
   @Input() activeMimeTypeFilter = ['all'];
+  @Input() type: TocCardType = TocCardType.TEXTBOOK;
 
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
 

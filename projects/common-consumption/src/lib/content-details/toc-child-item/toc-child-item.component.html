@@ -6,7 +6,8 @@
 
 <ng-container
   *ngIf="childData?.mimeType !== 'application/vnd.ekstep.content-collection' && hasMimeType(activeMimeTypeFilter, childData?.mimeType, childData)">
-  <sb-toc-card [content]="childData" (tocCardClick)="tocCardClickHandler($event)" [activeContent]="activeContent">
+  <sb-toc-card [content]="childData" (tocCardClick)="tocCardClickHandler($event)" [activeContent]="activeContent"
+    [type]="type">
   </sb-toc-card>
 </ng-container>
 
@@ -14,7 +15,7 @@
   <div *ngFor="let child of childData?.children; let j = index;">
     {{ createUniqueId(childData, child) }}
     <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)"
-      [activeMimeTypeFilter]="activeMimeTypeFilter">
+      [activeMimeTypeFilter]="activeMimeTypeFilter" [type]="type">
 
     </sb-toc-child-item>
   </div>

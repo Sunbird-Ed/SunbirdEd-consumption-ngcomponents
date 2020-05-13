@@ -27,6 +27,7 @@ import { TocCurriculumComponent } from './toc-curriculum/toc-curriculum.componen
     PlayerActionsComponent,
     PlayerTocComponent,
     TocItemComponent,
+    TocChildItemComponent,
     TocCurriculumComponent
   ]
 })
