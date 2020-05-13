@@ -101,8 +101,8 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [CourseCard](./projects/common-consumption/src/lib/card/course-card/course-card.md) | Can be used in the courses page for all consumption platforms| sb-course-card| *`<sb-course-card><sb-course-card>`*|
 | [MyCourseCard](./projects/common-consumption/src/lib/card/my-course-card/my-course-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card| *`<sb-my-course-card></sb-my-course-card>`*|
 | [TocCard](./projects/common-consumption/src/lib/card/toc-card/toc-card.md) | Can be used in the TOC card| sb-toc-card||
-| [LibraryCardsGrid](./projects/common-consumption/src/lib/layout/library-cards-grid/library-cards-grid.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid|
-*`<sb-library-cards-grid [title]="Grid Title" [isLoading]="isLoading[maxCardCount="3"><sb-library-cards-grid>`*|
+| [LibraryCardsGrid](./projects/common-consumption/src/lib/layout/library-cards-grid/library-cards-grid.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-grid
+|*`<sb-library-cards-grid [title]="Grid Title" [isLoading]="isLoading[maxCardCount="3"><sb-library-cards-grid>`*|
 | [CourseCardsGrid](./projects/common-consumption/src/lib/layout/course-cards-hlist/course-cards-hlist.md) | Can be used in the course page for all consumption platforms|sb-course-cards-hlist|
 *`<sb-course-cards-hlist [multiRow]="true" [contentList]="range(15)"[type="'curiculum_course_card_grid'" [title]="'Courses'" [isLoading]="isLoading"><sb-course-cards-hlist>`*|
 | [LibraryCardsStack](./projects/common-consumption/src/lib/layout/library-cards-stack/library-cards-stack.md) | Can be used in the courses page for all consumption platforms|sb-library-cards-stack|
