@@ -95,9 +95,9 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
     export class MyOwnCustomSunbirdComponentsModule { }
 
 ## Available components
-|Feature| Notes| Selector|
-|--|--|--|
-| [LibraryCard](./projects/common-consumption/src/lib/card/library-card/library-card.md) | Can be used in the library page for all consumption platforms| sb-library-card|
+|Feature| Notes| Selector|Code|
+|--|--|--|--|
+| [LibraryCard](./projects/common-consumption/src/lib/card/library-card/library-card.md) | Can be used in the library page for all consumption platforms| sb-library-card|<sb-library-card></sb-library-card>|
 | [CourseCard](./projects/common-consumption/src/lib/card/course-card/course-card.md) | Can be used in the courses page for all consumption platforms| sb-course-card|
 | [MyCourseCard](./projects/common-consumption/src/lib/card/my-course-card/my-course-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card|
 | [TocCard](./projects/common-consumption/src/lib/card/toc-card/toc-card.md) | Can be used in the My courses section for all consumption platforms| sb-my-course-card|
