@@ -1,8 +1,25 @@
-<div class="sbchapter__item course-content" (click)="onTocCardClick($event)"
-  [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier=== content?.sbUniqueIdentifier, 'course-content': isCourseContent }">
-  <h4 class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8"
-    [style.padding-left]="isCourseContent ? '5px' : '0'">
-    {{content?.name}}</h4>
-  <div class="sbchapter__img"><img [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" #img />
+<!-- For card type textbook -->
+<div *ngIf="type === TocCardType.TEXTBOOK">
+  <div class="sbchapter__item" (click)="onTocCardClick($event)"
+    [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
+    <h4 class="sbchapter__item__title sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8">
+      {{content?.name}}
+    </h4>
+    <div class="sbchapter__img"><img [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" alt=""
+        #img />
+    </div>
+  </div>
+</div>
+
+<!-- For card type course -->
+<div *ngIf="type === TocCardType.COURSE">
+  <div class="sbchapter__item course-content" (click)="onTocCardClick($event)"
+    [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier }">
+    <h4 class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pl-8">
+      {{content?.name}}
+    </h4>
+    <div class="sbchapter__img"><img [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" alt=""
+        #img />
+    </div>
   </div>
 </div>
