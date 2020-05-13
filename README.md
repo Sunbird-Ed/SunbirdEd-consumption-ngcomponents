@@ -95,6 +95,20 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
     export class MyOwnCustomSunbirdComponentsModule { }
 
 ## Available components
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 10%;
+}
+table th:nth-of-type(3) {
+    width: 10%;
+}
+table th:nth-of-type(4) {
+    width: 60%;
+}
+</style>
 |Feature| Notes| Selector|Code|
 |--|--|--|--|
 | [LibraryCard](./projects/common-consumption/src/lib/card/library-card/library-card.md) | Can be used in the library page for all consumption platforms| sb-library-card| *`<sb-library-card><sb-library-card>`*|
