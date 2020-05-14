@@ -12,6 +12,7 @@ export class TocCurriculumComponent implements OnInit {
   @Input() tocData = staticData;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
+  @Input() isMobile: boolean = false;
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 

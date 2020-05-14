@@ -13,3 +13,13 @@
 .sb--curiculum-holder {
     margin: calculateRem(8px);
 }
+.sb--scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5em;
+    .sb--chapter {
+        margin: calculateRem(5px);
+    }
+  }
