@@ -1,13 +1,25 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 
 .sb--card--course--curiculum {
-    .sb--card__meta1, .sb--card__title {
+    .sb--card__title {
         color: #ffffff;
     }
     .img-container {
         background-color: transparent !important;
+        height: 2rem !important;
+        width: 2rem !important;
     }
 }
 .sb--card {
     margin-bottom: calculateRem(8px) !important;
+    .sb--card__info {
+        margin-left: calculateRem(8px) !important;
+    }
+    .sb--card__img {
+        height: 2rem;
+        width: 2rem;
+        flex: 0 0 2rem;
+        margin: 0;
+        margin-top: 3rem;
+    }
   }
