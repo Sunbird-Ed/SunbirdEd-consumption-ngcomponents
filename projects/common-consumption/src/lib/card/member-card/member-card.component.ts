@@ -11,13 +11,12 @@ export class MemberCardComponent implements OnInit {
   paletteList:any = ["#FE0030","#7B1FA2","#0097A7","#7B1FA2",
   "#F57C00","#1976D2","#CDDC39","#FE0030","#F57C00","#388E3C"];
 
-  @Input() title:string;
-  @Input() isAdmin: boolean;
-  @Input() isMenu: boolean;
-  @Input() menuOptions: string[];
-  @Input() indexOfMember: number;
-  @Input() initial: number;
-  @Input() identifier: string;
+  @Input() title:string = "Dummy";
+  @Input() isAdmin: boolean = false;
+  @Input() isMenu: boolean = false;
+  @Input() indexOfMember: number = 0;
+  @Input() initial: string = "D";
+  @Input() identifier: string = "1";
 
   @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
