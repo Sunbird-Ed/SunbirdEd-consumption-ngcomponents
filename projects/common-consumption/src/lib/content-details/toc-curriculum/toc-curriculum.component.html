@@ -1,10 +1,12 @@
 <div *ngIf="isMobile">
-  <div class="sb-curiculum-responsive-grid" *ngFor="let item of tocData?.children; let index = index;">
+  <div class="sb-curiculum-responsive-grid">
+    <div *ngFor="let item of tocData?.children; let index = index;">
     {{ createUniqueId(tocData, item) }}
     <div class="sb--chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
       <div class="sequence">01</div>
       <div class="title">{{item?.name}}</div>
     </div>
+  </div>
   </div>
 </div>
 
