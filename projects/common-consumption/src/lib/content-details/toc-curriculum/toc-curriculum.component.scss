@@ -1,25 +1,56 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 
-.sb--chapter {
-    border-radius: calculateRem(4px);
-    border: 1px solid;
-    height: 140px;
-    width : 140px;
-    padding: calculateRem(4px);
-    .title {
-        font-size: calculateRem(10px);
-    }
-}
-.sb--curiculum-holder {
-    margin: calculateRem(8px);
-}
-.sb--scrolling-wrapper-flexbox {
-    display: flex;
-    flex-wrap: nowrap;
+.sb-curiculum-responsive-grid {
+  background: #f2f2f2;
+  padding: calculateRem(8px) calculateRem(8px) calculateRem(16px) calculateRem(8px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calculateRem(160px), 1fr));
+  grid-auto-rows: 120px;
+  grid-column-gap: calculateRem(16px);
+  grid-row-gap: 24px;
+
+  &--horizontal {
+    grid-auto-flow: column;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.5em;
-    .sb--chapter {
-        margin: calculateRem(5px);
-    }
+    grid-row-gap: 0px;
+    grid-auto-columns: 160px;
   }
+
+  .sb-curiculum {
+    border-radius: calculateRem(8px);
+    border: 1px solid;
+    padding: calculateRem(16px) calculateRem(8px);
+    border: 1px solid var(--primary-200);
+    background: var(--white);
+    font-weight: bold;
+
+    &:hover,
+    &:active,
+    &.active {
+      box-shadow: 0 2px 7px rgba(0, 136, 64, .65);
+    }
+
+    .sb-chapter {
+      display: flex;
+      align-items: flex-start;
+
+      .sequence {
+        color: var(--gray-400);
+        font-size: calculateRem(14px);
+        margin-right: calculateRem(4px);
+
+        html[dir="rtl"] {
+          margin-left: calculateRem(4px);
+          margin-right: inherit;
+        }
+      }
+
+      .title {
+        font-size: calculateRem(14px);
+        color: var(--gray-800);
+        line-height: calculateRem(20px);
+      }
+    }
+
+  }
+}
