@@ -1,16 +1,19 @@
-<div class="cards-container" *ngIf="isMobile">
-  <div class="sb--curiculum-holder" *ngFor="let item of tocData?.children; let index = index;">
+<div *ngIf="isMobile">
+  <div class="sb-curiculum-responsive-grid sb-curiculum-responsive-grid--mobile">
+    <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
     {{ createUniqueId(tocData, item) }}
-    <div class="sb--chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
-      <span class="title">{{item?.name}}</span>
+    <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
+      <div class="title">{{item?.name}}</div>
     </div>
   </div>
+  </div>
 </div>
-<div class="sb--scrolling-wrapper-flexbox" *ngIf="!isMobile">
-  <div class="sb--curiculum" *ngFor="let item of tocData?.children; let index = index;">
+
+<div class="sb-curiculum-responsive-grid sb-curiculum-responsive-grid--web" *ngIf="!isMobile">
+  <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
     {{ createUniqueId(tocData, item) }}
-    <div class="sb--chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
-      <span class="title">{{item?.name}}</span>
+    <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
+      <div class="title ml-4">{{item?.name}}</div>
     </div>
   </div>
 </div>

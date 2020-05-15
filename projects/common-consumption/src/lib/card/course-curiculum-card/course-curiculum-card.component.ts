@@ -15,6 +15,7 @@ export class CourseCuriculumCardComponent implements OnInit {
   @Input() subTitle;
   @Input() isLoading:boolean;
   @Input() theme: string;
+  @Input() titleColor: string;
 
 
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
@@ -33,6 +34,11 @@ export class CourseCuriculumCardComponent implements OnInit {
   fetchStyles() {
     return {
       background: this.theme!=null?this.theme:"#EA5B5D"
+    };
+  }
+  fetchTextStyles() {
+    return {
+      color: this.titleColor!=null?this.titleColor:"#000"
     };
   }
 
