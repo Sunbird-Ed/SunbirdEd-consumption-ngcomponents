@@ -18,8 +18,13 @@
     <h4 class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pl-8">
       {{content?.name}}
     </h4>
-    <div class="sbchapter__img"><img [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" alt=""
-        #img />
+    <div class="sbchapter__img background-transparent">
+      <em class="icon-svg icon-svg--md icon-docs" *ngIf="content?.appIcon">
+        <svg class="icon icon-svg--primary">
+          <use [attr.xlink:href]="content?.appIcon"></use>
+        </svg>
+      </em>
+      <img [src]="fallbackImg" *ngIf="!content?.appIcon" alt="" #img />
     </div>
   </div>
 </div>
