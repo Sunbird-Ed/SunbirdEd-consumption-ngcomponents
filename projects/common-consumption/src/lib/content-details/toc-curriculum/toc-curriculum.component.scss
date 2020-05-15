@@ -4,18 +4,20 @@
   background: #f2f2f2;
   padding: calculateRem(8px) calculateRem(8px) calculateRem(16px) calculateRem(8px);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(calculateRem(160px), 1fr));
-  grid-auto-rows: 120px;
-  grid-column-gap: calculateRem(16px);
-  grid-row-gap: 24px;
-
-  &--horizontal {
+  grid-template-columns: repeat(auto-fill, minmax(calculateRem(176px), 1fr));
+  grid-auto-rows: calculateRem(128px);
+  grid-gap: calculateRem(16px);
+  &--mobile {
+    @include respond-below(xs) {
+        grid-template-columns: repeat(auto-fill, minmax(calculateRem(128px), 1fr));
+        grid-auto-rows: auto;
+      }
+  }
+  &--web {
     grid-auto-flow: column;
     overflow-x: auto;
-    grid-row-gap: 0px;
-    grid-auto-columns: 160px;
+    grid-auto-columns: calculateRem(176px);
   }
-
   .sb-curiculum {
     border-radius: calculateRem(8px);
     border: 1px solid;
@@ -23,32 +25,25 @@
     border: 1px solid var(--primary-200);
     background: var(--white);
     font-weight: bold;
-
     &:hover,
     &:active,
     &.active {
       box-shadow: 0 2px 7px rgba(0, 136, 64, .65);
     }
 
-    .sb-chapter {
+    &__chapter {
       display: flex;
       align-items: flex-start;
-
-      .sequence {
-        color: var(--gray-400);
-        font-size: calculateRem(14px);
-        margin-right: calculateRem(4px);
-
-        html[dir="rtl"] {
-          margin-left: calculateRem(4px);
-          margin-right: inherit;
-        }
-      }
-
       .title {
         font-size: calculateRem(14px);
         color: var(--gray-800);
         line-height: calculateRem(20px);
+        -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
       }
     }
 
