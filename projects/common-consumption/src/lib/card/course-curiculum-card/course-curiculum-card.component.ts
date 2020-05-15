@@ -38,6 +38,8 @@ export class CourseCuriculumCardComponent implements OnInit {
     this.theme = this.cardData!=null && this.cardData.theme!=null?this.cardData.theme:this.fetchBgColor();
     this.titleColor = this.cardData!=null && this.cardData.titleColor!=null?this.cardData.titleColor:this.fetchColor();
     this.cardImg = this.cardData!=null && this.cardData.cardImg!=null?this.cardData.cardImg:"";
+    this.cardData.titleColor = this.titleColor;
+    this.cardData.theme = this.theme; 
   }
 
   fetchColor() {
