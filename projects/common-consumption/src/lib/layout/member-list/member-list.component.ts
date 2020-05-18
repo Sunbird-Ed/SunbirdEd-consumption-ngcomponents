@@ -10,6 +10,7 @@ export class MemberListComponent implements OnInit {
 
   @Input() memberList: any;
   @Input() isMenu: boolean = false;
+  @Input() cardImg: string;
   @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 

@@ -16,6 +16,7 @@ export class MemberCardComponent implements OnInit {
   @Input() isMenu: boolean = false;
   @Input() indexOfMember: number = 0;
   @Input() initial: string = "D";
+  @Input() cardImg: string = "";
   @Input() identifier: string = "1";
 
   @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();

@@ -3,5 +3,8 @@
     <div class="member-name" (click)="onClick($event)"><span>{{title}}</span></div>
     <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
     <div *ngIf="isAdmin" class="status" (click)="onClick($event)">Admin</div>
+    <div *ngIf="!isMenu && cardImg!=null" (click)="onMenuClick($event)">
+        <img [src]="cardImg" alt="">
+    </div>
 </div>
 
