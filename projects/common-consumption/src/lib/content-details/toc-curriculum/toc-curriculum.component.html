@@ -2,7 +2,8 @@
   <div class="sb-curiculum-responsive-grid sb-curiculum-responsive-grid--mobile">
     <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
     {{ createUniqueId(tocData, item) }}
-    <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
+    <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION" 
+       (click)="onTocChapterClick($event,item)">
       <div class="title">{{item?.name}}</div>
     </div>
   </div>
