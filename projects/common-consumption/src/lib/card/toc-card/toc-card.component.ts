@@ -34,6 +34,8 @@ export class TocCardComponent implements OnInit {
   public async onTocCardClick(event) {
     if (this.activeContent && this.activeContent.sbUniqueIdentifier !== this.content.sbUniqueIdentifier) {
       this.tocCardClick.emit({ event: event, data: { ...this.content } });
+    } else if (this.type = TocCardType.COURSE) {
+      this.tocCardClick.emit({ event: event, data: { ...this.content } });
     }
   }
 
