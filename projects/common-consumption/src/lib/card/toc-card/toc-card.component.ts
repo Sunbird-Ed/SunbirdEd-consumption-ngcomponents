@@ -16,9 +16,11 @@ export class TocCardComponent implements OnInit {
 
   fallbackImg = COMMON_CONSUMPTION_CONSTANTS.TOC_CARD_FALLBACK_IMG;
   iconPathMap: any;
+  isCourseCompleted = false;
   get TocCardType() { return TocCardType; }
 
   ngOnInit() {
+    this.isCourseCompleted = this.content.isCourseCompleted;
     if (this.type === TocCardType.COURSE) {
       this.createIconMap();
     }
@@ -32,19 +34,26 @@ export class TocCardComponent implements OnInit {
   public async onTocCardClick(event) {
     if (this.activeContent && this.activeContent.sbUniqueIdentifier !== this.content.sbUniqueIdentifier) {
       this.tocCardClick.emit({ event: event, data: { ...this.content } });
+    } else if (this.type = TocCardType.COURSE) {
+      this.tocCardClick.emit({ event: event, data: { ...this.content } });
     }
   }
 
   createIconMap() {
     const mimeTypesData = MimeTypeMasterData;
-    this.iconPathMap = [
-      [mimeTypesData.COLLECTION, 'assets/common-consumption/images/sprite.svg#doc'],
-      [mimeTypesData.VIDEO, 'assets/common-consumption/images/sprite.svg#play'],
-      [mimeTypesData.AUDIO, 'assets/common-consumption/images/sprite.svg#play'],
-      [mimeTypesData.INTERACTIVE, 'assets/common-consumption/images/sprite.svg#touch'],
-      [mimeTypesData.DOCS, 'assets/common-consumption/images/sprite.svg#doc'],
-    ];
-    this.content.appIcon = this.getIconPath(this.content.mimeType);
+
+    if (this.isCourseCompleted) {
+      this.content.appIcon = 'assets/common-consumption/images/sprite.svg#circle-with-check-symbol';
+    } else {
+      this.iconPathMap = [
+        [mimeTypesData.COLLECTION, 'assets/common-consumption/images/sprite.svg#doc'],
+        [mimeTypesData.VIDEO, 'assets/common-consumption/images/sprite.svg#play'],
+        [mimeTypesData.AUDIO, 'assets/common-consumption/images/sprite.svg#play'],
+        [mimeTypesData.INTERACTIVE, 'assets/common-consumption/images/sprite.svg#touch'],
+        [mimeTypesData.DOCS, 'assets/common-consumption/images/sprite.svg#doc'],
+      ];
+      this.content.appIcon = this.getIconPath(this.content.mimeType);
+    }
   }
 
   getIconPath(contentMimeType: string) {
