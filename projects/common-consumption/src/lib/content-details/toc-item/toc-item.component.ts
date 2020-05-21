@@ -16,6 +16,8 @@ export class TocItemComponent implements OnInit, OnChanges {
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
+  @Input() type = "";
+
   @Input() activeContent;
   @Input() recogniseCollection = false;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
