@@ -91,6 +91,13 @@ export class TocCurriculumComponent implements OnInit {
     }*/
     this.tocCardClick.emit({ ...event, item });
   }
+  public onTocCardClick(event) {
+    const rollup = this.getRollup(this.tocData, event.data.sbUniqueIdentifier);
+    if (rollup.length) {
+      rollup.pop();
+    }
+    this.tocCardClick.emit({ ...event, rollup });
+  }
 
   public collapsedChangeHandler(event) {
   }
