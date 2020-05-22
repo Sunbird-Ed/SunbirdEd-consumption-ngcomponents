@@ -12,7 +12,7 @@
 </div>
 <div  *ngIf="isChapterListing">
   <div class="sb-curiculum-responsive-grid">
-    <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
+    <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;" (click)="onTocChapterClick($event,item)">
       {{ createUniqueId(tocData, item) }}
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
         <div class="title ml-4">{{item?.name}}</div>
