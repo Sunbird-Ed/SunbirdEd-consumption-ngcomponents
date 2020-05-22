@@ -1,4 +1,4 @@
-<div *ngIf="isAccordion && !isChapterListing">
+<div *ngIf="isAccordion">
     <div class="" *ngIf="tocData?.mimeType === MimeTypeMasterData?.COLLECTION">
       <sb-toc-item *ngIf="type" [tocData]="tocData" [type]="type" [recogniseCollection]="true"></sb-toc-item>
       <sb-toc-item *ngIf="!type" [tocData]="tocData" [recogniseCollection]="true"></sb-toc-item>
@@ -10,7 +10,7 @@
             </sb-toc-card>
     </div>
 </div>
-<div  *ngIf="isAccordion && isChapterListing">
+<div  *ngIf="isChapterListing">
   <div class="sb-curiculum-responsive-grid">
     <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
       {{ createUniqueId(tocData, item) }}
@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<div class="" *ngIf="!isAccordion">
+<div class="" *ngIf="!isAccordion && !isChapterListing">
   
   <div class="">
       <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
