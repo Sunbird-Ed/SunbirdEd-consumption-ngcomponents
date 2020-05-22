@@ -11,7 +11,7 @@
     </div>
 </div>
 <div  *ngIf="isAccordion && isChapterListing">
-  <div class="sb-curiculum-responsive-grid sb-curiculum-responsive-grid--web">
+  <div class="sb-curiculum-responsive-grid">
     <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
       {{ createUniqueId(tocData, item) }}
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
