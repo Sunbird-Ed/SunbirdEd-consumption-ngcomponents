@@ -1,6 +1,20 @@
 <div *ngIf="isAccordion && !isChapterListing">
-  <sb-toc-item *ngIf="type" [tocData]="tocData" [type]="type" [recogniseCollection]="true"></sb-toc-item>
-  <sb-toc-item *ngIf="!type" [tocData]="tocData" [recogniseCollection]="true"></sb-toc-item>
+    <div class="" *ngFor="let item of tocData?.children; let index = index;">
+    <div class="" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType !== 'TextBook' && item?.contentType !== 'Course'">
+      <sb-toc-item *ngIf="type" [tocData]="tocData" [type]="type" [recogniseCollection]="true"></sb-toc-item>
+      <sb-toc-item *ngIf="!type" [tocData]="tocData" [recogniseCollection]="true"></sb-toc-item>
+    </div>
+    <div class="" *ngIf="item?.contentType === 'Resource'">
+        <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+          </sb-toc-card>
+    </div>
+    <div class="" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'TextBook'">
+        <sb-library-card [content]="item"></sb-library-card>
+    </div>
+    <div class="" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'Course'">
+        <sb-course-card [course]="item"></sb-course-card>
+      </div>
+      </div>
 </div>
 <div  *ngIf="isAccordion && isChapterListing">
   <div class="sb-curiculum-responsive-grid sb-curiculum-responsive-grid--web">
@@ -59,10 +73,10 @@
             </sb-toc-card>
       </div>
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'TextBook'">
-          <sb-library-card></sb-library-card>
+          <sb-library-card [content]="item"></sb-library-card>
       </div>
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'Course'">
-          <sb-course-card></sb-course-card>
+          <sb-course-card [course]="item"></sb-course-card>
         </div>
     </div>
     </div>
