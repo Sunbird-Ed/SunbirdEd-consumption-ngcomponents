@@ -37,7 +37,6 @@ export class TocItemComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    debugger;
     this.setActiveContent();
   }
 
