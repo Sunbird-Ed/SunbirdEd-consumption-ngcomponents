@@ -1,8 +1,8 @@
 <div *ngIf="isAccordion && !isChapterListing">
     <div class="" *ngFor="let item of tocData?.children; let index = index;">
     <div class="" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType !== 'TextBook' && item?.contentType !== 'Course'">
-      <sb-toc-item *ngIf="type" [tocData]="tocData" [type]="type" [recogniseCollection]="true"></sb-toc-item>
-      <sb-toc-item *ngIf="!type" [tocData]="tocData" [recogniseCollection]="true"></sb-toc-item>
+      <sb-toc-item *ngIf="type" [tocData]="item" [type]="type" [recogniseCollection]="true"></sb-toc-item>
+      <sb-toc-item *ngIf="!type" [tocData]="item" [recogniseCollection]="true"></sb-toc-item>
     </div>
     <div class="" *ngIf="item?.contentType === 'Resource'">
         <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
