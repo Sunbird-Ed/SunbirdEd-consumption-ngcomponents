@@ -1,10 +1,13 @@
-<div class="members-list-item">
-    <div class="oval" (click)="onClick($event)" [ngStyle]="fetchStyle()">{{initial}}</div>
-    <div class="member-name" (click)="onClick($event)"><span>{{title}}</span></div>
+<div class="sb-members-list-item" 
+[ngClass]="{'sb-members-list-item--small': config.size=='small','sb-members-list-item--medium': config.size=='medium','sb-members-list-item--large': config.size=='large', 'sb-members-list-item--horizontal': config.view=='horizontal', 'sb-members-list-item--vertical': config.view=='vertical', 'sb-members-list-item--bold': config.isBold, 'selection': config.isSelectable}">
+    <div class="sb-member" (click)="onClick($event)">
+        <div class="sb-member__img" [ngStyle]="fetchStyle()">{{initial}}</div>
+        <label class="sb-member__name"><span>{{title}}</span></label>   
+    </div>
     <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
     <div *ngIf="isAdmin" class="status" (click)="onClick($event)">Admin</div>
     <div *ngIf="!isMenu && cardImg!=null" (click)="onMenuClick($event)">
         <img [src]="cardImg" alt="">
     </div>
+    <div class="selected"><img src="assets/common-consumption/images/check.svg" /></div>
 </div>
-
