@@ -1,8 +1,8 @@
-<div *ngIf="isMobile && !isChapterListing">
+<div *ngIf="isAccordion && !isChapterListing">
   <sb-toc-item *ngIf="type" [tocData]="tocData" [type]="type" [recogniseCollection]="true"></sb-toc-item>
   <sb-toc-item *ngIf="!type" [tocData]="tocData" [recogniseCollection]="true"></sb-toc-item>
 </div>
-<div  *ngIf="isMobile && isChapterListing">
+<div  *ngIf="isAccordion && isChapterListing">
   <div class="sb-curiculum-responsive-grid sb-curiculum-responsive-grid--web">
     <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
       {{ createUniqueId(tocData, item) }}
@@ -13,12 +13,12 @@
   </div>
 </div>
 
-<div class="" *ngIf="!isMobile">
+<div class="" *ngIf="!isAccordion">
   
   <div class="">
       <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
       {{ createUniqueId(tocData, item) }}
-      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION" 
+      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType !== 'TextBook' && item?.contentType !== 'Course'" 
          (click)="onTocChapterClick($event,item)">
         <div class="title">{{item?.name}}</div>
         <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
@@ -54,7 +54,16 @@
           <div class="heading">{{noContentMessage}}</div>
         </ng-template>
       </div>
-     
+      <div class="sb-curiculum__chapter" *ngIf="item?.contentType === 'Resource'">
+          <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+            </sb-toc-card>
+      </div>
+      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'TextBook'">
+          <sb-library-card></sb-library-card>
+      </div>
+      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'Course'">
+          <sb-course-card></sb-course-card>
+        </div>
     </div>
     </div>
 </div>
