@@ -17,7 +17,7 @@ export class MemberCardComponent implements OnInit {
   @Input() initial: string = "D";
   @Input() cardImg: string = "";
   @Input() identifier: string = "1";
-  @Input() config={size:'medium', isBold:'false', isSelectable:"true", view:"horizontal"}
+  @Input() config={size:'medium', isBold:false, isSelectable:false, view:"horizontal"}
   @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 

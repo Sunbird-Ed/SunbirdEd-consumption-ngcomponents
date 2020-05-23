@@ -4,10 +4,8 @@
         <div class="sb-member__img" [ngStyle]="fetchStyle()">{{initial}}</div>
         <label class="sb-member__name"><span>{{title}}</span></label>   
     </div>
+    <div *ngIf="isAdmin" class="status mr-4" (click)="onClick($event)">Admin</div>
     <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
-    <div *ngIf="isAdmin" class="status" (click)="onClick($event)">Admin</div>
-    <div *ngIf="!isMenu && cardImg!=null" (click)="onMenuClick($event)">
-        <img [src]="cardImg" alt="">
-    </div>
+    <div *ngIf="!isMenu && cardImg!=null" (click)="onMenuClick($event)"><img [src]="cardImg" alt=""></div>
     <div class="selected"><img src="assets/common-consumption/images/check.svg" /></div>
 </div>
