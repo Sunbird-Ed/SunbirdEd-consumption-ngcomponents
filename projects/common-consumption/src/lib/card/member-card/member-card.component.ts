@@ -8,8 +8,7 @@ import { ICardClick } from '../models';
 })
 export class MemberCardComponent implements OnInit {
 
-  paletteList:any = ["#FE0030","#7B1FA2","#0097A7","#7B1FA2",
-  "#F57C00","#1976D2","#CDDC39","#FE0030","#F57C00","#388E3C"];
+  paletteList:any = ["#FE0030","#7B1FA2","#0097A7","#7B1FA2","#F57C00","#1976D2","#CDDC39","#FE0030","#F57C00","#388E3C"];
 
   @Input() title:string = "Dummy";
   @Input() isAdmin: boolean = false;
@@ -18,7 +17,7 @@ export class MemberCardComponent implements OnInit {
   @Input() initial: string = "D";
   @Input() cardImg: string = "";
   @Input() identifier: string = "1";
-
+  @Input() config={size:'medium', isBold:false, isSelectable:false, view:"horizontal"}
   @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
