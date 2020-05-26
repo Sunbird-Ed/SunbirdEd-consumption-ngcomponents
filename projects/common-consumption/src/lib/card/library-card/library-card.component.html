@@ -21,7 +21,7 @@
   </div>
 
   <!-- content for only desktop -->
-  <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK">
+  <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
     <div class="sb--card__moreinfo">
       <!-- other meta info Medium, Organization etc -->
       <div class="sb--card__meta2 text-left">
@@ -35,6 +35,12 @@
             [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
         <span class="sb--card__type" *ngIf="content?.resourceType">{{content.resourceType}}</span>
       </div>
+    </div>
+    <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
+        <div>
+          <button class="sb-btn sb-btn-primary sb-btn-normal w-100">
+            <i class="icon-svg icon-svg--xs icon-videos mr-4"><svg class="icon icon-svg--primary"><use xlink:href="./assets/common-consumption/images/sprite.svg#play"></use></svg></i> PLAY </button>
+        </div>
     </div>
   </div>
 
