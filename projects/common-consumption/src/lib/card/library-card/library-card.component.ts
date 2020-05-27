@@ -18,6 +18,8 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     @Input() section = '';
     @Input() isLoading:boolean;
     @Input('hover-template') gridTemplate: TemplateRef<any>;
+    @Input() btnlabel = '';
+    @Input() btnicon = '';
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 

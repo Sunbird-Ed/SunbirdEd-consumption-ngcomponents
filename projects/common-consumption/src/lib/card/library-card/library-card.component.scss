@@ -432,7 +432,8 @@
         background-position: calculateRem(468px) 0;
       }
     }
-
-
 }
-
+.border-top-r-left-right {
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+}
