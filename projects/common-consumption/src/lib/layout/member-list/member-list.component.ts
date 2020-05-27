@@ -11,6 +11,7 @@ export class MemberListComponent implements OnInit {
   @Input() memberList: any;
   @Input() isMenu: boolean = false;
   @Input() cardImg: string;
+  @Input() layoutConfig: any = {size:'medium', isBold:false, isSelectable:true, view:"vertical"}
   @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 

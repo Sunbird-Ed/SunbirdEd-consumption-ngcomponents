@@ -15,7 +15,7 @@ import { TocCurriculumComponent } from './toc-curriculum/toc-curriculum.componen
     PlayerTocComponent,
     TocItemComponent,
     TocChildItemComponent,
-    TocCurriculumComponent,
+    TocCurriculumComponent
   ],
   imports: [
     CommonModule,

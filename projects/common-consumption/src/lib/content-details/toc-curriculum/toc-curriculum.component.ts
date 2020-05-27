@@ -12,7 +12,9 @@ export class TocCurriculumComponent implements OnInit {
   @Input() tocData = staticData;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
-  @Input() isMobile: boolean = false;
+  @Input() isAccordion: boolean = false;
+  @Input() isChapterListing: boolean = false;
+  @Input() type = undefined;
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
@@ -85,11 +87,19 @@ export class TocCurriculumComponent implements OnInit {
   }
 
   public onTocChapterClick(event,item) {
+    console.log(item);
     /*const rollup = this.getRollup(this.tocData, event.data.sbUniqueIdentifier);
     if (rollup.length) {
       rollup.pop();
     }*/
     this.tocCardClick.emit({ ...event, item });
+  }
+  public onTocCardClick(event) {
+    const rollup = this.getRollup(this.tocData, event.data.sbUniqueIdentifier);
+    if (rollup.length) {
+      rollup.pop();
+    }
+    this.tocCardClick.emit({ ...event, rollup });
   }
 
   public collapsedChangeHandler(event) {

@@ -1,20 +1,77 @@
-<div *ngIf="isMobile">
-  <div class="sb-curiculum-responsive-grid sb-curiculum-responsive-grid--mobile">
-    <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
-    {{ createUniqueId(tocData, item) }}
-    <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION" 
-       (click)="onTocChapterClick($event,item)">
-      <div class="title">{{item?.name}}</div>
+<div *ngIf="isAccordion">
+    <div class="" *ngIf="tocData?.mimeType === MimeTypeMasterData?.COLLECTION">
+      <sb-toc-item *ngIf="type" [tocData]="tocData" [type]="type" [recogniseCollection]="true"></sb-toc-item>
+      <sb-toc-item *ngIf="!type" [tocData]="tocData" [recogniseCollection]="true"></sb-toc-item>
     </div>
-  </div>
+    <div class="" *ngIf="tocData?.mimeType !== MimeTypeMasterData?.COLLECTION">
+        <sb-toc-card *ngIf="type" [content]="tocData" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+          </sb-toc-card>
+          <sb-toc-card *ngIf="!type" [content]="tocData"  (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+            </sb-toc-card>
+    </div>
+</div>
+<div  *ngIf="isChapterListing">
+  <div class="sb-curiculum-responsive-grid">
+    <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;" (click)="onTocChapterClick($event,item)">
+      {{ createUniqueId(tocData, item) }}
+      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
+        <div class="title ml-4">{{item?.name}}</div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="sb-curiculum-responsive-grid sb-curiculum-responsive-grid--web" *ngIf="!isMobile">
-  <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
-    {{ createUniqueId(tocData, item) }}
-    <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
-      <div class="title ml-4">{{item?.name}}</div>
+<div class="" *ngIf="!isAccordion && !isChapterListing">
+  
+  <div class="">
+      <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
+      {{ createUniqueId(tocData, item) }}
+      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType !== 'TextBook' && item?.contentType !== 'Course'" 
+         (click)="onTocChapterClick($event,item)">
+        <div class="title">{{item?.name}}</div>
+        <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
+          <ng-container *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length" >
+            <div class="child-content-padding">
+              <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+              </sb-toc-card>
+              <sb-toc-card *ngIf="!type" [content]="item" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+                </sb-toc-card>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="item?.children?.length">
+            <ng-container *ngFor="let child of item?.children; let j = index;">
+              {{ createUniqueId(item, child) }}
+              <div class="sbchapter" *ngIf="filterChildren(child) && child.item?.contentType === 'TextBook'">
+                <sb-library-card></sb-library-card>
+              </div>
+              <div class="sbchapter" *ngIf="filterChildren(child) && child.item?.contentType === 'Course'">
+                <sb-course-card></sb-course-card>
+              </div>
+              <div class="sbchapter" *ngIf="filterChildren(child)">
+                <sb-toc-child-item *ngIf="type" [childData]="child" [type]="type" [activeMimeTypeFilter]="activeMimeTypeFilter"
+                  [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)">
+                </sb-toc-child-item>
+                <sb-toc-child-item *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
+                  [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)">
+                </sb-toc-child-item>
+              </div>
+            </ng-container>
+          </ng-container>
+        </div>
+        <ng-template #noContent>
+          <div class="heading">{{noContentMessage}}</div>
+        </ng-template>
+      </div>
+      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION">
+          <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+            </sb-toc-card>
+      </div>
+      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'TextBook'">
+          <sb-library-card [content]="item"></sb-library-card>
+      </div>
+      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'Course'">
+          <sb-course-card [course]="item"></sb-course-card>
+        </div>
     </div>
-  </div>
+    </div>
 </div>
