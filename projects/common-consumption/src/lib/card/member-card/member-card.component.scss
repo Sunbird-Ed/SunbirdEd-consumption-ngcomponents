@@ -10,9 +10,10 @@
   padding: calculateRem(8px);
   border: calculateRem(1px) solid transparent;
   position: relative;
-
-
-  
+  &:hover {
+    background-color: #E0EFFF;
+    border: calculateRem(1px) solid #007AFF;
+  }
   .menu::after {
     content: '\2807';
     font-size: calculateRem(16px);
