@@ -12,6 +12,7 @@ export class TocCardComponent implements OnInit {
   @Input() content;
   @Input() activeContent;
   @Input() type: TocCardType = TocCardType.TEXTBOOK;
+  @Input() contentStatus = [];
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
 
   fallbackImg = COMMON_CONSUMPTION_CONSTANTS.TOC_CARD_FALLBACK_IMG;
@@ -41,6 +42,11 @@ export class TocCardComponent implements OnInit {
 
   createIconMap() {
     const mimeTypesData = MimeTypeMasterData;
+    this.isCourseCompleted = this.contentStatus.find((item) => {
+      if (item.contentId === this.content.identifier && item.status === 2) {
+        return true;
+      }
+    });
 
     if (this.isCourseCompleted) {
       this.content.appIcon = 'assets/common-consumption/images/sprite.svg#circle-with-check-symbol';

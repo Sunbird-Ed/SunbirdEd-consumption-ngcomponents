@@ -1,10 +1,12 @@
 <div *ngIf="isAccordion">
     <div class="" *ngIf="tocData?.mimeType === MimeTypeMasterData?.COLLECTION">
-      <sb-toc-item *ngIf="type" [tocData]="tocData" [type]="type" [recogniseCollection]="true"></sb-toc-item>
+      <sb-toc-item *ngIf="type" [tocData]="tocData" [type]="type" [recogniseCollection]="true"
+       (tocCardClick)="onTocCardClick($event)" [contentStatus]="contentStatus"></sb-toc-item>
       <sb-toc-item *ngIf="!type" [tocData]="tocData" [recogniseCollection]="true"></sb-toc-item>
     </div>
     <div class="" *ngIf="tocData?.mimeType !== MimeTypeMasterData?.COLLECTION">
-        <sb-toc-card *ngIf="type" [content]="tocData" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+        <sb-toc-card *ngIf="type" [content]="tocData" [type]="type" (tocCardClick)="onTocCardClick($event)"
+         [activeContent]="activeContent" [contentStatus]="contentStatus">
           </sb-toc-card>
           <sb-toc-card *ngIf="!type" [content]="tocData"  (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
             </sb-toc-card>
@@ -32,7 +34,8 @@
         <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
           <ng-container *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length" >
             <div class="child-content-padding">
-              <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+              <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)"
+               [activeContent]="activeContent" [contentStatus]="contentStatus">
               </sb-toc-card>
               <sb-toc-card *ngIf="!type" [content]="item" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
                 </sb-toc-card>
@@ -49,7 +52,7 @@
               </div>
               <div class="sbchapter" *ngIf="filterChildren(child)">
                 <sb-toc-child-item *ngIf="type" [childData]="child" [type]="type" [activeMimeTypeFilter]="activeMimeTypeFilter"
-                  [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)">
+                  [activeContent]="activeContent" [contentStatus]="contentStatus" (tocCardClick)="onTocCardClick($event)">
                 </sb-toc-child-item>
                 <sb-toc-child-item *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
                   [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)">
@@ -63,7 +66,8 @@
         </ng-template>
       </div>
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION">
-          <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+          <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" 
+          [activeContent]="activeContent" [contentStatus]="contentStatus">
             </sb-toc-card>
       </div>
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'TextBook'">
