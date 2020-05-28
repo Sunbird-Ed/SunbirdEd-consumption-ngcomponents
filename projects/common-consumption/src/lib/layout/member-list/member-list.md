@@ -13,7 +13,9 @@ Can be used to display Member List for all consumption platforms
 |@Input() memberList: Array| Name that represents the section *`Pass Array Of Object like this`
 `[{title:'',initial:'',isAdmin:true,id:''},{title:'',initial:'',isAdmin:true,id:''}]`
 *|
+|@Input() layoutConfig: any| Mostly Used for representing Member Card configuration. *`Example:{size:'medium OR large OR small', isBold:false OR true, isSelectable:true OR false, view:"vertical OR horizaontal"` |
 |@Input() isMenu: boolean| Flag to distinguish menu display |
+|@Input() cardImg: boolean| Image to display on card |
 
 
 ### Events

@@ -116,7 +116,7 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [Member Card component](./projects/common-consumption/src/lib/card/member-card/member-card.md) | Member Card With Menu. |sb-member-card|
 *`<sb-member-card></sb-member-card>`*|
 | [Member List component](./projects/common-consumption/src/lib/layout/member-list/member-list.md) | Member List With Cards. |sb-member-list|
-*`<sb-member-list [memberList]="range(15)" [isMenu]="true"></sb-member-list>`*|
+*`<sb-member-list [layoutConfig]="{size:'medium', isBold:false, isSelectable:true,view:'horizontal'}" [memberList]="range(15)" [isMenu]="false"(cardClick)="memberCardClick``  ($event)" (menuClick)="menuClick($event)"></`sb-member-list>`*|
 | [Group Card component](./projects/common-consumption/src/lib/card/group-card/group-card.md) | 
 Group Card. |sb-group-card|
 *`<sb-group-card></sb-group-card>`*|

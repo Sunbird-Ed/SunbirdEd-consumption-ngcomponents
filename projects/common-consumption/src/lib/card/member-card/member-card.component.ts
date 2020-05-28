@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ICardClick } from '../models';
+import { config } from 'rxjs';
 
 @Component({
   selector: 'sb-member-card',
@@ -17,13 +18,25 @@ export class MemberCardComponent implements OnInit {
   @Input() initial: string = "D";
   @Input() cardImg: string = "";
   @Input() identifier: string = "1";
-  @Input() config={size:'medium', isBold:false, isSelectable:false, view:"horizontal"}
+  @Input() selected: boolean = false;
+  @Input() config={size:'medium', isBold:false, isSelectable:true, view:"vertical"}
   @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    if(this.config.view == "vertical") {
+      this.config.isSelectable = false;
+    }
+    if(this.initial!=null) {
+    } else {
+      this.initial = "D"
+    }
+    if(this.title!=null) {
+    } else {
+      this.title = "Dummy"
+    }
   }
 
   fetchStyle() {
@@ -36,7 +49,8 @@ export class MemberCardComponent implements OnInit {
     };
   }
   onClick(event: MouseEvent) {
-    this.cardClick.emit({ event: event, data: {title: this.title} });
+    this.selected = !this.selected;
+    this.cardClick.emit({ event: event, data: {title: this.title,identifier: this.identifier} });
  }
  onMenuClick(event: MouseEvent) {
   this.menuClick.emit({ event: event, data: {identifier:this.identifier} });

@@ -12,7 +12,8 @@ export enum LibraryCardTypes {
     RECENTLY_VIEWED = 'recently_viewed',
     MOBILE_TEXTBOOK = 'mobile_textbook',
     DESKTOP_TEXTBOOK = 'desktop_textbook',
-    QRCODE_RESULT = 'qrcode_result'
+    QRCODE_RESULT = 'qrcode_result',
+    PORTAL_QRCODE_FLATRESULT =  'portal_qrcode_flatresult'
 }
 
 export enum CourseCardGridTypes {
