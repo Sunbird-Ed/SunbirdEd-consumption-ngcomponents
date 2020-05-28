@@ -11,6 +11,7 @@ export class TocChildItemComponent implements OnInit {
   @Input() activeContent;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() type: TocCardType = TocCardType.TEXTBOOK;
+  @Input() contentStatus = [];
 
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
 

@@ -13,6 +13,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() tocData;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
+  @Input() contentStatus = [];
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 

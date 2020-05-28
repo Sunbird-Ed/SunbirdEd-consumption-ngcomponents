@@ -9,7 +9,7 @@
       <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
         <ng-container *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length" >
           <div class="child-content-padding">
-            <sb-toc-card *ngIf="type" [type]="type" [content]="item" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
+            <sb-toc-card *ngIf="type" [type]="type" [contentStatus]="contentStatus" [content]="item" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
             </sb-toc-card>
             <sb-toc-card *ngIf="!type" [content]="item" (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent">
               </sb-toc-card>
@@ -25,7 +25,7 @@
                 <sb-my-course-card [type]="'recently_viewed'"></sb-my-course-card>
               </div>
             <div class="sbchapter" *ngIf="filterChildren(child)">
-              <sb-toc-child-item  *ngIf="type" [type]="type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
+              <sb-toc-child-item  *ngIf="type" [type]="type" [contentStatus]="contentStatus" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
                 [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)">
               </sb-toc-child-item>
               <sb-toc-child-item  *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
@@ -33,6 +33,9 @@
               </sb-toc-child-item>
             </div>
           </ng-container>
+        </ng-container>
+        <ng-container *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && !item?.children?.length">
+          <div class="heading">{{noContentMessage}}</div>
         </ng-container>
       </div>
       <ng-template #noContent>
