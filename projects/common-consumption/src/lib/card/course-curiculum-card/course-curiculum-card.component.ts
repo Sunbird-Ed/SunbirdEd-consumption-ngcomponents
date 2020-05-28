@@ -22,10 +22,10 @@ export class CourseCuriculumCardComponent implements OnInit {
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
   palatteList = [
-    {bgColor:"#bcaaa4",fontColor:"#4e342e"},
-    {bgColor:"#ce93d8",fontColor:"#6a1b9a"},
-    {bgColor:"#9fa8da",fontColor:"#283593"},
-    {bgColor:"#90caf9",fontColor:"#1565c0"},
+    {bgColor:"#FFDFC7",fontColor:"#AD632D"},
+    {bgColor:"#C2ECE6",fontColor:"#149D88"},
+    {bgColor:"#FFE59B",fontColor:"#8D6A00"},
+    {bgColor:"#DAD4FF",fontColor:"#635CDC"},
     {bgColor:"#80cbc4",fontColor:"#00695c"},
     {bgColor:"#e6ee9c",fontColor:"#9e9d24"},
     {bgColor:"#ffe082",fontColor:"#ff8f00"}]
@@ -38,8 +38,11 @@ export class CourseCuriculumCardComponent implements OnInit {
     this.theme = this.cardData!=null && this.cardData.theme!=null?this.cardData.theme:this.fetchBgColor();
     this.titleColor = this.cardData!=null && this.cardData.titleColor!=null?this.cardData.titleColor:this.fetchColor();
     this.cardImg = this.cardData!=null && this.cardData.cardImg!=null?this.cardData.cardImg:"";
-    this.cardData.titleColor = this.titleColor;
-    this.cardData.theme = this.theme; 
+    if(this.cardData!=null) {
+     // this.cardData.titleColor = this.titleColor;
+     // this.cardData.theme = this.theme; 
+    }
+  
   }
 
   fetchColor() {
