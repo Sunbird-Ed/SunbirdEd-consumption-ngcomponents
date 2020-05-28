@@ -15,6 +15,7 @@ export class TocCurriculumComponent implements OnInit {
   @Input() isAccordion: boolean = false;
   @Input() isChapterListing: boolean = false;
   @Input() type = undefined;
+  @Input() contentStatus = [];
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
