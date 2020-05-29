@@ -20,6 +20,7 @@ export class CourseCardsHlistComponent implements OnInit {
    @Input() isLoading:boolean;
    @Input() type:CourseCardGridTypes;
    @Input() multiRow:boolean;
+   @Input() hideProgress:boolean;
 
 
    @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();

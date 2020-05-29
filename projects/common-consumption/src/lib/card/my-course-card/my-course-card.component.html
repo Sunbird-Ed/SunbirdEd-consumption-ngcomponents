@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-      <div class="sb--card__progressbar" *ngIf="type === CourseCardTypes.RECENTLY_VIEWED">
+      <div class="sb--card__progressbar" *ngIf="type === CourseCardTypes.RECENTLY_VIEWED && !hideProgress">
         <span [ngStyle]="fetchProgress()"></span>
       </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="sb--card__meta_c_data" *ngIf="section!=null" [innerHTML]="section">
     </div>
   </div>
-  <div class="sb--card__progressbar" *ngIf="type != CourseCardTypes.RECENTLY_VIEWED">
+  <div class="sb--card__progressbar" *ngIf="type != CourseCardTypes.RECENTLY_VIEWED && !hideProgress">
       <span [ngStyle]="fetchProgress()"></span>
     </div>
 
