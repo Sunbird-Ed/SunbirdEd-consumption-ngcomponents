@@ -16,8 +16,11 @@
   <div class="sb-curiculum-responsive-grid">
     <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;" (click)="onTocChapterClick($event,item)">
       {{ createUniqueId(tocData, item) }}
-      <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
+      <div class="sb-curiculum__chapter">
         <div class="title ml-4">{{item?.name}}</div>
+      </div>
+      <div class="sb--card__progressbar">
+        <span [ngStyle]="fetchProgress(item)"></span>
       </div>
     </div>
   </div>

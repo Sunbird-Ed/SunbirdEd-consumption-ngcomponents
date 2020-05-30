@@ -5,7 +5,9 @@ import {staticData} from './toc-data';
 @Component({
   selector: 'sb-toc-curriculum',
   templateUrl: './toc-curriculum.component.html',
-  styleUrls: ['./toc-curriculum.component.scss','../../layout/library-cards-grid/library-cards-grid.component.scss']
+  styleUrls: ['./toc-curriculum.component.scss',
+  '../../layout/library-cards-grid/library-cards-grid.component.scss',
+  '../../card/library-card/library-card.component.scss']
 })
 export class TocCurriculumComponent implements OnInit {
 
@@ -179,6 +181,15 @@ export class TocCurriculumComponent implements OnInit {
 
   createUniqueId(tocData, item) {
     item['sbUniqueIdentifier'] = tocData.identifier + '_' + item.identifier;
+  }
+
+  fetchProgress(item?) {
+    var bgColor = "#024f9d";
+    let widthStyle = item.progressPercentage!=null?item.progressPercentage+"%":"2%";
+    return {
+      width: widthStyle,
+      'background-color':bgColor
+    };
   }
 
 }
