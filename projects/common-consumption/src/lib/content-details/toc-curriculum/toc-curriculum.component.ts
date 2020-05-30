@@ -18,6 +18,8 @@ export class TocCurriculumComponent implements OnInit {
   @Input() isChapterListing: boolean = false;
   @Input() type = undefined;
   @Input() contentStatus = [];
+  @Input() shadowColor = "hsl(0, 0%, 80%)";
+  @Input() progressColor = "#024f9d";
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
@@ -184,11 +186,17 @@ export class TocCurriculumComponent implements OnInit {
   }
 
   fetchProgress(item?) {
-    var bgColor = "#024f9d";
+    var bgColor = this.progressColor;
     let widthStyle = item.progressPercentage!=null?item.progressPercentage+"%":"2%";
     return {
       width: widthStyle,
       'background-color':bgColor
+    };
+  }
+  fetchProgressShadow() {
+    var bgColor = this.shadowColor;
+    return {
+      'background':bgColor
     };
   }
 

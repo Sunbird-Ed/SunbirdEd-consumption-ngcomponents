@@ -19,7 +19,7 @@
       <div class="sb-curiculum__chapter">
         <div class="title">{{item?.name}}</div>
       </div>
-      <div class="sb--card__progressbar">
+      <div class="sb--card__progressbar" [ngStyle]="fetchProgressShadow()">
         <span [ngStyle]="fetchProgress(item)"></span>
       </div>
     </div>
