@@ -4,7 +4,6 @@
   background: var(--white);
   padding: calculateRem(8px) calculateRem(8px) calculateRem(16px) calculateRem(8px);
   display: block;
-  margin: calculateRem(8px) calculateRem(0px);
   /*grid-template-columns: repeat(auto-fill, minmax(calculateRem(176px), 1fr));
   grid-auto-rows: calculateRem(128px);
   grid-gap: calculateRem(16px);
@@ -29,6 +28,7 @@
     height: 130px;
     display: flex;
     flex-direction: column;
+    margin: calculateRem(8px) calculateRem(0px);
     &:hover,
     &:active,
     &.active {
