@@ -195,10 +195,10 @@ export class TocCurriculumComponent implements OnInit {
     };
   }
   showCompleted(item?) {
-    //if(item!=null && item.progressPercentage!=null && item.progressPercentage === 100) {
+    if(item!=null && item.progressPercentage!=null && item.progressPercentage === 100) {
       return true;
-    /*}
-    return false;*/
+    }
+    return false;
   }
   fetchProgressShadow() {
     var bgColor = this.shadowColor;

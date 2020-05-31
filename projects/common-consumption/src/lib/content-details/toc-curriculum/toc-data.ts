@@ -10,6 +10,7 @@ export const staticData:any = {
             "visibility": "Parent",
             "description": "Resources and Development",
             "index": 1,
+            "progressPercentage": 100,
             "mimeType": "application/vnd.ekstep.content-collection",
             "createdOn": "2019-07-04T07:43:31.243+0000",
             "versionKey": "1562226211243",
