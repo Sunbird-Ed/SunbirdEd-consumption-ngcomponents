@@ -26,7 +26,7 @@
     position: relative;
     border-radius: calculateRem(8px);
     border: 1px solid;
-    padding: calculateRem(16px) calculateRem(8px);
+    padding: calculateRem(16px);
     border: 1px solid var(--primary-200);
     background: #FFFFFF;
     font-weight: bold;
@@ -59,10 +59,7 @@
   }
   .sb--completed {
     position: absolute;
-    top: calculateRem(2px);
-    right: calculateRem(4px);
-    width: calculateRem(12px);
-    height: calculateRem(16px);
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQCAYAAAAiYZ4HAAABUElEQVQ4T62SO0sDURCFz8wW/hEbiwiClQpmbfIodwkIgo9UFioBK7vFXgULtVEbRSEm6XRTmDWChBjsrPwF6dMFMyN3Y1aTiBhwusvMd+aemSGMGDRiPX4EPM9jI+R5ngwK9gHxYmqJVHMCneoWWi9EcvDg+Nc9MALiN6ljIqwPKgqkw8JHQeZuy+RCoKuMi2E/0mSlhAC7xLisOH4+BOxCsgHQdD8gTVW1468zb0Gsdg7QeNX1Z8kYDGK1NgtaYnGRFVmgv5jBywJpV93yWARYZG1UnNsTu5DeUX0vGeXqZP0MihXTOQLMY76QrrN0JtiixL3j10zXx9jzqUJXv76pT4Hrz32aTi6S0hVEWmpRmpSyANa+eyKoU3H9UjRWO586BGNTIMLgcHFRkO4Hjr8djbWXWCgmMx1FDtBwYgxqELBnlIcW99eb+p/j+63bB8WxkBGLXA90AAAAAElFTkSuQmCC);
+    top: calculateRem(0px);
+    right: calculateRem(4px);;
   }
 }
