@@ -16,6 +16,7 @@
   <div class="sb-curiculum-responsive-grid">
     <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;" (click)="onTocChapterClick($event,item)">
       {{ createUniqueId(tocData, item) }}
+      <div class="sb--completed"></div>
       <div class="sb-curiculum__chapter">
         <div class="title">{{item?.name}}</div>
       </div>

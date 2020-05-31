@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ViewChildren, QueryList, Output, EventEmitter } from '@angular/core';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
 import {staticData} from './toc-data';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'sb-toc-curriculum',
@@ -192,6 +193,12 @@ export class TocCurriculumComponent implements OnInit {
       width: widthStyle,
       'background-color':bgColor
     };
+  }
+  showCompleted(item?) {
+    //if(item!=null && item.progressPercentage!=null && item.progressPercentage === 100) {
+      return true;
+    /*}
+    return false;*/
   }
   fetchProgressShadow() {
     var bgColor = this.shadowColor;
