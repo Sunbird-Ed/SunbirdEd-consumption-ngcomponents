@@ -13,6 +13,7 @@ export class TocCardComponent implements OnInit {
   @Input() activeContent;
   @Input() type: TocCardType = TocCardType.TEXTBOOK;
   @Input() contentStatus = [];
+  @Input() refresh: boolean;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
 
   fallbackImg = COMMON_CONSUMPTION_CONSTANTS.TOC_CARD_FALLBACK_IMG;
