@@ -19,6 +19,7 @@
       {{content?.name}}
     </h4>
     <div class="sbchapter__img background-transparent">
+      {{createIconMap()}}
       <em class="icon-svg icon-svg--md icon-docs" *ngIf="content?.appIcon">
         <svg class="icon icon-svg--primary">
           <use [attr.xlink:href]="content?.appIcon"></use>
