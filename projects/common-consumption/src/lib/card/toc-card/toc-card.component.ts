@@ -1,5 +1,5 @@
 import { MimeTypeMasterData } from './../../pipes-module/mime-type';
-import { Component, OnInit, Input, EventEmitter, Output, QueryList, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, QueryList, ViewChild, ElementRef, Renderer2, OnChanges } from '@angular/core';
 import { COMMON_CONSUMPTION_CONSTANTS } from '../../common-consumption.constants';
 import { TocCardType } from '../models';
 
@@ -21,7 +21,6 @@ export class TocCardComponent implements OnInit {
   get TocCardType() { return TocCardType; }
 
   ngOnInit() {
-    this.isCourseCompleted = this.content.isCourseCompleted;
     if (this.type === TocCardType.COURSE) {
       this.createIconMap();
     }
@@ -49,7 +48,7 @@ export class TocCardComponent implements OnInit {
     });
 
     if (this.isCourseCompleted) {
-      this.content.appIcon = 'assets/common-consumption/images/Group.svg#circle-with-check-symbol';
+      this.content.appIcon = 'assets/common-consumption/images/sprite.svg#circle-with-check-symbol';
     } else {
       this.iconPathMap = [
         [mimeTypesData.COLLECTION, 'assets/common-consumption/images/sprite.svg#doc'],
