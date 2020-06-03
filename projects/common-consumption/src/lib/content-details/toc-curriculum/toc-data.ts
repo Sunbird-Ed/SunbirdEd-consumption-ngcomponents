@@ -11,6 +11,7 @@ export const  staticData:any = {
       "code": "do_2127434091615436801425",
       "visibility": "Parent",
       "index": 1,
+      "progressPercentage": 100,
       "mimeType": "application/vnd.ekstep.content-collection",
       "createdOn": "2019-04-18T12:52:18.665+0000",
       "versionKey": "1555591938665",

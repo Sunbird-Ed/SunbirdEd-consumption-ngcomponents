@@ -26,7 +26,7 @@
     position: relative;
     border-radius: calculateRem(8px);
     border: 1px solid;
-    padding: calculateRem(16px);
+    padding: calculateRem(16px) calculateRem(34px) calculateRem(16px) calculateRem(16px);
     border: 1px solid var(--primary-200);
     background: #FFFFFF;
     font-weight: bold;
@@ -59,7 +59,7 @@
   }
   .sb--completed {
     position: absolute;
-    top: calculateRem(0px);
-    right: calculateRem(4px);;
+    top: calculateRem(14px);
+    right: calculateRem(16px);
   }
 }
