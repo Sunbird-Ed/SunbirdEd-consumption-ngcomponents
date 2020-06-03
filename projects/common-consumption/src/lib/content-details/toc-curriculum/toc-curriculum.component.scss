@@ -1,11 +1,11 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/styles";
 
 .sb--card__progressbar {
-  margin: calculateRem(8px) 0 0 0 !important;
+  margin: calculateRem(16px) !important;
+  width: unset !important;
 }
 
 .sb-curiculum-responsive-grid {
-  background: var(--white);
   padding: calculateRem(8px) calculateRem(8px) calculateRem(16px) calculateRem(8px);
   display: block;
   /*grid-template-columns: repeat(auto-fill, minmax(calculateRem(176px), 1fr));
@@ -22,15 +22,32 @@
     overflow-x: auto;
     grid-auto-columns: calculateRem(176px);
   }*/
+  .sb-curiculum__border {
+    background: #FFFFFF;
+    box-shadow:  0 2px 7px rgba(0, 0, 0, 0.16);
+    &:hover,
+    &:active,
+    &.active {
+      box-shadow: 0 2px 7px rgba(0, 136, 64, .65);
+    }
+    margin: calculateRem(8px) calculateRem(0px);
+    padding: calculateRem(2px) calculateRem(0px);
+    .sb-curiculum {
+      &:hover,
+    &:active,
+    &.active {
+      box-shadow:none;
+    }
+    }
+  }
   .sb-curiculum {
     position: relative;
     border-radius: calculateRem(8px);
     border: 1px solid;
-    padding: calculateRem(16px) calculateRem(34px) calculateRem(16px) calculateRem(16px);
+    padding: calculateRem(16px) calculateRem(34px) calculateRem(0px) calculateRem(16px);
     border: 1px solid var(--primary-200);
     background: #FFFFFF;
     font-weight: bold;
-    min-height: 80px;
     display: flex;
     flex-direction: column;
     margin: calculateRem(8px) calculateRem(0px);
@@ -60,6 +77,6 @@
   .sb--completed {
     position: absolute;
     top: calculateRem(14px);
-    right: calculateRem(16px);
+    right: calculateRem(8px);
   }
 }
