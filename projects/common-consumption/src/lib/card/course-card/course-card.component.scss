@@ -8,11 +8,11 @@
 .sb--card--course {
   &.sb--card--recently-viewed {
   }
-  .sb--card__title {
+  /*.sb--card__title {
     color: var(--black);
     font-size: calculateRem(12px);
     line-height: calculateRem(16px);
-  }
+  }*/
   
   .sb--card__meta1 {
     color: #979797;
