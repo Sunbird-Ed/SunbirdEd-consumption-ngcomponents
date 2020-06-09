@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 
 .selectElement {
   background-color: #E0EFFF;
@@ -33,7 +33,7 @@
 
   }
   .menu:hover::after {
-      background: #f2f2f2;
+      background: var(--gray-0);
   }
 
   img {
@@ -168,8 +168,4 @@
       height: calculateRem(56px);
     }
   }
-
-  
-
-  
 }

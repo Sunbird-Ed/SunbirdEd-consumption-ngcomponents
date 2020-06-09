@@ -1,8 +1,7 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
-
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
 /* sb card component css */
 :host {
-  // sb card css
   .sb--card {
     width: 100%;
     border-radius: 0px;
@@ -22,28 +21,22 @@
     @include respond-below(sm) {
       box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);
     }
-    @include respond-above(sm) {
-      
-    }
     &__main-area {
       display: flex;
       flex-direction: row;
       align-items: center;
-      // padding: $base-block-space;
       height: calculateRem(88px);
-      // border-bottom: calculateRem(1px) solid var(--gray-0);
     }
     &__img {
       height: calculateRem(72px);
       width: calculateRem(72px);
       overflow: hidden;
-      /* margin-right: 8px; */
       flex: 0 0 calculateRem(72px);
       margin: calculateRem(8px);
       .img-container {
         display: flex;
         align-items: center;
-        background-color: $gray-100;
+        background-color: var(--gray-100);
         height: calculateRem(72px);
         width: calculateRem(72px);
         justify-content: center;
@@ -59,16 +52,16 @@
       overflow: hidden;
     }
     &__title {
-      color: $primary-color;
-      font-size: $font-size-normal;
+      color: var(--primary-color);
+      font-size: calculateRem(14px);
       margin: 0px;
       line-height: normal;
       line-height: calculateRem(20px);
     }
     
     &__meta1 {
-      color: $gray-800;
-      font-size: $font-size-sm;
+      color: var(--gray-800);
+      font-size: calculateRem(12px);
       display: flex;    
       flex-direction: row;
       align-items: center;
@@ -78,20 +71,9 @@
     }
     .data_1 {
       max-width:50%;
-      // text-align: left;
-      // html[dir="rtl"] & {
-      //   text-align: inherit;
-      //   text-align: right;
-      // }
     }
     .data_2 {
-      // max-width:50%;
       flex:1;
-      // text-align: left;
-      // html[dir="rtl"] & {
-      //   text-align: inherit;
-      //   text-align: right;
-      // }
     }
     .dot-divider {
       width: calculateRem(4px);
@@ -101,7 +83,7 @@
       min-height: calculateRem(4px);
       max-height: calculateRem(4px);
       border-radius: 100%;
-      background-color: $gray-200;
+      background-color: var(--gray-200);
       display: inline-block;
       margin: 0px calculateRem(8px);
     }
@@ -112,20 +94,18 @@
       flex-direction: row;
       align-items: stretch;
       justify-content: space-between;
-      // padding: $base-block-space;
       min-height: calculateRem(56px);
       border-top: 0px solid #cacbce;
     }
     &__meta2 {
-      color: $gray-800;
-      font-size: $font-size-sm;
-      line-height: $font-size-normal;
+      color: var(--gray-800);
+      font-size: calculateRem(12px);
+      line-height: calculateRem(14px);
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       justify-content: space-around;
-      padding: $base-block-space;
-      // flex: 1 0 60%;
+      padding: calculateRem(8px);
     }
     &__meta2_data {
       .label {
@@ -136,7 +116,7 @@
       }
     }
     &__org {
-      color: $gray-200;
+      color: var(--gray-200);
     }
     &__tags {
       display: flex;
@@ -159,7 +139,7 @@
       height: calculateRem(20px);
       @include padding(null, calculateRem(8px), null, calculateRem(4px));
       color: var(--white);
-      font-size: $font-size-xs;
+      font-size: calculateRem(10px);
       display: flex;
       align-items: center;
       &:before {
@@ -168,7 +148,7 @@
         height: 0;
         border-width: calculateRem(10px) calculateRem(5px);
         border-style: solid;
-        border-color: $gray-200 $gray-200 $gray-200 transparent;
+        border-color: var(--gray-200) var(--gray-200) var(--gray-200) transparent;
         position: absolute;
         left: -10px;
         html[dir="rtl"] & {
@@ -189,8 +169,7 @@
         .img-container {
           display: flex;
           align-items: center;
-          background-color: $gray-100;
-          //   margin: -8px;
+          background-color: var(--gray-100);
           height: calculateRem(88px);
           width: calculateRem(88px);
         }
@@ -207,11 +186,11 @@
         .img-container {
           display: flex;
           align-items: center;
-          background-color: $tertiary-color;
+          background-color: var(--tertiary-color);
           opacity: 0.5;
           img {
             margin: auto;
-            font-size: $h3-font-size;
+            font-size: calculateRem(24px);
             color: var(--white);
           }
         }
@@ -228,25 +207,24 @@
     }
     &:hover {
       ::ng-deep .card-hover {
-        // background: #ddd;
-        // .child-content {
-        color: var(--white);
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        opacity: 0.95;
-        border-radius: calculateRem(2px);
-        background-color: var(--blue);
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        transition: 0.2s ease-in;
-        flex-direction: column;
-        justify-content: space-evenly;
-        // }
+      //  .child-content {
+      //   color: var(--white);
+      //   display: block;
+      //   position: absolute;
+      //   left: 0;
+      //   right: 0;
+      //   top: 0;
+      //   bottom: 0;
+      //   opacity: 0.95;
+      //   border-radius: calculateRem(2px);
+      //   background-color: var(--blue);
+      //   z-index: 1;
+      //   display: flex;
+      //   align-items: center;
+      //   transition: 0.2s ease-in;
+      //   flex-direction: column;
+      //   justify-content: space-evenly;
+      //   }
         .action-container {
           display: flex;
           width: 100%;

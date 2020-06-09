@@ -1,7 +1,8 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 
 .sbaccordion {
     width: 100%;
+    box-shadow: 0 0 .625rem 0 rgba(0,0,0,.25)!important;
     &--toc {
     }
     &__panel {

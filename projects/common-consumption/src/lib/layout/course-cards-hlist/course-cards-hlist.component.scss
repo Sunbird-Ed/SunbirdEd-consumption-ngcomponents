@@ -1,4 +1,5 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
 :host {
   .layout-library {
     display: flex;
@@ -34,7 +35,7 @@
       overflow: hidden;
       flex: 1;
       height: calculateRem(24px);
-      color: #008840;
+      color: var(--secondary-color);
       font-size: calculateRem(18px);
       font-weight: bold;
       text-transform: capitalize;

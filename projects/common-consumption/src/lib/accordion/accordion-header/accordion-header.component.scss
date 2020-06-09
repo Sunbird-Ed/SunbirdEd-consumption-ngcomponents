@@ -1,6 +1,7 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 
 .sbaccordion {
+ 
   &__panel-header {
     background: var(--white);
     padding: calculateRem(8px) calculateRem(16px);
@@ -10,6 +11,12 @@
     cursor: pointer;
     height: calculateRem(48px);
     border-radius: calculateRem(4px);
+  }
+  .accordion-item-header-expanded {
+    .sbaccordion__panel-header {
+      border-bottom-right-radius:0px;
+      border-bottom-left-radius:0px;
+    }
   }
   &__panel-header__title {
     font-size: calculateRem(14px);

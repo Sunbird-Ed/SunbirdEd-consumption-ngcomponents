@@ -1,13 +1,10 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
-
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 :host {
 .sb--card--course {
     & .sb--container-box {
             min-width: 0;
             flex: 1;
             padding-right: calculateRem(8px);
-            // @include padding(null, calculateRem(8px), null, null);
-            // @include padding(null calculateRem(8px) null null);
             html[dir="rtl"] & {
                 padding-right:inherit;
                 padding-left: calculateRem(8px);

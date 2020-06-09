@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 
 .sb--card__progressbar {
   margin: calculateRem(16px) !important;
@@ -23,7 +23,7 @@
     grid-auto-columns: calculateRem(176px);
   }*/
   .sb-curiculum__border {
-    background: #FFFFFF;
+    background: var(--white);
     box-shadow:  0 2px 7px rgba(0, 0, 0, 0.16);
     &:hover,
     &:active,
@@ -46,7 +46,7 @@
     border: 1px solid;
     padding: calculateRem(16px) calculateRem(34px) calculateRem(0px) calculateRem(16px);
     border: 1px solid var(--primary-200);
-    background: #FFFFFF;
+    background: var(--white);
     font-weight: bold;
     display: flex;
     flex-direction: column;

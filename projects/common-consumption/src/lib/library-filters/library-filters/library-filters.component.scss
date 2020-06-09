@@ -1,4 +1,6 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
+
 :host {
   .fixed-container {
     width: 100%;
@@ -13,7 +15,7 @@
       box-sizing: border-box;
       @include padding(calculateRem(16px) calculateRem(16px));
       .pill {
-        background-color: $white;
+        background-color: var(--white);
         white-space: nowrap;
         -webkit-appearance: none;
         text-overflow: ellipsis;
@@ -39,23 +41,23 @@
         align-items: center;
         line-height: calculateRem(16px);
         &:last-child {
-          @include margin(null, ($base-block-space * 0), null, null);
+          @include margin(null, calculateRem(8px), null, null);
         }
       }
     }
     // medium filter pill styles
     .sb-medium-pills-container {
       min-height: calculateRem(64px);
-      background: $white;
+      background: var(--white);
       min-width: 100%;
       .pill {
-        border: $secondary-color calculateRem(1px) solid;
-        color: $secondary-color;
+        border: var(--secondary-color) calculateRem(1px) solid;
+        color: var(--secondary-color);
         &:active,
         &:hover,
         &.active {
-          color: $white;
-          background-color: $secondary-color;
+          color: var(--white);
+          background-color: var(--secondary-color);
           box-shadow: 0 3px 4px 0 rgba(0,0,0,0.19);
         }
       }
@@ -63,19 +65,18 @@
     // grade filter pill styles
     .sb-grade-pills-container {
       min-height: calculateRem(48px);
-      background: $gray-0;
+      background: var(--gray-0);
       min-width: 100%;
       .pill {
         border-radius: calculateRem(16px);
         @include padding(calculateRem(4px), calculateRem(16px));
-        // box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(0, 0, 0, 0.19);
-        color: $primary-color;
+        color: var(--primary-color);
         min-height: calculateRem(32px);
         &:active,
         &:hover,
         &.active {
-          background-color: $primary-color;
-          color: $white;
+          background-color: var(--primary-color);
+          color: var(--white);
           box-shadow: 0 3px 4px 0 rgba(0,0,0,0.19);
           .icon-svg {
             svg {
