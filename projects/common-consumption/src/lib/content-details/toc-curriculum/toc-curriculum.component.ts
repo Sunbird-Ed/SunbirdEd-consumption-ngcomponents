@@ -189,7 +189,7 @@ export class TocCurriculumComponent implements OnInit {
 
   fetchProgress(item?) {
     var bgColor = this.progressColor;
-    let widthStyle = item.progressPercentage!=null?item.progressPercentage+"%":"0%";
+    let widthStyle = item.progressPercentage!=null?item.progressPercentage+"%":"2%";
     return {
       width: widthStyle,
       'background-color':bgColor
