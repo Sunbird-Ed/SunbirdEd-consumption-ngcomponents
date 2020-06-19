@@ -26,14 +26,14 @@
       <!-- other meta info Medium, Organization etc -->
       <div class="sb--card__meta2 text-left">
         <div class="sb--card__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
-            {{content.medium}}</span></div>
-        <div class="sb--card__org sb__ellipsis" *ngIf="content?.organisation"><bdi>{{content.organisation}}</bdi></div>
+            {{content?.medium}}</span></div>
+        <div class="sb--card__org sb__ellipsis" *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div>
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
       <div class="sb--card__tags">
         <span class="sb--card__badge" *ngIf="content?.badgeAssertions"><img
             [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
-        <span class="sb--card__type" *ngIf="content?.resourceType">{{content.resourceType}}</span>
+        <span class="sb--card__type" *ngIf="content?.resourceType">{{content?.resourceType}}</span>
       </div>
     </div>
     <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
@@ -51,7 +51,7 @@
   <!-- Qr code card -->
   <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
     <!-- Section area if not available it will be hidden -->
-    <div class="sb--card__moreinfo" *ngIf="section">
+    <div class="sb--card__moreinfo" *ngIf="section || showFullCard">
       <div class="sb--card__meta2 text-left">
         <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="section">
           <span class="label">{{moreInfoLabel}}: </span>
@@ -64,7 +64,7 @@
     
   </ng-content> -->
   <ng-container
-    *ngTemplateOutlet="gridTemplate; context: {$implicit: content.hoverData, hoverData: content.hoverData, content:content}"
+    *ngTemplateOutlet="gridTemplate; context: {$implicit: content?.hoverData, hoverData: content?.hoverData, content:content}"
     class="card-hover">
 
   </ng-container>

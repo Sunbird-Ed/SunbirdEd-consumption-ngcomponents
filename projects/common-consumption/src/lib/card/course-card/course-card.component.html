@@ -11,7 +11,7 @@
     <div class="sb--card__info">
       <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" title="{{course?.name}}">{{course?.name}}</h4>
       <div class="sb--card__meta1 text-left">
-        <span class="data_1 ellipsis" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName}}</span>
+        <span class="data_1 ellipsis" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName || course?.organisation?.join(', ')}}</span>
       </div>
     </div>
   </div>
