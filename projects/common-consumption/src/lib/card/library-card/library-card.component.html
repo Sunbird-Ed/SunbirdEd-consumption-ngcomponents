@@ -51,7 +51,7 @@
   <!-- Qr code card -->
   <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
     <!-- Section area if not available it will be hidden -->
-    <div class="sb--card__moreinfo" *ngIf="section || showFullCard">
+    <div class="sb--card__moreinfo" *ngIf="section !== null">
       <div class="sb--card__meta2 text-left">
         <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="section">
           <span class="label">{{moreInfoLabel}}: </span>
