@@ -190,6 +190,7 @@ export class TocCurriculumComponent implements OnInit {
   fetchProgress(item?) {
     var bgColor = this.progressColor;
     let widthStyle = item.progressPercentage!=null?item.progressPercentage+"%":"2%";
+    
     return {
       width: widthStyle,
       'background-color':bgColor
@@ -201,10 +202,12 @@ export class TocCurriculumComponent implements OnInit {
     }
     return false;
   }
-  fetchProgressShadow() {
+  fetchProgressShadow(item) {
     var bgColor = this.shadowColor;
+    let displayStatus = item.progressPercentage!=null && item.progressPercentage != "0"?'block':'none';
     return {
-      'background':bgColor
+      'background':bgColor,
+      display: displayStatus
     };
   }
 

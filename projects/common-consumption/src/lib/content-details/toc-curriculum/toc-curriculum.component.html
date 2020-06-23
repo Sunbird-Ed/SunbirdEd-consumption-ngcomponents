@@ -24,7 +24,7 @@
         <div class="title">{{item?.name}}</div>
       </div>
       </div>
-      <div class="sb--card__progressbar" [ngStyle]="fetchProgressShadow()">
+      <div class="sb--card__progressbar" [ngStyle]="fetchProgressShadow(item)">
         <span [ngStyle]="fetchProgress(item)"></span>
       </div>
     </div>
