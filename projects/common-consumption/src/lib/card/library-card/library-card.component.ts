@@ -9,7 +9,7 @@ import { staticContent } from './library-card.data';
 })
 export class LibraryCardComponent implements OnInit, AfterViewInit {
 
-    @Input() content: IContent|any = staticContent;
+    @Input() content: IContent|any;
     @Input() isMobile = false;
     @Input() isOffline = false;
     @Input() cardImg = '';

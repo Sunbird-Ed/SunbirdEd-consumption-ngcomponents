@@ -10,14 +10,11 @@ import { LibraryCardTypes } from '../../card/models';
 
 export class LibraryCardsStackComponent {
     @Input() contentList = defaultLibraryCardsGrid.contentList;
-    @Input() title: string = defaultLibraryCardsGrid.title;
+    @Input() title: string;
     @Input() isOffline = false;
     @Input() viewMoreButtonText: string = defaultLibraryCardsGrid.viewMoreButtonText;
     @Input() maxCardCount: number = defaultLibraryCardsGrid.maxCardCount;
     @Input() isLoading:boolean;
-    // @Input() defaultImg: string;
-    // @Input() cardImg;
-
 
     @Output() viewMoreClick: EventEmitter<MouseEvent> = new EventEmitter();
     @Output() cardClick: EventEmitter<any> = new EventEmitter();

@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, HostBinding, Host, Output, EventEmitter } from '@angular/core';
 import { AccordionComponent } from '../accordion.component';
-import { takeUntil } from 'rxjs/operators';
-
 @Component({
   selector: 'sb-accordion-item',
   templateUrl: './accordion-item.component.html',
@@ -9,7 +7,6 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class AccordionItemComponent implements OnInit {
   private collapsedValue = true;
-  private disabledValue = false;
   /**
    * Item is collapse (`true` by default)
    * type {boolean}
@@ -75,7 +72,6 @@ export class AccordionItemComponent implements OnInit {
 export function convertToBoolProperty(val: any): boolean {
   if (typeof val === 'string') {
     val = val.toLowerCase().trim();
-
     return (val === 'true' || val === '');
   }
 
