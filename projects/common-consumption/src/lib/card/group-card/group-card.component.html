@@ -3,18 +3,26 @@
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">
-      <div class="img-container">
-        <img [src]="cardImg" alt="">
+      <div class="img-container img-container--label">
+        <label>Ct</label>
       </div>
     </div>
     <!-- card mobile view details -->
     <div class="sb--card__info">
-      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" title="{{group?.name}}">{{group?.name}}</h4>
-      <div class="sb--card__meta1 text-left" *ngIf="group?.subject?.length || group?.gradeLevel?.length">
-        <span class="data_1 ellipsis" title="{{group?.subject}}">{{group?.subject}}</span>
-        <span *ngIf="group?.subject?.length && group?.gradeLevel?.length" class="dot-divider"></span>
-        <span class="data_2 ellipsis" title="{{group?.gradeLevel}}">{{group?.gradeLevel}}</span>
+      <div class="d-flex flex-dr flex-jc-space-between">
+        <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" title="{{group?.name}}">TN X SCIENCE EM ALL ONE MARKS COLLECTIONS</h4>
+        <div class="sb-label-badge">Admin</div>
       </div>
+      <div>
+        <div class="sb--card__meta2 text-left" style="padding:0px;">
+          <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two">Group of individuals, typically who share a similar interest, who discuss ideas  & solve</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sb--card__moreinfo">
+    <div class="sb--card__meta2 text-left">
+      <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two">Group of individuals, typically who share a similar interest, who discuss ideas  & solve</div>
     </div>
   </div>
 </div>

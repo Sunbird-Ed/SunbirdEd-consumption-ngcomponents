@@ -1,0 +1,29 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
+.sb--card__img{
+    .img-container--label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: capitalize;
+        background-color: #B3EBD7 !important;
+        color: #284C3F;
+            label {
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+                font-size: calculateRem(21px);
+                font-weight: bold;
+            }
+    }
+}
+.sb-label-badge {
+font-size: calculateRem(10px);
+align-self: flex-start;
+border: 1px solid var(--secondary-color);
+align-self: center;
+padding: calculateRem(4px) calculateRem(8px);
+border-radius: calculateRem(2px);
+color: var(--secondary-color);
+text-align: center;
+@include margin(null, calculateRem(8px), null, calculateRem(8px));
+}
