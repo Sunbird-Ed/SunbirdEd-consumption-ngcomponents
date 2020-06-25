@@ -8,6 +8,7 @@ import { ContentDetailsModule } from './content-details/content-details.module';
 import { FaqModule } from './faq/faq.module';
 import { AccordionModule } from './accordion/accordion.module';
 import { PipesModule } from './pipes-module/pipes-module.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [],
@@ -19,7 +20,8 @@ import { PipesModule } from './pipes-module/pipes-module.module';
     ContentDetailsModule,
     FaqModule,
     AccordionModule,
-    PipesModule
+    PipesModule,
+    PagesModule
 
   ],
   exports: [
@@ -30,7 +32,8 @@ import { PipesModule } from './pipes-module/pipes-module.module';
     ContentDetailsModule,
     FaqModule,
     AccordionModule,
-    PipesModule
+    PipesModule,
+    PagesModule
   ]
 })
 export class CommonConsumptionModule { }
