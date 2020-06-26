@@ -1,0 +1,36 @@
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+
+.close {
+	width: calculateRem(32px);
+	height: calculateRem(32px);
+	border-radius: 50%;
+	position: absolute;
+	right: calculateRem(8px);
+	top: calculateRem(8px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	i.icon-close {
+		svg {
+		}
+	}
+	&:hover {
+	}
+}
+.sb-group-container__title {
+	color: var(--gray-800);
+	font-size: calculateRem(20px);
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: calculateRem(28px);
+	text-align: center;
+}
+.sb-group-container__img {
+	width: calculateRem(220px);
+}
+.sb-group-container__description {
+	color: var(--gray-800);
+	font-size: calculateRem(14px);
+	line-height: calculateRem(22px);
+}

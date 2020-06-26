@@ -1,4 +1,6 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
+
 :host {
   .card-list-container {
     // box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
@@ -13,7 +15,7 @@
       font-size: calculateRem(18px);
       line-height: calculateRem(26px);
       font-weight: bold;
-      color: $primary-color;
+      color: var(--primary-color);
       text-overflow: ellipsis;
       text-transform: capitalize;
       overflow: hidden;

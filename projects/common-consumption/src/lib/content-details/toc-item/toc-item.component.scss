@@ -1,11 +1,11 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
   
   //sbchapter css
   .sbchapter {
     border-bottom: calculateRem(1px) solid #ddd;
     padding: calculateRem(16px) calculateRem(16px) calculateRem(8px);
     h4 {
-      font-size: $font-size-xs;
+      font-size: calculateRem(10px);
       line-height:calculateRem(18px);
       color: var(--gray-800);
       margin-bottom:calculateRem(8px);
@@ -23,7 +23,7 @@
       cursor: pointer;
       min-height: calculateRem(56px);
       h4 {
-        font-size: $font-size-sm;
+        font-size: calculateRem(12px);
         line-height:calculateRem(20px);
         color: var(--primary-400);
         margin: 0px;
@@ -53,7 +53,7 @@
     padding-bottom: var(--base-block-space);
     &__title {
       //@extend .sbaccordion__panel-header__tilte;
-      font-size: $font-size-normal;
+      font-size: calculateRem(14px);
       font-weight: bold;
       color: var(--primary-400);
       margin: 0px;
@@ -64,14 +64,14 @@
       padding: 0;
     }
     &__topics__title {
-      font-size: $font-size-normal;
+      font-size: calculateRem(14px);
       line-height: calculateRem(22px);
       margin: 0px 0px calculateRem(8px) 0px;
       color: var(--primary-400);
       padding: 0px calculateRem(16px);
     }
     &__topic {
-      font-size: $font-size-sm;
+      font-size: calculateRem(12px);
       line-height: calculateRem(20px);
       padding: 8px calculateRem(32px);
       margin: 0px;
@@ -115,7 +115,7 @@
   }
 
   .heading {
-    font-size: $font-size-normal;
+    font-size: calculateRem(14px);
     line-height: calculateRem(22px);
     font-weight: bold;
     text-align: center;

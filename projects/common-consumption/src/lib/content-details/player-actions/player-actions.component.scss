@@ -1,5 +1,5 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
-
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
 :host {
   .content-video {
     &__player {

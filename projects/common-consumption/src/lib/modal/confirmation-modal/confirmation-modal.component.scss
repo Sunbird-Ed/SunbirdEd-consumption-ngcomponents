@@ -1,19 +1,23 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/variables";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/buttons";
+
 // modal component variables
 $sb-modal-header-bg: var(--primary-400);
 $sb-modal-header-color: var(--white);
 $sb-modal-header-padding:  calculateRem(4px) calculateRem(16px);
 $sb-modal-header-height: calculateRem(40px);
 $sb-modal-fs-header-height:  calculateRem(56px);
-$sb-modal-header-line-height: $h3-font-size;
-$sb-modal-content-padding: $block-padding-xy;
+$sb-modal-header-line-height: calculateRem(24px);
+$sb-modal-content-padding: calculateRem(16px);
 $sb-modal-actions-bg: var(--white);
 $sb-modal-actions-padding: calculateRem(8px) calculateRem(16px);
 $sb-modal-actions-height: calculateRem(56px);
 $sb-modal-header-bg-success: var(--secondary-200);
 $sb-modal-header-bg-warning: var(--tertiary-100);
 $sb-modal-header-bg-error: var(--red-400);
-$sb-modal-header-fsize: $h5-font-size;
+$sb-modal-header-fsize: calculateRem(16px);
 $sb-modal-small-width: calculateRem(480px);
 $sb-modal-normal-width: calculateRem(720px);
 $sb-modal-large-width: calculateRem(900px);
@@ -277,7 +281,7 @@ $sb-modal-corner-radius: calculateRem(8px);
     background-color: $sb-modal-header-bg;
     color: $sb-modal-header-color;
     padding: $sb-modal-header-padding;
-    border-bottom: 0 solid $gray-100; //@include size(auto,($base-block-space * 5)); //bourbon
+    border-bottom: 0 solid var(--gray-100); //@include size(auto,($base-block-space * 5)); //bourbon
     min-height: $sb-modal-header-height;
     //line-height: $sb-modal-header-line-height;
     border-top-left-radius: calculateRem(4px);
@@ -289,7 +293,7 @@ $sb-modal-corner-radius: calculateRem(8px);
     h4 {
       margin: 0px 0px 0px 0px;
       padding: 0px 0px 0px 0px;
-      font-weight: $font-weight-bold;
+      font-weight: 700;
       font-size: $sb-modal-header-fsize;
       flex: 1;
       @include respond-above(sm) {
@@ -305,12 +309,12 @@ $sb-modal-corner-radius: calculateRem(8px);
     min-height: calculateRem(96px);
     padding: $sb-modal-content-padding;
     overflow-y: auto;
-    background: $white;
+    background: var(--white);
   }
   &__actions {
     padding: $sb-modal-actions-padding;
     background: $sb-modal-actions-bg;
-    border-top: calculateRem(1px) solid $gray-100;
+    border-top: calculateRem(1px) solid var(--gray-100);
     min-height: $sb-modal-actions-height;
     display: flex;
     flex-direction: row-reverse;

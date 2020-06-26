@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 .contentPadding{
     padding-bottom: 0px;
 }
@@ -15,7 +15,7 @@ iframe {
     font-family: 'Noto Sans';
 }
 .panelText{
-    font-size: $font-size-normal;
+    font-size:calculateRem(14px);
     padding: calculateRem(16px);
 }
 .rotate{
@@ -36,7 +36,7 @@ iframe {
     cursor: pointer;
 }
 p{
-    font-size: $font-size-normal;
+    font-size: calculateRem(14px);
 }
 .help-header, .help-header-send-email{
     background: var(--primary-color);
@@ -159,7 +159,7 @@ p{
     border-right: 0;
     box-shadow:none !important;
     border-bottom: solid calculateRem(1px) lightgray;
-    font-size: $h5-font-size;
+    font-size: calculateRem(16px);
 }
 .panel-default{
 
@@ -187,22 +187,11 @@ p{
 .panel-interact{
     text-align: center; 
     padding: calculateRem(20px);
-    // height: calculateRem(100px);
 }
 .panel-interact>button{
     margin: calculateRem(10px) calculateRem(5px) 0px calculateRem(5px);
-    // background-color: var(--primary-0);
-    // border-color: var(--primary-0);
-    // border:0px;
-    // width: calculateRem(80px);
-    // color: var(--primary-color);
-    // font-size: calculateRem(13px);
-    // font-weight: 700;
-    // outline: none;
-    // height: calculateRem(30px);
 }
 .panel-interact .yesBtn{
-    // color: var(--secondary-color);
 }
 .panel-interact>p{
     margin: 0px;
@@ -277,7 +266,7 @@ p{
         bottom: calculateRem(-13px);
         right: 0px;
         font-weight: normal;
-        font-size: $font-size-sm;
+        font-size: calculateRem(12px);
     }
     .initiate-email-info-button{
         left: 0px;
@@ -321,7 +310,7 @@ img>.report-button{
 .send-email-info{
     padding: calculateRem(10px) 0px;
     font-weight: normal;
-    font-size: $font-size-sm;
+    font-size: calculateRem(12px);
     text-align: justify;
 
 }
@@ -379,7 +368,7 @@ img>.report-button{
 }
 ::placeholder {
   color: var(--gray-200);
-  font-size: $font-size-normal;
+  font-size: calculateRem(14px);
   font-weight: normal;
 }
 a{

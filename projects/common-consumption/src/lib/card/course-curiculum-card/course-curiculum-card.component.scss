@@ -1,8 +1,8 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/styles";
+@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 
 .sb--card--course--curiculum {
     .sb--card__title {
-        color: #ffffff;
+        color: var(--white);
     }
     .img-container {
         background-color: transparent !important;
