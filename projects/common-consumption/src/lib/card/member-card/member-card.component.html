@@ -8,4 +8,12 @@
     <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
     <div *ngIf="!isMenu && cardImg!=null" (click)="onMenuClick($event)"><img [src]="cardImg" alt=""></div>
     <div *ngIf="config.isSelectable && selected" class="selected"><img src="assets/common-consumption/images/check.svg" /></div>
+
+    <div class="progress-circle" data-percentage="25">
+        <svg class="progress-circle__svg" viewport="0 0 2000 2000">
+          <circle class="progress-circle__stroke" r="50%" cx="50%" cy="50%"></circle>
+          <circle class="progress-circle__stroke" r="50%" cx="50%" cy="50%"></circle>
+        </svg>
+        <span>25%</span>
+      </div>
 </div>
