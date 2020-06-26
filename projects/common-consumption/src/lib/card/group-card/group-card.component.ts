@@ -11,9 +11,12 @@ export class GroupCardComponent implements OnInit {
   @Input() group: any = groupData;
   @Input() cardImg;
   @Input() title;
-  @Input() subTitle;
+  @Input() description;
   @Input() isLoading:boolean;
   @Input() theme: string;
+  @Input() isMobile;
+  @Input() isAdmin;
+  @Input() initial: string;
 
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 

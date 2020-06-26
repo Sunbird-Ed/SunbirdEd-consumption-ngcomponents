@@ -1,14 +1,14 @@
 <div class="members-list" *ngIf="layoutConfig.view == 'horizontal'">
   <span *ngFor="let member of memberList;let index = index">
       <sb-member-card [title]="member.title" [initial]="member.initial" [isAdmin]="member.isAdmin" 
-      [isMenu]="isMenu" [selected]="member.selected" [cardImg]="cardImg" [config]="layoutConfig" [identifier]="member.id" [indexOfMember]="index" (cardClick)="onCardClick($event, member)" (menuClick)="onMenuClick($event, member)">
+      [isMenu]="isMenu" [progressDisplay]="member.progressDisplay" [selected]="member.selected" [cardImg]="cardImg" [config]="layoutConfig" [identifier]="member.id" [indexOfMember]="index" (cardClick)="onCardClick($event, member)" (menuClick)="onMenuClick($event, member)">
       </sb-member-card>
   </span>
 </div>
 <div class="members-inline" *ngIf="layoutConfig.view == 'vertical'">
     <span *ngFor="let member of memberList;let index = index">
       <sb-member-card [title]="member.title" [initial]="member.initial" [isAdmin]="member.isAdmin" 
-        [isMenu]="isMenu" [cardImg]="cardImg" [config]="layoutConfig" [identifier]="member.id" [indexOfMember]="index" (cardClick)="onCardClick($event, member)" (menuClick)="onMenuClick($event, member)">
+        [isMenu]="isMenu" [progressDisplay]="member.progressDisplay" [cardImg]="cardImg" [config]="layoutConfig" [identifier]="member.id" [indexOfMember]="index" (cardClick)="onCardClick($event, member)" (menuClick)="onMenuClick($event, member)">
       </sb-member-card>
     </span>
 </div>
