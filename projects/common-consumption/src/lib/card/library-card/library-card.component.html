@@ -11,7 +11,11 @@
     </div>
     <!-- card mobile view details -->
     <div class="sb--card__info">
-      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
+        <div class="sb--card__meta1">
+          <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
+          <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
+        </div>
+      
       <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
         <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
         <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>

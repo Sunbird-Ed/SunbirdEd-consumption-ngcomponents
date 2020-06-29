@@ -16,8 +16,10 @@ export class CourseCardComponent implements OnInit {
   @Input() cardImg = courseData.appIcon;
   @Input() section = '';
   @Input() isLoading:boolean;
+  @Input() isMenu:boolean = false;
 
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
+  @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
 
 
   constructor() { }
@@ -30,6 +32,9 @@ export class CourseCardComponent implements OnInit {
 
   onClick(event: MouseEvent) {
       this.cardClick.emit({ event: event, data: this.course });
+  }
+  onMenuClick(event: MouseEvent) {
+    this.menuClick.emit({ event: event, data: this.course });
   }
 
 }

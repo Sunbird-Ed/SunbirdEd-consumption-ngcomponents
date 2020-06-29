@@ -20,8 +20,10 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     @Input('hover-template') gridTemplate: TemplateRef<any>;
     @Input() btnlabel = '';
     @Input() btnicon = '';
+    @Input() isMenu: boolean = false;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
+    @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
 
     get LibraryCardTypes() { return LibraryCardTypes; }
 
@@ -33,6 +35,9 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
 
     onClick(event: MouseEvent) {
         this.cardClick.emit({ event: event, data: this.content });
+    }
+    onMenuClick(event: MouseEvent) {
+        this.menuClick.emit({ event: event, data: this.content });
     }
 
     test() {
