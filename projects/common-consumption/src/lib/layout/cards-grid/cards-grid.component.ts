@@ -15,6 +15,7 @@ export class CardsGridComponent {
   @Input() contentList: Array<IContent> = defaultLibraryCardsGrid.contentList;
   @Input() type: CardGridTypes;
   @Input() hoverData = [];
+  @Input() cardType:String = "textbook";
 
   /* Max card count to be shown */
   @Input() maxCardCount = defaultLibraryCardsGrid.maxCardCount;
@@ -25,6 +26,7 @@ export class CardsGridComponent {
   @Input() isMenu:boolean = false;
 
   @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
+  @Output() menuClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
   @Output() hoverActionClick: EventEmitter<any> = new EventEmitter<any>();
 
@@ -48,6 +50,9 @@ export class CardsGridComponent {
   onCardClick(event: MouseEvent, data: IContent) {
       this.cardClick.emit({ event, data });
   }
+  onMenuClick(event: MouseEvent, data: IContent) {
+    this.menuClick.emit({ event, data });
+ }
 
   hoverActionClicked(event) {
       this.hoverActionClick.emit(event);
