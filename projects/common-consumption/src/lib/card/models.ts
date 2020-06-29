@@ -23,6 +23,10 @@ export enum CourseCardGridTypes {
     CURICULUM_COURSE_CARD_GRID = "curiculum_course_card_grid"
 }
 
+export enum CardGridTypes {
+    INFINITE_CARD_GRID = "infinite_grid"
+}
+
 export enum CourseCardTypes {
     RECENTLY_VIEWED = 'recently_viewed',
     MY_COURSE_CARD = 'my_course_card'
