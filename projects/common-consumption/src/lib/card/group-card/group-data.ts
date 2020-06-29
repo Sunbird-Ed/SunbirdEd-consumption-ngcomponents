@@ -1,5 +1,5 @@
 export const groupData = {
-    "identifier": "do_1130152710033489921159",
+    "id": "do_1130152710033489921159",
     "name": "Class 5B",
     "description": "Class 5B - CBSE - English - Math",
     "objectType": "Class",

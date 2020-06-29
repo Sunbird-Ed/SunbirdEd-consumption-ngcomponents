@@ -3,8 +3,8 @@
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">
-      <div class="img-container img-container--label">
-        <label>{{initial}}</label>
+      <div class="img-container img-container--label" [ngStyle]="fetchStyle()">
+        <label [ngStyle]="fetchInitialStyle()">{{initial}}</label>
       </div>
     </div>
     <!-- card mobile view details -->
