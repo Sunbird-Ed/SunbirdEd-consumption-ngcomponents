@@ -34,9 +34,11 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     }
 
     onClick(event: MouseEvent) {
+        console.log("Sharath Got Clicked");
         this.cardClick.emit({ event: event, data: this.content });
     }
     onMenuClick(event: MouseEvent) {
+        console.log("Sharath's Daugther Got Clicked");
         this.menuClick.emit({ event: event, data: this.content });
     }
 

@@ -13,7 +13,7 @@
     <div class="sb--card__info">
         <div class="sb--card__meta1">
           <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
-          <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event)"></div>
+          <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
         </div>
       
       <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">

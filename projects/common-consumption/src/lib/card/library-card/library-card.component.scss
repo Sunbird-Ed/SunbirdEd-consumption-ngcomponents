@@ -57,7 +57,7 @@
       margin: 0px;
       line-height: normal;
       line-height: calculateRem(20px);
-      min-width: 92%;
+      min-width: 86%;
     }
     
     &__meta1 {
@@ -169,12 +169,11 @@
       display: flex;
       justify-content: center;
       border-radius: 50%;
-      padding-left: calculateRem(4px);
+      padding: calculateRem(6px) calculateRem(12px);
       html[dir='rtl'] & {
         padding-right: calculateRem(4px);
         padding-left: calculateRem(0px);
       }
-      padding-top: calculateRem(2px);
       cursor: pointer;
   
     }
