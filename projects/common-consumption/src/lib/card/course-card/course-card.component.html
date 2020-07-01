@@ -10,11 +10,11 @@
     <!-- card mobile view details -->
     <div class="sb--card__info">
         <div class="sb--card__meta1">
-            <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" title="{{course?.name}}">{{course?.name}}</h4>
+            <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{course?.name}}">{{course?.name}}</h4>
             <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></div>
         </div>
       <div class="sb--card__meta1 text-left">
-        <span class="data_1 ellipsis" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName || course?.organisation?.join(', ')}}</span>
+        <span class="data_1 sb__ellipsis sb__ellipsis--two" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName || course?.organisation?.join(', ')}}</span>
       </div>
     </div>
   </div>

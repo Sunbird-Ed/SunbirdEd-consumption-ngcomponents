@@ -36,7 +36,7 @@
       background: var(--gray-0);
   }
 
-  img {
+  img.icon_select {
     width: calculateRem(24px);
     height: calculateRem(24px);
   }
@@ -173,16 +173,17 @@
 
 // percentage circle loader
 .progress-circle {
-  height: 2rem;
+  height: calculateRem(32px);
+  width: calculateRem(32px);
   position: relative;
-  width: 2rem;
   span {
-      position: absolute;
-      font-size: 10px;
-      margin: 0 auto;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: calculateRem(8px);
+    font-weight: bold;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   &__svg {
     border-radius: 50%;
@@ -190,26 +191,86 @@
     transform: scaleX(-1) rotate(-90deg);
     width: 100%;
   }
-
   &__stroke {
     fill: none;
-    stroke-width: 0.675rem;
-  
+    stroke-width: calculateRem(8px);
     &:nth-child(1) {
-      stroke: var(--secondary-100);
+      stroke: var(--secondary-200);
     }
-    
     &:nth-child(2) {
       stroke: var(--gray-100);
       stroke-dasharray: 314.1592%;
     }
   }
-
+  &--xs {
+    span {
+      display: none;
+    }
+  }
+  &--xs {
+    height: calculateRem(24px);
+    width: calculateRem(24px);
+    .progress-circle__stroke {
+      stroke-width: calculateRem(4px);
+    }
+  }
+  &--sm {
+    height: calculateRem(32px);
+    width: calculateRem(32px);
+    .progress-circle__stroke {
+      stroke-width: calculateRem(8px);
+    }
+  }
+  &--md {
+    height: calculateRem(48px);
+    width: calculateRem(48px);
+    .progress-circle__stroke {
+      stroke-width: calculateRem(12px);
+    }
+    span {
+      font-size: calculateRem(10px);
+    }
+  }
+  &--lg {
+    height: calculateRem(64px);
+    width: calculateRem(64px);
+    .progress-circle__stroke {
+      stroke-width: calculateRem(16px);
+    }
+    span {
+      font-size: calculateRem(14px);
+    }
+  }
+  &--xl {
+    height: calculateRem(72px);
+    width: calculateRem(72px);
+    .progress-circle__stroke {
+      stroke-width: calculateRem(20px);
+    }
+    span {
+      font-size: calculateRem(18px);
+    }
+  }
+  &--xxl {
+    height: calculateRem(88px);
+    width: calculateRem(88px);
+    .progress-circle__stroke {
+      stroke-width: calculateRem(24px);
+    }
+    span {
+      font-size: calculateRem(20px);
+    }
+  }
   @for $i from 0 to 100 {
-      &[data-percentage="#{$i}"] {
-          .progress-circle__stroke:nth-child(2) {
-            stroke-dashoffset: calc(314.1592% * (#{$i} / 100));
-          }
-        }
+    &[data-percentage="#{$i}"] {
+      .progress-circle__stroke:nth-child(2) {
+        stroke-dashoffset: calc(314.1592% * (#{$i} / 100));
+      }
+    }
+  }
+  &--success {
+    img.icon_progress_check {
+      width:100%;
+    }
   }
 }
