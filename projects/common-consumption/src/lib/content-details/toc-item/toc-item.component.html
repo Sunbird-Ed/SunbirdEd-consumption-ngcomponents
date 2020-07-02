@@ -5,8 +5,8 @@
         {{ createUniqueId(tocData, item) }}
         <sb-accordion-header>
             <div class="sb-checkbox sb-checkbox-primary" *ngIf="showCheckBox">
-                <input (change)="dispatchSelectedData(item)" [(ngModel)]="item.selected" type="checkbox" id="check1" name="example">
-                <label for="check1"><span class="title">{{item?.name}}</span></label>
+                <input (change)="onItemSelect(item)" [(ngModel)]="item.selected" type="checkbox" id="checkbox" name="example">
+                <label for="checkbox"><span class="title">{{item?.name}}</span></label>
             </div>
             <span *ngIf="!showCheckBox" class="title">{{item?.name}}</span>
         </sb-accordion-header>

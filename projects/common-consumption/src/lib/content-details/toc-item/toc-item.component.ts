@@ -15,7 +15,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() noContentMessage = 'No content available';
   @Input() contentStatus = [];
   @Input() showCheckBox;
-  @Input() selectAllUnit;
+  @Input() selectAll;
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
@@ -25,7 +25,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() recogniseCollection = false;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() noContent: EventEmitter<any> = new EventEmitter();
-  @Output() selectedUnitData: EventEmitter<any> = new EventEmitter();
+  @Output() selectedItem: EventEmitter<any> = new EventEmitter();
 
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
@@ -49,8 +49,8 @@ export class TocItemComponent implements OnInit, OnChanges {
       this.isMimeTypeFilterChanged = false;
     } else if (changes.tocData) {
       this.setActiveContent();
-    } else if (changes.selectAllUnit) {
-      this.selectAll(this.selectAllUnit);
+    } else if (changes.selectAll) {
+      this.selectAllItems(this.selectAll);
     }
   }
 
@@ -184,8 +184,8 @@ export class TocItemComponent implements OnInit, OnChanges {
    * @param item - selected children data.
    * @description - It will despatch an event on individual checkbox click
    */
-  dispatchSelectedData(item) {
-    this.selectedUnitData.emit({data: item});
+  onItemSelect(item) {
+    this.selectedItem.emit({data: item});
   }
 
   /**
@@ -195,11 +195,11 @@ export class TocItemComponent implements OnInit, OnChanges {
    *                selected: true/false based on the value of 'isSelectAll' and also despatch an event
    *                with the data.
    */
-  selectAll(isSelectAll) {
+  selectAllItems(isSelectAll: boolean) {
     this.tocData['children'].forEach(item => {
       item.selected = isSelectAll;
     });
-    this.selectedUnitData.emit({data: this.tocData['children']});
+    this.selectedItem.emit({data: this.tocData['children']});
   }
 
 }
