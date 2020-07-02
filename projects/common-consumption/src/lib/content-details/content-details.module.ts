@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayerActionsComponent } from './player-actions/player-actions.component';
-import { PlayerTocComponent } from './player-toc/player-toc.component';
 import { TocItemComponent } from './toc-item/toc-item.component';
 import { AccordionModule } from '../accordion/accordion.module';
 import { CardModule } from '../card/card.module';
@@ -13,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     PlayerActionsComponent,
-    PlayerTocComponent,
     TocItemComponent,
     TocChildItemComponent,
     TocCurriculumComponent
@@ -27,7 +25,6 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     PlayerActionsComponent,
-    PlayerTocComponent,
     TocItemComponent,
     TocChildItemComponent,
     TocCurriculumComponent
