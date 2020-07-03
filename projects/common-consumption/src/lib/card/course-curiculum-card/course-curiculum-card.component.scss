@@ -17,10 +17,10 @@
         margin-left: calculateRem(8px) !important;
     }
     .sb--card__img {
-        height: 2rem;
-        width: 2rem;
-        flex: 0 0 2rem;
+        height: calculateRem(32px);
+        width: calculateRem(32px);
+        flex: 0 0 calculateRem(32px);
         margin: 0;
-        margin-top: 3rem;
+        margin-top: calculateRem(48px);
     }
   }

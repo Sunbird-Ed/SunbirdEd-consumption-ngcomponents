@@ -1,7 +1,9 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
-/* sb card component css */
+@import "../../../../../../node_modules/common-consumption-styles/assets/loadingshadows";
 
+/* sb card component css */
+:host {
   .sb--card {
     width: 100%;
     border-radius: 0px;
@@ -14,25 +16,30 @@
     border: 0px;
     contain: content;
     border-radius: calculateRem(2px);
-    &:hover { 
+
+    &:hover {
       transform: translate(0, 0px);
-      box-shadow: 0 2px 7px 0 rgba(0,0,0,0.16);
+      box-shadow: 0 calculateRem(2px) calculateRem(7px) 0 rgba(0, 0, 0, 0.16);
     }
+
     @include respond-below(sm) {
-      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 calculateRem(2px) calculateRem(7px) rgba(0, 0, 0, 0.16);
     }
+
     &__main-area {
       display: flex;
       flex-direction: row;
       align-items: center;
       height: calculateRem(88px);
     }
+
     &__img {
       height: calculateRem(72px);
       width: calculateRem(72px);
       overflow: hidden;
       flex: 0 0 calculateRem(72px);
       margin: calculateRem(8px);
+
       .img-container {
         display: flex;
         align-items: center;
@@ -40,17 +47,20 @@
         height: calculateRem(72px);
         width: calculateRem(72px);
         justify-content: center;
+
         img {
           max-width: 100%;
           backdrop-filter: brightness(93%) opacity(85%) blur(3px) contrast(110%);
         }
       }
     }
+
     &__info {
       @include padding(null, calculateRem(8px), null, null);
-      flex:1;
+      flex: 1;
       overflow: hidden;
     }
+
     &__title {
       color: var(--primary-color);
       font-size: calculateRem(14px);
@@ -59,23 +69,26 @@
       line-height: calculateRem(20px);
       min-width: 86%;
     }
-    
+
     &__meta1 {
       color: var(--gray-800);
       font-size: calculateRem(12px);
-      display: flex;    
+      display: flex;
       flex-direction: row;
       align-items: center;
       flex: 1;
       line-height: calculateRem(20px);
-      margin-top:calculateRem(4px);
+      margin-top: calculateRem(4px);
     }
+
     .data_1 {
-      max-width:50%;
+      max-width: 50%;
     }
+
     .data_2 {
-      flex:1;
+      flex: 1;
     }
+
     .dot-divider {
       width: calculateRem(4px);
       height: calculateRem(4px);
@@ -88,9 +101,10 @@
       display: inline-block;
       margin: 0px calculateRem(8px);
     }
+
     &__moreinfo {
       border-radius: 0 0 calculateRem(2px) calculateRem(2px);
-      background-color: #fafafa;
+      background-color: var(--rc-fafafa);
       display: flex;
       flex-direction: row;
       align-items: stretch;
@@ -98,6 +112,7 @@
       min-height: calculateRem(56px);
       border-top: 0px solid #cacbce;
     }
+
     &__meta2 {
       color: var(--gray-800);
       font-size: calculateRem(12px);
@@ -108,17 +123,21 @@
       justify-content: space-around;
       padding: calculateRem(8px);
     }
+
     &__meta2_data {
       .label {
         font-weight: normal;
       }
+
       .value {
         font-weight: bold;
       }
     }
+
     &__org {
       color: var(--gray-200);
     }
+
     &__tags {
       display: flex;
       flex-direction: row;
@@ -126,23 +145,27 @@
       justify-content: flex-end;
       flex: 1;
     }
+
     &__badge {
       display: flex;
+
       img {
         width: calculateRem(20px);
         height: calculateRem(20px);
       }
     }
+
     &__type {
-      @include margin(null, null, null, calculateRem(16px));
       background: var(--gray-200);
       position: relative;
       height: calculateRem(20px);
       @include padding(null, calculateRem(8px), null, calculateRem(4px));
+      @include margin(null, null, null, calculateRem(16px));
       color: var(--white);
       font-size: calculateRem(10px);
       display: flex;
       align-items: center;
+
       &:before {
         content: "";
         width: 0;
@@ -152,14 +175,15 @@
         border-color: var(--gray-200) var(--gray-200) var(--gray-200) transparent;
         position: absolute;
         left: -10px;
+
         html[dir="rtl"] & {
           right: calculateRem(-10px);
           left: inherit;
-          border-color: var(--gray-200) transparent var(--gray-200)
-            var(--gray-200);
+          border-color: var(--gray-200) transparent var(--gray-200) var(--gray-200);
         }
       }
     }
+
     /* recently viewed card css */
     &--recently-viewed {
       .sb--card__img {
@@ -167,6 +191,7 @@
         width: calculateRem(88px);
         flex: 0 0 calculateRem(88px);
         margin: 0;
+
         .img-container {
           display: flex;
           align-items: center;
@@ -175,12 +200,13 @@
           width: calculateRem(88px);
         }
       }
+
       .sb--card__info {
         padding: calculateRem(8px);
-        flex:1;
+        flex: 1;
       }
     }
-   
+
     /* offline card css */
     &.offline {
       .sb--card__img {
@@ -189,6 +215,7 @@
           align-items: center;
           background-color: var(--tertiary-color);
           opacity: 0.5;
+
           img {
             margin: auto;
             font-size: calculateRem(24px);
@@ -196,6 +223,7 @@
           }
         }
       }
+
       .sb--card__info,
       .sb--card__moreinfo {
         opacity: 0.5;
@@ -206,26 +234,28 @@
       display: none;
       transition: all 0.2s ease-in;
     }
+
     &:hover {
       .card-hover {
-       .child-content {
-        color: var(--white);
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        opacity: 0.95;
-        border-radius: calculateRem(2px);
-        background-color: var(--primary-color);
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        transition: 0.2s ease-in;
-        flex-direction: column;
-        justify-content: space-evenly;
+        .child-content {
+          color: var(--white);
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          opacity: 0.95;
+          border-radius: calculateRem(2px);
+          background-color: var(--primary-color);
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          transition: 0.2s ease-in;
+          flex-direction: column;
+          justify-content: space-evenly;
         }
+
         .action-container {
           display: flex;
           width: 100%;
@@ -240,6 +270,7 @@
           padding: 0 calculateRem(16px);
           flex: 1;
           text-align: center;
+
           .sb-btn.sb-btn-primary[disabled] {
             background-color: transparent;
             opacity: 0.5;
@@ -270,8 +301,9 @@
     border-radius: 0px;
     box-shadow: inset 0 calculateRem(-1px) calculateRem(1px) rgba(255, 255, 255, 0.3);
     width: 100%;
-    background:var(--gray-100);
-    & > span {
+    background: var(--gray-100);
+
+    &>span {
       display: block;
       height: 100%;
       background-color: var(--secondary-200);
@@ -282,8 +314,8 @@
       overflow: hidden;
     }
   }
- 
-  .animate > span:after {
+
+  .animate>span:after {
     content: "";
     position: absolute;
     top: 0;
@@ -291,9 +323,9 @@
     bottom: 0;
     right: 0;
     background-image: -webkit-gradient(linear,
-      0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent),
-      color-stop(0.5, transparent),
-      color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
+        0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent),
+        color-stop(0.5, transparent),
+        color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
     z-index: 1;
     background-size: calculateRem(50px) calculateRem(50px);
     border-top-right-radius: calculateRem(8px);
@@ -303,122 +335,117 @@
     overflow: hidden;
     -webkit-animation: move 2s linear infinite;
   }
+
   @-webkit-keyframes move {
     0% {
       background-position: 0 0;
     }
+
     100% {
       background-position: calculateRem(50px) calculateRem(50px);
     }
   }
-  .completed > span {
+
+  .completed>span {
     background-color: var(--secondary-color);
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      color-stop(0, var(--secondary-100)),
-      color-stop(1, var(--secondary-400))
-    );
+    background-image: -webkit-gradient(linear,
+        left top,
+        left bottom,
+        color-stop(0, var(--secondary-100)),
+        color-stop(1, var(--secondary-400)));
     background-image: -webkit-linear-gradient(var(--secondary-100), var(--secondary-400));
   }
-  .inprogress > span {
+
+  .inprogress>span {
     background-color: var(--tertiary-color);
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      color-stop(0, var(--tertiary-100)),
-      color-stop(1, var(--tertiary-400))
-    );
+    background-image: -webkit-gradient(linear,
+        left top,
+        left bottom,
+        color-stop(0, var(--tertiary-100)),
+        color-stop(1, var(--tertiary-400)));
     background-image: -webkit-linear-gradient(var(--tertiary-100), var(--tertiary-400));
   }
-  .notcompleted > span {
+
+  .notcompleted>span {
     background-color: var(--red-100);
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      color-stop(0, var(--red-100)),
-      color-stop(1, var(--red-400))
-    );
-    background-image: -webkit-linear-gradient( var(--red-100),  var(--red-400));
+    background-image: -webkit-gradient(linear,
+        left top,
+        left bottom,
+        color-stop(0, var(--red-100)),
+        color-stop(1, var(--red-400)));
+    background-image: -webkit-linear-gradient(var(--red-100), var(--red-400));
   }
 
-  .nostripes > span,
-  .nostripes > span:after {
+  .nostripes>span,
+  .nostripes>span:after {
     -webkit-animation: none;
     -moz-animation: none;
     background-image: none;
   }
 
-  $background: #f6f7f8;
-  $grey-nuance-lighter: #eeeeee;
-  $grey-nuance-darker: #dddddd;
-  $fade-grey: #e8e8e8;
+  .sb--card--highlighter {
+    height: calculateRem(12px);
+    width: 100%;
+    margin-top: calculateRem(5px);
+    min-width: calculateRem(65px);
+  }
+
+  .border-top-r-left-right {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+
+  .loading-animation {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: placeload;
+    animation-name: placeload;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background: var(--lazyload-bg);
+    background: var(--grey-nuance-lighter);
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(8%, var(--grey-nuance-lighter)),
+      color-stop(18%, var(--grey-nuance-darker)),
+      color-stop(33%, var(--grey-nuance-lighter))
+    );
+    background: -webkit-linear-gradient(
+      left,
+      var(--grey-nuance-lighter) 8%,
+      var(--grey-nuance-darker) 18%,
+      var(--grey-nuance-lighter) 33%
+    );
+    background: linear-gradient(to right, var(--grey-nuance-lighter) 8%, var(--grey-nuance-darker) 18%, var(--grey-nuance-lighter) 33%);
+    -webkit-background-size: calculateRem(800px) calculateRem(104px);
+    background-size: calculateRem(1200px) calculateRem(104px);
+    position: relative;
+  }
+  @-webkit-keyframes placeload{
+    0% {
+      background-position: calculateRem(-468px) 0;
+    }
+    100% {
+      background-position: calculateRem(468px) 0;
+    }
+  }
+  @keyframes placeload {
+    0% {
+      background-position: calculateRem(-468px) 0;
+    }
+    100% {
+      background-position: calculateRem(468px) 0;
+    }
+  }
   
-    .sb--card--highlighter {
-      height: calculateRem(12px);
-      width: 100%;
-      margin-top:calculateRem(5px);
-      min-width: calculateRem(65px);
-    }
-    .loading-animation {
-      -webkit-animation-duration: 1s;
-      animation-duration: 1s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
-      -webkit-animation-name: placeload;
-      animation-name: placeload;
-      -webkit-animation-timing-function: linear;
-      animation-timing-function: linear;
-      background: $background;
-      background: $grey-nuance-lighter;
-      background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(8%, $grey-nuance-lighter),
-        color-stop(18%, $grey-nuance-darker),
-        color-stop(33%, $grey-nuance-lighter)
-      );
-      background: -webkit-linear-gradient(
-        left,
-        #eeeeee 8%,
-        #dddddd 18%,
-        #eeeeee 33%
-      );
-      background: linear-gradient(to right, $grey-nuance-lighter 8%, $grey-nuance-darker 18%, $grey-nuance-lighter 33%);
-      -webkit-background-size: calculateRem(800px) calculateRem(104px);
-      background-size: calculateRem(1200px) calculateRem(104px);
-      position: relative;
-    }
-    @-webkit-keyframes placeload{
-      0% {
-        background-position: calculateRem(-468px) 0;
-      }
-      100% {
-        background-position: calculateRem(468px) 0;
-      }
-    }
-    @keyframes placeload {
-      0% {
-        background-position: calculateRem(-468px) 0;
-      }
-      100% {
-        background-position: calculateRem(468px) 0;
-      }
-    }
-
-
-.border-top-r-left-right {
-  border-top-left-radius:0px;
-  border-top-right-radius:0px;
 }
-
-
 
 .menu::after {
   content: '\2807';
@@ -434,6 +461,7 @@
   width: calculateRem(32px);
   height: calculateRem(32px);
 }
+
 .menu:hover::after {
-    background: var(--gray-0);
+  background: var(--gray-0);
 }

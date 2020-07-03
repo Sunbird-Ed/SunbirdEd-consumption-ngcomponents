@@ -1,7 +1,7 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 .sb--card {
   border-radius: calculateRem(2px);
-  margin-bottom: calculateRem(8px) !important;
+  // margin-bottom: calculateRem(8px) !important;
 }
 
 .sb--card--course {
@@ -14,14 +14,14 @@
   }*/
   
   .sb--card__meta1 {
-    color: #979797;
+    color: var(--rc-979797);
     font-size: calculateRem(12px);
     line-height: calculateRem(16px);
   }
   .sb--card__meta_c_data {
       min-height: calculateRem(32px);
       padding: 0.5rem;
-      background-color: #fafafa;
+      background-color: var(--rc-fafafa);
       font-size: .8rem;
   } 
   .data_1 {

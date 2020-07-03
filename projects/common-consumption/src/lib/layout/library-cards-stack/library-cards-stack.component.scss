@@ -1,5 +1,6 @@
 @import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
+@import "../../../../../../node_modules/common-consumption-styles/assets/loadingshadows";
 
 :host {
   .card-list-container {
@@ -36,7 +37,7 @@
     box-shadow: 0 calculateRem(2px) calculateRem(7px) 0 rgba(0, 0, 0, 0.16);
   }
   .stack-btn {
-    background-color: #edf4f9;
+    background-color: var(--primary-100);
     padding: calculateRem(16px);
     color: var(--primary-color);
     font-weight: bold;
@@ -55,11 +56,6 @@
       }
     }
   }
-//Some Refactoring of Code required to SB-style
-$background: #f6f7f8;
-$grey-nuance-lighter: #eeeeee;
-$grey-nuance-darker: #dddddd;
-$fade-grey: #e8e8e8;
 
   .sb--card--highlighter {
     height: calculateRem(12px);
@@ -67,7 +63,8 @@ $fade-grey: #e8e8e8;
     margin-top:calculateRem(5px);
     min-width: calculateRem(35px);
   }
-  .loading-animation {
+
+ .loading-animation {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: forwards;
@@ -78,23 +75,23 @@ $fade-grey: #e8e8e8;
     animation-name: placeload;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
-    background: $background;
-    background: $grey-nuance-lighter;
+    background: var(--lazyload-bg);
+    background: var(--grey-nuance-lighter);
     background: -webkit-gradient(
       linear,
       left top,
       right top,
-      color-stop(8%, $grey-nuance-lighter),
-      color-stop(18%, $grey-nuance-darker),
-      color-stop(33%, $grey-nuance-lighter)
+      color-stop(8%, var(--grey-nuance-lighter)),
+      color-stop(18%, var(--grey-nuance-darker)),
+      color-stop(33%, var(--grey-nuance-lighter))
     );
     background: -webkit-linear-gradient(
       left,
-      #eeeeee 8%,
-      #dddddd 18%,
-      #eeeeee 33%
+      var(--grey-nuance-lighter) 8%,
+      var(--grey-nuance-darker) 18%,
+      var(--grey-nuance-lighter) 33%
     );
-    background: linear-gradient(to right, $grey-nuance-lighter 8%, $grey-nuance-darker 18%, $grey-nuance-lighter 33%);
+    background: linear-gradient(to right, var(--grey-nuance-lighter) 8%, var(--grey-nuance-darker) 18%, var(--grey-nuance-lighter) 33%);
     -webkit-background-size: calculateRem(800px) calculateRem(104px);
     background-size: calculateRem(1200px) calculateRem(104px);
     position: relative;
