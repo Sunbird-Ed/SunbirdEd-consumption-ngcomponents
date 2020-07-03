@@ -14,7 +14,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
   @Input() contentStatus = [];
-  @Input() showCheckBox;
+  @Input() selectMode;
   @Input() selectAll;
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
