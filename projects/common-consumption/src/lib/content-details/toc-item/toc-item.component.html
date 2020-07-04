@@ -6,7 +6,7 @@
         <sb-accordion-header>
             <div class="sb-checkbox sb-checkbox-primary" *ngIf="selectMode">
                 <input (change)="onItemSelect(item)" [(ngModel)]="item.selected" type="checkbox" name="example">
-                <label><span class="title">{{item?.name}}</span></label>
+                <label class="mb-0"><span class="title font-weight-bold">{{item?.name}}</span></label>
             </div>
             <span *ngIf="!selectMode" class="title">{{item?.name}}</span>
         </sb-accordion-header>
