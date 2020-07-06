@@ -14,6 +14,8 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
   @Input() contentStatus = [];
+  @Input() selectMode;
+  @Input() selectAll;
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
@@ -23,6 +25,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() recogniseCollection = false;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() noContent: EventEmitter<any> = new EventEmitter();
+  @Output() selectedItem: EventEmitter<any> = new EventEmitter();
 
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
@@ -46,6 +49,8 @@ export class TocItemComponent implements OnInit, OnChanges {
       this.isMimeTypeFilterChanged = false;
     } else if (changes.tocData) {
       this.setActiveContent();
+    } else if (changes.selectAll) {
+      this.selectAllItems(this.selectAll);
     }
   }
 
@@ -172,6 +177,29 @@ export class TocItemComponent implements OnInit, OnChanges {
 
   createUniqueId(tocData, item) {
     item['sbUniqueIdentifier'] = tocData.identifier + '_' + item.identifier;
+  }
+
+  /**
+   * @since #SH-362
+   * @param item - selected children data.
+   * @description - It will despatch an event on individual checkbox click
+   */
+  onItemSelect(item) {
+    this.selectedItem.emit({data: item});
+  }
+
+  /**
+   * @since #SH-362
+   * @param isSelectAll - boolean, which will be true/false if 'Select all checkbox is checked/unchecked
+   * @description - this method will mark every children of tocData object with an additional variable -
+   *                selected: true/false based on the value of 'isSelectAll' and also despatch an event
+   *                with the data.
+   */
+  selectAllItems(isSelectAll: boolean) {
+    this.tocData['children'].forEach(item => {
+      item.selected = isSelectAll;
+    });
+    this.selectedItem.emit({data: this.tocData['children']});
   }
 
 }

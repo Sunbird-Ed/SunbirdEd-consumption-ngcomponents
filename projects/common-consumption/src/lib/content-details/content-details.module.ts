@@ -7,6 +7,7 @@ import { CardModule } from '../card/card.module';
 import { TocChildItemComponent } from './toc-child-item/toc-child-item.component';
 import { PipesModule } from '../pipes-module/pipes-module.module';
 import { TocCurriculumComponent } from './toc-curriculum/toc-curriculum.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TocCurriculumComponent } from './toc-curriculum/toc-curriculum.componen
     CommonModule,
     AccordionModule,
     CardModule,
-    PipesModule
+    PipesModule,
+    FormsModule
   ],
   exports: [
     PlayerActionsComponent,

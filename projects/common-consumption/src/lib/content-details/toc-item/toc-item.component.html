@@ -4,7 +4,11 @@
       <sb-accordion-item [expanded]="isExpanded(index, item)" (collapsedChange)="collapsedChangeHandler($event);">
         {{ createUniqueId(tocData, item) }}
         <sb-accordion-header>
-          <span class="title">{{item?.name}}</span>
+            <div class="sb-checkbox sb-checkbox-primary" *ngIf="selectMode">
+                <input (change)="onItemSelect(item)" [(ngModel)]="item.selected" type="checkbox" name="example">
+                <label class="mb-0"><span class="title font-weight-bold">{{item?.name}}</span></label>
+            </div>
+            <span *ngIf="!selectMode" class="title">{{item?.name}}</span>
         </sb-accordion-header>
         <sb-accordion-body *ngIf="isShowBody(item, index)">
           <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
