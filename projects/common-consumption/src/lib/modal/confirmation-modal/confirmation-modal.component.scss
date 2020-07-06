@@ -1,7 +1,7 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/variables";
-@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
-@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/custom-mixins";
-@import "../../../../../../node_modules/common-consumption-styles/assets/buttons";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/variables";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/buttons";
 
 // modal component variables
 $sb-modal-header-bg: var(--primary-400);

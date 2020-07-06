@@ -8,13 +8,13 @@ For existing apps, follow these steps to begin using .
 ## Step 1: Install the package
 
     npm install @project-sunbird/common-consumption --save
-    npm install common-consumption-styles --save
+    npm install @project-sunbird/sb-styles --save
 
-## Step 2: Include the common-consumption-styles and assets in angular.json
+## Step 2: Include the sb-styles and assets in angular.json
     "styles": [
     ...
     ...
-    "./node_modules/common-consumption-styles/assets/_styles.scss"
+    "./node_modules/@project-sunbird/sb-styles/assets/_styles.scss"
     ]
   Add following under architect.build.assets
 
@@ -45,7 +45,7 @@ For existing apps, follow these steps to begin using .
 	    
 	    ...
 	    
-	    "./node_modules/common-consumption-styles/assets/_styles.scss"
+	    "./node_modules/@project-sunbird/sb-styles/assets/_styles.scss"
 	    
 	    ],
 	    
