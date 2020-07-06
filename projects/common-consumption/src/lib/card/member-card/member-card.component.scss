@@ -1,8 +1,8 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 
 .selectElement {
-  background-color: #E0EFFF;
-  border: calculateRem(1px) solid #007AFF !important;
+  background-color: var(--rc-E0EFFF);
+  border: calculateRem(1px) solid var(--rc-007AFF) !important;
 }
 .sb-members-list-item {
   display: flex;
@@ -11,8 +11,8 @@
   border: calculateRem(1px) solid transparent;
   position: relative;
   &:hover {
-    background-color: #E0EFFF;
-    border: calculateRem(1px) solid #007AFF;
+    background-color: var(--rc-E0EFFF);
+    border: calculateRem(1px) solid var(--rc-007AFF);
   }
   .menu::after {
     content: '\2807';
@@ -36,15 +36,11 @@
       background: var(--gray-0);
   }
 
-  img.icon_select {
-    width: calculateRem(24px);
-    height: calculateRem(24px);
-  }
   .status {
-    border: calculateRem(1px) solid #08BC82;
+    border: calculateRem(1px) solid var(--secondary-200);
     border-radius: calculateRem(2px);
     font-size: calculateRem(10px);
-    color: #08BC82;
+    color: var(--secondary-200);
     background-color: var(--white);
     padding: calculateRem(4px) calculateRem(8px);
   }
@@ -143,8 +139,8 @@
     }
     .menu::after {
       font-size: calculateRem(24px);
-      width: calculateRem(48px);
-      height: calculateRem(48px);
+      width: calculateRem(40px);
+      height: calculateRem(40px);
     }
   }
 
@@ -164,8 +160,8 @@
     }
     .menu::after {
       font-size: calculateRem(32px);
-      width: calculateRem(56px);
-      height: calculateRem(56px);
+      width: calculateRem(48px);
+      height: calculateRem(48px);
     }
   }
 }

@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/common-consumption-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 .contentPadding{
     padding-bottom: 0px;
 }
@@ -11,8 +11,8 @@ iframe {
     width: 100%;
   }
   body{
-    background-color: #edf4f9;
-    font-family: 'Noto Sans';
+    background-color: var(--primary-100);
+    font-family: var(--font-stack-en);
 }
 .panelText{
     font-size:calculateRem(14px);
@@ -225,7 +225,7 @@ p{
     box-shadow: none;
     border-width: calculateRem(1px);
     border-style:solid;
-    border-color: #c3c3c3;
+    border-color: var(--rc-c3c3c3);
     padding: calculateRem(8px) 0px 0px calculateRem(8px);
     resize: none;
 }
@@ -362,7 +362,7 @@ img>.report-button{
     box-shadow: none;
     border-width: calculateRem(1px);
     border-style:solid;
-    border-color: #c3c3c3;
+    border-color: var(--rc-c3c3c3);
     padding: calculateRem(15px);
     resize: none;
 }
