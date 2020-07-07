@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccordionHeaderComponent } from './accordion-header.component';
 import { AccordionItemComponent } from '../accordion-item/accordion-item.component';
+import { AccordionComponent } from '../accordion.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AccordionHeaderComponent', () => {
   let component: AccordionHeaderComponent;
@@ -9,7 +11,9 @@ describe('AccordionHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccordionHeaderComponent,AccordionItemComponent ]
+      imports: [BrowserAnimationsModule],
+      providers: [AccordionItemComponent,AccordionComponent],
+      declarations: [ AccordionHeaderComponent ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TocChildItemComponent } from './toc-child-item.component';
+import { TocCardComponent } from '../../card/toc-card/toc-card.component';
+import { PipesModule } from '../../pipes-module/pipes-module.module';
 
 describe('TocChildItemComponent', () => {
   let component: TocChildItemComponent;
@@ -8,7 +10,8 @@ describe('TocChildItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TocChildItemComponent ]
+      imports: [PipesModule],
+      declarations: [ TocChildItemComponent,TocCardComponent ]
     })
     .compileComponents();
   }));
