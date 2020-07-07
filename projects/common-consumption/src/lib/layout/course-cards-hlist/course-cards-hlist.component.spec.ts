@@ -25,4 +25,7 @@ describe('CourseCardsHlistComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should create click Method', () => {
+    expect(component).toBeTruthy();
+  });
 });

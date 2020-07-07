@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccordionComponent } from './accordion.component';
+import { AccordionComponent, convertToBoolProperty } from './accordion.component';
+
 
 describe('AccordionComponent', () => {
   let component: AccordionComponent;
@@ -20,6 +21,18 @@ describe('AccordionComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  it('should handle Open All Accordions', () => {
+    component.multi = true;
+    component.openAll();
+    expect(component).toBeTruthy();
+  });
+  it('should handle Close All Accordions', () => {
+    component.multi = true;
+    component.openAll();
+    component.closeAll();
+    convertToBoolProperty("true");
     expect(component).toBeTruthy();
   });
 });

@@ -14,6 +14,9 @@ import { TocChildItemComponent } from '../toc-child-item/toc-child-item.componen
 import { TocCardComponent } from '../../card/toc-card/toc-card.component';
 import { AccordionBodyComponent } from '../../accordion/accordion-body/accordion-body.component';
 import { CourseCardComponent } from '../../card/course-card/course-card.component';
+import { staticData } from './toc-data'
+import { MimeTypeMasterData } from '../../pipes-module/mime-type';
+import { By } from '@angular/platform-browser';
 
 describe('TocCurriculumComponent', () => {
   let component: TocCurriculumComponent;
@@ -32,10 +35,44 @@ describe('TocCurriculumComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TocCurriculumComponent);
     component = fixture.componentInstance;
+    component.tocData = staticData.content;
+    component.MimeTypeMasterData;
     fixture.detectChanges();
   });
 
   it('should create', () => {
+    component.setActiveContent();
+    component.filterChildren({mimeType:"All"});
+    component.filterChildren({mimeType:MimeTypeMasterData.COLLECTION});
+    component.filterChildren({mimeType:MimeTypeMasterData.DOCS});
+    component.isExpanded(4,{mimeType:MimeTypeMasterData.DOCS});
+    component.fetchProgress({progressPercentage:0});
+    component.fetchProgressShadow({});
+    component.fetchProgressShadow({progressPercentage:100});
+    component.showCompleted({progressPercentage:100});
+    component.getRollup(staticData.content,"");
+    component.isShowBody(staticData.content,true);
+    component.isShowBody(staticData.content,false);
+    expect(component).toBeTruthy();
+    component.ngOnChanges({tocData: staticData.content});
+    expect(component).toBeTruthy();
+  });
+  it('should create with All Filters', () => {
+    component.setActiveContent();
+    component.activeMimeTypeFilter = MimeTypeMasterData.DOCS;
+    component.filterChildren({mimeType:"All"});
+    component.filterChildren({mimeType:MimeTypeMasterData.COLLECTION});
+    component.filterChildren({mimeType:MimeTypeMasterData.DOCS});
+    component.isExpanded(4,{mimeType:MimeTypeMasterData.DOCS});
+    component.fetchProgress({});
+    component.fetchProgressShadow({});
+    component.showCompleted({progressPercentage:0});
+    expect(component).toBeTruthy();
+  });
+  it('should do chapter click',() => {
+    const panelHeader = fixture.debugElement.query(By.css('.sb-curiculum__chapter'));
+    panelHeader.nativeElement.click();
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

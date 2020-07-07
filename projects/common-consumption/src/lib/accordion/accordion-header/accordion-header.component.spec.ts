@@ -27,4 +27,12 @@ describe('AccordionHeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create', () => {
+    component.toggle();
+    component.state;
+    expect(component).toBeTruthy();
+  });
+ 
+
 });
