@@ -3,6 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TocCardComponent } from './toc-card.component';
 import { TocCardType } from '../models';
 import { MimeTypeMasterData } from '../../pipes-module/mime-type';
+import { By } from '@angular/platform-browser';
+import { courseData } from '../course-card/course-card-data';
 
 
 describe('TocCardComponent', () => {
@@ -20,8 +22,7 @@ describe('TocCardComponent', () => {
     fixture = TestBed.createComponent(TocCardComponent);
     component = fixture.componentInstance;
     component.type = TocCardType.COURSE;
-    component.content = {};
-    component.content.mimeType = "";
+    component.content = courseData;
     fixture.detectChanges();
   });
 
@@ -29,8 +30,10 @@ describe('TocCardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create with Course', () => {
-    component.content.mimeType = "Test";
+  it('should create with Toc', () => {
+    const panelHeader = fixture.debugElement.query(By.css('.sbchapter__item'));
+    panelHeader.nativeElement.click();
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

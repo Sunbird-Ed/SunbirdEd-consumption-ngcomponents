@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayerActionsComponent } from './player-actions.component';
+import { By } from '@angular/platform-browser';
 
 
 describe('PlayerActionsComponent', () => {
@@ -22,6 +23,9 @@ describe('PlayerActionsComponent', () => {
   });
 
   it('should create', () => {
+    const panelHeader = fixture.debugElement.query(By.css('.sb-btn'));
+    panelHeader.nativeElement.click();//.triggerEventHandler('click', {});
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });
