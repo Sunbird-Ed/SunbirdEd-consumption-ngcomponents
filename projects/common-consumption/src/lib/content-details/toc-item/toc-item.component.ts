@@ -199,7 +199,7 @@ export class TocItemComponent implements OnInit, OnChanges {
     this.tocData['children'].forEach(item => {
       item.selected = isSelectAll;
     });
-    this.selectedItem.emit({data: this.tocData['children']});
+    this.selectedItem.emit({selectAll: isSelectAll, data: this.tocData['children']});
   }
 
 }
