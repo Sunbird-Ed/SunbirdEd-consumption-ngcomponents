@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MemberListComponent } from './member-list.component';
+import { MemberCardComponent } from '../../card/member-card/member-card.component';
 
 describe('MemberListComponent', () => {
   let component: MemberListComponent;
@@ -8,7 +9,7 @@ describe('MemberListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MemberListComponent ]
+      declarations: [ MemberListComponent,MemberCardComponent ]
     })
     .compileComponents();
   }));

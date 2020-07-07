@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LibraryCardsGridComponent } from './library-cards-grid.component';
+import { LibraryCardComponent } from '../../card/library-card/library-card.component';
+import { CardHoverComponent } from '../../card/card-hover/card-hover.component';
 
 describe('LibraryCardsGridComponent', () => {
   let component: LibraryCardsGridComponent;
@@ -8,7 +10,7 @@ describe('LibraryCardsGridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LibraryCardsGridComponent ]
+      declarations: [ LibraryCardsGridComponent,LibraryCardComponent,CardHoverComponent ]
     })
     .compileComponents();
   }));

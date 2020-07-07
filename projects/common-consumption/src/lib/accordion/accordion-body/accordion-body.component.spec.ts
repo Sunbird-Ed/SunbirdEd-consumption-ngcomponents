@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccordionBodyComponent } from './accordion-body.component';
+import { AccordionHeaderComponent } from '../accordion-header/accordion-header.component';
+import { AccordionItemComponent } from '../accordion-item/accordion-item.component';
 
 describe('AccordionBodyComponent', () => {
   let component: AccordionBodyComponent;
@@ -8,7 +10,7 @@ describe('AccordionBodyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccordionBodyComponent ]
+      declarations: [ AccordionBodyComponent,AccordionHeaderComponent, AccordionItemComponent ]
     })
     .compileComponents();
   }));
