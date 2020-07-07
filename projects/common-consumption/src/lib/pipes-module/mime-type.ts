@@ -23,8 +23,8 @@ export class MimeTypeMasterData {
   name: 'hasMimeType',
 })
 export class MimeTypePipe implements PipeTransform {
-  transform(item: any, mimeTypes: string[] = ['all'], isTextbookTocPage: boolean = false): boolean {
-    if (mimeTypes.indexOf('all') > -1) {
+  transform(item?: any, mimeTypes: string[] = ['all'], isTextbookTocPage: boolean = false): boolean {
+    if (mimeTypes.indexOf('all') > -1 && item != null) {
       if (item.mimeType !== MimeTypeMasterData.COLLECTION && !item.children) {
         return true;
       } else {
@@ -38,10 +38,15 @@ export class MimeTypePipe implements PipeTransform {
         }
       }
     }
-    if (item.mimeType !== MimeTypeMasterData.COLLECTION && (!item.children || !item.children.length)) {
+    if (item != null && item.mimeType !== MimeTypeMasterData.COLLECTION && (!item.children || !item.children.length)) {
       return this.getFilteredItems([item], mimeTypes);
     }
-    return this.getFilteredItems(item.children, mimeTypes);
+    if(item!=null) {
+      return this.getFilteredItems(item.children, mimeTypes);
+    } else {
+      return null;
+    }
+    
   }
 
 
