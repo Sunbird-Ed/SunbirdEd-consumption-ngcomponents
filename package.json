@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "copy:assets": "node scripts/copy-assets",
-    "test:ci": "ng test --code-coverage --watch=false --browsers=ChromeHeadless",
+    "test:ci": "ng test --code-coverage --watch=false --browsers=ChromeHeadless --single-run true",
     "sonar-scanner": "sonar-scanner"
   },
   "private": true,
