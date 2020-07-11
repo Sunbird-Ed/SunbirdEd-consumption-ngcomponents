@@ -63,7 +63,7 @@
       justify-content: center;
       border-radius: 50%;
       background-color: var(--white);
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 6px 0 rgba(var(--rc-rgba-black) 0.1);
       font-weight: bold;
       text-transform: uppercase;
       padding-top:calculateRem(2px);

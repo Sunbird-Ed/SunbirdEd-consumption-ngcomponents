@@ -18,6 +18,7 @@ export class TocCardComponent implements OnInit {
 
   fallbackImg = COMMON_CONSUMPTION_CONSTANTS.TOC_CARD_FALLBACK_IMG;
   iconPathMap: any;
+  isContentStarted  = false;
   isCourseCompleted = false;
   get TocCardType() { return TocCardType; }
 
@@ -44,6 +45,12 @@ export class TocCardComponent implements OnInit {
     const mimeTypesData = MimeTypeMasterData;
     this.isCourseCompleted = this.contentStatus.find((item) => {
       if (item.contentId === this.content.identifier && item.status === 2) {
+        return true;
+      }
+    });
+
+    this.isContentStarted = this.contentStatus.find((item) => {
+      if (item.contentId === this.content.identifier && item.status === 1) {
         return true;
       }
     });
