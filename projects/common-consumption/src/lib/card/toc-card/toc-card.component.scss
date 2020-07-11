@@ -2,9 +2,8 @@
 .sbchapter {
   &__item {
     background: var(--white);
-    border: calculateRem(1px) solid #ddd;
-    box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(2, 79, 157, 0.1);
-    border: calculateRem(0.5px) solid rgba(35, 97, 255, 0.5);
+    border: calculateRem(1px) solid var(--primary-300);
+    box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary), 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,9 +22,9 @@
     }
 
     .sbchapter__img {
-      width: calculateRem(40px);
-      height: calculateRem(40px);
-      flex: 0 0 calculateRem(40px);
+      width: calculateRem(24px);
+      height: calculateRem(24px);
+      flex: 0 0 calculateRem(24px);
       display: flex;
       align-items: center;
       background: var(--rc-dddddd);
@@ -34,17 +33,22 @@
         max-height: 100%;
         object-fit: cover;
       }
+      .icon-svg {
+        svg.icon.icon-svg--primary {
+          fill:#9CB9FF;
+        }
+      }
+      &--inprogress {
+        .icon-svg {
+          svg.icon.icon-svg--primary {
+            fill:var(--primary-color);
+          }
+        }
+      }
     }
-    &:last-child {
-      margin-bottom: calculateRem(8px);
-    }
-    &:hover {
-      background: var(--gray-0);
-    }
-    &--active {
+    &:hover,&--active, &--active:hover {
       background: var(--primary-100);
     }
-    &:hover,
     &--active {
       .sbchapter__item__title {
         font-weight: bold;
