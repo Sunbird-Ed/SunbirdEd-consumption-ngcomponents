@@ -25,16 +25,8 @@
 <div class="sb-members-list-item sb-members-list-item--{{config.size}} sb-members-list-item--{{config.view}}"
 [ngClass]="{'sb-members-list-item--bold': config.isBold, 'selectElement': config.isSelectable && selected}" *ngIf="isLoading">    
     <div class="sb-member mr-8">
-        <div class="sb-member__img loading-animation"></div>
-        <label class="sb-member__name loading-animation"></label>   
+        <div class="sb-member__img loading-animation sb--card--highlighter"></div>
+        <label class="sb-member__name loading-animation sb--card--highlighter"></label>   
     </div>
-    <div *ngIf="isAdmin" class="status mr-8 loading-animation sb--card--highlighter"></div>
-    <div *ngIf="isMenu" class="menu mr-8 loading-animation sb--card--highlighter"></div>
-    <div *ngIf="!isMenu && cardImg!=null" loading-animation></div>
-    <div *ngIf="config.isSelectable && selected" class="selected loading-animation"></div>
-
-    <div *ngIf="progressDisplay && progressDisplay !== 100" class="loading-animation sb--card--highlighter progress-circle progress-circle--{{config?.progressSize}}" data-percentage="0">
-      </div>
-    <div *ngIf="progressDisplay === 100" class="loading-animation progress-circle progress-circle--{{config?.progressSize}} progress-circle--success"></div>
 </div>
 
