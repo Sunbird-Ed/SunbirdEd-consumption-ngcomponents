@@ -2,12 +2,12 @@
 
 .sbaccordion {
     width: 100%;
-    box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary),0.1) !important;
+    box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary), 0.1) !important;
     &--toc {
     }
     &__panel {
       margin-bottom: calculateRem(8px);
-      // box-shadow: 0 calculateRem(4px) calculateRem(4px) calculateRem(-4px) rgba(var(--rc-rgba-black),.25) 0 0 calculateRem(10px) 0 rgba(var(--rc-rgba-black),0.25);
+      // box-shadow: 0 calculateRem(4px) calculateRem(4px) calculateRem(-4px) rgba(var(--rc-rgba-black), 0.25) 0 0 calculateRem(10px) 0 rgba(var(--rc-rgba-black), 0.25);
     }
     &__panel-header {
       background: var(--white);

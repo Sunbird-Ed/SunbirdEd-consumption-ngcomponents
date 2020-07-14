@@ -1,4 +1,5 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 
 .selectElement {
   background-color: var(--rc-E0EFFF);
@@ -165,7 +166,6 @@
     }
   }
 }
-
 
 // percentage circle loader
 .progress-circle {
