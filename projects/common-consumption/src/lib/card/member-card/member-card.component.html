@@ -5,10 +5,12 @@
         <label class="sb-member__name sb__ellipsis sb__ellipsis--two"><span>{{title}}</span></label>   
     </div>
     <div class="d-flex flex-ai-center" *ngIf="config.view == 'horizontal'">
-    <div [style.visibility]="isAdmin ? 'visible' : 'hidden'" class="status" (click)="onClick($event)">Admin</div>
-    <div [style.visibility]="isMenu ? 'visible' : 'hidden'" class="menu ml-8" (click)="onMenuClick($event)"></div>
+      <div *ngIf="isAdmin || isMenu" class="d-flex flex-ai-center">
+        <div [style.visibility]="isAdmin ? 'visible' : 'hidden'" class="status" (click)="onClick($event)">Admin</div>
+        <div [style.visibility]="isMenu ? 'visible' : 'hidden'" class="menu ml-8" (click)="onMenuClick($event)"></div>
+      </div>
     <div *ngIf="!isMenu && cardImg!=null" (click)="onMenuClick($event)"><img [src]="cardImg" alt=""></div>
-    <div *ngIf="config.isSelectable && selected" class="selected"><img class="icon_select" src="assets/common-consumption/images/selected.svg" /></div>
+    <div *ngIf="config.isSelectable && selected" class="selected ml-8"><img class="icon_select" src="assets/common-consumption/images/selected.svg" /></div>
     <div *ngIf="progressDisplay && progressDisplay !== 100" class="ml-8 progress-circle progress-circle--{{config?.progressSize}}" [attr.data-percentage]="progressDisplay">
         <svg class="progress-circle__svg" viewport="0 0 2000 2000">
           <circle class="progress-circle__stroke" r="50%" cx="50%" cy="50%"></circle>
@@ -18,8 +20,8 @@
       </div>
     <div *ngIf="progressDisplay === 100" class="progress-circle progress-circle--{{config?.progressSize}} progress-circle--success"><img class="icon_progress_check" src="assets/common-consumption/images/completed.svg"></div>
   </div>
+ 
 </div>
-
 
 <!--Loading Indicator -->
 <div class="sb-members-list-item sb-members-list-item--{{config.size}} sb-members-list-item--{{config.view}}"

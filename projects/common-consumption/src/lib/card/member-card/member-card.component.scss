@@ -1,19 +1,16 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 
-.selectElement {
-  background-color: var(--rc-E0EFFF);
-  border: calculateRem(1px) solid var(--rc-007AFF) !important;
-}
 .sb-members-list-item {
   display: flex;
   align-items: center;
   padding: calculateRem(8px);
   border: calculateRem(1px) solid transparent;
   position: relative;
-  &:hover {
+  &:hover,&.selectElement {
     background-color: var(--rc-E0EFFF);
     border: calculateRem(1px) solid var(--rc-007AFF);
+    cursor: pointer;
   }
   .menu::after {
     content: '\2807';
