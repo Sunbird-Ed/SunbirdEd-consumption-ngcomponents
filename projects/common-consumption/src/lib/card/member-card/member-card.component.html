@@ -1,4 +1,4 @@
-<div class="sb-members-list-item sb-members-list-item--{{config.size}} sb-members-list-item--{{config.view}} isSelectable"
+<div class="sb-members-list-item sb-members-list-item--{{config.size}} sb-members-list-item--{{config.view}}"
 [ngClass]="{'sb-members-list-item--bold': config.isBold, 'selectElement': config.isSelectable && selected}" *ngIf="!isLoading">    
     <div class="sb-member mr-8" (click)="onClick($event)">
         <div class="sb-member__img" [ngStyle]="fetchStyle()"><span>{{initial}}</span></div>
