@@ -1,1 +1,7 @@
- 
+@import "../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+
+::ng-deep{
+.expanded .sbaccordion{
+    margin-bottom: calculateRem(24px);
+  }
+}

@@ -2,8 +2,14 @@
   
   //sbchapter css
   .sbchapter {
-    border-bottom: calculateRem(1px) solid #ddd;
-    padding: calculateRem(16px) calculateRem(16px) calculateRem(8px);
+    border-bottom: calculateRem(1px) solid var(--gray-100);
+    padding: calculateRem(0px) calculateRem(0px) calculateRem(16px) calculateRem(0px);
+    margin-bottom: calculateRem(16px);
+    &:last-child{
+      border-bottom:0px;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
     h4 {
       font-size: calculateRem(10px);
       line-height:calculateRem(18px);
@@ -12,9 +18,9 @@
     }
     &__item {
       background: var(--white);
-      border: calculateRem(1px) solid #ddd;
-      box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(2, 79, 157, 0.1);
-      border: calculateRem(0.5px) solid rgba(47, 66, 114, 0.5);
+      border: calculateRem(1px) solid var(--primary-300);
+      box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary), 0.1);
+      border: calculateRem(0.5px) solid rgba(var(--rc-rgba-primary), 0.5);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -30,20 +36,22 @@
         padding: 0px;
       }
       .sbchapter__img {
-        width: calculateRem(40px);
-        height: calculateRem(40px);
-        flex: 0 0 calculateRem(40px);
+        width: calculateRem(24px);
+        height: calculateRem(24px);
+        flex: 0 0 calculateRem(24px);
         img {
           width: 100%;
         }
-      }
-      &:last-child {
-        margin-bottom: 0px;
+        .icon-svg {
+          svg.icon .icon-svg--primary {
+            fill:#9CB9FF;
+          }
+        }
       }
       &:hover{
         background: var(--gray-0);
       }
-      &--active {
+      &--active, &--active:hover {
         background: var(--primary-100);
       }
     }
@@ -109,7 +117,7 @@
       background-color: var(--gray-400);
     }
     &::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 calculateRem(6px) rgba(0, 0, 0, 0);
+      -webkit-box-shadow: inset 0 0 calculateRem(6px) rgba(var(--rc-rgba-black), 0);
       background-color: var(--gray-0);
     }
   }

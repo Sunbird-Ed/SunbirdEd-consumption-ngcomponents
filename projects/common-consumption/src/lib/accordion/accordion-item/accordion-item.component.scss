@@ -2,12 +2,12 @@
 
 .sbaccordion {
     width: 100%;
-    box-shadow: 0 0 .625rem 0 rgba(0,0,0,.25)!important;
+    box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary), 0.1) !important;
     &--toc {
     }
     &__panel {
-      margin-bottom: calculateRem(4px);
-      box-shadow: 0 calculateRem(4px) calculateRem(4px) calculateRem(-4px) rgba(0,0,0,.25) 0 0 calculateRem(10px) 0 rgba(0,0,0,0.25);
+      margin-bottom: calculateRem(8px);
+      // box-shadow: 0 calculateRem(4px) calculateRem(4px) calculateRem(-4px) rgba(var(--rc-rgba-black), 0.25) 0 0 calculateRem(10px) 0 rgba(var(--rc-rgba-black), 0.25);
     }
     &__panel-header {
       background: var(--white);
@@ -16,8 +16,9 @@
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
-      height: calculateRem(48px);
+      height: calculateRem(56px);
       border-radius: calculateRem(4px);
+      border: 1px solid var(--primary-300);
     }
     .accordion-item-header-collapsed &__panel-header__title{
       font-weight: normal;

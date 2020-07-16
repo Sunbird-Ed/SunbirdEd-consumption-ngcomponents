@@ -10,7 +10,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "copy:assets": "node scripts/copy-assets"
+    "copy:assets": "node scripts/copy-assets",
+    "test:ci": "ng test --code-coverage --watch=false --browsers=ChromeHeadless",
+    "sonar-scanner": "sonar-scanner"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +24,7 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
-    "@project-sunbird/sb-styles": "~0.0.1",
+    "@project-sunbird/sb-styles": "~0.0.3",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
@@ -47,6 +49,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "puppeteer": "^1.19.0",
     "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
     "scss-bundle": "^3.0.1",

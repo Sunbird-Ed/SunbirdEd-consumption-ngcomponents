@@ -75,7 +75,7 @@ $sb-modal-corner-radius: calculateRem(8px);
 }
 /* sb modal wrapper  */
 .sb-modalWrapper {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(var(--rc-rgba-black), 0.35);
   position: fixed;
   transform-origin: center center;
   opacity: 1;
@@ -260,8 +260,8 @@ $sb-modal-corner-radius: calculateRem(8px);
   text-align: center;
   background: none;
   border: none;
-  box-shadow: calculateRem(1px) calculateRem(3px) calculateRem(3px) 0 rgba(0, 0, 0, 0.2),
-  calculateRem(1px) calculateRem(3px) calculateRem(15px) calculateRem(2px) rgba(0, 0, 0, 0.2);
+  box-shadow: calculateRem(1px) calculateRem(3px) calculateRem(3px) 0 rgba(var(--rc-rgba-black), 0.2),
+  calculateRem(1px) calculateRem(3px) calculateRem(15px) calculateRem(2px) rgba(var(--rc-rgba-black), 0.2);
   user-select: text;
   border-radius: calculateRem(4px) calculateRem(4px) 0px 0px;
   bottom: 0%;

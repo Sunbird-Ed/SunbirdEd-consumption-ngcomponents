@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GroupCardComponent } from './group-card.component';
+import { By } from '@angular/platform-browser';
 
 describe('GroupCardComponent', () => {
   let component: GroupCardComponent;
@@ -20,6 +21,9 @@ describe('GroupCardComponent', () => {
   });
 
   it('should create', () => {
+    const courseCard = fixture.debugElement.query(By.css('.sb--card--course--curiculum'));
+    courseCard.nativeElement.click();
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

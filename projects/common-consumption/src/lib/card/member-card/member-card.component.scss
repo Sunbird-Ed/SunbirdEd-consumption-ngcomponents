@@ -1,18 +1,16 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 
-.selectElement {
-  background-color: var(--rc-E0EFFF);
-  border: calculateRem(1px) solid var(--rc-007AFF) !important;
-}
 .sb-members-list-item {
   display: flex;
   align-items: center;
   padding: calculateRem(8px);
   border: calculateRem(1px) solid transparent;
   position: relative;
-  &:hover {
+  &:hover,&.selectElement {
     background-color: var(--rc-E0EFFF);
     border: calculateRem(1px) solid var(--rc-007AFF);
+    cursor: pointer;
   }
   .menu::after {
     content: '\2807';
@@ -63,7 +61,7 @@
       justify-content: center;
       border-radius: 50%;
       background-color: var(--white);
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 6px 0 rgba(var(--rc-rgba-black), 0.1);
       font-weight: bold;
       text-transform: uppercase;
       padding-top:calculateRem(2px);
@@ -165,7 +163,6 @@
     }
   }
 }
-
 
 // percentage circle loader
 .progress-circle {

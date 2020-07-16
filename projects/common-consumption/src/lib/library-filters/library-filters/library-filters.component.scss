@@ -58,7 +58,7 @@
         &.active {
           color: var(--white);
           background-color: var(--secondary-color);
-          box-shadow: 0 3px 4px 0 rgba(0,0,0,0.19);
+          box-shadow: 0 3px 4px 0 rgba(var(--rc-rgba-black), 0.19);
         }
       }
     }
@@ -77,7 +77,7 @@
         &.active {
           background-color: var(--primary-color);
           color: var(--white);
-          box-shadow: 0 3px 4px 0 rgba(0,0,0,0.19);
+          box-shadow: 0 3px 4px 0 rgba(var(--rc-rgba-black), 0.19);
           .icon-svg {
             svg {
               fill: var(--white);

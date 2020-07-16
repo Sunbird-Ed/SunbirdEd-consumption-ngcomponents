@@ -24,11 +24,11 @@
   }*/
   .sb-curiculum__border {
     background: var(--white);
-    box-shadow:  0 2px 7px rgba(0, 0, 0, 0.16);
+    box-shadow:  0 2px 7px rgba(var(--rc-rgba-black), 0.16);
     &:hover,
     &:active,
     &.active {
-      box-shadow: 0 2px 7px rgba(0, 136, 64, .65);
+      box-shadow: 0 2px 7px rgba(var(--rc-009D53), 0.65);
     }
     margin: calculateRem(8px) calculateRem(0px);
     padding: calculateRem(2px) calculateRem(0px);
@@ -54,7 +54,7 @@
     &:hover,
     &:active,
     &.active {
-      box-shadow: 0 2px 7px rgba(0, 136, 64, .65);
+      box-shadow: 0 2px 7px rgba(var(--rc-009D53), 0.65);
     }
 
     &__chapter {
