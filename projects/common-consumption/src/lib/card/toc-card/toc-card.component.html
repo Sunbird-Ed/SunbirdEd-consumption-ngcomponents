@@ -2,7 +2,7 @@
 <div *ngIf="type === TocCardType.TEXTBOOK">
   <div class="sbchapter__item" (click)="onTocCardClick($event)"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
-    <h4 class="sbchapter__item__title sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8">
+    <h4 class="sbchapter__item__title sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8" title="{{content?.name}}">
       {{content?.name}}
     </h4>
     <div class="sbchapter__img"><img [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" alt=""
@@ -15,7 +15,7 @@
 <div *ngIf="type === TocCardType.COURSE">
   <div class="sbchapter__item course-content"  (click)="onTocCardClick($event)"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier }">
-    <h4 class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pl-8 pt-4">
+    <h4 class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pl-8 pt-4" title="{{content?.name}}">
       {{content?.name}}
     </h4>
     <div class="sbchapter__img background-transparent" [ngClass]="{'isContentStarted': 'sbchapter__img--inprogress'}">
