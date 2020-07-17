@@ -13,9 +13,6 @@
 .sb--card {
     margin-bottom: calculateRem(8px) !important;
     border-radius: calculateRem(4px) !important;
-    .sb--card__info {
-        margin-left: calculateRem(8px) !important;
-    }
     .sb--card__img {
         height: calculateRem(32px);
         width: calculateRem(32px);
