@@ -18,7 +18,7 @@
     <h4 class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pl-8 pt-4" title="{{content?.name}}">
       {{content?.name}}
     </h4>
-    <div class="sbchapter__img background-transparent" [ngClass]="{'isContentStarted': 'sbchapter__img--inprogress'}">
+    <div class="sbchapter__img background-transparent" [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">
       {{createIconMap()}}
       <i class="icon-svg icon-svg--sm" *ngIf="content?.appIcon">
         <svg class="icon icon-svg--primary">
