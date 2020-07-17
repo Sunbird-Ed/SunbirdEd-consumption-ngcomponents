@@ -122,7 +122,8 @@ export class TocItemComponent implements OnInit, OnChanges {
   }
 
   isExpanded(index: number, item) {
-    return Boolean(index === 0 || item && item.mimeType !== MimeTypeMasterData.COLLECTION);
+    const activeContent = this.flattenDeep(item.children).find((child) => child.identifier === this.activeContent.identifier );
+    return Boolean(activeContent || item && item.mimeType !== MimeTypeMasterData.COLLECTION);
   }
 
   isShowBody(item, index) {
