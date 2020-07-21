@@ -43,7 +43,7 @@ describe('TocItemComponent', () => {
     component.filterChildren({mimeType:"All"});
     component.filterChildren({mimeType:MimeTypeMasterData.COLLECTION});
     component.filterChildren({mimeType:MimeTypeMasterData.DOCS});
-    component.isExpanded(4,{mimeType:MimeTypeMasterData.DOCS});
+   // component.isExpanded(4,{mimeType:MimeTypeMasterData.DOCS});
     component.selectAllItems(true);
     component.selectAllItems(false);
     expect(component).toBeTruthy();

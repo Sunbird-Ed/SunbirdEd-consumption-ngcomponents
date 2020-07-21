@@ -18,11 +18,13 @@ describe('MemberCardComponent', () => {
     fixture = TestBed.createComponent(MemberCardComponent);
     component = fixture.componentInstance;
     component.isMenu = true;
+    component.config.view = "horizontal";
     fixture.detectChanges();
   });
 
   it('should create', () => {
     const memberCard = fixture.debugElement.query(By.css('.sb-member'));
+    debugger;
     memberCard.nativeElement.click();
     fixture.detectChanges();
     expect(component).toBeTruthy();
