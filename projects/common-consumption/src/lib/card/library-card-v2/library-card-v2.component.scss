@@ -15,7 +15,7 @@
     margin-top: 0px;
     border: 0px;
     contain: content;
-    border-radius: calculateRem(2px);
+    border-radius: calculateRem(8px);
 
     &:hover {
       transform: translate(0, 0px);
