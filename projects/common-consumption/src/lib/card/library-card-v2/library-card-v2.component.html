@@ -1,30 +1,32 @@
 <!-- card component -->
-<span *ngIf="!layoutConfig">
 <div class="sb--card"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)" *ngIf="!isLoading">
   <div class="sb--card__main-area">
-    <!-- card img -->
-    <div class="sb--card__img">
+    <!-- Srini CSS-->
+    <div class="sb--card__svg-area">
+
+    </div>
+  </div>
+   <!-- card img -->
+   <div class="sb--card__img sb--card__image-pos">
       <div class="img-container">
         <img [src]="cardImg" alt="">
       </div>
     </div>
-    <!-- card mobile view details -->
-    <div class="sb--card__info">
-        <div class="sb--card__meta1">
-          <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
-          <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
-        </div>
-      
-      <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-        <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
-        <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
-        <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
+  <!-- card mobile view details -->
+  <div class="sb--card__info">
+      <div class="sb--card__meta1">
+        <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
+        <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
       </div>
+    
+    <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
+      <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
+      <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
+      <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
     </div>
   </div>
-
   <!-- content for only desktop -->
   <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
     <div class="sb--card__moreinfo">
@@ -108,11 +110,3 @@
       </div>
 
   </div>
-</span>
-<span *ngIf="layoutConfig">
-    <sb-library-card-v2 [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
-    [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel"
-    [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
-    [isMenu]="isMenu" (cardClick)="onClick($event)" (menuClick)="onMenuClick($event);$event.stopPropagation()"
-    ></sb-library-card-v2>
-</span>

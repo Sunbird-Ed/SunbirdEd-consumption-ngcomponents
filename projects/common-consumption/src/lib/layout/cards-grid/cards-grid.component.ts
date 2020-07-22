@@ -17,6 +17,8 @@ export class CardsGridComponent {
   @Input() hoverData = [];
   @Input() cardType:String = "textbook";
 
+  @Input() layoutConfig: any;
+
   /* Max card count to be shown */
   @Input() maxCardCount = defaultLibraryCardsGrid.maxCardCount;
   @Input() viewMoreButtonText = defaultLibraryCardsGrid.viewMoreButtonText;

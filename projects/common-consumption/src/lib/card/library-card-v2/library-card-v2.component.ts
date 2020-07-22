@@ -1,12 +1,13 @@
-import { IContent, LibraryCardTypes, ICardClick } from './../models';
-import { Component, Input, OnInit, EventEmitter, Output, TemplateRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, AfterViewInit } from '@angular/core';
+import { IContent, LibraryCardTypes, ICardClick } from '../models';
+
 
 @Component({
-    selector: 'sb-library-card',
-    templateUrl: './library-card.component.html',
-    styleUrls: ['./library-card.component.scss']
+  selector: 'sb-library-card-v2',
+  templateUrl: './library-card-v2.component.html',
+  styleUrls: ['./library-card-v2.component.scss']
 })
-export class LibraryCardComponent implements OnInit, AfterViewInit {
+export class LibraryCardV2Component implements OnInit, AfterViewInit {
 
     @Input() content: IContent|any;
     @Input() isMobile = false;
@@ -20,7 +21,6 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     @Input() btnlabel = '';
     @Input() btnicon = '';
     @Input() isMenu: boolean = false;
-    @Input() layoutConfig:any;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
@@ -40,9 +40,5 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     onMenuClick(event: MouseEvent) {
         console.log("Sharath's Daugther Got Clicked");
         this.menuClick.emit({ event: event, data: this.content });
-    }
-
-    test() {
-
     }
 }
