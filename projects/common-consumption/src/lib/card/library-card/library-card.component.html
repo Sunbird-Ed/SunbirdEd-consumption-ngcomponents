@@ -113,6 +113,7 @@
     <sb-library-card-v2 [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
     [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel"
     [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
-    [isMenu]="isMenu" (cardClick)="onClick($event)" (menuClick)="onMenuClick($event);$event.stopPropagation()"
+    [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 
+    (menuClick)="onMenuClick($event);$event.stopPropagation()"
     ></sb-library-card-v2>
 </span>

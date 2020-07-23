@@ -21,6 +21,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     @Input() btnlabel = '';
     @Input() btnicon = '';
     @Input() isMenu: boolean = false;
+    @Input() layoutConfig: any;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
@@ -40,5 +41,13 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     onMenuClick(event: MouseEvent) {
         console.log("Sharath's Daugther Got Clicked");
         this.menuClick.emit({ event: event, data: this.content });
+    }
+    getClassForImage() {
+        if(this.layoutConfig!=null && this.layoutConfig.cardImgStyle != null) {
+            return "sb--card__img sb--card__image-pos-"+this.layoutConfig.cardImgStyle;
+        } else {
+            return "sb--card__img sb--card__image-pos";
+        }
+       
     }
 }

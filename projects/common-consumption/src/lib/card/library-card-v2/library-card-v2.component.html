@@ -5,7 +5,7 @@
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)" *ngIf="!isLoading">
 <!-- card img -->
-<div class="sb--card__img sb--card__image-pos">
+<div [ngClass]="getClassForImage()">
   <div class="img-container">
     <img [src]="cardImg" alt="">
   </div>
