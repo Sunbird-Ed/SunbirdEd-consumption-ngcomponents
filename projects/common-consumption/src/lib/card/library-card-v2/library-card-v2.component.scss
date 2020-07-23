@@ -1,6 +1,5 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 /* sb card component css */
 :host {
   .sb--card {
@@ -11,6 +10,28 @@
       width: 100%;
       margin: 0.5rem;
       background: aliceblue;
+    }
+    &__img {
+      .img-container {
+        position: relative;
+        overflow: hidden;
+        img {
+          max-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          overflow: hidden;
+          object-fit: cover;
+        }
+        }
+        
     }
     &__image-pos {
       position: absolute;
