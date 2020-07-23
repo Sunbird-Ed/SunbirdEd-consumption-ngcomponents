@@ -1,6 +1,6 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
-
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 /* sb card component css */
 :host {
   .sb--card {
@@ -16,7 +16,7 @@
       position: absolute;
       top: calculateRem(32px);
       right: calculateRem(16px);
-      
+      z-index: 1000;
       &-top-right-outside {
         position: absolute;
         top: calculateRem(-32px);
