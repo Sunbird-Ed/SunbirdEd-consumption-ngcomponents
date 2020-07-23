@@ -5,7 +5,7 @@ import { IContent, LibraryCardTypes, ICardClick } from '../models';
 @Component({
   selector: 'sb-library-card-v2',
   templateUrl: './library-card-v2.component.html',
-  styleUrls: ['./library-card-v2.component.scss']
+  styleUrls: ['./library-card-v2.component.scss','../library-card/library-card.component.scss']
 })
 export class LibraryCardV2Component implements OnInit, AfterViewInit {
 

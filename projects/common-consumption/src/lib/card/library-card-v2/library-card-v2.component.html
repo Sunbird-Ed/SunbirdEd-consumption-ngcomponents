@@ -1,19 +1,22 @@
+<span style="position:relative;">
+
 <!-- card component -->
 <div class="sb--card"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)" *ngIf="!isLoading">
+<!-- card img -->
+<div class="sb--card__img sb--card__image-pos">
+  <div class="img-container">
+    <img [src]="cardImg" alt="">
+  </div>
+</div>
   <div class="sb--card__main-area">
     <!-- Srini CSS-->
     <div class="sb--card__svg-area">
 
     </div>
   </div>
-   <!-- card img -->
-   <div class="sb--card__img sb--card__image-pos">
-      <div class="img-container">
-        <img [src]="cardImg" alt="">
-      </div>
-    </div>
+   
   <!-- card mobile view details -->
   <div class="sb--card__info">
       <div class="sb--card__meta1">
@@ -110,3 +113,4 @@
       </div>
 
   </div>
+</span>
