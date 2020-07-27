@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280px" height="72px" viewBox="0 0 280 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>C77BC35B-3FE1-4634-8069-4BF02419C835</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="280" height="72" rx="16"></rect>
+    </defs>
+    <g id="Illustration-&amp;-colour-palette-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-4" transform="translate(-188.000000, -587.000000)">
+            <g id="Illustration-07" transform="translate(188.000000, 587.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#4B47FF" xlink:href="#path-1"></use>
+                <path d="M4.14224138,104.125994 C-6.19109195,59.7842202 2.80890805,37.6133333 31.1422414,37.6133333 C73.6422414,37.6133333 75.7376913,146.638654 113.142241,104.125994 C150.546791,61.6133333 92.3378318,31.6133333 135.979343,20.6133333 C165.073684,13.28 197.461317,30.9466667 233.142241,73.6133333 L165.580625,120.613333 L52.9708442,146.613333 L4.14224138,104.125994 Z" id="Shape-07" fill="#FFB8F5" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

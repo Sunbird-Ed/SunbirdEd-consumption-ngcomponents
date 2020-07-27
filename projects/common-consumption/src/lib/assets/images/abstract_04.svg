@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="282px" height="72px" viewBox="0 0 282 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>B496272F-EBEF-44CE-8DBD-E0D06DEF4D99</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="282" height="72" rx="16"></rect>
+    </defs>
+    <g id="Illustration-&amp;-colour-palette-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-4" transform="translate(-186.000000, -435.000000)">
+            <g id="Illustration-04" transform="translate(186.000000, 435.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FF9967" xlink:href="#path-1"></use>
+                <g id="Shape-04" mask="url(#mask-2)" fill="#FA6565">
+                    <g transform="translate(20.000000, -29.000000)">
+                        <circle id="Combined-Shape" cx="43" cy="43" r="43"></circle>
+                        <circle id="Combined-Shape-Copy-3" cx="187" cy="86" r="43"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

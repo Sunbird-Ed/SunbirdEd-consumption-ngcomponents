@@ -1,33 +1,43 @@
 
 
 <!-- card component -->
-<div class="sb--card"
+<div class="sb--card sb--card--theme2"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)" *ngIf="!isLoading">
-<!-- card img -->
+  <svg width="79px" class="sb--card-svg-tail" height="36px" viewBox="0 0 79 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>536CDCAF-4A97-4892-A915-61863D84DDAF</title>
+    <g id="Textbooks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1920-X-768" class="sb--card-svg-tail__rc" transform="translate(-735.000000, -524.000000)">
+            <g id="Group-25" transform="translate(517.000000, 338.000000)">
+                <g id="Fill-1">
+                    <path d="M224.269945,224.907985 C224.269945,224.907985 217.096964,205.264724 219.487958,199.23369 C221.878951,193.203161 229.905965,205.609232 231.442925,210.261729 C231.442925,210.261729 230.930605,187 237.762123,187 C244.59339,187 245.447423,217.498667 245.447423,217.498667 C245.447423,217.498667 247.838417,203.54168 252.27894,203.54168 C256.719214,203.54168 251.424907,219.049331 253.645044,218.704823 C255.865431,218.360315 264.612662,211.290301 270.931859,218.871747 C277.250806,226.453445 274.347493,238.1705 281.17901,237.998119 C288.010277,237.825992 268.503575,211.123125 272.431528,205.95374 C276.359732,200.784607 286.265169,212.84617 287.119203,215.94775 C287.119203,215.94775 286.606883,199.23369 291.218013,199.23369 C295.829393,199.23369 296,223.18494 296,223.18494 L224.269945,224.907985 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+  <div class="sb--card__main-area">
+    <!-- card img -->
 <div [ngClass]="getClassForImage()">
   <div class="img-container">
     <img [src]="cardImg" alt="">
   </div>
 </div>
-  <div class="sb--card__main-area">
     <!-- Srini CSS-->
     <div class="sb--card__svg-area">
-
+      <img src="assets/common-consumption/images/abstract_01.svg" />
     </div>
   </div>
    
   <!-- card mobile view details -->
   <div class="sb--card__info">
-      <div class="sb--card__meta1">
+      <div class="sb--card__meta">
         <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
         <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
       </div>
-    
     <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-      <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
-      <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
-      <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
+      <span class="data_1 mr-8" title="{{content?.subject}}">{{content?.subject}}</span>
+      <span class="data_2" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
     </div>
   </div>
   <!-- content for only desktop -->
@@ -76,11 +86,10 @@
   <ng-container
     *ngTemplateOutlet="gridTemplate; context: {$implicit: content?.hoverData, hoverData: content?.hoverData, content:content}"
     class="card-hover">
-
   </ng-container>
 </div>
 
-  <div class="sb--card" *ngIf="isLoading">
+  <div class="sb--card sb--card--theme2" *ngIf="isLoading">
     <!-- card img -->
     <div [ngClass]="getClassForImage()">
       <div class="img-container loading-animation">
@@ -89,13 +98,12 @@
     </div>
     <div class="sb--card__main-area">
           <div class="sb--card__svg-area loading-animation">
-  
           </div>
     </div>
     <!-- card mobile view details -->
     <div class="sb--card__info">
             <h4 class="sb--card__title loading-animation sb--card--highlighter"></h4>
-            <div class="sb--card__meta1 text-left">
+            <div class="sb--card__meta text-left">
               <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
             </div>
     </div>    
