@@ -17,6 +17,7 @@ import { CourseCardComponent } from '../../card/course-card/course-card.componen
 import { staticData } from './toc-data'
 import { MimeTypeMasterData } from '../../pipes-module/mime-type';
 import { By } from '@angular/platform-browser';
+import { LibraryCardV2Component } from '../../card/library-card-v2/library-card-v2.component';
 
 describe('TocCurriculumComponent', () => {
   let component: TocCurriculumComponent;
@@ -27,7 +28,7 @@ describe('TocCurriculumComponent', () => {
       imports: [FormsModule,CommonModule,PipesModule],
       declarations: [ TocCurriculumComponent,TocItemComponent, AccordionBodyComponent,AccordionHeaderComponent,
         AccordionComponent,AccordionItemComponent,LibraryCardComponent,MyCourseCardComponent,
-      TocChildItemComponent,TocCardComponent,CourseCardComponent ]
+      TocChildItemComponent,TocCardComponent,CourseCardComponent, LibraryCardV2Component ]
     })
     .compileComponents();
   }));

@@ -5,6 +5,7 @@ import { CourseCardComponent } from '../../card/course-card/course-card.componen
 import { LibraryCardComponent } from '../../card/library-card/library-card.component';
 import { courseSection } from '../course-cards-hlist/course-section-data';
 import { By } from '@angular/platform-browser';
+import { LibraryCardV2Component } from '../../card/library-card-v2/library-card-v2.component';
 
 describe('CardsGridComponent', () => {
   let component: CardsGridComponent;
@@ -12,7 +13,7 @@ describe('CardsGridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardsGridComponent,CourseCardComponent,LibraryCardComponent ]
+      declarations: [ CardsGridComponent,CourseCardComponent,LibraryCardComponent,LibraryCardV2Component ]
     })
     .compileComponents();
   }));

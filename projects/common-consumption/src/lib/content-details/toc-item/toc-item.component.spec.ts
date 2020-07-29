@@ -15,6 +15,7 @@ import { PipesModule } from '../../pipes-module/pipes-module.module';
 import { MimeTypeMasterData } from '../../pipes-module/mime-type';
 import { staticData } from '../toc-curriculum/toc-data';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LibraryCardV2Component } from '../../card/library-card-v2/library-card-v2.component';
 
 describe('TocItemComponent', () => {
   let component: TocItemComponent;
@@ -25,7 +26,7 @@ describe('TocItemComponent', () => {
       imports: [FormsModule,CommonModule,PipesModule,BrowserAnimationsModule],
       declarations: [ TocItemComponent, AccordionBodyComponent,AccordionHeaderComponent,
         AccordionComponent,AccordionItemComponent,LibraryCardComponent,MyCourseCardComponent,
-      TocChildItemComponent,TocCardComponent ]
+      TocChildItemComponent,TocCardComponent, LibraryCardV2Component]
     })
     .compileComponents();
   }));
