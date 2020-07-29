@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280px" height="72px" viewBox="0 0 280 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>8B1C2BE2-F327-4151-BBD1-ACA96064860A</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="280" height="72" rx="16"></rect>
+    </defs>
+    <g id="Illustration-&amp;-colour-palette-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-4" transform="translate(-580.000000, -587.000000)">
+            <g id="Illustration-08" transform="translate(580.000000, 587.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#48ECF1" transform="translate(140.000000, 36.000000) scale(-1, -1) translate(-140.000000, -36.000000) " xlink:href="#path-1"></use>
+                <polygon id="Shape-08" fill="#6B77FE" mask="url(#mask-2)" transform="translate(132.881605, 63.788681) scale(-1, 1) translate(-132.881605, -63.788681) " points="-14 101.499837 62.2637101 14 177.26371 113.577361 69.3540271 71.5612324 209.26371 18.0008725 257.253118 101.499837 209.26371 63.7886805 278.325424 22.9640277 279.76321 113.577361"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

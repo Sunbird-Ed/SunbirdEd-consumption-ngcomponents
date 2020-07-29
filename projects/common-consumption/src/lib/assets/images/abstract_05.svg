@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280px" height="72px" viewBox="0 0 280 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>F79FC603-F2BC-4E82-9725-DED5B67BCB59</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="280" height="72" rx="16"></rect>
+    </defs>
+    <g id="Illustration-&amp;-colour-palette-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-4" transform="translate(-580.000000, -435.000000)">
+            <g id="Illustration-05" transform="translate(580.000000, 435.000000)">
+                <g id="Mask">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use fill="#E86767" xlink:href="#path-1"></use>
+                    <path d="M0.03125,-33 C69.640625,34 124.953125,63.4296875 165.96875,55.2890625 C206.984375,47.1484375 251.484375,32.6540796 299.46875,11.8059888 L299.46875,94.921875 L0.03125,94.921875 L0.03125,-33 Z" id="Shape-05" fill="#F1FFB8" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

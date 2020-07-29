@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280px" height="72px" viewBox="0 0 280 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>B144650E-406D-4E9D-B176-FDA17938C3AB</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="280" height="72" rx="16"></rect>
+    </defs>
+    <g id="Illustration-&amp;-colour-palette-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-4" transform="translate(-970.000000, -283.000000)">
+            <g id="Illustration-03" transform="translate(970.000000, 283.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FBF272" xlink:href="#path-1"></use>
+                <path d="M89.9540825,84.6133333 C81.0795218,29.28 90.808908,1.61333333 119.142241,1.61333333 C161.642241,1.61333333 163.737691,110.638654 201.142241,68.1259938 C238.546791,25.6133333 180.337832,-4.38666667 223.979343,-15.3866667 C253.073684,-22.72 285.461317,-5.05333333 321.142241,37.6133333 L253.580625,84.6133333 L140.970844,110.613333 L89.9540825,84.6133333 Z" id="Shape-03" fill="#60E4E1" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

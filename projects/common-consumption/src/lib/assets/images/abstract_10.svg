@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280px" height="72px" viewBox="0 0 280 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>E171E6B5-2967-4AA1-ABC6-678E41623214</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="280" height="72" rx="16"></rect>
+    </defs>
+    <g id="Illustration-&amp;-colour-palette-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-4" transform="translate(-188.000000, -739.000000)">
+            <g id="Illustration-10" transform="translate(188.000000, 739.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#4BCDA2" xlink:href="#path-1"></use>
+                <path d="M-35,27.8468479 C117.413891,-104.81046 173.754228,-136.598154 134.021012,-67.5162354 C74.4211869,36.1066425 -23.2188981,120.206369 51.7426225,91.6725335 C126.704143,63.1386976 260.078533,-90.042948 253.109513,-35.9788378 C246.140493,18.0852724 95.2568748,150.241986 158.9443,111.195684 C222.631724,72.1493826 347.647838,-45.7404132 339.632281,0.0639023656 C334.288576,30.6001128 287.727002,82.9121453 199.947556,157 L21.7883227,151.386675 L-31.9148584,90.9216431 L-35,27.8468479 Z" id="Shape-10" fill="#FBF272" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -3,18 +3,11 @@
 /* sb card component css */
 :host {
   .sb--card {
-    border-radius: calculateRem(8px);
-    contain: initial !important;
-    &__svg-area {
-      height: calculateRem(72px);
-      width: 100%;
-      margin: 0.5rem;
-      background: aliceblue;
-    }
     &__img {
       .img-container {
         position: relative;
         overflow: hidden;
+        border: calculateRem(4px) solid var(--white);
         img {
           max-width: 100%;
           min-height: 100%;
@@ -35,9 +28,13 @@
     }
     &__image-pos {
       position: absolute;
-      top: calculateRem(32px);
+      top: 50%;
       right: calculateRem(16px);
       z-index: 1000;
+      html[dir="rtl"] & {
+        left:calculateRem(16px);
+        right: inherit;
+      }
       &-top-right-outside {
         position: absolute;
         top: calculateRem(-32px);
@@ -84,8 +81,79 @@
         border-radius: calculateRem(72px);
       }
     }
-    &__info {
-      @include padding(calculateRem(24px), calculateRem(8px), calculateRem(8px), calculateRem(8px));
+  }
+
+  .sb--card.sb--card--theme2 {
+    border-radius: calculateRem(24px);
+    box-shadow: 5px 5px 2px 0 rgba(0,0,0,0.1); //--sbt-box-shadow-black
+    overflow:hidden;
+    .sb--card-svg-tail {
+      position: absolute;
+      bottom:0px;
+      right:calculateRem(24px);
+      html[dir="rtl"] & {
+        left:calculateRem(24px);
+        right: inherit;
+      }
+      &__rc {
+        fill: transparent;
+        stroke:var(--primary-color);
+      }
+    }
+    .sb--card__svg-area {
+      height: calculateRem(72px);
+      width: 100%;
+      border-radius: calculateRem(16px);
+      overflow: hidden;
+      img {
+        // width:100%;
+        // height:100%;
+      }
+    }
+    .sb--card__main-area {
+      margin: calculateRem(16px) calculateRem(16px) calculateRem(8px);
+      height:auto;
+      position: relative;
+    }
+    .sb--card__info {
+      padding:0rem calculateRem(16px);
+    }
+    .sb--card__title {
+      margin-right: calculateRem(88px);
+      html[dir="rtl"] & {
+        margin-left: calculateRem(88px);
+        margin-right: 0px;
+      }
+    }
+    .sb--card__meta {
+      height: calculateRem(40px);
+      // align-items: flex-start;
+      display: flex;
+      align-items: center;
+    }
+    .sb--card__meta1 {
+      height: calculateRem(56px);
+      flex-wrap: wrap;
+      margin-top:calculateRem(8px);
+      .data_1, .data_2 {
+        border-radius: calculateRem(8px);
+        font-size: calculateRem(12px);
+        padding: 0px calculateRem(8px);
+        width:auto;flex: initial;
+        margin: 0px calculateRem(8px) calculateRem(8px) 0px;
+      }
+      .data_1 {
+        background:var(--secondary-0); 
+      }
+      .data_2 {
+        background:var(--primary-100);
+      }
+    }
+    .sb--card__meta2 {
+      padding:calculateRem(8px) calculateRem(16px);
+    }
+    .sb--card__image-pos {
+      margin:0;
     }
   }
 }
