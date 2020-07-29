@@ -20,16 +20,16 @@
     <div class="cards-container"
         *ngIf="type !== LibraryCardGridTypes.INFINITE_CARD_GRID && type !== LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER">
         <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
-            *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)">
-            <sb-library-card [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
+            *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)let i=index">
+            <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
                 (click)="onCardClick($event, content)" [cardImg]="content?.cardImg">
             </sb-library-card>
         </div>
     </div>
 
     <div class="cards-container" *ngIf="type === LibraryCardGridTypes.INFINITE_CARD_GRID">
-        <div class="item"  [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList">
-            <sb-library-card [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
+        <div class="item"  [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList;let i=index">
+            <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
                 (click)="onCardClick($event, content)" [cardImg]="content?.cardImg">
             </sb-library-card>
         </div>
@@ -38,7 +38,7 @@
     <div class="cards-container" *ngIf="type === LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER">
         <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
             *ngFor="let content of contentList; let index = index">
-            <sb-library-card [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
+            <sb-library-card [indexToDisplay]="index" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
                 (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [hover-template]="hoverTemplate">
 
                 <ng-template #hoverTemplate let-hoverData="hoverData">

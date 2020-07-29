@@ -22,6 +22,7 @@ export class TocCurriculumComponent implements OnInit {
   @Input() shadowColor = "hsl(0, 0%, 80%)";
   @Input() progressColor = "#024f9d";
   @Input() refresh: boolean;
+  @Input() layoutConfig = {};
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 

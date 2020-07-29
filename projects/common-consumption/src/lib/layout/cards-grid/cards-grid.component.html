@@ -20,8 +20,8 @@
     <div class="cards-container"
         *ngIf="type !== CardGridTypes.INFINITE_CARD_GRID">
         <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
-            *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)">
-            <sb-library-card [layoutConfig]="layoutConfig" *ngIf="cardType === 'textbook'" (menuClick)="onMenuClick($event, content)" [isMenu]="isMenu" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
+            *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length);let i=index">
+            <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" *ngIf="cardType === 'textbook'" (menuClick)="onMenuClick($event, content)" [isMenu]="isMenu" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
                 (click)="onCardClick($event, content)" [cardImg]="content?.cardImg">
             </sb-library-card>
             <sb-course-card [course]="content" (menuClick)="onMenuClick($event, content)" [isMenu]="isMenu" (click)="onCardClick($event, content)"  
@@ -31,8 +31,8 @@
     </div>
 
     <div class="cards-container" *ngIf="type === CardGridTypes.INFINITE_CARD_GRID">
-        <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList">
-            <sb-library-card [layoutConfig]="layoutConfig" *ngIf="cardType === 'textbook'" [isMenu]="isMenu" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
+        <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList;let i=index">
+            <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" *ngIf="cardType === 'textbook'" [isMenu]="isMenu" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
                 (click)="onCardClick($event, content)" (menuClick)="onMenuClick($event, content)" [cardImg]="content?.cardImg">
             </sb-library-card>
             <sb-course-card [isMenu]="isMenu" [course]="content" (click)="onCardClick($event, content)"  
@@ -53,14 +53,14 @@
 <div class="cards-container" *ngIf="maxCardCount > 0">
     <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
         *ngFor="let element of range(maxCardCount); let i=index">
-        <sb-library-card [layoutConfig]="layoutConfig" [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
+        <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
         </sb-library-card>
     </div>    
 </div>
 <div class="cards-container" *ngIf="maxCardCount <= 0">
     <div class="item"
         *ngFor="let number of [0,1,2]">
-        <sb-library-card [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
+        <sb-library-card [indexToDisplay]="number" [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
         </sb-library-card>
     </div>
 </div>

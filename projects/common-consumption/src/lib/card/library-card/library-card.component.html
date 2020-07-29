@@ -110,7 +110,7 @@
   </div>
 </span>
 <span *ngIf="layoutConfig">
-    <sb-library-card-v2 [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
+    <sb-library-card-v2 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
     [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel"
     [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
     [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 

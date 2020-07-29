@@ -21,6 +21,7 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     @Input() btnicon = '';
     @Input() isMenu: boolean = false;
     @Input() layoutConfig:any;
+    @Input() indexToDisplay:number;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();

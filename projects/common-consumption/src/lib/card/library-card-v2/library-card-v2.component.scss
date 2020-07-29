@@ -35,46 +35,6 @@
         left:calculateRem(16px);
         right: inherit;
       }
-      &-top-right-outside {
-        position: absolute;
-        top: calculateRem(-32px);
-        right: calculateRem(-32px);
-      }
-      &-top-right-inside {
-        position: absolute;
-        top: calculateRem(32px);
-      right: calculateRem(16px);
-      }
-      &-bottom-right-outside {
-        position: absolute;
-        bottom: calculateRem(-32px);
-        right: calculateRem(-32px);
-      }
-      &-bottom-right-inside {
-        position: absolute;
-        bottom: calculateRem(0px);
-        right: calculateRem(16px);
-      }
-      &-top-left-inside {
-        position: absolute;
-        top: calculateRem(32px);
-        left: calculateRem(16px);
-      }
-      &-top-left-outside {
-        position: absolute;
-        top: calculateRem(-32px);
-        left: calculateRem(-32px);
-      }
-      &-bottom-left-outside {
-        position: absolute;
-        bottom: calculateRem(-32px);
-        left: calculateRem(-32px);
-      }
-      &-bottom-left-inside {
-        position: absolute;
-        bottom: calculateRem(-16px);
-        left: calculateRem(16px);
-      }
     }
     &__img {
       .img-container {

@@ -22,6 +22,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     @Input() btnicon = '';
     @Input() isMenu: boolean = false;
     @Input() layoutConfig: any;
+    @Input() indexToDisplay: number;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
@@ -49,5 +50,10 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
             return "sb--card__img sb--card__image-pos";
         }
        
+    }
+    fetchSvg() {
+        var indexToDisplay = (this.indexToDisplay % 9)+1;
+        console.log(this.indexToDisplay);
+        return "assets/common-consumption/images/abstract_0"+indexToDisplay+".svg";
     }
 }
