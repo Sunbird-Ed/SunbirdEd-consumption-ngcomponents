@@ -24,7 +24,6 @@ describe('MemberCardComponent', () => {
 
   it('should create', () => {
     const memberCard = fixture.debugElement.query(By.css('.sb-member'));
-    debugger;
     memberCard.nativeElement.click();
     fixture.detectChanges();
     expect(component).toBeTruthy();
@@ -41,5 +40,9 @@ describe('MemberCardComponent', () => {
     component.initial = null;
     component.title = null;
     component.ngOnInit();
+    component.config.view = "vertical";
+    component.ngOnInit();
+    component.indexOfMember = 11;
+    component.fetchStyle();
   });
 });

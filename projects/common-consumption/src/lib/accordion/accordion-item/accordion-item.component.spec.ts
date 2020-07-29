@@ -49,6 +49,7 @@ describe('AccordionItemComponent', () => {
   });
 
   it('collapsed value should be true if openCloseItems emits true', () => {
+    convertToBoolProperty('false');
     expect(component).toBeTruthy();
   });
 

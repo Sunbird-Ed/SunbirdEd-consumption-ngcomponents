@@ -25,5 +25,8 @@ describe('MyCourseCardComponent', () => {
     courseCard.nativeElement.click();
     fixture.detectChanges();
     expect(component).toBeTruthy();
+    component.course.completionPercentage = "100";
+    component.fetchProgress();
+    expect(component).toBeTruthy();
   });
 });

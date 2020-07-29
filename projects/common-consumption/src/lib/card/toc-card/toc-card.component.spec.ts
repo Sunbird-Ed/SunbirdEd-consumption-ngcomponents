@@ -35,6 +35,13 @@ describe('TocCardComponent', () => {
     panelHeader.nativeElement.click();
     fixture.detectChanges();
     expect(component).toBeTruthy();
+    component.iconPathMap = [];
+    component.getIconPath("mimeTypesData.COLLECTION");
+    component.activeContent = {};
+    component.activeContent.sbUniqueIdentifier = "";
+    panelHeader.nativeElement.click();
+    fixture.detectChanges();
+    expect(component).toBeTruthy();
   });
 });
 

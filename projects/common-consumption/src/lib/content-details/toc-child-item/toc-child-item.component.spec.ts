@@ -24,5 +24,7 @@ describe('TocChildItemComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    component.hasMimeType(null,"",{});
+    expect(component).toBeTruthy();
   });
 });

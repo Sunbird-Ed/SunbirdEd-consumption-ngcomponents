@@ -17,10 +17,21 @@ describe('GroupCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(GroupCardComponent);
     component = fixture.componentInstance;
+    component.group = {};
+    component.group.initial = "";
+    component.group.cardBgColor = "";
+    component.group.cardTitleColor = "";
     fixture.detectChanges();
   });
 
   it('should create', () => {
+    component.group = {};
+    component.cardBgColor = null;
+    component.cardTitleColor = null;
+    component.fetchInitialStyle();
+    component.fetchStyle();
+    component.ngOnInit();
+    
     const courseCard = fixture.debugElement.query(By.css('.sb--card--course--curiculum'));
     courseCard.nativeElement.click();
     fixture.detectChanges();

@@ -26,6 +26,8 @@ describe('LibraryCardV2Component', () => {
     libraryCard.nativeElement.click();
     fixture.detectChanges();
     expect(component).toBeTruthy();
+    component.layoutConfig = {};
+    component.layoutConfig.cardImgStyle = "";
     fixture.detectChanges();
     
     expect(component).toBeTruthy();

@@ -18,6 +18,11 @@ describe('CourseCuriculumCardComponent', () => {
     fixture = TestBed.createComponent(CourseCuriculumCardComponent);
     component = fixture.componentInstance;
     component.cardData = {};
+    component.cardData.title = "";
+    component.cardData.count = "";
+    component.cardData.theme = "";
+    component.cardData.titleColor = "";
+    component.cardData.cardImg = "";
     fixture.detectChanges();
   });
 
@@ -29,5 +34,15 @@ describe('CourseCuriculumCardComponent', () => {
     courseCard.nativeElement.click();
     fixture.detectChanges();
     expect(component).toBeTruthy();
+    component.index = null;
+    component.theme = null;
+    component.titleColor = null;
+    component.fetchBgColor();
+    component.fetchColor();
+    component.fetchStyles();
+    component.fetchTextStyles();
+    fixture.detectChanges();
+    expect(component).toBeTruthy();
+    
   });
 });

@@ -36,13 +36,11 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     }
 
     onClick(event: MouseEvent) {
-        console.log("Sharath Got Clicked");
         this.cardClick.emit({ event: event, data: this.content });
     }
-    onMenuClick(event: MouseEvent) {
-        console.log("Sharath's Daugther Got Clicked");
+   /* onMenuClick(event: MouseEvent) {
         this.menuClick.emit({ event: event, data: this.content });
-    }
+    }*/
     getClassForImage() {
         if(this.layoutConfig!=null && this.layoutConfig.cardImgStyle != null) {
             return "sb--card__img sb--card__image-pos-"+this.layoutConfig.cardImgStyle;
