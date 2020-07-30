@@ -4,7 +4,6 @@
 .sb-members-list-item {
   display: flex;
   align-items: center;
-  padding: calculateRem(8px);
   border: calculateRem(1px) solid transparent;
   position: relative;
   &:hover,&.selectElement {
@@ -47,7 +46,7 @@
   .sb-member {
     display: flex;
     align-items: center;
-
+    padding: calculateRem(8px);
     // font weight bold and normal
     &__name {
       font-weight: normal;
