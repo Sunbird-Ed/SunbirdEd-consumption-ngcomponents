@@ -1,23 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="282px" height="72px" viewBox="0 0 282 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>B496272F-EBEF-44CE-8DBD-E0D06DEF4D99</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="282" height="72" rx="16"></rect>
-    </defs>
-    <g id="Illustration-&amp;-colour-palette-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD-Copy-4" transform="translate(-186.000000, -435.000000)">
-            <g id="Illustration-04" transform="translate(186.000000, 435.000000)">
-                <mask id="mask-2" fill="white">
-                    <use xlink:href="#path-1"></use>
-                </mask>
-                <use id="Mask" fill="#FF9967" xlink:href="#path-1"></use>
-                <g id="Shape-04" mask="url(#mask-2)" fill="#FA6565">
-                    <g transform="translate(20.000000, -29.000000)">
-                        <circle id="Combined-Shape" cx="43" cy="43" r="43"></circle>
-                        <circle id="Combined-Shape-Copy-3" cx="187" cy="86" r="43"></circle>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 282 72" style="enable-background:new 0 0 282 72;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FF9967;}
+	.st1{fill:#FA6565;}
+</style>
+<g>
+	<path class="st0" d="M282,0H103.7c1.5,4.4,2.3,9.1,2.3,14c0,23.7-19.3,43-43,43S20,37.7,20,14c0-4.9,0.8-9.6,2.3-14H0v72h166.7
+		c-1.7-4.7-2.7-9.7-2.7-15c0-23.7,19.3-43,43-43s43,19.3,43,43c0,5.3-1,10.3-2.7,15H282V0z"/>
+	<path class="st1" d="M63,57c23.7,0,43-19.3,43-43c0-4.9-0.8-9.6-2.3-14H22.3C20.8,4.4,20,9.1,20,14C20,37.7,39.3,57,63,57z"/>
+	<path class="st1" d="M207,14c-23.7,0-43,19.3-43,43c0,5.3,1,10.3,2.7,15h80.6c1.7-4.7,2.7-9.7,2.7-15C250,33.3,230.7,14,207,14z"/>
+</g>
 </svg>

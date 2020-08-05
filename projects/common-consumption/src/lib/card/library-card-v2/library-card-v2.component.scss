@@ -66,14 +66,17 @@
       border-radius: calculateRem(16px);
       overflow: hidden;
       img {
-        // width:100%;
-        height:100%;
+        width:100%;
+        //height:100%;
       }
     }
     .sb--card__main-area {
       margin: calculateRem(16px) calculateRem(16px) calculateRem(8px);
       height:auto;
       position: relative;
+    }
+    .sb--card__moreinfo {
+      background: var(--white);
     }
     .sb--card__info {
       padding:0rem calculateRem(16px);
