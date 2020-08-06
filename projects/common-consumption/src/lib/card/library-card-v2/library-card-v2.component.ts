@@ -23,6 +23,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     @Input() isMenu: boolean = false;
     @Input() layoutConfig: any;
     @Input() indexToDisplay: number;
+    @Input() svgToDisplay;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
@@ -30,6 +31,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     get LibraryCardTypes() { return LibraryCardTypes; }
 
     ngOnInit() {
+        this.fetchSvg();
     }
 
     ngAfterViewInit(): void {
@@ -50,8 +52,8 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
        
     }
     fetchSvg() {
-        var indexToDisplay = (this.indexToDisplay % 9)+1;
+        var indexToDisplay = this.indexToDisplay!=null ? (this.indexToDisplay % 9)+1:2;
         console.log(this.indexToDisplay);
-        return "assets/common-consumption/images/abstract_0"+indexToDisplay+".svg";
+        this.svgToDisplay =  "assets/common-consumption/images/abstract_0"+indexToDisplay+".svg";
     }
 }
