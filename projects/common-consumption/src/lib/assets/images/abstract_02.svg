@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="280px" height="72px" viewBox="0 0 280 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>314AD89C-4056-44CD-993E-477F53DE0FC6</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="280" height="72" rx="16"></rect>
-        <rect id="path-3" x="0" y="0" width="280" height="72"></rect>
-    </defs>
-    <g id="Illustration-&amp;-colour-palette-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD-Copy-4" transform="translate(-580.000000, -283.000000)">
-            <g id="Illustration-02" transform="translate(580.000000, 283.000000)">
-                <mask id="mask-2" fill="white">
-                    <use xlink:href="#path-1"></use>
-                </mask>
-                <g id="Mask"></g>
-                <mask id="mask-4" fill="white">
-                    <use xlink:href="#path-3"></use>
-                </mask>
-                <use id="Mask" fill="#4BCDA2" xlink:href="#path-3"></use>
-                <path d="M-64,105.690507 C60.3697349,-2.47622085 106.34345,-28.3954178 73.9211454,27.9329158 C25.2876885,112.425416 -54.3866209,180.99904 6.78197996,157.732989 C67.9505808,134.466938 176.784083,9.5649809 171.097363,53.6480246 C165.410643,97.7310683 42.2896098,205.48962 94.2585484,173.651866 C146.227487,141.814112 248.240636,45.6885862 241.699941,83.0367204 C237.339478,107.935477 199.345233,150.589903 127.717206,211 L-17.6607287,206.422981 L-61.4825244,157.120724 L-64,105.690507 Z" id="Shape-02" fill="#FBF272" mask="url(#mask-4)" transform="translate(89.000000, 105.000000) rotate(-13.000000) translate(-89.000000, -105.000000) "></path>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 280 157.5" style="enable-background:new 0 0 280 157.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4BCDA2;}
+	.st1{fill:#FBF272;}
+</style>
+<g id="Mask">
+</g>
+<g>
+	<path class="st0" d="M280,0H0v132.8c52.3-143.2,71.3-163.2,57-60c-4,28.8-8.7,57.3-13.6,84.7h67.1c25.6-73.8,44.9-124.5,47-77.7
+		c0.9,19.6-2.3,47-7.6,77.7h43.6c21.9-55.2,38.5-87.5,39.5-49.8c0.3,13.4-1.1,30-4.1,49.8H280V0z"/>
+	<path class="st1" d="M43.3,157.5c4.9-27.4,9.6-55.8,13.6-84.7c14.4-103.2-4.6-83.2-57,60v24.7H43.3z"/>
+	<path class="st1" d="M157.4,79.8c-2.1-46.8-21.4,3.9-47,77.7h39.4C155.1,126.9,158.3,99.4,157.4,79.8z"/>
+	<path class="st1" d="M232.8,107.7c-0.9-37.7-17.5-5.4-39.5,49.8h35.3C231.8,137.7,233.2,121.1,232.8,107.7z"/>
+</g>
 </svg>
