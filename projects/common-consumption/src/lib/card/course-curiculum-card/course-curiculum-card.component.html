@@ -4,7 +4,7 @@
    
     <!-- card mobile view details -->
     <div class="sb--card__info pl-8">
-      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
+      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three" [ngClass]="showTitleCenter ? 'text-center' : 'text-left'" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
       <div class="sb--card__meta1 text-left">
         <span class="data_1 ellipsis" title="{{subTitle}}">{{subTitle}}</span>
       </div>

@@ -46,6 +46,11 @@
         border-radius: calculateRem(72px);
       }
     }
+    &.selected {
+      border: 1px solid #024F9D;
+      border-radius: 4px;
+      background-color: rgba(2,79,157,0.2);
+    }
   }
 
   .sb--card.sb--card--theme2 {
