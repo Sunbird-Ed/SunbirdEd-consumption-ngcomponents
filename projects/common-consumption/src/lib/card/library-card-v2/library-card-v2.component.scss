@@ -26,6 +26,17 @@
         }
         
     }
+   //Accessibility Fixes
+    &__type {
+      background: #000 !important;
+    }
+    &__type::before {
+      border-color: #000 #000 #000 transparent !important;
+    }
+    &__org {
+      color: #000 !important;
+    }
+     //Accessibility Fixes
     &__image-pos {
       position: absolute;
       top: 50%;
