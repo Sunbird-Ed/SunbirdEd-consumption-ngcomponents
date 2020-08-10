@@ -12,7 +12,7 @@ export class LibraryCardsGridComponent {
 
     /* Title for the grid */
     @Input() title: string = defaultLibraryCardsGrid.title;
-    @Input() contentList: Array<IContent> = defaultLibraryCardsGrid.contentList;
+    @Input() contentList: Array<IContent|any> = defaultLibraryCardsGrid.contentList;
     @Input() type: LibraryCardGridTypes;
     @Input() hoverData = [];
 

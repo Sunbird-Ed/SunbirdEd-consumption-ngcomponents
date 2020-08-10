@@ -37,9 +37,13 @@
         <bdi>{{content?.name}}</bdi></h4>
       <a *ngIf="isMenu" class="menu" (click)="$event.stopPropagation()"></a>
     </div>
-    <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-      <span class="data_1 mr-8" title="{{content?.subject}}">{{content?.subject}}</span>
-      <span class="data_2" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
+    <div class="sb--card__meta1 text-left">
+      <ng-container *ngFor="let subject of content?.subject">
+        <span class="data_1 mr-8" title="{{subject}}">{{subject}}</span>
+      </ng-container>
+      <ng-container *ngFor="let grade of content?.gradeLevel">
+        <span class="data_2" title="{{grade}}">{{grade}}</span>
+      </ng-container>
     </div>
   </div>
   <!-- content for only desktop -->
