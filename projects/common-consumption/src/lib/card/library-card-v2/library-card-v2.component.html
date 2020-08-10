@@ -59,7 +59,7 @@
       <div class="sb--card__tags">
         <span class="sb--card__badge" *ngIf="content?.badgeAssertions"><img
             [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
-        <span class="sb--card__type" *ngIf="content?.resourceType">{{content?.resourceType}}</span>
+        <span class="sb--card__type" *ngIf="content?.contentType">{{content?.contentType}}</span>
       </div>
     </div>
     <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
