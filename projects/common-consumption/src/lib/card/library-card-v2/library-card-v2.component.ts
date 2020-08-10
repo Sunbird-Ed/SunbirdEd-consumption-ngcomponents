@@ -24,6 +24,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     @Input() layoutConfig: any;
     @Input() indexToDisplay: number;
     @Input() svgToDisplay;
+    @Input() isSelected = false;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
