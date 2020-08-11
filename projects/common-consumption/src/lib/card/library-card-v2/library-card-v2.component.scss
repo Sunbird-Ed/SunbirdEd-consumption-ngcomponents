@@ -55,7 +55,7 @@
 
   .sb--card.sb--card--theme2 {
     border-radius: calculateRem(24px);
-    box-shadow: var(sbt-box-shadow-6px);
+    box-shadow: var(--sbt-box-shadow-6px);
     overflow:hidden;
     .sb--card-svg-tail {
       position: absolute;
@@ -144,9 +144,11 @@
         margin: 0px calculateRem(8px) calculateRem(8px) 0px;
       }
       .data_1 {
+        --secondary-0:#E0F5EA;
         background:var(--secondary-0); 
       }
       .data_2 {
+        --primary-100: #E5EDF5;
         background:var(--primary-100);
       }
     }
