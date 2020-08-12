@@ -10,4 +10,3 @@ export * from './lib/library-filters/library-filters/models';
 export * from './lib/card/models';
 export * from './lib/content-details';
 export * from './lib/common-consumption.constants';
-export * from './lib/directives/certificates';
