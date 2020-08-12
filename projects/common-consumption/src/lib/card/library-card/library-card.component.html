@@ -1,7 +1,7 @@
 <!-- card component -->
 <span *ngIf="!layoutConfig">
 <div class="sb--card"
-  [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
+  [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" *ngIf="!isLoading">
   <div class="sb--card__main-area">
     <!-- card img -->

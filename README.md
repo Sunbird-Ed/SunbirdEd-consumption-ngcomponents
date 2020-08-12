@@ -120,3 +120,9 @@ Alternatively, you can create a separate NgModule that imports and then re-expor
 | [Group Card component](./projects/common-consumption/src/lib/card/group-card/group-card.md) | 
 Group Card. |sb-group-card|
 *`<sb-group-card></sb-group-card>`*|
+
+## Available directives
+|Feature| Notes| directive|Code|
+|--|--|--|------------------------------------------------------------------------------------------|
+| CertificateDownloadAsImageDirective | Can be used on any DOM element to make it download certificate as image on click| sbCertificateDownloadAsImage| *`<button sbCertificateDownloadAsImage [template]="'<svg some-attr="$SOME_VAR"></svg>'" [metadata]="{$SOME_VAR: 'SOME_VALUE'}" [baseUrl]="'SAMPLE_BASE_URL'"></button>`*|
+| CertificateDownloadAsPdfDirective | Can be used on any DOM element to make it download certificate as PDF on click| sbCertificateDownloadAsPdf| *`<button sbCertificateDownloadAsImage [template]="'<svg some-attr="$SOME_VAR"></svg>'" [metadata]="{$SOME_VAR: 'SOME_VALUE'}" [baseUrl]="'SAMPLE_BASE_URL'"></button>`*|

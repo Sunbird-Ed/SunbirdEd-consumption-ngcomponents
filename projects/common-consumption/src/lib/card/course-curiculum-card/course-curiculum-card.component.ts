@@ -17,7 +17,7 @@ export class CourseCuriculumCardComponent implements OnInit {
   @Input() theme: string;
   @Input() titleColor: string;
   @Input() index: number;
-
+  @Input() isActivityTypeCard = false;
 
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
