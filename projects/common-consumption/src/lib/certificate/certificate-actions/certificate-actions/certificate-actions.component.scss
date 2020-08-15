@@ -1,0 +1,46 @@
+@import "../../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+.select-template-container {
+  position: relative;
+  &__content {
+    display: block;
+    width: 100%;
+    height: auto;
+    .template-checkbox {
+      position: absolute;
+      top: calculateRem(-20px);
+      right: 0;
+    }
+    .template-image {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+.overlay-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.select-template-container:hover .overlay-container {
+  opacity: 1;
+}
+.overlay-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.sb-btn-select {
+  padding: 0.5rem 1.3rem;
+}
