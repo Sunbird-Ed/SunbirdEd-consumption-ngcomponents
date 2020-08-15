@@ -11,16 +11,16 @@
   <div class="overlay-container">
     <div class="overlay-buttons">
       <button *ngIf="select?.show" type="button" (click)="onSelectClick($event)"
-        class="d-flex flex-ai-center sb-btn sb-btn-normal sb-btn-outline-primary sb-left-icon-btn">
+        class="d-flex flex-ai-center sb-btn sb-btn-normal sb-btn-outline-primary sb-btn-select my-16">
         <i class="check circle icon" aria-hidden="true"></i>{{select?.label}}</button>
 
-      <button *ngIf="preview?.show" type="button" (click)="onPreviewClick($event)"
-        class="d-block sb-btn sb-btn-normal sb-btn-outline-primary sb-left-icon-btn my-16">
-        <i class="expand icon" aria-hidden="true"></i>{{preview?.label}}</button>
-
       <button *ngIf="remove?.show" type="button" (click)="onRemoveClick($event)"
-        class="sb-btn sb-btn-normal sb-btn-outline-error sb-left-icon-btn">
+        class="sb-btn sb-btn-normal sb-btn-outline-error sb-btn-outline-error">
         <i class="trash alternate outline icon" aria-hidden="true"></i>{{remove?.label}}</button>
+
+      <button *ngIf="preview?.show" type="button" (click)="onPreviewClick($event)"
+        class="d-block sb-btn sb-btn-normal sb-btn-outline-primary sb-btn-outline-primary my-16">
+        <i class="expand icon" aria-hidden="true"></i>{{preview?.label}}</button>
     </div>
   </div>
 </div>
