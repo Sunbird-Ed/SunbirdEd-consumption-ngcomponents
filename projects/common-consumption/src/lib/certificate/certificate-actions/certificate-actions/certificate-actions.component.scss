@@ -7,8 +7,8 @@
     height: auto;
     .template-checkbox {
       position: absolute;
-      top: calculateRem(-20px);
-      right: 0;
+      top: 12px;
+      right: 12px;
     }
     .template-image {
       img {
@@ -43,4 +43,16 @@
 }
 .sb-btn-select {
   padding: 0.5rem 1.3rem;
+}
+.sb-btn-content {
+  max-width: 200px;
+  white-space: normal;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
 }
