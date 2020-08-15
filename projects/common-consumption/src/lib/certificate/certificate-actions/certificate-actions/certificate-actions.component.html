@@ -1,0 +1,26 @@
+<div class="select-template-container d-flex flex-ai-center flex-jc-center flex-dc mb-16">
+  <div class="select-template-container__content">
+    <div class="template-checkbox">
+      <div class="sb-checkbox sb-checkbox-secondary py-32">
+        <input type="checkbox" id="check3" name="example" [checked]="isSelectedTemplate">
+        <label for="check3"></label></div>
+    </div>
+    <div class="template-image">
+      <img [src]="template" class="template-img" alt=""></div>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay-buttons">
+      <button *ngIf="select?.show" type="button" (click)="onSelectClick($event)"
+        class="d-flex flex-ai-center sb-btn sb-btn-normal sb-btn-outline-primary sb-left-icon-btn">
+        <i class="check circle icon" aria-hidden="true"></i>{{select?.label}}</button>
+
+      <button *ngIf="preview?.show" type="button" (click)="onPreviewClick($event)"
+        class="d-block sb-btn sb-btn-normal sb-btn-outline-primary sb-left-icon-btn my-16">
+        <i class="expand icon" aria-hidden="true"></i>{{preview?.label}}</button>
+
+      <button *ngIf="remove?.show" type="button" (click)="onRemoveClick($event)"
+        class="sb-btn sb-btn-normal sb-btn-outline-error sb-left-icon-btn">
+        <i class="trash alternate outline icon" aria-hidden="true"></i>{{remove?.label}}</button>
+    </div>
+  </div>
+</div>
