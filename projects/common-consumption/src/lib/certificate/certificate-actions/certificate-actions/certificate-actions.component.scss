@@ -7,12 +7,17 @@
     height: auto;
     .template-checkbox {
       position: absolute;
-      top: 12px;
-      right: 12px;
+      top: calculateRem(12px);
+      right: calculateRem(12px);;
     }
     .template-image {
-      img {
+      border: calculateRem(1px) solid var(--primary-400);
+      border-radius: calculateRem(4px);
+      width: 100%;
+      .template-img {
         max-width: 100%;
+        border-radius: calculateRem(4px);
+        width: 100%;
       }
     }
   }

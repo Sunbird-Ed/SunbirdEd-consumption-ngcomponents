@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { DomSanitizer} from '@angular/platform-browser';
 
 export interface IPreviewActionButton {
   label: string;
@@ -26,7 +27,7 @@ export class CertificateActionsComponent {
 
   @Input() actionButtons: IPreviewActionButton[] = [];
   @Output() buttonClick = new EventEmitter<IPreviewActionButtonClick>();
-  constructor() { }
+  constructor(public domSanitizer: DomSanitizer) { }
 
   onButtonClick(event: MouseEvent, name: string) {
     this.buttonClick.emit({ event, name });
