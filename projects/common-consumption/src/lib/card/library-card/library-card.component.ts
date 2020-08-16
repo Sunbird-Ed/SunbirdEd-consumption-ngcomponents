@@ -1,6 +1,6 @@
 import { IContent, LibraryCardTypes, ICardClick } from './../models';
 import { Component, Input, OnInit, EventEmitter, Output, TemplateRef, AfterViewInit } from '@angular/core';
-
+import { staticContent } from '../library-card/library-card.data';
 @Component({
     selector: 'sb-library-card',
     templateUrl: './library-card.component.html',
@@ -8,7 +8,7 @@ import { Component, Input, OnInit, EventEmitter, Output, TemplateRef, AfterViewI
 })
 export class LibraryCardComponent implements OnInit, AfterViewInit {
 
-    @Input() content: IContent|any;
+    @Input() content: IContent|any = staticContent;
     @Input() isMobile = false;
     @Input() isOffline = false;
     @Input() cardImg = '';
@@ -36,11 +36,9 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     }
 
     onClick(event: MouseEvent) {
-        console.log("Sharath Got Clicked");
         this.cardClick.emit({ event: event, data: this.content });
     }
     onMenuClick(event: MouseEvent) {
-        console.log("Sharath's Daugther Got Clicked");
         this.menuClick.emit({ event: event, data: this.content });
     }
 
