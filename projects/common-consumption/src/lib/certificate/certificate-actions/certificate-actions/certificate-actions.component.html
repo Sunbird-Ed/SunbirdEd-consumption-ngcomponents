@@ -5,7 +5,7 @@
       <i *ngIf="!isSelectedTemplate" class="square outline icon" aria-hidden="true"></i>
     </div>
     <div class="template-image">
-      <img [src]="template" class="template-img" alt=""></div>
+      <img [src]="domSanitizer?.bypassSecurityTrustUrl(template)" class="template-img" alt=""></div>
   </div>
   <div class="overlay-container">
     <div class="overlay-buttons">
