@@ -2,7 +2,6 @@
   <div class="select-template-container__content">
     <div class="template-checkbox">
       <i *ngIf="isSelectedTemplate" class="check square icon" aria-hidden="true"></i>
-      <i *ngIf="!isSelectedTemplate" class="square outline icon" aria-hidden="true"></i>
     </div>
     <div class="template-image">
       <img [src]="domSanitizer?.bypassSecurityTrustUrl(template)" class="template-img" alt=""></div>
