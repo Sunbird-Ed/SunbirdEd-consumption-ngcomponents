@@ -148,8 +148,14 @@
         background:var(--secondary-0); 
       }
       .data_2 {
-        --primary-100: #E5EDF5;
-        background:var(--primary-100);
+        --sbt-pill-hs: 212, 100%;
+        --sbt-pill-bg: hsl(var(--sbt-pill-hs), 90%);
+        --sbt-pill-bg-active: hsl(var(--sbt-pill-hs), 50%); // #0076FE
+        background:var(--sbt-pill-bg);
+        color:var(--sbt-pill-bg-active);
+        &:last-child {
+          margin-right:0px;
+        }
       }
     }
     .sb--card__meta2 {
