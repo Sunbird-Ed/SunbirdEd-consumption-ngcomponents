@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { DomSanitizer} from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 export interface IPreviewActionButton {
   label: string;
@@ -27,9 +27,16 @@ export class CertificateActionsComponent {
 
   @Input() actionButtons: IPreviewActionButton[] = [];
   @Output() buttonClick = new EventEmitter<IPreviewActionButtonClick>();
+
+  showOverlay = true;
   constructor(public domSanitizer: DomSanitizer) { }
 
   onButtonClick(event: MouseEvent, name: string) {
+
+    if (name === 'select') {
+      this.isSelectedTemplate = true;
+      this.showOverlay = false;
+    }
     this.buttonClick.emit({ event, name });
   }
 
