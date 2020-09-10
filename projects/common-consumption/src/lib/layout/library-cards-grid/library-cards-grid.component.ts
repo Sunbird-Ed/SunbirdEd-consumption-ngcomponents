@@ -25,10 +25,13 @@ export class LibraryCardsGridComponent {
 
     @Input() isLoading:boolean;
 
+    /* Show Menu on each card */
+    @Input() isMenu = false;
 
     @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
     @Output() hoverActionClick: EventEmitter<any> = new EventEmitter<any>();
+    @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
 
 
     get LibraryCardTypes() { return LibraryCardTypes; }
@@ -56,5 +59,8 @@ export class LibraryCardsGridComponent {
     }
     range(maxCardCounter) {
         return  new Array(maxCardCounter);
+    }
+    onCardMenuClick(event) {
+        this.menuClick.emit(event);
     }
 }

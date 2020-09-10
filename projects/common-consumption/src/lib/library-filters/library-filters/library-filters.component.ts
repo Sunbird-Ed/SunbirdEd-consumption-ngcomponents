@@ -52,7 +52,6 @@ export class LibraryFiltersComponent implements OnChanges {
             case TocMimeTypes.VIDEO: type = TocMimeTypes.VIDEO;
                 break;
         }
-        console.log(type);
         return type;
     }
 
@@ -69,7 +68,6 @@ export class LibraryFiltersComponent implements OnChanges {
                         return ({ text: item.text, selected: false, type: type });
                     }
                 });
-                console.log(this.filterList);
             } else if(this.list) {
                 this.filterList = this.list.map((item, index) => {
                     let type = this.fetchCorrespondingTypes(item);
@@ -81,7 +79,6 @@ export class LibraryFiltersComponent implements OnChanges {
                         return ({ text: item, selected: false, type: type });
                     }
                 });
-                console.log(this.filterList);
             }
         } else {
             if (this.list) {
@@ -116,7 +113,7 @@ export class LibraryFiltersComponent implements OnChanges {
                 }, 1000);
             }
         } catch (error) {
-            console.log('Error in selectPill method');
+            console.error('Error in selectPill method', error);
         }
     }
 
@@ -152,7 +149,7 @@ export class LibraryFiltersComponent implements OnChanges {
             }
 
         } catch (error) {
-            console.log('Error in selectPill method');
+            console.error('Error in selectPill method', error);
         }
     }
 }

@@ -22,9 +22,12 @@ export class CourseCardsHlistComponent implements OnInit {
    @Input() multiRow:boolean;
    @Input() hideProgress:boolean;
 
+   /* Show Menu on each card */
+   @Input() isMenu = false;
 
    @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
    @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
+   @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
 
   constructor() {
   }
@@ -74,6 +77,10 @@ export class CourseCardsHlistComponent implements OnInit {
 
    range(maxCardCounter) {
        return  new Array(maxCardCounter);
+   }
+
+   onCardMenuClick(event) {
+       this.menuClick.emit(event);
    }
 
 }

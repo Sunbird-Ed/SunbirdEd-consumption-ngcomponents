@@ -95,7 +95,6 @@ export class TocCurriculumComponent implements OnInit {
   }
 
   public onTocChapterClick(event,item) {
-    console.log(item);
     /*const rollup = this.getRollup(this.tocData, event.data.sbUniqueIdentifier);
     if (rollup.length) {
       rollup.pop();

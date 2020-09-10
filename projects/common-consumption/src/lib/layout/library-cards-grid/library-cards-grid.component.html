@@ -30,7 +30,7 @@
     <div class="cards-container" *ngIf="type === LibraryCardGridTypes.INFINITE_CARD_GRID">
         <div class="item"  [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList;let i=index">
             <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
-                (click)="onCardClick($event, content)" [cardImg]="content?.cardImg">
+                [isMenu]="isMenu" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" (menuClick)="onCardMenuClick($event)">
             </sb-library-card>
         </div>
     </div>
