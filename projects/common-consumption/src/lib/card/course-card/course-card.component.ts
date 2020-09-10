@@ -31,11 +31,9 @@ export class CourseCardComponent implements OnInit {
   }
 
   onClick(event: MouseEvent) {
-    console.log("Card Clicked");
       this.cardClick.emit({ event: event, data: this.course });
   }
   onMenuClick(event: MouseEvent) {
-    console.log("Menu Clicked");
     this.menuClick.emit({ event: event, data: this.course });
   }
 

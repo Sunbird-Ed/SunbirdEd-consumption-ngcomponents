@@ -168,12 +168,12 @@
 
 // percentage circle loader
 .progress-circle {
-  height: calculateRem(32px);
-  width: calculateRem(32px);
+  height: calculateRem(36px);
+  width: calculateRem(36px);
   position: relative;
   span {
     position: absolute;
-    font-size: calculateRem(8px);
+    font-size: calculateRem(10px);
     font-weight: bold;
     margin: 0 auto;
     top: 50%;
@@ -188,7 +188,7 @@
   }
   &__stroke {
     fill: none;
-    stroke-width: calculateRem(8px);
+    stroke-width: calculateRem(4px);
     &:nth-child(1) {
       stroke: var(--secondary-200);
     }
