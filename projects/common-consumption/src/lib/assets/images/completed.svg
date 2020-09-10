@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>31AD73E1-428E-47E1-A64F-D3ED80D45AA1</title>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1FCD22E3-942D-4276-8442-5E50B18A62A9</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Course_member-progress" transform="translate(-547.000000, -516.000000)">
-            <g id="Rectangle" transform="translate(112.000000, 289.000000)">
-                <g id="completed" transform="translate(437.000000, 229.000000)">
-                    <circle id="Oval" stroke="#08BC82" stroke-width="3" fill="#08BC82" cx="18" cy="18" r="18"></circle>
-                    <polygon id="Shape" fill="#FFFFFF" points="14.6 21.6 10.4 17.4 9 18.8 14.6 24.4 26.6 12.4 25.2 11"></polygon>
-                </g>
+        <g id="03-Library-textbook-level-courses-page01-Library---More-than-4-subjects-option1-Copy-2" transform="translate(-328.000000, -330.000000)" fill-rule="nonzero">
+            <g id="Group" transform="translate(328.000000, 330.000000)">
+                <path d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z" id="Path" fill="#008840"></path>
+                <path d="M12.1668574,5.17412386 C12.478995,5.48682482 12.5370371,5.93496331 12.2964979,6.1750692 L7.36593181,11.1618344 C7.15842811,10.9537909 6.97949372,10.7744138 6.82912864,10.6237031 L6.8282287,10.6262662 L4.23568572,8.03372324 C4.10552009,7.90355761 4.25326599,7.54477153 4.56568542,7.23235209 C4.87810486,6.91993266 5.23689094,6.77218676 5.36705657,6.90235239 L7.35839176,8.89298607 L11.1661474,5.04267888 C11.4066866,4.80257298 11.8547197,4.86142291 12.1668574,5.17412386 Z" id="Combined-Shape" fill="#FFFFFF"></path>
             </g>
         </g>
     </g>
