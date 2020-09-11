@@ -1,13 +1,13 @@
 <div class="layout-library" *ngIf="!isLoading">
     <div class="header">
         <div class="title">
-            <i class="icon-svg icon-svg--sm">
+            <i class="icon-svg icon-svg--sm" *ngIf="showTitleIcon">
                 <svg class="icon">
                     <use xlink:href="assets/common-consumption/images/sprite.svg#book"></use>
                 </svg>
             </i>
             {{title}}
-            <span class="badge">{{contentList?.length}}</span>
+            <span *ngIf="showBadgeCount" class="badge">{{contentList?.length}}</span>
         </div>
         <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
             *ngIf="(type !== LibraryCardGridTypes.INFINITE_CARD_GRID && type !== LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER) && maxCardCount && contentList?.length >maxCardCount"
