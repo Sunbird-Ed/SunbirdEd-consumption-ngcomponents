@@ -22,11 +22,15 @@ describe('LibraryCardV2Component', () => {
   });
 
   it('should create', () => {
+    component.content = {};
+    component.content.gradeLevel = ["English","Kannada"];
     const libraryCard = fixture.debugElement.query(By.css('.sb--card'));
     libraryCard.nativeElement.click();
     fixture.detectChanges();
     expect(component).toBeTruthy();
     component.layoutConfig = {};
+    component.content = {};
+    component.content.gradeLevel = "";
     component.layoutConfig.cardImgStyle = "";
     fixture.detectChanges();
     

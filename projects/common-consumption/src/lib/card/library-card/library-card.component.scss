@@ -6,7 +6,6 @@
 :host {
   .sb--card {
     width: 100%;
-    border-radius: 0px;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
@@ -237,7 +236,6 @@
   .sb--card__progressbar {
     height: calculateRem(4px);
     margin: 0px 0 0px;
-    background: var(--gray-200);
     border-radius: 0px;
     box-shadow: inset 0 calculateRem(-1px) calculateRem(1px) rgba(var(--rc-rgba-white), 0.3);
     width: 100%;
@@ -343,7 +341,6 @@
       display: block;
       .child-content {
         color: var(--white);
-        display: block;
         position: absolute;
         left: 0;
         right: 0;

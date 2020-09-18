@@ -44,14 +44,12 @@ p{
     padding: calculateRem(16px);
 }
 .help-header>h4,.help-header-send-email>h4{
-    margin: 0;
     padding:0;
     font-weight: 700;
     max-width: calculateRem(1024px);
     margin: 0 auto;
 }
 .help-header>p,.help-header-send-email>p{
-    margin: 0;
     font-weight: 100;
     max-width: calculateRem(1024px);
     margin: 0 auto;
@@ -132,7 +130,6 @@ p{
 @media only screen and (max-width : 768px) {
 
     .info-msg-send-email>p,.info-msg>p{
-        margin: 0;
         padding: calculateRem(8px) calculateRem(16px);
         max-width: calculateRem(1024px);
         margin: 0 auto;
@@ -142,7 +139,6 @@ p{
 @media only screen and (min-width : 768px) {
 
     .info-msg-send-email>p,.info-msg>p{
-        margin: 0;
         padding: calculateRem(16px) 0px;
         max-width: calculateRem(1024px);
         margin: 0 auto;
