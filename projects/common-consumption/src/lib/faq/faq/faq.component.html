@@ -35,7 +35,10 @@
     </div>
     <div class="panel-interact" *ngIf="isYesClicked || isSubmitted">
       <p class="yes-clicked"> {{data?.constants?.thanksMsg}}</p>
-      <p class="text-center btn btn-arrow" *ngIf="isNoClicked && isSubmitted && extraText" (click)="extraClicked(i, $event)">{{extraText}}</p>
+      <div *ngIf="isNoClicked && isSubmitted && extraTemplate" class="extraTemplate">
+        <ng-container *ngTemplateOutlet="extraTemplate">
+        </ng-container>
+      </div>
     </div>
     <div class="panel-info" *ngIf="!isSubmitted && isNoClicked">
       <h6>{{data?.constants?.sorryMsg}}</h6>

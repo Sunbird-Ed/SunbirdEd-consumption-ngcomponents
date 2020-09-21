@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, TemplateRef } from '@angular/core';
 import { IClick } from '../../card/models';
 import { staticData } from './faq.component.data';
 
@@ -11,7 +11,7 @@ export class FaqComponent implements OnInit {
 
   @Input() data:any = staticData;
   @Input() appName;
-  @Input() extraText;
+  @Input() extraTemplate: TemplateRef<any>;
 
   @Output() toggleGroupEvent: EventEmitter<IClick> = new EventEmitter();
   @Output() yesClickedEvent: EventEmitter<IClick> = new EventEmitter();
@@ -120,16 +120,4 @@ submitClicked(textValue, i,event:MouseEvent) {
   this.textValue = '';
   
 }
-
-  extraClicked(i, event: MouseEvent) {
-    this.value = {};
-    this.value.action = 'extra-clicked';
-    this.value.position = i;
-    this.value.value = {};
-    this.value.value.topic = this.data.faqs[i].topic;
-    this.value.value.description = this.data.faqs[i].description;
-    window.parent.postMessage(this.value, '*');
-    this.extraClickedEvent.emit({ event: event, data: this.value });
-  }
-
 }
