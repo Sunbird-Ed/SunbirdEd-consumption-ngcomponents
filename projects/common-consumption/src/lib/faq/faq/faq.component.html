@@ -35,6 +35,10 @@
     </div>
     <div class="panel-interact" *ngIf="isYesClicked || isSubmitted">
       <p class="yes-clicked"> {{data?.constants?.thanksMsg}}</p>
+      <div *ngIf="isNoClicked && isSubmitted && extraTemplate" class="extraTemplate">
+        <ng-container *ngTemplateOutlet="extraTemplate">
+        </ng-container>
+      </div>
     </div>
     <div class="panel-info" *ngIf="!isSubmitted && isNoClicked">
       <h6>{{data?.constants?.sorryMsg}}</h6>
