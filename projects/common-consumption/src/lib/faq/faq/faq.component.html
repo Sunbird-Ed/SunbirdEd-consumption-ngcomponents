@@ -35,6 +35,7 @@
     </div>
     <div class="panel-interact" *ngIf="isYesClicked || isSubmitted">
       <p class="yes-clicked"> {{data?.constants?.thanksMsg}}</p>
+      <p class="text-center btn btn-arrow" *ngIf="isNoClicked && isSubmitted && extraText" (click)="extraClicked(i, $event)">{{extraText}}</p>
     </div>
     <div class="panel-info" *ngIf="!isSubmitted && isNoClicked">
       <h6>{{data?.constants?.sorryMsg}}</h6>
