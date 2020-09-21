@@ -121,16 +121,15 @@ submitClicked(textValue, i,event:MouseEvent) {
   
 }
 
-extraClicked(i, event: MouseEvent) {
-  this.value = {};
-  this.value.action = 'extra-clicked';
-  this.value.position = i;
-  this.value.value = {};
-  this.value.value.topic = this.data.faqs[i].topic;
-  this.value.value.description = this.data.faqs[i].description;
-  window.parent.postMessage(this.value, '*');
-  this.extraClickedEvent.emit({event: event, data: this.value});
-}
-
+  extraClicked(i, event: MouseEvent) {
+    this.value = {};
+    this.value.action = 'extra-clicked';
+    this.value.position = i;
+    this.value.value = {};
+    this.value.value.topic = this.data.faqs[i].topic;
+    this.value.value.description = this.data.faqs[i].description;
+    window.parent.postMessage(this.value, '*');
+    this.extraClickedEvent.emit({ event: event, data: this.value });
+  }
 
 }
