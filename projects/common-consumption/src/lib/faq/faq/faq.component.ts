@@ -17,7 +17,6 @@ export class FaqComponent implements OnInit {
   @Output() yesClickedEvent: EventEmitter<IClick> = new EventEmitter();
   @Output() noClickedEvent: EventEmitter<IClick> = new EventEmitter();
   @Output() submitClickedEvent: EventEmitter<IClick> = new EventEmitter();
-  @Output() extraClickedEvent: EventEmitter<IClick> = new EventEmitter();
 
   constants: any;
   faqs: any;
