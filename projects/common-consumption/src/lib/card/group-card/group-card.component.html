@@ -5,6 +5,7 @@
     <div class="sb--card__img">
       <div class="img-container img-container--label" [ngStyle]="fetchStyle()">
         <label [ngStyle]="fetchInitialStyle()">{{initial}}</label>
+        <div class="img-container--badge" *ngIf="isSuspended">Suspended</div>
       </div>
     </div>
     <!-- card mobile view details -->

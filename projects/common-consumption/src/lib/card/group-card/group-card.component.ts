@@ -18,6 +18,7 @@ export class GroupCardComponent implements OnInit {
   @Input() isMobile;
   @Input() isAdmin;
   @Input() initial: string;
+  @Input() isSuspended = false;
 
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
