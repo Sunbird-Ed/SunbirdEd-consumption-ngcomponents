@@ -58,33 +58,33 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
     &--show-1 {
-      grid-template-columns: repeat(auto-fill, minmax(calc(100%/1.5), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 1.5), 1fr));
       }
     &--show-2 {
-      grid-template-columns: repeat(auto-fill, minmax(calc(100%/2.5), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 2.5), 1fr));
       }
     &--show-3 {
-      grid-template-columns: repeat(auto-fill, minmax(calc(100%/3.5), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3.5), 1fr));
       }
     &--show-4 {
-      grid-template-columns: repeat(auto-fill, minmax(calc(100%/4.5), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4.5), 1fr));
       }
     &--show-5 {
-      grid-template-columns: repeat(auto-fill, minmax(calc(100%/5.5), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 5.5), 1fr));
       }
     @include respond-below(md) {
       &--show-3, &--show-4, &--show-5 {
-        grid-template-columns: repeat(auto-fill, minmax(calc(100%/2.5), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 2.5), 1fr));
       }
     }
     @include respond-below(xs) {
       &--show-2,&--show-3, &--show-4, &--show-5 {
-        grid-template-columns: repeat(auto-fill, minmax(calc(100%/1.5), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 1.5), 1fr));
       }
     }
     @include respond-between(md, lg) {
       &--show-4, &--show-5 {
-        grid-template-columns: repeat(auto-fill, minmax(calc(100%/3.5), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3.5), 1fr));
       }
     }
     grid-gap: 1rem;

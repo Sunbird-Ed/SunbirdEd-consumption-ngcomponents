@@ -18,7 +18,6 @@
     }
     &__item {
       background: var(--white);
-      border: calculateRem(1px) solid var(--primary-300);
       box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary), 0.1);
       border: calculateRem(0.5px) solid rgba(var(--rc-rgba-primary), 0.5);
       display: flex;

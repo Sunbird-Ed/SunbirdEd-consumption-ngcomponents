@@ -43,7 +43,9 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
         this.cardClick.emit({ event: event, data: this.content });
     }
     splitGradeMedium() {
-    this.content.gradeLevel = typeof this.content.gradeLevel === "string"?this.content.gradeLevel.split(","):this.content.gradeLevel;
+        if(this.content && this.content.gradeLevel) {
+            this.content.gradeLevel = typeof this.content.gradeLevel === "string"?this.content.gradeLevel.split(","):this.content.gradeLevel;
+        }
     }
    /* onMenuClick(event: MouseEvent) {
         this.menuClick.emit({ event: event, data: this.content });
@@ -58,7 +60,6 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     }
     fetchSvg() {
         var indexToDisplay = this.indexToDisplay!=null ? (this.indexToDisplay % 9)+1:2;
-        console.log(this.indexToDisplay);
         this.svgToDisplay =  "assets/common-consumption/images/abstract_0"+indexToDisplay+".svg";
     }
 }
