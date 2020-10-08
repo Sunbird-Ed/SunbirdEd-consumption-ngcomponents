@@ -23,6 +23,7 @@ export class TocCurriculumComponent implements OnInit {
   @Input() progressColor = "#024f9d";
   @Input() refresh: boolean;
   @Input() layoutConfig = {};
+  @Input() playBtnText = '';
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
@@ -209,6 +210,14 @@ export class TocCurriculumComponent implements OnInit {
       'background':bgColor,
       display: displayStatus
     };
+  }
+
+  onPlayButtonClick(event) {
+    const rollup = this.getRollup(this.tocData, event.data.sbUniqueIdentifier);
+    if (rollup.length) {
+      rollup.pop();
+    }
+    this.tocCardClick.emit({ ...event, rollup });
   }
 
 }

@@ -2,6 +2,7 @@ import {
   Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren, OnChanges
 } from '@angular/core';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
+import { staticData } from '../toc-curriculum/toc-data';
 
 @Component({
   selector: 'sb-toc-item',
@@ -10,12 +11,15 @@ import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
   providers: [MimeTypePipe]
 })
 export class TocItemComponent implements OnInit, OnChanges {
-  @Input() tocData;
+  @Input() tocData = staticData.content;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
   @Input() contentStatus = [];
   @Input() selectMode;
   @Input() selectAll;
+  @Input() playBtnText = '';
+  @Input() checkTrackable = false;
+  @Input() trackableDefaultImage = '';
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
@@ -26,6 +30,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() noContent: EventEmitter<any> = new EventEmitter();
   @Output() selectedItem: EventEmitter<any> = new EventEmitter();
+  @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
 
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
@@ -201,6 +206,14 @@ export class TocItemComponent implements OnInit, OnChanges {
       item.selected = isSelectAll;
     });
     this.selectedItem.emit({selectAll: isSelectAll, data: this.tocData['children']});
+  }
+
+  onPlayButtonClick(event) {
+    const rollup = this.getRollup(this.tocData, event.data.sbUniqueIdentifier);
+    if (rollup.length) {
+      rollup.pop();
+    }
+    this.tocCardClick.emit({ ...event, rollup });
   }
 
 }

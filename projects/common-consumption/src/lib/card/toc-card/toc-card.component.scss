@@ -1,4 +1,7 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/margins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/paddings";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 .sbchapter {
   &__item {
     background: var(--white);
@@ -68,4 +71,17 @@
 
 .background-transparent {
   background: none !important;
+}
+
+.sbchapter__play__btn{
+  border: calculateRem(1px) solid var(--primary-color);
+  border-radius: calculateRem(16px);
+  color: var(--primary-color);
+  background-color: var(--white);
+  padding: calculateRem(4px);
+  svg{
+    height: 1rem;
+    width: 1rem;
+    vertical-align: middle;
+  }
 }
