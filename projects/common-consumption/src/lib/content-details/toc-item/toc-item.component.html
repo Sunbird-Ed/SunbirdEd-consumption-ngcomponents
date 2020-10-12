@@ -24,7 +24,7 @@
                   <sb-my-course-card [type]="'recently_viewed'"></sb-my-course-card>
                 </div>
                 <div class="sbchapter" *ngIf="filterChildren(child)">
-                  <ng-container *ngIf="!checkTrackable || !(child?.contentData?.trackable?.enabled === 'Yes')">
+                  <ng-container *ngIf="isFlattenedType(child?.contentData) === FlattenedType.EXPAND">
                     <sb-toc-child-item *ngIf="type" [type]="type" [contentStatus]="contentStatus" [childData]="child"
                       [activeMimeTypeFilter]="activeMimeTypeFilter" [activeContent]="activeContent"
                       (tocCardClick)="onTocCardClick($event)" [playBtnText]="playBtnText" (playButtonClick)="onPlayButtonClick($event)">
@@ -35,7 +35,7 @@
                     </sb-toc-child-item>
                   </ng-container>
                   
-                  <ng-container *ngIf="checkTrackable && child?.contentData?.trackable?.enabled === 'Yes'">
+                  <ng-container *ngIf="isFlattenedType(child?.contentData) === FlattenedType.COLLAPSE">
                     <sb-toc-card *ngIf="type" [type]="type" [content]="child" (tocCardClick)="onTocCardClick($event)" 
                       [activeContent]="activeContent" [playBtnText]="playBtnText" (playButtonClick)="onPlayButtonClick($event)"
                       [trackableDefaultImage]="trackableDefaultImage">

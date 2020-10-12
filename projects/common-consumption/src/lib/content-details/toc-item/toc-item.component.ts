@@ -1,8 +1,8 @@
 import {
   Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren, OnChanges
 } from '@angular/core';
+import { FlattenedType } from '../../card/models';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
-import { staticData } from '../toc-curriculum/toc-data';
 
 @Component({
   selector: 'sb-toc-item',
@@ -11,7 +11,7 @@ import { staticData } from '../toc-curriculum/toc-data';
   providers: [MimeTypePipe]
 })
 export class TocItemComponent implements OnInit, OnChanges {
-  @Input() tocData = staticData.content;
+  @Input() tocData;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
   @Input() contentStatus = [];
@@ -32,6 +32,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Output() selectedItem: EventEmitter<any> = new EventEmitter();
   @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
 
+  get FlattenedType() { return FlattenedType; }
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
   isMimeTypeFilterChanged = false;
@@ -214,6 +215,15 @@ export class TocItemComponent implements OnInit, OnChanges {
       rollup.pop();
     }
     this.tocCardClick.emit({ ...event, rollup });
+  }
+
+  isFlattenedType(contentData) {
+    if (!this.checkTrackable || !(contentData && contentData.trackable && contentData.trackable.enabled === 'Yes')) {
+      return FlattenedType.EXPAND;
+    } else if (this.checkTrackable && contentData && contentData.trackable && contentData.trackable.enabled === 'Yes') {
+      return FlattenedType.COLLAPSE;
+    }
+    return '';
   }
 
 }
