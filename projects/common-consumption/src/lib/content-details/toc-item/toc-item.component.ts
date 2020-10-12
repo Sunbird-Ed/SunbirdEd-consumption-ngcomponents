@@ -214,7 +214,7 @@ export class TocItemComponent implements OnInit, OnChanges {
     if (rollup.length) {
       rollup.pop();
     }
-    this.tocCardClick.emit({ ...event, rollup });
+    this.playButtonClick.emit({ ...event, rollup });
   }
 
   isFlattenedType(contentData) {
