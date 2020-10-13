@@ -63,8 +63,9 @@ export class TocItemComponent implements OnInit, OnChanges {
   setActiveContent() {
     if (this.tocData && this.tocData.children) {
       const flattenDeepContents = this.flattenDeep(this.tocData.children);
-      this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
-
+      if (!this.activeContent) {
+        this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
+      }
       if (!this.activeContent) {
         this.noContent.emit({ message: 'No Content Available' });
       }

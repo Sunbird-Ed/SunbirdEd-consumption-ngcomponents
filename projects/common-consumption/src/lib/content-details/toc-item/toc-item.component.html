@@ -23,7 +23,7 @@
                   *ngIf="recogniseCollection && filterChildren(child) && child.item?.contentType === 'Course'">
                   <sb-my-course-card [type]="'recently_viewed'"></sb-my-course-card>
                 </div>
-                <div class="sbchapter" *ngIf="filterChildren(child)">
+                <div class="sbchapter" *ngIf="filterChildren(child)" [id]="child.identifier">
                   <ng-container *ngIf="isFlattenedType(child?.contentData) === FlattenedType.EXPAND">
                     <sb-toc-child-item *ngIf="type" [type]="type" [contentStatus]="contentStatus" [childData]="child"
                       [activeMimeTypeFilter]="activeMimeTypeFilter" [activeContent]="activeContent"
