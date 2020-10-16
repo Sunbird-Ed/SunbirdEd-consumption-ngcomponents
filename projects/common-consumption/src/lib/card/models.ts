@@ -43,7 +43,9 @@ export enum LibraryCardStackTypes {
 
 export enum TocCardType {
     TEXTBOOK = 'textbook',
-    COURSE = 'course'
+    COURSE = 'course',
+    TRACKABLE = 'trackable',
+    NON_TRACKABLE = 'non_trackable'
 }
 
 export interface IBadge {
@@ -183,4 +185,14 @@ export interface IHoverData {
     note?: string;
     actions: any;
     hoverData: any;
+}
+
+export enum FlattenedType {
+    EXPAND = 'expand',
+    COLLAPSE = 'collapse'
+}
+
+export interface IButtonConfig {
+    label?: string;
+    show?: boolean;
 }

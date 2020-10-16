@@ -1,7 +1,7 @@
 import { MimeTypeMasterData } from './../../pipes-module/mime-type';
 import { Component, OnInit, Input, EventEmitter, Output, QueryList, ViewChild, ElementRef, Renderer2, OnChanges } from '@angular/core';
 import { COMMON_CONSUMPTION_CONSTANTS } from '../../common-consumption.constants';
-import { TocCardType } from '../models';
+import { IButtonConfig, TocCardType } from '../models';
 
 @Component({
   selector: 'sb-toc-card',
@@ -14,7 +14,13 @@ export class TocCardComponent implements OnInit {
   @Input() type: TocCardType = TocCardType.TEXTBOOK;
   @Input() contentStatus = [];
   @Input() refresh: boolean;
+  @Input() playBtnConfig: IButtonConfig = {
+    label: 'Play',
+    show: false
+  };
+  @Input() trackableDefaultImage = '';
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
+  @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
 
   fallbackImg = COMMON_CONSUMPTION_CONSTANTS.TOC_CARD_FALLBACK_IMG;
   iconPathMap: any;
@@ -76,5 +82,9 @@ export class TocCardComponent implements OnInit {
       }
     }
     return '';
+  }
+
+  onPlayButtonClick(event) {
+    this.playButtonClick.emit({ event: event, data: { ...this.content } });
   }
 }

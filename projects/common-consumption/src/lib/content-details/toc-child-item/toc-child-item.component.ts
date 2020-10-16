@@ -12,8 +12,10 @@ export class TocChildItemComponent implements OnInit {
   @Input() activeMimeTypeFilter = ['all'];
   @Input() type: TocCardType = TocCardType.TEXTBOOK;
   @Input() contentStatus = [];
+  @Input() playBtnConfig;
 
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
+  @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -40,6 +42,10 @@ export class TocChildItemComponent implements OnInit {
 
   createUniqueId(tocData, item) {
     item['sbUniqueIdentifier'] = tocData.identifier + '_' + item.identifier;
+  }
+
+  onPlayButtonClick(event) {
+    this.playButtonClick.emit({ ...event });
   }
 
 }

@@ -1,6 +1,7 @@
 import {
   Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren, OnChanges
 } from '@angular/core';
+import { FlattenedType, TocCardType } from '../../card/models';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
 
 @Component({
@@ -16,6 +17,8 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() contentStatus = [];
   @Input() selectMode;
   @Input() selectAll;
+  @Input() playBtnConfig;
+  @Input() trackableDefaultImage = '';
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
@@ -26,7 +29,9 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() noContent: EventEmitter<any> = new EventEmitter();
   @Output() selectedItem: EventEmitter<any> = new EventEmitter();
+  @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
 
+  get FlattenedType() { return FlattenedType; }
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
   isMimeTypeFilterChanged = false;
@@ -57,8 +62,9 @@ export class TocItemComponent implements OnInit, OnChanges {
   setActiveContent() {
     if (this.tocData && this.tocData.children) {
       const flattenDeepContents = this.flattenDeep(this.tocData.children);
-      this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
-
+      if (!this.activeContent) {
+        this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
+      }
       if (!this.activeContent) {
         this.noContent.emit({ message: 'No Content Available' });
       }
@@ -201,6 +207,25 @@ export class TocItemComponent implements OnInit, OnChanges {
       item.selected = isSelectAll;
     });
     this.selectedItem.emit({selectAll: isSelectAll, data: this.tocData['children']});
+  }
+
+  onPlayButtonClick(event) {
+    const rollup = this.getRollup(this.tocData, event.data.sbUniqueIdentifier);
+    if (rollup.length) {
+      rollup.pop();
+    }
+    this.playButtonClick.emit({ ...event, rollup });
+  }
+
+  isFlattenedType(contentData) {
+    if (!(this.type === TocCardType.TRACKABLE) ||
+      !(contentData && contentData.trackable && contentData.trackable.enabled === 'Yes')) {
+      return FlattenedType.EXPAND;
+    } else if (this.type === TocCardType.TRACKABLE &&
+      contentData && contentData.trackable && contentData.trackable.enabled === 'Yes') {
+      return FlattenedType.COLLAPSE;
+    }
+    return '';
   }
 
 }
