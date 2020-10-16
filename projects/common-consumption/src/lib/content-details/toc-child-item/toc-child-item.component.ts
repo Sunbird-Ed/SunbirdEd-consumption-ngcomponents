@@ -12,7 +12,7 @@ export class TocChildItemComponent implements OnInit {
   @Input() activeMimeTypeFilter = ['all'];
   @Input() type: TocCardType = TocCardType.TEXTBOOK;
   @Input() contentStatus = [];
-  @Input() playBtnText = '';
+  @Input() playBtnConfig;
 
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() playButtonClick: EventEmitter<any> = new EventEmitter();

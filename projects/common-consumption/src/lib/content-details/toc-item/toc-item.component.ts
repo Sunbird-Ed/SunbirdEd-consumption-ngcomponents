@@ -1,7 +1,7 @@
 import {
   Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren, OnChanges
 } from '@angular/core';
-import { FlattenedType } from '../../card/models';
+import { FlattenedType, TocCardType } from '../../card/models';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
 
 @Component({
@@ -17,8 +17,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() contentStatus = [];
   @Input() selectMode;
   @Input() selectAll;
-  @Input() playBtnText = '';
-  @Input() checkTrackable = false;
+  @Input() playBtnConfig;
   @Input() trackableDefaultImage = '';
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
@@ -219,9 +218,11 @@ export class TocItemComponent implements OnInit, OnChanges {
   }
 
   isFlattenedType(contentData) {
-    if (!this.checkTrackable || !(contentData && contentData.trackable && contentData.trackable.enabled === 'Yes')) {
+    if (!(this.type === TocCardType.TRACKABLE) ||
+      !(contentData && contentData.trackable && contentData.trackable.enabled === 'Yes')) {
       return FlattenedType.EXPAND;
-    } else if (this.checkTrackable && contentData && contentData.trackable && contentData.trackable.enabled === 'Yes') {
+    } else if (this.type === TocCardType.TRACKABLE &&
+      contentData && contentData.trackable && contentData.trackable.enabled === 'Yes') {
       return FlattenedType.COLLAPSE;
     }
     return '';

@@ -23,7 +23,7 @@ export class TocCurriculumComponent implements OnInit {
   @Input() progressColor = "#024f9d";
   @Input() refresh: boolean;
   @Input() layoutConfig = {};
-  @Input() playBtnText = '';
+  @Input() playBtnConfig;
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
