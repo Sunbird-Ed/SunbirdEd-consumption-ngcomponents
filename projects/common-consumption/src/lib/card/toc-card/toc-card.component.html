@@ -12,7 +12,7 @@
 </div>
 
 <!-- For card type TRACKABLE -->
-<div *ngIf="type === TocCardType.TRACKABLE">
+<div *ngIf="type === TocCardType.TRACKABLE_COLLECTION">
   <div class="sbchapter__item" (click)="onTocCardClick($event)"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
     <div class="d-inline-flex">
@@ -53,7 +53,7 @@
 </div>
 
 <!-- For card type NON TRACKABLE -->
-<div *ngIf="type === TocCardType.NON_TRACKABLE">
+<div *ngIf="type === TocCardType.NON_TRACKABLE_COLLECTION">
   <div class="sbchapter__item course-content"  (click)="onTocCardClick($event)"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier }">
     <div class="sbchapter__img background-transparent" [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">

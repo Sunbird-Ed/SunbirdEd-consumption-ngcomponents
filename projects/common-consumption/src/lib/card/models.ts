@@ -44,8 +44,8 @@ export enum LibraryCardStackTypes {
 export enum TocCardType {
     TEXTBOOK = 'textbook',
     COURSE = 'course',
-    TRACKABLE = 'trackable',
-    NON_TRACKABLE = 'non_trackable'
+    TRACKABLE_COLLECTION = 'trackable_collection',
+    NON_TRACKABLE_COLLECTION = 'non_trackable_collection'
 }
 
 export interface IBadge {

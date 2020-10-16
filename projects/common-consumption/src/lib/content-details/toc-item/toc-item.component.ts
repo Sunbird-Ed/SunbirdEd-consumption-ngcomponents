@@ -218,10 +218,10 @@ export class TocItemComponent implements OnInit, OnChanges {
   }
 
   isFlattenedType(contentData) {
-    if (!(this.type === TocCardType.TRACKABLE) ||
+    if (!(this.type === TocCardType.TRACKABLE_COLLECTION) ||
       !(contentData && contentData.trackable && contentData.trackable.enabled === 'Yes')) {
       return FlattenedType.EXPAND;
-    } else if (this.type === TocCardType.TRACKABLE &&
+    } else if (this.type === TocCardType.TRACKABLE_COLLECTION &&
       contentData && contentData.trackable && contentData.trackable.enabled === 'Yes') {
       return FlattenedType.COLLAPSE;
     }
