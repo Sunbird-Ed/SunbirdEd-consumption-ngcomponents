@@ -15,6 +15,7 @@ export enum ActionButtonType {
   DELETE = 'delete',
   DOWNLOAD = 'download',
   FULL_SCREEN = 'fullscreen',
+  MINIMIZE_SCREEN = 'minimize',
   PRINT = 'print',
   RATE = 'rate',
   SHARE = 'share',
