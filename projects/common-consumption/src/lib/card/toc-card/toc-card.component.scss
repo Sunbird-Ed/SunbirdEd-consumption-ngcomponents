@@ -83,3 +83,14 @@
     vertical-align: middle;
   }
 }
+
+.sb-card-swap{
+  flex-direction: row-reverse;
+  .arrange-card-items{
+    display: contents;
+  }
+}
+
+.arrange-card-items{
+  display: inline-flex;
+}

@@ -13,17 +13,17 @@
 
 <!-- For card type TRACKABLE -->
 <div *ngIf="type === TocCardType.TRACKABLE">
-  <div class="sbchapter__item" (click)="onTocCardClick($event)"
+  <div class="sbchapter__item" [ngClass]="{'sb-card-swap': swapCard(content)}" (click)="onTocCardClick($event)"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
-    <div class="d-inline-flex">
+    <div class="arrange-card-items">
       <div class="sbchapter__img">
-        <img [src]="trackableDefaultImage || content?.appIcon || content?.contentData?.appIcon || fallbackImg" alt="" #img />
+        <img [src]="getContentImage(content) || fallbackImg" alt="" #img />
       </div>
       <h4 class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 ml-8" title="{{content?.name}}">
         {{content?.name}}
       </h4>
     </div>
-    <button class="sbchapter__play__btn" *ngIf="!(content?.contentData?.trackable?.enabled === 'Yes') && playBtnConfig.show" 
+    <button class="sbchapter__play__btn" *ngIf="!isTrackable(content) && playBtnConfig.show" 
       (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)">
       <svg class="icon icon-svg--primary">
         <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>

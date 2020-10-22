@@ -196,3 +196,8 @@ export interface IButtonConfig {
     label?: string;
     show?: boolean;
 }
+
+export enum PlatformType {
+    PORTAL = 'portal',
+    MOBILE = 'mobile'
+}

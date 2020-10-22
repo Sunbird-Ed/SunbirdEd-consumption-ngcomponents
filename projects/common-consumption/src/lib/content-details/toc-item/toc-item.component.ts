@@ -18,6 +18,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Input() selectMode;
   @Input() selectAll;
   @Input() playBtnConfig;
+  @Input() platform;
   @Input() trackableDefaultImage = '';
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
@@ -61,6 +62,10 @@ export class TocItemComponent implements OnInit, OnChanges {
 
   setActiveContent() {
     if (this.tocData && this.tocData.children) {
+      if ((this.tocData.children[0].contentData && this.tocData.children[0].contentData.trackable && this.tocData.children[0].contentData.trackable.enabled === 'Yes') ||
+        (this.tocData.children[0].trackable && this.tocData.children[0].trackable.enabled === 'Yes')) {
+        return;
+      }
       const flattenDeepContents = this.flattenDeep(this.tocData.children);
       if (!this.activeContent) {
         this.activeContent = this.firstNonCollectionContent(flattenDeepContents);
@@ -217,12 +222,14 @@ export class TocItemComponent implements OnInit, OnChanges {
     this.playButtonClick.emit({ ...event, rollup });
   }
 
-  isFlattenedType(contentData) {
+  isFlattenedType(content) {
     if (!(this.type === TocCardType.TRACKABLE) ||
-      !(contentData && contentData.trackable && contentData.trackable.enabled === 'Yes')) {
+      !((content.contentData && content.contentData.trackable && content.contentData.trackable.enabled === 'Yes') ||
+      (content.trackable && content.trackable.enabled === 'Yes'))) {
       return FlattenedType.EXPAND;
     } else if (this.type === TocCardType.TRACKABLE &&
-      contentData && contentData.trackable && contentData.trackable.enabled === 'Yes') {
+      ((content.contentData && content.contentData.trackable && content.contentData.trackable.enabled === 'Yes') ||
+        (content.trackable && content.trackable.enabled === 'Yes'))) {
       return FlattenedType.COLLAPSE;
     }
     return '';

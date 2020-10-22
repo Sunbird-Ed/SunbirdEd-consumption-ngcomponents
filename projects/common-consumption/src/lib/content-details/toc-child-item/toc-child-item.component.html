@@ -4,19 +4,20 @@
   </div>
 </ng-container>
 
-<ng-container
-  *ngIf="childData?.mimeType !== 'application/vnd.ekstep.content-collection' && hasMimeType(activeMimeTypeFilter, childData?.mimeType, childData)">
+<ng-container *ngIf="childData?.mimeType !== 'application/vnd.ekstep.content-collection' && hasMimeType(activeMimeTypeFilter, childData?.mimeType, childData) ||
+  (childData?.contentData?.trackable?.enabled === 'Yes' || childData?.trackable?.enabled === 'Yes')">
   <sb-toc-card [content]="childData" (tocCardClick)="tocCardClickHandler($event)" [activeContent]="activeContent"
-    [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
+    [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+    [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
   </sb-toc-card>
 </ng-container>
 
-<div *ngIf="childData?.children">
+<div *ngIf="childData?.children && !(childData?.contentData?.trackable?.enabled === 'Yes' || childData?.trackable?.enabled === 'Yes')">
   <div *ngFor="let child of childData?.children; let j = index;" [id]="child.identifier">
     {{ createUniqueId(childData, child) }}
     <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)"
       [activeMimeTypeFilter]="activeMimeTypeFilter" [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" 
-      (playButtonClick)="onPlayButtonClick($event)">
+      (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
     </sb-toc-child-item>
   </div>
 </div>
