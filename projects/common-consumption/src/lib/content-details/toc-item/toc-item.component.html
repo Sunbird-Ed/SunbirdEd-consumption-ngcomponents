@@ -1,5 +1,5 @@
 <div *ngFor="let item of tocData?.children; let index = index;">
-  <div *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION">
+  <div *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && !(item?.contentData?.trackable?.enabled === 'Yes' || item?.trackable?.enabled === 'Yes')">
     <sb-accordion [multi]="false" [id]="item.identifier">
       <sb-accordion-item [expanded]="isExpanded(index, item)" (collapsedChange)="collapsedChangeHandler($event);">
         {{ createUniqueId(tocData, item) }}
@@ -24,25 +24,25 @@
                   <sb-my-course-card [type]="'recently_viewed'"></sb-my-course-card>
                 </div>
                 <div class="sbchapter" *ngIf="filterChildren(child)" [id]="child.identifier">
-                  <ng-container *ngIf="isFlattenedType(child?.contentData) === FlattenedType.EXPAND">
+                  <ng-container *ngIf="isFlattenedType(child) === FlattenedType.EXPAND">
                     <sb-toc-child-item *ngIf="type" [type]="type" [contentStatus]="contentStatus" [childData]="child"
-                      [activeMimeTypeFilter]="activeMimeTypeFilter" [activeContent]="activeContent"
+                      [activeMimeTypeFilter]="activeMimeTypeFilter" [activeContent]="activeContent" [platform]="platform"
                       (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
                     </sb-toc-child-item>
                     <sb-toc-child-item *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
                       [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig"
-                      (playButtonClick)="onPlayButtonClick($event)">
+                      (playButtonClick)="onPlayButtonClick($event)" [platform]="platform">
                     </sb-toc-child-item>
                   </ng-container>
                   
-                  <ng-container *ngIf="isFlattenedType(child?.contentData) === FlattenedType.COLLAPSE">
+                  <ng-container *ngIf="isFlattenedType(child) === FlattenedType.COLLAPSE">
                     <sb-toc-card *ngIf="type" [type]="type" [content]="child" (tocCardClick)="onTocCardClick($event)" 
                       [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
-                      [trackableDefaultImage]="trackableDefaultImage">
+                      [trackableDefaultImage]="trackableDefaultImage" [platform]="platform">
                     </sb-toc-card>
                     <sb-toc-card *ngIf="!type" [content]="child" (tocCardClick)="onTocCardClick($event)"
                       [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
-                      [trackableDefaultImage]="trackableDefaultImage">
+                      [trackableDefaultImage]="trackableDefaultImage" [platform]="platform">
                     </sb-toc-card>
                   </ng-container>
 
@@ -60,14 +60,15 @@
       </sb-accordion-item>
     </sb-accordion>
   </div>
-  <div *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length" class="sb-content__bar">
+  <div *ngIf="(item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length) || 
+    item?.contentData?.trackable?.enabled === 'Yes' || item?.trackable?.enabled === 'Yes'" class="sb-content__bar">
     <ng-container>
     <div class="child-content-padding">
       <sb-toc-card *ngIf="type" [type]="type" [contentStatus]="contentStatus" [content]="item" 
         (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent" [playBtnConfig]="playBtnConfig"
-        (playButtonClick)="onPlayButtonClick($event)">
+        (playButtonClick)="onPlayButtonClick($event)" [platform]="platform">
       </sb-toc-card>
-      <sb-toc-card *ngIf="!type" [content]="item" (tocCardClick)="onTocCardClick($event)"
+      <sb-toc-card *ngIf="!type" [content]="item" (tocCardClick)="onTocCardClick($event)" [platform]="platform"
         [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
       </sb-toc-card>
     </div>

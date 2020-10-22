@@ -44,8 +44,8 @@ export enum LibraryCardStackTypes {
 export enum TocCardType {
     TEXTBOOK = 'textbook',
     COURSE = 'course',
-    TRACKABLE_COLLECTION = 'trackable_collection',
-    NON_TRACKABLE_COLLECTION = 'non_trackable_collection'
+    TRACKABLE = 'trackable',
+    NON_TRACKABLE = 'non_trackable'
 }
 
 export interface IBadge {
@@ -195,4 +195,9 @@ export enum FlattenedType {
 export interface IButtonConfig {
     label?: string;
     show?: boolean;
+}
+
+export enum PlatformType {
+    PORTAL = 'portal',
+    MOBILE = 'mobile'
 }

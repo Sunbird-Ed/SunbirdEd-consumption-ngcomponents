@@ -24,6 +24,7 @@ export class TocCurriculumComponent implements OnInit {
   @Input() refresh: boolean;
   @Input() layoutConfig = {};
   @Input() playBtnConfig;
+  @Input() platform;
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 

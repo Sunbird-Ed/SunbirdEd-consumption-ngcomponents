@@ -83,3 +83,14 @@
     vertical-align: middle;
   }
 }
+
+.sb-card-swap{
+  -webkit-transform: scaleX(-1);  /* Chrome, Safari, Opera */
+  -moz-transform: scaleX(-1);  /* Firefox */
+  -ms-transform: scaleX(-1);  /* IE 9 */
+  transform: scaleX(-1);  /* Standard syntax */    
+}
+
+.display-content{
+  display: contents;
+}

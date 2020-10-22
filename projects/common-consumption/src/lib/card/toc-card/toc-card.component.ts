@@ -1,7 +1,7 @@
 import { MimeTypeMasterData } from './../../pipes-module/mime-type';
 import { Component, OnInit, Input, EventEmitter, Output, QueryList, ViewChild, ElementRef, Renderer2, OnChanges } from '@angular/core';
 import { COMMON_CONSUMPTION_CONSTANTS } from '../../common-consumption.constants';
-import { IButtonConfig, TocCardType } from '../models';
+import { IButtonConfig, PlatformType, TocCardType } from '../models';
 
 @Component({
   selector: 'sb-toc-card',
@@ -14,11 +14,9 @@ export class TocCardComponent implements OnInit {
   @Input() type: TocCardType = TocCardType.TEXTBOOK;
   @Input() contentStatus = [];
   @Input() refresh: boolean;
-  @Input() playBtnConfig: IButtonConfig = {
-    label: 'Play',
-    show: false
-  };
+  @Input() playBtnConfig: IButtonConfig;
   @Input() trackableDefaultImage = '';
+  @Input() platform = PlatformType.MOBILE;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
 
@@ -37,6 +35,15 @@ export class TocCardComponent implements OnInit {
         this.tocCardClick.emit({ event: {}, data: { ...this.content } });
       }
     });
+    if (!this.playBtnConfig) {
+      this.playBtnConfig = {
+        label: 'Play',
+        show: false
+      };
+    }
+    if (!this.platform) {
+      this.platform = PlatformType.MOBILE;
+    }
   }
 
   public async onTocCardClick(event) {
@@ -55,11 +62,11 @@ export class TocCardComponent implements OnInit {
       }
     });
 
-    this.isContentStarted = this.contentStatus.find((item) => {
+    this.isContentStarted = !!(this.contentStatus.find((item) => {
       if (item.contentId === this.content.identifier && item.status === 1) {
         return true;
       }
-    });
+    }));
 
     if (this.isCourseCompleted) {
       this.content.appIcon = 'assets/common-consumption/images/sprite.svg#circle-with-check-symbol';
@@ -86,5 +93,16 @@ export class TocCardComponent implements OnInit {
 
   onPlayButtonClick(event) {
     this.playButtonClick.emit({ event: event, data: { ...this.content } });
+  }
+
+  swapCard(content) {
+    if (this.platform === PlatformType.MOBILE) {
+      return false;
+    }
+    if ((content.contentData && content.contentData.trackable && content.contentData.trackable.enabled === 'Yes') ||
+      (content.trackable && content.trackable.enabled === 'Yes')) {
+      return false;
+    }
+    return true;
   }
 }
