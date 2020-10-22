@@ -7,10 +7,12 @@
     </div>
     <div class="" *ngIf="tocData?.mimeType !== MimeTypeMasterData?.COLLECTION">
         <sb-toc-card *ngIf="type" [content]="tocData" [type]="type" (tocCardClick)="onTocCardClick($event)"[platform]="platform"
-         [activeContent]="activeContent" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
+         [activeContent]="activeContent" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+         [trackableDefaultImage]="trackableDefaultImage">
           </sb-toc-card>
           <sb-toc-card *ngIf="!type" [content]="tocData"  (tocCardClick)="onTocCardClick($event)" [platform]="platform"
-            [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
+            [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+            [trackableDefaultImage]="trackableDefaultImage">
           </sb-toc-card>
     </div>
 </div>
@@ -45,10 +47,12 @@
           <ng-container *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length" >
             <div class="child-content-padding">
               <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [platform]="platform"
-               [activeContent]="activeContent" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
+               [activeContent]="activeContent" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+               [trackableDefaultImage]="trackableDefaultImage">
               </sb-toc-card>
               <sb-toc-card *ngIf="!type" [content]="item" (tocCardClick)="onTocCardClick($event)" [platform]="platform"
-                [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
+                [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+                [trackableDefaultImage]="trackableDefaultImage">
               </sb-toc-card>
             </div>
           </ng-container>
@@ -64,11 +68,12 @@
               <div class="sbchapter" *ngIf="filterChildren(child)">
                 <sb-toc-child-item *ngIf="type" [childData]="child" [type]="type" [activeMimeTypeFilter]="activeMimeTypeFilter"
                   [activeContent]="activeContent" [contentStatus]="contentStatus" (tocCardClick)="onTocCardClick($event)" 
-                  [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)" [platform]="platform">
+                  [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)" [platform]="platform"
+                  [trackableDefaultImage]="trackableDefaultImage">
                 </sb-toc-child-item>
                 <sb-toc-child-item *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
                   [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig"
-                  (playButtonClick)="onPlayButtonClick($event)" [platform]="platform">
+                  (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
                 </sb-toc-child-item>
               </div>
             </ng-container>
@@ -80,7 +85,8 @@
       </div>
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION">
           <sb-toc-card *ngIf="type" [content]="item" [type]="type" (tocCardClick)="onTocCardClick($event)" [platform]="platform"
-          [activeContent]="activeContent" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
+          [activeContent]="activeContent" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+          [trackableDefaultImage]="trackableDefaultImage">
             </sb-toc-card>
       </div>
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType === 'TextBook'">

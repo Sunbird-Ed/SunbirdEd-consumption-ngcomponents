@@ -85,12 +85,12 @@
 }
 
 .sb-card-swap{
-  -webkit-transform: scaleX(-1);  /* Chrome, Safari, Opera */
-  -moz-transform: scaleX(-1);  /* Firefox */
-  -ms-transform: scaleX(-1);  /* IE 9 */
-  transform: scaleX(-1);  /* Standard syntax */    
+  flex-direction: row-reverse;
+  .arrange-card-items{
+    display: contents;
+  }
 }
 
-.display-content{
-  display: contents;
+.arrange-card-items{
+  display: inline-flex;
 }

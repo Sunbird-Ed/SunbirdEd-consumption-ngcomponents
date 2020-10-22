@@ -8,7 +8,7 @@
   (childData?.contentData?.trackable?.enabled === 'Yes' || childData?.trackable?.enabled === 'Yes')">
   <sb-toc-card [content]="childData" (tocCardClick)="tocCardClickHandler($event)" [activeContent]="activeContent"
     [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
-    [platform]="platform">
+    [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
   </sb-toc-card>
 </ng-container>
 
@@ -17,7 +17,7 @@
     {{ createUniqueId(childData, child) }}
     <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)"
       [activeMimeTypeFilter]="activeMimeTypeFilter" [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" 
-      (playButtonClick)="onPlayButtonClick($event)" [platform]="platform">
+      (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
     </sb-toc-child-item>
   </div>
 </div>

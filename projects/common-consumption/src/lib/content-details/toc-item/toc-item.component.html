@@ -27,11 +27,12 @@
                   <ng-container *ngIf="isFlattenedType(child) === FlattenedType.EXPAND">
                     <sb-toc-child-item *ngIf="type" [type]="type" [contentStatus]="contentStatus" [childData]="child"
                       [activeMimeTypeFilter]="activeMimeTypeFilter" [activeContent]="activeContent" [platform]="platform"
-                      (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
+                      (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+                      [trackableDefaultImage]="trackableDefaultImage">
                     </sb-toc-child-item>
                     <sb-toc-child-item *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
                       [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig"
-                      (playButtonClick)="onPlayButtonClick($event)" [platform]="platform">
+                      (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
                     </sb-toc-child-item>
                   </ng-container>
                   
@@ -66,10 +67,11 @@
     <div class="child-content-padding">
       <sb-toc-card *ngIf="type" [type]="type" [contentStatus]="contentStatus" [content]="item" 
         (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent" [playBtnConfig]="playBtnConfig"
-        (playButtonClick)="onPlayButtonClick($event)" [platform]="platform">
+        (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
       </sb-toc-card>
       <sb-toc-card *ngIf="!type" [content]="item" (tocCardClick)="onTocCardClick($event)" [platform]="platform"
-        [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)">
+        [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+        [trackableDefaultImage]="trackableDefaultImage">
       </sb-toc-card>
     </div>
     </ng-container>

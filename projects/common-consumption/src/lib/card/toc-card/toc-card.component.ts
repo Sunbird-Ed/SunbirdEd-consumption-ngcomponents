@@ -99,10 +99,24 @@ export class TocCardComponent implements OnInit {
     if (this.platform === PlatformType.MOBILE) {
       return false;
     }
-    if ((content.contentData && content.contentData.trackable && content.contentData.trackable.enabled === 'Yes') ||
-      (content.trackable && content.trackable.enabled === 'Yes')) {
+    if (this.isTrackable(content)) {
       return false;
     }
     return true;
+  }
+
+  isTrackable(content) {
+    if ((content.contentData && content.contentData.trackable && content.contentData.trackable.enabled === 'Yes') ||
+      (content.trackable && content.trackable.enabled === 'Yes')) {
+      return true;
+    }
+    return false;
+  }
+
+  getContentImage(content) {
+    if (this.isTrackable(content) && this.trackableDefaultImage) {
+      return this.trackableDefaultImage;
+    }
+    return content.appIcon || (content.contentData && content.contentData.appIcon);
   }
 }
