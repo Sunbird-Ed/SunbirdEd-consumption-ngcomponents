@@ -17,7 +17,9 @@ export class AccordionItemComponent implements OnInit {
     return this.collapsedValue;
   }
   set collapsed(val: boolean) {
-    this.collapsedValue = convertToBoolProperty(val);
+    const newVal = convertToBoolProperty(val);
+    if (this.collapsedValue === newVal) { return; }
+    this.collapsedValue = newVal;
     this.collapsedChange.emit(this.collapsedValue);
   }
 

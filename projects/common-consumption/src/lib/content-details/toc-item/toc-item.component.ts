@@ -3,6 +3,7 @@ import {
 } from '@angular/core';
 import { FlattenedType, TocCardType } from '../../card/models';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
+import {AccordionItemComponent} from '../../accordion/accordion-item/accordion-item.component';
 
 @Component({
   selector: 'sb-toc-item',
@@ -11,6 +12,8 @@ import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
   providers: [MimeTypePipe]
 })
 export class TocItemComponent implements OnInit, OnChanges {
+  @Input() expandMode: 'single' | 'multiple' = 'multiple';
+  @ViewChildren('sbAccordionItem') accordionItems: QueryList<AccordionItemComponent>;
   @Input() tocData;
   @Input() activeMimeTypeFilter = ['all'];
   @Input() noContentMessage = 'No content available';
@@ -112,7 +115,12 @@ export class TocItemComponent implements OnInit, OnChanges {
     this.tocCardClick.emit({ ...event, rollup });
   }
 
-  public collapsedChangeHandler(event) {
+  public collapsedChangeHandler(collapsed: boolean, item: AccordionItemComponent) {
+    if (this.expandMode === 'single' && !collapsed) {
+      this.accordionItems.filter(i => i !== item).forEach((i) => {
+        if (i.expanded) { i.expanded = false; }
+      });
+    }
   }
 
   private firstNonCollectionContent(contents) {
