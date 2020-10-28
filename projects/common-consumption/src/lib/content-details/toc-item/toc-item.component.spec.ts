@@ -16,6 +16,7 @@ import { MimeTypeMasterData } from '../../pipes-module/mime-type';
 import { staticData } from '../toc-curriculum/toc-data';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LibraryCardV2Component } from '../../card/library-card-v2/library-card-v2.component';
+import { QueryList } from '@angular/core';
 
 describe('TocItemComponent', () => {
   let component: TocItemComponent;
@@ -56,6 +57,27 @@ describe('TocItemComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should create Chapter Click', () => {
-    
+
+  });
+
+  describe('when expandMode is single and an accordion item is toggled', () => {
+    it('should close all other accordion items', () => {
+      // arrange
+      const mockMockAccordionItem: Partial<AccordionItemComponent> = { expanded: true };
+      const mockMockOtherAccordionItem: Partial<AccordionItemComponent> = { expanded: true };
+
+      component.expandMode = 'single';
+      component.accordionItems = new QueryList<AccordionItemComponent>();
+      component.accordionItems.reset([
+        mockMockAccordionItem as AccordionItemComponent,
+        mockMockOtherAccordionItem as AccordionItemComponent
+      ]);
+
+      // act
+      component.collapsedChangeHandler(false, mockMockAccordionItem as AccordionItemComponent);
+
+      // assert
+      expect(mockMockOtherAccordionItem.expanded).toBe(false);
+    });
   });
 });

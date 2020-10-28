@@ -1,7 +1,7 @@
 <div *ngFor="let item of tocData?.children; let index = index;">
   <div *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && !(item?.contentData?.trackable?.enabled === 'Yes' || item?.trackable?.enabled === 'Yes')">
     <sb-accordion [multi]="false" [id]="item.identifier">
-      <sb-accordion-item [expanded]="isExpanded(index, item)" (collapsedChange)="collapsedChangeHandler($event);">
+      <sb-accordion-item #sbAccordionItem [expanded]="isExpanded(index, item)" (collapsedChange)="collapsedChangeHandler($event, sbAccordionItem);">
         {{ createUniqueId(tocData, item) }}
         <sb-accordion-header>
             <div class="sb-checkbox sb-checkbox-primary" *ngIf="selectMode">
@@ -35,9 +35,9 @@
                       (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
                     </sb-toc-child-item>
                   </ng-container>
-                  
+
                   <ng-container *ngIf="isFlattenedType(child) === FlattenedType.COLLAPSE">
-                    <sb-toc-card *ngIf="type" [type]="type" [content]="child" (tocCardClick)="onTocCardClick($event)" 
+                    <sb-toc-card *ngIf="type" [type]="type" [content]="child" (tocCardClick)="onTocCardClick($event)"
                       [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
                       [trackableDefaultImage]="trackableDefaultImage" [platform]="platform">
                     </sb-toc-card>
@@ -61,11 +61,11 @@
       </sb-accordion-item>
     </sb-accordion>
   </div>
-  <div *ngIf="(item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length) || 
+  <div *ngIf="(item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length) ||
     item?.contentData?.trackable?.enabled === 'Yes' || item?.trackable?.enabled === 'Yes'" class="sb-content__bar">
     <ng-container>
     <div class="child-content-padding">
-      <sb-toc-card *ngIf="type" [type]="type" [contentStatus]="contentStatus" [content]="item" 
+      <sb-toc-card *ngIf="type" [type]="type" [contentStatus]="contentStatus" [content]="item"
         (tocCardClick)="onTocCardClick($event)" [activeContent]="activeContent" [playBtnConfig]="playBtnConfig"
         (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
       </sb-toc-card>
