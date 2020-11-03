@@ -142,7 +142,7 @@ export class TocItemComponent implements OnInit, OnChanges {
 
   isExpanded(index: number, item) {
     const activeContent = item.children ? this.flattenDeep(item.children).find((child) => {
-      if (this.activeContent.parent) {
+      if (this.activeContent && this.activeContent.parent) {
         return child.identifier === this.activeContent.identifier && child.parent === this.activeContent.parent;
       } else {
         return child.identifier === this.activeContent.identifier;
