@@ -201,3 +201,16 @@ export enum PlatformType {
     PORTAL = 'portal',
     MOBILE = 'mobile'
 }
+
+export enum ExpandMode {
+    SINGLE = 'single',
+    MULTIPLE = 'multiple'
+}
+export enum ExpandBehavior {
+    NONE = 'none',
+    EXPAND_FIRST = 'expand-first'
+}
+export interface IAccordianConfig {
+    expandMode: ExpandMode;
+    expandBehavior: ExpandBehavior;
+}
