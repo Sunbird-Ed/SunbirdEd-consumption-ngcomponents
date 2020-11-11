@@ -339,6 +339,7 @@
   .sb--card:hover {
     .card-hover {
       display: block;
+      z-index: 1001;
       .child-content {
         color: var(--white);
         position: absolute;
