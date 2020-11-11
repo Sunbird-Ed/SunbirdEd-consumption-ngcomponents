@@ -1,0 +1,16 @@
+<div (click)="notificationClickHandler($event)">
+  <div class="d-flex">
+    <img *ngIf="!notification?.isRead" src="assets/common-consumption/images/oval.svg" alt="">
+    <p>{{ notification?.displayTime * 1000 | date:'E, d MMMM h:mm'}}</p>
+    <img src="assets/common-consumption/images/bin.svg" alt="" width="10px">
+  </div>
+  <div class="d-flex">
+    <div class="img-info ni-flex-grow" *ngIf="notification?.actionData?.appIcon">
+      <img [src]="notification?.actionData?.appIcon" width="20px">
+    </div>
+    <div>
+      <p class="title">{{notification?.actionData?.title}}</p>
+      <p class="description" *ngIf="notification?.actionData?.richText">{{notification?.actionData?.richText}}</p>
+    </div>
+  </div>
+</div>

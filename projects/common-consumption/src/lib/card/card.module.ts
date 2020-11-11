@@ -9,16 +9,17 @@ import { CourseCuriculumCardComponent } from './course-curiculum-card/course-cur
 import { GroupCardComponent } from './group-card/group-card.component';
 import { MemberCardComponent } from './member-card/member-card.component';
 import { LibraryCardV2Component } from './library-card-v2/library-card-v2.component';
+import { NotificationCardComponent } from './notification-card/notification-card.component';
 
 @NgModule({
   declarations: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, 
     TocCardComponent, MyCourseCardComponent, CourseCuriculumCardComponent, GroupCardComponent, 
-    MemberCardComponent, LibraryCardV2Component],
+    MemberCardComponent, LibraryCardV2Component, NotificationCardComponent],
   imports: [
     CommonModule
   ],
   exports: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, TocCardComponent, 
     MyCourseCardComponent, CourseCuriculumCardComponent, GroupCardComponent, MemberCardComponent,
-    LibraryCardV2Component]
+    LibraryCardV2Component, NotificationCardComponent]
 })
 export class CardModule { }
