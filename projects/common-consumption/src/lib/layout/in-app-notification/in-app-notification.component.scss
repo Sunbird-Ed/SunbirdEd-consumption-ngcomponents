@@ -1,0 +1,43 @@
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+
+:host {
+    .sb-notification-container{
+        .sb-notification-header{
+            color: var(--gray);
+            .title{
+                font-size: calculateRem(16px);
+                font-weight: bold;
+                margin-bottom: calculateRem(4px);
+            }
+            .sub-title{
+                font-size: calculateRem(12px);
+                margin-bottom: calculateRem(16px);
+            }
+        }
+        .sb-notification-list-items{
+            max-height: calc(100vh - 275px);
+            overflow-y: auto;
+        }
+        .clear-text{
+            a{
+                color: var(--danger-color);
+                font-size: calculateRem(14px);
+                position: absolute;
+                right: calculateRem(24px);
+                top: calculateRem(24px);
+                html[dir="rtl"] & {
+                    right: auto;
+                    left: calculateRem(24px);
+                }
+            }
+        }
+        .more-text{
+            a{
+                font-size: calculateRem(12px);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
