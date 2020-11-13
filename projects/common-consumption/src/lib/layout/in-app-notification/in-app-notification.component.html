@@ -1,17 +1,17 @@
-<div>
-  <div class="d-flex">
-    <div>
-      <p>{{inAppNotificationConfig.title}}</p>
-      <p>{{inAppNotificationConfig.subTitle}}</p>
-    </div>
-    <div>
-      <button (click)="clearAllNotifications()">{{inAppNotificationConfig.clearText}}</button>
+<div class="sb-notification-container">
+  <div class="sb-notification-header">
+    <div class="title">{{inAppNotificationConfig.title}}</div>
+    <div class="sub-title">{{inAppNotificationConfig.subTitle}}</div>
+  </div>
+  <div class="clear-text">
+    <a href="javascript:void(0)" (click)="clearAllNotifications()">{{inAppNotificationConfig.clearText}}</a>
+  </div>
+  <div class="sb-notification-list-items">
+    <div *ngFor="let notification of notificationList" >
+      <sb-notification-card [notification]="notification" (notificationClick)="notificationClickHandler($event)"></sb-notification-card>
     </div>
   </div>
-  <div *ngFor="let notification of notificationList" >
-    <sb-notification-card [notification]="notification" (notificationClick)="notificationClickHandler($event)"></sb-notification-card>
-  </div>
-  <div>
-    <button (click)="showMore()">{{inAppNotificationConfig.moreText}}</button>
+  <div class="text-center more-text mt-16">
+    <a href="javascript:void(0)" (click)="showMore()">{{inAppNotificationConfig.moreText}}</a>
   </div>
 </div>
