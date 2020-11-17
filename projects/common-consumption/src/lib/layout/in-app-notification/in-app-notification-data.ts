@@ -32,3 +32,12 @@ export const notificationList = [
     "status": "unread"
   }
 ];
+
+export const notificationViewConfig = {
+  title: 'Notification',
+  subTitle: 'New Notification (s)',
+  clearText: 'Clear',
+  moreText: 'See more',
+  lessText: 'See less',
+  minNotificationViewCount: 5
+}

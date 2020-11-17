@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { notificationList } from './in-app-notification-data';
+import { NotificationViewConfig } from '../../card/models';
+import { notificationViewConfig } from './in-app-notification-data';
 
 @Component({
   selector: 'sb-in-app-notification',
@@ -9,14 +10,7 @@ import { notificationList } from './in-app-notification-data';
 export class InAppNotificationComponent implements OnInit {
 
   @Input() notificationList = [];
-  @Input() inAppNotificationConfig = {
-    title: 'Notification',
-    subTitle: 'New Notification (s)',
-    clearText: 'Clear',
-    moreText: 'See more',
-    lessText: 'See less',
-    maxNotificationCount: 5
-  };
+  @Input() inAppNotificationConfig: NotificationViewConfig = notificationViewConfig;
   @Output() notificationClick: EventEmitter<any> = new EventEmitter();
   @Output() deleteNotificationClick: EventEmitter<any> = new EventEmitter();
   @Output() clearAllClick: EventEmitter<any> = new EventEmitter();
@@ -25,7 +19,7 @@ export class InAppNotificationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.displayItemCount = this.inAppNotificationConfig.maxNotificationCount;
+    this.displayItemCount = this.inAppNotificationConfig.minNotificationViewCount;
     console.log(this.notificationList);
   }
 
@@ -53,7 +47,7 @@ export class InAppNotificationComponent implements OnInit {
   }
 
   showLess() {
-    this.displayItemCount = this.inAppNotificationConfig.maxNotificationCount;
+    this.displayItemCount = this.inAppNotificationConfig.minNotificationViewCount;
   }
 
 }

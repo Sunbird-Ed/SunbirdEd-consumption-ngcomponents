@@ -207,6 +207,15 @@ export enum NotificationStatus {
     UNREAD = 'unread'
 }
 
+export interface NotificationViewConfig{
+    title: string;
+    subTitle: string;
+    clearText: string;
+    moreText: string;
+    lessText: string;
+    minNotificationViewCount: number;
+}
+
 export enum ExpandMode {
     SINGLE = 'single',
     MULTIPLE = 'multiple'
