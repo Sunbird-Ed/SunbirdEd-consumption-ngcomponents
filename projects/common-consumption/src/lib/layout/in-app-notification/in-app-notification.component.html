@@ -1,0 +1,23 @@
+<div class="sb-notification-container">
+  <div class="sb-notification-header">
+    <div class="title" *ngIf="inAppNotificationConfig?.title">{{inAppNotificationConfig?.title}}</div>
+    <div class="sub-title" *ngIf="inAppNotificationConfig?.subTitle">{{inAppNotificationConfig?.subTitle}}</div>
+  </div>
+  <div class="clear-text" *ngIf="inAppNotificationConfig.clearText">
+    <a (click)="clearAllNotifications($event)">{{inAppNotificationConfig.clearText}}</a>
+  </div>
+  <div class="sb-notification-list-items">
+    <div *ngFor="let notification of notificationList | slice:0:displayItemCount; let i=index" >
+      <sb-notification-card [notification]="notification" (notificationClick)="notificationClickHandler($event)"
+      (deleteNotificationClick)="deleteNotificationHandler($event)"></sb-notification-card>
+    </div>
+  </div>
+  <ng-container *ngIf="inAppNotificationConfig?.minNotificationViewCount < this.notificationList?.length">
+    <div class="text-center more-text mt-16" *ngIf="displayItemCount < this.notificationList?.length">
+      <a (click)="showMore()">{{inAppNotificationConfig?.moreText}}</a>
+    </div>
+    <div class="text-center more-text mt-16" *ngIf="displayItemCount === this.notificationList?.length">
+      <a (click)="showLess()">{{inAppNotificationConfig?.lessText}}</a>
+    </div>
+  </ng-container>
+</div>

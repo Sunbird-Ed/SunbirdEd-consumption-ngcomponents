@@ -202,6 +202,20 @@ export enum PlatformType {
     MOBILE = 'mobile'
 }
 
+export enum NotificationStatus {
+    READ = 'read',
+    UNREAD = 'unread'
+}
+
+export interface NotificationViewConfig{
+    title: string;
+    subTitle: string;
+    clearText: string;
+    moreText: string;
+    lessText: string;
+    minNotificationViewCount: number;
+}
+
 export enum ExpandMode {
     SINGLE = 'single',
     MULTIPLE = 'multiple'
@@ -214,3 +228,4 @@ export interface IAccordianConfig {
     expandMode: ExpandMode;
     expandBehavior: ExpandBehavior;
 }
+
