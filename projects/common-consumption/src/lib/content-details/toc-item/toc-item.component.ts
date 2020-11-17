@@ -1,18 +1,21 @@
 import {
-  Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren, OnChanges
+  Component, OnInit, Input, Output, EventEmitter, ViewChild, QueryList, ViewChildren, OnChanges, AfterViewInit, OnDestroy
 } from '@angular/core';
-import { FlattenedType, TocCardType } from '../../card/models';
+import { ExpandBehavior, ExpandMode, FlattenedType, IAccordianConfig, TocCardType } from '../../card/models';
 import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
 import {AccordionItemComponent} from '../../accordion/accordion-item/accordion-item.component';
-
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'sb-toc-item',
   templateUrl: './toc-item.component.html',
   styleUrls: ['./toc-item.component.scss'],
   providers: [MimeTypePipe]
 })
-export class TocItemComponent implements OnInit, OnChanges {
-  @Input() expandMode: 'single' | 'multiple' = 'multiple';
+export class TocItemComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
+  @Input() accordianConfig: IAccordianConfig = {
+    expandMode: ExpandMode.MULTIPLE,
+    expandBehavior: ExpandBehavior.NONE
+  };
   @ViewChildren('sbAccordionItem') accordionItems: QueryList<AccordionItemComponent>;
   @Input() tocData;
   @Input() activeMimeTypeFilter = ['all'];
@@ -34,19 +37,18 @@ export class TocItemComponent implements OnInit, OnChanges {
   @Output() noContent: EventEmitter<any> = new EventEmitter();
   @Output() selectedItem: EventEmitter<any> = new EventEmitter();
   @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
-
+  private resetActiveContent = false;
   get FlattenedType() { return FlattenedType; }
   get MimeTypeMasterData() { return MimeTypeMasterData; }
-
+  get ExpandBehavior() { return ExpandBehavior; }
   isMimeTypeFilterChanged = false;
-
   private isSameMimeTypeInChildren = ((mimeTypesCount, activeMimeType) => {
     const contentMimeType = Object.keys(JSON.parse(mimeTypesCount));
     return Boolean(activeMimeType.filter(value => contentMimeType.includes(value)).length);
   });
   private isSameMimeType = (currentContent) => this.activeMimeTypeFilter.find(mimeType => mimeType === currentContent.mimeType);
   private isChildrenPresent = (currentContent) => Boolean(currentContent.children && currentContent.children.length);
-
+  private subscriptions: Subscription[] = [];
   constructor() { }
 
   ngOnInit() {
@@ -56,11 +58,23 @@ export class TocItemComponent implements OnInit, OnChanges {
   ngOnChanges(changes) {
     if (changes.activeMimeTypeFilter) {
       this.isMimeTypeFilterChanged = false;
+      this.resetActiveContent = true;
     } else if (changes.tocData) {
       this.setActiveContent();
     } else if (changes.selectAll) {
       this.selectAllItems(this.selectAll);
     }
+  }
+
+  ngAfterViewInit() {
+    const subscription =  this.accordionItems.changes.subscribe(change => {
+      if (this.resetActiveContent && this.accordionItems.length && this.accordianConfig.expandBehavior === ExpandBehavior.EXPAND_FIRST) {
+        this.resetActiveContent = false;
+        this.accordionItems.first.collapsed = false;
+        this.collapsedChangeHandler(false, this.accordionItems.first);
+      }
+    });
+    this.subscriptions.push(subscription);
   }
 
   setActiveContent() {
@@ -116,7 +130,7 @@ export class TocItemComponent implements OnInit, OnChanges {
   }
 
   public collapsedChangeHandler(collapsed: boolean, item: AccordionItemComponent) {
-    if (this.expandMode === 'single' && !collapsed) {
+    if (this.accordianConfig.expandMode === ExpandMode.SINGLE && !collapsed) {
       this.accordionItems.filter(i => i !== item).forEach((i) => {
         if (i.expanded) { i.expanded = false; }
       });
@@ -249,4 +263,7 @@ export class TocItemComponent implements OnInit, OnChanges {
     return '';
   }
 
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s.unsubscribe());
+  }
 }
