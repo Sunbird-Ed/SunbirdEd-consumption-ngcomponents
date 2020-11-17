@@ -3,19 +3,19 @@
     <!-- <img *ngIf="!notification?.isRead" src="assets/common-consumption/images/oval.svg" alt=""> -->
     <div class="notification-info d-flex flex-ai-center mb-8">
       <div class="status" *ngIf="!notification?.isRead"></div>
-      <div class="date ml-8">{{notification?.displayTime * 1000 | date:'E, d MMMM h:mm'}}</div>
+      <div class="date ml-8">{{notification?.createdOn * 1000 | date:'E, d MMMM h:mm'}}</div>
     </div>
-    <div class="delete-icon">
+    <div class="delete-icon" (click)="notificationDeleteHandler($event)">
       <img src="assets/common-consumption/images/bin.svg" alt="" alt="delete" width="14px">
     </div>
   </div>
   <div class="sb-notification-data d-flex flex-ai-center">
-    <div class="logo" *ngIf="notification?.actionData?.appIcon">
-      <img [src]="notification?.actionData?.appIcon" width="20px">
+    <div class="logo" *ngIf="notification?.data?.appIcon">
+      <img [src]="notification?.data?.appIcon" width="20px">
     </div>
     <div class="ml-12 notification-content">
-      <div class="title" [ngClass]="{'active': !notification?.isRead}">{{notification?.actionData?.title}}</div>
-      <div class="sub-title py-8" *ngIf="notification?.actionData?.richText">{{notification?.actionData?.richText}}</div>
+      <div class="title" [ngClass]="{'active': !notification?.isRead}">{{notification?.data?.title}}</div>
+      <div class="sub-title py-8" *ngIf="notification?.data?.description">{{notification?.data?.description}}</div>
     </div>
   </div>
 </div>

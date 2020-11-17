@@ -4,14 +4,20 @@
     <div class="sub-title">{{inAppNotificationConfig.subTitle}}</div>
   </div>
   <div class="clear-text">
-    <a href="javascript:void(0)" (click)="clearAllNotifications()">{{inAppNotificationConfig.clearText}}</a>
+    <a href="javascript:void(0)" (click)="clearAllNotifications($event)">{{inAppNotificationConfig.clearText}}</a>
   </div>
   <div class="sb-notification-list-items">
-    <div *ngFor="let notification of notificationList" >
-      <sb-notification-card [notification]="notification" (notificationClick)="notificationClickHandler($event)"></sb-notification-card>
+    <div *ngFor="let notification of notificationList | slice:0:displayItemCount; let i=index" >
+      <sb-notification-card [notification]="notification" (notificationClick)="notificationClickHandler($event)"
+      (deleteNotificationClick)="deleteNotificationHandler($event)"></sb-notification-card>
     </div>
   </div>
-  <div class="text-center more-text mt-16">
-    <a href="javascript:void(0)" (click)="showMore()">{{inAppNotificationConfig.moreText}}</a>
-  </div>
+  <ng-container *ngIf="inAppNotificationConfig?.maxNotificationCount < this.notificationList?.length">
+    <div class="text-center more-text mt-16" *ngIf="displayItemCount < this.notificationList?.length">
+      <a (click)="showMore()">{{inAppNotificationConfig?.moreText}}</a>
+    </div>
+    <div class="text-center more-text mt-16" *ngIf="displayItemCount === this.notificationList?.length">
+      <a (click)="showLess()">{{inAppNotificationConfig?.lessText}}</a>
+    </div>
+  </ng-container>
 </div>

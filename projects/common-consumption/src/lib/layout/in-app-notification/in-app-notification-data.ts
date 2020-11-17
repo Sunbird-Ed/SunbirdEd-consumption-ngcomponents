@@ -1,46 +1,34 @@
 export const notificationList = [
   {
-    id: 'id_00001',
-    isRead: false,
-    displayTime: 789789,
-    actionData: {
-      appIcon: 'assets/common-consumption/images/book.png',
-      title: '1. Some title which is lengthy so that we can cehck overflow',
-      richText: '1. Sample description about the notification paragraph',
-      deepLink: 'http://staging.ntp.net.in/'
-    }
+    "identifier": "c2d72c04-3010-45d7-bc13-29a3105dca26",
+    "data": {
+      "actionType": "contentURL",
+      "contentURL": "https://staging.ntp.net.in/resources/play/content/do_212669767503060992174",
+      "description": "Notfication description",
+      "openPlayer": true,
+      "title": "InApp Notification 4"
+    },
+    "id": "c2d72c04-3010-45d7-bc13-29a3105dca26",
+    "category": "Notification",
+    "priority": 1,
+    "userId": "555caa55-8dc8-4d8f-a8c5-159ade057f90",
+    "createdOn": 1605589382634,
+    "status": "unread"
   },
   {
-    id: 'id_00002',
-    isRead: true,
-    displayTime: 789789,
-    actionData: {
-      appIcon: 'assets/common-consumption/images/book.png',
-      title: '2. Some title which is lengthy so that we can cehck overflow',
-      richText: '2. Sample description about the notification paragraph',
-      deepLink: 'http://staging.ntp.net.in/'
-    }
-  },
-  {
-    id: 'id_00003',
-    isRead: true,
-    displayTime: 789789,
-    actionData: {
-      appIcon: '',
-      title: '3. Some title which is lengthy so that we can cehck overflow',
-      richText: '',
-      deepLink: 'http://staging.ntp.net.in/'
-    }
-  },
-  {
-    id: 'id_00004',
-    isRead: false,
-    displayTime: 789789,
-    actionData: {
-      appIcon: '',
-      title: '4. Some title which is lengthy so that we can cehck overflow',
-      richText: '4. Sample description about the notification paragraph',
-      deepLink: 'http://staging.ntp.net.in/'
-    }
+    "identifier": "03ae8b70-e6ea-4615-9545-bf9e5ee2f30b",
+    "data": {
+      "actionType": "contentURL",
+      "contentURL": "https://staging.ntp.net.in/resources/play/content/do_212669767503060992174",
+      "description": "Notfication description",
+      "openPlayer": true,
+      "title": "InApp Notification 7"
+    },
+    "id": "03ae8b70-e6ea-4615-9545-bf9e5ee2f30b",
+    "category": "Notification",
+    "priority": 1,
+    "userId": "555caa55-8dc8-4d8f-a8c5-159ade057f90",
+    "createdOn": 1605589397767,
+    "status": "unread"
   }
 ];

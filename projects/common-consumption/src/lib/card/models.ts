@@ -201,3 +201,8 @@ export enum PlatformType {
     PORTAL = 'portal',
     MOBILE = 'mobile'
 }
+
+export enum NotificationStatus {
+    READ = 'read',
+    UNREAD = 'unread'
+}
