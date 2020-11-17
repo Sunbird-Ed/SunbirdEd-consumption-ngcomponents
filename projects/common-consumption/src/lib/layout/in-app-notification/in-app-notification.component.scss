@@ -25,6 +25,7 @@
                 position: absolute;
                 right: calculateRem(24px);
                 top: calculateRem(24px);
+                text-decoration: none;
                 html[dir="rtl"] & {
                     right: auto;
                     left: calculateRem(24px);
@@ -35,6 +36,8 @@
             a{
                 font-size: calculateRem(12px);
                 font-weight: bold;
+                cursor: pointer;
+                color: var(--primary-400);
             }
         }
     }
