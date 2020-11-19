@@ -40,4 +40,10 @@ export class CertificateActionsComponent {
     this.buttonClick.emit({ event, name });
   }
 
+  getSafeUrl(url) {
+    if (url) {
+      return this.domSanitizer.bypassSecurityTrustResourceUrl(url);
+    }
+    return '';
+  }
 }

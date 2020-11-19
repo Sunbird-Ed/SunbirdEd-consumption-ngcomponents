@@ -4,7 +4,7 @@
       <img *ngIf="isSelectedTemplate" src="assets/common-consumption/images/checked-icon.svg" width="18px" height="18px" alt="">
     </div>
     <div class="template-image">
-      <object type="image/svg+xml" data="domSanitizer?.bypassSecurityTrustUrl(template)" class="template-img"></object>
+      <embed [src]="getSafeUrl(template)" class="template-img" type="image/svg+xml" /></div>
   </div>
   <div [ngClass]="{'overlay-container': showOverlay}">
     <div class="d-flex flex-ai-center flex-jc-center flex-dc overlay-buttons">
