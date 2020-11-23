@@ -1,4 +1,5 @@
 <div *ngFor="let item of tocData?.children; let index = index;">
+  <ng-container *ngIf="(item | hasMimeType: activeMimeTypeFilter) || this.accordianConfig.expandBehavior === ExpandBehavior.NONE">
   <div *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && !(item?.contentData?.trackable?.enabled === 'Yes' || item?.trackable?.enabled === 'Yes')">
     <sb-accordion [multi]="false" [id]="item.identifier">
       <sb-accordion-item #sbAccordionItem [expanded]="isExpanded(index, item)" (collapsedChange)="collapsedChangeHandler($event, sbAccordionItem);">
@@ -76,4 +77,5 @@
     </div>
     </ng-container>
   </div>
+  </ng-container>
 </div>
