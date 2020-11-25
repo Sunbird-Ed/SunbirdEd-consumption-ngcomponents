@@ -1,0 +1,9 @@
+<div class="sb-slider-pills-container">
+    <div class="sb-pills-container sb-grade-pills-container">
+        <div class="pill rounded rounded-with-icon" [ngClass]="{'______todo-class-1':PillShape.RECTANGLE, '______todo-class-2':PillShape.CIRCLE}" *ngFor="let item of pillsList; let i = index;"
+            [ngClass]="{'active': item?.selected}" attr.id="mimeType{{i}}" (click)="selectPill($event, i)">
+            <img src="" *ngIf="item.image" [ngClass]="{'______todo-class-1':PillImageSide.LEFT, '______todo-class-2':PillImageSide.RIGHT}" alt="">
+            <span class="name">{{item.name}}</span>
+        </div>
+    </div>
+</div>
