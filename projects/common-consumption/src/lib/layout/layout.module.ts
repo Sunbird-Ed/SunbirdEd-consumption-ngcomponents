@@ -6,13 +6,27 @@ import { LibraryCardsGridComponent } from './library-cards-grid/library-cards-gr
 import { CourseCardsHlistComponent } from './course-cards-hlist/course-cards-hlist.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { CardsGridComponent } from './cards-grid/cards-grid.component';
+import { InAppNotificationComponent } from './in-app-notification/in-app-notification.component';
 
 @NgModule({
-  declarations: [LibraryCardsStackComponent, LibraryCardsGridComponent, CourseCardsHlistComponent, MemberListComponent, CardsGridComponent],
+  declarations: [
+    LibraryCardsStackComponent,
+    LibraryCardsGridComponent,
+    CourseCardsHlistComponent,
+    MemberListComponent,
+    CardsGridComponent,
+    InAppNotificationComponent
+  ],
   imports: [
     CommonModule,
     CardModule
   ],
-  exports: [LibraryCardsStackComponent, LibraryCardsGridComponent,CourseCardsHlistComponent,MemberListComponent,CardsGridComponent]
+  exports: [
+    LibraryCardsStackComponent,
+    LibraryCardsGridComponent,
+    CourseCardsHlistComponent,
+    MemberListComponent,
+    CardsGridComponent,
+    InAppNotificationComponent]
 })
 export class LayoutModule { }
