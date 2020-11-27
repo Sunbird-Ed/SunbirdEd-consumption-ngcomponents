@@ -32,6 +32,7 @@ export class TocCurriculumComponent implements OnInit {
   @Input() activeContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() noContent: EventEmitter<any> = new EventEmitter();
+  @Input() scoreLabel;
 
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
