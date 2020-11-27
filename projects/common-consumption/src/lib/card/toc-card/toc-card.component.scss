@@ -100,3 +100,11 @@
   top: -0.3rem;
   right: -0.3rem;
 }
+
+.pr-8 {
+  padding-right: calculateRem(8px);
+}
+
+.ml-auto {
+  margin-left: auto;
+}
