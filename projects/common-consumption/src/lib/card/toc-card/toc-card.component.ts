@@ -19,6 +19,7 @@ export class TocCardComponent implements OnInit {
   @Input() platform = PlatformType.MOBILE;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
+  @Input() scoreLabel;
 
   fallbackImg = COMMON_CONSUMPTION_CONSTANTS.TOC_CARD_FALLBACK_IMG;
   iconPathMap: any;
