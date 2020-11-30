@@ -1,16 +1,19 @@
 export interface IPill {
-   name: string;
-   image?: string;
-   selected?: boolean;
+    name: string;
+    icon?: string;
+    selected?: boolean;
+    data?: any;
 }
 
 export enum PillShape {
     CIRCLE = 'circle',
+    BOX = 'box',
     RECTANGLE = 'rectangle'
 }
 export enum PillsLayout {
     HORIZONTAL = 'horizontal',
-    VERTICLE = 'verticle'
+    VERTICLE = 'verticle',
+    NONE = 'none'
 }
 export enum PillsViewType {
     GRID = 'grid',
@@ -20,4 +23,13 @@ export enum PillsViewType {
 export enum PillImageSide {
     LEFT = 'left',
     RIGHT = 'right'
+}
+export enum PillBorder {
+    ROUNDED = 'rounded',
+    NONE = 'none'
+}
+
+export enum SelectMode {
+    SINGLE = 'single',
+    MULTIPLE = 'multiple'
 }
