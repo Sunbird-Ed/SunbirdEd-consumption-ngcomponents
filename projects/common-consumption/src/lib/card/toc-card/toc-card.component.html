@@ -29,7 +29,7 @@
     <h4 *ngIf="scoreLabel" class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two pr-8 pt-4 ml-auto" title="{{scoreLabel}}">
       {{scoreLabel}}
     </h4>
-    <button class="sbchapter__play__btn" 
+    <button class="sbchapter__play__btn" *ngIf="!isTrackable(content) && playBtnConfig.show"
       (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)">
       <svg class="icon icon-svg--primary">
         <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
