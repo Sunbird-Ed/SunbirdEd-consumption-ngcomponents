@@ -14,6 +14,8 @@ export class InAppNotificationComponent implements OnInit {
   @Output() notificationClick: EventEmitter<any> = new EventEmitter();
   @Output() deleteNotificationClick: EventEmitter<any> = new EventEmitter();
   @Output() clearAllClick: EventEmitter<any> = new EventEmitter();
+  @Output() showMore: EventEmitter<any> = new EventEmitter();
+  @Output() showLess: EventEmitter<any> = new EventEmitter();
   displayItemCount: number;
 
   constructor() { }
@@ -40,13 +42,15 @@ export class InAppNotificationComponent implements OnInit {
     this.clearAllClick.emit(eventData);
   }
 
-  showMore() {
+  onShowMore() {
+    this.showMore.emit(true);
     if (this.notificationList.length) {
       this.displayItemCount = this.notificationList.length;
     }
   }
 
-  showLess() {
+  onShowLess() {
+    this.showLess.emit(true);
     this.displayItemCount = this.inAppNotificationConfig.minNotificationViewCount;
   }
 
