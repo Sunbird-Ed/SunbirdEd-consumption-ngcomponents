@@ -100,7 +100,7 @@ export class TocCardComponent implements OnInit {
       if (item.contentId === this.content.identifier && item.bestScore) {
         this.bestScoreLabel = this.scoreLabel + ' ' + item.bestScore.totalMaxScore.toString() + '/' + item.bestScore.totalScore.toString();
         if (this.maxAttempts - item.score.length === 1) this.isLastAttempt = true;
-        if (this.maxAttempts === item.score.length) this.isDisabled = true;
+        if (item.score.length >= this.maxAttempts) this.isDisabled = true;
       }
     });
   }
