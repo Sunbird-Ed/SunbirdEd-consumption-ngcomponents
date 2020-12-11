@@ -15,6 +15,9 @@ export class TocChildItemComponent implements OnInit {
   @Input() playBtnConfig;
   @Input() platform;
   @Input() trackableDefaultImage;
+  @Input() maxAttempts;
+  @Input() disabled = '';
+  @Input() scoreLabel = '';
 
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() playButtonClick: EventEmitter<any> = new EventEmitter();
