@@ -1,6 +1,6 @@
 <ng-template>
-  <div class="item">
-    <img src="https://www.flaticon.com/svg/static/icons/svg/2502/2502529.svg" class="sb-icon-img sb-icon-img-sm" />
-    <label>{{name}}</label>
+  <div class="item" (click)="onClick($event)">
+    <img *ngIf="icon" src="{{icon}}" class="sb-icon-img sb-icon-img-sm" />
+    <label *ngIf="name">{{name}}</label>
   </div>
 </ng-template>

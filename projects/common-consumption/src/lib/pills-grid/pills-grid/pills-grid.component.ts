@@ -1,5 +1,5 @@
-import { AfterContentInit, Component, ContentChildren, Input, Output, EventEmitter, QueryList, TemplateRef, ViewChildren } from '@angular/core';
-import { IPill, PillImageSide, PillShape, PillsLayout, PillsViewType, SelectMode } from '../models';
+import { AfterContentInit, Component, ContentChildren, Input, Output, EventEmitter, QueryList, TemplateRef, OnInit } from '@angular/core';
+import { PillBorder, PillShape, PillsViewType, SelectMode } from '../models';
 import { PillItemComponent } from '../pill-item/pill-item.component';
 
 @Component({
@@ -8,45 +8,63 @@ import { PillItemComponent } from '../pill-item/pill-item.component';
     styleUrls: ['./pills-grid.component.scss']
 })
 
-export class PillsGridComponent implements AfterContentInit {
+export class PillsGridComponent implements AfterContentInit, OnInit {
 
     @ContentChildren(PillItemComponent) pillItems: QueryList<PillItemComponent>;
     visiblePillItems: PillItemComponent[] = [];
     visiblePillTemplateRefs: TemplateRef<any>[] = [];
 
-    @Input() pillsLayout: PillsLayout = PillsLayout.HORIZONTAL;
-    @Input() pillShape: PillShape = PillShape.BOX;
-    @Input() pillImageSide: PillImageSide = PillImageSide.LEFT;
+    @Input() pillShape: PillShape = PillShape.DEFAULT;
     @Input() pillsViewType: PillsViewType = PillsViewType.NONE;
+    @Input() pillBorder: PillBorder = PillBorder.NONE;
     @Input() selectMode: SelectMode = SelectMode.SINGLE;
-    @Input() viewCount = 5;
-    @Output() select = new EventEmitter<any[]>();
+    @Input() minDisplayCount: number;
+    @Input() viewMoreText: string;
+    @Input() viewLessText: string;
 
-    get PillImageSide() { return PillImageSide; }
+    @Output() select = new EventEmitter<any>();
+    viewCount: number;
+
     get PillShape() { return PillShape; }
-    get PillsLayout() { return PillsLayout; }
     get PillsViewType() { return PillsViewType; }
-    get SelectMode() { return SelectMode; }
+    get PillBorder() { return PillBorder; }
 
-    private minimumCount;
+    ngOnInit() {
+        this.assignDefaultPillsConfig();
+    }
+
+    assignDefaultPillsConfig() {
+        this.pillShape = this.pillShape || PillShape.DEFAULT;
+        this.pillsViewType = this.pillsViewType || PillsViewType.NONE;
+        this.pillBorder = this.pillBorder || PillBorder.NONE;
+        this.selectMode = this.selectMode || SelectMode.SINGLE;
+        if (this.minDisplayCount !== null && this.minDisplayCount !== undefined) {
+            this.viewMoreText = this.viewMoreText || 'View More';
+            this.viewLessText = this.viewLessText || 'View Less';
+        }
+    }
 
     ngAfterContentInit() {
-        this.minimumCount = this.viewCount;
+        this.viewCount = (this.minDisplayCount) ? this.minDisplayCount : this.pillItems.length;
+
         this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
         this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
-
-        const onSelect = (pill: PillItemComponent) => {
+        const onSelect = (pill: PillItemComponent, event: MouseEvent) => {
             if (this.selectMode === SelectMode.SINGLE && pill.selected) {
                 this.visiblePillItems.forEach(e => {
                     if (e !== pill) {
                         e.selected = false;
                     }
                 });
-                this.select.emit([{ name: pill.name, value: pill.value }]);
+                pill.selected = false;
+                this.select.emit({event, data: [{ name: pill.name, value: pill.value }]});
             } else {
-                this.select.emit(this.visiblePillItems
-                    .filter(p => p.selected)
-                    .map(p => ({ name: p.name, value: p.value })));
+                this.select.emit({
+                    event,
+                    data: this.visiblePillItems
+                        .filter(p => p.selected)
+                        .map(p => ({ name: p.name, value: p.value }))
+                });
             }
         };
         this.visiblePillItems.forEach(e => e.onSelect = onSelect);
@@ -59,7 +77,7 @@ export class PillsGridComponent implements AfterContentInit {
     }
 
     viewLess() {
-        this.viewCount = this.minimumCount;
+        this.viewCount = this.minDisplayCount;
         this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
         this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
     }

@@ -1,15 +1,15 @@
-<div class="sb-label-grid show-icon" [ngClass]="{'sb-box-grid':((pillShape === PillShape.BOX)||(pillShape === PillShape.CIRCLE)), 'sb-pills-grid':(pillShape === PillShape.RECTANGLE), 'show-circle':(pillShape === PillShape.CIRCLE), 'hscroll': ((pillsViewType === PillsViewType.SCROLL) && (pillsLayout === PillsLayout.HORIZONTAL))}">
+<div class="sb-label-grid show-icon" [ngClass]="{
+  'sb-box-grid':((pillShape === PillShape.BOX)||(pillShape === PillShape.CIRCLE)), 
+  'sb-pills-grid':(pillShape === PillShape.DEFAULT), 
+  'show-circle':(pillShape === PillShape.CIRCLE), 
+  'hscroll': (pillsViewType === PillsViewType.SCROLL), 
+  'border-radius':(pillBorder === PillBorder.ROUNDED)}">
   <ng-container *ngFor="let ref of visiblePillTemplateRefs">
     <ng-container *ngTemplateOutlet="ref"></ng-container>
   </ng-container>
 </div>
 
-<button (click)="viewMore()">View More</button>
-<button (click)="viewLess()">View Less</button>
-
-<!-- <div class="sb-label-grid show-icon" [ngClass]="{'sb-box-grid':((pillShape === PillShape.BOX)||(pillShape === PillShape.CIRCLE)), 'sb-pills-grid':(pillShape === PillShape.RECTANGLE), 'show-circle':(pillShape === PillShape.CIRCLE), 'hscroll': ((pillsViewType === PillsViewType.SCROLL) && (pillsLayout === PillsLayout.HORIZONTAL))}">
-  <div class="item" *ngFor="let item of pillsList; let i = index;" (click)="selectedPill(item, i)">
-    <img *ngIf="item?.icon" src="{{item?.icon}}" class="sb-icon-img sb-icon-img-sm" />
-    <label *ngIf="item?.name">{{item?.name}}</label>
-  </div>
-</div> -->
+<div class="text-center pt-8" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
+  <button class="sb-btn sb-btn-normal sb-color-primary" *ngIf="viewCount < pillItems?.length" (click)="viewMore()">{{viewMoreText}}</button>
+  <button class="sb-btn sb-btn-normal sb-color-primary" *ngIf="viewCount === pillItems?.length"  (click)="viewLess()">{{viewLessText}}</button>
+</div>
