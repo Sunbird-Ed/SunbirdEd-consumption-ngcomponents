@@ -9,6 +9,7 @@ import { AccordionModule } from './accordion/accordion.module';
 import { PipesModule } from './pipes-module/pipes-module.module';
 import { PagesModule } from './pages/pages.module';
 import { CertificateActionsModule } from './certificate/certificate-actions/certificate-actions.module';
+import { PillsGridModule } from './pills-grid/pills-grid.module';
 
 @NgModule({
   declarations: [],
@@ -22,7 +23,8 @@ import { CertificateActionsModule } from './certificate/certificate-actions/cert
     AccordionModule,
     PipesModule,
     PagesModule,
-    CertificateActionsModule
+    CertificateActionsModule,
+    PillsGridModule
 
   ],
   exports: [
@@ -35,7 +37,8 @@ import { CertificateActionsModule } from './certificate/certificate-actions/cert
     AccordionModule,
     PipesModule,
     PagesModule,
-    CertificateActionsModule
+    CertificateActionsModule,
+    PillsGridModule
   ]
 })
 export class CommonConsumptionModule { }

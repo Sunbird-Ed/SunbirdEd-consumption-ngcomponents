@@ -1,0 +1,6 @@
+<ng-template>
+  <div class="item" (click)="onClick($event)">
+    <img *ngIf="icon" src="{{icon}}" class="sb-icon-img sb-icon-img-sm" />
+    <label *ngIf="name">{{name}}</label>
+  </div>
+</ng-template>
