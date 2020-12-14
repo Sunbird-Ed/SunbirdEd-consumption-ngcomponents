@@ -8,7 +8,7 @@
   (childData?.contentData?.trackable?.enabled === 'Yes' || childData?.trackable?.enabled === 'Yes')">
   <sb-toc-card [content]="childData" (tocCardClick)="tocCardClickHandler($event)" [activeContent]="activeContent"
     [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
-    [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
+    [platform]="platform" [trackableDefaultImage]="trackableDefaultImage" [maxAttempts]="maxAttempts" [disabled]="disabled" [scoreLabel]="scoreLabel">
   </sb-toc-card>
 </ng-container>
 

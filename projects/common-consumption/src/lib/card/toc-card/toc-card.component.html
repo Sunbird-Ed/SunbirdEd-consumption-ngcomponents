@@ -26,10 +26,10 @@
         {{content?.name}}
       </h4>
     </div>
-    <h4 *ngIf="scoreLabel" class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two pr-8 pt-4 ml-auto" title="{{scoreLabel}}">
-      {{scoreLabel}}
+    <h4 *ngIf="bestScoreLabel" class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two pr-8 pt-4 ml-auto" title="{{bestScoreLabel}}">
+      {{bestScoreLabel}}
     </h4>
-    <button class="sbchapter__play__btn" 
+    <button class="sbchapter__play__btn" *ngIf="!isTrackable(content) && playBtnConfig.show"
       (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)">
       <svg class="icon icon-svg--primary">
         <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
@@ -42,9 +42,9 @@
 <!-- For card type course -->
 <div *ngIf="type === TocCardType.COURSE">
   <div class="sbchapter__item course-content"  (click)="onTocCardClick($event)"
-    [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier }">
-    <h4 *ngIf="scoreLabel" class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two pr-8 pt-4 ml-auto" title="{{scoreLabel}}">
-      {{scoreLabel}}
+  [ngClass]="[(activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier) ? 'sbchapter__item--active': '', isDisabled ? disabled: '']">
+    <h4 *ngIf="bestScoreLabel" class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two pr-8 pt-4 ml-auto" title="{{bestScoreLabel}}">
+      {{bestScoreLabel}}
     </h4>
     <h4 class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pl-8 pt-4" title="{{content?.name}}">
       {{content?.name}}

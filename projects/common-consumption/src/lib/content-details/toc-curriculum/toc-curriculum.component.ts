@@ -26,13 +26,15 @@ export class TocCurriculumComponent implements OnInit {
   @Input() playBtnConfig;
   @Input() platform;
   @Input() trackableDefaultImage;
+  @Input() maxAttempts;
+  @Input() disabled = '';
   @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
   @Input() activeContent;
   @Output() tocCardClick: EventEmitter<any> = new EventEmitter();
   @Output() noContent: EventEmitter<any> = new EventEmitter();
-  @Input() scoreLabel;
+  @Input() scoreLabel = '';
 
   get MimeTypeMasterData() { return MimeTypeMasterData; }
 
