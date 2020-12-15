@@ -8,7 +8,7 @@ import { IButtonConfig, PlatformType, TocCardType } from '../models';
   templateUrl: './toc-card.component.html',
   styleUrls: ['./toc-card.component.scss']
 })
-export class TocCardComponent implements OnInit {
+export class TocCardComponent implements OnInit, OnChanges {
   @Input() content;
   @Input() activeContent;
   @Input() type: TocCardType = TocCardType.TEXTBOOK;
@@ -50,6 +50,15 @@ export class TocCardComponent implements OnInit {
     }
     if (!this.platform) {
       this.platform = PlatformType.MOBILE;
+    }
+  }
+
+  ngOnChanges(changes) {
+    if (changes && changes.contentStatus) {
+      if (this.type === TocCardType.COURSE) {
+        this.createIconMap();
+      }
+      this.getBestScore();
     }
   }
 
