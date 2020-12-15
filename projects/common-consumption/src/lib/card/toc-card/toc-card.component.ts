@@ -35,8 +35,8 @@ export class TocCardComponent implements OnInit {
   ngOnInit() {
     if (this.type === TocCardType.COURSE) {
       this.createIconMap();
-      this.getBestScore();
     }
+    this.getBestScore();
     setTimeout(() => {
       if (this.activeContent && this.activeContent.sbUniqueIdentifier === this.content.sbUniqueIdentifier) {
         this.tocCardClick.emit({ event: {}, data: { ...this.content } });
@@ -98,7 +98,7 @@ export class TocCardComponent implements OnInit {
   getBestScore() {
     this.contentStatus.forEach((item) => {
       if (item.contentId === this.content.identifier && item.bestScore) {
-        this.bestScoreLabel = this.scoreLabel + ' ' + item.bestScore.totalMaxScore.toString() + '/' + item.bestScore.totalScore.toString();
+        this.bestScoreLabel = this.scoreLabel + ' ' + item.bestScore.totalScore.toString() + '/' + item.bestScore.totalMaxScore.toString();
         if (this.maxAttempts - item.score.length === 1) this.isLastAttempt = true;
         if (item.score.length >= this.maxAttempts) this.isDisabled = true;
       }
