@@ -22,10 +22,11 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     @Input() isMenu: boolean = false;
     @Input() layoutConfig:any;
     @Input() indexToDisplay:number;
+    @Input() contentCount: number;
     @Input() isSelected = false;
-
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
+    @Output() onCheckboxChange: EventEmitter<ICardClick> = new EventEmitter();
 
     get LibraryCardTypes() { return LibraryCardTypes; }
 
@@ -41,8 +42,7 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     onMenuClick(event: MouseEvent) {
         this.menuClick.emit({ event: event, data: this.content });
     }
-
-    test() {
-
+    onCheckOrUncheck(event: MouseEvent) {
+        this.onCheckboxChange.emit({ event: event, data: this.content });
     }
 }
