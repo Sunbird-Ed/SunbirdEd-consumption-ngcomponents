@@ -2,7 +2,7 @@
   <div class="sb-notification-list-header d-flex flex-ai-center flex-jc-space-between">
     <div class="notification-info d-flex flex-ai-center mb-8">
       <div class="status" *ngIf="!notification?.isRead"></div>
-      <div class="date ml-8">{{notification?.createdOn * 1000 | date:'E, d MMMM h:mm'}}</div>
+      <div class="date ml-8">{{notification?.createdOn | date:'E, d MMMM h:mm'}}</div>
     </div>
     <div class="delete-icon" (click)="notificationDeleteHandler($event);$event.stopPropagation()">
       <img class="Delete-gray" src="assets/common-consumption/images/Delete-gray.svg" alt="" alt="delete" width="14px">
