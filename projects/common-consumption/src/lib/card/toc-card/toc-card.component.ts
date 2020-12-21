@@ -106,7 +106,7 @@ export class TocCardComponent implements OnInit, OnChanges {
 
   getBestScore() {
     this.contentStatus.forEach((item) => {
-      if (item.contentId === this.content.identifier && item.bestScore) {
+      if (item.contentId === this.content.identifier && item.bestScore && this.scoreLabel && this.maxAttempts) {
         this.bestScoreLabel = this.scoreLabel + ' ' + item.bestScore.totalScore.toString() + '/' + item.bestScore.totalMaxScore.toString();
         if (this.maxAttempts - item.score.length === 1) this.isLastAttempt = true;
         if (item.score.length >= this.maxAttempts) this.isDisabled = true;
