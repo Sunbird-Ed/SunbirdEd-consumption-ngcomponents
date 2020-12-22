@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 export interface IPreviewActionButton {
   label: string;
@@ -18,7 +18,7 @@ export interface IPreviewActionButtonClick {
   styleUrls: ['./certificate-actions.component.scss']
 })
 
-export class CertificateActionsComponent {
+export class CertificateActionsComponent implements OnInit {
   @Input() select: IPreviewActionButton = { show: false, label: 'Select', name: 'select' };
   @Input() preview: IPreviewActionButton = { show: false, label: 'Preview', name: 'preview' };
   @Input() remove: IPreviewActionButton = { show: false, label: 'Remove', name: 'remove' };
@@ -29,6 +29,7 @@ export class CertificateActionsComponent {
   @Output() buttonClick = new EventEmitter<IPreviewActionButtonClick>();
 
   showOverlay = true;
+  templateUrl: SafeResourceUrl | string = '';
   constructor(public domSanitizer: DomSanitizer) { }
 
   onButtonClick(event: MouseEvent, name: string) {
@@ -40,10 +41,9 @@ export class CertificateActionsComponent {
     this.buttonClick.emit({ event, name });
   }
 
-  getSafeUrl(url) {
-    if (url) {
-      return this.domSanitizer.bypassSecurityTrustResourceUrl(url);
+  ngOnInit() {
+    if (this.template) {
+     this.templateUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.template);
     }
-    return '';
   }
 }
