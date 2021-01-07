@@ -82,14 +82,14 @@ export class TocCardComponent implements OnInit {
     }));
 
     if (this.isCourseCompleted) {
-      this.content.appIcon = 'assets/common-consumption/images/sprite.svg#circle-with-check-symbol';
+      this.content.appIcon = 'assets/common-consumption-v8/images/sprite.svg#circle-with-check-symbol';
     } else {
       this.iconPathMap = [
-        [mimeTypesData.COLLECTION, 'assets/common-consumption/images/sprite.svg#doc'],
-        [mimeTypesData.VIDEO, 'assets/common-consumption/images/sprite.svg#play'],
-        [mimeTypesData.AUDIO, 'assets/common-consumption/images/sprite.svg#play'],
-        [mimeTypesData.INTERACTIVE, 'assets/common-consumption/images/sprite.svg#touch'],
-        [mimeTypesData.DOCS, 'assets/common-consumption/images/sprite.svg#doc'],
+        [mimeTypesData.COLLECTION, 'assets/common-consumption-v8/images/sprite.svg#doc'],
+        [mimeTypesData.VIDEO, 'assets/common-consumption-v8/images/sprite.svg#play'],
+        [mimeTypesData.AUDIO, 'assets/common-consumption-v8/images/sprite.svg#play'],
+        [mimeTypesData.INTERACTIVE, 'assets/common-consumption-v8/images/sprite.svg#touch'],
+        [mimeTypesData.DOCS, 'assets/common-consumption-v8/images/sprite.svg#doc'],
       ];
       this.content.appIcon = this.getIconPath(this.content.mimeType);
     }

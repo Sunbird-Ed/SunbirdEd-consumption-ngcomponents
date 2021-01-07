@@ -60,6 +60,6 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     }
     fetchSvg() {
         var indexToDisplay = this.indexToDisplay!=null ? (this.indexToDisplay % 9)+1:2;
-        this.svgToDisplay =  "assets/common-consumption/images/abstract_0"+indexToDisplay+".svg";
+        this.svgToDisplay =  "assets/common-consumption-v8/images/abstract_0"+indexToDisplay+".svg";
     }
 }
