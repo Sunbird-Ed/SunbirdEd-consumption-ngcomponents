@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IActionButton, ActionButtonType, IButtonClick } from './model';
 
-const IMAGE_PATH = 'assets/common-consumption/images/sprite.svg';
+const IMAGE_PATH = 'assets/common-consumption-v8/images/sprite.svg';
 const DEFAULT_BUTTON: IActionButton = {
   name: ActionButtonType.FULL_SCREEN,
   label: 'Fullscreen',

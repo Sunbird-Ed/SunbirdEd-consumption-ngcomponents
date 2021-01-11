@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter, ViewChild, TemplateRef } from '
 
 export class PillItemComponent {
 
-    @ViewChild(TemplateRef) template: TemplateRef<any>;
+    @ViewChild(TemplateRef, {static: false}) template: TemplateRef<any>;
 
     @Input() name: string;
     @Input() icon: string;
