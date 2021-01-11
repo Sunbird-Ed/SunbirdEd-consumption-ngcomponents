@@ -13,14 +13,14 @@
     <!-- card mobile view details -->
     <div class="sb--card__info">
         <div class="sb--card__meta1">
-          <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
+          <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{contentData?.name}}"><bdi>{{contentData?.name}}</bdi></h4>
           <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
         </div>
       
-      <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-        <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
-        <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
-        <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
+      <div class="sb--card__meta1 text-left" *ngIf="contentData?.subject?.length || contentData?.gradeLevel?.length">
+        <span class="data_1 ellipsis" title="{{contentData?.subject}}">{{contentData?.subject}}</span>
+        <span *ngIf="contentData?.subject?.length && contentData?.gradeLevel?.length" class="dot-divider"></span>
+        <span class="data_2 ellipsis" title="{{contentData?.gradeLevel}}">{{contentData?.gradeLevel}}</span>
       </div>
     </div>
   </div>
@@ -30,15 +30,15 @@
     <div class="sb--card__moreinfo">
       <!-- other meta info Medium, Organization etc -->
       <div class="sb--card__meta2 text-left">
-        <div class="sb--card__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
-            {{content?.medium}}</span></div>
-        <div class="sb--card__org sb__ellipsis" *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div>
+        <div class="sb--card__meta2_data" *ngIf="contentData?.medium"><span class="">{{moreInfoLabel}}:
+            {{contentData?.medium}}</span></div>
+        <div class="sb--card__org sb__ellipsis" *ngIf="contentData?.organisation"><bdi>{{contentData?.organisation}}</bdi></div>
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
       <div class="sb--card__tags">
-        <span class="sb--card__badge" *ngIf="content?.badgeAssertions"><img
-            [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
-        <span class="sb--card__type" *ngIf="content?.resourceType">{{content?.resourceType}}</span>
+        <span class="sb--card__badge" *ngIf="contentData?.badgeAssertions"><img
+            [src]="contentData?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
+        <span class="sb--card__type" *ngIf="contentData?.resourceType">{{contentData?.resourceType}}</span>
       </div>
     </div>
     <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
@@ -69,7 +69,7 @@
     
   </ng-content> -->
   <ng-container
-    *ngTemplateOutlet="gridTemplate; context: {$implicit: content?.hoverData, hoverData: content?.hoverData, content:content}"
+    *ngTemplateOutlet="gridTemplate; context: {$implicit: contentData?.hoverData, hoverData: contentData?.hoverData, content:contentData}"
     class="card-hover">
 
   </ng-container>
@@ -110,7 +110,7 @@
   </div>
 </span>
 <span *ngIf="layoutConfig">
-    <sb-library-card-v2 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
+    <sb-library-card-v2 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="contentData" [isMobile]="isMobile"
     [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel"
     [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
     [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 

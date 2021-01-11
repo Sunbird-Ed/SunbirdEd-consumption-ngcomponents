@@ -1,0 +1,53 @@
+<div class="layout-course" *ngIf="!isLoading">
+    <div class="header">
+        <div class="title"> {{title}} <hr> </div>
+        <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.TOP" (click)="onViewMoreClick($event)">
+            {{viewMoreButtonText}}
+        </button>
+    </div>
+
+    <div class="sb--scrolling-wrapper-flexbox" *ngIf="!multiRow">
+        <div *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let index = index" class="sb--card--container">
+            <sb-library-card [indexToDisplay]="index" [layoutConfig]="layoutConfig" [content]="content" [type]="type" [isMobile]="isMobile" [isOffline]="(isOffline && !content.isAvailableLocally)" [moreInfoLabel]="moreInfoLabel" [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon" [isMenu]="isMenu" [isSelected]="isSelected" (cardClick)="onCardClick($event, index)" (menuClick)="onMenuClick($event)" [cardImg]="content?.cardImg || content?.contentData?.cardImg"></sb-library-card>
+        </div>
+        <div class="view-all">
+            <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white sb-btn-oval" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.RIGHT" (click)="onViewMoreClick($event)">
+                {{viewMoreButtonText}}
+            </button>
+        </div>
+    </div>
+    
+    <div class="sb--scrolling-wrapper-flexbox" *ngIf="multiRow">
+        <span *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let index = index">
+            <div *ngIf="index%2 == 0" class="sb--card--container">
+                <sb-library-card class="sb--card--seperator" *ngIf="contentList[index]!=null" [indexToDisplay]="index" [layoutConfig]="layoutConfig" [content]="contentList[index]" [type]="type" [isMobile]="isMobile" [isOffline]="isOffline && !content.isAvailableLocally" [moreInfoLabel]="moreInfoLabel" [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon" [isMenu]="isMenu" [isSelected]="isSelected" (cardClick)="onCardClick($event, index)" (menuClick)="onMenuClick($event)" [cardImg]="contentList[index]?.cardImg || contentList[index]?.contentData?.cardImg"></sb-library-card>
+                <sb-library-card class="sb--card--seperator" *ngIf="index+1 < contentList.length" [indexToDisplay]="index+1" [layoutConfig]="layoutConfig" [content]="contentList[index+1]" [type]="type" [isMobile]="isMobile" [isOffline]="isOffline && !content.isAvailableLocally" [moreInfoLabel]="moreInfoLabel" [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon" [isMenu]="isMenu" [isSelected]="isSelected" (cardClick)="onCardClick($event, index+1)" (menuClick)="onMenuClick($event)" [cardImg]="contentList[index+1]?.cardImg || contentList[index+1]?.contentData?.cardImg"></sb-library-card>
+            </div>
+        </span>
+        <div class="view-all">
+            <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white sb-btn-oval" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.RIGHT" (click)="onViewMoreClick($event)">
+                {{viewMoreButtonText}}
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="layout-course" *ngIf="isLoading">
+    <div class="header" style="width:120px;">
+        <div class="title loading-animation sb--card--highlighter"></div>
+    </div>
+
+    <div class="sb--scrolling-wrapper-flexbox" *ngIf="maxCardCount > 0 && !multiRow">
+        <div *ngFor="let content of range(maxCardCount); let index=index" class="sb--card--container">
+            <sb-library-card [indexToDisplay]="index" [isLoading]="isLoading" [type]="type"></sb-library-card>
+        </div>
+    </div>
+
+    <div class="sb--scrolling-wrapper-flexbox" *ngIf="maxCardCount > 0 && multiRow">
+        <div *ngFor="let content of range(maxCardCount); let index=index" class="sb--card--container">
+            <sb-library-card [indexToDisplay]="index" [isLoading]="isLoading" [type]="type"></sb-library-card>
+            <sb-library-card [indexToDisplay]="index" [isLoading]="isLoading" [type]="type"></sb-library-card>
+        </div>
+    </div>
+
+</div>

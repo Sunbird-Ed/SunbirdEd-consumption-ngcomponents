@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { courseSection } from './course-section-data';
 import { myCourses } from './my-courses-data';
-import { ICourse, CourseCardGridTypes, CourseCardTypes } from '../../card/models';
+import { ICourse, CourseCardGridTypes, CourseCardTypes, ButtonPosition } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
@@ -23,11 +23,14 @@ export class CourseCardsHlistComponent implements OnInit {
    @Input() hideProgress:boolean;
 
    /* Show Menu on each card */
-   @Input() isMenu = false;
+    @Input() isMenu = false;
+    @Input() viewMoreButtonPosition: ButtonPosition = ButtonPosition.TOP
 
    @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
    @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
    @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
+
+    get ButtonPosition() { return ButtonPosition; }
 
   constructor() {
   }

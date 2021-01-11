@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, ViewChild, TemplateRef } from '@angular/core';
+import { PillsColorTheme } from '../models';
 
 @Component({
     selector: 'sb-pill-item',
@@ -13,6 +14,7 @@ export class PillItemComponent {
     @Input() name: string;
     @Input() icon: string;
     @Input() value?: any;
+    @Input() theme: PillsColorTheme;
     @Output() click = new EventEmitter<MouseEvent>();
 
     onSelect?: (pill: PillItemComponent, event: MouseEvent) => void;
