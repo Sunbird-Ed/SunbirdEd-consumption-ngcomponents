@@ -9,7 +9,7 @@ import { PillsColorTheme } from '../models';
 
 export class PillItemComponent {
 
-    @ViewChild(TemplateRef) template: TemplateRef<any>;
+    @ViewChild(TemplateRef,{static:false}) template: TemplateRef<any>;
 
     @Input() name: string;
     @Input() icon: string;
