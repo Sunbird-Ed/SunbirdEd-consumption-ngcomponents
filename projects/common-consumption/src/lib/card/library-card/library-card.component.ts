@@ -29,10 +29,7 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
 
     get LibraryCardTypes() { return LibraryCardTypes; }
 
-    contentData: any;
-
     ngOnInit() {
-        this.contentData = (this.type === LibraryCardTypes.MOBILE_TEXTBOOK && this.content.contentData) ? this.content.contentData : this.content;
     }
 
     ngAfterViewInit(): void {
