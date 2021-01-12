@@ -36,7 +36,7 @@
       overflow: hidden;
       flex: 1;
       height: calculateRem(24px);
-      color: var(--secondary-color);
+      color: var(--black);
       font-size: calculateRem(18px);
       font-weight: bold;
       text-transform: capitalize;
@@ -49,10 +49,10 @@
         display: none;
       }
     }
-  }
-
-  .sb-btn-oval{
-    border-radius: 50%;
+	}
+	
+	.sb-btn-oval{
+		border-radius: 50%;
     padding: 0;
     height: 80%;
     top: 10%;

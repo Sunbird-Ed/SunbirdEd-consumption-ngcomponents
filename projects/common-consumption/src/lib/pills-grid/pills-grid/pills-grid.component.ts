@@ -1,5 +1,5 @@
 import { AfterContentInit, Component, ContentChildren, Input, Output, EventEmitter, QueryList, TemplateRef, OnInit } from '@angular/core';
-import { PillBorder, PillShape, PillsViewType, SelectMode } from '../models';
+import { PillBorder, PillShape, PillsViewType, SelectMode, PillsMultiRow, ShowMoreViewType } from '../models';
 import { PillItemComponent } from '../pill-item/pill-item.component';
 
 @Component({
@@ -18,16 +18,21 @@ export class PillsGridComponent implements AfterContentInit, OnInit {
     @Input() pillsViewType: PillsViewType = PillsViewType.NONE;
     @Input() pillBorder: PillBorder = PillBorder.NONE;
     @Input() selectMode: SelectMode = SelectMode.SINGLE;
+    @Input() pillsMultiRow: PillsMultiRow = PillsMultiRow.DEFAULT;
     @Input() minDisplayCount: number;
     @Input() viewMoreText: string;
     @Input() viewLessText: string;
+    @Input() showMoreViewType: ShowMoreViewType = ShowMoreViewType.EXPAND
 
     @Output() select = new EventEmitter<any>();
+    @Output() viewMorePillList = new EventEmitter<any>();
     viewCount: number;
 
     get PillShape() { return PillShape; }
     get PillsViewType() { return PillsViewType; }
     get PillBorder() { return PillBorder; }
+    get PillsMultiRow() { return PillsMultiRow; }
+    get ShowMoreViewType() { return ShowMoreViewType; }
 
     ngOnInit() {
         this.assignDefaultPillsConfig();
@@ -38,9 +43,11 @@ export class PillsGridComponent implements AfterContentInit, OnInit {
         this.pillsViewType = this.pillsViewType || PillsViewType.NONE;
         this.pillBorder = this.pillBorder || PillBorder.NONE;
         this.selectMode = this.selectMode || SelectMode.SINGLE;
+        this.pillsMultiRow = this.pillsMultiRow || PillsMultiRow.DEFAULT;
         if (this.minDisplayCount !== null && this.minDisplayCount !== undefined) {
             this.viewMoreText = this.viewMoreText || 'View More';
             this.viewLessText = this.viewLessText || 'View Less';
+            this.showMoreViewType = this.showMoreViewType || ShowMoreViewType.EXPAND;
         }
     }
 
@@ -80,6 +87,10 @@ export class PillsGridComponent implements AfterContentInit, OnInit {
         this.viewCount = this.minDisplayCount;
         this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
         this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
+    }
+
+    viewMoreInNewScreen(event) {
+        this.viewMorePillList.emit({ event, data: (this.pillItems && this.pillItems.toArray()) });
     }
 
 }

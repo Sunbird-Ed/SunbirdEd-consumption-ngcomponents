@@ -52,8 +52,8 @@
       }
     }
     &.sb-box-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      grid-auto-rows: minmax(100px, auto);
+      grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+      grid-auto-rows: minmax(7.5rem, auto);
       &.show-icon {
         align-items: center;
       }
@@ -63,7 +63,7 @@
         justify-content: flex-end;
         font-weight: bold;
         padding: 0.5rem 0.5rem 1rem 0.5rem;
-        min-height: 100px;
+        height: 7.5rem;
         text-align: center;
         .sb-icon-img {
           margin-bottom: 0.5rem;
@@ -95,8 +95,7 @@
       }
       &.hscroll {
         grid-auto-flow: column;
-        grid-auto-columns: minmax(120px, 1fr);
-        padding-right: 50px;
+        grid-auto-columns: minmax(7.5rem, 1fr);
       }
     }
     &.sb-pills-grid {
@@ -109,8 +108,9 @@
         justify-content: flex-start;
         padding: 0.5rem;
         height: 2.5rem;
+        flex: none;
         label {
-          // max-width:90%;
+          // max-width: 90%;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -124,7 +124,70 @@
     &.hscroll {
       overflow-x: auto;
       overflow-y: hidden;
-      padding: 0.75rem 0px;
+      padding: 0.75rem 5px;
+    }
+    &.icon-header {
+      display: flex;
+      padding: 1.75rem 0.5rem 0;
+      .item {
+        justify-content: space-around;
+        height: 6rem;
+        width: 5.5rem;
+        font-size: 0.75rem;
+        font-weight: normal;
+        overflow: initial;
+        border: 0px;
+        flex: none;
+        margin-right: 0.5rem;
+        .img {
+          padding: 1rem;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0.25rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          padding: 8px;
+          margin-top: -32px;
+          box-shadow: -2px 8px 5px -2px rgba(0, 0, 0, 0.1);
+          img {
+            margin: 0 0 0 0;
+          }
+        }
+      }
+    }
+    &.two-rows-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(16.375rem, 1fr));
+      &.row-sequence {
+        grid-auto-flow: row !important;
+      }
+      &.column-sequence {
+        grid-auto-flow: column !important;
+        grid-template-rows: repeat(2, 4.5rem);
+      }
+      &.one-row-grid {
+        grid-template-columns: none;
+      }
+      .item {
+        height: 4.5rem;
+        border-radius: 1.5rem;
+        border: 0px;
+        .img {
+          width: 3rem;
+          height: 3rem;
+          background: #f2f2f2;
+          border-radius: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 0.5rem;
+          img {
+            margin: 0 0 0 0;
+          }
+        }
+      }
     }
   }
 }

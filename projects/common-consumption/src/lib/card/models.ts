@@ -229,3 +229,8 @@ export interface IAccordianConfig {
     expandBehavior: ExpandBehavior;
 }
 
+export enum ButtonPosition {
+    TOP = "top",
+    RIGHT = "right",
+    BOTTOM = "bottom"
+}

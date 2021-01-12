@@ -7,6 +7,7 @@ import { CourseCardsHlistComponent } from './course-cards-hlist/course-cards-hli
 import { MemberListComponent } from './member-list/member-list.component';
 import { CardsGridComponent } from './cards-grid/cards-grid.component';
 import { InAppNotificationComponent } from './in-app-notification/in-app-notification.component';
+import { LibraryCardsHlistComponent } from './library-cards-hlist/library-cards-hlist.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { InAppNotificationComponent } from './in-app-notification/in-app-notific
     CourseCardsHlistComponent,
     MemberListComponent,
     CardsGridComponent,
-    InAppNotificationComponent
+    InAppNotificationComponent,
+    LibraryCardsHlistComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,8 @@ import { InAppNotificationComponent } from './in-app-notification/in-app-notific
     CourseCardsHlistComponent,
     MemberListComponent,
     CardsGridComponent,
-    InAppNotificationComponent]
+    InAppNotificationComponent,
+    LibraryCardsHlistComponent
+  ]
 })
 export class LayoutModule { }
