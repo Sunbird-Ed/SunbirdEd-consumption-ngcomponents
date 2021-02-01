@@ -13,8 +13,8 @@
 
 <!-- For card type TRACKABLE -->
 <div *ngIf="type === TocCardType.TRACKABLE">
-  <div class="sbchapter__item" [ngClass]="{'sb-card-swap': swapCard(content)}" (click)="onTocCardClick($event)"
-    [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
+  <div class="sbchapter__item" (click)="onTocCardClick($event)"
+    [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier, 'sb-card-swap': swapCard(content)}">
     <div class="relative">
       <img src="assets/common-consumption/images/completed.svg" *ngIf="content?.isAvailableLocally" class="sb_success_check" alt="">
       <div class="sbchapter__img">
