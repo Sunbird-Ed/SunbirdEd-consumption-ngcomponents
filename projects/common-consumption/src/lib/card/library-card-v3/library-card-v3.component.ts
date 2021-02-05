@@ -44,10 +44,9 @@ export class LibraryCardV3Component implements OnInit, AfterViewInit {
     }
     splitGradeMedium() {
         if(this.content && this.content.gradeLevel) {
-            this.content.gradeLevel = 
-            typeof this.content.gradeLevel === "string"?this.content.gradeLevel.split(',') : this.content.gradeLevel;
+            this.content.gradeLevel = this.content.gradeLevel.join(' and ');
         } else if (this.content && this.content.medium) {
-            this.content.medium = typeof this.content.medium === "string"?this.content.medium.split(',') : this.content.medium;
+            this.content.medium = this.content.medium.join(' and ');
         }
     }
    /* onMenuClick(event: MouseEvent) {
