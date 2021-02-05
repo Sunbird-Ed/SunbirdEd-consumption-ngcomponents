@@ -130,6 +130,7 @@
       padding:0rem calculateRem(16px);
     }
     .sb--card__title {
+      color: unset;
       font-size: calculateRem(24px);
       margin-right: calculateRem(88px);
       html[dir="rtl"] & {
@@ -146,6 +147,7 @@
     .sb--card__meta1 {
       height: calculateRem(40px);
       flex-wrap: wrap;
+      width: 80%;
       .data_1, .data_2 {
         color: #024F9D;
         border-radius: calculateRem(8px);
