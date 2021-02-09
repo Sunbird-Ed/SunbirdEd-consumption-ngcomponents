@@ -23,7 +23,7 @@
       <span  title="{{content?.subject}}">{{content?.subject}}</span>
     </div>
     <div class="sb--card__meta1 text-left" *ngIf="content?.board?.length || content?.medium?.length || content?.gradeLevel?.length">
-      <span class="data_1 ellipsis" title="{{content?.board.length}}">{{content?.board}}</span>
+      <span class="data_1 ellipsis" title="{{content?.board}}">{{content?.board}}</span>
       <span *ngIf="content?.subject?.length && content?.medium?.length" class="dot-divider"></span>
       <span class="data_2 ellipsis" title="{{content?.medium}}">{{content?.medium}}</span>
       <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
