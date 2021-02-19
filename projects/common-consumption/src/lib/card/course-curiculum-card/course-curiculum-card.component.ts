@@ -22,13 +22,13 @@ export class CourseCuriculumCardComponent implements OnInit {
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
   palatteList = [
-    {bgColor:"#FFDFC7",fontColor:"#AD632D"},
-    {bgColor:"#C2ECE6",fontColor:"#149D88"},
-    {bgColor:"#FFE59B",fontColor:"#8D6A00"},
-    {bgColor:"#DAD4FF",fontColor:"#635CDC"},
-    {bgColor:"#80cbc4",fontColor:"#00695c"},
-    {bgColor:"#e6ee9c",fontColor:"#9e9d24"},
-    {bgColor:"#ffe082",fontColor:"#ff8f00"}]
+    {bgColor:"#FFDFC7",fontColor:"#6D3E1C"},
+    {bgColor:"#C2ECE6",fontColor:"#0B5046"},
+    {bgColor:"#FFE59B",fontColor:"#5C4500"},
+    {bgColor:"#DAD4FF",fontColor:"#2F27B9"},
+    {bgColor:"#80cbc4",fontColor:"#00332E"},
+    {bgColor:"#e6ee9c",fontColor:"#4C4C10"},
+    {bgColor:"#ffe082",fontColor:"#6B3D00"}]
 
   constructor() { }
 
