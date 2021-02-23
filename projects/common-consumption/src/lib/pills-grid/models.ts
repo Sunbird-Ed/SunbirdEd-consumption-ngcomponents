@@ -26,6 +26,21 @@ export enum ShowMoreViewType{
     EXPAND = 'expand',
     NEW_SCREEN = 'new_screen'
 }
+export enum PillSize{
+    SMALL = 'small',
+    MEDIUM = 'medium',
+    LARGE = 'large',
+    EXTRA_LARGE = 'extra_large'
+}
+export enum PillTextElipsis{
+    NONE = 'none',
+    ONE_LINE = 'one_line',
+    TWO_LINE = 'two_line'
+}
+export enum PillBoxShadow{
+    DISABLE = 'disable',
+    ENABLE = 'enable'
+}
 export interface PillsColorTheme {
     iconBgColor?: string;
     pillBgColor?: string

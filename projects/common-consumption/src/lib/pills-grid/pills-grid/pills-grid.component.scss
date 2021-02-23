@@ -1,3 +1,17 @@
 .sb-view-more-less{
   text-align: center;
 }
+.sb-view-btn {
+  border: .0625rem solid #94CCF5;
+  border-radius: 1rem;
+  color: #0076FE;
+  font-size: 1rem;
+  text-align: center;
+  background: transparent;
+  width: 100%;
+  height: 2.5rem;
+  transition: .3s ease-in-out;
+  &:hover {
+    background-color: var(--white);
+  }
+} 
