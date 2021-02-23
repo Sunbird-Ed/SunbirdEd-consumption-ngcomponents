@@ -4,11 +4,18 @@
   'show-circle':(pillShape === PillShape.CIRCLE), 
   'icon-header':(pillShape === PillShape.IMAGE_OVERLAP),
   'hscroll': (pillsViewType === PillsViewType.SCROLL), 
-  'border-radius':(pillBorder === PillBorder.ROUNDED),
+  'show-bradius':(pillBorder === PillBorder.ROUNDED),
   'two-rows-grid':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_COLUMN) || (pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW) || (pillsMultiRow === PillsMultiRow.SINGLE),
   'one-row-grid':(pillsMultiRow === PillsMultiRow.SINGLE),
   'column-sequence':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_COLUMN),
-  'row-sequence':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW)
+  'row-sequence':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW),
+  'size--sm':(pillSize === PillSize.SMALL),
+  'size--md':(pillSize === PillSize.MEDIUM),
+  'size--lg':(pillSize === PillSize.LARGE),
+  'size--xl':(pillSize === PillSize.EXTRA_LARGE),
+  'show-ellipsis':(pillTextElipsis === PillTextElipsis.ONE_LINE),
+  'show-ellipsis--two':(pillTextElipsis === PillTextElipsis.TWO_LINE),
+  'show-bshadow':(pillBoxShadow === PillBoxShadow.ENABLE)
 }">
   <ng-container *ngFor="let ref of visiblePillTemplateRefs">
     <ng-container *ngTemplateOutlet="ref"></ng-container>
@@ -17,11 +24,11 @@
 
 <div class="sb-view-more-less pb-16" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
   <div *ngIf="showMoreViewType===ShowMoreViewType.EXPAND">
-    <button class="sb-btn sb-btn-normal view-more" *ngIf="viewCount < pillItems?.length" (click)="viewMore()">{{viewMoreText}}</button>
-    <button class="sb-btn sb-btn-normal view-less" *ngIf="viewCount === pillItems?.length"  (click)="viewLess()">{{viewLessText}}</button>
+    <button class="view-more sb-view-btn" *ngIf="viewCount < pillItems?.length" (click)="viewMore()">{{viewMoreText}}</button>
+    <button class="view-less sb-view-btn" *ngIf="viewCount === pillItems?.length"  (click)="viewLess()">{{viewLessText}}</button>
   </div>
 
   <div *ngIf="showMoreViewType===ShowMoreViewType.NEW_SCREEN">
-    <button class="sb-btn sb-btn-normal view-all" (click)="viewMoreInNewScreen($event)">{{viewMoreText}}</button>
+    <button class="view-all sb-view-btn" (click)="viewMoreInNewScreen($event)">{{viewMoreText}}</button>
   </div>
 </div>
