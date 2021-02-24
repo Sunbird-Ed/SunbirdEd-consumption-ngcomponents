@@ -3,6 +3,6 @@
     <span *ngIf="icon" class="img" [ngStyle]="{'background-color':theme?.iconBgColor}">
       <img src="{{icon}}" class="sb-icon-img sb-icon-img-sm" />
     </span>
-    <label *ngIf="name">{{name}}</label>
+    <label [ngStyle]="{'color':theme?.pillTextColor}" *ngIf="name">{{name}}</label>
   </div>
 </ng-template>
