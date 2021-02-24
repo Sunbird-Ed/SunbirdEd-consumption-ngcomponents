@@ -84,6 +84,14 @@
         }
       }
     }
+    &.show-round-bradius {
+      .item {
+        border-radius: 10rem;
+        span.img {
+          border-radius: 0.5em;
+        }
+      }
+    }
     &.sb-box-grid {
       grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
       grid-auto-rows: minmax(7.5em, auto);

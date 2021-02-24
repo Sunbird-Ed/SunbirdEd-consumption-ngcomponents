@@ -9,7 +9,8 @@ export enum PillsViewType {
     NONE = 'none'
 }
 export enum PillBorder {
-    ROUNDED = 'rounded',
+    ROUND = 'round',
+    SEMI_ROUND = 'semi_round',
     NONE = 'none'
 }
 export enum SelectMode {
@@ -43,5 +44,6 @@ export enum PillBoxShadow{
 }
 export interface PillsColorTheme {
     iconBgColor?: string;
-    pillBgColor?: string
+    pillBgColor?: string;
+    pillTextColor?: string;
 }
