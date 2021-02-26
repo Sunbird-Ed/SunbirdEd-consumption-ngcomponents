@@ -329,6 +329,7 @@
   }
 }
 
+:host{
 ::ng-deep {
 
   .card-hover {
@@ -383,6 +384,10 @@
   
       .action-item:not(:last-child) {
         border-right: calculateRem(1px) solid rgba(var(--rc-rgba-white), 0.5);
+        html[dir="rtl"] & {
+          border-left: calculateRem(1px) solid rgba(var(--rc-rgba-white), 0.5);
+          border-right: none;
+        }
       }
   
       .hover-meta-info {
@@ -394,7 +399,7 @@
       }
     }
   }
-
+}
 }
 
 
