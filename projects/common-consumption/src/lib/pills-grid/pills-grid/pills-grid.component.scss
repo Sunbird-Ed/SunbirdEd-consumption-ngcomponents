@@ -1,10 +1,15 @@
+:root {
+  --cc-viewbtn-border:#94CCF5;
+  --cc-viewbtn-text:#0076FE;
+  --cc-viewbtn-hover:var(--white);
+}
 .sb-view-more-less{
   text-align: center;
 }
 .sb-view-btn {
-  border: .0625rem solid #94CCF5;
+  border: .0625rem solid var(--cc-viewbtn-border);
   border-radius: 1rem;
-  color: #0076FE;
+  color: var(--cc-viewbtn-text);
   font-size: 1rem;
   text-align: center;
   background: transparent;
@@ -12,6 +17,6 @@
   height: 2.5rem;
   transition: .3s ease-in-out;
   &:hover {
-    background-color: var(--white);
+    background-color: var(--cc-viewbtn-hover);
   }
 } 

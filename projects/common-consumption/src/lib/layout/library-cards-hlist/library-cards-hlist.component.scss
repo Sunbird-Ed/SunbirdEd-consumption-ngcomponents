@@ -1,6 +1,10 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
+
+:root {
+  --cc-lb-card-hlist-title:var(--black);
+}
 :host {
   .layout-library {
     display: flex;
@@ -31,12 +35,13 @@
     padding: 0px 0;
     align-items: center;
     .title {
+      
       font-family: inherit;
       text-overflow: ellipsis;
       overflow: hidden;
       flex: 1;
       height: calculateRem(24px);
-      color: var(--black);
+      color: var(--cc-lb-card-hlist-title);
       font-size: calculateRem(18px);
       font-weight: bold;
       text-transform: capitalize;

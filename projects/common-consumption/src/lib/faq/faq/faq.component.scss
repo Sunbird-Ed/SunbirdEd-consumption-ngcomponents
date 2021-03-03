@@ -1,4 +1,13 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+
+:root {
+    --cc-faq-yesbtn-text:var(--secondary-color);
+    --cc-faq-helpheader-text:var(--white);
+    --cc-faq-helpheader-bg:var(--primary-color);
+    --cc-faq-panel-title-text:var(--primary-color);
+    --cc-faq-info-msg-bg:var(--primary-0);
+    --cc-faq-panelheader-bg: var(--white);
+}
 .contentPadding{
     padding-bottom: 0px;
 }
@@ -30,7 +39,7 @@ iframe {
     margin-left: calculateRem(5px);
 }
 .yesBtn{
-    color: var(--secondary-color);
+    color: var(--cc-faq-yesbtn-text);
 }
 .btn{
     cursor: pointer;
@@ -38,9 +47,9 @@ iframe {
 p{
     font-size: calculateRem(14px);
 }
-.help-header, .help-header-send-email{
-    background: var(--primary-color);
-    color: var(--white);
+.help-header, .help-header-send-email{   
+    background: var(--cc-faq-helpheader-bg);
+    color: var(--cc-faq-helpheader-text);
     padding: calculateRem(16px);
 }
 .help-header>h4,.help-header-send-email>h4{
@@ -63,11 +72,12 @@ p{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    color: var(--primary-color);
+    color: var(--cc-faq-panel-title-text);
 }
 .info-msg{
-        background-color: var(--primary-0)
+        background-color: var(--cc-faq-info-msg-bg);
     }
+   
 .report-text{
       padding-left: calculateRem(6px);
     }
@@ -174,7 +184,7 @@ p{
     margin-top: 0px;
 }
 .panel-default>.panel-heading{
-    background-color: var(--white);
+    background-color: var(--cc-faq-panelheader-bg);
     border-radius: 0px !important;
 }
 .panel-body{
@@ -202,6 +212,8 @@ p{
     color:var(--secondary-color);
     text-align: center;
 }
+
+
 
 .panel-info{
     text-align: center;

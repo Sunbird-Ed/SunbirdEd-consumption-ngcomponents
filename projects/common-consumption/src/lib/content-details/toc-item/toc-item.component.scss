@@ -1,8 +1,12 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
   
+:root {
+  --cc-chapter-br:var(--gray-100);
+  --cc-chapter-title:var(--gray-800);
+}
   //sbchapter css
   .sbchapter {
-    border-bottom: calculateRem(1px) solid var(--gray-100);
+    border-bottom: calculateRem(1px) solid var(--cc-chapter-br);
     padding: calculateRem(0px) calculateRem(0px) calculateRem(16px) calculateRem(0px);
     margin-bottom: calculateRem(16px);
     &:last-child{
@@ -11,15 +15,17 @@
       padding-bottom: 0px;
     }
     h4 {
+      
       font-size: calculateRem(10px);
       line-height:calculateRem(18px);
-      color: var(--gray-800);
+      color: var(--cc-chapter-title);
       margin-bottom:calculateRem(8px);
     }
     &__item {
-      background: var(--white);
-      box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary), 0.1);
-      border: calculateRem(0.5px) solid rgba(var(--rc-rgba-primary), 0.5);
+     
+      background: var(--cc-chapter-item-bg);
+      box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--cc-chapter-item-bs), 0.1);
+      border: calculateRem(0.5px) solid rgba(var(--cc-chapter-item-br), 0.5);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -30,7 +36,7 @@
       h4 {
         font-size: calculateRem(12px);
         line-height:calculateRem(20px);
-        color: var(--primary-400);
+        color:var(--cc-chapter-item-title-text);
         margin: 0px;
         padding: 0px;
       }
@@ -56,13 +62,16 @@
     }
   }
   .sbchapter-open {
-    border-bottom: calculateRem(1px) solid #e0e0e0;
+
+   
+
+    border-bottom: calculateRem(1px) solid var(--cc-chapter-item-open-br);
     padding-bottom: var(--base-block-space);
     &__title {
       //@extend .sbaccordion__panel-header__tilte;
       font-size: calculateRem(14px);
       font-weight: bold;
-      color: var(--primary-400);
+      color: var(--cc-chapter-item-open-title-text);
       margin: 0px;
       padding: calculateRem(16px);
       width: 100%;
@@ -74,7 +83,7 @@
       font-size: calculateRem(14px);
       line-height: calculateRem(22px);
       margin: 0px 0px calculateRem(8px) 0px;
-      color: var(--primary-400);
+      color: var(--cc-chapter-item-topic-title-text);
       padding: 0px calculateRem(16px);
     }
     &__topic {
@@ -82,12 +91,12 @@
       line-height: calculateRem(20px);
       padding: 8px calculateRem(32px);
       margin: 0px;
-      color: var(--primary-400);
+      color: var(--cc-chapter-item-topic-title-text);
     }
     &__topic--active {
-      background: var(--primary-100);
+      background: var(--cc-chapter-item-topic-title-text-active);
     }
-    &__topic:hover {
+    &__topic:hover {      
       background: var(--gray-0);
     }
   }
