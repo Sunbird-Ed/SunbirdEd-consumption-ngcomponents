@@ -19,7 +19,7 @@
         <bdi>{{content?.name}}</bdi></h4>
       <a *ngIf="isMenu" class="menu" (click)="$event.stopPropagation()"></a>
     </div>
-    <div *ngIf="content?.subject?.length">
+    <div class="data_4" *ngIf="content?.subject?.length">
       <span  title="{{content?.subject}}">{{content?.subject}}</span>
     </div>
     <div class="sb--card__meta1 text-left" *ngIf="content?.board?.length || content?.medium?.length || content?.gradeLevel?.length">

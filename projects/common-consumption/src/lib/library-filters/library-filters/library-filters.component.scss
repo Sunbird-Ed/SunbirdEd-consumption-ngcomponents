@@ -1,6 +1,18 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 
+:root{
+  --sb-pill-bg:var(--white);
+  --cc-pill-border:var(--secondary-color);
+  --cc-pill-text:var(--secondary-color);
+    --cc-pill-bg-hover:var(--secondary-color);
+    --cc-pill-text-hover:var(--white);
+  --cc-grade-pill-container-bg:var(--gray-0);
+  --cc-grade-pill-text:var(--primary-color);
+  --cc-grade-pill-bg-hover:var(--primary-color);
+  --cc-grade-pill-text-hover:var(--white);
+  --cc-grade-pill-svg-fill:var(--white);
+}
 :host {
   .fixed-container {
     width: 100%;
@@ -8,6 +20,7 @@
     z-index: 2;
   }
   .sb-slider-pills-container {
+    
     overflow-x: auto;
     .sb-pills-container {
       display: inline-flex;
@@ -15,7 +28,7 @@
       box-sizing: border-box;
       @include padding(calculateRem(16px) calculateRem(16px));
       .pill {
-        background-color: var(--white);
+        background-color: var(--sb-pill-bg);
         white-space: nowrap;
         -webkit-appearance: none;
         text-overflow: ellipsis;
@@ -51,36 +64,42 @@
       background: var(--white);
       min-width: 100%;
       .pill {
-        border: var(--secondary-color) calculateRem(1px) solid;
-        color: var(--secondary-color);
+        
+        border: var(--cc-pill-border) calculateRem(1px) solid;
+        color: var(--cc-pill-text);
         &:active,
         &:hover,
         &.active {
-          color: var(--white);
-          background-color: var(--secondary-color);
+         
+          color: var(--cc-pill-text-hover);
+          background-color: var(--cc-pill-bg-hover);
           box-shadow: 0 3px 4px 0 rgba(var(--rc-rgba-black), 0.19);
         }
       }
     }
     // grade filter pill styles
     .sb-grade-pills-container {
+     
       min-height: calculateRem(48px);
-      background: var(--gray-0);
+      background: var(--cc-grade-pill-container-bg);
       min-width: 100%;
       .pill {
+       
         border-radius: calculateRem(16px);
         @include padding(calculateRem(4px), calculateRem(16px));
-        color: var(--primary-color);
+        color: var(--cc-grade-pill-text);
         min-height: calculateRem(32px);
         &:active,
         &:hover,
         &.active {
-          background-color: var(--primary-color);
-          color: var(--white);
+         
+          background-color: var(--cc-grade-pill-bg-hover);
+          color: var(--cc-grade-pill-text-hover);
           box-shadow: 0 3px 4px 0 rgba(var(--rc-rgba-black), 0.19);
           .icon-svg {
             svg {
-              fill: var(--white);
+             
+              fill: var(--cc-grade-pill-svg-fill);
             }
           }
         }

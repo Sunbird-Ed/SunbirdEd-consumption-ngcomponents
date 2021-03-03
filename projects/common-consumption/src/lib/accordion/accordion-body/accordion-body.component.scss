@@ -1,19 +1,25 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 
+:root {
+  --cc-accordion-panel-br: var(--primary-300);
+  --cc-accordion-panel-bg: var(--gray-0);
+}
+
 .sbaccordion {
-    &__panel-content {
-      border: calculateRem(1px) solid var(--primary-300);
-      background: var(--gray-0);
-      min-height: calculateRem(32px);
-      padding:calculateRem(16px);
-      overflow: hidden;
-      overflow-y: auto;
-      max-height: 60vh;
-      margin-top: -1px;
-      border-bottom-left-radius: calculateRem(2px);
-      border-bottom-right-radius: calculateRem(2px);
-    }
-    .accordion-item-header-collapsed &__panel-header__title{
-      font-weight: normal;
-    }
+  &__panel-content {
+    border: calculateRem(1px) solid var(--cc-accordion-panel-br);
+    background: var(--cc-accordion-panel-bg);
+    min-height: calculateRem(32px);
+    padding: calculateRem(16px);
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 60vh;
+    margin-top: -1px;
+    border-bottom-left-radius: calculateRem(2px);
+    border-bottom-right-radius: calculateRem(2px);
   }
+
+  .accordion-item-header-collapsed &__panel-header__title {
+    font-weight: normal;
+  }
+}
