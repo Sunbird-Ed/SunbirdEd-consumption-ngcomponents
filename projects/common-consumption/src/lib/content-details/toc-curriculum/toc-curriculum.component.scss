@@ -1,5 +1,12 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 
+:root {
+  --cc-curriculum-br-bg:var(--white);
+  --cc-curriculum-bg:var(--white);
+    --cc-curriculum-br:var(--primary-200);
+    --cc-curriculum-active-bs:var(--rc-009D53);
+    --cc-curriculum-title-text:#3A3A3A;
+}
 .sb--card__progressbar {
   margin: calculateRem(16px) !important;
   width: unset !important;
@@ -23,7 +30,7 @@
     grid-auto-columns: calculateRem(176px);
   }*/
   .sb-curiculum__border {
-    background: var(--white);
+    background: var(--cc-curriculum-br-bg);
     box-shadow:  0 2px 7px rgba(var(--rc-rgba-black), 0.16);
     &:hover,
     &:active,
@@ -44,8 +51,8 @@
     position: relative;
     border-radius: calculateRem(8px);
     padding: calculateRem(8px) calculateRem(34px) calculateRem(0px) calculateRem(16px);
-    border: 1px solid var(--primary-200);
-    background: var(--white);
+    border: 1px solid var(--cc-curriculum-br);
+    background: var(--cc-curriculum-bg);
     font-weight: bold;
     display: flex;
     min-height: 48px;
@@ -53,7 +60,8 @@
     &:hover,
     &:active,
     &.active {
-      box-shadow: 0 2px 7px rgba(var(--rc-009D53), 0.65);
+      
+      box-shadow: 0 2px 7px rgba(--cc-curriculum-active-bs, 0.65);
     }
 
     &__chapter {
@@ -61,8 +69,9 @@
       align-items: flex-start;
       flex: 1;
       .title {
+        
         font-size: calculateRem(14px);
-        color:#3A3A3A;
+        color:var(--cc-curriculum-title-text);
         line-height: calculateRem(20px);
         -webkit-box-orient: vertical;
             display: -webkit-box;

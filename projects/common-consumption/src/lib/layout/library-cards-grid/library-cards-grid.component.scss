@@ -5,6 +5,7 @@
 :root {
   --cc-badge-bg: var(--rc-d4d3d3);
   --cc-badge-text: var(--gray-800);
+  --cc-lb-card-grid-title:var(--primary-color);
 }
 
 :host {
@@ -27,7 +28,7 @@
       overflow: hidden;
       flex: 1;
       height: calculateRem(24px);
-      color: var(--primary-color);
+      color: var(--cc-lb-card-grid-title);
       font-size: calculateRem(18px);
       font-weight: bold;
       text-transform: capitalize;
