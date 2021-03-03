@@ -4,6 +4,7 @@
 :root {
   --cc-sbcard-org-text: var(--balck);
   --cc-sbcard-selected-border: var(--primary-color);
+  --cc-sbcard-img-br:var(--white);
   --cd-sbcard-data1-bg: #E0F5EA;
   --sbt-pill-hs: 212, 100%;
   --cd-sbcard-data2-bg: hsl(var(--sbt-pill-hs), 90%);
@@ -20,7 +21,7 @@
       .img-container {
         position: relative;
         overflow: hidden;
-        border: calculateRem(4px) solid var(--white);
+        border: calculateRem(4px) solid var(--cc-sbcard-img-br);
 
         img {
           max-width: 100%;

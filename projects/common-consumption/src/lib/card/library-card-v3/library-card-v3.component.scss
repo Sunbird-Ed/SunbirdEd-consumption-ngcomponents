@@ -4,6 +4,7 @@
   --sbt-pill-hs: 212, 100%;
   --cd-sbcard-data2-bg:hsl(var(--sbt-pill-hs), 90%);
   --cd-sbcard-data2-bg-active:hsl(var(--sbt-pill-hs), 50%); //#0076FE
+  --cc-sbcard-selected-border:var(--primary-color);
 }
 /* sb card component css */
 :host {
@@ -50,7 +51,7 @@
       }
     }
     &.selected {
-      border: 1px solid #024F9D;
+      border: 1px solid var(--cc-sbcard-selected-border);
       border-radius: 4px;
       background-color: rgba(2,79,157,0.2);
     }
