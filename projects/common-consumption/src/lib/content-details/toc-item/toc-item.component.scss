@@ -2,6 +2,7 @@
   
 :root {
   --cc-chapter-br:var(--gray-100);
+  --cc-chapter-bg:var(--white);
   --cc-chapter-title:var(--gray-800);
   --cc-chapter-item-bg:varvar(--white);
       --cc-chapter-item-bs:var(--rc-rgba-primary);
@@ -15,6 +16,7 @@
 }
   //sbchapter css
   .sbchapter {
+    background: var(--cc-chapter-bg);
     border-bottom: calculateRem(1px) solid var(--cc-chapter-br);
     padding: calculateRem(0px) calculateRem(0px) calculateRem(16px) calculateRem(0px);
     margin-bottom: calculateRem(16px);

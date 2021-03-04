@@ -1,10 +1,12 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 :root {
   --cc-toc-card-item-bg:var(--white);
+  --cc-toc-card-item-hover:var(--primary-100);
+  --cc-toc-card-item-title:var(--primary-400);
+  --cc-toc-card-item-title-hover:var(--primary-400);
   --cc-toc-card-item-br:var(--primary-300);
   --cc-toc-card-item-bs:var(--rc-rgba-primary);
   --cc-toc-card-item-img-bg:var(--rc-dddddd);
-  --cc-toc-card-item-title:var(--primary-400);
   --cc-toc-card-item-score-text:#3F19C3;
 }
 .sbchapter {
@@ -45,7 +47,10 @@
       }
     }
     &:hover,&--active, &--active:hover {
-      background: var(--primary-100);
+      background: var(--cc-toc-card-item-hover);
+      .sbchapter__item__title {
+        color:var(--cc-toc-card-item-title-hover);
+      }
     }
     &--active {
       .sbchapter__item__title {
@@ -55,7 +60,6 @@
   }
 }
 .sbchapter__item__title{
-  
   font-size: calculateRem(12px);
   line-height: calculateRem(20px);
   color: var(--cc-toc-card-item-title);
@@ -69,7 +73,6 @@
   }
 }
 .sbchapter__item__score{
-  
   text-transform: uppercase;
   color: var(--cc-toc-card-item-score-text);
   font-size: calculateRem(11px);

@@ -5,6 +5,7 @@
   --cd-sbcard-data2-bg:hsl(var(--sbt-pill-hs), 90%);
   --cd-sbcard-data2-bg-active:hsl(var(--sbt-pill-hs), 50%); //#0076FE
   --cc-sbcard-selected-border:var(--primary-color);
+  --cd-sbcard-data1-2-text:var(--primary-color);
 }
 /* sb card component css */
 :host {
@@ -176,7 +177,6 @@
     .sb--card__meta1 {
       margin-top:0px;
       .data_1, .data_2 {
-        --cd-sbcard-data1-2-text:var(--primary-color);
         color: var(--cd-sbcard-data1-2-text);
         border-radius: calculateRem(8px);
         font-size: calculateRem(12px);
