@@ -61,7 +61,7 @@
     &:active,
     &.active {
       
-      box-shadow: 0 2px 7px rgba(--cc-curriculum-active-bs, 0.65);
+      box-shadow: 0 2px 7px rgba(var(--cc-curriculum-active-bs), 0.65);
     }
 
     &__chapter {
