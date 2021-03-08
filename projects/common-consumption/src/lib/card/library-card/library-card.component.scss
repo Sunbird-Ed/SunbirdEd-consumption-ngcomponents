@@ -21,6 +21,7 @@
   --cc-sbcard-offline-img-text: var(--white);
   --cc-sbcard-card__progressbar-bg: var(--gray-100);
   --cc-sbcard-card__progressbar-span-bg: var(--secondary-200);
+  --cc-sbcard-type-br:var(--gray-200);
 }
 
 /* sb card component css */
@@ -199,14 +200,14 @@
         height: 0;
         border-width: calculateRem(10px) calculateRem(5px);
         border-style: solid;
-        border-color: var(--gray-200) var(--gray-200) var(--gray-200) transparent;
+        border-color: var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) transparent;
         position: absolute;
         left: -10px;
 
         html[dir="rtl"] & {
           right: calculateRem(-10px);
           left: inherit;
-          border-color: var(--gray-200) transparent var(--gray-200) var(--gray-200);
+          border-color: var(--cc-sbcard-type-br) transparent var(--cc-sbcard-type-br) var(--cc-sbcard-type-br);
         }
       }
     }
