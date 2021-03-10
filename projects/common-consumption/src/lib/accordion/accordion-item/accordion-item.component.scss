@@ -1,5 +1,9 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 
+:root {
+  --cc-accordion-panel-header-bg: var(--white);
+  --cc-accordion-panel-header-br:var(--primary-300);
+}
 .sbaccordion {
     width: 100%;
     box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary), 0.1) !important;
@@ -10,7 +14,8 @@
       // box-shadow: 0 calculateRem(4px) calculateRem(4px) calculateRem(-4px) rgba(var(--rc-rgba-black), 0.25) 0 0 calculateRem(10px) 0 rgba(var(--rc-rgba-black), 0.25);
     }
     &__panel-header {
-      background: var(--white);
+      
+      background: var(--cc-accordion-panel-header-bg);
       padding: calculateRem(8px) calculateRem(16px);
       display: flex;
       align-items: center;
@@ -18,7 +23,7 @@
       cursor: pointer;
       height: calculateRem(56px);
       border-radius: calculateRem(4px);
-      border: 1px solid var(--primary-300);
+      border: 1px solid var(--cc-accordion-panel-header-br);
     }
     .accordion-item-header-collapsed &__panel-header__title{
       font-weight: normal;

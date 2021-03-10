@@ -1,9 +1,17 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 
+:root {
+  --cc-accordion-panel-header-bg: var(--white);
+  --cc-accordion-panel-header-br:var(--primary-300);
+  --cc-accordion-panel-header-title: var(--primary-400);
+  --cc-progress-circle-stroke:var(--secondary-200);
+  --cc-progress-circle-stroke2:var(--gray-100);
+}
 .sbaccordion {
  
   &__panel-header {
-    background: var(--white);
+    
+    background: var(--cc-accordion-panel-header-bg);
     padding: calculateRem(8px) calculateRem(16px);
     display: flex;
     align-items: center;
@@ -11,14 +19,15 @@
     cursor: pointer;
     height: calculateRem(56px);
     border-radius: calculateRem(4px);
-    border: 0.5px solid var(--primary-300);
+    border: 0.5px solid var(--cc-accordion-panel-header-br);
   }
 
   &__panel-header__title {
+    
     font-size: calculateRem(14px);
     line-height:calculateRem(20px);
     font-weight: bold;
-    color: var(--primary-400);
+    color: var(--cc-accordion-panel-header-title);
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -61,10 +70,10 @@
     fill: none;
     stroke-width: calculateRem(8px);
     &:nth-child(1) {
-      stroke: var(--secondary-200);
+      stroke: var(--cc-progress-circle-stroke);
     }
     &:nth-child(2) {
-      stroke: var(--gray-100);
+      stroke: var(--cc-progress-circle-stroke2);
       stroke-dasharray: 314.1592%;
     }
   }
