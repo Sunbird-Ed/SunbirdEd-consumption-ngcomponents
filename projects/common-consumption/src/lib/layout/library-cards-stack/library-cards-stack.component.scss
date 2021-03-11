@@ -2,7 +2,7 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 
-:root {
+::ng-deep :root {
 	--cc-lb-card-stack-title:var(--primary-color);
 	--cc-lb-card-stack-btn-bg:var(--primary-100);
 	--cc-lb-card-stack-btn-text:var(--primary-color);

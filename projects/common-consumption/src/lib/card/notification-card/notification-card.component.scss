@@ -1,6 +1,6 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 
-:root {
+::ng-deep :root {
   --cc-notification-list-bg:var(--white);
   --cc-notification-list-br:#ddd;
   --cc-notification-status-bg:var(--gray-200);

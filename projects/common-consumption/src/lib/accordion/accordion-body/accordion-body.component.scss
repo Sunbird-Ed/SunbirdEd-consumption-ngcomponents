@@ -1,6 +1,6 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 
-:root {
+::ng-deep :root {
   --cc-accordion-panel-br: var(--primary-300);
   --cc-accordion-panel-bg: var(--gray-0);
 }

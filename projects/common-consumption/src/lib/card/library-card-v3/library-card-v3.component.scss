@@ -1,6 +1,6 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
-:root {
+::ng-deep :root {
   --sbt-pill-hs: 212, 100%;
   --cd-sbcard-data2-bg:hsl(var(--sbt-pill-hs), 90%);
   --cd-sbcard-data2-bg-active:hsl(var(--sbt-pill-hs), 50%); //#0076FE

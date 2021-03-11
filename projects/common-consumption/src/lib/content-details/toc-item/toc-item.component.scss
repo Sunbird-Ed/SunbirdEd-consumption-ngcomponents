@@ -1,6 +1,6 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
   
-:root {
+::ng-deep :root{
   --cc-chapter-br:var(--gray-100);
   --cc-chapter-bg:var(--white);
   --cc-chapter-title:var(--gray-800);
