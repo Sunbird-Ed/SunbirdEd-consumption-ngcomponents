@@ -1,6 +1,6 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 
-:root {
+::ng-deep :root {
   --cc-curriculum-br-bg:var(--white);
   --cc-curriculum-bg:var(--white);
     --cc-curriculum-br:var(--primary-200);

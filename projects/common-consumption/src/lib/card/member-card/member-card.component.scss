@@ -1,6 +1,6 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
-:root {
+::ng-deep :root {
   --cc-members-list-item-selected:var(--rc-E0EFFF);
   --cc-members-list-item-selected-border:var(--rc-E0EFFF);
   --cc-members-list-item-menu-text:var(--gray-200);

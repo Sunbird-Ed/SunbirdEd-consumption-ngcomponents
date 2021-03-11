@@ -1,7 +1,7 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 
-:root {
+::ng-deep :root {
   --sb-pill-bg: var(--white);
   --cc-pill-border: var(--secondary-color);
   --cc-pill-text: var(--secondary-color);

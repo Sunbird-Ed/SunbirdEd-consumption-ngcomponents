@@ -2,7 +2,7 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 
-:root {
+::ng-deep :root {
   --cc-sbcard-img-label: #284C3F;
   --cc-sbcard-img-label-bg: #B3EBD7;
   --cc-sbcard-img-badge-bg: var(--black);

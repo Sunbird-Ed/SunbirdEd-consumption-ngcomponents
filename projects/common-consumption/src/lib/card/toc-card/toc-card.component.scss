@@ -1,5 +1,5 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-:root {
+::ng-deep :root {
   --cc-toc-card-item-bg:var(--white);
   --cc-toc-card-item-hover:var(--primary-100);
   --cc-toc-card-item-title:var(--primary-400);

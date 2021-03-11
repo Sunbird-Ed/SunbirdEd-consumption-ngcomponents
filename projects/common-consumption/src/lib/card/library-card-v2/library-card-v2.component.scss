@@ -1,7 +1,7 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 
-:root {
+::ng-deep :root {
   --cc-sbcard-org-text: var(--balck);
   --cc-sbcard-selected-border: var(--primary-color);
   --cc-sbcard-img-br:var(--white);

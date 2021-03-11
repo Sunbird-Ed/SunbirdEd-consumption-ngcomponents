@@ -2,7 +2,7 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 
-:root {
+::ng-deep :root{
   --cc-lb-card-hlist-title:var(--black);
 }
 :host {
