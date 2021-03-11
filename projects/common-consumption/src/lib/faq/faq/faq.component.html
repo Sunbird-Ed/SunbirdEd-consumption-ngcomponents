@@ -1,4 +1,4 @@
-<div class="panel panel-default" *ngFor="let faq of faqs; let i = index">
+<div class="panel panel-default cc-faq-panel" *ngFor="let faq of faqs; let i = index">
   <div data-toggle="collapse" (click)="toggleGroup(i,$event)">
     <div class="panel-heading">
       <div class="text-left" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
@@ -27,9 +27,9 @@
     <div class="panel-interact" *ngIf="!isNoClicked && !isYesClicked">
       <p class="panelText">{{data?.constants?.helpMsg}}&lrm;</p>
       <div class="d-flex flex-jc-center">
-        <button type="button" class="sb-btn sb-btn-normal sb-btn-success mr-8" id="btn-yes"
+        <button type="button" class="sb-btn sb-btn-normal sb-btn-success mr-8 yes-btn" id="btn-yes"
           (click)="yesClicked(i,$event)">{{data?.constants?.yesMsg}}</button>
-      <button type="button" class="sb-btn sb-btn-normal sb-btn-outline-primary" id="btn-no"
+      <button type="button" class="sb-btn sb-btn-normal sb-btn-outline-primary no-btn" id="btn-no"
         (click)="noClicked(i,$event)">{{data?.constants?.noMsg}}</button>
         </div>
     </div>

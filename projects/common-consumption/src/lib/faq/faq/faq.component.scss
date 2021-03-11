@@ -7,6 +7,13 @@
     --cc-faq-panel-title-text:var(--primary-color);
     --cc-faq-info-msg-bg:var(--primary-0);
     --cc-faq-panelheader-bg: var(--white);
+    --cc-faq-panel-body-bg:var(--white);
+    --cc-faq-panel-interact-bg:var(--white);
+    --cc-faq-yesbtn-bg:inherit;
+    --cc-faq-yesbtn-text:inherit;
+}
+.cc-faq-panel {
+
 }
 .contentPadding{
     padding-bottom: 0px;
@@ -188,16 +195,19 @@ p{
     border-radius: 0px !important;
 }
 .panel-body{
-    background-color: transparent;
+    background-color: var(--cc-faq-panel-body-bg);
 }
 .panel-interact{
     text-align: center; 
     padding: calculateRem(20px);
+    background-color: var(--cc-faq-panel-interact-bg);
 }
 .panel-interact>button{
     margin: calculateRem(10px) calculateRem(5px) 0px calculateRem(5px);
 }
-.panel-interact .yesBtn{
+.panel-interact .yes-btn{
+    // background:var(--cc-faq-yesbtn-bg);
+    color:var(--cc-faq-yesbtn-text);
 }
 .panel-interact>p{
     margin: 0px;
