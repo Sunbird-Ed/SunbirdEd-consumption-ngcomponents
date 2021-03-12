@@ -153,13 +153,13 @@
       .data_3{
         border-radius: 4px;
         background-color: #FFE99E;
-        font-size:0.75rem;
+        font-size:0.90rem;
         text-transform: uppercase;
         padding: 2px;
         margin-bottom: 0.25rem;
       }
       .data_4 {
-        font-size:0.75rem;
+        font-size:0.90rem;
         margin:0.5rem 0;
       }
       
@@ -176,10 +176,11 @@
     }
     .sb--card__meta1 {
       margin-top:0px;
+      width: 100%;
       .data_1, .data_2 {
         color: var(--cd-sbcard-data1-2-text);
         border-radius: calculateRem(8px);
-        font-size: calculateRem(12px);
+        font-size: calculateRem(14px);
         width:auto;flex: initial;
         white-space: nowrap;
       }
