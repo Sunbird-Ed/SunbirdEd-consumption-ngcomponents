@@ -2,10 +2,11 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 ::ng-deep :root {
   --sbt-pill-hs: 212, 100%;
-  --cd-sbcard-data2-bg:hsl(var(--sbt-pill-hs), 90%);
-  --cd-sbcard-data2-bg-active:hsl(var(--sbt-pill-hs), 50%); //#0076FE
+  --cc-sbcard-data2-bg:hsl(var(--sbt-pill-hs), 90%);
+  --cc-sbcard-data2-bg-active:hsl(var(--sbt-pill-hs), 50%); //#0076FE
   --cc-sbcard-selected-border:var(--primary-color);
-  --cd-sbcard-data1-2-text:var(--primary-color);
+  --cc-sbcard-data1-2-text:var(--primary-color);
+  --cc-sbcard-type-br:var(--gray-200);
 }
 /* sb card component css */
 :host {
@@ -119,7 +120,7 @@
           padding-right: 8px;
         }
         &::before{
-          border-color: var(--black) var(--black) var(--black) transparent;
+          border-color: var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) transparent;
           position: absolute;
           right: -8px;
           transform: rotatey(-180deg);
@@ -178,7 +179,7 @@
       margin-top:0px;
       width: 100%;
       .data_1, .data_2 {
-        color: var(--cd-sbcard-data1-2-text);
+        color: var(--cc-sbcard-data1-2-text);
         border-radius: calculateRem(8px);
         font-size: calculateRem(14px);
         width:auto;flex: initial;
