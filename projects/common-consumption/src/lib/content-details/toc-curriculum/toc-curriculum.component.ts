@@ -28,7 +28,7 @@ export class TocCurriculumComponent implements OnInit {
   @Input() trackableDefaultImage;
   @Input() maxAttempts;
   @Input() disabled = '';
-  @ViewChild('chapter',{static:false}) divs: QueryList<any>;
+  @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
   @Input() activeContent;

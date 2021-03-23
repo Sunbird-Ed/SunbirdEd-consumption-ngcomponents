@@ -26,7 +26,7 @@ export class TocItemComponent implements OnInit, OnChanges, AfterViewInit, OnDes
   @Input() playBtnConfig;
   @Input() platform;
   @Input() trackableDefaultImage = '';
-  @ViewChild('chapter',{static: false}) divs: QueryList<any>;
+  @ViewChild('chapter') divs: QueryList<any>;
   @ViewChildren('chapterContainer') chapterContainer: QueryList<any>;
 
   @Input() type = "";
