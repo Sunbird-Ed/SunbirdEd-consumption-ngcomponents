@@ -1,0 +1,14 @@
+<div>
+  <div *ngIf="title">{{title}}</div>
+  <div *ngIf="subTitle">{{subTitle}}</div>
+
+  <section>
+    <div *ngFor="let item of listData; let i = index" 
+    [ngClass]="{'selected-item': (i===selectedIndex)}"
+    (click)="onItemSelect($event, item, i)" >
+      <img *ngIf="item?.image" src="{{item?.image}}" alt="">
+      {{item?.label}}
+      <button>Play</button>
+    </div>
+  </section>
+</div>
