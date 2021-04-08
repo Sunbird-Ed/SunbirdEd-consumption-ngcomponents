@@ -120,7 +120,7 @@
     </ng-container>
     <ng-container *ngIf="layoutConfig.layout === 'v3'">
       <sb-library-card-v3 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
-      [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel"
+      [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel" [isSelected]="isSelected"
       [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
       [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 
       (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
