@@ -112,7 +112,7 @@
 <span *ngIf="layoutConfig">
     <ng-container *ngIf="(layoutConfig && !layoutConfig.layout && !(layoutConfig.layout === 'v3')) || layoutConfig.layout === 'v2'">
       <sb-library-card-v2 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
-      [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel"
+      [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel" [isSelected]="isSelected"
       [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
       [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 
       (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
