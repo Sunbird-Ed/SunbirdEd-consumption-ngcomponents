@@ -1,4 +1,5 @@
-export interface List {
-    label: string;
-    data: any;
+export interface FaqCategory {
+    name: string;
+    faqs?: any[];
+    videos?: any[];
 }

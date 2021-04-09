@@ -1,30 +1,37 @@
-export const ListData = [
+export const CategoryListData = [
   {
-    label: 'title 1',
-    data: {}
+    name: 'title 1',
+    faqs: [],
+    videos: []
   },
   {
     label: 'title 2',
-    data: {}
+    faqs: [],
+    videos: []
   },
   {
     label: 'title 3',
-    data: {}
+    faqs: [],
+    videos: []
   },
   {
     label: 'title 4',
-    data: {}
+    faqs: [],
+    videos: []
   },
   {
     label: 'title 5',
-    data: {}
+    faqs: [],
+    videos: []
   },
   {
     label: 'title 6',
-    data: {}
+    faqs: [],
+    videos: []
   },
   {
     label: 'title 7',
-    data: {}
+    faqs: [],
+    videos: []
   }
 ]

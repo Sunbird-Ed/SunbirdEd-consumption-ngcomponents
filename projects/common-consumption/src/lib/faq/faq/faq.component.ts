@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, TemplateRef, SimpleChanges, OnChanges } from '@angular/core';
 import { IClick } from '../../card/models';
 import { staticData } from './faq.component.data';
 
@@ -7,7 +7,7 @@ import { staticData } from './faq.component.data';
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.scss']
 })
-export class FaqComponent implements OnInit {
+export class FaqComponent implements OnInit, OnChanges {
 
   @Input() data:any = staticData;
   @Input() appName;
@@ -30,19 +30,25 @@ export class FaqComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.constants = this.data.constants;
-    this.faqs = this.data.faqs;
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.data.faqs.length; i++) {
-      if (this.data.faqs[i].topic.includes('{{APP_NAME}}')) {
-        this.data.faqs[i].topic = this.data.faqs[i].topic.replace('{{APP_NAME}}', this.appName);
-      } else {
-        this.data.faqs[i].topic = this.data.faqs[i].topic;
-      }
-      if (this.data.faqs[i].description.includes('{{APP_NAME}}')) {
-        this.data.faqs[i].description = this.data.faqs[i].description.replace('{{APP_NAME}}', this.appName);
-      } else {
-        this.data.faqs[i].description = this.data.faqs[i].description;
+    
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['data'] && changes['data'].currentValue) {   
+      this.constants = this.data.constants;
+      this.faqs = this.data.faqs;
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < this.data.faqs.length; i++) {
+        if (this.data.faqs[i].topic.includes('{{APP_NAME}}')) {
+          this.data.faqs[i].topic = this.data.faqs[i].topic.replace('{{APP_NAME}}', this.appName);
+        } else {
+          this.data.faqs[i].topic = this.data.faqs[i].topic;
+        }
+        if (this.data.faqs[i].description.includes('{{APP_NAME}}')) {
+          this.data.faqs[i].description = this.data.faqs[i].description.replace('{{APP_NAME}}', this.appName);
+        } else {
+          this.data.faqs[i].description = this.data.faqs[i].description;
+        }
       }
     }
   }

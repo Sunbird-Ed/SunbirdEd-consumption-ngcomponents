@@ -6,7 +6,7 @@
     <div class="item" *ngFor="let item of listData; let i = index"
     [ngClass]="{'selected-item': (i===selectedIndex), 'unselected-item': (i!==selectedIndex)}"
     (click)="onItemSelect($event, item, i)" >
-      {{item.label}}
+      {{item.name}}
     </div>
   </section>
 
