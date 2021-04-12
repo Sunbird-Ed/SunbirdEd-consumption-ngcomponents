@@ -1,0 +1,105 @@
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  padding: 0 10;
+}
+
+.carousel-scroller {
+   /* snap mandatory on horizontal axis  */
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: center; 
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  display: flex;
+  align-items: center;
+
+  height: 200px;
+  
+  /* Enable Safari touch scrolling physics which is needed for scroll snap */
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.carousel-scroller div {
+   /* snap align center  */
+  scroll-snap-align: center;
+  position: relative;
+}
+
+.carousel-scroller img {
+  border-radius: 10px;
+}
+
+.carousel-scroller div.carousel-card {
+  min-width: 312px;
+  min-height: 220px;
+  border-radius: 10px;
+  gap: 16px;
+ }
+
+.carousel-container div.note {
+  position: absolute;
+
+  /* vertically align center */
+  top:  50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+
+  background: rgba(0,0,0, 0.6);
+  padding: 20px;
+  position: absolute;
+
+  font-size: 4em;
+  color: white;
+}
+
+.carousel-container .carousel-btn {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 30px;
+  width: 30px;
+
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.5);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+}
+
+.carousel-container .carousel-btn.next {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M25.557 14.7L13.818 2.961 16.8 0l16.8 16.8-16.8 16.8-2.961-2.961L25.557 18.9H0v-4.2z" fill="%23FFF" fill-rule="evenodd"/></svg>');
+  right: 10px;
+}
+
+.carousel-container .carousel-btn.prev {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M33.6 14.7H8.043L19.782 2.961 16.8 0 0 16.8l16.8 16.8 2.961-2.961L8.043 18.9H33.6z" fill="%23FFF" fill-rule="evenodd"/></svg>');
+  left: 10px;
+}
+
+.carousel-scroller > div.carousel-card:nth-of-type(1) { background-color: #e8eaf6; }
+.carousel-scroller > div.carousel-card:nth-of-type(2) { background-color: #c5cae9; }
+.carousel-scroller > div.carousel-card:nth-of-type(3) { background-color: #9fa8da; }
+.carousel-scroller > div.carousel-card:nth-of-type(4) { background-color: #7986cb; }
+.carousel-scroller > div.carousel-card:nth-of-type(5) { background-color: #5c6bc0; }
+.carousel-scroller > div.carousel-card:nth-of-type(6) { background-color: #3f51b5; }
+.carousel-scroller > div.carousel-card:nth-of-type(7) { background-color: #3949ab; }
+.carousel-scroller > div.carousel-card:nth-of-type(8) { background-color: #303f9f; }
+.carousel-scroller > div.carousel-card:nth-of-type(9) { background-color: #283593; }
+.carousel-scroller > div.carousel-card:nth-of-type(10) { background-color: #1a237e; }
+
+.carousel-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.carousel-scroller {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

@@ -1,0 +1,17 @@
+<div>
+  <div *ngIf="title">{{title}}</div>
+  <div *ngIf="subTitle">{{subTitle}}</div>
+
+  <div #carouselContainer class="carousel-container">
+    <div class="carousel-scroller">
+      <div class="carousel-card" *ngFor="let item of listData; let i = index;" (click)="onItemSelect($event, item, i)">
+        <img *ngIf="item?.image" src="{{item?.image}}" alt="">
+        <p *ngIf="item?.label">{{item?.label}}</p>
+        <button>Play</button>
+      </div>
+    </div>
+    <span class="carousel-btn prev" (click)="scrollToPrevPage()"></span>
+    <span class="carousel-btn next" (click)="scrollToNextPage()"></span>
+  </div>
+
+</div>
