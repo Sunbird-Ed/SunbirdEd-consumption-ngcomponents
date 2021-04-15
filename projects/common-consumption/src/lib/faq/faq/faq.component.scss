@@ -7,11 +7,14 @@
     --cc-faq-panel-title-text:var(--primary-color);
     --cc-faq-info-msg-bg:var(--primary-0);
     --cc-faq-panelheader-bg: var(--white);
-    --cc-faq-panel-body-bg:var(--white);
+    --cc-faq-panel-body-bg:#F3F7FA;
     --cc-faq-panel-interact-bg:var(--white);
-    --cc-faq-yesbtn-bg:inherit;
-    --cc-faq-yesbtn-text:inherit;
+    --cc-faq-yesbtn-bg:rgba(0,136,64,0.1);
+    --cc-faq-yesbtn-text:#008840;
+    --cc-faq-nobtn-bg:rgba(2, 79, 157, 0.1);
+    --cc-faq-nobtn-text:#024F9D;
 }
+
 .cc-faq-panel {
 
 }
@@ -72,7 +75,7 @@ p{
 }
 .panel-title {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
 }
 .panel-title-blue{
@@ -171,7 +174,7 @@ p{
     border-left: 0;
     border-right: 0;
     box-shadow:none !important;
-    border-bottom: solid calculateRem(1px) lightgray;
+    border-bottom: solid calculateRem(1px) #ccc;
     font-size: calculateRem(16px);
 }
 .panel-default{
@@ -206,8 +209,12 @@ p{
     margin: calculateRem(10px) calculateRem(5px) 0px calculateRem(5px);
 }
 .panel-interact .yes-btn{
-    // background:var(--cc-faq-yesbtn-bg);
+    background:var(--cc-faq-yesbtn-bg);
     color:var(--cc-faq-yesbtn-text);
+}
+.panel-interact .no-btn{
+    background:var(--cc-faq-nobtn-bg);
+    color:var(--cc-faq-nobtn-text);
 }
 .panel-interact>p{
     margin: 0px;

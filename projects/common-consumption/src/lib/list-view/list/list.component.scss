@@ -1,20 +1,58 @@
-.title {
-  color: #333333;
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+
+::ng-deep :root {
+  --cc-listView-compt-title: #333333;
+  --cc-listView-compt-subTitle: #333333;
+  --cc-listView-compt-itemText: #333333;
+  --cc-listView-compt-itemText-hover:var(--primary-color);
 }
 
-.sub-title {
-  color: #333333;
-}
+.listView-compt {
+  &__title {
+    color: var(--cc-listView-compt-title);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.25rem;
+  }
 
-.unselected-item {
-  color: #333333;
-}
+  &__subTitle {
+    color: var(--cc-listView-compt-subTitle);
+  }
 
-.selected-item {
-  color: #024F9D;
-}
+  &__item {
+    cursor: pointer;
+    color: var(--cc-listView-compt-itemText);
+    font-size: 0.875rem;
+    letter-spacing: 0;
+    line-height:normal;
+    padding:0.5rem;
+    &:hover, &.selected-item {
+      color: var(--cc-listView-compt-itemText-hover);
+    }
+  }
 
-.item {
-  cursor: pointer;
+  &__btn {
+    button {
+      border-radius: 1.25rem;
+      background-color: var(--white);
+      box-shadow: 5px 5px 2px 0 rgba(0, 0, 0, 0.1);
+      color: var(--primary-color);
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 1.25rem;
+      height: 2.5rem;
+      width: 100%;
+      padding:0.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      box-shadow: var(--sbt-box-shadow-6px) !important;
+      border:0px;
+      &:hover,&:active,&.selected {
+        background-color: var(--primary-color);
+        color:var(--white);
+      }
+    }
+  }
 }
-
