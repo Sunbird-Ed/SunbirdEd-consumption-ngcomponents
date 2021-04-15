@@ -1,17 +1,17 @@
-<div>
-  <div class="title p-16" *ngIf="title">{{title}}</div>
-  <div class="sub-title pl-16"*ngIf="subTitle">{{subTitle}}</div>
+<div class="listView-compt">
+  <div class="listView-compt__title pb-16" *ngIf="title">{{title}}</div>
+  <div class="listView-compt__subTitle" *ngIf="subTitle">{{subTitle}}</div>
 
-  <section class="pl-16">
-    <div class="item" *ngFor="let item of listData; let i = index"
-    [ngClass]="{'selected-item': (i===selectedIndex), 'unselected-item': (i!==selectedIndex)}"
-    (click)="onItemSelect($event, item, i)" >
+  <section>
+    <div class="listView-compt__item" *ngFor="let item of listData; let i = index"
+      [ngClass]="{'selected-item': (i===selectedIndex)}"
+      (click)="onItemSelect($event, item, i)">
       {{item.name}}
     </div>
   </section>
 
-  <section *ngIf="btnText">
-    <button>
+  <section *ngIf="btnText" class="mt-24">
+    <button class="sb-btn sb-btn-primary sb-btn-normal w-100">
       <img *ngIf="btnImg" src="{{btnImg}}">
       {{btnText}}
     </button>
