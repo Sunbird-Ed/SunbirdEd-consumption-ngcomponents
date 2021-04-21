@@ -14,13 +14,19 @@ export class ListComponent {
     @Input() listData: any[] = CategoryListData;
     @Input() btnImg?;
     @Input() btnText?;
+    @Input() showRightArrow = false;
 
     @Output() itemClick: EventEmitter<any> = new EventEmitter();
+    @Output() btnClick: EventEmitter<any> = new EventEmitter();
 
     selectedIndex = -1;
 
     onItemSelect(event, item, index) {
         this.selectedIndex = index;
         this.itemClick.emit({event, data: item, index});
+    }
+
+    onBtnClick(event) {
+        this.btnClick.emit(event);
     }
 }

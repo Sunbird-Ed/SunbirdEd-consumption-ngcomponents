@@ -29,6 +29,7 @@
     padding:0.5rem;
     &:hover, &.selected-item {
       color: var(--cc-listView-compt-itemText-hover);
+      font-weight: bold;
     }
   }
 
@@ -55,4 +56,8 @@
       }
     }
   }
+}
+
+.forward-arrow {
+  transform: rotate(-90deg);
 }

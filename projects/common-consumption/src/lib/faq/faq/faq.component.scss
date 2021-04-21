@@ -78,6 +78,9 @@ p{
     align-items: center;
     justify-content: space-between;
 }
+.panel-heading {
+    background-color: var(--cc-faq-panel-interact-bg);
+}
 .panel-title-blue{
     display: flex;
     align-items: flex-start;
