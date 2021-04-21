@@ -9,7 +9,7 @@ import { config } from 'rxjs';
 })
 export class MemberCardComponent implements OnInit {
 
-  paletteList:any = ["#B30021","#7B1FA2","#00606B","#7B1FA2","#8A4500","#1976D2","#CDDC39","#B30021","#8A4500","#388E3C"];
+  paletteList:any = ["#B30021","#7B1FA2","#00606B","#7B1FA2","#8A4500","#115292","#50590D","#B30021","#8A4500","#28622B"];
 
   @Input() title:string = "Dummy";
   @Input() isAdmin: boolean = false;
