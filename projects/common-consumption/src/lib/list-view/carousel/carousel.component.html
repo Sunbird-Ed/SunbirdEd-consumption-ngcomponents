@@ -8,7 +8,7 @@
         <div class="black-layer"></div>
         <img *ngIf="item?.image" src="{{item?.image}}" alt="">
         <div class="carousel-meta">
-          <p *ngIf="item?.label">{{item?.label}}</p>
+          <p class="sb__ellipsis sb__ellipsis--one" *ngIf="item?.label">{{item?.label}}</p>
           <div>
             <img src="assets/common-consumption/images/play-btn.svg" alt="Play {{item?.label}}">
             <span>Play</span>
