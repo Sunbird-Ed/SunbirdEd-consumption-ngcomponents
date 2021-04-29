@@ -12,3 +12,5 @@ export * from './lib/content-details';
 export * from './lib/common-consumption.constants';
 export * from './lib/pills-grid/pills-grid.module';
 export * from './lib/pills-grid/models';
+export * from './lib/list-view/list-view.module';
+export * from './lib/list-view/models';

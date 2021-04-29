@@ -1,3 +1,9 @@
+::ng-deep :root {
+  --cc-pills-grid-item:var(--white);
+  --cc-pills-grid-item-hover:#f2f2f2;
+  --cc-pills-grid-item-img-bg:#f2f2f2;
+  --cc-pills-grid-icon-head-img-bg:var(--white);
+}
 ::ng-deep {
   .sb-label-grid {
     display: grid;
@@ -34,7 +40,7 @@
     }
     .item {
       display: flex;
-      background: var(--white);
+      background: var(--cc-pills-grid-item);
       border-radius: 0.25em;
       transition: all 0.3s ease-in-out;
       margin: 0.25em;
@@ -42,7 +48,7 @@
         box-shadow: none;
         transform: translate(0, 0px) scale(0.95);
         z-index: 99;
-        background: #f2f2f2;
+        background:var(--cc-pills-grid-item-hover);
       }
     }
     &.show-icon {
@@ -148,7 +154,7 @@
         .img {
           width: 2em;
           height: 2em;
-          background: #f2f2f2;
+          background: var(--cc-pills-grid-item-img-bg);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -197,7 +203,7 @@
         }
         .img {
           padding: 1em;
-          background: var(--white);
+          background: var(--cc-pills-grid-icon-head-img-bg);
           display: flex;
           justify-content: center;
           align-items: center;

@@ -1,0 +1,27 @@
+<div class="listView-compt">
+  <div class="listView-compt__title pb-16" *ngIf="title">{{title}}</div>
+  <div class="listView-compt__subTitle" *ngIf="subTitle">{{subTitle}}</div>
+
+  <section>
+    <div class="listView-compt__item d-flex flex-ai-center" *ngFor="let item of listData; let i = index"
+      [ngClass]="{'selected-item': (i===selectedIndex)}"
+      (click)="onItemSelect($event, item, i)">
+      {{item.name}}
+      <div *ngIf="showRightArrow" class="ml-auto">
+        <i class="icon-svg icon-svg--xxs ml-4 forward-arrow">
+          <svg class="icon icon-svg--primary">
+            <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-down"></use>
+          </svg>
+        </i>
+      </div>
+      
+    </div>
+  </section>
+
+  <section *ngIf="btnText" class="mt-24">
+    <button class="sb-btn sb-btn-outline-primary sb-btn-normal w-100" (click)="onBtnClick($event)">
+      <img *ngIf="btnImg" src="{{btnImg}}">
+      {{btnText}}
+    </button>
+  </section>
+</div>

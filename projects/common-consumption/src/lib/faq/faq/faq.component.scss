@@ -1,4 +1,23 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+
+::ng-deep :root {
+    --cc-faq-yesbtn-text:var(--secondary-color);
+    --cc-faq-helpheader-text:var(--white);
+    --cc-faq-helpheader-bg:var(--primary-color);
+    --cc-faq-panel-title-text:var(--primary-color);
+    --cc-faq-info-msg-bg:var(--primary-0);
+    --cc-faq-panelheader-bg: var(--white);
+    --cc-faq-panel-body-bg:#F3F7FA;
+    --cc-faq-panel-interact-bg:var(--white);
+    --cc-faq-yesbtn-bg:rgba(0,136,64,0.1);
+    --cc-faq-yesbtn-text:#008840;
+    --cc-faq-nobtn-bg:rgba(2, 79, 157, 0.1);
+    --cc-faq-nobtn-text:#024F9D;
+}
+
+.cc-faq-panel {
+
+}
 .contentPadding{
     padding-bottom: 0px;
 }
@@ -30,7 +49,7 @@ iframe {
     margin-left: calculateRem(5px);
 }
 .yesBtn{
-    color: var(--secondary-color);
+    color: var(--cc-faq-yesbtn-text);
 }
 .btn{
     cursor: pointer;
@@ -38,9 +57,9 @@ iframe {
 p{
     font-size: calculateRem(14px);
 }
-.help-header, .help-header-send-email{
-    background: var(--primary-color);
-    color: var(--white);
+.help-header, .help-header-send-email{   
+    background: var(--cc-faq-helpheader-bg);
+    color: var(--cc-faq-helpheader-text);
     padding: calculateRem(16px);
 }
 .help-header>h4,.help-header-send-email>h4{
@@ -56,18 +75,22 @@ p{
 }
 .panel-title {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
+}
+.panel-heading {
+    background-color: var(--cc-faq-panel-interact-bg);
 }
 .panel-title-blue{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    color: var(--primary-color);
+    color: var(--cc-faq-panel-title-text);
 }
 .info-msg{
-        background-color: var(--primary-0)
+        background-color: var(--cc-faq-info-msg-bg);
     }
+   
 .report-text{
       padding-left: calculateRem(6px);
     }
@@ -154,7 +177,7 @@ p{
     border-left: 0;
     border-right: 0;
     box-shadow:none !important;
-    border-bottom: solid calculateRem(1px) lightgray;
+    border-bottom: solid calculateRem(1px) #ccc;
     font-size: calculateRem(16px);
 }
 .panel-default{
@@ -174,20 +197,27 @@ p{
     margin-top: 0px;
 }
 .panel-default>.panel-heading{
-    background-color: var(--white);
+    background-color: var(--cc-faq-panelheader-bg);
     border-radius: 0px !important;
 }
 .panel-body{
-    background-color: transparent;
+    background-color: var(--cc-faq-panel-body-bg);
 }
 .panel-interact{
     text-align: center; 
     padding: calculateRem(20px);
+    background-color: var(--cc-faq-panel-interact-bg);
 }
 .panel-interact>button{
     margin: calculateRem(10px) calculateRem(5px) 0px calculateRem(5px);
 }
-.panel-interact .yesBtn{
+.panel-interact .yes-btn{
+    background:var(--cc-faq-yesbtn-bg);
+    color:var(--cc-faq-yesbtn-text);
+}
+.panel-interact .no-btn{
+    background:var(--cc-faq-nobtn-bg);
+    color:var(--cc-faq-nobtn-text);
 }
 .panel-interact>p{
     margin: 0px;
@@ -202,6 +232,8 @@ p{
     color:var(--secondary-color);
     text-align: center;
 }
+
+
 
 .panel-info{
     text-align: center;

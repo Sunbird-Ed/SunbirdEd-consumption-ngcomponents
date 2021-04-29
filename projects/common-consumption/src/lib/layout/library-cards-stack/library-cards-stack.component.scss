@@ -2,6 +2,11 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 
+::ng-deep :root {
+	--cc-lb-card-stack-title:var(--primary-color);
+	--cc-lb-card-stack-btn-bg:var(--primary-100);
+	--cc-lb-card-stack-btn-text:var(--primary-color);
+}
 :host {
 	.card-list-container {
 		// box-shadow: 0 2px 7px 0 rgba(var(--rc-rgba-black), 0.16);
@@ -16,7 +21,7 @@
 			font-size: calculateRem(18px);
 			line-height: calculateRem(26px);
 			font-weight: bold;
-			color: var(--primary-color);
+			color: var(--cc-lb-card-stack-title);
 			text-overflow: ellipsis;
 			text-transform: capitalize;
 			overflow: hidden;
@@ -37,9 +42,9 @@
 		box-shadow: 0 calculateRem(2px) calculateRem(7px) 0 rgba(var(--rc-rgba-black), 0.16);
 	}
 	.stack-btn {
-		background-color: var(--primary-100);
+		background-color: var(--cc-lb-card-stack-btn-bg);
 		padding: calculateRem(16px);
-		color: var(--primary-color);
+		color: var(--cc-lb-card-stack-btn-text);
 		font-weight: bold;
 		border-style: none;
 		text-transform: uppercase;

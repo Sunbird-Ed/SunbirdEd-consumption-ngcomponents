@@ -1,0 +1,35 @@
+<div>
+  <div class="carousel_title mb-16" *ngIf="title">{{title}}</div>
+  <div *ngIf="subTitle">{{subTitle}}</div>
+
+  <div #carouselContainer class="carousel-container">
+    <div class="carousel-scroller">
+      <div class="carousel-card" *ngFor="let item of listData; let i = index;" (click)="onItemSelect($event, item, i)">
+        <div class="black-layer"></div>
+        <img *ngIf="item?.thumbnail" src="{{item?.thumbnail}}" alt="">
+        <div class="carousel-meta">
+          <p class="sb__ellipsis sb__ellipsis--one" *ngIf="item?.name">{{item?.name}}</p>
+          <div>
+            <img src="assets/common-consumption/images/play-btn.svg" alt="Play {{item?.name}}">
+            <span>Play</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-btn prev" (click)="scrollToPrevPage()">
+      <i class="icon-svg icon-svg--lg">
+        <svg class="icon">
+            <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-round-right"></use>
+        </svg>
+    </i>
+    </button>
+    <button class="carousel-btn next" (click)="scrollToNextPage()">
+      <i class="icon-svg icon-svg--lg">
+        <svg class="icon">
+            <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-round-right"></use>
+        </svg>
+    </i>
+    </button>
+  </div>
+
+</div>
