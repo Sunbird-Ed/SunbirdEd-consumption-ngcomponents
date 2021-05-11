@@ -56,7 +56,7 @@
     <div class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pt-4" title="{{content?.name}}">
       {{content?.name}}
     </div>
-      <div *ngIf="bestScoreLabel" class="sbchapter__item__score pr-8 ml-auto" title="{{bestScoreLabel}}">
+      <div *ngIf="bestScoreLabel && displayScore" class="sbchapter__item__score pr-8 ml-auto" title="{{bestScoreLabel}}">
         {{bestScoreLabel}}
       </div>
   </div>
@@ -80,7 +80,7 @@
       <div class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pt-4" title="{{content?.name}}">
         {{content?.name}}
       </div>
-      <div *ngIf="bestScoreLabel" class="sbchapter__item__score pr-8 ml-auto" title="{{bestScoreLabel}}">
+      <div *ngIf="bestScoreLabel && displayScore" class="sbchapter__item__score pr-8 ml-auto" title="{{bestScoreLabel}}">
         {{bestScoreLabel}}
       </div> 
     </div>

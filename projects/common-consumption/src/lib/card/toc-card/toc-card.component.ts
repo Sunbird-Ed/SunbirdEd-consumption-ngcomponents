@@ -31,6 +31,7 @@ export class TocCardComponent implements OnInit, OnChanges {
   isLastAttempt: boolean = false;
   isDisabled: boolean = false;
   get TocCardType() { return TocCardType; }
+  displayScore: boolean = false;
 
   ngOnInit() {
     if (this.type === TocCardType.COURSE) {
@@ -107,6 +108,7 @@ export class TocCardComponent implements OnInit, OnChanges {
   getBestScore() {
     this.contentStatus.forEach((item) => {
       if (item.contentId === this.content.identifier && item.bestScore && this.scoreLabel) {
+        this.displayScore = this.content && this.content.hasOwnProperty('displayScore') ? this.content['displayScore'] : true;
         this.bestScoreLabel = this.scoreLabel + ' ' + (Math.round(item.bestScore.totalScore*100)/100).toString() + '/' + item.bestScore.totalMaxScore.toString();
         if (this.maxAttempts && (this.maxAttempts - item.score.length === 1)) {
           this.isLastAttempt = true;
