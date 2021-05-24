@@ -11,18 +11,18 @@ import { MemberCardComponent } from './member-card/member-card.component';
 import { LibraryCardV2Component } from './library-card-v2/library-card-v2.component';
 import { LibraryCardV3Component } from './library-card-v3/library-card-v3.component';
 import { NotificationCardComponent } from './notification-card/notification-card.component';
-import {BannerDiscoveryCardComponent} from './banner-discovery-card/banner-discovery-card.component';
+import {BannerCardComponent} from './banner-card/banner-card.component';
 
 @NgModule({
   declarations: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, 
     TocCardComponent, MyCourseCardComponent, CourseCuriculumCardComponent, GroupCardComponent, 
     MemberCardComponent, LibraryCardV2Component, LibraryCardV3Component, NotificationCardComponent,
-    BannerDiscoveryCardComponent],
+    BannerCardComponent],
   imports: [
     CommonModule
   ],
   exports: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, TocCardComponent, 
     MyCourseCardComponent, CourseCuriculumCardComponent, GroupCardComponent, MemberCardComponent,
-    LibraryCardV2Component, LibraryCardV3Component, NotificationCardComponent, BannerDiscoveryCardComponent]
+    LibraryCardV2Component, LibraryCardV3Component, NotificationCardComponent, BannerCardComponent]
 })
 export class CardModule { }

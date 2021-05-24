@@ -3,11 +3,11 @@ import { IContent, ICardClick } from '../models';
 
 
 @Component({
-  selector: 'sb-banner-discovery-card-hlist',
-  templateUrl: './banner-discovery-card.component.html',
-  styleUrls: ['./banner-discovery-card.component.scss']
+  selector: 'sb-banner-card-hlist',
+  templateUrl: './banner-card.component.html',
+  styleUrls: ['./banner-card.component.scss']
 })
-export class BannerDiscoveryCardComponent {
+export class BannerCardComponent {
 
   @Input() backGround: string;
   @Input() text: string;
