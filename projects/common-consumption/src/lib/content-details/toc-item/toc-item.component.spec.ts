@@ -17,6 +17,7 @@ import { staticData } from '../toc-curriculum/toc-data';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LibraryCardV2Component } from '../../card/library-card-v2/library-card-v2.component';
 import { QueryList } from '@angular/core';
+import { ExpandMode } from '../../card/models';
 
 describe('TocItemComponent', () => {
   let component: TocItemComponent;
@@ -66,7 +67,7 @@ describe('TocItemComponent', () => {
       const mockMockAccordionItem: Partial<AccordionItemComponent> = { expanded: true };
       const mockMockOtherAccordionItem: Partial<AccordionItemComponent> = { expanded: true };
 
-      component.expandMode = 'single';
+      component.accordianConfig.expandMode = ExpandMode.SINGLE;
       component.accordionItems = new QueryList<AccordionItemComponent>();
       component.accordionItems.reset([
         mockMockAccordionItem as AccordionItemComponent,
