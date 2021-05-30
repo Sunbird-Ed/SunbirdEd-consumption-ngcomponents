@@ -1,3 +1,12 @@
+<div class="header" *ngIf="platform === 'portal' && pillItems?.length > 0">
+  <div class="title">{{title}}</div>
+  <div *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
+    <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
+     (click)="viewMore()">{{viewMoreText}}</button>
+    <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length"
+     (click)="viewLess()">{{viewLessText}}</button>
+  </div>
+</div>
 <div class="sb-label-grid show-icon" [ngClass]="{
   'sb-box-grid':((pillShape === PillShape.BOX)||(pillShape === PillShape.CIRCLE)||(pillShape === PillShape.IMAGE_OVERLAP)), 
   'sb-pills-grid':(pillShape === PillShape.DEFAULT), 
@@ -23,7 +32,7 @@
   </ng-container>
 </div>
 
-<div class="sb-view-more-less pb-16" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
+<div class="sb-view-more-less pb-16" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount) && platform === 'mobile'">
   <div *ngIf="showMoreViewType===ShowMoreViewType.EXPAND">
     <button class="view-more sb-view-btn" *ngIf="viewCount < pillItems?.length" (click)="viewMore()">{{viewMoreText}}</button>
     <button class="view-less sb-view-btn" *ngIf="viewCount === pillItems?.length"  (click)="viewLess()">{{viewLessText}}</button>

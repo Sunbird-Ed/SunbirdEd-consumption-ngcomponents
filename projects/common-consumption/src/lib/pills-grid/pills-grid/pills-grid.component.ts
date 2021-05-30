@@ -1,5 +1,6 @@
 import { AfterContentInit, Component, ContentChildren, Input, Output, EventEmitter, QueryList, TemplateRef, OnInit } from '@angular/core';
 import { PillBorder, PillShape, PillsViewType, SelectMode, PillsMultiRow, ShowMoreViewType, PillSize, PillTextElipsis, PillBoxShadow } from '../models';
+import { PlatformType } from '../../card/models';
 import { PillItemComponent } from '../pill-item/pill-item.component';
 
 @Component({
@@ -29,6 +30,8 @@ export class PillsGridComponent implements AfterContentInit, OnInit {
 
     @Output() select = new EventEmitter<any>();
     @Output() viewMorePillList = new EventEmitter<any>();
+    @Input() platform = PlatformType.MOBILE;
+    @Input() title = '';
     viewCount: number;
 
     get PillShape() { return PillShape; }
