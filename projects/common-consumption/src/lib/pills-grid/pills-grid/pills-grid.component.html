@@ -1,9 +1,9 @@
 <div class="header" *ngIf="platform === 'portal' && pillItems?.length > 0">
   <div class="title">{{title}}</div>
   <div *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
-    <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
+    <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
      (click)="viewMore()">{{viewMoreText}}</button>
-    <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length"
+    <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length"
      (click)="viewLess()">{{viewLessText}}</button>
   </div>
 </div>
