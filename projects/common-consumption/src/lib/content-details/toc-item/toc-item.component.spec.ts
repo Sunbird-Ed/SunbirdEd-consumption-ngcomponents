@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LibraryCardV2Component } from '../../card/library-card-v2/library-card-v2.component';
 import { QueryList } from '@angular/core';
 import { ExpandMode } from '../../card/models';
+import { LibraryCardV3Component } from '../../card/library-card-v3/library-card-v3.component';
 
 describe('TocItemComponent', () => {
   let component: TocItemComponent;
@@ -26,9 +27,18 @@ describe('TocItemComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule,CommonModule,PipesModule,BrowserAnimationsModule],
-      declarations: [ TocItemComponent, AccordionBodyComponent,AccordionHeaderComponent,
-        AccordionComponent,AccordionItemComponent,LibraryCardComponent,MyCourseCardComponent,
-      TocChildItemComponent,TocCardComponent, LibraryCardV2Component]
+      declarations: [
+        TocItemComponent,
+        AccordionBodyComponent,
+        AccordionHeaderComponent,
+        AccordionComponent,
+        AccordionItemComponent,
+        LibraryCardComponent,
+        MyCourseCardComponent,
+        TocChildItemComponent,
+        TocCardComponent,
+        LibraryCardV2Component,
+        LibraryCardV3Component]
     })
     .compileComponents();
   }));
