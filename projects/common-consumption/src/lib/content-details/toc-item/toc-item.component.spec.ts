@@ -26,7 +26,7 @@ describe('TocItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule,CommonModule,PipesModule,BrowserAnimationsModule],
+      imports: [FormsModule, CommonModule,PipesModule,BrowserAnimationsModule],
       declarations: [
         TocItemComponent,
         AccordionBodyComponent,
