@@ -15,16 +15,18 @@
   'hscroll': (pillsViewType === PillsViewType.SCROLL), 
   'show-bradius':(pillBorder === PillBorder.SEMI_ROUND),
   'show-round-bradius':(pillBorder === PillBorder.ROUND),
-  'two-rows-grid':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_COLUMN) || (pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW) || (pillsMultiRow === PillsMultiRow.SINGLE),
+  'two-rows-grid':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_COLUMN) || (pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW) || (pillsMultiRow === PillsMultiRow.SINGLE) || (pillsMultiRow === PillsMultiRow.AUTO_RESPONSIVE),
   'one-row-grid':(pillsMultiRow === PillsMultiRow.SINGLE),
+  'auto-responsive-grid':(pillsMultiRow === PillsMultiRow.AUTO_RESPONSIVE),
   'column-sequence':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_COLUMN),
   'row-sequence':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW),
   'size--sm':(pillSize === PillSize.SMALL),
   'size--md':(pillSize === PillSize.MEDIUM),
   'size--lg':(pillSize === PillSize.LARGE),
   'size--xl':(pillSize === PillSize.EXTRA_LARGE),
-  'show-ellipsis':(pillTextElipsis === PillTextElipsis.ONE_LINE),
+  'show-ellipsis':(pillTextElipsis === PillTextElipsis.ONE_LINE) || (pillTextElipsis === PillTextElipsis.TWO_LINE) || (pillTextElipsis === PillTextElipsis.THREE_LINE),
   'show-ellipsis--two':(pillTextElipsis === PillTextElipsis.TWO_LINE),
+  'show-ellipsis--three':(pillTextElipsis === PillTextElipsis.THREE_LINE),
   'show-bshadow':(pillBoxShadow === PillBoxShadow.ENABLE)
 }">
   <ng-container *ngFor="let ref of visiblePillTemplateRefs">

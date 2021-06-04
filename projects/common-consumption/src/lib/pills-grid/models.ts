@@ -21,7 +21,8 @@ export enum PillsMultiRow{
     DEFAULT = 'default',
     SINGLE = 'single',
     DOUBLE_VIEW_ROW = 'double_view_row',
-    DOUBLE_VIEW_COLUMN = 'double_view_column'
+    DOUBLE_VIEW_COLUMN = 'double_view_column',
+    AUTO_RESPONSIVE = 'auto_responsive'
 }
 export enum ShowMoreViewType{
     EXPAND = 'expand',
@@ -36,7 +37,8 @@ export enum PillSize{
 export enum PillTextElipsis{
     NONE = 'none',
     ONE_LINE = 'one_line',
-    TWO_LINE = 'two_line'
+    TWO_LINE = 'two_line',
+    THREE_LINE = 'three_line'
 }
 export enum PillBoxShadow{
     DISABLE = 'disable',

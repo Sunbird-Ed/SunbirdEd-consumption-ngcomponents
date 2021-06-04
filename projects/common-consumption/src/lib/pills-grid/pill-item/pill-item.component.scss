@@ -237,6 +237,9 @@
       &.one-row-grid {
         grid-template-columns: none;
       }
+      &.auto-responsive-grid {
+        grid-template-columns: repeat(auto-fill, minmax(16.375rem, 1fr));
+      }
     }
     &.show-ellipsis {
       .item {
@@ -245,18 +248,34 @@
           overflow: hidden;
           text-overflow: ellipsis;
           cursor: pointer;
+
+          @supports (-webkit-line-clamp: 1) {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+            white-space: inherit;
+            cursor: pointer;
+          }
         }
       }
       &--two {
         .item {
           label {
-            -webkit-box-orient: vertical;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            word-break: break-word;
-            white-space: inherit;
+            @supports (-webkit-line-clamp: 2) {
+              -webkit-line-clamp: 2;
+            }
+          }
+        }
+      }
+      &--three {
+        .item {
+          label {
+            @supports (-webkit-line-clamp: 3) {
+              -webkit-line-clamp: 3;
+            }
           }
         }
       }
