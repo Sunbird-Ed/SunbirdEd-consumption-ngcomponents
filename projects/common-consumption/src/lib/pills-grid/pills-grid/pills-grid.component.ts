@@ -69,6 +69,10 @@ export class PillsGridComponent implements AfterContentInit, OnInit {
 
         this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
         this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
+        this.associateOnSelect();
+    }
+
+    private associateOnSelect() {
         const onSelect = (pill: PillItemComponent, event: MouseEvent) => {
             if (this.selectMode === SelectMode.SINGLE && pill.selected) {
                 this.visiblePillItems.forEach(e => {
@@ -94,12 +98,14 @@ export class PillsGridComponent implements AfterContentInit, OnInit {
         this.viewCount = this.pillItems.length;
         this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
         this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
+        this.associateOnSelect();
     }
 
     viewLess() {
         this.viewCount = this.minDisplayCount;
         this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
         this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
+        this.associateOnSelect();
     }
 
     viewMoreInNewScreen(event) {
