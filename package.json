@@ -45,7 +45,7 @@
     "cpy-cli": "^2.0.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "karma": "~3.1.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
