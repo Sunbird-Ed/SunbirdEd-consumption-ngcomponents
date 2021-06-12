@@ -4,6 +4,9 @@
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" *ngIf="!isLoading">
   <div class="sb--card__main-area">
+    <div class="sb--checkbox sb--checkbox-primary sb--card__checkbox">
+      <input type="checkbox" name="id" (change)="onCheckOrUncheck($event)">
+    </div>
     <!-- card img -->
     <div class="sb--card__img">
       <div class="img-container">
@@ -16,7 +19,7 @@
           <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
           <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
         </div>
-      
+
       <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
         <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
         <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
@@ -66,7 +69,7 @@
     </div>
   </div>
   <!-- <ng-content select=".card-hover">
-    
+
   </ng-content> -->
   <ng-container
     *ngTemplateOutlet="gridTemplate; context: {$implicit: content?.hoverData, hoverData: content?.hoverData, content:content}"
@@ -80,7 +83,6 @@
           <!-- card img -->
           <div class="sb--card__img">
             <div class="img-container loading-animation">
-              
             </div>
           </div>
           <!-- card mobile view details -->
@@ -113,7 +115,7 @@
     <sb-library-card-v2 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
     [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel"
     [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
-    [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 
+    [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)"
     (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
     ></sb-library-card-v2>
 </span>

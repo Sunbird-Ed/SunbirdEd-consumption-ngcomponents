@@ -12,6 +12,7 @@ export class LibraryCardsGridComponent {
 
     /* Title for the grid */
     @Input() title: string = defaultLibraryCardsGrid.title;
+    @Input() contentCount: number;
     @Input() contentList: Array<IContent|any> = defaultLibraryCardsGrid.contentList;
     @Input() type: LibraryCardGridTypes;
     @Input() hoverData = [];
@@ -32,6 +33,8 @@ export class LibraryCardsGridComponent {
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
     @Output() hoverActionClick: EventEmitter<any> = new EventEmitter<any>();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
+    @Output() cardCheckUncheck: EventEmitter<ICardClick> = new EventEmitter();
+
 
 
     get LibraryCardTypes() { return LibraryCardTypes; }
@@ -62,5 +65,9 @@ export class LibraryCardsGridComponent {
     }
     onCardMenuClick(event) {
         this.menuClick.emit(event);
+    }
+
+    onCardCheckboxChange(event) {
+        this.cardCheckUncheck.emit(event);
     }
 }

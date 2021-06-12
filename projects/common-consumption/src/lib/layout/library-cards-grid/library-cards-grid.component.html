@@ -7,7 +7,7 @@
                 </svg>
             </i>
             {{title}}
-            <span class="badge">{{contentList?.length}}</span>
+            <span class="badge">{{contentCount}}</span>
         </div>
         <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
             *ngIf="(type !== LibraryCardGridTypes.INFINITE_CARD_GRID && type !== LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER) && maxCardCount && contentList?.length >maxCardCount"
@@ -16,13 +16,12 @@
         </button>
     </div>
 
-
     <div class="cards-container"
         *ngIf="type !== LibraryCardGridTypes.INFINITE_CARD_GRID && type !== LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER">
         <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
             *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)let i=index">
             <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
-                (click)="onCardClick($event, content)" [cardImg]="content?.cardImg">
+                (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" (onCheckboxChange)="onCardCheckboxChange($event)">
             </sb-library-card>
         </div>
     </div>
@@ -30,7 +29,7 @@
     <div class="cards-container" *ngIf="type === LibraryCardGridTypes.INFINITE_CARD_GRID">
         <div class="item"  [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList;let i=index">
             <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
-                [isMenu]="isMenu" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" (menuClick)="onCardMenuClick($event)">
+                [isMenu]="isMenu" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" (menuClick)="onCardMenuClick($event)" (onCheckboxChange)="onCardCheckboxChange($event)">
             </sb-library-card>
         </div>
     </div>
@@ -39,7 +38,7 @@
         <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
             *ngFor="let content of contentList; let index = index">
             <sb-library-card [indexToDisplay]="index" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
-                (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [hover-template]="hoverTemplate">
+                (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [hover-template]="hoverTemplate" (onCheckboxChange)="onCardCheckboxChange($event)">
 
                 <ng-template #hoverTemplate let-hoverData="hoverData">
                     <sb-card-hover class="card-hover" [hoverData]="hoverData" [content]="content"
@@ -63,7 +62,7 @@
         *ngFor="let element of range(maxCardCount); let i=index">
         <sb-library-card [layoutConfig]="layoutConfig" [isLoading]="isLoading" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK">
         </sb-library-card>
-    </div>    
+    </div>
 </div>
 <div class="cards-container" *ngIf="maxCardCount <= 0">
     <div class="item"
