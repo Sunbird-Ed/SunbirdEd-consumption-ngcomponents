@@ -68,9 +68,6 @@ describe('TocItemComponent', () => {
     component.ngOnChanges({tocData: staticData.content});
     expect(component).toBeTruthy();
   });
-  it('should create Chapter Click', () => {
-
-  });
 
   describe('when expandMode is single and an accordion item is toggled', () => {
     it('should close all other accordion items', () => {
