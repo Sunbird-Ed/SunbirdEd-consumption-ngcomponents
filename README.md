@@ -1,5 +1,5 @@
 # Common angular components for Sunbird consumption!
-Contains common UI components powered by angular. These components are designed to be used in sunbird consumption platforms *(mobile app, web portal, offline desktop app)* to drive reusability, maintainability hence reducing the redundant development effort significantly.
+Contains common UI components powered by angular. These components are designed to be used in sunbird consumption platforms *(mobile app, web portal, offline desktop app)* to drive reusability, maintainability hence reducing the redundant development effort significantly. 
 
 # Getting Started
 For help getting started with a new Angular app, check out the Angular CLI.
