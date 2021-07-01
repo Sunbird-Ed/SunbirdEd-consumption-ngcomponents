@@ -101,6 +101,7 @@ export interface IContent {
     pkgVersion?: string;
     visibility?: string;
     hoverData?: any; // for card hover data
+    primaryCategory?: string;
 }
 
 export interface ICourse {
