@@ -34,11 +34,6 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Run Tests
-          command: npm run test:ci
-      - store_artifacts:
-          path: coverage
-      - run:
           name: install sonar scanner
           command: sudo npm install -g sonarqube-scanner@2.5.0
       - run:
@@ -48,7 +43,7 @@ jobs:
           name: Publish to NPM
           command: |
             if [ -z $CIRCLE_PR_NUMBER ]; then
-              npm run npm run build-lib
+              npm run build-lib
               echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
               npm publish ./dist/common-consumption
             else
