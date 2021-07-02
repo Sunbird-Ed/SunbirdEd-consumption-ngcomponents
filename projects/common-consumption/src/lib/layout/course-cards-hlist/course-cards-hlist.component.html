@@ -1,12 +1,12 @@
 <div class="layout-course" *ngIf="!isLoading">
-    <div class="header" tabindex="0">
+    <div class="header" >
         <div class="title">
             {{title}}
             <hr>
         </div>
         <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
             *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.TOP"
-            (click)="onViewMoreClick($event)">
+            (click)="onViewMoreClick($event)" tabindex="0">
             {{viewMoreButtonText}}
         </button>
     </div>

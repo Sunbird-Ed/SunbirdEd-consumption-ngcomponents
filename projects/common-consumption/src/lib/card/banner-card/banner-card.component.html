@@ -1,6 +1,6 @@
 <div class="sb--scrolling-wrapper-flexbox">
 <div *ngFor="let banner of bannerList">
-    <div class="sb--card sb--card--theme2" [ngStyle]="{background: 'url(' + banner?.ui?.background+ ')'}" (click)="onClick($event, banner)">
+    <div class="sb--card sb--card--theme2" [ngStyle]="{background: 'url(' + banner?.ui?.background+ ')'}" (click)="onClick($event, banner)" tabindex="0">
         <div class="explore-text">{{banner?.ui?.text}}</div>
     </div>
 </div>
