@@ -1,5 +1,5 @@
 <!-- card component -->
-<div class="sb--card sb--card--course--curiculum" [ngStyle]="fetchStyles()" (click)="onClick($event)" *ngIf="!isLoading">
+<div class="sb--card sb--card--course--curiculum" [ngStyle]="fetchStyles()" (click)="onClick($event)" tabindex="0" *ngIf="!isLoading">
   <div class="sb--card__main-area" *ngIf="isActivityTypeCard">
       <div class="sb--card__info pl-8">
         <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-center font-weight-bold" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
