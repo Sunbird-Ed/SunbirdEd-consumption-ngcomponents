@@ -19,7 +19,7 @@
         <bdi>{{content?.name}}</bdi></h4>
       <a *ngIf="isMenu" class="menu" (click)="$event.stopPropagation()"></a>
     </div>
-    <div *ngIf="content?.subject?.length">
+    <div class="data_4 sb__ellipsis sb__ellipsis--two" *ngIf="content?.subject?.length">
       <span  title="{{content?.subject}}">{{content?.subject}}</span>
     </div>
     <div title="{{content?.primaryCategory}}">
