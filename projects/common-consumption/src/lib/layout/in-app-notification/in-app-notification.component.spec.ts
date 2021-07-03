@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NotificationCardComponent } from '../../card/notification-card/notification-card.component';
 import { InAppNotificationComponent } from './in-app-notification.component';
 
 describe('InAppNotificationComponent', () => {
@@ -8,7 +8,10 @@ describe('InAppNotificationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InAppNotificationComponent ]
+      declarations: [
+        InAppNotificationComponent,
+      NotificationCardComponent
+      ]
     })
     .compileComponents();
   }));

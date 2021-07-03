@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CertificateActionsComponent } from './certificate-actions.component';
-import { By } from '@angular/platform-browser';
+import { By, DomSanitizer } from '@angular/platform-browser';
 
 describe('CertificateActionsComponent', () => {
   let component: CertificateActionsComponent;
@@ -9,6 +9,15 @@ describe('CertificateActionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: DomSanitizer,
+          useValue: {
+            sanitize: () => 'safeString',
+            bypassSecurityTrustResourceUrl: () => ''
+          }
+        }
+      ],
       declarations: [ CertificateActionsComponent ]
     })
     .compileComponents();
