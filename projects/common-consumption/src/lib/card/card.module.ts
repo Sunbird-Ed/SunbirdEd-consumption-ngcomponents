@@ -12,17 +12,41 @@ import { LibraryCardV2Component } from './library-card-v2/library-card-v2.compon
 import { LibraryCardV3Component } from './library-card-v3/library-card-v3.component';
 import { NotificationCardComponent } from './notification-card/notification-card.component';
 import {BannerCardComponent} from './banner-card/banner-card.component';
+import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
 
 @NgModule({
-  declarations: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, 
-    TocCardComponent, MyCourseCardComponent, CourseCuriculumCardComponent, GroupCardComponent, 
-    MemberCardComponent, LibraryCardV2Component, LibraryCardV3Component, NotificationCardComponent,
-    BannerCardComponent],
+  declarations: [
+    LibraryCardComponent,
+    CourseCardComponent,
+    CardHoverComponent,
+    TocCardComponent,
+    MyCourseCardComponent,
+    CourseCuriculumCardComponent,
+    GroupCardComponent,
+    MemberCardComponent,
+    LibraryCardV2Component,
+    LibraryCardV3Component,
+    NotificationCardComponent,
+    BannerCardComponent,
+    TruncatedEllipsisComponent
+  ],
   imports: [
     CommonModule
   ],
-  exports: [LibraryCardComponent, CourseCardComponent, CardHoverComponent, TocCardComponent, 
-    MyCourseCardComponent, CourseCuriculumCardComponent, GroupCardComponent, MemberCardComponent,
-    LibraryCardV2Component, LibraryCardV3Component, NotificationCardComponent, BannerCardComponent]
+  exports: [
+    LibraryCardComponent,
+    CourseCardComponent,
+    CardHoverComponent,
+    TocCardComponent,
+    MyCourseCardComponent,
+    CourseCuriculumCardComponent,
+    GroupCardComponent,
+    MemberCardComponent,
+    LibraryCardV2Component,
+    LibraryCardV3Component,
+    NotificationCardComponent,
+    BannerCardComponent,
+    TruncatedEllipsisComponent
+  ]
 })
 export class CardModule { }
