@@ -1,0 +1,14 @@
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+
+.dot-divider {
+  width: calculateRem(4px);
+  height: calculateRem(4px);
+  min-width: calculateRem(4px);
+  max-width: calculateRem(4px);
+  min-height: calculateRem(4px);
+  max-height: calculateRem(4px);
+  border-radius: 100%;
+  background-color: var(--cc-sbcard-dot-divider);
+  display: inline-block;
+  margin: 0 0 calculateRem(2px) 0;
+}
