@@ -160,8 +160,8 @@
         margin-bottom: 0.25rem;
       }
       .data_4 {
-        font-size:0.90rem;
-        margin:0.5rem 0;
+        font-size:0.9rem;
+        margin:0.125rem 0;
       }
       
     }
@@ -181,7 +181,7 @@
       .data_1, .data_2 {
         color: var(--cc-sbcard-data1-2-text);
         border-radius: calculateRem(8px);
-        font-size: calculateRem(14px);
+        font-size: calculateRem(12px);
         width:auto;flex: initial;
         white-space: nowrap;
       }
@@ -191,7 +191,12 @@
           margin-right:0px;
         }
       }
-    
+      app-truncated-ellipsis{
+        color: var(--cc-sbcard-data1-2-text);
+        .dot-divider{
+          background-color: var(--cc-sbcard-data1-2-text);
+        }
+      }
     }
 
   
@@ -206,5 +211,9 @@
         height: calculateRem(72px);
       }
     }
+  }
+
+  .sb--card__details{
+    font-size: calculateRem(12px);
   }
 }
