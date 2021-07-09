@@ -1,7 +1,7 @@
 <div class="d-flex flex-w-wrap content-video__player__tools">
   <div *ngFor="let item of actionButtons">
     <button class="sb-btn sb-btn-link sb-btn-link-gray sb-btn-sm sb-btn-square"
-      [class.sb-btn-link-disabled]="item?.disabled" [hidden]="item?.disabled" (click)="onButtonClick($event, item)">
+      [class.sb-btn-link-disabled]="item?.disabled" [hidden]="item?.disabled" tabindex="0" (click)="onButtonClick($event, item)">
       <i class="icon-svg icon-svg--sm icon-back">
         <svg class="icon icon-svg--primary">
           <use [attr.xlink:href]="item?.iconPath"></use>
@@ -15,7 +15,7 @@
     <div class="separator"></div>
     <button class="sb-btn sb-btn-link sb-btn-link-gray sb-btn-sm sb-btn-square"
       [class.sb-btn-link-disabled]="fullscreenButton?.disabled" [hidden]="fullscreenButton?.disabled"
-      (click)="onButtonClick($event, fullscreenButton)">
+      (click)="onButtonClick($event, fullscreenButton)" tabindex="0">
       <i class="icon-svg icon-svg--sm icon-back">
         <svg class="icon icon-svg--primary">
           <use [attr.xlink:href]="fullscreenButton?.iconPath"></use>

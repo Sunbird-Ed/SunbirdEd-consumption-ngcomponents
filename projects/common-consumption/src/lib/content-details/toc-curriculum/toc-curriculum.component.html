@@ -18,7 +18,7 @@
 </div>
 <div  *ngIf="isChapterListing">
   <div class="sb-curiculum-responsive-grid">
-    <div class="sb-curiculum__border" *ngFor="let item of tocData?.children; let index = index;" (click)="onTocChapterClick($event,item)">
+    <div class="sb-curiculum__border" *ngFor="let item of tocData?.children; let index = index;" (click)="onTocChapterClick($event,item)" tabindex="0">
       {{ createUniqueId(tocData, item) }}
       <div class="sb-curiculum" style="border:none;">
       <div class="sb--completed" *ngIf="showCompleted(item)">
@@ -41,7 +41,7 @@
       <div class="sb-curiculum" *ngFor="let item of tocData?.children; let index = index;">
       {{ createUniqueId(tocData, item) }}
       <div class="sb-curiculum__chapter" *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && item?.contentType !== 'TextBook' && item?.contentType !== 'Course'" 
-         (click)="onTocChapterClick($event,item)">
+         (click)="onTocChapterClick($event,item)" tabindex="0">
         <div class="title">{{item?.name}}</div>
         <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
           <ng-container *ngIf="item?.mimeType !== MimeTypeMasterData?.COLLECTION && !item?.children?.length" >

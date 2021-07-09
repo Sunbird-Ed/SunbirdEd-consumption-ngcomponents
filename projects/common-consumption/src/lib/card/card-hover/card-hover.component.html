@@ -3,7 +3,7 @@
     <div class="action-container">
         <ng-container *ngFor="let item of hoverData?.actions">
             <div class="action-item" *ngIf="item.type === 'save'" [title]="item?.title ? item.title : ''">
-                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" [disabled]="item.disabled">
+                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
                     <i class="icon-svg icon-svg--md">
                         <svg class="icon">
                             <use xlink:href="assets/common-consumption/images/sprite.svg#pendrive"></use>
@@ -13,7 +13,7 @@
                 </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'download'" [title]="item?.title ? item.title : ''">
-                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" [disabled]="item.disabled">
+                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
                     <i class="icon-svg icon-svg--md">
                         <svg class="icon">
                             <use xlink:href="assets/common-consumption/images/sprite.svg#outline-cloud_download"></use>
@@ -23,7 +23,7 @@
                   </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'open'" [title]="item?.title ? item.title : ''">
-                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" [disabled]="item.disabled">
+                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
                     <i class="icon-svg icon-svg--md">
                         <svg class="icon">
                             <use xlink:href="assets/common-consumption/images/sprite.svg#book-open"></use>
@@ -33,7 +33,7 @@
                   </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'view'" [title]="item?.title ? item.title : ''">
-                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" [disabled]="item.disabled">
+                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
                     <i class="icon-svg icon-svg--sm">
                         <svg class="icon">
                             <use xlink:href="assets/common-consumption/images/sprite.svg#eye"></use>
@@ -43,7 +43,7 @@
                   </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'addToGroup'" [title]="item?.title ? item.title : ''">
-                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" [disabled]="item.disabled">
+                <button class="sb-btn-grow" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
                     <i class="icon-svg icon-svg--sm">
                         <svg class="icon">
                             <use xlink:href="assets/common-consumption/images/sprite.svg#add-icon"></use>
