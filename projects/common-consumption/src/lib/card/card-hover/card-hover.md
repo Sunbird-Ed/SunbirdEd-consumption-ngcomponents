@@ -38,7 +38,7 @@ Sample hover data :
 Example :
 ```html
 <sb-library-card [content]="content" [type]="recentlyViewedCard"
-                    (click)="cardClick($event)" [cardImg]="content?.appIcon"
+                    (click)="cardClick($event)" tabindex="0" [cardImg]="content?.appIcon"
                     [hover-template]="hoverTemplate">
 
                     <ng-template #hoverTemplate let-hoverData="hoverData" 

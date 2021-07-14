@@ -9,7 +9,8 @@ export enum PillsViewType {
     NONE = 'none'
 }
 export enum PillBorder {
-    ROUNDED = 'rounded',
+    ROUND = 'round',
+    SEMI_ROUND = 'semi_round',
     NONE = 'none'
 }
 export enum SelectMode {
@@ -20,13 +21,31 @@ export enum PillsMultiRow{
     DEFAULT = 'default',
     SINGLE = 'single',
     DOUBLE_VIEW_ROW = 'double_view_row',
-    DOUBLE_VIEW_COLUMN = 'double_view_column'
+    DOUBLE_VIEW_COLUMN = 'double_view_column',
+    AUTO_RESPONSIVE = 'auto_responsive'
 }
 export enum ShowMoreViewType{
     EXPAND = 'expand',
     NEW_SCREEN = 'new_screen'
 }
+export enum PillSize{
+    SMALL = 'small',
+    MEDIUM = 'medium',
+    LARGE = 'large',
+    EXTRA_LARGE = 'extra_large'
+}
+export enum PillTextElipsis{
+    NONE = 'none',
+    ONE_LINE = 'one_line',
+    TWO_LINE = 'two_line',
+    THREE_LINE = 'three_line'
+}
+export enum PillBoxShadow{
+    DISABLE = 'disable',
+    ENABLE = 'enable'
+}
 export interface PillsColorTheme {
     iconBgColor?: string;
-    pillBgColor?: string
+    pillBgColor?: string;
+    pillTextColor?: string;
 }

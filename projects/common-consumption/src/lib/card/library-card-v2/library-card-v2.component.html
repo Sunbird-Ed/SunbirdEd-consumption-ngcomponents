@@ -1,10 +1,9 @@
 <!-- card component -->
-<div class="sb--card sb--card--theme2"
+<div class="sb--card sb--card--theme2" tabindex="0"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
-  (click)="onClick($event)" *ngIf="!isLoading">
+  (click)="onClick($event)" tabindex="0" *ngIf="!isLoading">
   <svg width="79px" class="sb--card-svg-tail" height="36px" viewBox="0 0 79 36" version="1.1"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>536CDCAF-4A97-4892-A915-61863D84DDAF</title>
     <g id="Textbooks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g id="1920-X-768" class="sb--card-svg-tail__rc" transform="translate(-735.000000, -524.000000)">
         <g id="Group-25" transform="translate(517.000000, 338.000000)">
@@ -35,7 +34,7 @@
     <div class="sb--card__meta">
       <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}">
         <bdi>{{content?.name}}</bdi></h4>
-      <a *ngIf="isMenu" class="menu" (click)="$event.stopPropagation()"></a>
+      <a *ngIf="isMenu" tabindex="0" class="menu" (click)="$event.stopPropagation()"></a>
     </div>
     <div class="sb--card__meta1 text-left">
       <ng-container *ngIf="content?.subject && content?.subject.length > 0">

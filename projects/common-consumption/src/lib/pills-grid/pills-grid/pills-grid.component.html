@@ -1,27 +1,46 @@
+<div class="header" *ngIf="platform === 'portal' && pillItems?.length > 0">
+  <div class="title" tabindex="0">{{title}}</div>
+  <div *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
+    <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
+     (click)="viewMore()" tabindex="0">{{viewMoreText}}</button>
+    <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length"
+     (click)="viewLess()" tabindex="0">{{viewLessText}}</button>
+  </div>
+</div>
 <div class="sb-label-grid show-icon" [ngClass]="{
   'sb-box-grid':((pillShape === PillShape.BOX)||(pillShape === PillShape.CIRCLE)||(pillShape === PillShape.IMAGE_OVERLAP)), 
   'sb-pills-grid':(pillShape === PillShape.DEFAULT), 
   'show-circle':(pillShape === PillShape.CIRCLE), 
   'icon-header':(pillShape === PillShape.IMAGE_OVERLAP),
   'hscroll': (pillsViewType === PillsViewType.SCROLL), 
-  'border-radius':(pillBorder === PillBorder.ROUNDED),
-  'two-rows-grid':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_COLUMN) || (pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW) || (pillsMultiRow === PillsMultiRow.SINGLE),
+  'show-bradius':(pillBorder === PillBorder.SEMI_ROUND),
+  'show-round-bradius':(pillBorder === PillBorder.ROUND),
+  'two-rows-grid':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_COLUMN) || (pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW) || (pillsMultiRow === PillsMultiRow.SINGLE) || (pillsMultiRow === PillsMultiRow.AUTO_RESPONSIVE),
   'one-row-grid':(pillsMultiRow === PillsMultiRow.SINGLE),
+  'auto-responsive-grid':(pillsMultiRow === PillsMultiRow.AUTO_RESPONSIVE),
   'column-sequence':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_COLUMN),
-  'row-sequence':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW)
+  'row-sequence':(pillsMultiRow === PillsMultiRow.DOUBLE_VIEW_ROW),
+  'size--sm':(pillSize === PillSize.SMALL),
+  'size--md':(pillSize === PillSize.MEDIUM),
+  'size--lg':(pillSize === PillSize.LARGE),
+  'size--xl':(pillSize === PillSize.EXTRA_LARGE),
+  'show-ellipsis':(pillTextElipsis === PillTextElipsis.ONE_LINE) || (pillTextElipsis === PillTextElipsis.TWO_LINE) || (pillTextElipsis === PillTextElipsis.THREE_LINE),
+  'show-ellipsis--two':(pillTextElipsis === PillTextElipsis.TWO_LINE),
+  'show-ellipsis--three':(pillTextElipsis === PillTextElipsis.THREE_LINE),
+  'show-bshadow':(pillBoxShadow === PillBoxShadow.ENABLE)
 }">
   <ng-container *ngFor="let ref of visiblePillTemplateRefs">
     <ng-container *ngTemplateOutlet="ref"></ng-container>
   </ng-container>
 </div>
 
-<div class="sb-view-more-less pb-16" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
+<div class="sb-view-more-less pb-16" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount) && platform === 'mobile'">
   <div *ngIf="showMoreViewType===ShowMoreViewType.EXPAND">
-    <button class="sb-btn sb-btn-normal view-more" *ngIf="viewCount < pillItems?.length" (click)="viewMore()">{{viewMoreText}}</button>
-    <button class="sb-btn sb-btn-normal view-less" *ngIf="viewCount === pillItems?.length"  (click)="viewLess()">{{viewLessText}}</button>
+    <button class="view-more sb-view-btn" *ngIf="viewCount < pillItems?.length" (click)="viewMore()" tabindex="0">{{viewMoreText}}</button>
+    <button class="view-less sb-view-btn" *ngIf="viewCount === pillItems?.length"  (click)="viewLess()" tabindex="0">{{viewLessText}}</button>
   </div>
 
   <div *ngIf="showMoreViewType===ShowMoreViewType.NEW_SCREEN">
-    <button class="sb-btn sb-btn-normal view-all" (click)="viewMoreInNewScreen($event)">{{viewMoreText}}</button>
+    <button class="view-all sb-view-btn" tabindex="0" (click)="viewMoreInNewScreen($event)">{{viewMoreText}}</button>
   </div>
 </div>
