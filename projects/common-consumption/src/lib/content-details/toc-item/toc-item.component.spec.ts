@@ -17,6 +17,8 @@ import { staticData } from '../toc-curriculum/toc-data';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LibraryCardV2Component } from '../../card/library-card-v2/library-card-v2.component';
 import { QueryList } from '@angular/core';
+import { ExpandMode } from '../../card/models';
+import { LibraryCardV3Component } from '../../card/library-card-v3/library-card-v3.component';
 
 describe('TocItemComponent', () => {
   let component: TocItemComponent;
@@ -24,10 +26,19 @@ describe('TocItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule,CommonModule,PipesModule,BrowserAnimationsModule],
-      declarations: [ TocItemComponent, AccordionBodyComponent,AccordionHeaderComponent,
-        AccordionComponent,AccordionItemComponent,LibraryCardComponent,MyCourseCardComponent,
-      TocChildItemComponent,TocCardComponent, LibraryCardV2Component]
+      imports: [FormsModule, CommonModule,PipesModule,BrowserAnimationsModule],
+      declarations: [
+        TocItemComponent,
+        AccordionBodyComponent,
+        AccordionHeaderComponent,
+        AccordionComponent,
+        AccordionItemComponent,
+        LibraryCardComponent,
+        MyCourseCardComponent,
+        TocChildItemComponent,
+        TocCardComponent,
+        LibraryCardV2Component,
+        LibraryCardV3Component]
     })
     .compileComponents();
   }));
@@ -66,7 +77,7 @@ describe('TocItemComponent', () => {
       const mockMockAccordionItem: Partial<AccordionItemComponent> = { expanded: true };
       const mockMockOtherAccordionItem: Partial<AccordionItemComponent> = { expanded: true };
 
-      component.expandMode = 'single';
+      component.accordianConfig.expandMode = ExpandMode.SINGLE;
       component.accordionItems = new QueryList<AccordionItemComponent>();
       component.accordionItems.reset([
         mockMockAccordionItem as AccordionItemComponent,

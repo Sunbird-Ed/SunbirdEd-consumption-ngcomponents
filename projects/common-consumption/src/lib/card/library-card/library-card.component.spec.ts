@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LibraryCardComponent } from './library-card.component';
 import { By } from '@angular/platform-browser';
 import { LibraryCardV2Component } from '../library-card-v2/library-card-v2.component';
+import { LibraryCardV3Component } from '../library-card-v3/library-card-v3.component';
 
 describe('LibraryCardComponent', () => {
   let component: LibraryCardComponent;
@@ -10,7 +11,7 @@ describe('LibraryCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LibraryCardComponent, LibraryCardV2Component ]
+      declarations: [ LibraryCardComponent, LibraryCardV2Component, LibraryCardV3Component ]
     })
     .compileComponents();
   }));
