@@ -65,45 +65,50 @@ export class PillsGridComponent implements AfterContentInit, OnInit {
     }
 
     ngAfterContentInit() {
-        this.viewCount = (this.minDisplayCount) ? this.minDisplayCount : this.pillItems.length;
+      this.viewCount = (this.minDisplayCount) ? this.minDisplayCount : this.pillItems.length;
 
-        this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
-        this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
-        const onSelect = (pill: PillItemComponent, event: MouseEvent) => {
-            if (this.selectMode === SelectMode.SINGLE && pill.selected) {
-                this.visiblePillItems.forEach(e => {
-                    if (e !== pill) {
-                        e.selected = false;
-                    }
-                });
-                pill.selected = false;
-                this.select.emit({event, data: [{ name: pill.name, value: pill.value }]});
-            } else {
-                this.select.emit({
-                    event,
-                    data: this.visiblePillItems
-                        .filter(p => p.selected)
-                        .map(p => ({ name: p.name, value: p.value }))
-                });
-            }
-        };
-        this.visiblePillItems.forEach(e => e.onSelect = onSelect);
+      this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
+      this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
+      this.associateOnSelect();
     }
 
     viewMore() {
         this.viewCount = this.pillItems.length;
         this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
         this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
+        this.associateOnSelect();
     }
 
     viewLess() {
         this.viewCount = this.minDisplayCount;
         this.visiblePillItems = this.pillItems.toArray().slice(0, this.viewCount);
         this.visiblePillTemplateRefs = this.visiblePillItems.map(p => p.template);
+        this.associateOnSelect();
     }
 
     viewMoreInNewScreen(event) {
         this.viewMorePillList.emit({ event, data: (this.pillItems && this.pillItems.toArray()) });
     }
 
+  private associateOnSelect() {
+    const onSelect = (pill: PillItemComponent, event: MouseEvent) => {
+      if (this.selectMode === SelectMode.SINGLE && pill.selected) {
+        this.visiblePillItems.forEach(e => {
+          if (e !== pill) {
+            e.selected = false;
+          }
+        });
+        pill.selected = false;
+        this.select.emit({event, data: [{ name: pill.name, value: pill.value }]});
+      } else {
+        this.select.emit({
+          event,
+          data: this.visiblePillItems
+            .filter(p => p.selected)
+            .map(p => ({ name: p.name, value: p.value }))
+        });
+      }
+    };
+    this.visiblePillItems.forEach(e => e.onSelect = onSelect);
+  }
 }
