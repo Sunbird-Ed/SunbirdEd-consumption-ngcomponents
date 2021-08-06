@@ -22,22 +22,12 @@
     <div class="sb--card__details sb__ellipsis sb__ellipsis--two" *ngIf="content?.subject?.length">
       <span  title="{{content?.subject}}">{{content?.subject}}</span>
     </div>
-    <div class="sb--card__details" title="{{content?.primaryCategory}}">
-      {{content?.primaryCategory}}
-    </div>
-    <div class="sb--card__details" *ngIf="content?.additionalCategories">
-      {{content?.additionalCategories}}
-    </div>
     <div class="sb--card__meta1 text-left" *ngIf="frameworkDetailsList && frameworkDetailsList.length">
       <app-truncated-ellipsis 
         [arrayList]= "frameworkDetailsList"
         [showCount]="1"
         [separatorText]="', '">
       </app-truncated-ellipsis>
-    </div>
-
-    <div class="sb--card__details">
-      {{content?.organisation}}
     </div>
   </div>
   </div>
