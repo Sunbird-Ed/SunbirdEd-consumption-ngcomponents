@@ -1,5 +1,5 @@
 <!-- card component -->
-<div class="sb--card sb--card--theme2"
+<div class="sb--card sb--card--theme2" role="link" tabindex="0"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" *ngIf="!isLoading">
   <div class="sb--card__main-area">
