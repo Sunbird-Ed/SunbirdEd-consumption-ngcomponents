@@ -5,7 +5,7 @@
   <section>
     <div class="listView-compt__item d-flex flex-ai-center" role="listitem" attr.aria-label="{{item.name}}"  *ngFor="let item of listData; let i = index"
       [ngClass]="{'selected-item': (i===selectedIndex)}"
-      (click)="onItemSelect($event, item, i)">
+      (click)="onItemSelect($event, item, i)" tabindex="0">
       {{item.name}}
       <div *ngIf="showRightArrow" class="ml-auto">
         <i class="icon-svg icon-svg--xxs ml-4 forward-arrow">
@@ -19,7 +19,7 @@
   </section>
 
   <section *ngIf="btnText" class="mt-24">
-    <button class="sb-btn sb-btn-outline-primary sb-btn-normal w-100" (click)="onBtnClick($event)">
+    <button class="sb-btn sb-btn-outline-primary sb-btn-normal w-100" (click)="onBtnClick($event)" tabindex="0">
       <img *ngIf="btnImg" src="{{btnImg}}">
       {{btnText}}
     </button>

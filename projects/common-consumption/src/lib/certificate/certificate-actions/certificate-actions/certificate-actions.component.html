@@ -8,19 +8,19 @@
   </div>
   <div [ngClass]="{'overlay-container': showOverlay}">
     <div class="d-flex flex-ai-center flex-jc-center flex-dc overlay-buttons">
-      <button type="button" *ngIf="select?.show" (click)="onButtonClick($event, select?.name)"
+      <button type="button" *ngIf="select?.show" (click)="onButtonClick($event, select?.name)" tabindex="0"
         class="d-flex sb-btn sb-btn-normal sb-btn-no-border mb-16">
         <img src="assets/common-consumption/images/select-icon.svg" width="16px" height="16px" class="mr-8" alt="">
         <span class="sb-color-primary font-weight-bold">{{select?.label}}</span>
       </button>
 
-      <button type="button" *ngIf="remove?.show" (click)="onButtonClick($event, remove?.name)"
+      <button type="button" *ngIf="remove?.show" (click)="onButtonClick($event, remove?.name)" tabindex="0"
         class="d-flex sb-btn sb-btn-normal sb-btn-no-border mb-16">
         <img src="assets/common-consumption/images/bin.svg" width="16px" height="16px" class="mr-8" alt="">
         <span class="sb-color-error font-weight-bold">{{remove?.label}}</span>
       </button>
 
-      <button type="button" *ngIf="preview?.show" (click)="onButtonClick($event, preview?.name)"
+      <button type="button" *ngIf="preview?.show" (click)="onButtonClick($event, preview?.name)" tabindex="0"
         class="d-flex sb-btn sb-btn-normal sb-btn-no-border">
         <img src="assets/common-consumption/images/preview-icon.svg" width="14px" height="14px" class="mr-8" alt="">
         <span class="sb-color-primary font-weight-bold">{{preview?.label}}</span></button>

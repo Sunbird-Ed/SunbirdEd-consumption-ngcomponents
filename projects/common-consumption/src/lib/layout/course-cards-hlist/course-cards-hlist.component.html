@@ -6,16 +6,16 @@
         </div>
         <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
             *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.TOP"
-            (click)="onViewMoreClick($event)">
+            (click)="onViewMoreClick($event)" tabindex="0">
             {{viewMoreButtonText}}
         </button>
     </div>
     <div class="sb--scrolling-wrapper-flexbox" *ngIf="!multiRow">
       <div  *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let index = index" class="sb--card--container">
-        <sb-course-card [course]="content" (click)="onCardClick($event, content)"  [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID" [isMenu]="isMenu"  (menuClick)="onCardMenuClick($event)"></sb-course-card>
-        <sb-my-course-card [hideProgress]="hideProgress" [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
-        <sb-my-course-card [hideProgress]="hideProgress" [course]="content" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
-        <sb-course-curiculum-card [cardData]="content" [index]="index" (click)="onCardClick($event, content)" *ngIf="type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
+        <sb-course-card [course]="content" (click)="onCardClick($event, content)" tabindex="0"  [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.COURSE_CARD_GRID" [isMenu]="isMenu"  (menuClick)="onCardMenuClick($event)"></sb-course-card>
+        <sb-my-course-card [hideProgress]="hideProgress" [course]="content" tabindex="0" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" *ngIf="type === CourseCardGridTypes.MY_COURSE_CARD_GRID"></sb-my-course-card>
+        <sb-my-course-card [hideProgress]="hideProgress" [course]="content" tabindex="0" (click)="onCardClick($event, content)" [cardImg]="content?.cardImg" [section]="content?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED" *ngIf="type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID"></sb-my-course-card>
+        <sb-course-curiculum-card [cardData]="content" [index]="index" tabindex="0" (click)="onCardClick($event, content)" *ngIf="type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
       </div>
       <div class="view-all">
         <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white sb-btn-oval" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.RIGHT" (click)="onViewMoreClick($event)">
@@ -35,8 +35,8 @@
             <sb-my-course-card [hideProgress]="hideProgress" class="sb--card--seperator" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID" [course]="contentList[index]" (click)="onCardClick($event, contentList[index])" [cardImg]="contentList[index]?.cardImg" [section]="contentList[index]?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED"></sb-my-course-card>
             <sb-my-course-card [hideProgress]="hideProgress" class="sb--card--seperator" *ngIf="index+1 < contentList.length && type === CourseCardGridTypes.MY_COURSE_RECENTLY_VIEWED_CARD_GRID" [course]="contentList[index+1]" (click)="onCardClick($event, contentList[index+1])" [cardImg]="contentList[index+1]?.cardImg" [section]="contentList[index+1]?.info_to_display" [type]="CourseCardTypes.RECENTLY_VIEWED"></sb-my-course-card>
         
-            <sb-course-curiculum-card class="sb--card--seperator" [index]="index" [cardData]="contentList[index]" (click)="onCardClick($event, contentList[index])" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
-            <sb-course-curiculum-card class="sb--card--seperator" [index]="index+1" [cardData]="contentList[index+1]" (click)="onCardClick($event, contentList[index+1])" *ngIf="index+1 < contentList.length && contentList[index+1]!=null && type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
+            <sb-course-curiculum-card class="sb--card--seperator" [index]="index" [cardData]="contentList[index]" tabindex="0" (click)="onCardClick($event, contentList[index])" *ngIf="contentList[index]!=null && type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
+            <sb-course-curiculum-card class="sb--card--seperator" [index]="index+1" [cardData]="contentList[index+1]" tabindex="0" (click)="onCardClick($event, contentList[index+1])" *ngIf="index+1 < contentList.length && contentList[index+1]!=null && type === CourseCardGridTypes.CURICULUM_COURSE_CARD_GRID"></sb-course-curiculum-card>
        </div>
       </span>
       <div class="view-all">

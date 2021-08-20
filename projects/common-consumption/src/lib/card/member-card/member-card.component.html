@@ -7,10 +7,10 @@
     </div>
     <div class="d-flex flex-ai-center pr-8" *ngIf="config.view == 'horizontal'">
       <div *ngIf="isAdmin || isMenu" class="d-flex flex-ai-center">
-        <div [style.visibility]="isAdmin ? 'visible' : 'hidden'" class="status" (click)="onClick($event);$event.stopPropagation();">Admin</div>
-        <div [style.visibility]="isMenu ? 'visible' : 'hidden'" class="menu ml-8" (click)="onMenuClick($event);$event.stopPropagation();"></div>
+        <div [style.visibility]="isAdmin ? 'visible' : 'hidden'" class="status" tabindex="0" (click)="onClick($event);$event.stopPropagation();">Admin</div>
+        <div [style.visibility]="isMenu ? 'visible' : 'hidden'" class="menu ml-8" tabindex="0" (click)="onMenuClick($event);$event.stopPropagation();"></div>
       </div>
-    <div *ngIf="!isMenu && cardImg!=null" (click)="onMenuClick($event);$event.stopPropagation();"><img [src]="cardImg" alt=""></div>
+    <div *ngIf="!isMenu && cardImg!=null" tabindex="0" (click)="onMenuClick($event);$event.stopPropagation();"><img [src]="cardImg" alt=""></div>
     <div *ngIf="config.isSelectable && selected" class="selected ml-8"><img class="icon_select" alt="" src="assets/common-consumption/images/selected.svg" /></div>
     <div *ngIf="progressDisplay && progressDisplay !== '100'" class="ml-8 progress-circle progress-circle--{{config?.progressSize}}" [attr.data-percentage]="progressDisplay">
         <svg class="progress-circle__svg" viewport="0 0 2000 2000">

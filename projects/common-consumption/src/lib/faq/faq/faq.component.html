@@ -1,5 +1,5 @@
 <div class="panel panel-default cc-faq-panel" *ngFor="let faq of faqs; let i = index">
-  <div data-toggle="collapse" (click)="toggleGroup(i,$event)">
+  <div data-toggle="collapse" (click)="toggleGroup(i,$event)" tabindex="0">
     <div class="panel-heading">
       <div class="text-left" role="tabpanel" attr.aria-label="{{faq?.topic}}" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
         {{ faq?.topic}}
@@ -28,9 +28,9 @@
       <p class="panelText">{{data?.constants?.helpMsg}}&lrm;</p>
       <div class="d-flex flex-jc-center">
         <button type="button" class="sb-btn sb-btn-normal sb-btn-outline-primary mr-8 no-btn" id="btn-no"
-          (click)="noClicked(i,$event)">{{data?.constants?.noMsg}}</button>
+          (click)="noClicked(i,$event)" tabindex="0">{{data?.constants?.noMsg}}</button>
         <button type="button" class="sb-btn sb-btn-normal sb-btn-success yes-btn" id="btn-yes"
-          (click)="yesClicked(i,$event)">{{data?.constants?.yesMsg}}</button>
+          (click)="yesClicked(i,$event)" tabindex="0">{{data?.constants?.yesMsg}}</button>
         </div>
     </div>
     <div class="panel-interact" *ngIf="isYesClicked || isSubmitted">
@@ -47,7 +47,7 @@
         <textarea type="text" name="moreInfo" placeholder="{{constants?.typeHere}}" class="input-text" maxlength="1000"
           [(ngModel)]="textValue"></textarea>
         <input type="submit" value="{{constants?.submitButton}}" class="submit-button"
-          (click)="submitClicked(textValue,i,$event)">
+          (click)="submitClicked(textValue,i,$event)" tabindex="0">
       </form>
       <p class="no-clicked" hidden="true" *ngIf="isSubmitted"> {{data?.constants?.thanksMsg}} </p>
     </div>

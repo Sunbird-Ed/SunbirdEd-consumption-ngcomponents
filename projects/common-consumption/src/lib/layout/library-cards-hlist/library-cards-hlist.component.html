@@ -1,7 +1,7 @@
 <div class="layout-course" *ngIf="!isLoading">
     <div class="header">
         <div class="title"> {{title}} <hr> </div>
-        <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.TOP" (click)="onViewMoreClick($event)">
+        <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.TOP" (click)="onViewMoreClick($event)" tabindex="0">
             {{viewMoreButtonText}}
         </button>
     </div>
@@ -11,7 +11,7 @@
             <sb-library-card [indexToDisplay]="index" [layoutConfig]="layoutConfig" [content]="content" [type]="type" [isMobile]="isMobile" [isOffline]="(isOffline && !content.isAvailableLocally)" [moreInfoLabel]="moreInfoLabel" [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon" [isMenu]="isMenu" [isSelected]="isSelected" (cardClick)="onCardClick($event, index)" (menuClick)="onMenuClick($event)" [cardImg]="content?.cardImg || content?.contentData?.cardImg"></sb-library-card>
         </div>
         <div class="view-all">
-            <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white sb-btn-oval" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.RIGHT" (click)="onViewMoreClick($event)">
+            <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white sb-btn-oval" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.RIGHT" (click)="onViewMoreClick($event)" tabindex="0">
                 {{viewMoreButtonText}}
             </button>
         </div>
@@ -25,7 +25,7 @@
             </div>
         </span>
         <div class="view-all">
-            <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white sb-btn-oval" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.RIGHT" (click)="onViewMoreClick($event)">
+            <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white sb-btn-oval" *ngIf="contentList?.length > maxCardCount && viewMoreButtonPosition === ButtonPosition.RIGHT" (click)="onViewMoreClick($event)" tabindex="0">
                 {{viewMoreButtonText}}
             </button>
         </div>
