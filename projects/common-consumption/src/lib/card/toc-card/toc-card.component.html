@@ -1,10 +1,6 @@
 <!-- For card type textbook -->
 <div *ngIf="type === TocCardType.TEXTBOOK">
-<<<<<<< HEAD
-  <div class="sbchapter__item" (click)="onTocCardClick($event)" tabindex="0"
-=======
-  <div class="sbchapter__item" role="tablist" (click)="onTocCardClick($event)"
->>>>>>> 1f9dc2769cc38e7dd6e99895833a58e254708072
+  <div class="sbchapter__item" role="tablist" (click)="onTocCardClick($event)" tabindex="0"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
     <h4 class="sbchapter__item__title sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8" title="{{content?.name}}">
       {{content?.name}}
@@ -17,11 +13,7 @@
 
 <!-- For card type TRACKABLE -->
 <div *ngIf="type === TocCardType.TRACKABLE">
-<<<<<<< HEAD
-  <div class="sbchapter__item" (click)="onTocCardClick($event)" tabindex="0"
-=======
-  <div class="sbchapter__item" role="tablist" (click)="onTocCardClick($event)"
->>>>>>> 1f9dc2769cc38e7dd6e99895833a58e254708072
+  <div class="sbchapter__item" role="tablist" (click)="onTocCardClick($event)" tabindex="0"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier, 'sb-card-swap': swapCard(content)}">
     <div class="relative">
       <img src="assets/common-consumption/images/completed.svg" *ngIf="content?.isAvailableLocally" class="sb_success_check" alt="">
@@ -49,11 +41,7 @@
 
 <!-- For card type course -->
 <div *ngIf="type === TocCardType.COURSE">
-<<<<<<< HEAD
-  <div class="sbchapter__item"  (click)="onTocCardClick($event)" tabindex="0"
-=======
-  <div class="sbchapter__item" role="tablist" (click)="onTocCardClick($event)"
->>>>>>> 1f9dc2769cc38e7dd6e99895833a58e254708072
+  <div class="sbchapter__item" role="tablist" (click)="onTocCardClick($event)" tabindex="0"
   [ngClass]="[(activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier) ? 'sbchapter__item--active': '', isDisabled ? disabled: '']">
   <div class="sbchapter__img background-transparent" [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">
     {{createIconMap()}}
