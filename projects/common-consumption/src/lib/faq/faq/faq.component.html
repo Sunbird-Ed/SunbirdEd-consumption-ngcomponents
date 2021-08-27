@@ -1,7 +1,7 @@
 <div class="panel panel-default cc-faq-panel" *ngFor="let faq of faqs; let i = index">
   <div data-toggle="collapse" (click)="toggleGroup(i,$event)" tabindex="0">
     <div class="panel-heading">
-      <div class="text-left" role="tabpanel" attr.aria-label="{{faq?.topic}}" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
+      <div class="text-left" role="button" attr.aria-label="{{faq?.topic}}" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
         {{ faq?.topic}}
         <span>
           <i class="icon-svg icon-svg--xs ml-4" *ngIf="!isGroupShown(i)">
