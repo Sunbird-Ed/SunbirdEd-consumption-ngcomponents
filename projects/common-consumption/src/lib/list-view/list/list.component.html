@@ -3,7 +3,7 @@
   <div class="listView-compt__subTitle" *ngIf="subTitle">{{subTitle}}</div>
 
   <section>
-    <div class="listView-compt__item d-flex flex-ai-center" role="listitem" attr.aria-label="{{item.name}}"  *ngFor="let item of listData; let i = index"
+    <div class="listView-compt__item d-flex flex-ai-center" role="button" attr.aria-label="{{item.name}}"  *ngFor="let item of listData; let i = index"
       [ngClass]="{'selected-item': (i===selectedIndex)}"
       (click)="onItemSelect($event, item, i)" tabindex="0">
       {{item.name}}
