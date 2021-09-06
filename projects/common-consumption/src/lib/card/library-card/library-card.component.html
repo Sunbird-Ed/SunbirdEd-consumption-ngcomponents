@@ -2,7 +2,7 @@
 <span *ngIf="!layoutConfig">
 <div class="sb--card"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
-  (click)="onClick($event)" *ngIf="!isLoading">
+  (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">
@@ -14,7 +14,7 @@
     <div class="sb--card__info">
         <div class="sb--card__meta1">
           <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
-          <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
+          <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
         </div>
       
       <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
