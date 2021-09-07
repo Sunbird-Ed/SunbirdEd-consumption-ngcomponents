@@ -20,7 +20,7 @@
 
   <section *ngIf="btnText" class="mt-24">
     <button class="sb-btn sb-btn-outline-primary sb-btn-normal w-100" (click)="onBtnClick($event)" tabindex="0">
-      <img *ngIf="btnImg" src="{{btnImg}}">
+      <img *ngIf="btnImg" alt="Icon {{btnText}}" src="{{btnImg}}">
       {{btnText}}
     </button>
   </section>
