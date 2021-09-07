@@ -21,9 +21,7 @@
   .sb--card {
     &__img {
       .img-container {
-        position: relative;
         overflow: hidden;
-        // border: calculateRem(4px) solid var(--cc-sbcard-img-br);
 
         img {
           max-width: 100%;
@@ -39,6 +37,7 @@
           transform: translate(-50%, -50%);
           overflow: hidden;
           object-fit: cover;
+          border-radius: calculateRem(8px);
         }
       }
 
@@ -52,7 +51,7 @@
     //Accessibility Fixes
     &__image-pos {
       position: absolute;
-      top: 50%;
+      top: 0px;
       right: calculateRem(16px);
       z-index: 1000;
 
@@ -76,10 +75,11 @@
   }
 
   .title-info{
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Noto Sans";
     letter-spacing: 0;
     line-height: 20px;
+    font-weight: bold;
   }
 
   .subject-info{
@@ -105,9 +105,9 @@
     margin-left: 10px;
     margin-top: calculateRem(11px);
     box-shadow: 5px 5px 2px 0 rgba(0, 0, 0, 0.1) !important;
-    
+
     .sb--card__main-area {
-      margin: calculateRem(16px) calculateRem(16px) calculateRem(8px);
+      margin: calculateRem(16px) 0 calculateRem(8px);
       height: auto;
       position: relative;
 
@@ -150,7 +150,7 @@
       margin: 0rem;
     }
     .sb--card__img .img-container {
-      width: 3.5rem;
+      width: 4rem;
     }
 
     .sb--card__moreinfo {
@@ -182,7 +182,7 @@
     }
 
     .sb--card__meta1 {
-      height: calculateRem(32px);
+      height: auto;
       flex-wrap: wrap;
       margin-top: calculateRem(10px);
 
@@ -198,11 +198,15 @@
         white-space: nowrap;
         letter-spacing: 0;
         line-height: calculateRem(22px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 32ch
       }
 
       .data_1 {
         background: #E0F5EA;
         color: #008840;
+        width: auto;
       }
 
       .data_2 {
@@ -229,6 +233,7 @@
 
       .img-container {
         box-shadow: 0 0 5px 0 rgba(var(--rc-rgba-black), 0.1);
+        height: calculateRem(84px);
       }
     }
   }
