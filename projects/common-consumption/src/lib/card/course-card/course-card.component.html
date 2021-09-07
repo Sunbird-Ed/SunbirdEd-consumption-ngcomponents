@@ -1,5 +1,5 @@
 <!-- card component -->
-<div class="sb--card sb--card--course" (click)="onClick($event)" *ngIf="!isLoading">
+<div class="sb--card sb--card--course" (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">
@@ -11,7 +11,7 @@
     <div class="sb--card__info">
         <div class="sb--card__meta1">
             <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{course?.name}}">{{course?.name}}</h4>
-            <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></div>
+            <div *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></div>
         </div>
       <div class="sb--card__meta1 text-left">
         <span class="data_1 sb__ellipsis sb__ellipsis--two" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName || course?.organisation?.join(', ')}}</span>
