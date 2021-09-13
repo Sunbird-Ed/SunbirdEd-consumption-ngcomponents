@@ -10,6 +10,7 @@ import { GroupCardComponent } from './group-card/group-card.component';
 import { MemberCardComponent } from './member-card/member-card.component';
 import { LibraryCardV2Component } from './library-card-v2/library-card-v2.component';
 import { LibraryCardV3Component } from './library-card-v3/library-card-v3.component';
+import { LibraryCardV4Component } from './library-card-v4/library-card-v4.component';
 import { NotificationCardComponent } from './notification-card/notification-card.component';
 import {BannerCardComponent} from './banner-card/banner-card.component';
 import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
@@ -26,6 +27,7 @@ import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellip
     MemberCardComponent,
     LibraryCardV2Component,
     LibraryCardV3Component,
+    LibraryCardV4Component,
     NotificationCardComponent,
     BannerCardComponent,
     TruncatedEllipsisComponent
@@ -44,6 +46,7 @@ import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellip
     MemberCardComponent,
     LibraryCardV2Component,
     LibraryCardV3Component,
+    LibraryCardV4Component,
     NotificationCardComponent,
     BannerCardComponent,
     TruncatedEllipsisComponent
