@@ -37,7 +37,6 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
 
     ngOnInit() {
         this.fetchBMGS();
-        this.fetchSvg();
         this.arrangeFrameworkDetails();
     }
 
@@ -89,10 +88,6 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
         } else {
             return "sb--card__img sb--card__image-pos";
         }
-       
-    }
-    fetchSvg() {
-        var indexToDisplay = this.indexToDisplay!=null ? (this.indexToDisplay % 9)+1:2;
-        this.svgToDisplay =  "assets/common-consumption/images/abstract_0"+indexToDisplay+".svg";
+
     }
 }
