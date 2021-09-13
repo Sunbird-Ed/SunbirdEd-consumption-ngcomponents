@@ -41,6 +41,10 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
     }
 
     fetchBMGS () {
+        this.content['se_subjects'] = this.content.se_subjects ? this.content.se_subjects : this.content.subject;
+        this.content['se_boards'] = this.content.se_boards ? this.content.se_boards : this.content.board;
+        this.content['se_mediums'] = this.content.se_mediums ? this.content.se_mediums : this.content.medium;
+        this.content['se_gradeLevels'] = this.content.se_gradeLevels ? this.content.se_gradeLevels : this.content.gradeLevel;
         this.displaySubject += this.content.se_subjects.length > 1 ?
         (this.content.se_subjects[0] + '...+' + (this.content.se_subjects.length - 1).toString()) : this.content.se_subjects[0];
 

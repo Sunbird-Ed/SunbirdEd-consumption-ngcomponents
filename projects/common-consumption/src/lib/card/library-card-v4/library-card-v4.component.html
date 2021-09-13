@@ -33,7 +33,7 @@
         <span class="data_3" title="{{content?.se_gradeLevels[0]}}">{{gradeLevel}}</span>
       </ng-container>
     </div>
-    <div class="subject-info text-info" *ngIf="displaySubject">Published by : {{content?.creator}}</div>
+    <div class="subject-info text-info" *ngIf="content?.creator">Published by : {{content?.creator}}</div>
   </div>
 
 <div class="sb--card sb--card--theme2" *ngIf="isLoading">
