@@ -122,7 +122,7 @@
         background: var(--cc-sbcard-type-bg);
         height: 1.25rem;
         color: var(--cc-sbcard-type-text);
-        font-size: .625rem;
+        font-size:calculateRem(11px);
         display: flex;
         align-items: center;
 

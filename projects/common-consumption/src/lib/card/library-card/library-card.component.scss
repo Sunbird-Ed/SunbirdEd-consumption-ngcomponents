@@ -190,7 +190,7 @@
       @include padding(null, calculateRem(8px), null, calculateRem(4px));
       @include margin(null, null, null, calculateRem(16px));
       color: var(--cc-sbcard-type-text);
-      font-size: calculateRem(10px);
+      font-size: calculateRem(11px);
       display: flex;
       align-items: center;
 
