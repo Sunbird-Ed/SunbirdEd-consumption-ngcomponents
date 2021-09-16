@@ -48,4 +48,4 @@ jobs:
               npm publish ./dist/common-consumption
             else
               npm run build-lib
-            fi    
+            fi
