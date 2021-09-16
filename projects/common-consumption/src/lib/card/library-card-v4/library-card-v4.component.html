@@ -19,18 +19,40 @@
       <div class="sb__ellipsis sb__ellipsis--two text-left flex-basis-1 title-info" title="{{content?.name}}">
         <bdi>{{content?.name}}</bdi></div>
     </div>
-    <div class="subject-info" *ngIf="displaySubject">Subject : {{displaySubject}}</div>
+    <div class="subject-info" *ngIf="displaySubject?.length">
+      Subject : 
+      <app-truncated-ellipsis class="d-inline-block"
+        [arrayList]= "displaySubject"
+        [showCount]="1"
+        [separatorText]="', '">
+      </app-truncated-ellipsis></div>
     <div class="sb--card__meta1 text-left">
       <ng-container *ngIf="content?.se_boards && content?.se_boards.length > 0">
         <span class="data_1 mr-8" title="{{content?.se_boards[0]}}">
-          {{board}}
+          <app-truncated-ellipsis 
+            [arrayList]= "board"
+            [showCount]="1"
+            [separatorText]="', '">
+          </app-truncated-ellipsis>
         </span>
       </ng-container>
       <ng-container *ngIf="content?.se_mediums && content?.se_mediums.length > 0">
-        <span class="data_2" title="{{content?.se_mediums[0]}}">{{medium}}</span>
+        <span class="data_2" title="{{content?.se_mediums[0]}}">
+          <app-truncated-ellipsis 
+            [arrayList]= "medium"
+            [showCount]="1"
+            [separatorText]="', '">
+          </app-truncated-ellipsis>
+        </span>
       </ng-container>
       <ng-container *ngIf="content?.se_gradeLevels && content?.se_gradeLevels.length > 0">
-        <span class="data_3" title="{{content?.se_gradeLevels[0]}}">{{gradeLevel}}</span>
+        <span class="data_3" title="{{content?.se_gradeLevels[0]}}">
+          <app-truncated-ellipsis 
+            [arrayList]= "gradeLevel"
+            [showCount]="1"
+            [separatorText]="', '">
+          </app-truncated-ellipsis>
+        </span>
       </ng-container>
     </div>
     <div class="subject-info text-info" *ngIf="content?.creator">Published by : {{content?.creator}}</div>
