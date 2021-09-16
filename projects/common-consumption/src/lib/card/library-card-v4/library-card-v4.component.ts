@@ -30,10 +30,10 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
 
     get LibraryCardTypes() { return LibraryCardTypes; }
     frameworkDetailsList = [];
-    displaySubject = '';
-    board = '';
-    medium = '';
-    gradeLevel = '';
+    displaySubject = [];
+    board = [];
+    medium = [];
+    gradeLevel = [];
 
     ngOnInit() {
         this.fetchBMGS();
@@ -45,17 +45,6 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
         this.content['se_boards'] = this.content.se_boards ? this.content.se_boards : this.content.board;
         this.content['se_mediums'] = this.content.se_mediums ? this.content.se_mediums : this.content.medium;
         this.content['se_gradeLevels'] = this.content.se_gradeLevels ? this.content.se_gradeLevels : this.content.gradeLevel;
-        this.displaySubject += this.content.se_subjects.length > 1 ?
-        (this.content.se_subjects[0] + '...+' + (this.content.se_subjects.length - 1).toString()) : this.content.se_subjects[0];
-
-        this.board += this.content.se_boards.length > 1 ?
-        (this.content.se_boards[0] + '...+' + (this.content.se_boards.length - 1).toString()) : this.content.se_boards[0];
-
-        this.medium += this.content.se_mediums.length > 1 ?
-        (this.content.se_mediums[0] + '...+' + (this.content.se_mediums.length - 1).toString()) : this.content.se_mediums[0];
-
-        this.gradeLevel += this.content.se_gradeLevels.length > 1 ?
-        (this.content.se_gradeLevels[0] + '...+' + (this.content.se_gradeLevels.length - 1).toString()) : this.content.se_gradeLevels[0];
     }
 
     ngAfterViewInit(): void {
@@ -66,24 +55,19 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
     }
 
     arrangeFrameworkDetails() {
-        this.frameworkDetailsList = [];
-        if (typeof this.content.board === 'string') {
-            this.frameworkDetailsList.push([this.content.board]);
-        } else if (Array.isArray(this.content.board)) {
-            this.frameworkDetailsList.push(this.content.board);
-        }
+        this.board = this.getFormatedData(this.content.board);
+        this.medium = this.getFormatedData(this.content.medium);
+        this.gradeLevel = this.getFormatedData(this.content.gradeLevel);
+        this.displaySubject = this.getFormatedData(this.content.se_subjects);
+    }
 
-        if (typeof this.content.medium === 'string') {
-            this.frameworkDetailsList.push([this.content.medium]);
-        } else if (Array.isArray(this.content.medium)) {
-            this.frameworkDetailsList.push(this.content.medium  );
+    getFormatedData(frameworkData){
+        if (typeof frameworkData === 'string') {
+            return [[frameworkData]];
+        } else if (Array.isArray(frameworkData)) {
+            return [frameworkData];
         }
-
-        if (typeof this.content.gradeLevel === 'string') {
-            this.frameworkDetailsList.push([this.content.gradeLevel]);
-        } else if (Array.isArray(this.content.gradeLevel)) {
-            this.frameworkDetailsList.push(this.content.gradeLevel);
-        }
+        return [];
     }
  
     getClassForImage() {
@@ -92,6 +76,5 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
         } else {
             return "sb--card__img sb--card__image-pos";
         }
-
     }
 }
