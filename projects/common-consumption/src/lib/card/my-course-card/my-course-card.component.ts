@@ -18,6 +18,7 @@ export class MyCourseCardComponent implements OnInit {
   @Input() isLoading:boolean;
   @Input() type:CourseCardTypes;
   @Input() hideProgress: boolean = false;
+  @Input() publishedByText = '';
 
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 

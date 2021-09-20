@@ -13,8 +13,8 @@
       <div class="sb--card__info">
         <div class="sb--holder">
           <h4 class="sb--card__title sb__ellipsis  sb__ellipsis--three text-left" title="{{course?.courseName}}">{{course?.courseName}}</h4>
-          <div class="sb--card__meta1 text-left">
-            <span class="data_1 ellipsis" title="{{course?.content?.orgDetails?.orgName}}">{{course?.content?.orgDetails?.orgName}}</span>
+          <div class="sb--card__meta1 text-left" *ngIf="course?.content?.orgDetails?.orgName">
+            <span class="data_1 ellipsis" title="{{course?.content?.orgDetails?.orgName}}"> <span *ngIf="publishedByText">{{publishedByText}} : </span> {{course?.content?.orgDetails?.orgName}}</span>
           </div>
         </div>
       </div>
