@@ -24,7 +24,8 @@ export class CourseCardsHlistComponent implements OnInit {
 
    /* Show Menu on each card */
     @Input() isMenu = false;
-    @Input() viewMoreButtonPosition: ButtonPosition = ButtonPosition.TOP
+    @Input() viewMoreButtonPosition: ButtonPosition = ButtonPosition.TOP;
+    @Input() publishedByText = '';
 
    @Output() viewMoreClick: EventEmitter<IViewMoreClick> = new EventEmitter<IViewMoreClick>();
    @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
