@@ -1,5 +1,5 @@
 <ng-template>
-  <div class="item" [ngStyle]="{'background-color':theme?.pillBgColor}" (click)="onClick($event)" tabindex="0">
+  <div class="item" [ngStyle]="{'background-color':theme?.pillBgColor}" (click)="onClick($event)" role="button" tabindex="0">
     <span *ngIf="icon" class="img" [ngStyle]="{'background-color':theme?.iconBgColor}">
       <img src="{{icon}}" class="sb-icon-img sb-icon-img-sm" />
     </span>

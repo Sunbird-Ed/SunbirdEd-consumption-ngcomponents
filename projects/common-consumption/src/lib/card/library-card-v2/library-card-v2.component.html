@@ -34,7 +34,7 @@
     <div class="sb--card__meta">
       <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}">
         <bdi>{{content?.name}}</bdi></h4>
-      <a *ngIf="isMenu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
+      <a *ngIf="isMenu" class="menu" tabindex="0" (click)="onMenuClick($event);$event.stopPropagation()"></a>
     </div>
     <div class="sb--card__meta1 text-left">
       <ng-container *ngIf="content?.subject && content?.subject.length > 0">
@@ -103,7 +103,7 @@
   </ng-container>
 </div>
 
-<div class="sb--card sb--card--theme2" *ngIf="isLoading">
+<div class="sb--card sb--card--theme2" *ngIf="isLoading" tabindex="0" role="button">
   <!-- card img -->
   <div class="sb--card__main-area">
     <div [ngClass]="getClassForImage()">
