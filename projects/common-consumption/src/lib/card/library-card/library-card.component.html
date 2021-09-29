@@ -2,7 +2,7 @@
 <span *ngIf="!layoutConfig">
 <div class="sb--card"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
-  (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
+  (click)="onClick($event)" *ngIf="!isLoading" tabindex="0" role="button">
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">
@@ -75,7 +75,7 @@
   </ng-container>
 </div>
 
-  <div class="sb--card" *ngIf="isLoading">
+  <div class="sb--card" *ngIf="isLoading" tabindex="0" role="button">
       <div class="sb--card__main-area">
           <!-- card img -->
           <div class="sb--card__img">
