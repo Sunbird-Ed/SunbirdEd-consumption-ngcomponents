@@ -3,7 +3,7 @@
   <div class="listView-compt__subTitle" *ngIf="subTitle">{{subTitle}}</div>
 
   <section>
-    <div class="listView-compt__item d-flex flex-ai-center" role="listitem" attr.aria-label="{{item.name}}"  *ngFor="let item of listData; let i = index"
+    <div class="listView-compt__item d-flex flex-ai-center" role="button" attr.aria-label="{{item.name}}"  *ngFor="let item of listData; let i = index"
       [ngClass]="{'selected-item': (i===selectedIndex)}"
       (click)="onItemSelect($event, item, i)" tabindex="0">
       {{item.name}}
@@ -20,7 +20,7 @@
 
   <section *ngIf="btnText" class="mt-24">
     <button class="sb-btn sb-btn-outline-primary sb-btn-normal w-100" (click)="onBtnClick($event)" tabindex="0">
-      <img *ngIf="btnImg" src="{{btnImg}}">
+      <img *ngIf="btnImg" alt="Icon {{btnText}}" src="{{btnImg}}">
       {{btnText}}
     </button>
   </section>

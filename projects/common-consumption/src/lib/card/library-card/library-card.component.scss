@@ -190,7 +190,7 @@
       @include padding(null, calculateRem(8px), null, calculateRem(4px));
       @include margin(null, null, null, calculateRem(16px));
       color: var(--cc-sbcard-type-text);
-      font-size: calculateRem(10px);
+      font-size: calculateRem(11px);
       display: flex;
       align-items: center;
 
@@ -369,14 +369,16 @@
 ::ng-deep {
 
   .card-hover {
-    display: none;
+    opacity: 0;
     transition: all 0.2s ease-in;
+    display: none;
   }
 
-  .sb--card:hover {
+  .sb--card:hover, .sb--card:focus-within {
     .card-hover {
-      display: block;
+      opacity: 1;
       z-index: 1001;
+      display: block;
 
       .child-content {
         --cc-sbcard-hover-text: var(--white);

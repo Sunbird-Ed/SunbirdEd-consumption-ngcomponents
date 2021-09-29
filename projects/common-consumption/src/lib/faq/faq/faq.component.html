@@ -1,7 +1,7 @@
 <div class="panel panel-default cc-faq-panel" *ngFor="let faq of faqs; let i = index">
   <div data-toggle="collapse" (click)="toggleGroup(i,$event)" tabindex="0">
     <div class="panel-heading">
-      <div class="text-left" role="tabpanel" attr.aria-label="{{faq?.topic}}" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
+      <div class="text-left" role="button" attr.aria-expanded="{{isGroupShown(i)}}" attr.aria-label="{{faq?.topic}}" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
         {{ faq?.topic}}
         <span>
           <i class="icon-svg icon-svg--xs ml-4" *ngIf="!isGroupShown(i)">
@@ -24,27 +24,27 @@
     <div class="panel-body">
       <p class="panelText text-left" [innerHtml]="faq.description"></p>
     </div>
-    <div class="panel-interact" *ngIf="!isNoClicked && !isYesClicked">
-      <p class="panelText">{{data?.constants?.helpMsg}}&lrm;</p>
+    <fieldset class="panel-interact" *ngIf="!isNoClicked && !isYesClicked">
+      <legend class="panelText m-0 pb-0">{{data?.constants?.helpMsg}}&lrm;</legend>
       <div class="d-flex flex-jc-center">
-        <button type="button" class="sb-btn sb-btn-normal sb-btn-outline-primary mr-8 no-btn" id="btn-no"
+        <button type="button" class="sb-btn sb-btn-normal sb-btn-outline-primary mr-8 no-btn" attr.aria-label="{{data?.constants?.noMsg}}" id="btn-no"
           (click)="noClicked(i,$event)" tabindex="0">{{data?.constants?.noMsg}}</button>
-        <button type="button" class="sb-btn sb-btn-normal sb-btn-success yes-btn" id="btn-yes"
+        <button type="button" class="sb-btn sb-btn-normal sb-btn-success yes-btn" attr.aria-label="{{data?.constants?.yesMsg}}" id="btn-yes"
           (click)="yesClicked(i,$event)" tabindex="0">{{data?.constants?.yesMsg}}</button>
         </div>
-    </div>
-    <div class="panel-interact" *ngIf="isYesClicked || isSubmitted">
-      <p class="yes-clicked"> {{data?.constants?.thanksMsg}}</p>
+    </fieldset>
+    <fieldset class="panel-interact" *ngIf="isYesClicked || isSubmitted">
+      <legend class="yes-clicked m-0 pb-0"> {{data?.constants?.thanksMsg}}</legend>
       <div *ngIf="isNoClicked && isSubmitted && extraTemplate" class="extraTemplate">
         <ng-container *ngTemplateOutlet="extraTemplate">
         </ng-container>
       </div>
-    </div>
+    </fieldset>
     <div class="panel-info" *ngIf="!isSubmitted && isNoClicked">
       <h6>{{data?.constants?.sorryMsg}}</h6>
-      <p>{{data?.constants?.knowMoreMsg}}</p>
       <form action="#" id="know-more-form" class="know-more-form" *ngIf="!isSubmitted">
-        <textarea type="text" name="moreInfo" placeholder="{{constants?.typeHere}}" class="input-text" maxlength="1000"
+      <label for="knowMoreMsg">{{data?.constants?.knowMoreMsg}}</label>
+        <textarea type="text" id="knowMoreMsg" name="moreInfo" placeholder="{{constants?.typeHere}}" class="input-text" maxlength="1000"
           [(ngModel)]="textValue"></textarea>
         <input type="submit" value="{{constants?.submitButton}}" class="submit-button"
           (click)="submitClicked(textValue,i,$event)" tabindex="0">

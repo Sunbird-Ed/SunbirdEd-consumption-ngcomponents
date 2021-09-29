@@ -28,7 +28,9 @@
     </div>
 
     <div class="cards-container" *ngIf="type === LibraryCardGridTypes.INFINITE_CARD_GRID">
-        <div class="item"  [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList;let i=index">
+        <button *ngIf="maxCardCount && viewMore && contentList?.length >maxCardCount" class="view-all-info sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
+            (click)="onViewMoreClick($event)" tabindex="0">{{viewMoreButtonText}}</button>
+        <div class="item"  [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList | slice:0:(maxCardCount && viewMore ? maxCardCount : contentList?.length);let i=index">
             <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
                 [isMenu]="isMenu" (click)="onCardClick($event, content)" tabindex="0" [cardImg]="content?.cardImg" (menuClick)="onCardMenuClick($event)">
             </sb-library-card>
