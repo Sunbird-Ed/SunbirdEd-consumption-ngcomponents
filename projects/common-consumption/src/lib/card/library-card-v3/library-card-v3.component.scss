@@ -115,6 +115,7 @@
         font-size: 18px;
         display: flex;
         align-items: center;
+        text-transform: uppercase;
         html[dir="rtl"] & {
           margin-right: -1rem;
           padding-right: 8px;
@@ -186,7 +187,6 @@
         white-space: nowrap;
       }
       .data_2 {
-        
         &:last-child {
           margin-right:0px;
         }

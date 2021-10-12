@@ -125,7 +125,6 @@
         margin-left: 0px;
         text-transform: uppercase;
         background-color: black;
-
         &::before {
           border-color: var(--black) var(--black) var(--black) transparent;
           position: absolute;
@@ -154,7 +153,6 @@
     }
 
     .sb--card__moreinfo {
-
       background: var(--cc-sbcard-moreinfo-bg);
     }
 
