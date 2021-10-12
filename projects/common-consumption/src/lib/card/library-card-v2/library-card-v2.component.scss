@@ -6,10 +6,12 @@
   --cc-sbcard-selected-border: var(--primary-color);
   --cc-sbcard-img-br:var(--white);
   --sbt-pill-hs: 212, 100%;
-  --cc-sbcard-data2-bg: hsl(var(--sbt-pill-hs), 90%);
-  --cc-sbcard-data2-bg-active: var(--gray-800); //#0076FE
-  --cc-sbcard-data1-bg: #E0F5EA;
-  --cc-sbcard-data1-bg-active:var(--gray-800);
+  --cc-sbcard-data2-bg: #E5EDF5;
+  --cc-sbcard-data2-bg-active: #0076FE;
+  --cc-sbcard-data1-bg: #F0E5F5;
+  --cc-sbcard-data1-bg-active:#6236FF;
+  --cc-sbcard-data0-bg: #E0F5EA;
+  --cc-sbcard-data0-bg-active:#008840;
   --cc-sbcard-moreinfo-bg: var(--white);
   --cc-sbcard-type-bg: var(--black);
   --cc-sbcard-type-text: var(--white);
@@ -125,6 +127,7 @@
         font-size:calculateRem(11px);
         display: flex;
         align-items: center;
+        text-transform: uppercase;
 
         html[dir="rtl"] & {
           margin-right: -1rem;
@@ -148,7 +151,6 @@
     }
 
     .sb--card__moreinfo {
-
       background: var(--cc-sbcard-moreinfo-bg);
     }
 
@@ -178,7 +180,7 @@
       margin-top: calculateRem(8px);
 
       .data_1,
-      .data_2 {
+      .data_2,.data_0 {
         border-radius: calculateRem(8px);
         font-size: calculateRem(12px);
         padding: 0px calculateRem(8px);
@@ -187,12 +189,14 @@
         margin: 0px calculateRem(8px) calculateRem(8px) 0px;
         white-space: nowrap;
       }
-
+      .data_0 {
+        background: var(--cc-sbcard-data0-bg);
+        color: var(--cc-sbcard-data0-bg-active);
+      }
       .data_1 {
         background: var(--cc-sbcard-data1-bg);
         color: var(--cc-sbcard-data1-bg-active);
       }
-
       .data_2 {
         background: var(--cc-sbcard-data2-bg);
         color: var(--cc-sbcard-data2-bg-active);

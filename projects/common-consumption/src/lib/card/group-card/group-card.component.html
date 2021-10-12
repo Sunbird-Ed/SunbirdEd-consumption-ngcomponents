@@ -1,5 +1,5 @@
 <!-- card component -->
-<div class="sb--card sb--card--course--curiculum" (click)="onClick($event)" *ngIf="!isLoading" role="link" tabindex="0">
+<div class="sb--card sb--card--course--curiculum" title="{{group?.name}}" attr.aria-label="{{group?.name}}" (click)="onClick($event)" *ngIf="!isLoading" role="link" tabindex="0">
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">

@@ -34,34 +34,45 @@
     <div class="sb--card__meta">
       <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}">
         <bdi>{{content?.name}}</bdi></h4>
-      <a *ngIf="isMenu" class="menu" tabindex="0" (click)="onMenuClick($event);$event.stopPropagation()"></a>
+      <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
     </div>
     <div class="sb--card__meta1 text-left">
-      <ng-container *ngIf="content?.subject && content?.subject.length > 0">
-        <span class="data_1 mr-8" title="{{content?.subject[0]}}">
-          {{content?.subject[0]}}
-        </span>
-        <span class="data_1 mr-8" *ngIf="content?.subject.length > 1" title="{{content?.subject}}">
-            + {{content?.subject.length-1}}
-          </span>
+      <ng-container *ngIf="content?.organisation && content?.organisation.length > 0">
+        <span class="data_0 mr-8 organisation" title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</span>
+        <span class="data_1 mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1">+{{content?.organisation.length-1}}</span>
+      </ng-container>
+      <ng-container *ngIf="content?.medium && content?.medium.length > 0">
+        <span class="data_1 mr-8 medium" title="{{content?.medium[0]}}">{{content?.medium[0]}}</span>
+        <span class="data_1 mr-8" title="{{content?.medium}}" *ngIf="content?.medium.length > 1">+{{content?.medium.length-1}}</span>
       </ng-container>
       <ng-container *ngIf="content?.gradeLevel && content?.gradeLevel.length > 0">
         <span class="data_2" title="{{content?.gradeLevel[0]}}">{{content?.gradeLevel[0]}}</span>
-        <span class="data_2" *ngIf="content?.gradeLevel.length > 1" title="{{content?.gradeLevel}}">
-            + {{content?.gradeLevel.length-1}}
-          </span>
+        <span class="data_2" title="{{content?.gradeLevel}}" *ngIf="content?.gradeLevel.length > 1">+{{content?.gradeLevel.length-1}}</span>
       </ng-container>
     </div>
   </div>
   <!-- content for only desktop -->
   <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
     <div class="sb--card__moreinfo">
-      <!-- other meta info Medium, Organization etc -->
+      <!-- other meta info subject, publisher/organizer etc -->
       <div class="sb--card__meta2 text-left">
-        <div class="sb--card__meta2_data sb__ellipsis" title="{{moreInfoLabel}}:
-        {{content?.medium}}" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
-            {{content?.medium}}</span></div>
-        <div class="sb--card__org sb__ellipsis" title="{{content?.organisation}}" *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div>
+        <ng-container *ngIf="content?.subject && content?.subject.length > 0">
+          <div class="sb--card__meta2_data sb__ellipsis subject">
+            <span>Subject: </span> <span title="{{content?.subject[0]}}">{{content?.subject[0]}}</span> <span class="data_1 mr-8" *ngIf="content?.subject.length > 1"> +{{content?.subject.length-1}}
+            </span>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="content?.subject && content?.organisation.length > 0">
+          <div class="sb--card__meta2_data sb__ellipsis organisation">
+            <span>Publisher: </span> <span title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</span>
+            <span class="data_1 mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1"> +{{content?.organisation.length-1}}
+            </span>
+          </div>
+        </ng-container>
+        <!-- <div class="sb--card__meta2_data sb__ellipsis" title="{{moreInfoLabel}}:
+        {{content?.subject}}" *ngIf="content?.subject"><span class="">{{moreInfoLabel}}:
+            {{content?.subject}}</span></div> -->
+        <!-- <div class="sb--card__org sb__ellipsis" title="{{content?.organisation}}" *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div> -->
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
       <div class="sb--card__tags">
