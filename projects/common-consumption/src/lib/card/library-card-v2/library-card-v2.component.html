@@ -39,7 +39,7 @@
     <div class="sb--card__meta1 text-left">
       <ng-container *ngIf="content?.organisation && content?.organisation.length > 0">
         <span class="data_0 mr-8 organisation" title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</span>
-        <span class="data_1 mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1">+{{content?.organisation.length-1}}</span>
+        <span class="data_0 mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1">+{{content?.organisation.length-1}}</span>
       </ng-container>
       <ng-container *ngIf="content?.medium && content?.medium.length > 0">
         <span class="data_1 mr-8 medium" title="{{content?.medium[0]}}">{{content?.medium[0]}}</span>
@@ -58,7 +58,7 @@
       <div class="sb--card__meta2 text-left">
         <ng-container *ngIf="content?.subject && content?.subject.length > 0">
           <div class="sb--card__meta2_data sb__ellipsis subject">
-            <span>Subject: </span> <span title="{{content?.subject[0]}}">{{content?.subject[0]}}</span> <span class="data_1 mr-8" *ngIf="content?.subject.length > 1"> +{{content?.subject.length-1}}
+            <span>Subject: </span> <span title="{{content?.subject[0]}}">{{content?.subject[0]}}</span> <span class="data_1 mr-8" title="{{content?.subject}}" *ngIf="content?.subject.length > 1"> +{{content?.subject.length-1}}
             </span>
           </div>
         </ng-container>
