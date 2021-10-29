@@ -62,7 +62,7 @@
             </span>
           </div>
         </ng-container>
-        <ng-container *ngIf="content?.subject && content?.organisation.length > 0">
+        <ng-container *ngIf="content?.organisation && content?.organisation.length > 0">
           <div class="sb--card__meta2_data sb__ellipsis organisation">
             <span>Publisher: </span> <span title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</span>
             <span class="data_1 mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1"> +{{content?.organisation.length-1}}
