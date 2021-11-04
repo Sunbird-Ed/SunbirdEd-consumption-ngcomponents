@@ -12,6 +12,7 @@ export class BannerCardComponent {
   @Input() backGround: string;
   @Input() text: string;
   @Input() bannerList: any;
+  @Input() secondaryBanner: false;
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
 
   onClick(event: MouseEvent, data) {
