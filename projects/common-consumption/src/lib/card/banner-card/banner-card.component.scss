@@ -46,14 +46,13 @@
     border-radius: 50%;
     background-color: #FFD954;
     display: inline-block;
-    margin: calculateRem(20px) calculateRem(40px) 0px;
+    margin: calculateRem(34px) calculateRem(68px) 0px;
   }
   .icon-info{
     padding: 13px;
   }
   .banner-title{
     color: #333333;
-    font-family: "Noto Sans";
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0;
@@ -61,5 +60,30 @@
     text-align: center;
     line-height: calculateRem(20px);
     margin-top: calculateRem(20px);
+    padding: 0 10px;
+  }
+  .web-item{
+    display: block;
+    background: var(--white);
+    border-radius: calculateRem(16px);
+    transition: .3s ease-in-out;
+    margin: .25em;
+    height: calculateRem(194px);
+    width: calculateRem(200px);
+    margin-left: 1em;
+  }
+
+  .web-img-info{
+    height: calculateRem(64px);
+    width: calculateRem(64px);
+    border-radius: 50%;
+    background-color: #FFD954;
+    display: inline-block;
+    margin: calculateRem(20px) calculateRem(60px) 0px;
+  }
+  .web-icon-info{
+    width: 40px;
+    margin-left: 12px;
+    padding: 17px 6px;
   }
 }
