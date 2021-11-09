@@ -8,7 +8,7 @@
 
 <div class="sb--scrolling-wrapper-flexbox" *ngIf="secondaryBanner && platform !== 'portal'">
     <div *ngFor="let banner of bannerList">
-        <div class="item">
+        <div class="item" (click)="onClick($event, banner)">
             <div class="img-info"><img src="{{banner?.ui?.icon}}" alt="Avatar" class="icon-info"></div>
             <div class="banner-title">{{banner?.ui?.text}}</div>
         </div>
@@ -17,7 +17,7 @@
 
 <div class="sb--scrolling-wrapper-flexbox" *ngIf="secondaryBanner && platform === 'portal'">
     <div *ngFor="let banner of bannerList">
-        <div class="web-item">
+        <div class="web-item" (click)="onClick($event, banner)">
             <div class="web-img-info"><img src="{{banner?.ui?.icon}}" alt="Avatar" class="web-icon-info"></div>
             <div class="banner-title">{{banner?.ui?.text}}</div>
         </div>
