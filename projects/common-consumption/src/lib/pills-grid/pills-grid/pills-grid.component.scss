@@ -1,3 +1,4 @@
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 ::ng-deep :root {
   --cc-viewbtn-border:#94CCF5;
   --cc-viewbtn-text:#0076FE;
@@ -19,4 +20,28 @@
   &:hover {
     background-color: var(--cc-viewbtn-hover);
   }
-} 
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  @include margin(1.5rem 0 1rem 0);
+  padding: 0px 0;
+  align-items: center;
+  margin: 1.5rem 0 1rem;
+  padding-left: 1rem;
+
+  .title {
+    font-family: inherit;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+    height: calculateRem(24px);
+    color: var(--cc-lb-card-grid-title);
+    font-size: calculateRem(18px);
+    font-weight: bold !important;
+    text-transform: capitalize;
+    line-height: calculateRem(26px);
+    display: flex;
+    align-items: center;
+  }
+}

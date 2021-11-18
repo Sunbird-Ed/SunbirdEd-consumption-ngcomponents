@@ -47,9 +47,11 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
             this.content.gradeLevel = typeof this.content.gradeLevel === "string"?this.content.gradeLevel.split(","):this.content.gradeLevel;
         }
     }
-   /* onMenuClick(event: MouseEvent) {
+
+    onMenuClick(event: MouseEvent) {
         this.menuClick.emit({ event: event, data: this.content });
-    }*/
+    }
+
     getClassForImage() {
         if(this.layoutConfig!=null && this.layoutConfig.cardImgStyle != null) {
             return "sb--card__img sb--card__image-pos-"+this.layoutConfig.cardImgStyle;

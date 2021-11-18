@@ -24,6 +24,8 @@ export class LibraryCardsGridComponent {
     @Input('hover-template') gridTemplate: TemplateRef<any>;
 
     @Input() isLoading:boolean;
+    @Input() viewMore = false;
+
 
     /* Show Menu on each card */
     @Input() isMenu = false;

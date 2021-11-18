@@ -1,5 +1,5 @@
 <!-- card component -->
-<div class="sb--card sb--card--course--curiculum" (click)="onClick($event)" *ngIf="!isLoading">
+<div class="sb--card sb--card--course--curiculum" title="{{group?.name}}" attr.aria-label="{{group?.name}}" (click)="onClick($event)" *ngIf="!isLoading" role="link" tabindex="0">
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">
@@ -11,7 +11,7 @@
     <!-- card mobile view details -->
     <div class="sb--card__info">
       <div class="d-flex flex-dr flex-jc-space-between">
-        <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" title="{{group?.name}}">{{group?.name}}</h4>
+        <div class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" title="{{group?.name}}">{{group?.name}}</div>
         <div *ngIf="isAdmin" class="sb-label-badge">Admin</div>
       </div>
       <div *ngIf="isMobile">
@@ -28,7 +28,7 @@
   </div>
 </div>
 
-<div class="sb--card sb--card--course--curiculum" *ngIf="isLoading">
+<div class="sb--card sb--card--course--curiculum" *ngIf="isLoading" tabindex="0" >
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">

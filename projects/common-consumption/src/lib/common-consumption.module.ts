@@ -10,6 +10,7 @@ import { PipesModule } from './pipes-module/pipes-module.module';
 import { PagesModule } from './pages/pages.module';
 import { CertificateActionsModule } from './certificate/certificate-actions/certificate-actions.module';
 import { PillsGridModule } from './pills-grid/pills-grid.module';
+import { ListViewModule } from './list-view/list-view.module';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import { PillsGridModule } from './pills-grid/pills-grid.module';
     PipesModule,
     PagesModule,
     CertificateActionsModule,
-    PillsGridModule
+    PillsGridModule,
+    ListViewModule
 
   ],
   exports: [
@@ -38,7 +40,8 @@ import { PillsGridModule } from './pills-grid/pills-grid.module';
     PipesModule,
     PagesModule,
     CertificateActionsModule,
-    PillsGridModule
+    PillsGridModule,
+    ListViewModule
   ]
 })
 export class CommonConsumptionModule { }

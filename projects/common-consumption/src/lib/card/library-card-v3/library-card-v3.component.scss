@@ -75,7 +75,7 @@
     border-radius: calculateRem(8px);
     box-shadow: var(--sbt-box-shadow-6px);
     overflow:hidden;
-    padding:0.5rem;
+    padding:1rem;
     .sb--card-svg-tail {
       position: absolute;
       bottom:0px;
@@ -115,6 +115,7 @@
         font-size: 18px;
         display: flex;
         align-items: center;
+        text-transform: uppercase;
         html[dir="rtl"] & {
           margin-right: -1rem;
           padding-right: 8px;
@@ -160,8 +161,8 @@
         margin-bottom: 0.25rem;
       }
       .data_4 {
-        font-size:0.90rem;
-        margin:0.5rem 0;
+        font-size:0.9rem;
+        margin:0.125rem 0;
       }
       
     }
@@ -181,17 +182,21 @@
       .data_1, .data_2 {
         color: var(--cc-sbcard-data1-2-text);
         border-radius: calculateRem(8px);
-        font-size: calculateRem(14px);
+        font-size: calculateRem(12px);
         width:auto;flex: initial;
         white-space: nowrap;
       }
       .data_2 {
-        
         &:last-child {
           margin-right:0px;
         }
       }
-    
+      app-truncated-ellipsis{
+        color: var(--cc-sbcard-data1-2-text);
+        .dot-divider{
+          background-color: var(--cc-sbcard-data1-2-text);
+        }
+      }
     }
 
   
@@ -203,8 +208,12 @@
       overflow:inherit;
       .img-container {
         box-shadow: 0 0 5px 0 rgba(var(--rc-rgba-black), 0.1);
-        height: calculateRem(90px);
+        height: calculateRem(72px);
       }
     }
+  }
+
+  .sb--card__details{
+    font-size: calculateRem(12px);
   }
 }

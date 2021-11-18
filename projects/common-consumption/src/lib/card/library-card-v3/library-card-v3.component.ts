@@ -30,10 +30,11 @@ export class LibraryCardV3Component implements OnInit, AfterViewInit {
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
 
     get LibraryCardTypes() { return LibraryCardTypes; }
+    frameworkDetailsList = [];
 
     ngOnInit() {
         this.fetchSvg();
-        this.splitGradeMedium();
+        this.arrangeFrameworkDetails();
     }
 
     ngAfterViewInit(): void {
@@ -42,11 +43,25 @@ export class LibraryCardV3Component implements OnInit, AfterViewInit {
     onClick(event: MouseEvent) {
         this.cardClick.emit({ event: event, data: this.content });
     }
-    splitGradeMedium() {
-        if(this.content && this.content.gradeLevel) {
-            this.content.gradeLevel = (typeof this.content.gradeLevel === 'string') ? this.content.gradeLevel : this.content.gradeLevel.join(' and ');
-        } else if (this.content && this.content.medium) {
-            this.content.medium = (typeof this.content.medium === 'string') ? this.content.medium : this.content.medium.join(' and ');
+
+    arrangeFrameworkDetails() {
+        this.frameworkDetailsList = [];
+        if (typeof this.content.board === 'string') {
+            this.frameworkDetailsList.push([this.content.board]);
+        } else if (Array.isArray(this.content.board)) {
+            this.frameworkDetailsList.push(this.content.board);
+        }
+
+        if (typeof this.content.medium === 'string') {
+            this.frameworkDetailsList.push([this.content.medium]);
+        } else if (Array.isArray(this.content.medium)) {
+            this.frameworkDetailsList.push(this.content.medium  );
+        }
+
+        if (typeof this.content.gradeLevel === 'string') {
+            this.frameworkDetailsList.push([this.content.gradeLevel]);
+        } else if (Array.isArray(this.content.gradeLevel)) {
+            this.frameworkDetailsList.push(this.content.gradeLevel);
         }
     }
    /* onMenuClick(event: MouseEvent) {
