@@ -14,11 +14,6 @@
           "options": {
             "tsConfig": "projects/common-consumption/tsconfig.lib.json",
             "project": "projects/common-consumption/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/common-consumption/tsconfig.lib.prod.json"
-            }
           }
         },
         "test": {
@@ -44,13 +39,10 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "styleext": "scss"
         }
       }
     }
   },
-  "defaultProject": "commonConsumption",
-  "cli": {
-    "analytics": "236206a8-a878-4622-be14-855aff315cc4"
-  }
+  "defaultProject": "commonConsumption"
 }

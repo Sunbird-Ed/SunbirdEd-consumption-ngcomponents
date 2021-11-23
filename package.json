@@ -26,9 +26,9 @@
     "@angular/router": "^9.1.12",
     "@project-sunbird/sb-styles": "~0.0.5",
     "core-js": "^2.5.4",
-    "rxjs": "~6.6.6",
-    "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "rxjs": "~6.3.3",
+    "tslib": "^1.9.0",
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.15",
@@ -38,9 +38,9 @@
     "@angular/language-service": "^9.1.12",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
+    "@types/node": "~8.9.4",
     "canvag": "^1.0.3",
-    "codelyzer": "^5.1.2",
+    "codelyzer": "~4.5.0",
     "copyfiles": "^2.1.1",
     "cpy-cli": "^2.0.0",
     "jasmine-core": "~2.99.1",
