@@ -32,7 +32,7 @@ export class PlayerActionsComponent implements OnInit {
         if (item.name === ActionButtonType.FULL_SCREEN) {
           this.showFullscreen = true;
           this.fullscreenButton = item;
-          object.splice(index, 1);
+          //object.splice(index, 1);
         }
       });
     }
