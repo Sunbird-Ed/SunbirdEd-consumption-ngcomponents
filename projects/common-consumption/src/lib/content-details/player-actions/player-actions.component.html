@@ -1,27 +1,15 @@
-<div class="d-flex flex-w-wrap content-video__player__tools">
+<div class="d-flex flex-w-wrap content-video__player__tools"
+[ngClass]="{'content-video__player__screenpart': showFullscreen}">
   <div *ngFor="let item of actionButtons">
+    <div class="separator" *ngIf="item?.showSeperator"></div>
     <button class="sb-btn sb-btn-link sb-btn-link-gray sb-btn-sm sb-btn-square"
-      [class.sb-btn-link-disabled]="item?.disabled" [hidden]="item?.disabled" (click)="onButtonClick($event, item)" tabindex="0">
+      [ngClass]="{'sb-btn-link-disabled': item?.isInActive}" [disabled]="item?.isInActive" [hidden]="item?.disabled " (click)="onButtonClick($event, item)" tabindex="0">
       <i class="icon-svg icon-svg--sm icon-back">
         <svg class="icon icon-svg--primary">
           <use [attr.xlink:href]="item?.iconPath"></use>
         </svg>
       </i>
       <span class="fxsmall">{{item?.label}}</span>
-    </button>
-  </div>
-
-  <div class="d-flex flex-ai-center content-video__player__screenpart" *ngIf="showFullscreen">
-    <div class="separator"></div>
-    <button class="sb-btn sb-btn-link sb-btn-link-gray sb-btn-sm sb-btn-square"
-      [class.sb-btn-link-disabled]="fullscreenButton?.disabled" [hidden]="fullscreenButton?.disabled"
-      (click)="onButtonClick($event, fullscreenButton)" tabindex="0">
-      <i class="icon-svg icon-svg--sm icon-back">
-        <svg class="icon icon-svg--primary">
-          <use [attr.xlink:href]="fullscreenButton?.iconPath"></use>
-        </svg>
-      </i>
-      <span class="fxsmall">{{fullscreenButton?.label}}</span>
     </button>
   </div>
 </div>
