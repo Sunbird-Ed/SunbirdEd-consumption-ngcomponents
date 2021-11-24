@@ -1,15 +1,16 @@
-<div class="d-flex flex-w-wrap content-video__player__tools"
-[ngClass]="{'content-video__player__screenpart': showFullscreen}">
+<div class="d-flex flex-w-wrap content-video__player__tools">
   <div *ngFor="let item of actionButtons">
-    <div class="separator" *ngIf="item?.showSeperator"></div>
-    <button class="sb-btn sb-btn-link sb-btn-link-gray sb-btn-sm sb-btn-square"
-      [ngClass]="{'sb-btn-link-disabled': item?.isInActive}" [disabled]="item?.isInActive" [hidden]="item?.disabled " (click)="onButtonClick($event, item)" tabindex="0">
-      <i class="icon-svg icon-svg--sm icon-back">
-        <svg class="icon icon-svg--primary">
-          <use [attr.xlink:href]="item?.iconPath"></use>
-        </svg>
-      </i>
-      <span class="fxsmall">{{item?.label}}</span>
-    </button>
+    <div [ngClass]="{'d-flex flex-ai-center content-video__player__screenpart' : item?.showSeperator}">
+        <div class="separator" *ngIf="item?.showSeperator"></div>
+        <button class="sb-btn sb-btn-link sb-btn-link-gray sb-btn-sm sb-btn-square"
+          [ngClass]="{'sb-btn-link-disabled': item?.isInActive}" [disabled]="item?.isInActive" [hidden]="item?.disabled " (click)="onButtonClick($event, item)" tabindex="0">
+          <i class="icon-svg icon-svg--sm icon-back">
+            <svg class="icon icon-svg--primary">
+              <use [attr.xlink:href]="item?.iconPath"></use>
+            </svg>
+          </i>
+          <span class="fxsmall">{{item?.label}}</span>
+        </button>
+      </div>
   </div>
 </div>
