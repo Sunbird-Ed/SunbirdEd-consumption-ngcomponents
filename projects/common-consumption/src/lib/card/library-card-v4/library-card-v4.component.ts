@@ -31,9 +31,9 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
     get LibraryCardTypes() { return LibraryCardTypes; }
     frameworkDetailsList = [];
     displaySubject = [];
-    board = [];
-    medium = [];
-    gradeLevel = [];
+    se_boards = [];
+    se_mediums = [];
+    se_gradeLevels = [];
 
     ngOnInit() {
         this.fetchBMGS();
@@ -55,9 +55,9 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
     }
 
     arrangeFrameworkDetails() {
-        this.board = this.getFormatedData(this.content.board);
-        this.medium = this.getFormatedData(this.content.medium);
-        this.gradeLevel = this.getFormatedData(this.content.gradeLevel);
+        this.se_boards = this.getFormatedData(this.content.se_boards);
+        this.se_mediums = this.getFormatedData(this.content.se_mediums);
+        this.se_gradeLevels = this.getFormatedData(this.content.se_gradeLevels);
         this.displaySubject = this.getFormatedData(this.content.se_subjects);
     }
 
