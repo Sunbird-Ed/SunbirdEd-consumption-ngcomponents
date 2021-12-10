@@ -30,7 +30,7 @@
       <ng-container *ngIf="content?.se_boards && content?.se_boards.length > 0">
         <span class="data_1 mr-8" title="{{content?.se_boards[0]}}">
           <app-truncated-ellipsis 
-            [arrayList]= "board"
+            [arrayList]= "se_boards"
             [showCount]="1"
             [separatorText]="', '">
           </app-truncated-ellipsis>
@@ -39,7 +39,7 @@
       <ng-container *ngIf="content?.se_mediums && content?.se_mediums.length > 0">
         <span class="data_2" title="{{content?.se_mediums[0]}}">
           <app-truncated-ellipsis 
-            [arrayList]= "medium"
+            [arrayList]= "se_mediums"
             [showCount]="1"
             [separatorText]="', '">
           </app-truncated-ellipsis>
@@ -48,7 +48,7 @@
       <ng-container *ngIf="content?.se_gradeLevels && content?.se_gradeLevels.length > 0">
         <span class="data_3" title="{{content?.se_gradeLevels[0]}}">
           <app-truncated-ellipsis 
-            [arrayList]= "gradeLevel"
+            [arrayList]= "se_gradeLevels"
             [showCount]="1"
             [separatorText]="', '">
           </app-truncated-ellipsis>
