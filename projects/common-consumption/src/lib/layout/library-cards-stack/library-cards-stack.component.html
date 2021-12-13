@@ -26,7 +26,7 @@
                 (menuClick)="emitMenuClick($event)" [isMenu]="isMenu" [layoutConfig]="layoutConfig">
             </sb-library-card>
             <button *ngIf="maxCardCount && contentList?.length >maxCardCount" class="sbbtn flat stack-btn full-width"
-                (click)="showAllList($event)">{{viewMoreButtonText}}</button>
+                (click)="showAllList($event)" tabindex="0">{{viewMoreButtonText}}</button>
         </ng-container>
         <ng-container *ngIf="cardType==='course' && !layoutConfig">
             <sb-course-card *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let i= index"
@@ -34,7 +34,7 @@
                 (menuClick)="emitMenuClick($event)">
             </sb-course-card>
             <button *ngIf="maxCardCount && contentList?.length >maxCardCount" class="sbbtn flat stack-btn full-width"
-                (click)="showAllList($event)">{{viewMoreButtonText}}</button>
+                (click)="showAllList($event)" tabindex="0">{{viewMoreButtonText}}</button>
         </ng-container>
     </div>
 

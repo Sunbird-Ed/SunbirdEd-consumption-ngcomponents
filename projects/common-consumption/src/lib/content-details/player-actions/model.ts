@@ -3,6 +3,8 @@ export interface IActionButton {
   name: ActionButtonType;
   iconPath?: string;
   disabled: boolean;
+  isInActive?:boolean;
+  showSeperator?:boolean;
 }
 
 export interface IButtonClick {

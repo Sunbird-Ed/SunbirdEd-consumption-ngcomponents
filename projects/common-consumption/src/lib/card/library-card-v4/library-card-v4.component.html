@@ -1,0 +1,96 @@
+<!-- card component -->
+<div class="sb--card sb--card--theme2" tabindex="0"
+  [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
+  (click)="onClick($event)" *ngIf="!isLoading">
+  <div class="sb--card__main-area">
+    <!-- card img -->
+    <div [ngClass]="getClassForImage()">
+      <div class="img-container">
+        <img [src]="cardImg" alt="">
+      </div>
+    </div>
+    <!-- card type -->
+    <div class="sb--card__type" *ngIf="content?.contentType">{{content?.contentType}}</div>
+  </div>
+
+  <!-- card mobile view details -->
+  <div class="sb--card__info">
+    <div class="sb--card__meta">
+      <div class="sb__ellipsis sb__ellipsis--two text-left flex-basis-1 title-info" title="{{content?.name}}">
+        <bdi>{{content?.name}}</bdi></div>
+    </div>
+    <div class="subject-info" *ngIf="displaySubject?.length">
+      Subject : 
+      <app-truncated-ellipsis class="d-inline-block"
+        [arrayList]= "displaySubject"
+        [showCount]="1"
+        [separatorText]="', '">
+      </app-truncated-ellipsis></div>
+    <div class="sb--card__meta1 text-left">
+      <ng-container *ngIf="content?.se_boards && content?.se_boards.length > 0">
+        <span class="data_1 mr-8" title="{{content?.se_boards[0]}}">
+          <app-truncated-ellipsis 
+            [arrayList]= "se_boards"
+            [showCount]="1"
+            [separatorText]="', '">
+          </app-truncated-ellipsis>
+        </span>
+      </ng-container>
+      <ng-container *ngIf="content?.se_mediums && content?.se_mediums.length > 0">
+        <span class="data_2" title="{{content?.se_mediums[0]}}">
+          <app-truncated-ellipsis 
+            [arrayList]= "se_mediums"
+            [showCount]="1"
+            [separatorText]="', '">
+          </app-truncated-ellipsis>
+        </span>
+      </ng-container>
+      <ng-container *ngIf="content?.se_gradeLevels && content?.se_gradeLevels.length > 0">
+        <span class="data_3" title="{{content?.se_gradeLevels[0]}}">
+          <app-truncated-ellipsis 
+            [arrayList]= "se_gradeLevels"
+            [showCount]="1"
+            [separatorText]="', '">
+          </app-truncated-ellipsis>
+        </span>
+      </ng-container>
+    </div>
+    <div class="subject-info text-info" *ngIf="content?.creator">Published by : {{content?.creator}}</div>
+  </div>
+
+<div class="sb--card sb--card--theme2" *ngIf="isLoading">
+  <!-- card img -->
+  <div class="sb--card__main-area">
+    <div [ngClass]="getClassForImage()">
+      <div class="img-container loading-animation">
+        <img [src]="cardImg" alt="">
+      </div>
+    </div>
+    <div class="sb--card__svg-area loading-animation">
+    </div>
+  </div>
+  <!-- card mobile view details -->
+  <div class="sb--card__info">
+    <h4 class="sb--card__title loading-animation sb--card--highlighter" style="width:50%;"></h4>
+    <div class="sb--card__meta text-left">
+      <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
+    </div>
+  </div>
+  <div class="sb--card__moreinfo" style="display:block;"
+    *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.QRCODE_RESULT || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
+    <div class="sb--card__meta2 text-left" style="float:left;width:60%">
+      <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
+      <div class="value loading-animation sb--card--highlighter" style="width:60%;"></div>
+    </div>
+    <div class="sb--card__tags" style="float:right;width:30%;margin-top: 15px;">
+      <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
+    <div>
+      <div class="label loading-animation sb--card--highlighter" style="width:100%;"></div>
+    </div>
+  </div>
+
+</div>

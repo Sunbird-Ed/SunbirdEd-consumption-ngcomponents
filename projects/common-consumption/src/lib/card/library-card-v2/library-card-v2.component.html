@@ -1,14 +1,13 @@
 <!-- card component -->
-<div class="sb--card sb--card--theme2"
+<div class="sb--card sb--card--theme2" role="link" tabindex="0"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" *ngIf="!isLoading">
   <svg width="79px" class="sb--card-svg-tail" height="36px" viewBox="0 0 79 36" version="1.1"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>536CDCAF-4A97-4892-A915-61863D84DDAF</title>
-    <g id="Textbooks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-      <g id="1920-X-768" class="sb--card-svg-tail__rc" transform="translate(-735.000000, -524.000000)">
-        <g id="Group-25" transform="translate(517.000000, 338.000000)">
-          <g id="Fill-1">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g class="sb--card-svg-tail__rc" transform="translate(-735.000000, -524.000000)">
+        <g transform="translate(517.000000, 338.000000)">
+          <g>
             <path
               d="M224.269945,224.907985 C224.269945,224.907985 217.096964,205.264724 219.487958,199.23369 C221.878951,193.203161 229.905965,205.609232 231.442925,210.261729 C231.442925,210.261729 230.930605,187 237.762123,187 C244.59339,187 245.447423,217.498667 245.447423,217.498667 C245.447423,217.498667 247.838417,203.54168 252.27894,203.54168 C256.719214,203.54168 251.424907,219.049331 253.645044,218.704823 C255.865431,218.360315 264.612662,211.290301 270.931859,218.871747 C277.250806,226.453445 274.347493,238.1705 281.17901,237.998119 C288.010277,237.825992 268.503575,211.123125 272.431528,205.95374 C276.359732,200.784607 286.265169,212.84617 287.119203,215.94775 C287.119203,215.94775 286.606883,199.23369 291.218013,199.23369 C295.829393,199.23369 296,223.18494 296,223.18494 L224.269945,224.907985 Z">
             </path>
@@ -35,34 +34,45 @@
     <div class="sb--card__meta">
       <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}">
         <bdi>{{content?.name}}</bdi></h4>
-      <a *ngIf="isMenu" class="menu" (click)="$event.stopPropagation()"></a>
+      <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
     </div>
     <div class="sb--card__meta1 text-left">
-      <ng-container *ngIf="content?.subject && content?.subject.length > 0">
-        <span class="data_1 mr-8" title="{{content?.subject[0]}}">
-          {{content?.subject[0]}}
-        </span>
-        <span class="data_1 mr-8" *ngIf="content?.subject.length > 1" title="{{content?.subject}}">
-            + {{content?.subject.length-1}}
-          </span>
+      <ng-container *ngIf="content?.organisation && content?.organisation.length > 0">
+        <span class="data_0 mr-8 organisation" title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</span>
+        <span class="data_0 mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1">+{{content?.organisation.length-1}}</span>
+      </ng-container>
+      <ng-container *ngIf="content?.medium && content?.medium.length > 0">
+        <span class="data_1 mr-8 medium" title="{{content?.medium[0]}}">{{content?.medium[0]}}</span>
+        <span class="data_1 mr-8" title="{{content?.medium}}" *ngIf="content?.medium.length > 1">+{{content?.medium.length-1}}</span>
       </ng-container>
       <ng-container *ngIf="content?.gradeLevel && content?.gradeLevel.length > 0">
         <span class="data_2" title="{{content?.gradeLevel[0]}}">{{content?.gradeLevel[0]}}</span>
-        <span class="data_2" *ngIf="content?.gradeLevel.length > 1" title="{{content?.gradeLevel}}">
-            + {{content?.gradeLevel.length-1}}
-          </span>
+        <span class="data_2" title="{{content?.gradeLevel}}" *ngIf="content?.gradeLevel.length > 1">+{{content?.gradeLevel.length-1}}</span>
       </ng-container>
     </div>
   </div>
   <!-- content for only desktop -->
   <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
     <div class="sb--card__moreinfo">
-      <!-- other meta info Medium, Organization etc -->
+      <!-- other meta info subject, publisher/organizer etc -->
       <div class="sb--card__meta2 text-left">
-        <div class="sb--card__meta2_data sb__ellipsis" title="{{moreInfoLabel}}:
-        {{content?.medium}}" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
-            {{content?.medium}}</span></div>
-        <div class="sb--card__org sb__ellipsis" title="{{content?.organisation}}" *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div>
+        <ng-container *ngIf="content?.subject && content?.subject.length > 0">
+          <div class="sb--card__meta2_data sb__ellipsis subject">
+            <span>Subject: </span> <span title="{{content?.subject[0]}}">{{content?.subject[0]}}</span> <span class="data_1 mr-8" title="{{content?.subject}}" *ngIf="content?.subject.length > 1"> +{{content?.subject.length-1}}
+            </span>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="content?.organisation && content?.organisation.length > 0">
+          <div class="sb--card__meta2_data sb__ellipsis organisation">
+            <span>Publisher: </span> <span title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</span>
+            <span class="data_1 mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1"> +{{content?.organisation.length-1}}
+            </span>
+          </div>
+        </ng-container>
+        <!-- <div class="sb--card__meta2_data sb__ellipsis" title="{{moreInfoLabel}}:
+        {{content?.subject}}" *ngIf="content?.subject"><span class="">{{moreInfoLabel}}:
+            {{content?.subject}}</span></div> -->
+        <!-- <div class="sb--card__org sb__ellipsis" title="{{content?.organisation}}" *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div> -->
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
       <div class="sb--card__tags">
@@ -104,7 +114,7 @@
   </ng-container>
 </div>
 
-<div class="sb--card sb--card--theme2" *ngIf="isLoading">
+<div class="sb--card sb--card--theme2" *ngIf="isLoading" tabindex="0" role="button">
   <!-- card img -->
   <div class="sb--card__main-area">
     <div [ngClass]="getClassForImage()">

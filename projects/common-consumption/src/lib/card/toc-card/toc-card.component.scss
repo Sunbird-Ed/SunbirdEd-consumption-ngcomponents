@@ -1,10 +1,19 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-
+::ng-deep :root {
+  --cc-toc-card-item-bg:var(--white);
+  --cc-toc-card-item-hover:var(--primary-100);
+  --cc-toc-card-item-title:var(--primary-400);
+  --cc-toc-card-item-title-hover:var(--primary-400);
+  --cc-toc-card-item-br:var(--primary-300);
+  --cc-toc-card-item-bs:var(--rc-rgba-primary);
+  --cc-toc-card-item-img-bg:var(--rc-dddddd);
+  --cc-toc-card-item-score-text:#3F19C3;
+}
 .sbchapter {
   &__item {
-    background: var(--white);
-    border: calculateRem(1px) solid var(--primary-300);
-    box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--rc-rgba-primary), 0.1);
+    background: var(--cc-toc-card-item-bg);
+    border: calculateRem(1px) solid var(--cc-toc-card-item-br);
+    box-shadow: 0 calculateRem(3px) calculateRem(4px) 0 rgba(var(--cc-toc-card-item-bs), 0.1);
     display: flex;
     align-items: center;
     margin-bottom: calculateRem(8px);
@@ -18,7 +27,7 @@
       flex: 0 0 calculateRem(24px);
       display: flex;
       align-items: center;
-      background: var(--rc-dddddd);
+      background: var(--cc-toc-card-item-img-bg);
       img {
         width: 100%;
         max-height: 100%;
@@ -38,7 +47,10 @@
       }
     }
     &:hover,&--active, &--active:hover {
-      background: var(--primary-100);
+      background: var(--cc-toc-card-item-hover);
+      .sbchapter__item__title {
+        color:var(--cc-toc-card-item-title-hover);
+      }
     }
     &--active {
       .sbchapter__item__title {
@@ -50,7 +62,7 @@
 .sbchapter__item__title{
   font-size: calculateRem(12px);
   line-height: calculateRem(20px);
-  color: var(--primary-400);
+  color: var(--cc-toc-card-item-title);
   margin: 0px;
   padding: 0px;
   font-weight: normal;
@@ -62,7 +74,7 @@
 }
 .sbchapter__item__score{
   text-transform: uppercase;
-  color: #3F19C3;
+  color: var(--cc-toc-card-item-score-text);
   font-size: calculateRem(11px);
   text-align: right;
   white-space: nowrap;

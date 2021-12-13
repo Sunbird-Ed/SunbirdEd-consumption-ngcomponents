@@ -1,0 +1,104 @@
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
+/* sb card component css */
+:host {
+
+  .sb--card.sb--card--theme2 {
+    border-radius: calculateRem(16px);
+    box-shadow: var(--sbt-box-shadow-6px);
+    overflow:hidden;
+    padding:1rem;
+    height: 16vh; width: 40vh;
+     background-size: cover;
+      overflow: hidden;
+       background-repeat: no-repeat;
+       margin: calculateRem(10px) calculateRem(6px) calculateRem(10px) calculateRem(18px);
+  }
+
+  .sb--scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5em;
+  }
+  .explore-text{
+    color: white;
+    font-size: calculateRem(18px);
+    font-weight: bold;
+    padding: calculateRem(18px) calculateRem(10px);
+    width: 54%;
+  }
+
+  .item{
+    display: block;
+    background: var(--white);
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+    margin: .25em;
+    height: calculateRem(138px);
+    width: calculateRem(128px);
+    margin-left: 1em;
+  }
+  .img-info{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #FFD954;
+    display: inline-block;
+    margin: calculateRem(20px) calculateRem(40px) 0px;
+  }
+  .icon-info{
+    padding: 13px;
+  }
+  .banner-title{
+    color: #333333;
+    font-size: calculateRem(13px);
+    font-weight: 600;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: calculateRem(20px);
+    margin-top: calculateRem(20px);
+    padding: 0 10px;
+  }
+  .web-item{
+    display: block;
+    background: var(--white);
+    border-radius: calculateRem(16px);
+    transition: .3s ease-in-out;
+    height: calculateRem(194px);
+    width: 78%;
+    &:hover{
+      transform: translate(0, 0px) scale(0.95);
+      z-index: 99;
+      cursor: pointer;
+    }
+  }
+
+  .web-img-info{
+    height: calculateRem(64px);
+    width: calculateRem(64px);
+    border-radius: 50%;
+    background-color: #FFD954;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 16%;
+  }
+  .web-icon-info{
+    width: 40px;
+    margin-left: calculateRem(12px);
+    padding: calculateRem(17px) 6px;
+  }
+  .web-banner-title{
+    color: #333333;
+    font-size: calculateRem(18px);
+    font-weight: 600;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: calculateRem(24px);
+    margin-top:calculateRem(64px);
+    padding: 0 10px;
+  }
+}

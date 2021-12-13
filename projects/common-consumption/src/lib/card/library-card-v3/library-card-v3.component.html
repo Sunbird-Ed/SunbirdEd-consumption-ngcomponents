@@ -1,0 +1,71 @@
+<!-- card component -->
+<div class="sb--card sb--card--theme2" role="link" tabindex="0"
+  [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
+  (click)="onClick($event)" *ngIf="!isLoading">
+  <div class="sb--card__main-area">
+    <!-- card img -->
+    <div [ngClass]="getClassForImage()">
+      <div class="img-container">
+        <img [src]="cardImg" alt="">
+      </div>
+    </div>
+
+  <!-- card mobile view details -->
+
+  <div class="sb--card__info">
+    <div class="data_3 ellipsis" *ngIf="content?.tagName">{{content?.tagName}}</div>
+    <div class="sb--card__meta1">
+      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}">
+        <bdi>{{content?.name}}</bdi></h4>
+      <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="$event.stopPropagation()"></a>
+    </div>
+    <div class="sb--card__details sb__ellipsis sb__ellipsis--two" *ngIf="content?.subject?.length">
+      <span  title="{{content?.subject}}">{{content?.subject}}</span>
+    </div>
+    <div class="sb--card__meta1 text-left" *ngIf="frameworkDetailsList && frameworkDetailsList.length">
+      <app-truncated-ellipsis 
+        [arrayList]= "frameworkDetailsList"
+        [showCount]="1"
+        [separatorText]="', '">
+      </app-truncated-ellipsis>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="sb--card sb--card--theme2" *ngIf="isLoading">
+  <!-- card img -->
+  <div class="sb--card__main-area">
+    <div [ngClass]="getClassForImage()">
+      <div class="img-container loading-animation">
+        <img [src]="cardImg" alt="">
+      </div>
+    </div>
+    <div class="sb--card__svg-area loading-animation">
+    </div>
+  </div>
+  <!-- card mobile view details -->
+  <div class="sb--card__info">
+    <h4 class="sb--card__title loading-animation sb--card--highlighter" style="width:50%;"></h4>
+    <div class="sb--card__meta text-left">
+      <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
+    </div>
+  </div>
+  <div class="sb--card__moreinfo" style="display:block;"
+    *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.QRCODE_RESULT || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
+    <div class="sb--card__meta2 text-left" style="float:left;width:60%">
+      <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
+      <div class="value loading-animation sb--card--highlighter" style="width:60%;"></div>
+    </div>
+    <div class="sb--card__tags" style="float:right;width:30%;margin-top: 15px;">
+      <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
+    <div>
+      <div class="label loading-animation sb--card--highlighter" style="width:100%;"></div>
+    </div>
+  </div>
+
+</div>

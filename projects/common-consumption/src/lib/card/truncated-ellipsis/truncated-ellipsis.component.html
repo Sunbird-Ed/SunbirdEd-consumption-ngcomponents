@@ -1,0 +1,8 @@
+<ng-container *ngIf="displayTextArr && displayTextArr.length">
+  <div class="truncated-ellipsis-container">
+    <span *ngFor="let displayText of displayTextArr; let i=index">
+      {{displayText}}
+      <span class="dot-divider" *ngIf="(i+1)<displayTextArr?.length"></span>
+    </span>
+  </div>
+</ng-container>

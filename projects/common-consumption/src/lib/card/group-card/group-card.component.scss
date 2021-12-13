@@ -2,42 +2,57 @@
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
 @import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
 
-.sb--card__img{
-    .img-container--label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-transform: capitalize;
-        background-color: #B3EBD7;
-        color: #284C3F;
-        position: relative;
-        label {
-            margin-bottom: 0px;
-            padding-bottom: 0px;
-            font-size: calculateRem(21px);
-            font-weight: bold;
-        }
-        .img-container--badge{
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background-color: var(--black);
-            color: var(--white);
-            font-size: calculateRem(12px);
-            text-align: center;
-            margin-bottom: calculateRem(8px);
-            line-height: normal;
-            opacity: 0.6;
-        }
-    }
+::ng-deep :root {
+  --cc-sbcard-img-label: #284C3F;
+  --cc-sbcard-img-label-bg: #B3EBD7;
+  --cc-sbcard-img-badge-bg: var(--black);
+  --cc-sbcard-img-badge-text: var(--white);
+  --cc-sblabel-badge-br: var(--secondary-color);
+  --cc-sblabel-badge-text: var(--secondary-color);
 }
+
+.sb--card__img {
+  .img-container--label {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    background-color: var(--cc-sbcard-img-label-bg);
+    color: var(--cc-sbcard-img-label);
+    position: relative;
+
+    label {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      font-size: calculateRem(21px);
+      font-weight: bold;
+    }
+
+    .img-container--badge {
+
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: var(--cc-sbcard-img-badge-bg);
+      color: var(--cc-sbcard-img-badge-text);
+      font-size: calculateRem(12px);
+      text-align: center;
+      margin-bottom: calculateRem(8px);
+      line-height: normal;
+      opacity: 0.6;
+    }
+  }
+}
+
 .sb-label-badge {
-font-size: calculateRem(10px);
-border: 1px solid var(--secondary-color);
-align-self: center;
-padding: calculateRem(4px) calculateRem(8px);
-border-radius: calculateRem(2px);
-color: var(--secondary-color);
-text-align: center;
-@include margin(null, calculateRem(8px), null, calculateRem(8px));
+
+  font-size: calculateRem(11px);
+  border: 1px solid var(--cc-sblabel-badge-br);
+  align-self: center;
+  padding: calculateRem(4px) calculateRem(8px);
+  border-radius: calculateRem(2px);
+  color: var(--cc-sblabel-badge-text);
+  text-align: center;
+  @include margin(null, calculateRem(8px), null, calculateRem(8px));
 }
