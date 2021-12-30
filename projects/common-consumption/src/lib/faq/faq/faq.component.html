@@ -1,7 +1,7 @@
 <div class="panel panel-default cc-faq-panel" *ngFor="let faq of faqs; let i = index">
-  <div data-toggle="collapse" (click)="toggleGroup(i,$event)" tabindex="0">
+  <div data-toggle="collapse" role="button" attr.aria-expanded="{{isGroupShown(i)}}" (click)="toggleGroup(i,$event)" tabindex="0">
     <div class="panel-heading">
-      <div class="text-left" role="button" attr.aria-expanded="{{isGroupShown(i)}}" attr.aria-label="{{faq?.topic}}" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
+      <div class="text-left" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
         {{ faq?.topic}}
         <span>
           <i class="icon-svg icon-svg--xs ml-4" *ngIf="!isGroupShown(i)">
@@ -34,14 +34,14 @@
         </div>
     </fieldset>
     <fieldset class="panel-interact" *ngIf="isYesClicked || isSubmitted">
-      <legend class="yes-clicked m-0 pb-0"> {{data?.constants?.thanksMsg}}</legend>
+      <legend tabindex="0" id="yes-clicked" class="yes-clicked m-0 pb-0"> {{data?.constants?.thanksMsg}}</legend>
       <div *ngIf="isNoClicked && isSubmitted && extraTemplate" class="extraTemplate">
         <ng-container *ngTemplateOutlet="extraTemplate">
         </ng-container>
       </div>
     </fieldset>
     <div class="panel-info" *ngIf="!isSubmitted && isNoClicked">
-      <h6>{{data?.constants?.sorryMsg}}</h6>
+      <h6 id="no-clicked" tabindex="0">{{data?.constants?.sorryMsg}}</h6>
       <form action="#" id="know-more-form" class="know-more-form" *ngIf="!isSubmitted">
       <label for="knowMoreMsg">{{data?.constants?.knowMoreMsg}}</label>
         <textarea type="text" id="knowMoreMsg" name="moreInfo" placeholder="{{constants?.typeHere}}" class="input-text" maxlength="1000"
