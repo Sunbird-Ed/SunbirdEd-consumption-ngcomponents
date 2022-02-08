@@ -34,7 +34,8 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
 
     ngOnInit() {
         this.cardType = this.content.contentType;
-        if (this.content.primaryCategory.toLowerCase() !== 'course' && this.content.contentType.toLowerCase() === 'course') {
+        if (this.content.primaryCategory && this.content.primaryCategory.toLowerCase() !== 'course' &&
+         this.content.trackable && this.content.trackable.enabled === 'Yes') {
             this.cardType = 'Digital Textbook';
         }
         this.fetchSvg();
