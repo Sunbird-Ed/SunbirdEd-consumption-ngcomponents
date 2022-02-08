@@ -28,10 +28,15 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
+    cardType = '';
 
     get LibraryCardTypes() { return LibraryCardTypes; }
 
     ngOnInit() {
+        this.cardType = this.content.contentType;
+        if (this.content.primaryCategory.toLowerCase() !== 'course' && this.content.contentType.toLowerCase() === 'course') {
+            this.cardType = 'Digital Textbook';
+        }
         this.fetchSvg();
         this.splitGradeMedium();
     }
