@@ -10,7 +10,7 @@ export class MimeTypeMasterData {
   public static readonly DOCS = ['application/pdf', 'application/epub', 'application/msword'];
   public static readonly ALL = ['video/mp4', 'video/x-youtube', 'video/webm', 'application/pdf', 'application/epub',
     'application/pdf', 'application/epub', 'application/vnd.ekstep.ecml-archive', 'application/vnd.ekstep.h5p-archive',
-    'application/vnd.ekstep.html-archive'
+    'application/vnd.ekstep.html-archive', 'audio/mp3', 'audio/mp4', 'audio/mpeg', 'audio/ogg', 'audio/webm', 'audio/x-wav', 'audio/wav'
   ];
 }
 
