@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CardHoverComponent } from './card-hover.component';
 import { By } from '@angular/platform-browser';
@@ -7,7 +7,7 @@ describe('CardHoverComponent', () => {
   let component: CardHoverComponent;
   let fixture: ComponentFixture<CardHoverComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CardHoverComponent ]
     })

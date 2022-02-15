@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TocChildItemComponent } from './toc-child-item.component';
 import { TocCardComponent } from '../../card/toc-card/toc-card.component';
@@ -8,7 +8,7 @@ describe('TocChildItemComponent', () => {
   let component: TocChildItemComponent;
   let fixture: ComponentFixture<TocChildItemComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [PipesModule],
       declarations: [ TocChildItemComponent,TocCardComponent ]

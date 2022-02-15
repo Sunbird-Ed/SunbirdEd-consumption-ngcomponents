@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TocCurriculumComponent } from './toc-curriculum.component';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +23,7 @@ describe('TocCurriculumComponent', () => {
   let component: TocCurriculumComponent;
   let fixture: ComponentFixture<TocCurriculumComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule,CommonModule,PipesModule],
       declarations: [ TocCurriculumComponent,TocItemComponent, AccordionBodyComponent,AccordionHeaderComponent,

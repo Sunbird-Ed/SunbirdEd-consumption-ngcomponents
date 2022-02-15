@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GroupCardComponent } from './group-card.component';
 import { By } from '@angular/platform-browser';
@@ -7,7 +7,7 @@ describe('GroupCardComponent', () => {
   let component: GroupCardComponent;
   let fixture: ComponentFixture<GroupCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ GroupCardComponent ]
     })

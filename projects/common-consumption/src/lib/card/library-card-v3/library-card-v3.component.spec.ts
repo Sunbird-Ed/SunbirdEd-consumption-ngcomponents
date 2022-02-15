@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LibraryCardV3Component } from './library-card-v3.component';
 import { By } from '@angular/platform-browser';
@@ -7,7 +7,7 @@ describe('LibraryCardV3Component', () => {
   let component: LibraryCardV3Component;
   let fixture: ComponentFixture<LibraryCardV3Component>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LibraryCardV3Component ]
     })

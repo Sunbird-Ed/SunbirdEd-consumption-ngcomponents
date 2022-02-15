@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AccordionHeaderComponent } from './accordion-header.component';
 import { AccordionItemComponent } from '../accordion-item/accordion-item.component';
@@ -9,7 +9,7 @@ describe('AccordionHeaderComponent', () => {
   let component: AccordionHeaderComponent;
   let fixture: ComponentFixture<AccordionHeaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],
       providers: [AccordionItemComponent,AccordionComponent],

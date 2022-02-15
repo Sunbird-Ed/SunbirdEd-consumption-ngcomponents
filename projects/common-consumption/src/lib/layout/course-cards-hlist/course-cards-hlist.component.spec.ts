@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CourseCardsHlistComponent } from './course-cards-hlist.component';
 import { CourseCardComponent } from '../../card/course-card/course-card.component';
@@ -13,7 +13,7 @@ describe('CourseCardsHlistComponent', () => {
   let component: CourseCardsHlistComponent;
   let fixture: ComponentFixture<CourseCardsHlistComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CourseCardsHlistComponent,CourseCardComponent,MyCourseCardComponent,CourseCuriculumCardComponent ]
     })

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LibraryCardsStackComponent } from './library-cards-stack.component';
 import { LibraryCardComponent } from '../../card/library-card/library-card.component';
@@ -9,7 +9,7 @@ describe('LibraryCardsStackComponent', () => {
   let component: LibraryCardsStackComponent;
   let fixture: ComponentFixture<LibraryCardsStackComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LibraryCardsStackComponent,LibraryCardComponent,LibraryCardV2Component,CourseCardComponent ]
     })
