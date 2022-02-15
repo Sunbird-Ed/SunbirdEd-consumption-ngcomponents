@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AccordionItemComponent, convertToBoolProperty } from './accordion-item.component';
 import { AccordionComponent } from '../accordion.component';
@@ -25,7 +25,7 @@ describe('AccordionItemComponent', () => {
     .compileComponents();
   };
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     setup();
   }));
 

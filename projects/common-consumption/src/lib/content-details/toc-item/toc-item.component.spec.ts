@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TocItemComponent } from './toc-item.component';
 import { AccordionComponent } from '../../accordion/accordion.component';
@@ -22,7 +22,7 @@ describe('TocItemComponent', () => {
   let component: TocItemComponent;
   let fixture: ComponentFixture<TocItemComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule,CommonModule,PipesModule,BrowserAnimationsModule],
       declarations: [ TocItemComponent, AccordionBodyComponent,AccordionHeaderComponent,

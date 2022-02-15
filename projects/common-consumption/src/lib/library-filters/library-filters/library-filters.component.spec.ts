@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LibraryFiltersComponent } from './library-filters.component';
 import {staticData} from '../../content-details/toc-curriculum/toc-data';
@@ -8,7 +8,7 @@ describe('LibraryFiltersComponent', () => {
   let component: LibraryFiltersComponent;
   let fixture: ComponentFixture<LibraryFiltersComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LibraryFiltersComponent ]
     })
