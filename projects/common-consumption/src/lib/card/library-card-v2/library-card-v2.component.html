@@ -26,7 +26,7 @@
     <div class="sb--card__svg-area">
       <img [src]="svgToDisplay" alt=""/>
     </div>
-    <div class="sb--card__type" *ngIf="content?.contentType">{{cardType}}</div>
+    <div class="sb--card__type" *ngIf="content?.primaryCategory">{{content?.primaryCategory}}</div>
   </div>
 
   <!-- card mobile view details -->
