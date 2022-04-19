@@ -14,6 +14,8 @@ import { LibraryCardV4Component } from './library-card-v4/library-card-v4.compon
 import { NotificationCardComponent } from './notification-card/notification-card.component';
 import {BannerCardComponent} from './banner-card/banner-card.component';
 import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
+import { EventCardComponent } from './event-card/event-card.component';
+import { EventCardV2Component } from './event-card-v2/event-card-v2.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellip
     LibraryCardV4Component,
     NotificationCardComponent,
     BannerCardComponent,
-    TruncatedEllipsisComponent
+    TruncatedEllipsisComponent,
+    EventCardComponent,
+    EventCardV2Component
   ],
   imports: [
     CommonModule
@@ -49,7 +53,9 @@ import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellip
     LibraryCardV4Component,
     NotificationCardComponent,
     BannerCardComponent,
-    TruncatedEllipsisComponent
+    TruncatedEllipsisComponent,
+    EventCardComponent,
+    EventCardV2Component
   ]
 })
 export class CardModule { }
