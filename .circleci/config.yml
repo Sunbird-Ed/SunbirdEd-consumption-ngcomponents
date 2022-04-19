@@ -34,18 +34,12 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: install sonar scanner
-          command: sudo npm install -g sonarqube-scanner@2.5.0
-      - run:
-          name: Run SonarScanner
-          command: sonar-scanner
-      - run:
           name: Publish to NPM
           command: |
             if [ -z $CIRCLE_PR_NUMBER ]; then
-              npm run build-lib
+              npm run build-lib && npm pack ./dist/common-consumption
               echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-              npm publish ./dist/common-consumption
+              npm publish project-sunbird-common-consumption-v11-*
             else
               npm run build-lib
             fi    
