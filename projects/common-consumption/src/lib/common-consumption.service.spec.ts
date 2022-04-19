@@ -9,4 +9,5 @@ describe('commonConsumptionService', () => {
     const service: CommonConsumptionService = TestBed.get(CommonConsumptionService);
     expect(service).toBeTruthy();
   });
+
 });
