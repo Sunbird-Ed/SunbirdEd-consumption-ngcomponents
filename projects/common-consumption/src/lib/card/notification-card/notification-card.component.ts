@@ -36,3 +36,4 @@ export class NotificationCardComponent implements OnInit {
   }
 
 }
+
