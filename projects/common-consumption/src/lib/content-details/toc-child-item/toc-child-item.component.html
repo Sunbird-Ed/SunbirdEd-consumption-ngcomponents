@@ -19,7 +19,7 @@
       <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)"
         [activeMimeTypeFilter]="activeMimeTypeFilter" [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" 
         (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
-      </sb-toc-child-item>
+      </sb-toc-child-item> 
     </div>
     <div *ngIf="child?.mimeType === 'application/vnd.sunbird.questionset'">
       <div class="child-content-padding">
