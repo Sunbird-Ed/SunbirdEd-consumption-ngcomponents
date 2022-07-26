@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, AfterViewInit } from '@angular/core';
-import { IContent, LibraryCardTypes, ICardClick } from '../models';
+import { IContent, LibraryCardTypes, ICardClick, IEnterKeyPress } from '../models';
 
 
 @Component({
@@ -27,6 +27,7 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
     @Input() isSelected = false;
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
+    @Output() enterKeyPress: EventEmitter<IEnterKeyPress> = new EventEmitter();
 
     get LibraryCardTypes() { return LibraryCardTypes; }
     frameworkDetailsList = [];
@@ -52,6 +53,9 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
 
     onClick(event: MouseEvent) {
         this.cardClick.emit({ event: event, data: this.content });
+    }
+    onEnterKeyPress(event: KeyboardEvent) {
+        this.enterKeyPress.emit({ event: event, data: this.content });
     }
 
     arrangeFrameworkDetails() {

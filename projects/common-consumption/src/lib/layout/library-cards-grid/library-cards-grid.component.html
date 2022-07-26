@@ -22,7 +22,7 @@
         <div class="item" [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''"
             *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length)let i=index">
             <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
-                (click)="onCardClick($event, content)" tabindex="0" [cardImg]="content?.cardImg">
+                (click)="onCardClick($event, content)" (keydown.enter)="onEnterKeyPress($event, content)" tabindex="0" [cardImg]="content?.cardImg">
             </sb-library-card>
         </div>
     </div>
@@ -32,7 +32,7 @@
             (click)="onViewMoreClick($event)" tabindex="0">{{viewMoreButtonText}}</button>
         <div class="item"  [ngClass]="maxCardCount ? 'show-' + maxCardCount: ''" *ngFor="let content of contentList;let i=index">
             <sb-library-card [indexToDisplay]="i" [layoutConfig]="layoutConfig" [content]="content" [type]="LibraryCardTypes.DESKTOP_TEXTBOOK"
-                [isMenu]="isMenu" (click)="onCardClick($event, content)" tabindex="0" [cardImg]="content?.cardImg" (menuClick)="onCardMenuClick($event)">
+                [isMenu]="isMenu" (click)="onCardClick($event, content)" (keydown.enter)="onEnterKeyPress($event, content)" tabindex="0" [cardImg]="content?.cardImg" (menuClick)="onCardMenuClick($event)">
             </sb-library-card>
         </div>
     </div>

@@ -2,7 +2,7 @@
 <span *ngIf="!layoutConfig">
 <div class="sb--card"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
-  (click)="onClick($event)" *ngIf="!isLoading" tabindex="0" role="button">
+  (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading" tabindex="0" role="button">
   <div class="sb--card__main-area">
     <!-- card img -->
     <div class="sb--card__img">
@@ -114,7 +114,7 @@
       <sb-library-card-v2 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
       [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel" [isSelected]="isSelected"
       [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
-      [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 
+      [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" (enterKeyPress)="onEnterKeyPress($event)"
       (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
       ></sb-library-card-v2>
     </ng-container>
@@ -122,7 +122,7 @@
       <sb-library-card-v3 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
       [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel" [isSelected]="isSelected"
       [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
-      [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 
+      [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" (enterKeyPress)="onEnterKeyPress($event)"
       (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
       ></sb-library-card-v3>
     </ng-container>
@@ -130,7 +130,7 @@
       <sb-library-card-v4 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
       [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel" [isSelected]="isSelected"
       [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
-      [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" 
+      [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" (enterKeyPress)="onEnterKeyPress($event)"
       (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
       ></sb-library-card-v4>
     </ng-container>
