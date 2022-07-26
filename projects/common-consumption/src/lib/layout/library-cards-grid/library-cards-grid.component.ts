@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { defaultLibraryCardsGrid } from '../library-cards.data';
-import { IContent, LibraryCardTypes, LibraryCardGridTypes } from '../../card/models';
+import { IContent, LibraryCardTypes, LibraryCardGridTypes, IEnterKeyPress } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
@@ -34,6 +34,7 @@ export class LibraryCardsGridComponent {
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter<ICardClick>();
     @Output() hoverActionClick: EventEmitter<any> = new EventEmitter<any>();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
+    @Output() enterKey: EventEmitter<IEnterKeyPress> = new EventEmitter();
 
 
     get LibraryCardTypes() { return LibraryCardTypes; }
@@ -54,6 +55,10 @@ export class LibraryCardsGridComponent {
      */
     onCardClick(event: MouseEvent, data: IContent) {
         this.cardClick.emit({ event, data });
+    }
+
+    onEnterKeyPress(event: KeyboardEvent, data: IContent) {
+        this.enterKey.emit({ event, data });
     }
 
     hoverActionClicked(event) {

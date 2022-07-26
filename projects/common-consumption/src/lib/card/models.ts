@@ -2,6 +2,10 @@ export interface ICardClick {
     event: MouseEvent;
     data: any;
 }
+export interface IEnterKeyPress {
+    event: KeyboardEvent;
+    data: any;
+}
 
 export interface IClick {
     event: MouseEvent;
