@@ -1,5 +1,5 @@
 import { MimeTypeMasterData } from './../../pipes-module/mime-type';
-import { Component, OnInit, Input, EventEmitter, Output, QueryList, ViewChild, ElementRef, Renderer2, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnChanges } from '@angular/core';
 import { COMMON_CONSUMPTION_CONSTANTS } from '../../common-consumption.constants';
 import { IButtonConfig, PlatformType, TocCardType } from '../models';
 
