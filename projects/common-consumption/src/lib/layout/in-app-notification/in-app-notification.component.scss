@@ -19,7 +19,7 @@
             overflow-y: auto;
         }
         .clear-text{
-            a{
+            p{
                 color: var(--danger-color);
                 font-size: calculateRem(14px);
                 position: absolute;
@@ -33,7 +33,7 @@
             }
         }
         .more-text{
-            a{
+            p{
                 font-size: calculateRem(12px);
                 font-weight: bold;
                 cursor: pointer;
