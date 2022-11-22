@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 
 ::ng-deep :root {
   --cc-notification-list-bg:var(--white);

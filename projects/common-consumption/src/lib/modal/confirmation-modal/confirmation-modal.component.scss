@@ -1,7 +1,5 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/variables";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/buttons";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "~@project-sunbird/sb-styles/assets/buttons" as *;
 
 // modal component variables
 $sb-modal-header-bg: var(--primary-400);
@@ -127,11 +125,11 @@ $sb-modal-corner-radius: calculateRem(8px);
   }
   &.sb-modal-full {
     .sb-modal {
-      @include position(fixed, 0 0 0 0); //bourbon
+      position: fixed;left:0;right:0;bottom:0;top:0;
       width: 100%;
       height:100vh;
       transform: translate(0,0%);
-      @include margin(0 auto);
+      margin: 0 auto;
       overflow-y: auto;
       overflow-x: hidden;
       border-radius: 0 0 0px 0px;
