@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 ::ng-deep :root {
   --cc-viewbtn-border:#94CCF5;
   --cc-viewbtn-text:#0076FE;

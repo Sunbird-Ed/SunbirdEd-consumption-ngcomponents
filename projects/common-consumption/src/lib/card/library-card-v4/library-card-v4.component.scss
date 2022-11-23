@@ -1,5 +1,4 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 
 ::ng-deep :root {
   --cc-sbcard-org-text: var(--balck);
