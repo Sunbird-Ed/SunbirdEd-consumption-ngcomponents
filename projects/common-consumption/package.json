@@ -15,7 +15,7 @@
     },
     "homepage": "https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents.git#readme",
     "peerDependencies": {
-      "@angular/common": "^9.1.0",
-      "@angular/core": "^9.1.0"
+        "@angular/common": "^9.1.0",
+        "@angular/core": "^9.1.0"
     }
 }
