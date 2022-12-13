@@ -7,16 +7,12 @@
     --cc-faq-panel-title-text:var(--primary-color);
     --cc-faq-info-msg-bg:var(--primary-0);
     --cc-faq-panelheader-bg: var(--white);
-    --cc-faq-panel-body-bg:#F3F7FA;
-    --cc-faq-panel-interact-bg:var(--white);
+    --cc-faq-panel-body-bg:var(--primary-0);
+    --cc-faq-panel-interact-bg:var(--primary-100);
     --cc-faq-yesbtn-bg:rgba(0,136,64,0.1);
     --cc-faq-yesbtn-text:#008840;
     --cc-faq-nobtn-bg:rgba(2, 79, 157, 0.1);
-    --cc-faq-nobtn-text:#024F9D;
-}
-
-.cc-faq-panel {
-
+    --cc-faq-nobtn-text:var(--primary-color);
 }
 .contentPadding{
     padding-bottom: 0px;
