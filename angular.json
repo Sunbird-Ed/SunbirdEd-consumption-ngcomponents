@@ -65,7 +65,13 @@
             "main": "projects/demo/src/main.ts",
             "polyfills": "projects/demo/src/polyfills.ts",
             "tsConfig": "projects/demo/tsconfig.app.json",
-            "aot": true,
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true,
             "assets": [
               "projects/demo/src/favicon.ico",
               "projects/demo/src/assets",
@@ -76,8 +82,8 @@
               }
             ],
             "styles": [
-              "node_modules/@project-sunbird/sb-styles/assets/styles.scss",
-              "projects/demo/src/styles.scss"
+              "projects/demo/src/styles.scss",
+              "node_modules/@project-sunbird/sb-styles/assets/styles.scss"
             ],
             "scripts": []
           },
@@ -173,5 +179,5 @@
       }
     }
   },
-  "defaultProject": "commonConsumption"
+  "defaultProject": "demo"
 }
