@@ -1,5 +1,4 @@
 <!-- card component -->
-test content
 <div class="sb--card sb--card--theme2" role="link" tabindex="0"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading">
@@ -32,6 +31,7 @@ test content
     </div>
   </div>
   </div>
+</div>
 
 <div class="sb--card sb--card--theme2" *ngIf="isLoading">
   <!-- card img -->
