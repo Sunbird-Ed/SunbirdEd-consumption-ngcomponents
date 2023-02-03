@@ -2,6 +2,18 @@
 /* sb card component css */
 :host {
 
+  .sb--card.sb--card--theme2 {
+    border-radius: calculateRem(16px);
+    box-shadow: var(--sbt-box-shadow-6px);
+    overflow:hidden;
+    padding:1rem;
+    height: 16vh; width: 40vh;
+     background-size: cover;
+      overflow: hidden;
+       background-repeat: no-repeat;
+       margin: calculateRem(10px) calculateRem(6px) calculateRem(10px) calculateRem(18px);
+  }
+
   .sb--scrolling-wrapper-flexbox {
     display: flex;
     flex-wrap: nowrap;
@@ -10,7 +22,7 @@
     padding-bottom: 0.5em;
   }
   .explore-text{
-    color: var(--white);
+    color: white;
     font-size: calculateRem(18px);
     font-weight: bold;
     padding: calculateRem(18px) calculateRem(10px);
@@ -36,17 +48,17 @@
     margin: calculateRem(20px) calculateRem(40px) 0px;
   }
   .icon-info{
-    padding: calculateRem(13px);
+    padding: 13px;
   }
   .banner-title{
-    color: var(--gray-800);
+    color: #333333;
     font-size: calculateRem(13px);
     font-weight: 600;
     letter-spacing: 0;
     text-align: center;
     line-height: calculateRem(20px);
     margin-top: calculateRem(20px);
-    padding: 0 calculateRem(10px);
+    padding: 0 10px;
   }
   .web-item{
     display: block;
@@ -74,18 +86,18 @@
     top: 16%;
   }
   .web-icon-info{
-    width: calculateRem(40px);
+    width: 40px;
     margin-left: calculateRem(12px);
-    padding: calculateRem(17px) calculateRem(6px);
+    padding: calculateRem(17px) 6px;
   }
   .web-banner-title{
-    color: var(--black);
+    color: #333333;
     font-size: calculateRem(18px);
     font-weight: 600;
     letter-spacing: 0;
     text-align: center;
     line-height: calculateRem(24px);
     margin-top:calculateRem(64px);
-    padding: 0 calculateRem(10px);
+    padding: 0 10px;
   }
 }

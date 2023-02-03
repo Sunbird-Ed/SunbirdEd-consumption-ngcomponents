@@ -6,7 +6,7 @@ import { ICardClick, CourseCardTypes } from '../models';
 @Component({
   selector: 'sb-my-course-card',
   templateUrl: './my-course-card.component.html',
-  styleUrls: ['./my-course-card.component.scss','../course-card/course-card.component.scss']
+  styleUrls: ['./my-course-card.component.scss','../course-card/course-card.component.scss','../library-card/library-card.component.scss']
 })
 export class MyCourseCardComponent implements OnInit {
 

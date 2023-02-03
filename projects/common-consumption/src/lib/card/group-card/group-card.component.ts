@@ -4,7 +4,7 @@ import { groupData } from './group-data';
 @Component({
   selector: 'sb-group-card',
   templateUrl: './group-card.component.html',
-  styleUrls: ['./group-card.component.scss']
+  styleUrls: ['./group-card.component.scss','../library-card/library-card.component.scss']
 })
 export class GroupCardComponent implements OnInit {
 
