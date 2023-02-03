@@ -1,62 +1,142 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "../library-card/library-card.component.scss";
+
+::ng-deep :root {
+  --cc-sbcard-org-text: var(--balck);
+  --cc-sbcard-selected-border: var(--primary-color);
+  --cc-sbcard-img-br:var(--white);
+  --sbt-pill-hs: 212, 100%;
+  --cc-sbcard-data2-bg: hsl(var(--sbt-pill-hs), 90%);
+  --cc-sbcard-data2-bg-active: var(--gray-800); //#0076FE
+  --cc-sbcard-data1-bg: #E0F5EA;
+  --cc-sbcard-data1-bg-active:var(--gray-800);
+  --cc-sbcard-moreinfo-bg: none; //var(--white)
+  --cc-sbcard-type-bg: var(--black);
+  --cc-sbcard-type-text: var(--white);
+  --cc-sbcard-type-br:var(--gray-200);
+}
 
 /* sb card component css */
 :host {
   .sb--card {
+    &__img {
+      .img-container {
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          overflow: hidden;
+          object-fit: cover;
+          border-radius: calculateRem(8px);
+        }
+      }
+
+    }
+
+    //Accessibility Fixes
+    &__org {
+      color: var(--cc-sbcard-org-text) !important;
+    }
+
+    //Accessibility Fixes
     &__image-pos {
+      position: absolute;
       top: 0px;
       right: calculateRem(16px);
+      z-index: 1000;
+
+      html[dir="rtl"] & {
+        left: calculateRem(16px);
+        right: inherit;
+      }
+    }
+
+    &__img {
+      .img-container {
+        border-radius: calculateRem(8px);
+      }
+    }
+
+    &.selected {
+      border: 1px solid var(--cc-sbcard-selected-border);
+      border-radius: 0.25rem;
+      background-color: var(--cc-sbcard-selected-bg);
     }
   }
 
   .title-info{
-    font-size: calculateRem(16px);
+    font-size: 16px;
+    font-family: "Noto Sans";
     letter-spacing: 0;
-    line-height: calculateRem(20px);
+    line-height: 20px;
     font-weight: bold;
   }
 
   .subject-info{
     height: auto;
     width: auto;
-    color: var(--gray-800);
-    font-size: calculateRem(13px);
+    color: #333333;
+    font-family: "Noto Sans";
+    font-size: 13px;
     letter-spacing: 0;
-    line-height: calculateRem(20px);
-    margin-top: calculateRem(10px);
+    line-height: 20px;
+    margin-top: 10px;
   }
 
   .text-info{
-    padding: 0px calculateRem(5px) calculateRem(16px) 0;
-    margin-top: calculateRem(5px);
+    padding: 0px 5px calculateRem(16px) 0;
+    margin-top: 5px;
   }
 
   .sb--card.sb--card--theme2 {
     border-radius: calculateRem(24px);
-    margin-left: calculateRem(10px);
+    overflow: hidden;
+    width: 95vw;
+    margin-left: 10px;
     margin-top: calculateRem(11px);
-    box-shadow: calculateRem(5px) calculateRem(5px) calculateRem(2px) 0 rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 5px 5px 2px 0 rgba(0, 0, 0, 0.1) !important;
 
     .sb--card__main-area {
       margin: calculateRem(16px) 0 calculateRem(8px);
+      height: auto;
+      position: relative;
 
       .sb--card__type {
-        margin-top: calculateRe(3px);
+        margin-top: 3px;
         height: 1.4rem;
         width: auto;
-        color: var(--white);
-        font-size: calculateRe(11px);
+        color: #FFFFFF;
+        font-family: "Noto Sans";
+        font-size: 11px;
         letter-spacing: 0;
-        line-height: calculateRe(20px);
+        line-height: 20px;
         text-align: center;
-        padding-left: calculateRe(10px);
+        padding-left: 10px;
         margin-left: 0px;
         text-transform: uppercase;
-        background-color: var(--black);
+        background-color: black;
         &::before {
           border-color: var(--black) var(--black) var(--black) transparent;
+          position: absolute;
+          right: -8px;
+          transform: rotatey(-180deg);
+          left: inherit;
           height: 1.4rem;
+
+          html[dir="rtl"] & {
+            left: -8px;
+            transform: rotatex(180deg);
+            right: inherit;
+          }
         }
       }
     }
@@ -70,12 +150,32 @@
     .sb--card__img .img-container {
       width: 4rem;
     }
+
+    .sb--card__moreinfo {
+      background: var(--cc-sbcard-moreinfo-bg);
+    }
+
+    .sb--card__info {
+      padding: 0rem calculateRem(16px);
+    }
+
+    .sb--card__title {
+      margin-right: calculateRem(88px);
+
+      html[dir="rtl"] & {
+        margin-left: calculateRem(88px);
+        margin-right: 0px;
+      }
+    }
+
     .sb--card__meta {
+        height: auto;
         width: 60vw;
-        color: var(--gray-800);
-        font-size: calculateRe(16px);
+        color: #333333;
+        font-family: "Noto Sans";
+        font-size: 16px;
         letter-spacing: 0;
-        line-height: calculateRe(20px);
+        line-height: 20px;
     }
 
     .sb--card__meta1 {
@@ -119,8 +219,17 @@
         background: #E5EDF5;
       }
     }
+
+    .sb--card__meta2 {
+      padding: calculateRem(8px) calculateRem(16px);
+    }
+
     .sb--card__image-pos {
+      margin: 0;
+      overflow: inherit;
+
       .img-container {
+        box-shadow: 0 0 5px 0 rgba(var(--rc-rgba-black), 0.1);
         height: calculateRem(84px);
       }
     }

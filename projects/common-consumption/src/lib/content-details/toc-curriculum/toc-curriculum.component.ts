@@ -7,7 +7,8 @@ import { isNgTemplate } from '@angular/compiler';
   selector: 'sb-toc-curriculum',
   templateUrl: './toc-curriculum.component.html',
   styleUrls: ['./toc-curriculum.component.scss',
-  '../../layout/library-cards-grid/library-cards-grid.component.scss']
+  '../../layout/library-cards-grid/library-cards-grid.component.scss',
+  '../../card/library-card/library-card.component.scss']
 })
 export class TocCurriculumComponent implements OnInit {
 
