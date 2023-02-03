@@ -2,9 +2,9 @@
 
 ::ng-deep :root {
   --cc-notification-list-bg:var(--white);
-  --cc-notification-list-br:#ddd;
+  --cc-notification-list-br: var(--rc-dddddd);
   --cc-notification-status-bg:var(--gray-200);
-  --cc-notification-date-text:#979797;
+  --cc-notification-date-text:var(--gray-200);
   --cc-notification-logo-bg:var(--gray-0);
   --cc-notification-title-text:var(--gray-400);
   --cc-notification-title-active:var(--primary-color);
