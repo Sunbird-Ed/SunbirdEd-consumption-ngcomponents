@@ -5,7 +5,7 @@ import { ICardClick } from '../../layout/models';
 @Component({
   selector: 'sb-course-curiculum-card',
   templateUrl: './course-curiculum-card.component.html',
-  styleUrls: ['./course-curiculum-card.component.scss','../library-card/library-card.component.scss']
+  styleUrls: ['./course-curiculum-card.component.scss']
 })
 export class CourseCuriculumCardComponent implements OnInit {
 
