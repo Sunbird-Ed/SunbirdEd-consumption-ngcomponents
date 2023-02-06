@@ -94,12 +94,8 @@ layoutConfig:any;
     isMenu:false,
     btnlabel:"btnlabel"
 }
-​
-​
-​
+
   constructor() { }
-​
   ngOnInit(): void {
   }
-​
 }

@@ -142,6 +142,12 @@
           }
         }
       }
+      .custom-style{
+        &:hover{
+          background-color: var(--sb-pill-bg) !important;
+          color: var(--cc-grade-pill-text) !important;
+        }
+      }
     }
   }
 

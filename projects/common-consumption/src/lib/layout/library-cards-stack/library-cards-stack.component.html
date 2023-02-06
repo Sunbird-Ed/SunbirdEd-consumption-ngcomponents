@@ -22,7 +22,7 @@
         <ng-container *ngIf="cardType==='textbook' || layoutConfig">
             <sb-library-card
                 *ngFor="let content of contentList | slice:0:(maxCardCount ? maxCardCount : contentList?.length); let i= index" [isOffline]="!content?.isAvailableLocally && isOffline"
-                [content]="content" [type]="LibraryCardTypes.MOBILE_TEXTBOOK" [isLoading]="isLoading" (cardClick)="emitCardClick($event, i)" [cardImg]="content?.cardImg"
+                [content]="content" [type]="LibraryCardTypes.MOBILE_TEXTBOOK" [isLoading]="isLoading" (cardClick)="emitCardClick($event, i)" [cardImg]="content?.cardImg || defaultImage"
                 (menuClick)="emitMenuClick($event)" [isMenu]="isMenu" [layoutConfig]="layoutConfig">
             </sb-library-card>
             <button *ngIf="maxCardCount && contentList?.length >maxCardCount" class="sbbtn flat stack-btn full-width"
