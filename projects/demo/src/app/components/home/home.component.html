@@ -1,14 +1,10 @@
 <div style="max-width: 90%;margin:0 auto;">
-    <!-- <h4>Banner Card</h4>
-    <sb-banner-card-hlist [bannerList]="bCardData.bannerList"></sb-banner-card-hlist>
-    <br><br> -->
-
-    <!-- <h4>Course Card</h4>
-    <sb-course-card [course]="courseCard.course" [isMenu]="true"></sb-course-card>
-    <br><br> -->
     <h4>Course Card</h4>
-    <sb-course-card [course]="courseCard.course" [isMobile]="true" [isOffline]="true" [isMenu]="true"></sb-course-card>
+    <sb-course-card [course]="courseCard.course" [isMobile]="false" [isOffline]="true" [isMenu]="true" [section]="true"></sb-course-card>
     <br><br>
+
+    <h4>Member Card</h4>
+    <sb-member-card [title]="member?.title" [config]="memberCardConfig" [initial]="member?.initial"></sb-member-card>
 
     <h4>Group Card</h4>
     <sb-group-card [group]="gCardData.group" [isMobile]="false" [isAdmin]="true" [isSuspended]="true"></sb-group-card>
@@ -28,6 +24,7 @@
                         </ng-template>
     </sb-library-card>
     <br><br>
+    
     <h4> Library Card selected</h4>
     <sb-library-card [content]="VCardData.content" [type]="VCardData.type[0]" [isSelected]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
         <ng-template #hoverTemplate let-hoverData="hoverData" 

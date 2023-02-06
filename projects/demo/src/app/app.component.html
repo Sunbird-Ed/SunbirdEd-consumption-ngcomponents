@@ -1,2 +1,14 @@
-<app-home></app-home>
+<div class="d-flex flex-justify-center">
+    <div class="" style="width: 20%;">
+        <ul>
+            <li [routerLink]="['group-card']">Group card</li>
+            <li [routerLink]="['library-card']">Library card</li>
+            <li>Course card</li>
+          </ul>
+    </div>
+    <div class="" style="flex:1">
+        <app-home></app-home>
+    </div>
+</div>
+
 <router-outlet></router-outlet>

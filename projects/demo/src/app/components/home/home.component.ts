@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+​
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  @Input() section = '';
 layoutConfig:any;
   bCardData = {
     bannerList: {
@@ -36,7 +36,7 @@ layoutConfig:any;
     isMobile: false,
     isOffline: false,
     isMenu:false,
-    section:"section"
+    section: "section",
   }
   courseCurCard = {
     title:"title",
@@ -45,7 +45,13 @@ layoutConfig:any;
     isActivityTypeCard:false
   }
   
-
+  memberCardConfig = { size: 'large', isBold: true, isSelectable: true, view: 'vertical' };
+  
+  member = {
+    title:"sample",
+    initial:"V",
+  }
+​
   gCardData = {
     group: {
       initial:"AB",
@@ -89,11 +95,7 @@ layoutConfig:any;
     btnlabel:"btnlabel"
 }
 
-
-
   constructor() { }
-
   ngOnInit(): void {
   }
-
 }
