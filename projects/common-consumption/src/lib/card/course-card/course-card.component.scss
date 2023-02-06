@@ -1,22 +1,14 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "../card.scss";
 .sb--card {
   border-radius: calculateRem(2px);
-  // margin-bottom: calculateRem(8px) !important;
 }
 
 .sb--card--course {
-  &.sb--card--recently-viewed {
-  }
-  /*.sb--card__title {
-    color: var(--black);
-    font-size: calculateRem(12px);
-    line-height: calculateRem(16px);
-  }*/
   
   .sb--card__meta1 {
-    --cc-sbcard-meta1:#555;
+    --cc-sbcard-meta1:var(--gray-400);
     color: var(--cc-sbcard-meta1);
-    font-size: calculateRem(12px);
     line-height: calculateRem(16px);
   }
   .sb--card__meta_c_data {

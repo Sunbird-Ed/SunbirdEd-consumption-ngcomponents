@@ -1,19 +1,6 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 /* sb card component css */
 :host {
-
-  .sb--card.sb--card--theme2 {
-    border-radius: calculateRem(16px);
-    box-shadow: var(--sbt-box-shadow-6px);
-    overflow:hidden;
-    padding:1rem;
-    height: 16vh; width: 40vh;
-     background-size: cover;
-      overflow: hidden;
-       background-repeat: no-repeat;
-       margin: calculateRem(10px) calculateRem(6px) calculateRem(10px) calculateRem(18px);
-  }
 
   .sb--scrolling-wrapper-flexbox {
     display: flex;
@@ -23,7 +10,7 @@
     padding-bottom: 0.5em;
   }
   .explore-text{
-    color: white;
+    color: var(--white);
     font-size: calculateRem(18px);
     font-weight: bold;
     padding: calculateRem(18px) calculateRem(10px);
@@ -49,17 +36,17 @@
     margin: calculateRem(20px) calculateRem(40px) 0px;
   }
   .icon-info{
-    padding: 13px;
+    padding: calculateRem(13px);
   }
   .banner-title{
-    color: #333333;
+    color: var(--gray-800);
     font-size: calculateRem(13px);
     font-weight: 600;
     letter-spacing: 0;
     text-align: center;
     line-height: calculateRem(20px);
     margin-top: calculateRem(20px);
-    padding: 0 10px;
+    padding: 0 calculateRem(10px);
   }
   .web-item{
     display: block;
@@ -87,18 +74,18 @@
     top: 16%;
   }
   .web-icon-info{
-    width: 40px;
+    width: calculateRem(40px);
     margin-left: calculateRem(12px);
-    padding: calculateRem(17px) 6px;
+    padding: calculateRem(17px) calculateRem(6px);
   }
   .web-banner-title{
-    color: #333333;
+    color: var(--black);
     font-size: calculateRem(18px);
     font-weight: 600;
     letter-spacing: 0;
     text-align: center;
     line-height: calculateRem(24px);
     margin-top:calculateRem(64px);
-    padding: 0 10px;
+    padding: 0 calculateRem(10px);
   }
 }

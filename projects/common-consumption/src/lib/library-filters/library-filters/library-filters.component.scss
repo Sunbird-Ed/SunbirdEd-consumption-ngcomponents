@@ -1,5 +1,4 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 
 ::ng-deep :root {
   --sb-pill-bg: var(--white);
@@ -91,9 +90,8 @@
 
     // grade filter pill styles
     .sb-grade-pills-container {
-
       min-height: calculateRem(48px);
-      background: var(--cc-grade-pill-container-bg);
+      background: transparent; //var(--cc-grade-pill-container-bg);
       min-width: 100%;
 
       .pill {

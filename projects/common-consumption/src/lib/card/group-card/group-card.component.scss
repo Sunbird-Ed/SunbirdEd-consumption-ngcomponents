@@ -1,7 +1,6 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/custom-mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
-
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "~@project-sunbird/sb-styles/assets/loadingshadows" as *;
+@use "../card.scss";
 ::ng-deep :root {
   --cc-sbcard-img-label: #284C3F;
   --cc-sbcard-img-label-bg: #B3EBD7;
@@ -13,10 +12,6 @@
 
 .sb--card__img {
   .img-container--label {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-transform: capitalize;
     background-color: var(--cc-sbcard-img-label-bg);
     color: var(--cc-sbcard-img-label);

@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 .sb-btn-grow {
   background: none;
   border:0px solid transparent;
@@ -16,4 +16,38 @@
     transform: scale(1.15);
   }
 }
+::ng-deep {
+  .sb--card:hover, .sb--card:focus-within {
+    .hover-meta-info {
+      font-size: calculateRem(10px);
+      opacity: 0.8;
+      color: var(--white);
+      line-height: calculateRem(12px);
+      flex: 0 0 25%;
+    }
+    .action-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-self: center;
+      justify-self: center;
+      flex: 1;
+      align-items: center;
+    }
+  }
+  .action-item {
+    padding: 0 calculateRem(16px);
+    flex: 1;
+    text-align: center;
 
+    .sb-btn.sb-btn-primary[disabled] {
+      background-color: transparent;
+      opacity: 0.5;
+      border: 0;
+      color: var(--white);
+    }
+  }
+  .action-item:not(:last-child) {
+    border-right: calculateRem(1px) solid rgba(var(--rc-rgba-white), 0.5);
+  }
+}

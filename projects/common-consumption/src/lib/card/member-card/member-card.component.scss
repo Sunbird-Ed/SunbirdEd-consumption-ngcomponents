@@ -1,8 +1,8 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "~@project-sunbird/sb-styles/assets/loadingshadows" as *;
 ::ng-deep :root {
-  --cc-members-list-item-selected:var(--rc-E0EFFF);
-  --cc-members-list-item-selected-border:var(--rc-E0EFFF);
+  --cc-members-list-item-selected:var(--sbt-body-bg)
+  --cc-members-list-item-selected-border:var(--sbt-body-bg2)
   --cc-members-list-item-menu-text:var(--gray-200);
   --cc-members-list-item-status-text:var(--secondary-200);
     --cc-members-list-item-status-br:var(--secondary-200);
