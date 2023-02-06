@@ -4,12 +4,16 @@ import { CommonConsumptionModule } from '@project-sunbird/common-consumption';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GroupCardComponent } from './components/group-card/group-card.component';
 import { HomeComponent } from './components/home/home.component';
+import { LibraryCardComponent } from './components/library-card/library-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    GroupCardComponent,
+    LibraryCardComponent
   ],
   imports: [
     BrowserModule,

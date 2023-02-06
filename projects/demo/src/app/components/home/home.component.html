@@ -1,11 +1,141 @@
 <div style="max-width: 90%;margin:0 auto;">
+    <h4>Course Card</h4>
+    <sb-course-card [course]="courseCard.course" [isMobile]="false" [isOffline]="true" [isMenu]="true" [section]="true"></sb-course-card>
+    <br><br>
 
-<!-- <sb-library-card-v2></sb-library-card-v2>
-<br> -->
-<sb-library-card-v3 [content]="v2CardData.content" [type]="v2CardData.type" [isOffline]="true"></sb-library-card-v3>
+    <h4>Member Card</h4>
+    <sb-member-card [title]="member?.title" [config]="memberCardConfig" [initial]="member?.initial"></sb-member-card>
 
-<!-- <br>
-<sb-library-card-v4></sb-library-card-v4>
-<br>
-<sb-library-card></sb-library-card> -->
-</div>
+    <h4>Group Card</h4>
+    <sb-group-card [group]="gCardData.group" [isMobile]="false" [isAdmin]="true" [isSuspended]="true"></sb-group-card>
+    <br><br>
+
+    <h4>Group Card mobile View</h4>
+    <sb-group-card [group]="gCardData.group" [isMobile]="true" [isAdmin]="false" [isSuspended]="true"></sb-group-card>
+    <br><br>
+    
+    <h4>Library Card</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+        <ng-template #hoverTemplate let-hoverData="hoverData" 
+                        let-content="content">
+                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
+                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                            </sb-card-hover>
+                        </ng-template>
+    </sb-library-card>
+    <br><br>
+    
+    <h4> Library Card selected</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[0]" [isSelected]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+        <ng-template #hoverTemplate let-hoverData="hoverData" 
+                        let-content="content">
+                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
+                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                            </sb-card-hover>
+                        </ng-template>
+    </sb-library-card>
+    <br><br>
+
+    <h4> Library Card Portal qrcode</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[1]" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+        <ng-template #hoverTemplate let-hoverData="hoverData" 
+                        let-content="content">
+                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
+                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                            </sb-card-hover>
+                        </ng-template>
+    </sb-library-card>
+    <br><br>
+
+    <h4>Library Card -- Desktop View</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[2]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+        <ng-template #hoverTemplate let-hoverData="hoverData" 
+                        let-content="content">
+                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
+                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                            </sb-card-hover>
+                        </ng-template>
+    </sb-library-card>
+    <br><br>
+    <h4>Library Card -- Mobile View</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[3]" [isMobile] ="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+        <ng-template #hoverTemplate let-hoverData="hoverData" 
+                        let-content="content">
+                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
+                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                            </sb-card-hover>
+                        </ng-template>
+    </sb-library-card>
+    <br><br>
+    <h4>Library Card -- Recently View</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[4]" [cardImg]="VCardData.cardImg" [isOffline]="true" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+        <ng-template #hoverTemplate let-hoverData="hoverData" 
+                        let-content="content">
+                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
+                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                            </sb-card-hover>
+                        </ng-template>
+    </sb-library-card>
+    <br><br>
+
+    <h4>Library Card V2</h4>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <h4>Library Card V2 -- selected</h4>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [isSelected]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <h4>Library Card V2  Portal qrcode</h4>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[1]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <h4>Library Card V2 -- Desktop View</h4>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[2]"  [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <h4>Library Card V2 -- Mobile</h4>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[3]" [isMobile] ="true"  [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <h4>Library Card V2 -- Recently View</h4>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[4]" [isOffline]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+
+    <h4>Library Card V3</h4>
+    <sb-library-card-v3 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v3>
+    <br><br>
+    <h4>Library Card V3 -- selected</h4>
+    <sb-library-card-v3 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [isSelected]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v3>
+    <br><br>
+    <h4>Library Card V3  Portal qrcode</h4>
+    <sb-library-card-v3 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[1]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v3>
+    <br><br>
+    <h4>Library Card V3 -- Desktop View</h4>
+    <sb-library-card-v3 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[2]"  [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v3>
+    <br><br>
+    <h4>Library Card V3 -- Mobile</h4>
+    <sb-library-card-v3 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[3]" [isMobile] ="true"  [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v3>
+    <br><br>
+    <h4>Library Card V3 -- Recently View</h4>
+    <sb-library-card-v3 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[4]" [isOffline]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v3>
+    <br><br>
+
+    <h4>Library Card V4</h4>
+    <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
+    <br><br>
+    <h4>Library Card V4 -- selected</h4>
+    <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [isSelected]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
+    <br><br>
+    <h4>Library Card V4  Portal qrcode</h4>
+    <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[1]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
+    <br><br>
+    <h4>Library Card V4 -- Desktop View</h4>
+    <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[2]"  [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
+    <br><br>
+    <h4>Library Card V4 -- Mobile</h4>
+    <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[3]" [isMobile] ="true"  [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
+    <br><br>
+    <h4>Library Card V4 -- Recently View</h4>
+    <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[4]" [isOffline]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
+    <br><br>
+
+    <h4>sb-course-curiculum-card</h4>
+    <sb-course-curiculum-card [title]="courseCurCard.title" [subTitle]="courseCurCard.subTitle" [cardImg]="courseCurCard.cardImg" [isActivityTypeCard]="false"></sb-course-curiculum-card>
+   
+    </div>
