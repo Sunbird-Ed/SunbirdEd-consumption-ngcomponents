@@ -29,6 +29,9 @@
     }
     .sb--card__img .img-container {
       width: 3.5rem;
+      img{
+        min-height: 100%;
+      }
     }
     .sb--card__info {
       padding:0rem calculateRem(8px) 0 calculateRem(0px);
@@ -36,7 +39,7 @@
       flex-direction: column;
       align-items: flex-start;
       .data_3{
-        border-radius: 4px;
+        border-radius: calculateRem(4px);
         background-color: #FFE99E;
         font-size:0.90rem;
         text-transform: uppercase;

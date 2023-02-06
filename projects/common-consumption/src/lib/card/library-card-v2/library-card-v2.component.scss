@@ -18,6 +18,9 @@
       .img-container {
         border: calculateRem(4px) solid var(--cc-sbcard-img-br);
         border-radius: calculateRem(72px);
+        img{
+          min-height: 100%;
+        }
       }
     }
     //Accessibility Fixes
@@ -27,10 +30,8 @@
   }
 
   .sb--card.sb--card--theme2 {
-    .sb--card-svg-tail {
     .sb--card__main-area {
       margin: calculateRem(16px) calculateRem(16px) calculateRem(8px);
-      }
     }
     .sb--card__meta1 {
       .data_1,

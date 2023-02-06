@@ -42,15 +42,15 @@
       margin: calculateRem(16px) 0 calculateRem(8px);
 
       .sb--card__type {
-        margin-top: calculateRe(3px);
+        margin-top: calculateRem(16px);
         height: 1.4rem;
         width: auto;
         color: var(--white);
-        font-size: calculateRe(11px);
+        font-size: calculateRem(11px);
         letter-spacing: 0;
-        line-height: calculateRe(20px);
+        line-height: calculateRem(20px);
         text-align: center;
-        padding-left: calculateRe(10px);
+        padding-left: calculateRem(10px);
         margin-left: 0px;
         text-transform: uppercase;
         background-color: var(--black);
@@ -69,15 +69,20 @@
     }
     .sb--card__img .img-container {
       width: 4rem;
+      img{
+        min-height: 100%;
+      }
     }
     .sb--card__meta {
         width: 60vw;
         color: var(--gray-800);
-        font-size: calculateRe(16px);
+        font-size: calculateRem(16px);
         letter-spacing: 0;
-        line-height: calculateRe(20px);
+        line-height: calculateRem(20px);
     }
-
+    .sb--card__info{
+      padding-top: 0.5rem;
+    }
     .sb--card__meta1 {
       height: auto;
       flex-wrap: wrap;
