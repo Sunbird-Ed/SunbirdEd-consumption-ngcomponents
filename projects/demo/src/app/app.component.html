@@ -1,14 +1,31 @@
-<div class="d-flex flex-justify-center">
-    <div class="" style="width: 20%;">
-        <ul>
-            <li [routerLink]="['group-card']">Group card</li>
-            <li [routerLink]="['library-card']">Library card</li>
-            <li>Course card</li>
+<div class="d-flex flex-justify-center" style="background-color: lightblue;
+align-items: center;
+justify-content: center;
+position: fixed;
+width: 100%;
+top: 0;
+left: 0;
+right: 0;z-index:9;">
+   
+        <ul style="display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none none;
+        padding: 1rem;
+        gap: 1rem; margin: 0;">
+            <li [routerLink]="['group-card']" #rla="routerLinkActive"  routerLinkActive [ngStyle]="rla.isActive ? {'color': 'red'} : {'color': 'gray'}">Group card</li>
+            <li [routerLink]="['library-card']" #rla1="routerLinkActive"  routerLinkActive [ngStyle]="rla1.isActive ? {'color': 'red'} : {'color': 'gray'}">Library card</li>
+            <li [routerLink]="['library-card-v2']" #rla2="routerLinkActive"  routerLinkActive [ngStyle]="rla2.isActive ? {'color': 'red'} : {'color': 'gray'}">Library card v2</li>
+            <li [routerLink]="['library-card-v3']" #rla3="routerLinkActive"  routerLinkActive [ngStyle]="rla3.isActive ? {'color': 'red'} : {'color': 'gray'}">Library card v3</li>
+            <li [routerLink]="['library-card-v4']" #rla4="routerLinkActive"  routerLinkActive [ngStyle]="rla4.isActive ? {'color': 'red'} : {'color': 'gray'}">Library card v4</li>
+            <li [routerLink]="['member-card']" #rla5="routerLinkActive"  routerLinkActive [ngStyle]="rla5.isActive ? {'color': 'red'} : {'color': 'gray'}">Member card</li>
+            <li [routerLink]="['course-card']" #rla6="routerLinkActive"  routerLinkActive [ngStyle]="rla6.isActive ? {'color': 'red'} : {'color': 'gray'}">Course card</li>
+            <li [routerLink]="['course-curiculum-card']" routerLinkActive="active" #rla7="routerLinkActive"  [ngStyle]="rla7.isActive ? {'color': 'red'} : {'color': 'gray'}">Course curiculum card</li>
           </ul>
-    </div>
-    <div class="" style="flex:1">
+
+    <!-- <div class="" style="flex:1">
         <app-home></app-home>
-    </div>
+    </div> -->
 </div>
 
 <router-outlet></router-outlet>

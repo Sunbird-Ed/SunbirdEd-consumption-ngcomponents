@@ -18,6 +18,7 @@ export class GroupCardComponent implements OnInit {
       cardBgColor:"#b3ebd7"
     }
   }
+  
 
   constructor() { }
 

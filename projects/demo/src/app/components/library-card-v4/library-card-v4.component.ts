@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-library-card',
-  templateUrl: './library-card.component.html',
-  styleUrls: ['./library-card.component.scss']
+  selector: 'app-library-card-v4',
+  templateUrl: './library-card-v4.component.html',
+  styleUrls: ['./library-card-v4.component.scss']
 })
-export class LibraryCardComponent implements OnInit {
+export class LibraryCardV4Component implements OnInit {
 
   VCardData = {
     content: {
@@ -38,7 +38,6 @@ export class LibraryCardComponent implements OnInit {
     isMenu:false,
     btnlabel:"btnlabel"
 }
-
   constructor() { }
 
   ngOnInit(): void {

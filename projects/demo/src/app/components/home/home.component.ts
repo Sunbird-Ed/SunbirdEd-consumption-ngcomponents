@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-​
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -51,7 +51,7 @@ layoutConfig:any;
     title:"sample",
     initial:"V",
   }
-​
+
   gCardData = {
     group: {
       initial:"AB",
@@ -63,6 +63,7 @@ layoutConfig:any;
       cardBgColor:"#b3ebd7"
     }
   }
+  
   VCardData = {
     content: {
       tagName:"tagname",

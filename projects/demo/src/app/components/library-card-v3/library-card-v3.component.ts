@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-library-card',
-  templateUrl: './library-card.component.html',
-  styleUrls: ['./library-card.component.scss']
+  selector: 'app-library-card-v3',
+  templateUrl: './library-card-v3.component.html',
+  styleUrls: ['./library-card-v3.component.scss']
 })
-export class LibraryCardComponent implements OnInit {
+export class LibraryCardV3Component implements OnInit {
 
   VCardData = {
     content: {
