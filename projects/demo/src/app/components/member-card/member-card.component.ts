@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MemberCardComponent implements OnInit {
 
   memberCardConfig = { size: 'large', isBold: true, isSelectable: true, view: 'vertical' };
-  
+  memberCardConfig1 = { size: 'medium', isBold: false, isSelectable: false, view: 'horizontal' };
   member = {
     title:"sample",
     initial:"V",
