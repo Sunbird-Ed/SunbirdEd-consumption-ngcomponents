@@ -170,6 +170,11 @@
 
     &__badge {
       display: flex;
+      margin-right: calculateRem(16px);
+      html[dir="rtl"] & {
+        margin-right: 0;
+        margin-left: calculateRem(16px);
+      }
 
       img {
         width: calculateRem(20px);
