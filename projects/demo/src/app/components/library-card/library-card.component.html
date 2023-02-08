@@ -1,5 +1,10 @@
 
     <h4>Library Card</h4>
+    <sb-library-card [content]="VCardData.content" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+    </sb-library-card>
+    <br><br>
+
+    <h4>Library Card -- QRCODE_RESULT</h4>
     <sb-library-card [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
         <ng-template #hoverTemplate let-hoverData="hoverData" 
                         let-content="content">
@@ -10,18 +15,7 @@
     </sb-library-card>
     <br><br>
     
-    <h4> Library Card -- selected</h4>
-    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[0]" [isSelected]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
-        <ng-template #hoverTemplate let-hoverData="hoverData" 
-                        let-content="content">
-                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
-                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
-                            </sb-card-hover>
-                        </ng-template>
-    </sb-library-card>
-    <br><br>
-
-    <h4> Library Card -- Portal qrcode</h4>
+    <h4> Library Card -- portal_qrcode_flatresult</h4>
     <sb-library-card [content]="VCardData.content" [type]="VCardData.type[1]" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
         <ng-template #hoverTemplate let-hoverData="hoverData" 
                         let-content="content">
@@ -32,8 +26,19 @@
     </sb-library-card>
     <br><br>
 
-    <h4>Library Card -- Desktop View</h4>
-    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[2]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+    <h4> Library Card -- desktop_textbook</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[2]" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+        <ng-template #hoverTemplate let-hoverData="hoverData" 
+                        let-content="content">
+                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
+                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                            </sb-card-hover>
+                        </ng-template>
+    </sb-library-card>
+    <br><br> 
+
+    <h4> Library Card -- desktop_textbook</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[2]" [isSelected]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
         <ng-template #hoverTemplate let-hoverData="hoverData" 
                         let-content="content">
                             <sb-card-hover class="card-hover" [hoverData]="hoverData"
@@ -42,8 +47,9 @@
                         </ng-template>
     </sb-library-card>
     <br><br>
-    <h4>Library Card -- Mobile View</h4>
-    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[3]" [isMobile] ="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+
+    <h4>Library Card -- mobile_textbook</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[3]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
         <ng-template #hoverTemplate let-hoverData="hoverData" 
                         let-content="content">
                             <sb-card-hover class="card-hover" [hoverData]="hoverData"
@@ -52,8 +58,18 @@
                         </ng-template>
     </sb-library-card>
     <br><br>
-    <h4>Library Card -- Recently View</h4>
-    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[4]" [cardImg]="VCardData.cardImg" [isOffline]="true" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+    <h4>Library Card -- recently_viewed</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[4]" [isMobile] ="false" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+        <ng-template #hoverTemplate let-hoverData="hoverData" 
+                        let-content="content">
+                            <sb-card-hover class="card-hover" [hoverData]="hoverData"
+                            [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+                            </sb-card-hover>
+                        </ng-template>
+    </sb-library-card>
+    <br><br>
+    <h4>Library Card -- Offline</h4>
+    <sb-library-card [content]="VCardData.content" [type]="VCardData.type[2]" [cardImg]="VCardData.cardImg" [isOffline]="true" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
         <ng-template #hoverTemplate let-hoverData="hoverData" 
                         let-content="content">
                             <sb-card-hover class="card-hover" [hoverData]="hoverData"

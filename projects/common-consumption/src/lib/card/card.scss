@@ -221,12 +221,12 @@
         margin: 0;
 
         .img-container {
-
           display: flex;
           align-items: center;
           background-color: var(--cc-sbcard-rv-img-container-bg);
           height: calculateRem(88px);
           width: calculateRem(88px);
+          border-radius: 0rem;
         }
       }
 
@@ -236,8 +236,8 @@
     }
 
     &.selected {
-      border: 1px solid var(--cc-sbcard-selected-border);
-      border-radius: 4px;
+      border: 0.063rem solid var(--cc-sbcard-selected-border);
+      border-radius: 0.25rem;
       background-color:var(--cc-sbcard-selected-bg);
     }
 
@@ -372,8 +372,10 @@
     }
   }
 }
+
 //card more actions styles
-.menu::after {
+a.menu {
+&::after {
   content: '\2807';
   font-size: calculateRem(24px);
   color: var(--gray-200);
@@ -387,7 +389,10 @@
   width: calculateRem(32px);
   height: calculateRem(32px);
 }
-
-.menu:hover::after {
-  background: var(--gray-0);
+&:hover {
+  text-decoration: none;
+  &::after {
+    background: var(--gray-0);
+  }
+}
 }

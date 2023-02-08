@@ -1,18 +1,5 @@
-<div class="d-flex flex-justify-center" style="background-color: lightblue;
-align-items: center;
-justify-content: center;
-position: fixed;
-width: 100%;
-top: 0;
-left: 0;
-right: 0;z-index:9;">
-   
-        <ul style="display: flex;
-        align-items: center;
-        justify-content: center;
-        list-style: none none;
-        padding: 1rem;
-        gap: 1rem; margin: 0;">
+<div class="wrapper">
+        <ul>
             <li [routerLink]="['group-card']" #rla="routerLinkActive"  routerLinkActive [ngStyle]="rla.isActive ? {'color': 'red'} : {'color': 'gray'}">Group card</li>
             <li [routerLink]="['library-card']" #rla1="routerLinkActive"  routerLinkActive [ngStyle]="rla1.isActive ? {'color': 'red'} : {'color': 'gray'}">Library card</li>
             <li [routerLink]="['library-card-v2']" #rla2="routerLinkActive"  routerLinkActive [ngStyle]="rla2.isActive ? {'color': 'red'} : {'color': 'gray'}">Library card v2</li>
@@ -22,7 +9,6 @@ right: 0;z-index:9;">
             <li [routerLink]="['course-card']" #rla6="routerLinkActive"  routerLinkActive [ngStyle]="rla6.isActive ? {'color': 'red'} : {'color': 'gray'}">Course card</li>
             <li [routerLink]="['course-curiculum-card']" routerLinkActive="active" #rla7="routerLinkActive"  [ngStyle]="rla7.isActive ? {'color': 'red'} : {'color': 'gray'}">Course curiculum card</li>
           </ul>
-
     <!-- <div class="" style="flex:1">
         <app-home></app-home>
     </div> -->
