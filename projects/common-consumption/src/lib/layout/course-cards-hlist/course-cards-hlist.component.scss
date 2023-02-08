@@ -18,7 +18,7 @@
     width: calculateRem(280px);
     margin: 0 0 0 0;
     margin-right:0.5rem;
-    html[dir="rtl"] & {
+    html[dir='rtl'] & {
       margin-right:inherit;
       margin-left:1rem;
     }

@@ -25,8 +25,8 @@ import { MemberCardComponent } from './components/member-card/member-card.compon
       { path: 'member-card', component: MemberCardComponent },
       { path: 'course-card', component: CourseCardComponent },
       { path: 'course-curiculum-card', component: CourseCuriculumCardComponent },
-      { path: 'home', component: HomeComponent }
-      // { path: '**', redirectTo: 'login' }
+      { path: 'home', component: HomeComponent },
+      { path: '**', redirectTo: 'home' }
     ])
   ],
   exports: [

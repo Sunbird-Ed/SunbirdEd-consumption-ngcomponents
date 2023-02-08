@@ -1,11 +1,9 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 @use "~@project-sunbird/sb-styles/assets/loadingshadows" as *;
-@use "../card.scss";
+@forward "../card.scss";
 /* sb card common library cards component css */
 ::ng-deep :root {
   --cc-sbcard-org-text: var(--balck);
-  --cc-sbcard-selected-border:var(--primary-color);
-  --cc-sbcard-type-br:var(--gray-200);
 }
 
 :host {
@@ -41,7 +39,7 @@
       top: 50%;
       z-index: 1000;
 
-      html[dir="rtl"] & {
+      html[dir='rtl'] & {
         left: calculateRem(16px);
         right: inherit;
       }
@@ -55,7 +53,7 @@
       position: absolute;
       bottom: 0px;
       right: calculateRem(24px);
-      html[dir="rtl"] & {
+      html[dir='rtl'] & {
         left:calculateRem(24px);
         right: inherit;
       }
@@ -80,28 +78,24 @@
       height: auto;
       position: relative;
       .sb--card__type {
-        margin-left: calculateRem(-16px);
-        padding-left: 0.5rem;
         position: absolute;
         background: var(--black);
-        height: 1.25rem;
-        color: var(--white);
-        font-size:calculateRem(11px);
-        display: flex;
-        align-items: center;
         text-transform: uppercase;
-        html[dir="rtl"] & {
-          margin-right: -1rem;
+        margin-left: -0.5rem;
+        padding-left: 0.5rem;
+        html[dir='rtl'] & {
+          margin-right: -0.5rem;
           padding-right: 0.5rem;
+          margin-left: 0rem;
         }
         &::before {
           border-color: var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) transparent;
           position: absolute;
-          right: -0.5rem;
+          right: -0.6rem;
           transform: rotatey(-180deg);
           left: inherit;
-  
-          html[dir="rtl"] & {
+          
+          html[dir='rtl'] & {
             left: -0.5rem;
             transform: rotatex(180deg);
             right: inherit;
@@ -115,7 +109,7 @@
     .sb--card__title {
       margin-right: calculateRem(88px);
 
-      html[dir="rtl"] & {
+      html[dir='rtl'] & {
         margin-left: calculateRem(88px);
         margin-right: 0px;
       }

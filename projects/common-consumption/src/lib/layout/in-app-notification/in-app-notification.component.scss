@@ -26,7 +26,7 @@
                 right: calculateRem(24px);
                 top: calculateRem(24px);
                 text-decoration: none;
-                html[dir="rtl"] & {
+                html[dir='rtl'] & {
                     right: auto;
                     left: calculateRem(24px);
                 }

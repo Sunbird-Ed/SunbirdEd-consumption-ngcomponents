@@ -34,29 +34,20 @@
 
   .sb--card.sb--card--theme2 {
     border-radius: calculateRem(24px);
-    margin-left: calculateRem(10px);
-    margin-top: calculateRem(11px);
-    box-shadow: calculateRem(5px) calculateRem(5px) calculateRem(2px) 0 rgba(0, 0, 0, 0.1) !important;
 
     .sb--card__main-area {
       margin: calculateRem(16px) 0 calculateRem(8px);
 
       .sb--card__type {
-        margin-top: calculateRem(16px);
-        height: 1.4rem;
+        margin-top: 1rem;
         width: auto;
-        color: var(--white);
-        font-size: calculateRem(11px);
-        letter-spacing: 0;
-        line-height: calculateRem(20px);
         text-align: center;
-        padding-left: calculateRem(10px);
-        margin-left: 0px;
-        text-transform: uppercase;
-        background-color: var(--black);
+        margin-left: 0rem;
+        html[dir='rtl'] & {
+          margin-right: 0rem !important;
+        }
         &::before {
           border-color: var(--black) var(--black) var(--black) transparent;
-          height: 1.4rem;
         }
       }
     }

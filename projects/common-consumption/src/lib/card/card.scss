@@ -1,5 +1,5 @@
-@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "~@project-sunbird/sb-styles/assets/loadingshadows" as *;
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins"as *;
+@use "~@project-sunbird/sb-styles/assets/loadingshadows"as *;
 
 ::ng-deep :root {
   --cc-sbcard-bg: var(--white);
@@ -15,326 +15,328 @@
   --cc-sbcard-type-text: var(--white);
   --cc-sbcard-rv-img-container-bg: var(--gray-100);
   --cc-sbcard-selected-border: var(--primary-color);
-  --cc-sbcard-selected-bg:rgba(2, 79, 157, 0.2);
+  --cc-sbcard-selected-bg: rgba(2, 79, 157, 0.2);
   --cc-sbcard-offline-bg: var(--tertiary-color);
   --cc-sbcard-offline-img-text: var(--white);
-  --cc-sbcard-type-br:var(--black);
+  --cc-sbcard-type-br: var(--gray-200);
 }
 
 /* sb card component css */
 
-  .sb--card {
-    width: 100%;
-    background-color: var(--cc-sbcard-bg);
+.sb--card {
+  width: 100%;
+  background-color: var(--cc-sbcard-bg);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  margin-top: 0px;
+  border: 0px;
+  contain: content;
+  border-radius: calculateRem(2px);
+
+  &:hover {
+    transform: translate(0, 0px);
+    box-shadow: 0 calculateRem(2px) calculateRem(7px) 0 rgba(var(--rc-rgba-black), 0.16);
+  }
+
+  @include respond-below(sm) {
+    box-shadow: 0 calculateRem(2px) calculateRem(7px) rgba(var(--rc-rgba-black), 0.16);
+  }
+
+  &__main-area {
     display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    position: relative;
-    margin-top: 0px;
-    border: 0px;
-    contain: content;
-    border-radius: calculateRem(2px);
+    flex-direction: row;
+    align-items: center;
+    height: calculateRem(88px);
+  }
 
-    &:hover {
-      transform: translate(0, 0px);
-      box-shadow: 0 calculateRem(2px) calculateRem(7px) 0 rgba(var(--rc-rgba-black), 0.16);
-    }
+  &__img {
+    height: calculateRem(72px);
+    width: calculateRem(72px);
+    overflow: hidden;
+    flex: 0 0 calculateRem(72px);
+    margin: calculateRem(8px);
 
-    @include respond-below(sm) {
-      box-shadow: 0 calculateRem(2px) calculateRem(7px) rgba(var(--rc-rgba-black), 0.16);
-    }
+    .img-container {
 
-    &__main-area {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      height: calculateRem(88px);
-    }
-
-    &__img {
+      background-color: var(--cc-sbcard-img-container-bg);
       height: calculateRem(72px);
       width: calculateRem(72px);
-      overflow: hidden;
-      flex: 0 0 calculateRem(72px);
-      margin: calculateRem(8px);
+      justify-content: center;
 
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__info {
+    @include padding(null, calculateRem(8px), null, null);
+    flex: 1;
+    overflow: hidden;
+  }
+
+  &__title {
+
+    color: var(--cc-sbcard-title);
+    font-size: calculateRem(14px);
+    margin: 0px;
+    line-height: normal;
+
+  }
+
+  &__meta1 {
+
+    color: var(--cc-sbcard-meta-text);
+    font-size: calculateRem(12px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    line-height: calculateRem(20px);
+    margin-top: calculateRem(4px);
+  }
+
+  .data_1 {
+    max-width: 50%;
+  }
+
+  .data_2 {
+    flex: 1;
+  }
+
+  .dot-divider {
+
+    width: calculateRem(4px);
+    height: calculateRem(4px);
+    min-width: calculateRem(4px);
+    max-width: calculateRem(4px);
+    min-height: calculateRem(4px);
+    max-height: calculateRem(4px);
+    border-radius: 100%;
+    background-color: var(--cc-sbcard-dot-divider);
+    display: inline-block;
+    margin: 0px calculateRem(8px);
+  }
+
+  &__moreinfo {
+
+    border-radius: 0 0 calculateRem(2px) calculateRem(2px);
+    background-color: var(--cc-sbcard-moreinfo-bg);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    border-top: 0px solid var(--cc-sbcard-moreinfo-bordertop);
+  }
+
+  &__meta2 {
+
+    color: var(--cc-sbcard-meta2-text);
+    font-size: calculateRem(12px);
+    line-height: calculateRem(14px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: calculateRem(8px);
+  }
+
+  &__meta2_data {
+    .label {
+      font-weight: normal;
+    }
+
+    .value {
+      font-weight: bold;
+    }
+  }
+
+  &__org {
+
+    color: var(--cc-sbcard-org-text);
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+
+  &__badge {
+    display: flex;
+    // margin-right: 0.5rem;
+    // html[dir='rtl'] & {
+    //   margin-right: 0;
+    //   margin-left: 0.5rem;
+    // }
+
+    img {
+      width: calculateRem(20px);
+      height: calculateRem(20px);
+    }
+  }
+
+  &__type {
+    background: var(--cc-sbcard-type-bg);
+    position: relative;
+    height: 1.25rem;
+    color: var(--cc-sbcard-type-text);
+    font-size: 0.6875rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0 0 0 0.5rem;
+    // html[dir='rtl'] & {
+    //   margin: 0 0.5rem 0 0rem;
+    // }
+    &::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-width: calculateRem(10px) calculateRem(5px);
+      border-style: solid;
+      border-color: var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) transparent;
+      position: absolute;
+      left: -0.625rem;
+
+      html[dir='rtl'] & {
+        right: -0.625rem;
+        left: inherit;
+        border-color: var(--cc-sbcard-type-br) transparent var(--cc-sbcard-type-br) var(--cc-sbcard-type-br);
+      }
+    }
+  }
+
+  /* recently viewed card css */
+  &--recently-viewed {
+    .sb--card__img {
+      height: calculateRem(88px);
+      width: calculateRem(88px);
+      flex: 0 0 calculateRem(88px);
+      margin: 0;
+
+      .img-container {
+        display: flex;
+        align-items: center;
+        background-color: var(--cc-sbcard-rv-img-container-bg);
+        height: calculateRem(88px);
+        width: calculateRem(88px);
+        border-radius: 0rem;
+      }
+    }
+
+    .sb--card__info {
+      padding: calculateRem(8px);
+    }
+  }
+
+  &.selected {
+    border: 0.063rem solid var(--cc-sbcard-selected-border);
+    border-radius: 0.25rem;
+    background-color: var(--cc-sbcard-selected-bg);
+  }
+
+  /* offline card css */
+  &.offline {
+    .sb--card__img {
       .img-container {
 
         display: flex;
         align-items: center;
-        background-color: var(--cc-sbcard-img-container-bg);
-        height: calculateRem(72px);
-        width: calculateRem(72px);
-        justify-content: center;
+        background-color: var(--cc-sbcard-offline-bg);
+        opacity: 0.5;
 
         img {
-          max-width: 100%;
+
+          margin: auto;
+          font-size: calculateRem(24px);
+          color: var(--cc-sbcard-offline-img-text);
         }
       }
     }
 
-    &__info {
-      @include padding(null, calculateRem(8px), null, null);
-      flex: 1;
-      overflow: hidden;
-    }
-
-    &__title {
-
-      color: var(--cc-sbcard-title);
-      font-size: calculateRem(14px);
-      margin: 0px;
-      line-height: normal;
-      line-height: calculateRem(20px);
-    }
-
-    &__meta1 {
-
-      color: var(--cc-sbcard-meta-text);
-      font-size: calculateRem(12px);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      flex: 1;
-      line-height: calculateRem(20px);
-      margin-top: calculateRem(4px);
-    }
-
-    .data_1 {
-      max-width: 50%;
-    }
-
-    .data_2 {
-      flex: 1;
-    }
-
-    .dot-divider {
-
-      width: calculateRem(4px);
-      height: calculateRem(4px);
-      min-width: calculateRem(4px);
-      max-width: calculateRem(4px);
-      min-height: calculateRem(4px);
-      max-height: calculateRem(4px);
-      border-radius: 100%;
-      background-color: var(--cc-sbcard-dot-divider);
-      display: inline-block;
-      margin: 0px calculateRem(8px);
-    }
-
-    &__moreinfo {
-
-      border-radius: 0 0 calculateRem(2px) calculateRem(2px);
-      background-color: var(--cc-sbcard-moreinfo-bg);
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      justify-content: space-between;
-      border-top: 0px solid var(--cc-sbcard-moreinfo-bordertop);
-    }
-
-    &__meta2 {
-
-      color: var(--cc-sbcard-meta2-text);
-      font-size: calculateRem(12px);
-      line-height: calculateRem(14px);
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: calculateRem(8px);
-    }
-
-    &__meta2_data {
-      .label {
-        font-weight: normal;
-      }
-
-      .value {
-        font-weight: bold;
-      }
-    }
-
-    &__org {
-
-      color: var(--cc-sbcard-org-text);
-    }
-
-    &__tags {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-end;
-      flex: 1;
-    }
-
-    &__badge {
-      display: flex;
-      margin-right: calculateRem(16px);
-      html[dir="rtl"] & {
-        margin-right: 0;
-        margin-left: calculateRem(16px);
-      }
-
-      img {
-        width: calculateRem(20px);
-        height: calculateRem(20px);
-      }
-    }
-
-    &__type {
-
-      background: var(--cc-sbcard-type-bg);
-      position: relative;
-      height: calculateRem(20px);
-      @include padding(null, calculateRem(8px), null, calculateRem(4px));
-      @include margin(null, null, null, calculateRem(16px));
-      color: var(--cc-sbcard-type-text);
-      font-size: calculateRem(11px);
-      display: flex;
-      align-items: center;
-
-      &:before {
-        content: "";
-        width: 0;
-        height: 0;
-        border-width: calculateRem(10px) calculateRem(5px);
-        border-style: solid;
-        border-color: var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) var(--cc-sbcard-type-br) transparent;
-        position: absolute;
-        left: -10px;
-
-        html[dir="rtl"] & {
-          right: calculateRem(-10px);
-          left: inherit;
-          border-color: var(--cc-sbcard-type-br) transparent var(--cc-sbcard-type-br) var(--cc-sbcard-type-br);
-        }
-      }
-    }
-
-    /* recently viewed card css */
-    &--recently-viewed {
-      .sb--card__img {
-        height: calculateRem(88px);
-        width: calculateRem(88px);
-        flex: 0 0 calculateRem(88px);
-        margin: 0;
-
-        .img-container {
-          display: flex;
-          align-items: center;
-          background-color: var(--cc-sbcard-rv-img-container-bg);
-          height: calculateRem(88px);
-          width: calculateRem(88px);
-          border-radius: 0rem;
-        }
-      }
-
-      .sb--card__info {
-        padding: calculateRem(8px);
-      }
-    }
-
-    &.selected {
-      border: 0.063rem solid var(--cc-sbcard-selected-border);
-      border-radius: 0.25rem;
-      background-color:var(--cc-sbcard-selected-bg);
-    }
-
-    /* offline card css */
-    &.offline {
-      .sb--card__img {
-        .img-container {
-
-          display: flex;
-          align-items: center;
-          background-color: var(--cc-sbcard-offline-bg);
-          opacity: 0.5;
-
-          img {
-
-            margin: auto;
-            font-size: calculateRem(24px);
-            color: var(--cc-sbcard-offline-img-text);
-          }
-        }
-      }
-
-      .sb--card__info,
-      .sb--card__moreinfo {
-        opacity: 0.5;
-      }
+    .sb--card__info,
+    .sb--card__moreinfo {
+      opacity: 0.5;
     }
   }
+}
+
 /*End sb card component css */
 
-  .animate>span:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-image: -webkit-gradient(linear,
-        0 0, 100% 100%, color-stop(0.25, rgba(var(--rc-rgba-white), 0.2)), color-stop(0.25, transparent),
-        color-stop(0.5, transparent),
-        color-stop(0.5, rgba(var(--rc-rgba-white), 0.2)), color-stop(0.75, rgba(var(--rc-rgba-white), 0.2)), color-stop(0.75, transparent), to(transparent));
-    z-index: 1;
-    background-size: calculateRem(50px) calculateRem(50px);
-    border-top-right-radius: calculateRem(8px);
-    border-bottom-right-radius: calculateRem(8px);
-    border-top-left-radius: calculateRem(20px);
-    border-bottom-left-radius: calculateRem(20px);
-    overflow: hidden;
-    -webkit-animation: move 2s linear infinite;
+.animate>span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: -webkit-gradient(linear,
+      0 0, 100% 100%, color-stop(0.25, rgba(var(--rc-rgba-white), 0.2)), color-stop(0.25, transparent),
+      color-stop(0.5, transparent),
+      color-stop(0.5, rgba(var(--rc-rgba-white), 0.2)), color-stop(0.75, rgba(var(--rc-rgba-white), 0.2)), color-stop(0.75, transparent), to(transparent));
+  z-index: 1;
+  background-size: calculateRem(50px) calculateRem(50px);
+  border-top-right-radius: calculateRem(8px);
+  border-bottom-right-radius: calculateRem(8px);
+  border-top-left-radius: calculateRem(20px);
+  border-bottom-left-radius: calculateRem(20px);
+  overflow: hidden;
+  -webkit-animation: move 2s linear infinite;
+}
+
+@-webkit-keyframes move {
+  0% {
+    background-position: 0 0;
   }
 
-  @-webkit-keyframes move {
-    0% {
-      background-position: 0 0;
-    }
-
-    100% {
-      background-position: calculateRem(50px) calculateRem(50px);
-    }
+  100% {
+    background-position: calculateRem(50px) calculateRem(50px);
   }
+}
 
-  .completed>span {
-    background-color: var(--secondary-color);
-    background-image: -webkit-gradient(linear,
-        left top,
-        left bottom,
-        color-stop(0, var(--secondary-100)),
-        color-stop(1, var(--secondary-400)));
-    background-image: -webkit-linear-gradient(var(--secondary-100), var(--secondary-400));
-  }
+.completed>span {
+  background-color: var(--secondary-color);
+  background-image: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(0, var(--secondary-100)),
+      color-stop(1, var(--secondary-400)));
+  background-image: -webkit-linear-gradient(var(--secondary-100), var(--secondary-400));
+}
 
-  .inprogress>span {
-    background-color: var(--tertiary-color);
-    background-image: -webkit-gradient(linear,
-        left top,
-        left bottom,
-        color-stop(0, var(--tertiary-100)),
-        color-stop(1, var(--tertiary-400)));
-    background-image: -webkit-linear-gradient(var(--tertiary-100), var(--tertiary-400));
-  }
+.inprogress>span {
+  background-color: var(--tertiary-color);
+  background-image: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(0, var(--tertiary-100)),
+      color-stop(1, var(--tertiary-400)));
+  background-image: -webkit-linear-gradient(var(--tertiary-100), var(--tertiary-400));
+}
 
-  .notcompleted>span {
-    background-color: var(--red-100);
-    background-image: -webkit-gradient(linear,
-        left top,
-        left bottom,
-        color-stop(0, var(--red-100)),
-        color-stop(1, var(--red-400)));
-    background-image: -webkit-linear-gradient(var(--red-100), var(--red-400));
-  }
+.notcompleted>span {
+  background-color: var(--red-100);
+  background-image: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(0, var(--red-100)),
+      color-stop(1, var(--red-400)));
+  background-image: -webkit-linear-gradient(var(--red-100), var(--red-400));
+}
 
-  .nostripes>span,
-  .nostripes>span:after {
-    -webkit-animation: none;
-    -moz-animation: none;
-    background-image: none;
-  }
+.nostripes>span,
+.nostripes>span:after {
+  -webkit-animation: none;
+  -moz-animation: none;
+  background-image: none;
+}
 
 ::ng-deep {
 
@@ -344,7 +346,8 @@
     display: none;
   }
 
-  .sb--card:hover, .sb--card:focus-within {
+  .sb--card:hover,
+  .sb--card:focus-within {
     .card-hover {
       opacity: 1;
       z-index: 1001;
@@ -375,24 +378,26 @@
 
 //card more actions styles
 a.menu {
-&::after {
-  content: '\2807';
-  font-size: calculateRem(24px);
-  color: var(--gray-200);
-  text-align: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  border-radius: 50%;
-  padding-left: calculateRem(6px);
-  cursor: pointer;
-  width: calculateRem(32px);
-  height: calculateRem(32px);
-}
-&:hover {
-  text-decoration: none;
   &::after {
-    background: var(--gray-0);
+    content: '\2807';
+    font-size: calculateRem(24px);
+    color: var(--gray-200);
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    padding-left: calculateRem(6px);
+    cursor: pointer;
+    width: calculateRem(32px);
+    height: calculateRem(32px);
   }
-}
+
+  &:hover {
+    text-decoration: none;
+
+    &::after {
+      background: var(--gray-0);
+    }
+  }
 }

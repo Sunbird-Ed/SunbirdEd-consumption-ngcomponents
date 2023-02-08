@@ -14,9 +14,8 @@ export class CourseCardComponent implements OnInit {
       contentType: "Course",
       identifier: "do_31297042406633472017",
       name: "Dashboard Loadtest",
-      topic: [
-        "Social Science"
-      ],
+      language: ["English"],
+      topic: ["Social Science"],
       resourceType: "Course",
       orgDetails: {
         orgName: "Pre-prod Custodian Organization"
@@ -25,9 +24,28 @@ export class CourseCardComponent implements OnInit {
     isMobile: false,
     isOffline: false,
     isMenu:false,
+    isLoading:true,
     section: "section",
   }
   
+  courseData = {
+    "organisation": [
+      "Pre-prod Custodian Organization"
+    ],
+    "language": [
+      "English"
+    ],
+    "appIcon": "",
+    "mimeType": "application/vnd.ekstep.content-collection",
+    "objectType": "Content",
+    "contentType": "Course",
+    "identifier": "do_31297042406633472017",
+    "name": "Dashboard Loadtest",
+    "topic": [
+      "Social Science"
+    ],
+    "resourceType": "Course"
+  };
   constructor() { }
 
   ngOnInit(): void {

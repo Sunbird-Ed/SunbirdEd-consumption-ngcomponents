@@ -10,7 +10,7 @@
         min-width: 0;
         flex: 1;
         padding-right: calculateRem(8px);
-        html[dir="rtl"] & {
+        html[dir='rtl'] & {
             padding-right:inherit;
             padding-left: calculateRem(8px);
         }

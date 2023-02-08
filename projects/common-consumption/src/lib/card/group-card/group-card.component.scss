@@ -41,7 +41,6 @@
 }
 
 .sb-label-badge {
-
   font-size: calculateRem(11px);
   border: 1px solid var(--cc-sblabel-badge-br);
   align-self: center;
@@ -49,5 +48,4 @@
   border-radius: calculateRem(2px);
   color: var(--cc-sblabel-badge-text);
   text-align: center;
-  @include margin(null, calculateRem(8px), null, calculateRem(8px));
 }
