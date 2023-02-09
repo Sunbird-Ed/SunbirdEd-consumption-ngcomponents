@@ -19,21 +19,21 @@
             overflow-y: auto;
         }
         .clear-text{
-            p{
+            a{
                 color: var(--danger-color);
                 font-size: calculateRem(14px);
                 position: absolute;
                 right: calculateRem(24px);
                 top: calculateRem(24px);
                 text-decoration: none;
-                html[dir='rtl'] & {
+                html[dir="rtl"] & {
                     right: auto;
                     left: calculateRem(24px);
                 }
             }
         }
         .more-text{
-            p{
+            a{
                 font-size: calculateRem(12px);
                 font-weight: bold;
                 cursor: pointer;
@@ -42,5 +42,3 @@
         }
     }
 }
-
-

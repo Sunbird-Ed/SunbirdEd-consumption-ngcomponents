@@ -18,7 +18,6 @@ export class LibraryCardsStackComponent {
     @Input() isMenu;
     @Input() layoutConfig: any;
     @Input() cardType = 'textbook';
-    @Input() defaultImage: string = '';
 
     @Output() viewMoreClick: EventEmitter<MouseEvent> = new EventEmitter();
     @Output() cardClick: EventEmitter<any> = new EventEmitter();

@@ -4,7 +4,7 @@
     <div class="sub-title" *ngIf="inAppNotificationConfig?.subTitle">{{inAppNotificationConfig?.subTitle}}</div>
   </div>
   <div class="clear-text" *ngIf="inAppNotificationConfig.clearText">
-    <p (click)="clearAllNotifications($event)" tabindex="0">{{inAppNotificationConfig.clearText}}</p>
+    <a (click)="clearAllNotifications($event)" tabindex="0">{{inAppNotificationConfig.clearText}}</a>
   </div>
   <div class="sb-notification-list-items">
     <div *ngFor="let notification of notificationList | slice:0:displayItemCount; let i=index" >
@@ -14,10 +14,10 @@
   </div>
   <ng-container *ngIf="inAppNotificationConfig?.minNotificationViewCount < this.notificationList?.length">
     <div class="text-center more-text mt-16" *ngIf="displayItemCount < this.notificationList?.length">
-      <p (click)="onShowMore()" tabindex="0">{{inAppNotificationConfig?.moreText}}</p>
+      <a (click)="onShowMore()" tabindex="0">{{inAppNotificationConfig?.moreText}}</a>
     </div>
     <div class="text-center more-text mt-16" *ngIf="displayItemCount === this.notificationList?.length">
-      <p (click)="onShowLess()" tabindex="0">{{inAppNotificationConfig?.lessText}}</p>
+      <a (click)="onShowLess()" tabindex="0">{{inAppNotificationConfig?.lessText}}</a>
     </div>
   </ng-container>
 </div>

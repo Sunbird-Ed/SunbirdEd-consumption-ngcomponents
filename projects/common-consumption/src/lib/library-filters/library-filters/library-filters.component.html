@@ -10,7 +10,7 @@
     <!-- Library class/grade filter -->
     <div *ngIf="layout === LibraryFiltersLayout.ROUND" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-grade-pills-container" id="gradeScroll">
-            <div class="pill rounded custom-style" *ngFor="let item of filterList; let i = index;" role="tab" attr.aria-selected="{{item?.selected}}"
+            <div class="pill rounded" *ngFor="let item of filterList; let i = index;" role="tab" attr.aria-selected="{{item?.selected}}"
                 [ngClass]="{'active': item?.selected}" attr.id="class{{i}}" (click)="selectPill($event, i)" tabindex="0">
                 {{item.text}}</div>
         </div>

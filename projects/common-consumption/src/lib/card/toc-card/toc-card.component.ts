@@ -132,9 +132,7 @@ export class TocCardComponent implements OnInit, OnChanges {
   }
 
   onPlayButtonClick(event) {
-    setTimeout(() => {
-      this.playButtonClick.emit({ event: event, data: { ...this.content } });
-    },50)
+    this.playButtonClick.emit({ event: event, data: { ...this.content } });
   }
 
   swapCard(content) {
