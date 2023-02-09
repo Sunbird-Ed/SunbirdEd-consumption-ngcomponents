@@ -1,6 +1,6 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 @use "../library-card/library-card.component.scss";
-
+@forward "../cardv2.scss";
 /* sb card component css */
 :host {
   .sb--card {
