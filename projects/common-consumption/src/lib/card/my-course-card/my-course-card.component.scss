@@ -1,28 +1,33 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "../card.scss";
+::ng-deep :root {
+    --cc-sbcard-card__progressbar-bg: var(--gray-100);
+  --cc-sbcard-card__progressbar-span-bg: var(--secondary-200);
+  }
 :host {
 .sb--card--course {
     & .sb--container-box {
-            min-width: 0;
-            flex: 1;
-            padding-right: calculateRem(8px);
-            html[dir="rtl"] & {
-                padding-right:inherit;
-                padding-left: calculateRem(8px);
-            }
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            .sb--card__info {
-                padding: 0rem 0rem 0rem 0rem;
-                display: flex; 
-                align-items: center;
-            }
-            .sb--holder {
-                flex:1;
-                min-width: 0;
-            }
+        min-width: 0;
+        flex: 1;
+        padding-right: calculateRem(8px);
+        html[dir='rtl'] & {
+            padding-right:inherit;
+            padding-left: calculateRem(8px);
         }
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .sb--card__info {
+            padding: 0rem 0rem 0rem 0rem;
+            display: flex; 
+            align-items: center;
+        }
+        .sb--holder {
+            flex:1;
+            min-width: 0;
+        }
+    }
 }
 }
 
@@ -41,3 +46,24 @@
     padding: 0.1rem;
     font-size: .8rem;
 } 
+.sb--card__progressbar {
+
+    height: calculateRem(4px);
+    margin: 0px 0 0px;
+    border-radius: 0px;
+    box-shadow: inset 0 calculateRem(-1px) calculateRem(1px) rgba(var(--rc-rgba-white), 0.3);
+    width: 100%;
+    background: var(--cc-sbcard-card__progressbar-bg);
+
+    &>span {
+
+      display: block;
+      height: 100%;
+      background-color: var(--cc-sbcard-card__progressbar-span-bg);
+      background-image: -webkit-gradient(center bottom, var(--secondary-400), var(--secondary-200));
+      box-shadow: inset 0 calculateRem(2px) calculateRem(9px) var(--gray-100),
+        inset 0 calculateRem(-2px) calculateRem(6px) rgba(var(--rc-rgba-black), 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+  }

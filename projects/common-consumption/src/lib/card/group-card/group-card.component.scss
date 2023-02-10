@@ -1,6 +1,6 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 @use "~@project-sunbird/sb-styles/assets/loadingshadows" as *;
-
+@use "../card.scss";
 ::ng-deep :root {
   --cc-sbcard-img-label: #284C3F;
   --cc-sbcard-img-label-bg: #B3EBD7;
@@ -12,10 +12,6 @@
 
 .sb--card__img {
   .img-container--label {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-transform: capitalize;
     background-color: var(--cc-sbcard-img-label-bg);
     color: var(--cc-sbcard-img-label);
@@ -45,7 +41,6 @@
 }
 
 .sb-label-badge {
-
   font-size: calculateRem(11px);
   border: 1px solid var(--cc-sblabel-badge-br);
   align-self: center;
@@ -53,5 +48,4 @@
   border-radius: calculateRem(2px);
   color: var(--cc-sblabel-badge-text);
   text-align: center;
-  @include margin(null, calculateRem(8px), null, calculateRem(8px));
 }
