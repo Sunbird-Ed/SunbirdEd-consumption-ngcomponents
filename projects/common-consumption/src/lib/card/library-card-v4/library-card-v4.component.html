@@ -19,7 +19,7 @@
       <div class="sb__ellipsis sb__ellipsis--two text-left flex-basis-1 title-info" title="{{content?.name}}">
         <bdi>{{content?.name}}</bdi></div>
     </div>
-    <div class="subject-info" *ngIf="displaySubject?.length">
+    <div class="subject-info text-left" *ngIf="displaySubject?.length">
       Subject : 
       <app-truncated-ellipsis class="d-inline-block"
         [arrayList]= "displaySubject"
@@ -55,7 +55,7 @@
         </span>
       </ng-container>
     </div>
-    <div class="subject-info text-info" *ngIf="content?.creator">Published by : {{content?.creator}}</div>
+    <div class="subject-info text-left text-info" *ngIf="content?.creator">Published by : {{content?.creator}}</div>
   </div>
 
 <div class="sb--card sb--card--theme2" *ngIf="isLoading">

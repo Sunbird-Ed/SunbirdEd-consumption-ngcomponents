@@ -127,7 +127,7 @@
           .icon-svg {
             margin-right: calculateRem(4px);
 
-            html[dir="rtl"] & {
+            html[dir='rtl'] & {
               margin-left: calculateRem(4px);
               margin-right: inherit;
             }
@@ -140,6 +140,12 @@
             display: inline-block;
             line-height: calculateRem(16px);
           }
+        }
+      }
+      .custom-style{
+        &:hover{
+          background-color: var(--sb-pill-bg) !important;
+          color: var(--cc-grade-pill-text) !important;
         }
       }
     }

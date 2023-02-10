@@ -42,7 +42,7 @@
   width: 100%;
   height: 100%;
   .sb-btn-no-border {
-    box-shadow: 0 calculateRem(20px) calculateRem(40px) calculateRem(-10px) rgba(2, 79, 157, 0.3);
+    box-shadow: 0 1.25rem 2.5rem -0.625rem rgba(2, 79, 157, 0.3);
     background: var(--white);
     border: 0;
   }
