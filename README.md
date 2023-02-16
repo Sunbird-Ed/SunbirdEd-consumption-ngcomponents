@@ -134,3 +134,5 @@ Group Card. |sb-group-card|
 | v10_migration     |      4.11.0         |     Ng V10      |
 | release-5.1.0_v11 |      4.12.0         |     Ng V11      |
 | release-5.1.0_v12 |      5.1.0          |     Ng V12      |
+| release-5.1.0_v12 |      5.1.1          |     Ng V12      |
+
