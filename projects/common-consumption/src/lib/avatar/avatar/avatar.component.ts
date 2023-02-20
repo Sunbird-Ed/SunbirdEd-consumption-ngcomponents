@@ -20,7 +20,9 @@ export class AvatarComponent implements OnInit {
   @Input() config = { size: 'medium', view: "vertical", isTitle: true }
 
   constructor() { }
-
+  /**
+    * @description -   To check the initial & title data if it is null assigned the default value.
+   */
   ngOnInit() {
     if (this.initial != null) {
     } else {
@@ -31,6 +33,9 @@ export class AvatarComponent implements OnInit {
     }
   }
 
+  /**
+    * @description -   fetch the indexOfMember form parent to change the font color and border-color of avatar
+   */
   fetchStyle() {
     if (this.indexOfMember > 10) {
       this.indexOfMember = this.indexOfMember % 10;
