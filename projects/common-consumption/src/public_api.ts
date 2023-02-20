@@ -62,3 +62,5 @@ export * from './lib/layout/layout.module';
 export * from './lib/layout/library-cards-hlist/library-cards-hlist.component';
 export * from './lib/layout/library-cards-stack/library-cards-stack.component';
 export * from './lib/layout/member-list/member-list.component';
+export * from './lib/avatar/avatar.module';
+export * from './lib/avatar/avatar/avatar.component';

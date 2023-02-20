@@ -1,0 +1,19 @@
+<div
+  class="sb-avatar-list-item sb-avatar-list-item--{{config.size}} sb-avatar-list-item--{{config.view}} sb-avatar-list-item--bold"
+  *ngIf="!isLoading" tabindex="0">
+  <div class="sb-avatar text-left">
+    <div class="sb-avatar__img" [ngStyle]="fetchStyle()"><span>{{initial}}</span></div>
+    <label *ngIf="config.isTitle" class="sb-avatar__name sb__ellipsis sb__ellipsis--two ml-8"
+      title="{{title}}"><span>{{title}}&lrm;</span></label>
+  </div>
+</div>
+
+<!--Loading Indicator -->
+<div
+  class="sb-avatar-list-item sb-avatar-list-item--{{config.size}} sb-avatar-list-item--{{config.view}} sb-avatar-list-item--bold"
+  *ngIf="isLoading">
+  <div class="sb-avatar mr-8">
+    <div class="sb-avatar__img loading-animation"></div>
+    <label class="sb-avatar__name loading-animation sb--card--highlighter"></label>
+  </div>
+</div>
