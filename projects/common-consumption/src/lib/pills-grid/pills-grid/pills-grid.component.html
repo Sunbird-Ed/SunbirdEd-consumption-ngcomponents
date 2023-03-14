@@ -7,7 +7,12 @@
      (click)="viewLess()" tabindex="0">{{viewLessText}}</button>
   </div>
 </div>
-<div class="sb-label-grid show-icon" [ngClass]="{
+<div class="sb-label-grid show-icon sb-pills-grid">
+  <ng-container *ngFor="let ref of visiblePillTemplateRefs">
+    <ng-container *ngTemplateOutlet="ref"></ng-container>
+  </ng-container>
+</div>
+<!-- <div class="sb-label-grid show-icon" [ngClass]="{
   'sb-box-grid':((pillShape === PillShape.BOX)||(pillShape === PillShape.CIRCLE)||(pillShape === PillShape.IMAGE_OVERLAP)), 
   'sb-pills-grid':(pillShape === PillShape.DEFAULT), 
   'show-circle':(pillShape === PillShape.CIRCLE), 
@@ -30,7 +35,7 @@
   <ng-container *ngFor="let ref of visiblePillTemplateRefs">
     <ng-container *ngTemplateOutlet="ref"></ng-container>
   </ng-container>
-</div>
+</div> -->
 
 <div class="sb-view-more-less pb-16" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount) && platform === 'mobile'">
   <div *ngIf="showMoreViewType===ShowMoreViewType.EXPAND">

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LibraryCardComponent } from './library-card/library-card.component';
 import { CourseCardComponent } from './course-card/course-card.component';
@@ -14,7 +14,8 @@ import { LibraryCardV4Component } from './library-card-v4/library-card-v4.compon
 import { NotificationCardComponent } from './notification-card/notification-card.component';
 import {BannerCardComponent} from './banner-card/banner-card.component';
 import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule} from '@angular/material/chips';
 @NgModule({
   declarations: [
     LibraryCardComponent,
@@ -33,8 +34,11 @@ import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellip
     TruncatedEllipsisComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatChipsModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [
     LibraryCardComponent,
     CourseCardComponent,

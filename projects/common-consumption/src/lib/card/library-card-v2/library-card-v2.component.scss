@@ -221,3 +221,36 @@
     }
   }
 }
+
+:host{
+  .mat-card-banner-img{
+    height: 100px;
+    object-fit: cover;
+  }
+  .sb--card-svg-tail{
+    position: absolute;
+    bottom: 0;
+    right: 1.5rem;
+  }
+  .mat-card__type{
+    background: #000;
+    margin: 0 0 0 -0.5rem;
+    position: absolute;
+    color: #fff;
+  }
+  .mat-card__type:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 0.3125rem solid transparent;
+    border-bottom: 0.625rem solid #000;
+    border-right: 0.3125rem solid #000;
+    border-top: 0.625rem solid #000;
+    position: absolute;
+    left: -0.625rem;
+    position: absolute;
+    right: -0.6rem;
+    transform: rotatey(-180deg);
+    left: inherit;
+  }
+}
