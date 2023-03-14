@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PillsGridComponent } from './pills-grid/pills-grid.component';
 import { PillItemComponent } from './pill-item/pill-item.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -9,8 +10,10 @@ import { PillItemComponent } from './pill-item/pill-item.component';
     PillItemComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatChipsModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [
     PillsGridComponent,
     PillItemComponent
