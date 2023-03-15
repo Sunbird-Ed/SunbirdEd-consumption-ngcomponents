@@ -9,11 +9,12 @@
             {{title}}
             <span class="badge">{{contentList?.length}}</span>
         </div>
-        <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
+        <!-- <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
             *ngIf="(type !== LibraryCardGridTypes.INFINITE_CARD_GRID && type !== LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER) && maxCardCount && contentList?.length >maxCardCount"
             (click)="onViewMoreClick($event)" tabindex="0">
             {{viewMoreButtonText}}
-        </button>
+        </button> -->
+        <button mat-raised-button (click)="onViewMoreClick($event)" tabindex="0" *ngIf="(type !== LibraryCardGridTypes.INFINITE_CARD_GRID && type !== LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER) && maxCardCount && contentList?.length >maxCardCount">{{viewMoreButtonText}}</button>
     </div>
 
 

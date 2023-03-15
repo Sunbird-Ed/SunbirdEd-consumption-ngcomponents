@@ -16,6 +16,7 @@ import {BannerCardComponent} from './banner-card/banner-card.component';
 import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule} from '@angular/material/chips';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     LibraryCardComponent,
@@ -36,7 +37,8 @@ import { MatChipsModule} from '@angular/material/chips';
   imports: [
     CommonModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [

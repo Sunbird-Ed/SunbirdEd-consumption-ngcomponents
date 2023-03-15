@@ -1,10 +1,12 @@
 <div class="header" *ngIf="platform === 'portal' && pillItems?.length > 0">
   <div class="title">{{title}}</div>
   <div *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
-    <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
+    <button mat-raised-button (click)="viewMore()" tabindex="0" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length">{{viewMoreText}}</button>
+    <button mat-raised-button (click)="viewLess()" tabindex="0" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length">{{viewLessText}}</button>
+    <!-- <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
      (click)="viewMore()" tabindex="0">{{viewMoreText}}</button>
     <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length"
-     (click)="viewLess()" tabindex="0">{{viewLessText}}</button>
+     (click)="viewLess()" tabindex="0">{{viewLessText}}</button> -->
   </div>
 </div>
 <div class="sb-label-grid show-icon sb-pills-grid">

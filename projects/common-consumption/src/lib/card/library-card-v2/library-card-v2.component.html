@@ -1,4 +1,6 @@
-<mat-card>
+<mat-card role="link" tabindex="0"
+[ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
+(click)="onClick($event)" *ngIf="!isLoading">
   <mat-card-header>
     <div mat-card-avatar> <img [src]="cardImg" alt="Thumbnail image" class="w-100"> </div>
     <mat-card-title class="sb__ellipsis sb__ellipsis--two">{{content?.name}}</mat-card-title>
@@ -20,6 +22,23 @@
       <mat-chip *ngIf="content?.gradeLevel.length > 1" title="{{content?.gradeLevel}}">+{{content?.gradeLevel.length-1}}</mat-chip>
     </mat-chip-list>
    </div>
+   <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
+    <div class="text-left">
+      <ng-container *ngIf="content?.subject && content?.subject.length > 0">
+        <div class="sb__ellipsis">
+          <span>Subject: </span> <span title="{{content?.subject[0]}}">{{content?.subject[0]}}</span> <span class="data_1 mr-8" title="{{content?.subject}}" *ngIf="content?.subject.length > 1"> +{{content?.subject.length-1}}
+          </span>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="content?.organisation && content?.organisation.length > 0">
+        <div class="sb__ellipsis">
+          <span>Publisher: </span> <span title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</span>
+          <span class="data_1 mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1"> +{{content?.organisation.length-1}}
+          </span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
   </mat-card-content>
   <div class="mb-32">
     <div class="mat-card__type px-8" *ngIf="content?.primaryCategory || content?.contentType">{{content?.primaryCategory || content?.contentType}}</div>
