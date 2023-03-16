@@ -26,18 +26,6 @@
             "tsConfig": "projects/common-consumption/tsconfig.spec.json",
             "karmaConfig": "projects/common-consumption/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/common-consumption/tsconfig.lib.json",
-              "projects/common-consumption/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       },
       "schematics": {
