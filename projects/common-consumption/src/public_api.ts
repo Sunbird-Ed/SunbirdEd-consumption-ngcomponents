@@ -64,3 +64,7 @@ export * from './lib/layout/library-cards-stack/library-cards-stack.component';
 export * from './lib/layout/member-list/member-list.component';
 export * from './lib/avatar/avatar.module';
 export * from './lib/avatar/avatar/avatar.component';
+export * from './lib/card/library-card-v4/library-card-v4.component';
+export * from './lib/card/truncated-ellipsis/truncated-ellipsis.component';
+export * from  './lib/card/cqube-card/cqube-card.component';
+export { AccordionItemComponent } from './lib/accordion/accordion-item/accordion-item.component'
