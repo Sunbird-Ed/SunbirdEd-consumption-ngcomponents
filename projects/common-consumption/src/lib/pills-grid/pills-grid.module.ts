@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PillsGridComponent } from './pills-grid/pills-grid.component';
 import { PillItemComponent } from './pill-item/pill-item.component';
 import { MatChipsModule } from '@angular/material/chips';
-
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     PillsGridComponent,
@@ -11,7 +11,8 @@ import { MatChipsModule } from '@angular/material/chips';
   ],
   imports: [
     CommonModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [

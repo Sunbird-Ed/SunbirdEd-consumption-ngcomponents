@@ -16,9 +16,18 @@
     </div>
 </div>
 
-<div *ngIf="secondaryBanner && platform === 'portal' && bannerList">
+<!-- <div *ngIf="secondaryBanner && platform === 'portal' && bannerList">
     <div class="web-item" (click)="onClick($event, bannerList)">
         <div class="web-img-info"><img src="{{bannerList?.ui?.icon}}" alt="Avatar" class="web-icon-info"></div>
         <div class="web-banner-title sb__ellipsis sb__ellipsis--two">{{bannerList?.ui?.text}}</div>
     </div>
-</div>
+</div> -->
+
+<mat-card class="mat-banner-card text-center" *ngIf="secondaryBanner && platform === 'portal' && bannerList">
+    <mat-card-content (click)="onClick($event, bannerList)" tabindex="0">
+        <button mat-fab color="accent" aria-label="icon">
+            <img src="{{bannerList?.ui?.icon}}" alt="Avatar">
+        </button>
+        <mat-card-title class="sb__ellipsis mt-16">{{bannerList?.ui?.text}}</mat-card-title>
+    </mat-card-content>
+</mat-card>

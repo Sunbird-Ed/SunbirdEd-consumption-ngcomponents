@@ -102,3 +102,9 @@
     padding: 0 10px;
   }
 }
+
+:host{
+  .mat-banner-card{
+    width: calculateRem(150px);
+  }
+}
