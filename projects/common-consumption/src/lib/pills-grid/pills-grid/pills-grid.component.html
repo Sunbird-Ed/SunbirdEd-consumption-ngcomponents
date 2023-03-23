@@ -1,8 +1,13 @@
 <div class="header" *ngIf="platform === 'portal' && pillItems?.length > 0">
-  <div class="title">{{title}}</div>
-  <div *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
-    <button mat-raised-button (click)="viewMore()" tabindex="0" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length">{{viewMoreText}}</button>
-    <button mat-raised-button (click)="viewLess()" tabindex="0" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length">{{viewLessText}}</button>
+  <!-- <div class="title">{{title}}</div> -->
+  <div class="mat-typography">
+    <h2 class="m-0">{{title}}</h2>
+  </div>
+  <div class="ml-auto" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
+    <span class="sb-secondary-btn">
+      <button mat-raised-button (click)="viewMore()" tabindex="0" color="accent" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length">{{viewMoreText}}</button>
+      <button mat-raised-button (click)="viewLess()" tabindex="0"  color="accent" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length">{{viewLessText}}</button>
+    </span>
     <!-- <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
      (click)="viewMore()" tabindex="0">{{viewMoreText}}</button>
     <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length"
