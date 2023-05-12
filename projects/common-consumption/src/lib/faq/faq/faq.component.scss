@@ -1,7 +1,7 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 
 ::ng-deep :root {
-    --cc-faq-yesbtn-text:var(--secondary-color);
+    --cc-faq-yesbtn-text:var(--success-color);
     --cc-faq-helpheader-text:var(--white);
     --cc-faq-helpheader-bg:var(--primary-color);
     --cc-faq-panel-title-text:var(--primary-color);
