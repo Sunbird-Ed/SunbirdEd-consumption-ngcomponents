@@ -15,6 +15,8 @@ import { NotificationCardComponent } from './notification-card/notification-card
 import {BannerCardComponent} from './banner-card/banner-card.component';
 import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
 import { CqubeCardComponent } from './cqube-card/cqube-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CqubeCardComponent } from './cqube-card/cqube-card.component';
     CqubeCardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatChipsModule
   ],
   exports: [
     LibraryCardComponent,
