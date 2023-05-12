@@ -1,0 +1,23 @@
+.wrapper {
+    background-color: lightblue;
+align-items: center;
+justify-content: flex-start;
+position: fixed;
+width: 100%;
+top: 0;
+left: 0;
+right: 0;z-index:9;
+display:flex;
+ul {
+    display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        list-style: none none;
+        padding: 1rem;
+        gap: 1rem; margin: 0;
+        overflow-x:auto;
+    li {
+        white-space: nowrap;
+    }
+}
+}

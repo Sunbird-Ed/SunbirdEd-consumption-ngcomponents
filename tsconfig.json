@@ -22,10 +22,10 @@
       "dom"
     ],
     "paths": {
-      "common-consumption": [
+      "@project-sunbird/common-consumption": [
         "dist/common-consumption"
       ],
-      "common-consumption/*": [
+      "@project-sunbird/common-consumption/*": [
         "dist/common-consumption/*"
       ]
     }
