@@ -17,7 +17,8 @@ import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellip
 import { CqubeCardComponent } from './cqube-card/cqube-card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     LibraryCardComponent,
@@ -39,7 +40,9 @@ import {MatChipsModule} from '@angular/material/chips';
   imports: [
     CommonModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   exports: [
     LibraryCardComponent,

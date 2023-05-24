@@ -8,7 +8,9 @@ import { MemberListComponent } from './member-list/member-list.component';
 import { CardsGridComponent } from './cards-grid/cards-grid.component';
 import { InAppNotificationComponent } from './in-app-notification/in-app-notification.component';
 import { LibraryCardsHlistComponent } from './library-cards-hlist/library-cards-hlist.component';
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     LibraryCardsStackComponent,
@@ -21,7 +23,10 @@ import { LibraryCardsHlistComponent } from './library-cards-hlist/library-cards-
   ],
   imports: [
     CommonModule,
-    CardModule
+    CardModule,
+    MatButtonModule,
+    MatBadgeModule,
+    MatIconModule
   ],
   exports: [
     LibraryCardsStackComponent,
