@@ -1,8 +1,10 @@
 <ng-template>
-  <div class="item" [ngStyle]="{'background-color':theme?.pillBgColor}" (click)="onClick($event)" role="button" tabindex="0">
-    <span *ngIf="icon" class="img" [ngStyle]="{'background-color':theme?.iconBgColor}">
-      <img src="{{icon}}" class="sb-icon-img sb-icon-img-sm" />
-    </span>
-    <label [ngStyle]="{'color':theme?.pillTextColor}" *ngIf="name">{{name}}</label>
-  </div>
+  <mat-chip-list>
+    <mat-chip aria-label="subjects selection" [ngStyle]="{'background-color':theme?.pillBgColor}" (click)="onClick($event)" role="button" tabindex="0">
+      <span *ngIf="icon" [ngStyle]="{'background-color':theme?.iconBgColor}" class="mr-16">
+        <img alt="image" src="{{icon}}" class="w-100">
+      </span>
+      <label [ngStyle]="{'color':theme?.pillTextColor}" class="mb-0" *ngIf="name">{{name}}</label>
+    </mat-chip>
+  </mat-chip-list>
 </ng-template>

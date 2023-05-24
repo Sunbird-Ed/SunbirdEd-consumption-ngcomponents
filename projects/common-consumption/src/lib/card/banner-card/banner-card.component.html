@@ -1,4 +1,4 @@
-<div class="sb--scrolling-wrapper-flexbox" *ngIf="!secondaryBanner">
+<!-- <div class="sb--scrolling-wrapper-flexbox">
     <div *ngFor="let banner of bannerList">
         <div class="sb--card sb--card--theme2" role="link" tabindex="0"
             [ngStyle]="{background: 'url(' + banner?.ui?.background+ ')'}" (click)="onClick($event, banner)">
@@ -7,18 +7,46 @@
     </div>
 </div>
 
-<div class="sb--scrolling-wrapper-flexbox" *ngIf="secondaryBanner && platform !== 'portal'">
+<div class="sb--scrolling-wrapper-flexbox">
     <div *ngFor="let banner of bannerList">
         <div class="item" (click)="onClick($event, banner)" tabindex="0">
             <div class="img-info"><img src="{{banner?.ui?.icon}}" alt="Avatar" class="icon-info"></div>
             <div class="banner-title sb__ellipsis sb__ellipsis--two">{{banner?.ui?.text}}</div>
         </div>
     </div>
-</div>
+</div> -->
 
-<div *ngIf="secondaryBanner && platform === 'portal' && bannerList">
+<!-- <div *ngIf="secondaryBanner && platform === 'portal' && bannerList">
     <div class="web-item" (click)="onClick($event, bannerList)" tabindex="0">
         <div class="web-img-info"><img src="{{bannerList?.ui?.icon}}" alt="Avatar" class="web-icon-info"></div>
         <div class="web-banner-title sb__ellipsis sb__ellipsis--two">{{bannerList?.ui?.text}}</div>
     </div>
+</div> -->
+
+<div class="sb--scrolling-wrapper-flexbox" *ngIf="!secondaryBanner">
+    <mat-card class="mat-banner-card text-center" *ngFor="let banner of bannerList">
+        <mat-card-content tabindex="0" ngStyle]="{background: 'url(' + banner?.ui?.background+ ')'}" (click)="onClick($event, banner)">
+            <mat-card-title>{{banner?.ui?.text}}</mat-card-title>
+        </mat-card-content>
+    </mat-card>
 </div>
+
+<div class="sb--scrolling-wrapper-flexbox" *ngIf="secondaryBanner && platform !== 'portal'">
+    <mat-card class="mat-banner-card text-center" *ngFor="let banner of bannerList">
+        <mat-card-content (click)="onClick($event, banner)" tabindex="0">
+            <button mat-fab color="accent" aria-label="icon">
+                <img src="{{bannerList?.ui?.icon}}" alt="Avatar">
+            </button>
+            <mat-card-title class="sb__ellipsis sb__ellipsis--two mt-16">{{banner?.ui?.text}}</mat-card-title>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<mat-card class="mat-banner-card text-center" *ngIf="secondaryBanner && platform === 'portal' && bannerList">
+    <mat-card-content (click)="onClick($event, bannerList)" tabindex="0">
+        <button mat-fab color="accent" aria-label="icon">
+            <img src="{{bannerList?.ui?.icon}}" alt="Avatar">
+        </button>
+        <mat-card-title class="sb__ellipsis mt-16">{{bannerList?.ui?.text}}</mat-card-title>
+    </mat-card-content>
+</mat-card>
