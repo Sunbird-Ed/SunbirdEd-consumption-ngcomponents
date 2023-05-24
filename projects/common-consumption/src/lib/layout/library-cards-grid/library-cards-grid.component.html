@@ -1,10 +1,6 @@
 <div class="layout-library" *ngIf="!isLoading">
     <div class="header">
-        <i class="icon-svg icon-svg--sm">
-            <svg class="icon">
-                <use xlink:href="assets/common-consumption/images/sprite.svg#book"></use>
-            </svg>
-        </i>
+        <mat-icon class="mr-4" color="accent">library_books</mat-icon>
         <div matBadge="{{contentList?.length}}" matBadgeOverlap="false" class="mat-typography ml-4"><h2 class="mb-0">{{title}}</h2></div>
         <span class="sb-secondary-btn ml-auto">
             <button type="button" mat-raised-button (click)="onViewMoreClick($event)" color="accent" tabindex="0" *ngIf="(type !== LibraryCardGridTypes.INFINITE_CARD_GRID && type !== LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER) && maxCardCount && contentList?.length >maxCardCount">{{viewMoreButtonText}}</button>

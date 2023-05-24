@@ -10,6 +10,7 @@ import { InAppNotificationComponent } from './in-app-notification/in-app-notific
 import { LibraryCardsHlistComponent } from './library-cards-hlist/library-cards-hlist.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     LibraryCardsStackComponent,
@@ -24,7 +25,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     CommonModule,
     CardModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatIconModule
   ],
   exports: [
     LibraryCardsStackComponent,
