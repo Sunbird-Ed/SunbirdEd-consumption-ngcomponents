@@ -1,5 +1,5 @@
 <!-- For card type textbook -->
-<div *ngIf="type === TocCardType.TEXTBOOK">
+<!-- <div *ngIf="type === TocCardType.TEXTBOOK">
   <div class="sbchapter__item" role="button" (click)="onTocCardClick($event)" attr.aria-pressed="{{activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}}" tabindex="0"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
     <h4 class="sbchapter__item__title sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8" title="{{content?.name}}">
@@ -9,10 +9,23 @@
         #img />
     </div>
   </div>
-</div>
+</div> -->
+
+
+<mat-list class="1" role="list" *ngIf="type === TocCardType.TEXTBOOK">
+  <mat-list-item role="listitem" class="mat-app-background" (click)="onTocCardClick($event)"
+    attr.aria-pressed="{{activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}}" tabindex="0"
+    [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
+
+    <div mat-line title="{{content?.name}}">{{content?.name}}</div>
+    <img width="32" height="32" [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" alt="{{content?.name}} Image" #img />
+
+  </mat-list-item>
+</mat-list>
+
 
 <!-- For card type TRACKABLE -->
-<div *ngIf="type === TocCardType.TRACKABLE">
+<!-- <div *ngIf="type === TocCardType.TRACKABLE">
   <div class="sbchapter__item" role="button" attr.aria-pressed="{{activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}}" (click)="onTocCardClick($event)" tabindex="0"
     [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier, 'sb-card-swap': swapCard(content)}">
     <div class="relative">
@@ -37,10 +50,32 @@
       {{playBtnConfig.label}}
     </button>
   </div>
-</div>
+</div> -->
+
+<mat-list *ngIf="type === TocCardType.TRACKABLE" class="2" role="list">
+  <mat-list-item role="listitem" class="mat-app-background"
+    attr.aria-pressed="{{activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}}"
+    (click)="onTocCardClick($event)" tabindex="0"
+    [ngClass]="{'sbchapter__item--active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier, 'sb-card-swap': swapCard(content)}">
+
+    <img src="assets/common-consumption/images/completed.svg" *ngIf="content?.isAvailableLocally"
+      class="sb_success_check" alt="Complated Icon">
+    <img width="32" height="32" [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg"
+      alt="{{content?.name}} Image" #img />
+    <div mat-line title="{{content?.name}}">{{content?.name}}</div>
+    <div mat-line *ngIf="bestScoreLabel" title="{{bestScoreLabel}}">{{bestScoreLabel}}</div>
+    <button class="sbchapter__play__btn" *ngIf="!isTrackable(content) && playBtnConfig.show"
+      (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)" tabindex="0">
+      <svg class="icon icon-svg--primary">
+        <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
+      </svg>
+      {{playBtnConfig.label}}
+    </button>
+  </mat-list-item>
+</mat-list>
 
 <!-- For card type course -->
-<div *ngIf="type === TocCardType.COURSE">
+<!-- <div *ngIf="type === TocCardType.COURSE" class="2">
   <div class="sbchapter__item" role="button" (click)="onTocCardClick($event)" tabindex="0"
   [ngClass]="[(activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier) ? 'sbchapter__item--active': '', isDisabled ? disabled: '']">
   <div class="sbchapter__img background-transparent" [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">
@@ -61,10 +96,29 @@
       </div>
   </div>
   </div>
-</div>
+</div> -->
+
+<mat-list *ngIf="type === TocCardType.COURSE" class="3" role="list">
+  <mat-list-item role="listitem" (click)="onTocCardClick($event)" tabindex="0" class="mat-app-background"
+    [ngClass]="[(activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier) ? 'sbchapter__item--active': '', isDisabled ? disabled: '']">
+    <div class="sbchapter__img background-transparent" mat-list-icon
+      [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">
+      {{createIconMap()}}
+      <i class="icon-svg icon-svg--sm" *ngIf="content?.appIcon">
+        <svg class="icon icon-svg--primary">
+          <use [attr.xlink:href]="content?.appIcon"></use>
+        </svg>
+      </i>
+      <img [src]="fallbackImg" width="32" height="32" *ngIf="!content?.appIcon" alt="" #img />
+    </div>
+    <div mat-line title="{{content?.name}}">{{content?.name}}</div>
+    <div mat-line *ngIf="bestScoreLabel && displayScore" title="{{bestScoreLabel}}">{{bestScoreLabel}}</div>
+
+  </mat-list-item>
+</mat-list>
 
 <!-- For card type NON TRACKABLE -->
-<div *ngIf="type === TocCardType.NON_TRACKABLE">
+<!-- <div *ngIf="type === TocCardType.NON_TRACKABLE">
   <div class="sbchapter__item" role="button" (click)="onTocCardClick($event)" tabindex="0"
     [ngClass]="[(activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier) ? 'sbchapter__item--active': '', isDisabled ? disabled: '']">
     <div class="sbchapter__img background-transparent" [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">
@@ -80,11 +134,13 @@
       <div class="sbchapter__item__title text-left sb__ellipsis sb__ellipsis--two mr-8 pt-4" title="{{content?.name}}">
         {{content?.name}}
       </div>
-      <div *ngIf="bestScoreLabel && displayScore" class="sbchapter__item__score pr-8 ml-auto" title="{{bestScoreLabel}}">
+      <div *ngIf="bestScoreLabel && displayScore" class="sbchapter__item__score pr-8 ml-auto"
+        title="{{bestScoreLabel}}">
         {{bestScoreLabel}}
-      </div> 
+      </div>
     </div>
-    <button class="sbchapter__play__btn" *ngIf="!(content?.contentData?.trackable?.enabled === 'Yes') && playBtnConfig.show" 
+    <button class="sbchapter__play__btn"
+      *ngIf="!(content?.contentData?.trackable?.enabled === 'Yes') && playBtnConfig.show"
       (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)" tabindex="0">
       <svg class="icon icon-svg--primary">
         <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
@@ -92,4 +148,76 @@
       {{playBtnConfig.label}}
     </button>
   </div>
-</div>
+</div> -->
+
+<mat-list *ngIf="type === TocCardType.NON_TRACKABLE" class="4" role="list">
+  <mat-list-item role="listitem" (click)="onTocCardClick($event)" tabindex="0" class="mat-app-background"
+    [ngClass]="[(activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier) ? 'sbchapter__item--active': '', isDisabled ? disabled: '']">
+    <div class="sbchapter__img background-transparent" mat-list-icon
+      [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">
+      {{createIconMap()}}
+      <i class="icon-svg icon-svg--sm" *ngIf="content?.appIcon">
+        <svg class="icon icon-svg--primary">
+          <use [attr.xlink:href]="content?.appIcon"></use>
+        </svg>
+      </i>
+      <img [src]="fallbackImg" width="32" height="32" *ngIf="!content?.appIcon" alt="" #img />
+    </div>
+    <div mat-line title="{{content?.name}}">{{content?.name}}</div>
+    <div mat-line *ngIf="bestScoreLabel && displayScore" title="{{bestScoreLabel}}">{{bestScoreLabel}}</div>
+    <button class="sbchapter__play__btn"
+      *ngIf="!(content?.contentData?.trackable?.enabled === 'Yes') && playBtnConfig.show"
+      (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)" tabindex="0">
+      <svg class="icon icon-svg--primary">
+        <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
+      </svg>
+      {{playBtnConfig.label}}
+    </button>
+  </mat-list-item>
+</mat-list>
+
+<!-- <mat-list style="margin: 20px 0;" class="mat-app-background" role="list">
+  <div mat-subheader>Folders</div>
+  <mat-list-item role="listitem" class="sbchapter__item">
+    <img src="assets/common-consumption/images/completed.svg" mat-list-icon />
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" mat-list-icon></mat-icon>
+      <div mat-line>{{content?.name}}</div>
+      <div mat-line *ngIf="!bestScoreLabel">{{bestScoreLabel}}</div>
+      <button class="sbchapter__play__btn" (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)" tabindex="0">
+      <svg class="icon icon-svg--primary">
+        <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
+      </svg>
+      {{playBtnConfig.label}}
+    </button>
+  </mat-list-item>
+</mat-list> -->
+<!-- <mat-list-item role="listitem">
+  <img src="assets/common-consumption/images/completed.svg" mat-list-icon />
+    <div mat-line>Photos</div>
+    <div mat-line>Jan 1, 2016</div>
+</mat-list-item>
+<mat-list-item role="listitem">
+  <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" mat-list-icon />
+    <div mat-line>Photos</div>
+    <div mat-line>Jan 1, 2016</div>
+</mat-list-item>
+<mat-list-item role="listitem">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" mat-list-icon></mat-icon>
+    <div mat-line>Photos</div>
+    <div mat-line>Jan 1, 2016</div>
+</mat-list-item>
+<mat-divider></mat-divider>
+<div mat-subheader>Notes</div>
+<mat-list-item role="listitem">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="note" mat-list-icon></mat-icon>
+    <div mat-line>Vacation Itinerary</div>
+    <div mat-line>Feb 20, 2016</div>
+</mat-list-item> -->
+
+<!-- <mat-card class="example-card mat-app-background">
+  <mat-card-title-group>
+    <img width="32" height="32" src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Small</mat-card-subtitle>
+  </mat-card-title-group>
+</mat-card> -->
