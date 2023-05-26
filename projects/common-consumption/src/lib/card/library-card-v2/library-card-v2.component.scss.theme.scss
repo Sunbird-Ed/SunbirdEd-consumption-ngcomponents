@@ -168,6 +168,10 @@
         position: absolute;
         bottom: 0;
         right: 1rem;
+        .svg-tail__rc{
+          fill: transparent;
+          stroke: var(--primary-color);
+        }
         html[dir='rtl'] & {
           right: auto;
           left: 1rem;
