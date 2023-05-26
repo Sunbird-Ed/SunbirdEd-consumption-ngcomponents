@@ -17,6 +17,9 @@
   --cc-mat-card-data0-bg-active:#008840;
   --cc-mat-card-menu:#999;
   --cc-mat-card-menu-hover:#f2f2f2;
+  --cc-mat-card-img-container-bg:#ccc;
+  --cc-mat-label-badge-br: var(--secondary-color);
+  --cc-mat-label-badge-text: var(--secondary-color);
   //loading
   --cc-mat-card-loading-bg:#CCC;
   --cc-mat-card-loading-highlight1:#eeeeee;
@@ -27,7 +30,6 @@
   .joy{
     $mat-card-palette: mat.define-palette(mat.$indigo-palette);
     &.mat-card{
-      background-color: var(--cc-mat-card-bg);
       cursor: pointer;
       position: relative;
       border-radius: 1.5rem;
@@ -49,8 +51,21 @@
           overflow: hidden;
           border: 0.1875rem solid var(--cc-mat-card-avatar-border);
           z-index: 1;
+          display: flex;
+          align-items: center;
+          background-color: var(--cc-mat-card-img-container-bg);
           img {
             min-height: 100%;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+            -o-object-fit: cover;
+            object-fit: cover;
           }
           html[dir='rtl'] & {
             right: auto;
@@ -62,7 +77,7 @@
           width: 100%;
         }
         .mat-card-title{
-          width: 60%;
+          width: 70%;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: initial;
@@ -167,7 +182,6 @@
         .mat-card-header .mat-card-avatar{
           height: 5.5rem;
           width: 5.5rem;
-          border-radius: 0;
           right: 2.5rem;
         }
       }
@@ -209,6 +223,91 @@
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
         z-index: 9;
+      }
+      //card hover styles..
+      &:hover, &:focus-within{
+        .card-hover{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          opacity: 1;
+          transition: .3s ease;
+          background-color: var(--primary-400);
+          cursor: pointer;
+          z-index: 1000;
+          display: block;
+          height: 100%;
+          width: 100%;
+          .action-container{
+            .action-item {
+              padding: 0 1rem;
+              flex: 1;
+              text-align: center;
+              .card-hover-mat-btn{
+                background: none;
+                border: 0px solid transparent;
+                font-size: .75rem;
+                cursor: pointer;
+                outline: 0px!important;
+                transition: all .2s ease-in-out;
+                box-shadow: none;
+                line-height: 1.75rem;
+                &:disabled {
+                  opacity: 0.4;
+                  cursor: default;
+                }
+                transition: all .2s ease-in-out;
+                &:hover:not([disabled]) {
+                  background: none;
+                  transform: scale(1.15);
+                }
+              }
+            }
+            .action-item:not(:last-child) {
+              border-right: 0.0625rem solid rgba(var(--rc-rgba-white),.5);
+              html[dir='rtl'] & {
+                border-left: 0.0625rem solid rgba(var(--rc-rgba-white),.5);
+                border-right:none;
+              }
+            }
+          }
+        }
+      }
+      //group card styles
+      &.group-card{
+        border-radius: 1rem;
+        padding: 0;
+        .mat-card-header{
+          padding: 0;
+          align-items: center;
+          .mat-card-avatar{
+            position: initial;
+            border-radius: 0.5rem;
+            border: none;
+            margin: 0.5rem;
+            .img-container{
+              background-color: var(--cc-mat-card-img-container-bg);
+              height: 4.5rem;
+              width: 4.5rem;
+              position: relative;
+              text-transform: capitalize;
+              label{
+                font-weight: 700;
+              }
+            }
+          }
+          .mat-label-badge{
+            font-size: .6875rem;
+            border: 0.063rem solid var(--cc-mat-label-badge-br);
+            align-self: center;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            color: var(--cc-mat-label-badge-text);
+            text-align: center;
+          }
+        }
       }
     }
   }

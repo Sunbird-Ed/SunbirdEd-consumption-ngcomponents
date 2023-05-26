@@ -92,6 +92,19 @@
 
 :host{
   .mat-banner-card{
-    width: calculateRem(150px);
+    width: 9.375rem;
+    height: 12.125rem;
+    box-shadow: none;
+    padding: 2rem 1rem;
+    .mat-card-title{
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: normal;
+    }
   }
 }

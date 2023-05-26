@@ -1,57 +1,31 @@
 <!-- card component -->
-<div class="sb--card" title="{{group?.name}}" attr.aria-label="{{group?.name}}" (click)="onClick($event)" *ngIf="!isLoading" role="link" tabindex="0">
-  <div class="sb--card__main-area">
-    <!-- card img -->
-    <div class="sb--card__img">
-      <div class="img-container img-container--label" [ngStyle]="fetchStyle()">
-        <label [ngStyle]="fetchInitialStyle()">{{initial}}</label>
-        <div class="img-container--badge" *ngIf="isSuspended">{{suspendBadgeText}}</div>
+<mat-card class="joy group-card" title="{{group?.name}}" attr.aria-label="{{group?.name}}" (click)="onClick($event)" *ngIf="!isLoading" role="link" tabindex="0">
+  <mat-card-header>
+    <div mat-card-avatar> 
+      <div class="img-container d-flex flex-ai-center flex-jc-center" [ngStyle]="fetchStyle()">
+        <label class="mat-h2 m-0 p-0" [ngStyle]="fetchInitialStyle()">{{initial}}</label>
+        <div class="img-container--badge mr-8" *ngIf="isSuspended">{{suspendBadgeText}}</div>
       </div>
     </div>
-    <!-- card mobile view details -->
-    <div class="sb--card__info">
-      <div class="d-flex flex-dr flex-jc-space-between">
-        <div class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" title="{{group?.name}}">{{group?.name}}</div>
-        <div *ngIf="isAdmin" class="sb-label-badge">Admin</div>
-      </div>
-      <div *ngIf="isMobile">
-        <div class="sb--card__meta2 text-left p-0 pt-4">
-          <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two" title="{{group?.description}}">{{group?.description}}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="sb--card__moreinfo" *ngIf="!isMobile">
-    <div class="sb--card__meta2 text-left">
-      <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two" title="{{group?.description}}">{{group?.description}}</div>
-    </div>
-  </div>
-</div>
+    <mat-card-title class="mat-body-1 text-left" title="{{group?.name}}">{{group?.name}}</mat-card-title>
+    <mat-card-subtitle *ngIf="isMobile" class="text-left" title="{{group?.description}}">{{group?.description}}</mat-card-subtitle>
+    <div *ngIf="isAdmin" class="mat-label-badge mr-8">Admin</div>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="!isMobile" class="text-left mat-small p-8 sb__ellipsis" title="{{group?.description}}">{{group?.description}}</div>
+  </mat-card-content>
+</mat-card>
 
-<div class="sb--card" *ngIf="isLoading" tabindex="0" >
-  <div class="sb--card__main-area">
-    <!-- card img -->
-    <div class="sb--card__img">
-      <div class="img-container img-container--label">
-        <label class="loading-animation"></label>
+<mat-card class="joy group-card animationLoading" *ngIf="isLoading">
+  <mat-card-header>
+    <div mat-card-avatar> 
+      <div class="img-container d-flex flex-ai-center flex-jc-center animation-highlight w-100">
       </div>
     </div>
-    <!-- card mobile view details -->
-    <div class="sb--card__info">
-      <div class="d-flex flex-dr flex-jc-space-between">
-        <h4 class="sb--card__title loading-animation sb--card--highlighter"></h4>
-        <div *ngIf="isAdmin" class="sb-label-badge loading-animation sb--card--highlighter"></div>
-      </div>
-      <div *ngIf="isMobile">
-        <div class="sb--card__meta2 text-left p-0 pt-4">
-          <div class="sb--card__meta2_data loading-animation sb--card--highlighter"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="sb--card__moreinfo" *ngIf="!isMobile">
-    <div class="sb--card__meta2 text-left">
-      <div class="sb--card__meta2_data loading-animation sb--card--highlighter"></div>
-    </div>
-  </div>
-</div>
+    <mat-card-title class="text-left animation-highlight w-60"></mat-card-title>
+    <mat-card-subtitle class="text-left animation-highlight" style="width:40%"></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="animation-highlight mb-8" style="width:120px;margin: 0 0.5rem;"></div>
+  </mat-card-content>
+</mat-card>

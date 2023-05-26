@@ -2,7 +2,7 @@
 <mat-card role="link" tabindex="0" class="joy w-100 h-100 d-flex flex-dc p-0"
   [ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}" (click)="onClick($event)" *ngIf="!isLoading">
   <mat-card-header>
-    <div mat-card-avatar> <img [src]="cardImg" alt="Thumbnail image" class="w-100"> </div>
+    <div mat-card-avatar> <img [src]="cardImg"> </div>
     <mat-card-title class="mat-body-1 text-left">{{content?.name}}</mat-card-title>
     <mat-card-subtitle class="hide text-left">coming soon</mat-card-subtitle>
     <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
@@ -114,10 +114,6 @@
     <mat-chip-list aria-label="data selection">
       <mat-chip class="animation-highlight" style="width:30px; height:20px"></mat-chip>
       <mat-chip class="animation-highlight" style="width:30px; height:20px"></mat-chip>
-    </mat-chip-list>
-    <mat-chip-list aria-label="data selection">
-      <mat-chip class="animation-highlight" style="width:30px; height:20px"></mat-chip>
-      <mat-chip class="animation-highlight" style="width:76px; height:20px"></mat-chip>
     </mat-chip-list>
    </div>
     <div class="d-flex">

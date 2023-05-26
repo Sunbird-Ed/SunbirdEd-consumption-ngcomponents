@@ -1,28 +1,70 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "../card.scss";
+
 ::ng-deep :root {
-    --cc-sbcard-course-curi-title:var(--white);
+    --cc-mat-card-loading-bg:#CCC;
+    --cc-mat-card-loading-highlight1:#eeeeee;
+    --cc-mat-card-loading-highlight2: #dddddd;
+    --cc-mat-card-bg: #fff;
 }
 
-.sb--card--course--curiculum {
-    .sb--card__title {
-        
-        color: var(--cc-sbcard-course-curi-title);
-    }
-    .img-container {
-        background-color: transparent !important;
-        height: 2rem !important;
-        width: 2rem !important;
+:host ::ng-deep {
+    .mat-curiculum-card{
+        border-radius: 1rem !important;
+        box-shadow: var(--sbt-box-shadow-6px) !important;
+        cursor: pointer;
+        contain: content;
+        &:hover{
+            box-shadow: 0 0.125rem 0.4375rem 0 rgba(var(--rc-rgba-black),.16) !important;
+        }
+        .mat-card-content{
+            height: 5.5rem;
+        }  
+        &__title{
+            flex: 1;
+            overflow: hidden;
+            padding: 0 1rem;
+        }
+        &__img{
+            height: 2rem;
+            width: 2rem;
+            flex: 0 0 2rem;
+            margin: 0;
+            margin-top: 3rem;
+            .img-container{
+                background-color: transparent;
+                height: 2rem;
+                width: 2rem;
+                img{
+                    max-width: 100%;
+                }
+            }
+        }
+        &.animationLoading{
+            background-color: var(--cc-mat-card-bg);
+            border-radius: 1.5rem;
+            box-shadow: var(--sbt-box-shadow-6px);
+        }
     }
 }
-.sb--card {
-    margin-bottom: calculateRem(8px) !important;
-    border-radius: calculateRem(4px) !important;
-    .sb--card__img {
-        height: calculateRem(32px);
-        width: calculateRem(32px);
-        flex: 0 0 calculateRem(32px);
-        margin: 0;
-        margin-top: calculateRem(48px);
+
+@keyframes animate {
+    0% {
+    background-position: -468px 0
     }
-  }
+    100% {
+      background-position: 468px 0
+    }
+ }
+ .animation-highlight {
+   position:relative;
+   background-color: var(--cc-mat-card-loading-bg);
+   height: 0.5rem;
+   animation-name: animate; 
+   animation-duration: 2s; 
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;   
+   background: -webkit-gradient(linear, left top, right top, color-stop(8%, var(--cc-mat-card-loading-highlight1)), color-stop(18%, var(--cc-mat-card-loading-highlight2)), color-stop(33%, var(--cc-mat-card-loading-highlight1)));
+   background: -webkit-linear-gradient(left, var(--cc-mat-card-loading-highlight1) 8%, var(--cc-mat-card-loading-highlight2) 18%, var(--cc-mat-card-loading-highlight1) 33%);
+   background: linear-gradient(to right, var(--cc-mat-card-loading-highlight1) 8%, var(--cc-mat-card-loading-highlight2) 18%, var(--cc-mat-card-loading-highlight1) 33%);
+   -webkit-background-size: 800px 104px;  
+ }
