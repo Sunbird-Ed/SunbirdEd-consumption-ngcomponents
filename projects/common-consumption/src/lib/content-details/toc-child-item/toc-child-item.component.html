@@ -16,7 +16,7 @@
   <div *ngFor="let child of childData?.children; let j = index;" [id]="child.identifier">
     <div *ngIf="child?.mimeType !== 'application/vnd.sunbird.question' && child?.mimeType !== 'application/vnd.sunbird.questionset'">
       {{ createUniqueId(childData, child) }}
-      <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)"
+      <sb-toc-child-item class="mat-app-background2" [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)"
         [activeMimeTypeFilter]="activeMimeTypeFilter" [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" 
         (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
       </sb-toc-child-item>
