@@ -1,9 +1,64 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@forward "./../library-card-v2/library-card-v2.component.scss.theme.scss";
+@use "@angular/material" as mat;
+@use 'sass:map';
+
+ //card hover styles..
 ::ng-deep {
   .card-hover {
     opacity: 0;
     transition: all 0.2s ease-in;
     display: none;
+  }
+  .mat-card{
+    &:hover, &:focus-within{
+      .card-hover{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: .3s ease;
+        background-color: var(--primary-400);
+        cursor: pointer;
+        z-index: 1000;
+        display: block;
+        height: 100%;
+        width: 100%;
+        .action-container{
+          .action-item {
+            padding: 0 1rem;
+            flex: 1;
+            text-align: center;
+            .card-hover-mat-btn{
+              background: none;
+              border: 0px solid transparent;
+              font-size: .75rem;
+              cursor: pointer;
+              outline: 0px!important;
+              transition: all .2s ease-in-out;
+              box-shadow: none;
+              line-height: 1.75rem;
+              &:disabled {
+                opacity: 0.4;
+                cursor: default;
+              }
+              transition: all .2s ease-in-out;
+              &:hover:not([disabled]) {
+                background: none;
+                transform: scale(1.15);
+              }
+            }
+          }
+          .action-item:not(:last-child) {
+            border-right: 0.0625rem solid rgba(var(--rc-rgba-white),.5);
+            html[dir='rtl'] & {
+              border-left: 0.0625rem solid rgba(var(--rc-rgba-white),.5);
+              border-right:none;
+            }
+          }
+        }
+      }
+    }
   }
 }

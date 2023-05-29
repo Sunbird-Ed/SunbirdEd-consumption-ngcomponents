@@ -1,5 +1,5 @@
 <!-- card component -->
-<mat-card class="joy group-card" title="{{group?.name}}" attr.aria-label="{{group?.name}}" (click)="onClick($event)" *ngIf="!isLoading" role="link" tabindex="0">
+<mat-card class="group-card d-flex flex-dc w-100 h-100" title="{{group?.name}}" attr.aria-label="{{group?.name}}" (click)="onClick($event)" *ngIf="!isLoading" role="link" tabindex="0">
   <mat-card-header>
     <div mat-card-avatar> 
       <div class="img-container d-flex flex-ai-center flex-jc-center" [ngStyle]="fetchStyle()">
@@ -16,7 +16,7 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card class="joy group-card animationLoading" *ngIf="isLoading">
+<mat-card class="group-card animationLoading" *ngIf="isLoading">
   <mat-card-header>
     <div mat-card-avatar> 
       <div class="img-container d-flex flex-ai-center flex-jc-center animation-highlight w-100">

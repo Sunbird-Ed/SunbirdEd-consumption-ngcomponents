@@ -1,12 +1,5 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-
-::ng-deep :root {
-    --cc-mat-card-loading-bg:#CCC;
-    --cc-mat-card-loading-highlight1:#eeeeee;
-    --cc-mat-card-loading-highlight2: #dddddd;
-    --cc-mat-card-bg: #fff;
-}
-
+@forward "../lazy-loading.scss";
 :host ::ng-deep {
     .mat-curiculum-card{
         border-radius: 1rem !important;
@@ -39,32 +32,5 @@
                 }
             }
         }
-        &.animationLoading{
-            background-color: var(--cc-mat-card-bg);
-            border-radius: 1.5rem;
-            box-shadow: var(--sbt-box-shadow-6px);
-        }
     }
 }
-
-@keyframes animate {
-    0% {
-    background-position: -468px 0
-    }
-    100% {
-      background-position: 468px 0
-    }
- }
- .animation-highlight {
-   position:relative;
-   background-color: var(--cc-mat-card-loading-bg);
-   height: 0.5rem;
-   animation-name: animate; 
-   animation-duration: 2s; 
-   animation-iteration-count: infinite;
-   animation-timing-function: linear;   
-   background: -webkit-gradient(linear, left top, right top, color-stop(8%, var(--cc-mat-card-loading-highlight1)), color-stop(18%, var(--cc-mat-card-loading-highlight2)), color-stop(33%, var(--cc-mat-card-loading-highlight1)));
-   background: -webkit-linear-gradient(left, var(--cc-mat-card-loading-highlight1) 8%, var(--cc-mat-card-loading-highlight2) 18%, var(--cc-mat-card-loading-highlight1) 33%);
-   background: linear-gradient(to right, var(--cc-mat-card-loading-highlight1) 8%, var(--cc-mat-card-loading-highlight2) 18%, var(--cc-mat-card-loading-highlight1) 33%);
-   -webkit-background-size: 800px 104px;  
- }

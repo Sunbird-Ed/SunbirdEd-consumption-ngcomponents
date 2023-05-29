@@ -1,4 +1,5 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@forward "../lazy-loading.scss";
 /* sb card component css */
 :host {
 
@@ -94,8 +95,9 @@
   .mat-banner-card{
     width: 9.375rem;
     height: 12.125rem;
-    box-shadow: none;
+    box-shadow: none !important;
     padding: 2rem 1rem;
+    border-radius: 1rem;
     .mat-card-title{
       width: 100%;
       overflow: hidden;

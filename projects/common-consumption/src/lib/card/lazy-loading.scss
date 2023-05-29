@@ -1,0 +1,85 @@
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+
+::ng-deep :root {
+    --cc-mat-card-animation-bg: #fff;
+    --cc-mat-card-loading-bg:#CCC;
+    --cc-mat-card-loading-highlight1:#eeeeee;
+    --cc-mat-card-loading-highlight2: #dddddd;
+  }
+
+//loading animation
+:host ::ng-deep {
+    .mat-card{
+        &.animationLoading{
+            background-color: var(--cc-mat-card-animation-bg);
+            border-radius: 1.5rem;
+            box-shadow: var(--sbt-box-shadow-6px);
+            .mat-card-header {
+                order: 2;
+                padding: 0 1rem;
+                .mat-card-avatar {
+                width: 4.5rem;
+                height: 4.5rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 3rem;
+                right: 2rem;
+                overflow: hidden;
+                border: 0.1875rem solid var(--cc-mat-card-avatar-border);
+                z-index: 1;
+                html[dir='rtl'] & {
+                    right: auto;
+                    left: 2rem;
+                }
+                }
+                .mat-card-header-text{
+                margin: 0;
+                width: 100%;
+                }
+            }
+            .mat-card-banner{
+                height: 4.5rem;
+                border-radius: 1rem;
+                overflow: hidden;
+            }
+            .mat-card-content {
+                order: 3;
+            }
+            .mat-card-chips-list{
+                height: 3.5rem;
+                overflow: hidden;
+                .mat-chip-list{
+                .mat-chip-list-wrapper{
+                    margin: 0;
+                    .mat-chip {
+                    min-height: auto;
+                    height: auto;
+                    margin: 0 0.5rem 0.5rem 0;
+                    }
+                }
+                }
+            }
+        }
+    }
+    @keyframes animate {
+        0% {
+        background-position: -468px 0
+        }
+        100% {
+        background-position: 468px 0
+        }
+    }
+    .animation-highlight {
+        position:relative;
+        background-color: var(--cc-mat-card-loading-bg);
+        height: 0.5rem;
+        animation-name: animate; 
+        animation-duration: 2s; 
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;   
+        background: -webkit-gradient(linear, left top, right top, color-stop(8%, var(--cc-mat-card-loading-highlight1)), color-stop(18%, var(--cc-mat-card-loading-highlight2)), color-stop(33%, var(--cc-mat-card-loading-highlight1)));
+        background: -webkit-linear-gradient(left, var(--cc-mat-card-loading-highlight1) 8%, var(--cc-mat-card-loading-highlight2) 18%, var(--cc-mat-card-loading-highlight1) 33%);
+        background: linear-gradient(to right, var(--cc-mat-card-loading-highlight1) 8%, var(--cc-mat-card-loading-highlight2) 18%, var(--cc-mat-card-loading-highlight1) 33%);
+        -webkit-background-size: 800px 104px;  
+    }
+}
