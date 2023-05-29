@@ -5,3 +5,9 @@
     line-height: calculateRem(22px);
 }
 
+.content-child {
+    margin-bottom: .5rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
