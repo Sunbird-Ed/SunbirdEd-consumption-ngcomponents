@@ -15,6 +15,7 @@ export class BannerCardComponent {
   @Input() secondaryBanner: false;
   @Input() platform = PlatformType.MOBILE;
   @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
+  @Input() isLoading:boolean;
 
   onClick(event: MouseEvent, data) {
     this.cardClick.emit({ event: event, data: data });

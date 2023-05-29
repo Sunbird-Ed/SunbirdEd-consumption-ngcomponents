@@ -9,7 +9,6 @@ import { CardsGridComponent } from './cards-grid/cards-grid.component';
 import { InAppNotificationComponent } from './in-app-notification/in-app-notification.component';
 import { LibraryCardsHlistComponent } from './library-cards-hlist/library-cards-hlist.component';
 import {MatButtonModule} from '@angular/material/button';
-import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import {MatIconModule} from '@angular/material/icon';
     CommonModule,
     CardModule,
     MatButtonModule,
-    MatBadgeModule,
     MatIconModule
   ],
   exports: [

@@ -1,28 +1,36 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "../card.scss";
-::ng-deep :root {
-    --cc-sbcard-course-curi-title:var(--white);
+@forward "../lazy-loading.scss";
+:host ::ng-deep {
+    .mat-curiculum-card{
+        border-radius: 1rem !important;
+        box-shadow: var(--sbt-box-shadow-6px) !important;
+        cursor: pointer;
+        contain: content;
+        &:hover{
+            box-shadow: 0 0.125rem 0.4375rem 0 rgba(var(--rc-rgba-black),.16) !important;
+        }
+        .mat-card-content{
+            height: 5.5rem;
+        }  
+        &__title{
+            flex: 1;
+            overflow: hidden;
+            padding: 0 1rem;
+        }
+        &__img{
+            height: 2rem;
+            width: 2rem;
+            flex: 0 0 2rem;
+            margin: 0;
+            margin-top: 3rem;
+            .img-container{
+                background-color: transparent;
+                height: 2rem;
+                width: 2rem;
+                img{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
 }
-
-.sb--card--course--curiculum {
-    .sb--card__title {
-        
-        color: var(--cc-sbcard-course-curi-title);
-    }
-    .img-container {
-        background-color: transparent !important;
-        height: 2rem !important;
-        width: 2rem !important;
-    }
-}
-.sb--card {
-    margin-bottom: calculateRem(8px) !important;
-    border-radius: calculateRem(4px) !important;
-    .sb--card__img {
-        height: calculateRem(32px);
-        width: calculateRem(32px);
-        flex: 0 0 calculateRem(32px);
-        margin: 0;
-        margin-top: calculateRem(48px);
-    }
-  }

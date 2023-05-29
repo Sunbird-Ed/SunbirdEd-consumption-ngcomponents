@@ -1,41 +1,32 @@
 <!-- card component -->
-<div class="sb--card sb--card--course--curiculum" [ngStyle]="fetchStyles()" attr.aria-label="{{title}}" (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
-  <div class="sb--card__main-area" *ngIf="isActivityTypeCard">
-      <div class="sb--card__info pl-8">
-        <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-center font-weight-bold" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
+<mat-card class="mat-curiculum-card p-0 w-100" [ngStyle]="fetchStyles()" attr.aria-label="{{title}}" (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
+  <mat-card-content class="d-flex flex-dr flex-ai-center" *ngIf="isActivityTypeCard">
+    <h4 class="mat-curiculum-card__title text-center font-weight-bold mat-body-1 m-0 sb__ellipsis" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
+  </mat-card-content>
+  <mat-card-content class="d-flex flex-dr flex-ai-center" *ngIf="!isActivityTypeCard">
+    <div class="mat-curiculum-card__title">
+      <h4 class="mat-body-1 m-0 sb__ellipsis" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
+      <span class="mat-small sb__ellipsis" title="{{subTitle}}">{{subTitle}}</span>
+    </div>
+    <div class="mat-curiculum-card__img">
+      <div class="img-container">
+        <img [src]="cardImg" alt="">
       </div>
-  </div>
+    </div>
+  </mat-card-content>
+</mat-card>
 
-  <div class="sb--card__main-area" *ngIf="!isActivityTypeCard">
-      <div class="sb--card__info pl-8">
-        <h4 class="sb--card__title sb__ellipsis sb__ellipsis--three text-left" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
-        <div class="sb--card__meta1 text-left">
-          <span class="data_1 ellipsis" title="{{subTitle}}">{{subTitle}}</span>
-        </div>
+<mat-card class="mat-curiculum-card p-0 w-100 animationLoading" *ngIf="isLoading" tabindex="0">
+  <mat-card-content class="d-flex flex-dr flex-ai-center">
+    <div class="mat-curiculum-card__title">
+      <h4 class="mat-body-1 m-0 sb__ellipsis animation-highlight" style="width:150px;"></h4>
+      <span class="mat-small sb__ellipsis animation-highlight mt-8" style="width:120px;"></span>
+    </div>
+    <div class="mat-curiculum-card__img animation-highlight">
+      <div class="img-container">
+        <img [src]="cardImg" alt="">
       </div>
-      <!-- card img -->
-      <div class="sb--card__img">
-        <div class="img-container">
-          <img [src]="cardImg" alt="">
-        </div>
-      </div>
-  </div>
-</div>
+    </div>
+  </mat-card-content>
+</mat-card>
 
-  <div class="sb--card sb--card--course--curiculum" [ngStyle]="fetchStyles()" *ngIf="isLoading" tabindex="0">
-      <div class="sb--card__main-area">
-          <!-- card mobile view details -->
-          <div class="sb--card__info">
-            <h4 class="sb--card__title loading-animation sb--card--highlighter"></h4>
-            <div class="sb--card__meta1 text-left">
-              <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
-            </div>
-          </div>
-          <!-- card img -->
-          <div class="sb--card__img">
-            <div class="img-container loading-animation">
-              
-            </div>
-          </div>
-        </div>
-  </div>

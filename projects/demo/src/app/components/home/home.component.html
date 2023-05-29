@@ -16,3 +16,16 @@
 <h4>Library Card -- V4</h4>
 <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[2]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
 <br><br>
+
+<br><br>
+<h4>Library Card -- hover</h4>
+<sb-library-card-v2 [layoutConfig]="layoutConfig" [hover-template]="hoverTemplate" [content]="VCardData.content" [type]="VCardData.type[2]"  [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" 
+[content]="content" [type]="recentlyViewedCard">
+    <ng-template #hoverTemplate let-hoverData="hoverData" 
+    let-content="content">
+        <sb-card-hover class="card-hover" [hoverData]="hoverData"
+        [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+        </sb-card-hover>
+    </ng-template>
+</sb-library-card-v2>
+

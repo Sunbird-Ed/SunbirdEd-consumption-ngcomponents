@@ -1,4 +1,5 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@forward "../lazy-loading.scss";
 /* sb card component css */
 :host {
 
@@ -92,6 +93,20 @@
 
 :host{
   .mat-banner-card{
-    width: calculateRem(150px);
+    width: 9.375rem;
+    height: 12.125rem;
+    box-shadow: none !important;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    .mat-card-title{
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: normal;
+    }
   }
 }

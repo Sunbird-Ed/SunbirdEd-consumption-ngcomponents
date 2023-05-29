@@ -1,51 +1,70 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "~@project-sunbird/sb-styles/assets/loadingshadows" as *;
-@use "../card.scss";
+@use "@angular/material" as mat;
+@use 'sass:map';
 ::ng-deep :root {
-  --cc-sbcard-img-label: #284C3F;
-  --cc-sbcard-img-label-bg: #B3EBD7;
-  --cc-sbcard-img-badge-bg: var(--black);
-  --cc-sbcard-img-badge-text: var(--white);
-  --cc-sblabel-badge-br: var(--secondary-color);
-  --cc-sblabel-badge-text: var(--secondary-color);
+  --cc-mat-card-img-container-bg:#ccc;
+  --cc-mat-label-badge-br: var(--secondary-color);
+  --cc-mat-label-badge-text: var(--secondary-color);
+  --cc-mat-card-title:#024f9d;
 }
-
-.sb--card__img {
-  .img-container--label {
-    text-transform: capitalize;
-    background-color: var(--cc-sbcard-img-label-bg);
-    color: var(--cc-sbcard-img-label);
-    position: relative;
-
-    label {
-      margin-bottom: 0px;
-      padding-bottom: 0px;
-      font-size: calculateRem(21px);
-      font-weight: bold;
-    }
-
-    .img-container--badge {
-
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background-color: var(--cc-sbcard-img-badge-bg);
-      color: var(--cc-sbcard-img-badge-text);
-      font-size: calculateRem(12px);
-      text-align: center;
-      margin-bottom: calculateRem(8px);
-      line-height: normal;
-      opacity: 0.6;
+::ng-deep {
+  .mat-card{
+    &.group-card{
+      cursor: pointer;
+      position: relative;
+      border-radius: 1rem;
+      padding: 0;
+      box-shadow: var(--sbt-box-shadow-6px) !important;
+      overflow: hidden;
+      .mat-card-header {
+        padding: 0;
+        align-items: center;
+        .mat-card-header-text{
+          margin: 0;
+          width: 100%;
+        }
+        .mat-card-title{
+          width: 70%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: initial;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          font-size: 0.875rem;
+          color: var(--cc-mat-card-title);
+          font-weight: bold;
+          line-height: normal;
+        }
+        .mat-card-avatar{
+          position: initial;
+          border-radius: 0.5rem;
+          border: none;
+          margin: 0.5rem;
+          height: 4.5rem;
+          width: 4.5rem;
+          overflow: hidden;
+          .img-container{
+            background-color: var(--cc-mat-card-img-container-bg);
+            height: 4.5rem;
+            width: 4.5rem;
+            position: relative;
+            text-transform: capitalize;
+            label{
+              font-weight: 700;
+            }
+          }
+        }
+        .mat-label-badge{
+          font-size: .6875rem;
+          border: 0.063rem solid var(--cc-mat-label-badge-br);
+          align-self: center;
+          padding: 0.25rem 0.5rem;
+          border-radius: 0.25rem;
+          color: var(--cc-mat-label-badge-text);
+          text-align: center;
+        }
+      }
     }
   }
-}
-
-.sb-label-badge {
-  font-size: calculateRem(11px);
-  border: 1px solid var(--cc-sblabel-badge-br);
-  align-self: center;
-  padding: calculateRem(4px) calculateRem(8px);
-  border-radius: calculateRem(2px);
-  color: var(--cc-sblabel-badge-text);
-  text-align: center;
 }

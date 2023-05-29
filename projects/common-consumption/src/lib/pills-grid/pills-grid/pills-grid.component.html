@@ -1,9 +1,9 @@
 <div class="header" *ngIf="platform === 'portal' && pillItems?.length > 0">
-  <div class="title">{{title}}</div>
+  <div class="mat-title font-weight-bold m-0">{{title}}</div>
   <div *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
-    <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
+    <button mat-raised-button class="button-rounded color-accent" role="button" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
      (click)="viewMore()" tabindex="0">{{viewMoreText}}</button>
-    <button class="sb-btn sb-btn-normal font-weight-bold sb-btn-outline-primary sb-btn-white" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length"
+    <button mat-raised-button class="button-rounded color-accent" role="button" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount === pillItems?.length"
      (click)="viewLess()" tabindex="0">{{viewLessText}}</button>
   </div>
 </div>
@@ -32,13 +32,13 @@
   </ng-container>
 </div>
 
-<div class="sb-view-more-less pb-16" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount) && platform === 'mobile'">
+<div class="text-center pb-16" *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount) && platform === 'mobile'">
   <div *ngIf="showMoreViewType===ShowMoreViewType.EXPAND">
-    <button class="view-more sb-view-btn" *ngIf="viewCount < pillItems?.length" (click)="viewMore()" tabindex="0">{{viewMoreText}}</button>
-    <button class="view-less sb-view-btn" *ngIf="viewCount === pillItems?.length"  (click)="viewLess()" tabindex="0">{{viewLessText}}</button>
+    <button mat-raised-button class="button-rounded color-accent" role="button" *ngIf="viewCount < pillItems?.length" (click)="viewMore()" tabindex="0">{{viewMoreText}}</button>
+    <button mat-raised-button class="button-rounded color-accent" role="button" *ngIf="viewCount === pillItems?.length"  (click)="viewLess()" tabindex="0">{{viewLessText}}</button>
   </div>
 
   <div *ngIf="showMoreViewType===ShowMoreViewType.NEW_SCREEN">
-    <button class="view-all sb-view-btn" (click)="viewMoreInNewScreen($event)" tabindex="0">{{viewMoreText}}</button>
+    <button mat-raised-button class="button-rounded color-accent" role="button" (click)="viewMoreInNewScreen($event)" tabindex="0">{{viewMoreText}}</button>
   </div>
 </div>
