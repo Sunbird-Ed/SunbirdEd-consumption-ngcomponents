@@ -11,6 +11,7 @@
 
   /* New color code for material */
   --mat-list-border: #ddd;
+  --mat-list-bg: #fff;
   --mat-list-bg-active: #f1f1e7;
   --mat-list-border-active: #afcce1;
 }
@@ -146,6 +147,7 @@
       border-radius: 1.5rem;
       cursor: pointer;
       border: 1px solid var(--mat-list-border);
+      background-color: var(--mat-list-bg);
       transition: all 0.2s ease-in;
       margin-bottom: 1rem;
       font-size: .75rem;
