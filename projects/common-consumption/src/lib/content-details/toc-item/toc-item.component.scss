@@ -13,6 +13,8 @@
       --cc-chapter-item-topic-title-text: var(--primary-400);
       --cc-chapter-item-topic-title-text-active: var(--primary-100);
       --cc-chapter-item-topic-title-text-hover: var(--gray-0);
+
+      --list-container-bg: var(--white);
 }
   //sbchapter css
   .sbchapter {
@@ -156,4 +158,12 @@
   .sb-content__bar {
     margin: calculateRem(8px) 0; 
     background: var(--gray-0);
+  }
+
+  .list-container {
+    padding: 1rem .5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0.1875rem 0.1875rem 0.125rem 0 rgba(0,0,0,.2);
+    margin-bottom: 1rem;
+    background: var(--list-container-bg);
   }

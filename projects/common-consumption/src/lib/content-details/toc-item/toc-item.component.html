@@ -24,14 +24,14 @@
                   *ngIf="recogniseCollection && filterChildren(child) && child.item?.contentType === 'Course'">
                   <sb-my-course-card [type]="'recently_viewed'"></sb-my-course-card>
                 </div>
-                <div class="sbchapter" *ngIf="filterChildren(child)" [id]="child.identifier">
+                <div class="list-container" *ngIf="filterChildren(child)" [id]="child.identifier">
                   <ng-container *ngIf="isFlattenedType(child) === FlattenedType.EXPAND">
-                    <sb-toc-child-item class="mat-app-background2" *ngIf="type" [type]="type" [contentStatus]="contentStatus" [childData]="child"
+                    <sb-toc-child-item *ngIf="type" [type]="type" [contentStatus]="contentStatus" [childData]="child"
                       [activeMimeTypeFilter]="activeMimeTypeFilter" [activeContent]="activeContent" [platform]="platform"
                       (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
                       [trackableDefaultImage]="trackableDefaultImage">
                     </sb-toc-child-item>
-                    <sb-toc-child-item class="mat-app-background2" *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
+                    <sb-toc-child-item *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
                       [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig"
                       (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
                     </sb-toc-child-item>

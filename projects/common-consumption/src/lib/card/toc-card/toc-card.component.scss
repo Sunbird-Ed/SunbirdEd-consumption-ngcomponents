@@ -8,6 +8,12 @@
   --cc-toc-card-item-bs:var(--rc-rgba-primary);
   --cc-toc-card-item-img-bg:var(--rc-dddddd);
   --cc-toc-card-item-score-text:#3F19C3;
+
+  /* New color code for material */
+  --mat-list-border: #ddd;
+  --mat-list-bg: #fff;
+  --mat-list-bg-active: #f1f1e7;
+  --mat-list-border-active: #afcce1;
 }
 .sbchapter {
   &__item {
@@ -136,16 +142,48 @@
 
 :host {
   .mat-list-base {
+    padding-top: 0;
     .mat-list-item {
       border-radius: 1.5rem;
       cursor: pointer;
-      font-size: .875rem;
-      border: 1px solid transparent;
-      &:hover {
-        border-color: #ccc;
+      border: 1px solid var(--mat-list-border);
+      background-color: var(--mat-list-bg);
+      transition: all 0.2s ease-in;
+      margin-bottom: 1rem;
+      font-size: .75rem;
+
+      &:hover, &.active {
+        border-color: var(--mat-list-border-active);
+        background-color: var(--mat-list-bg-active);
+      }
+      &.active {
+        font-weight: bold;
       }
       &.mat-list-item-with-avatar {
         height: 3rem;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .mat-list-icon {
+        border-radius: 0;
+        padding: 0;
+      }
+
+      &.mat-list-item-with-avatar .mat-list-item-content .mat-list-text {
+        padding-left: .5rem;
+      }
+
+      .mat-line {
+        display: -webkit-box;
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: unset;
       }
     }
   } 
