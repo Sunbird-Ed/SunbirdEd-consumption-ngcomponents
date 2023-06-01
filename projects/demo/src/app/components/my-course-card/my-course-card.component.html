@@ -1,0 +1,12 @@
+<h4>My Course Card</h4>
+<sb-my-course-card [course]="myCourseCard.course" [isMobile]="false" [isOffline]="false" [isMenu]="true" [section]="true"></sb-my-course-card>
+<br><br>
+
+<h4>My Course Card -- offline</h4>
+<sb-my-course-card [course]="myCourseCard.course" [isMobile]="false" [isOffline]="true" [isMenu]="true" [section]="true"></sb-my-course-card>
+<br><br>
+
+<h4>My Course Card -- mobile</h4>
+<sb-my-course-card [course]="myCourseCard.course" [isMobile]="true" [isOffline]="true" [isMenu]="true" [section]="true"></sb-my-course-card>
+<br><br>
+<sb-my-course-card [isLoading]="true" ></sb-my-course-card>

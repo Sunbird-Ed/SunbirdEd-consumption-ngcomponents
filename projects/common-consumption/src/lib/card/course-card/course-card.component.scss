@@ -1,26 +1,83 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "../card.scss";
-.sb--card {
-  border-radius: calculateRem(2px);
+@use "@angular/material" as mat;
+@use 'sass:map';
+@forward "../lazy-loading.scss";
+
+::ng-deep :root {
+  --cc-mat-card-title: #024f9d;
+  --cc-mat-card-menu:#999;
+  --cc-mat-card-menu-hover:#f2f2f2;
+  --cc-mat-card-img-container-bg:#ccc;
 }
 
-.sb--card--course {
-  
-  .sb--card__meta1 {
-    --cc-sbcard-meta1:var(--gray-400);
-    color: var(--cc-sbcard-meta1);
-    line-height: calculateRem(16px);
-  }
-  .sb--card__meta_c_data {
-    --cc-sbcard-metaC-data:var(--rc-FAFAFA);
-      min-height: calculateRem(32px);
-      padding: 0.5rem;
-      background-color: var(--cc-sbcard-metaC-data);
-      font-size: .8rem;
+//default material card styles
+::ng-deep{
+  .mat-card{
+    &.course-card{
+      cursor: pointer;
+      box-shadow: none;
+      padding: 0;
+      .mat-card-header{
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        .mat-card-header-text{
+          margin: 0 0.5rem;
+          width: 100%;
+        }
+        .mat-card-avatar{
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          background-color: var(--cc-mat-card-img-container-bg);
+          height: 4.5rem;
+          width: 4.5rem;
+          border-radius: 0;
+          img{
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+            max-width: 100%;
+            overflow: hidden;
+            object-fit: cover;
+          }
+        }
+        .mat-card-title{
+          color: var(--cc-mat-card-title);
+          font-weight: bold !important;
+          line-height: normal;
+          font-size: 0.875rem;
+        }
+        .menu {
+          position: absolute;
+          right: 1rem;
+          html[dir='rtl'] & {
+            right: auto;
+            left: 1rem;
+          }
+          &::after {
+            content: '\2807';
+            font-size: calculateRem(24px);
+            color: var(--cc-mat-card-menu);
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            padding-left: calculateRem(6px);
+            cursor: pointer;
+            width: calculateRem(32px);
+            height: calculateRem(32px);
+          }
+          &:hover {
+            text-decoration: none;
+            &::after {
+              background: var(--cc-mat-card-menu-hover);
+            }
+          }
+        }
+      }
+    }
   } 
-  .data_1 {
-    max-width:100% !important;
-  }
 }
-
 
