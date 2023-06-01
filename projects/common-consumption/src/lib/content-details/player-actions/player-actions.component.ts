@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IActionButton, ActionButtonType, IButtonClick } from './model';
 
-const IMAGE_PATH = 'assets/common-consumption/images/sprite.svg';
+const IMAGE_PATH = '';
 const DEFAULT_BUTTON: IActionButton = {
   name: ActionButtonType.FULL_SCREEN,
   label: 'Fullscreen',
-  iconPath: `${IMAGE_PATH}#${ActionButtonType.FULL_SCREEN}`,
+  iconPath: `${ActionButtonType.FULL_SCREEN}`,
   disabled: false
 };
 
@@ -27,7 +27,7 @@ export class PlayerActionsComponent implements OnInit {
   ngOnInit() {
     if (this.actionButtons) {
       this.actionButtons.forEach((item, index, object) => {
-        item.iconPath = item.iconPath ? item.iconPath : `${IMAGE_PATH}#${item.name}`;
+        item.iconPath = item.iconPath ? item.iconPath : `${item.name}`;
 
         if (item.name === ActionButtonType.FULL_SCREEN) {
           this.showFullscreen = true;

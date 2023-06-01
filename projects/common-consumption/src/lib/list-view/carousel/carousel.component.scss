@@ -1,9 +1,10 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+
 ::ng-deep :root {
   --cc-carousel-title: #333333;
 }
+
 .carousel_title {
-  color: var(--cc-carousel-title);
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0;
@@ -91,6 +92,7 @@
     margin-top: 2.5rem;
     transform: scale(1);
     transition: all 0.2s ease-in;
+
     img {
       width: 3.5rem;
       height: 3.5rem;
@@ -120,48 +122,44 @@
   position: absolute;
 
   font-size: 1rem;
-  color:var(--white);
+  color: var(--white);
 }
 
-.carousel-container .carousel-btn {
+
+
+
+
+/* mat */
+.play-btn {
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border:0px;
+  border: 0px;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   background: none;
-    box-shadow: none;
-    border: 0px;
-  i {
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,10%);
-  filter: invert(1);
-  border-radius: 50%;
-  }
-  &:hover {
-   i {
-         transform: scale(1.25);
-   }
-  }
+  box-shadow: none;
+  border: 0px;
 }
 
-.carousel-container .carousel-btn.next {
-  // background-image: url('assets/common-consumption/images/right-arrow.svg');
+.carousel-btn.next {
   right: calculateRem(-12px);
 }
 
-.carousel-container .carousel-btn.prev {
-  // background-image: url('assets/common-consumption/images/right-arrow.svg');
+.carousel-btn.prev {
   left: calculateRem(-12px);
-  i.icon-svg.icon-svg--lg {
-    transform: rotate(180deg); 
-  }
-  &:hover i {
-    transform: scale(1.25) rotate(180deg) !important;
-  }
 }
 
 .carousel-scroller::-webkit-scrollbar {

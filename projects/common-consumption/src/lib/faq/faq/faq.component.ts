@@ -5,7 +5,7 @@ import { staticData } from './faq.component.data';
 @Component({
   selector: 'sb-faq',
   templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.scss']
+  // styleUrls: ['./faq.component.scss']
 })
 export class FaqComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class FaqComponent implements OnInit {
   shownGroup : any;
   value: any;
   textValue: any;
-
+  panelOpenState = false;
   constructor() { }
 
   ngOnInit() {
