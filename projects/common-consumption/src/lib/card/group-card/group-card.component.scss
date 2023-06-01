@@ -1,6 +1,7 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 @use "@angular/material" as mat;
 @use 'sass:map';
+@forward "../lazy-loading.scss";
 ::ng-deep :root {
   --cc-mat-card-img-container-bg:#ccc;
   --cc-mat-label-badge-br: var(--secondary-color);

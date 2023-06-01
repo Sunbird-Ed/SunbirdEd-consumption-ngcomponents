@@ -1,65 +1,26 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "../card.scss";
+@use "@angular/material" as mat;
+@use 'sass:map';
+@forward "../lazy-loading.scss";
+
 ::ng-deep :root {
-    --cc-sbcard-card__progressbar-bg: var(--gray-100);
-  --cc-sbcard-card__progressbar-span-bg: var(--secondary-200);
+    --cc-mat-card-progressbar-bg: #ccc;
+    --cc-mat-card-card-progressbar-span-bg: var(--secondary-200);
+    --cc-mat-card-title: #024f9d;
+    --cc-mat-card-img-container-bg:#ccc;
   }
-:host {
-.sb--card--course {
-    & .sb--container-box {
-        min-width: 0;
-        flex: 1;
-        padding-right: calculateRem(8px);
-        html[dir='rtl'] & {
-            padding-right:inherit;
-            padding-left: calculateRem(8px);
-        }
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        .sb--card__info {
-            padding: 0rem 0rem 0rem 0rem;
-            display: flex; 
-            align-items: center;
-        }
-        .sb--holder {
-            flex:1;
-            min-width: 0;
-        }
-    }
-}
-}
 
-.sb--card--course {
-    &.sb--card--recently-viewed {
-        .sb--container-box {
-            padding: 0.5rem !important;
-        }
-        .sb--card__meta_c_data {
-            min-height: 1rem !important;
-        }
-    }
-}
-.sb--card__meta_c_data_external {
-    min-height: calculateRem(16px);
-    padding: 0.1rem;
-    font-size: .8rem;
-} 
-.sb--card__progressbar {
-
+.mat-card__progressbar {
     height: calculateRem(4px);
     margin: 0px 0 0px;
     border-radius: 0px;
     box-shadow: inset 0 calculateRem(-1px) calculateRem(1px) rgba(var(--rc-rgba-white), 0.3);
     width: 100%;
-    background: var(--cc-sbcard-card__progressbar-bg);
-
+    background: var(--cc-mat-card-progressbar-bg);
     &>span {
-
       display: block;
       height: 100%;
-      background-color: var(--cc-sbcard-card__progressbar-span-bg);
+      background-color: var(--cc-mat-card-card-progressbar-span-bg);
       background-image: -webkit-gradient(center bottom, var(--secondary-400), var(--secondary-200));
       box-shadow: inset 0 calculateRem(2px) calculateRem(9px) var(--gray-100),
         inset 0 calculateRem(-2px) calculateRem(6px) rgba(var(--rc-rgba-black), 0.4);
@@ -67,3 +28,59 @@
       overflow: hidden;
     }
   }
+
+//default material card styles
+::ng-deep{
+  .mat-card{
+    &.my-course-card{
+        cursor: pointer;
+        box-shadow: none;
+        padding: 0;
+        .mat-card-header{
+            padding: 0;
+            display: flex;
+            align-items: center;
+            .mat-card-header-text{
+            margin: 0 0.5rem;
+            width: 100%;
+            }
+            .mat-card-avatar{
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: var(--cc-mat-card-img-container-bg);
+            height: 4.5rem;
+            width: 4.5rem;
+            margin: 0.5rem;
+            border-radius: 0;
+            img{
+                width: 100%;
+                min-height: 100%;
+                height: auto;
+                max-width: 100%;
+                overflow: hidden;
+                object-fit: cover;
+            }
+            }
+            .mat-card-title{
+            color: var(--cc-mat-card-title);
+            font-weight: bold !important;
+            line-height: normal;
+            font-size: 0.875rem;
+            }
+        }
+        &.recently-viewed{
+            .mat-card-header .mat-card-avatar{
+                height: 5.5rem;
+                width: 5.5rem;
+                flex: 0 0 5.5rem;
+                margin: 0;
+            }
+        }
+    }
+    &.offline{
+        opacity: 0.6;
+    }
+  } 
+}
+

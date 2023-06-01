@@ -1,5 +1,5 @@
 <mat-card role="link" tabindex="0" class="mat-card-v2"
-[ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}" (click)="onClick($event)" *ngIf="!isLoading">
+[ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}" (click)="onClick($event)" *ngIf="!isLoading">
   <mat-card-header>
     <div mat-card-avatar> <img [src]="cardImg"> </div>
     <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two">{{content?.name}}</mat-card-title>

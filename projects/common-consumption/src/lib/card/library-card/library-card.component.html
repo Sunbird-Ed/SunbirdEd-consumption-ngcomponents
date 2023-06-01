@@ -1,65 +1,50 @@
 <!-- card component -->
 <span *ngIf="!layoutConfig">
-<div class="sb--card"
-  [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
-  (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading" tabindex="0" role="button">
-  <div class="sb--card__main-area">
-    <!-- card img -->
-    <div class="sb--card__img">
-      <div class="img-container">
-        <img [src]="cardImg" alt="">
-      </div>
-    </div>
-    <!-- card mobile view details -->
-    <div class="sb--card__info">
-        <div class="sb--card__meta1">
-          <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}"><bdi>{{content?.name}}</bdi></h4>
-          <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
-        </div>
-      
-      <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-        <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
-        <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
-        <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- content for only desktop -->
+  <mat-card role="link" tabindex="0" class="mat-card-v1" [ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
+  (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading" tabindex="0">
+  <mat-card-header>
+    <div mat-card-avatar> <img [src]="cardImg"> </div>
+    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two">{{content?.name}}</mat-card-title>
+    <mat-card-subtitle class="mat-small sb__ellipsis sb__ellipsis--two m-0" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
+      <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
+      <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
+      <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
+    </mat-card-subtitle>
+    <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- content for only desktop -->
   <div *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
-    <div class="sb--card__moreinfo">
+    <div class="d-flex flex-ai-center flex-jc-space-between mat-card-info">
       <!-- other meta info Medium, Organization etc -->
-      <div class="sb--card__meta2 text-left">
-        <div class="sb--card__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
-            {{content?.medium}}</span></div>
-        <div class="sb--card__org sb__ellipsis" *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div>
+      <div class="text-left mat-small">
+        <div *ngIf="content?.medium">
+          <span>{{moreInfoLabel}}: {{content?.medium}}</span>
+        </div>
+        <div *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div>
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
-      <div class="sb--card__tags">
-        <span class="sb--card__badge" *ngIf="content?.badgeAssertions"><img
-            [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" /></span>
-        <span class="sb--card__type" *ngIf="content?.resourceType">{{content?.resourceType}}</span>
+      <div class="mat-card__badge d-flex">
+        <img *ngIf="content?.badgeAssertions" class="mr-8"
+            [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" />
+        <span class="mat-card__type" *ngIf="content?.resourceType">{{content?.resourceType}}</span>
       </div>
     </div>
     <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
-          <button class="sb-btn sb-btn-primary sb-btn-normal w-100 border-top-r-left-right">
-            <i class="icon-svg icon-svg--xxs icon-videos mr-4">
-              <svg class="icon icon-svg--white">
-                <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
-              </svg>
-            </i> {{btnlabel}} </button>
+      <button mat-raised-button color="accent" class="w-100 button-label">
+        <mat-icon class="mr-4">play_circle</mat-icon>
+        {{btnlabel}}
+      </button>
     </div>
   </div>
 
-  <!-- Qr code card -->
-  <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
+   <!-- Qr code card -->
+   <div *ngIf="type === LibraryCardTypes.QRCODE_RESULT">
     <!-- Section area if not available it will be hidden -->
-    <div class="sb--card__moreinfo" *ngIf="section !== null">
-      <div class="sb--card__meta2 text-left">
-        <div class="sb--card__meta2_data sb__ellipsis sb__ellipsis--two" *ngIf="section">
-          <span class="label">{{moreInfoLabel}}: </span>
-          <span class="value">{{section}}</span>
-        </div>
+    <div class="text-left mat-small" *ngIf="section !== null">
+      <div class="sb__ellipsis" *ngIf="section">
+        <span class="label">moreInfoLabel: </span>
+        <span class="value">section</span>
       </div>
     </div>
   </div>
@@ -69,43 +54,28 @@
   <ng-container
     *ngTemplateOutlet="gridTemplate; context: {$implicit: content?.hoverData, hoverData: content?.hoverData, content:content}"
     class="card-hover">
-
   </ng-container>
-</div>
+  </mat-card-content>
+</mat-card>
 
-  <div class="sb--card" *ngIf="isLoading" tabindex="0" role="button">
-      <div class="sb--card__main-area">
-          <!-- card img -->
-          <div class="sb--card__img">
-            <div class="img-container loading-animation">
-              
-            </div>
-          </div>
-          <!-- card mobile view details -->
-          <div class="sb--card__info">
-            <h4 class="sb--card__title loading-animation sb--card--highlighter"></h4>
-            <div class="sb--card__meta1 text-left">
-              <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
-            </div>
-          </div>
-        </div>
-        <div class="sb--card__moreinfo" style="display:block;" *ngIf="type === LibraryCardTypes.DESKTOP_TEXTBOOK || type === LibraryCardTypes.QRCODE_RESULT || type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
-              <div class="sb--card__meta2 text-left" style="float:left;width:60%">
-                <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
-                <div class="value loading-animation sb--card--highlighter" style="width:60%;"></div>
-              </div>
-              <div class="sb--card__tags" style="float:right;width:30%;margin-top: 15px;">
-                <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
-              </div>
-              <div style="clear:both;"></div>
-        </div>
-        <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
-          <div>
-            <div class="label loading-animation sb--card--highlighter" style="width:100%;"></div>
-          </div>
+<mat-card role="link" tabindex="0" class="mat-card-v1 w-100 h-100 d-flex flex-dc p-0 animationLoading" *ngIf="isLoading">
+  <mat-card-header>
+    <div mat-card-avatar> <div class="animation-highlight w-100" style="height:100%"> </div> </div>
+    <mat-card-title class="text-left animation-highlight w-60 mt-16"></mat-card-title>
+    <mat-card-subtitle class="text-left animation-highlight" style="width:40%"></mat-card-subtitle>
+    <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
+  </mat-card-header>
+  <mat-card-content class="m-0">
+    <div class="d-flex">
+      <div class="text-left px-16 pb-12">
+        <div class="animation-highlight mb-8" style="width:120px"></div>
+        <div class="animation-highlight" style="width:120px"></div>
       </div>
+    </div>
+  </mat-card-content>
+</mat-card>
 
-  </div>
+
 </span>
 <span *ngIf="layoutConfig">
     <ng-container *ngIf="(layoutConfig && !layoutConfig.layout) || layoutConfig.layout === 'v2'">

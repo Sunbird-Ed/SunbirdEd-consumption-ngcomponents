@@ -1,48 +1,23 @@
-<!-- card component -->
-<div class="sb--card sb--card--course" (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
-  <div class="sb--card__main-area">
-    <!-- card img -->
-    <div class="sb--card__img">
-      <div class="img-container">
-        <img [src]="cardImg" alt="">
-      </div>
-    </div>
-    <!-- card mobile view details -->
-    <div class="sb--card__info">
-        <div class="sb--card__meta1">
-            <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{course?.name}}">{{course?.name}}</h4>
-            <div *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></div>
-        </div>
-      <div class="sb--card__meta1 text-left">
-        <span class="data_1 sb__ellipsis sb__ellipsis--two" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName || course?.organisation?.join(', ')}}</span>
-      </div>
-    </div>
-  </div>
-  
-  <div>
-    <div class="sb--card__meta_c_data" *ngIf="section!=null" [innerHTML]="section">
-    </div>
-  </div>
+<mat-card role="link" tabindex="0" class="course-card" (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
+  <mat-card-header>
+    <div mat-card-avatar> <img [src]="cardImg"> </div>
+    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two mb-4" title="{{course?.name}}">{{course?.name}}</mat-card-title>
+    <mat-card-subtitle class="data_1 sb__ellipsis sb__ellipsis--two m-0" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName || course?.organisation?.join(', ')}}</mat-card-subtitle>
+    <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="p-8" *ngIf="section!=null" [innerHTML]="section"></div>
+  </mat-card-content>
+</mat-card>
 
-</div>
-
-  <div class="sb--card" *ngIf="isLoading">
-      <div class="sb--card__main-area">
-          <!-- card img -->
-          <div class="sb--card__img">
-            <div class="img-container loading-animation">
-              
-            </div>
-          </div>
-          <!-- card mobile view details -->
-          <div class="sb--card__info">
-            <h4 class="sb--card__title loading-animation sb--card--highlighter"></h4>
-            <div class="sb--card__meta1 text-left">
-              <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
-            </div>
-          </div>
-        </div>
-        <div class="sb--card__meta_c_data" style="display:none;">
-            <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
-        </div>
-  </div>
+<mat-card role="link" tabindex="0" class="course-card animationLoading" (click)="onClick($event)" *ngIf="isLoading" tabindex="0">
+  <mat-card-header>
+    <div mat-card-avatar> <div class="animation-highlight w-100" style="height:100%"> </div> </div>
+    <mat-card-title class="animation-highlight" style="width:150px"></mat-card-title>
+    <mat-card-subtitle class="animation-highlight" style="width:120px"></mat-card-subtitle>
+    <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
+  </mat-card-header>
+  <mat-card-content class="p-8">
+    <div class="animation-highlight mb-8" style="width:120px"></div>
+  </mat-card-content>
+</mat-card>
