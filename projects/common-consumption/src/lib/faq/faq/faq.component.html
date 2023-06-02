@@ -1,8 +1,8 @@
 
 <mat-accordion>
-  <mat-expansion-panel class="mat-app-background2" (opened)="panelOpenState = true" (closed)="panelOpenState = false" attr.aria-expanded="{{isGroupShown(i)}}" *ngFor="let faq of faqs; let i = index">
+  <mat-expansion-panel class="mat-app-background2" (opened)="panelOpenState = true" role="button" (closed)="panelOpenState = false" [attr.aria-expanded]="panelOpenState === true ? true : false" *ngFor="let faq of faqs; let i = index">
     <mat-expansion-panel-header>
-      <mat-panel-title [ngClass]="panelOpenState === true ? 'color-accent' : ''">
+      <mat-panel-title [ngClass]="panelOpenState ? 'color-accent' : ''">
         {{faq?.topic}}
       </mat-panel-title>
       <!-- <mat-panel-description>
