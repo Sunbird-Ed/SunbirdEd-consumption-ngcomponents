@@ -13,6 +13,7 @@ import { LibraryCardV4Component } from './components/library-card-v4/library-car
 import { MemberCardComponent } from './components/member-card/member-card.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { CourseCuriculumCardComponent } from './components/course-curiculum-card/course-curiculum-card.component';
+import { MyCourseCardComponent } from './components/my-course-card/my-course-card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CourseCuriculumCardComponent } from './components/course-curiculum-card
     LibraryCardV4Component,
     MemberCardComponent,
     CourseCardComponent,
-    CourseCuriculumCardComponent
+    CourseCuriculumCardComponent,
+    MyCourseCardComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { LibraryCardV3Component } from './components/library-card-v3/library-car
 import { LibraryCardV4Component } from './components/library-card-v4/library-card-v4.component';
 import { LibraryCardComponent } from './components/library-card/library-card.component';
 import { MemberCardComponent } from './components/member-card/member-card.component';
+import { MyCourseCardComponent } from './components/my-course-card/my-course-card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { MemberCardComponent } from './components/member-card/member-card.compon
       { path: 'course-card', component: CourseCardComponent },
       { path: 'course-curiculum-card', component: CourseCuriculumCardComponent },
       { path: 'home', component: HomeComponent },
-      { path: '**', redirectTo: 'home' }
+      { path: 'my-course-card', component: MyCourseCardComponent },
+      { path: '**', redirectTo: 'home' },
+      
     ])
   ],
   exports: [

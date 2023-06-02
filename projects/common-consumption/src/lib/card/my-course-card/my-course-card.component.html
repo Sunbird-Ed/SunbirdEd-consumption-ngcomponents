@@ -1,61 +1,38 @@
-<!-- card component -->
-<div class="sb--card sb--card--course" [ngClass]="{'sb--card--recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
+<mat-card role="link" tabindex="0" class="my-course-card" [ngClass]="{'recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
-  <div class="sb--card__main-area">
-    <!-- card img -->
-    <div class="sb--card__img">
-      <div class="img-container">
-        <img [src]="cardImg" alt="">
-      </div>
-    </div>
-    <!-- card mobile view details -->
-    <div class="sb--container-box">
-      <div class="sb--card__info">
-        <div class="sb--holder">
-          <h4 class="sb--card__title sb__ellipsis  sb__ellipsis--three text-left" title="{{course?.courseName}}">{{course?.courseName}}</h4>
-          <div class="sb--card__meta1 text-left" *ngIf="course?.content?.orgDetails?.orgName">
-            <span class="data_1 ellipsis" title="{{course?.content?.orgDetails?.orgName}}"> <span *ngIf="publishedByText">{{publishedByText}} : </span> {{course?.content?.orgDetails?.orgName}}</span>
-          </div>
-        </div>
-      </div>
-      <div class="sb--card__progressbar" *ngIf="type === CourseCardTypes.RECENTLY_VIEWED && !hideProgress">
-        <span [ngStyle]="fetchProgress()"></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- content for only desktop -->
-  <div *ngIf="type != CourseCardTypes.RECENTLY_VIEWED">
-    <div class="sb--card__meta_c_data" *ngIf="section!=null" [innerHTML]="section">
-    </div>
-  </div>
-  <div class="sb--card__progressbar" *ngIf="type != CourseCardTypes.RECENTLY_VIEWED && !hideProgress">
+  <mat-card-header>
+    <div mat-card-avatar> <img [src]="cardImg"> </div>
+    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two mb-4" title="{{course?.courseName}}">{{course?.courseName}}</mat-card-title>
+    <mat-card-subtitle class="mat-body-1 sb__ellipsis sb__ellipsis--two m-0" *ngIf="course?.content?.orgDetails?.orgName">
+      <span *ngIf="publishedByText">{{publishedByText}} : </span> {{course?.content?.orgDetails?.orgName}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="mat-card__progressbar" *ngIf="type === CourseCardTypes.RECENTLY_VIEWED && !hideProgress">
       <span [ngStyle]="fetchProgress()"></span>
     </div>
+    <div *ngIf="type != CourseCardTypes.RECENTLY_VIEWED">
+      <div class="mat-body-1 px-8" *ngIf="section!=null" [innerHTML]="section">
+      </div>
+    </div>
+    <div class="mat-card__progressbar" *ngIf="type != CourseCardTypes.RECENTLY_VIEWED && !hideProgress">
+        <span [ngStyle]="fetchProgress()"></span>
+    </div>
+    <div *ngIf="type == CourseCardTypes.RECENTLY_VIEWED">
+      <div class="mat-body-1 px-8" *ngIf="section!=null" [innerHTML]="section">
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
 
-</div>
-<div *ngIf="type == CourseCardTypes.RECENTLY_VIEWED">
-  <div class="sb--card__meta_c_data_external" *ngIf="section!=null" [innerHTML]="section">
-  </div>
-</div>
+<mat-card role="link" tabindex="0" class="course-card animationLoading" (click)="onClick($event)" *ngIf="isLoading" tabindex="0">
+  <mat-card-header>
+    <div mat-card-avatar> <div class="animation-highlight w-100" style="height:100%"> </div> </div>
+    <mat-card-title class="animation-highlight" style="width:150px"></mat-card-title>
+    <mat-card-subtitle class="animation-highlight" style="width:120px"></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="p-8">
+    <div class="animation-highlight mb-8" style="width:120px"></div>
+  </mat-card-content>
+</mat-card>
 
-  <div class="sb--card sb--card--course" [ngClass]="{'sb--card--recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}" *ngIf="isLoading">
-      <div class="sb--card__main-area">
-          <!-- card img -->
-          <div class="sb--card__img">
-            <div class="img-container loading-animation">
-              
-            </div>
-          </div>
-          <!-- card mobile view details -->
-          <div class="sb--card__info">
-            <h4 class="sb--card__title loading-animation sb--card--highlighter"></h4>
-            <div class="sb--card__meta1 text-left">
-              <span class="data_1 ellipsis loading-animation sb--card--highlighter"></span>
-            </div>
-          </div>
-        </div>
-        <div class="sb--card__meta_c_data" style="display:none;">
-            <div class="label loading-animation sb--card--highlighter" style="width:80%;"></div>
-        </div>
-  </div>
