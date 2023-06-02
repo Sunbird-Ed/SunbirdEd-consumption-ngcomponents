@@ -1,22 +1,24 @@
-<div>
-  <div class="carousel_title mb-16" *ngIf="title">{{title}}</div>
-  <div *ngIf="subTitle">{{subTitle}}</div>
 
+  <div class="mat-title mb-8" *ngIf="title">{{title}}</div>
+  <div class="mat-body-2" *ngIf="subTitle">{{subTitle}}</div>
   <div #carouselContainer class="carousel-container">
     <div class="carousel-scroller">
       <div class="carousel-card" *ngFor="let item of listData; let i = index;" (click)="onItemSelect($event, item, i)" tabindex="0">
         <div class="black-layer"></div>
         <img *ngIf="item?.thumbnail" src="{{item?.thumbnail}}" alt="">
         <div class="carousel-meta">
-          <p class="sb__ellipsis sb__ellipsis--one" *ngIf="item?.name">{{item?.name}}</p>
-          <div>
+          <p class="sb__ellipsis sb__ellipsis--one mat-body-2" *ngIf="item?.name">{{item?.name}}</p>
+          <button mat-mini-fab class="play-btn" attr.aria-label="play {{item?.name}}"><mat-icon>play_arrow</mat-icon></button>
+          <!-- <div>
             <img src="assets/common-consumption/images/play-btn.svg" alt="Play {{item?.name}}">
             <span>Play</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
-    <button class="carousel-btn prev" (click)="scrollToPrevPage()" tabindex="0">
+    <button mat-mini-fab class="carousel-btn prev" color="warn" (click)="scrollToPrevPage()" aria-label="Scroll to left"><mat-icon>chevron_left</mat-icon></button>
+    <button mat-mini-fab class="carousel-btn next" color="warn" (click)="scrollToNextPage()"  aria-label="Scroll to right"><mat-icon>chevron_right</mat-icon></button>
+    <!-- <button class="carousel-btn prev" (click)="scrollToPrevPage()" tabindex="0">
       <i class="icon-svg icon-svg--lg">
         <svg class="icon">
             <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-round-right"></use>
@@ -29,7 +31,5 @@
             <use xlink:href="assets/common-consumption/images/sprite.svg#arrow-round-right"></use>
         </svg>
     </i>
-    </button>
+    </button> -->
   </div>
-
-</div>

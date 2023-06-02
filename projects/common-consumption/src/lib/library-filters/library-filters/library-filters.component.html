@@ -18,31 +18,18 @@
         <!-- Player page content filters -->
     <div *ngIf="layout === LibraryFiltersLayout.ROUND_WITH_ICONS" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-grade-pills-container" id="gradeScroll">
-            <div class="pill rounded rounded-with-icon" *ngFor="let item of filterList; let i = index;" role="tab" attr.aria-selected="{{item?.selected}}"
-                [ngClass]="{'active': item?.selected}" attr.id="mimeType{{i}}" (click)="selectMimeFilter($event, i)" tabindex="0">
-                <ng-container *ngIf="item?.type === TocMimeTypes.VIDEO ">
-                    <i class="icon-svg icon-svg--xs icon-videos" >
-                        <svg class="icon icon-svg--primary">
-                            <use xlink:href="assets/common-consumption/images/sprite.svg#play"></use>
-                        </svg>
-                    </i>
-                </ng-container>
-                <ng-container *ngIf="item?.type === TocMimeTypes.DOCS ">
-                    <i class="icon-svg icon-svg--xs icon-docs" >
-                        <svg class="icon icon-svg--primary">
-                            <use xlink:href="assets/common-consumption/images/sprite.svg#doc"></use>
-                        </svg>
-                    </i>
-                </ng-container>
-                <ng-container *ngIf="item?.type === TocMimeTypes.INTERACTIVE ">
-                    <i class="icon-svg icon-svg--xs icon-touch" >
-                        <svg class="icon icon-svg--primary">
-                            <use xlink:href="assets/common-consumption/images/sprite.svg#touch"></use>
-                        </svg>
-                    </i>
-                </ng-container>
-                <span class="name">{{item.text}}</span>
-            </div>
+            <button mat-raised-button [color]="item?.selected ? 'accent' : ''" class="button-rounded mr-8" *ngFor="let item of filterList; let i = index;" role="tab" attr.aria-selected="{{item?.selected}}" attr.id="mimeType{{i}}" (click)="selectMimeFilter($event, i)" tabindex="0">
+            <ng-container *ngIf="item?.type === TocMimeTypes.VIDEO ">
+                <mat-icon>play_arrow</mat-icon>
+             </ng-container>
+             <ng-container *ngIf="item?.type === TocMimeTypes.DOCS ">
+                 <mat-icon>description</mat-icon>
+             </ng-container>
+             <ng-container *ngIf="item?.type === TocMimeTypes.INTERACTIVE ">
+                 <mat-icon>touch_app</mat-icon>
+             </ng-container>
+             <span class="name mat-body-2">{{item.text}}</span>
+            </button>
         </div>
     </div>
 </div>

@@ -229,8 +229,6 @@ p{
     text-align: center;
 }
 
-
-
 .panel-info{
     text-align: center;
     max-width: calculateRem(1024px);
@@ -338,9 +336,7 @@ img>.report-button{
     text-align: justify;
 
 }
- #know-more-form{
-        margin: 0px calculateRem(16px);
-    }
+
 @media only screen and (min-width : 768px) {
     .send-email-form{
         max-width: calculateRem(1025px);
@@ -404,9 +400,9 @@ a:active, a:hover{
     color: none;
 }
 
-.extraTemplate {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 18px;
+
+
+
+ul {
+    margin-top:1rem;
 }
