@@ -1,4 +1,4 @@
-<div class="sb-members-list-item sb-members-list-item--{{config.size}} sb-members-list-item--{{config.view}}"
+<!-- <div class="sb-members-list-item sb-members-list-item--{{config.size}} sb-members-list-item--{{config.view}}"
 [ngClass]="{'sb-members-list-item--bold': config.isBold, 'selectElement': config.isSelectable && selected}" 
 *ngIf="!isLoading" (click)="onClick($event)" tabindex="0">
     <div class="sb-member text-left">
@@ -21,14 +21,53 @@
       </div>
     <div *ngIf="progressDisplay === '100'" class="progress-circle progress-circle--{{config?.progressSize}} progress-circle--success"><img class="icon_progress_check" alt="" src="assets/common-consumption/images/completed.svg"></div>
   </div>
-</div>
+</div> -->
 
 <!--Loading Indicator -->
-<div class="sb-members-list-item sb-members-list-item--{{config.size}} sb-members-list-item--{{config.view}}"
+<!-- <div class="sb-members-list-item sb-members-list-item--{{config.size}} sb-members-list-item--{{config.view}}"
 [ngClass]="{'sb-members-list-item--bold': config.isBold, 'selectElement': config.isSelectable && selected}" *ngIf="isLoading">    
     <div class="sb-member mr-8">
         <div class="sb-member__img loading-animation"></div>
         <label class="sb-member__name loading-animation sb--card--highlighter"></label>   
     </div>
-</div>
+</div> -->
+
+<mat-card role="link" tabindex="0" class="member-card member-card--{{config.size}} member-card--{{config.view}}"
+[ngClass]="{'member-card--bold': config.isBold, 'selectElement': config.isSelectable && selected}" *ngIf="isLoading">
+  <mat-card-header>
+    <div mat-card-avatar class="loading-animation"></div>
+    <mat-card-title class="loading-animation sb--card--highlighter"></mat-card-title>
+  </mat-card-header>
+</mat-card>
+
+<mat-card role="link" tabindex="0" class="member-card member-card--{{config.size}} member-card--{{config.view}}"
+  [ngClass]="{'member-card--bold': config.isBold, 'selectElement bgcolor-accent': config.isSelectable && selected}" *ngIf="!isLoading"
+  (click)="onClick($event)" tabindex="0">
+  <mat-card-header>
+    <div mat-card-avatar [ngStyle]="fetchStyle()"><span>{{initial}}</span></div>
+    <mat-card-title>{{title}}</mat-card-title>
+    <div class="d-flex flex-ai-center pr-8 ml-auto" *ngIf="config.view == 'horizontal'">
+      <div *ngIf="isAdmin || isMenu" class="d-flex flex-ai-center">
+        <div [style.visibility]="isAdmin ? 'visible' : 'hidden'" class="status"
+          (click)="onClick($event);$event.stopPropagation();">Admin</div>
+        <div [style.visibility]="isMenu ? 'visible' : 'hidden'" class="menu ml-8" tabindex="0"
+          (click)="onMenuClick($event);$event.stopPropagation();"></div>
+      </div>
+      <div *ngIf="!isMenu && cardImg!=null" tabindex="0" (click)="onMenuClick($event);$event.stopPropagation();"><img
+          [src]="cardImg" alt=""></div>
+      <div *ngIf="config.isSelectable && selected" class="selected ml-8"><mat-icon>check_circle</mat-icon></div>
+      <div *ngIf="progressDisplay && progressDisplay !== '100'"
+        class="ml-8 progress-circle progress-circle--{{config?.progressSize}}" [attr.data-percentage]="progressDisplay">
+        <svg class="progress-circle__svg" viewport="0 0 2000 2000">
+          <circle class="progress-circle__stroke" r="50%" cx="50%" cy="50%"></circle>
+          <circle class="progress-circle__stroke" r="50%" cx="50%" cy="50%"></circle>
+        </svg>
+        <span>{{progressDisplay}}%</span>
+      </div>
+      <div *ngIf="progressDisplay === '100'"
+        class="progress-circle progress-circle--{{config?.progressSize}} progress-circle--success"><img
+          class="icon_progress_check" alt="" src="assets/common-consumption/images/completed.svg"></div>
+    </div>
+  </mat-card-header>
+</mat-card>
 
