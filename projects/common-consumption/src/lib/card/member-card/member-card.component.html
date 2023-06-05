@@ -41,7 +41,7 @@
 </mat-card>
 
 <mat-card role="link" tabindex="0" class="member-card member-card--{{config.size}} member-card--{{config.view}}"
-  [ngClass]="{'member-card--bold': config.isBold, 'selectElement': config.isSelectable && selected}" *ngIf="!isLoading"
+  [ngClass]="{'member-card--bold': config.isBold, 'selectElement bgcolor-accent': config.isSelectable && selected}" *ngIf="!isLoading"
   (click)="onClick($event)" tabindex="0">
   <mat-card-header>
     <div mat-card-avatar [ngStyle]="fetchStyle()"><span>{{initial}}</span></div>
@@ -55,8 +55,7 @@
       </div>
       <div *ngIf="!isMenu && cardImg!=null" tabindex="0" (click)="onMenuClick($event);$event.stopPropagation();"><img
           [src]="cardImg" alt=""></div>
-      <div *ngIf="config.isSelectable && selected" class="selected ml-8"><img class="icon_select" alt=""
-          src="assets/common-consumption/images/selected.svg" /></div>
+      <div *ngIf="config.isSelectable && selected" class="selected ml-8"><mat-icon>check_circle</mat-icon></div>
       <div *ngIf="progressDisplay && progressDisplay !== '100'"
         class="ml-8 progress-circle progress-circle--{{config?.progressSize}}" [attr.data-percentage]="progressDisplay">
         <svg class="progress-circle__svg" viewport="0 0 2000 2000">

@@ -184,9 +184,6 @@
       cursor: pointer;
       background-color: inherit;
       transition: all ease-in .3s;
-      &:hover {
-        transform: scale(1.02);
-      }
 
       .mat-card-header {
         display: flex;
@@ -243,7 +240,7 @@
       }
 
       &--vertical {
-        padding: 0;
+        padding: .5rem 0;
         .mat-card-header {
           flex-direction: column;
         }
