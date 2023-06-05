@@ -27,7 +27,9 @@
       <div class="mat-card__badge d-flex">
         <img *ngIf="content?.badgeAssertions" class="mr-8"
             [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" />
-        <span class="mat-card__type" *ngIf="content?.resourceType">{{content?.resourceType}}</span>
+        <span class="mat-card__type" *ngIf="content?.resourceType">
+         <span class="sb__ellipsis" title="{{content?.resourceType}}">{{content?.resourceType}}</span>
+        </span>
       </div>
     </div>
     <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
@@ -48,7 +50,7 @@
       </div>
     </div>
   </div>
-  <!-- <ng-content select=".card-hover">
+   <!-- <ng-content select=".card-hover">
     
   </ng-content> -->
   <ng-container
@@ -62,7 +64,7 @@
   <mat-card-header>
     <div mat-card-avatar> <div class="animation-highlight w-100" style="height:100%"> </div> </div>
     <mat-card-title class="text-left animation-highlight w-60 mt-16"></mat-card-title>
-    <mat-card-subtitle class="text-left animation-highlight" style="width:40%"></mat-card-subtitle>
+    <mat-card-subtitle class="text-left animation-highlight mt-16" style="width:40%"></mat-card-subtitle>
     <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
   </mat-card-header>
   <mat-card-content class="m-0">
