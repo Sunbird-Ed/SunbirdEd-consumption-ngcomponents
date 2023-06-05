@@ -8,6 +8,7 @@ import { TocChildItemComponent } from './toc-child-item/toc-child-item.component
 import { PipesModule } from '../pipes-module/pipes-module.module';
 import { TocCurriculumComponent } from './toc-curriculum/toc-curriculum.component';
 import { FormsModule } from '@angular/forms';
+import { MaterialExampleModule } from './../material.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     AccordionModule,
     CardModule,
     PipesModule,
-    FormsModule
+    FormsModule,
+    MaterialExampleModule
   ],
   exports: [
     PlayerActionsComponent,

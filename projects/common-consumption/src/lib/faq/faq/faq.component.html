@@ -1,4 +1,52 @@
-<div class="panel panel-default cc-faq-panel" *ngFor="let faq of faqs; let i = index">
+
+<mat-accordion>
+  <mat-expansion-panel class="mat-app-background2" (opened)="panelOpenState = true" role="button" (closed)="panelOpenState = false" [attr.aria-expanded]="panelOpenState === true ? true : false" *ngFor="let faq of faqs; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title [ngClass]="panelOpenState ? 'color-accent' : ''">
+        {{faq?.topic}}
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <!-- *ngIf="isGroupShown(i)" -->
+    <div>
+    <div class="text-left mat-body-2 mb-16" [innerHtml]="faq.description"></div>
+    <fieldset *ngIf="!isNoClicked && !isYesClicked">
+      <legend class="mat-body-2 my-8 pb-0 text-center">{{data?.constants?.helpMsg}}&lrm;</legend>
+      <div class="d-flex flex-jc-center">
+        <button mat-raised-button type="button" class="button-rounded mr-8 color-warn hover-bgcolor-warn" attr.aria-label="{{data?.constants?.noMsg}}" id="btn-no"
+          (click)="noClicked(i,$event)" tabindex="0">{{data?.constants?.noMsg}}</button>
+        <button mat-raised-button type="button" class="button-rounded color-success hover-bgcolor-success" attr.aria-label="{{data?.constants?.yesMsg}}" id="btn-yes"
+          (click)="yesClicked(i,$event)" tabindex="0">{{data?.constants?.yesMsg}}</button>
+        </div>
+    </fieldset>
+    <!-- *ngIf="isYesClicked || isSubmitted" -->
+    <fieldset *ngIf="isYesClicked || isSubmitted">
+      <legend tabindex="0" id="yes-clicked" class="mat-title my-16 pb-0 text-center color-success"> {{data?.constants?.thanksMsg}}</legend>
+      <div *ngIf="isNoClicked && isSubmitted && extraTemplate" class="d-flex flex-ai-center">
+        <ng-container *ngTemplateOutlet="extraTemplate">
+        </ng-container>
+      </div>
+    </fieldset>
+    <div class="d-flex flex-dc mt-16" *ngIf="!isSubmitted && isNoClicked">
+      <h6 id="no-clicked" class="mat-body-2 mb-8" tabindex="0">{{data?.constants?.sorryMsg}}</h6>
+      <form action="#" id="know-more-form" class="d-flex flex-dc m-0" *ngIf="!isSubmitted">
+        <mat-form-field color="accent" appearance="fill">
+          <mat-label for="knowMoreMsg">{{data?.constants?.knowMoreMsg}}</mat-label>
+          <textarea matInput id="knowMoreMsg" name="moreInfo" placeholder="{{constants?.typeHere}}" maxlength="1000"
+          [(ngModel)]="textValue"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit" class="button-rounded ml-auto" (click)="submitClicked(textValue,i,$event)">{{constants?.submitButton}}</button>
+      </form>
+      <p class="mat-title color-accent text-center my-16" hidden="true" *ngIf="isSubmitted">{{data?.constants?.thanksMsg}}</p>
+    </div>
+  </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+<div class="panel panel-default cc-faq-panel hide hidden" *ngFor="let faq of faqs; let i = index">
   <div data-toggle="collapse" role="button" attr.aria-expanded="{{isGroupShown(i)}}" (click)="toggleGroup(i,$event)" tabindex="0">
     <div class="panel-heading">
       <div class="text-left" [ngClass]="{'panel-title': !isGroupShown(i), 'panel-title-blue': isGroupShown(i)}">
