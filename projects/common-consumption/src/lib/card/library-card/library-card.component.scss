@@ -16,7 +16,7 @@
 }
 
 ::ng-deep :root {
-  --cc-mat-card-type-bg:#999;
+  --cc-mat-card-type-bg:#000;
   --cc-mat-card-type:#fff;
   --cc-mat-card-title: #024f9d;
   --cc-mat-card-selected-bg: rgba(2, 79, 157, 0.2);
@@ -31,6 +31,7 @@
     cursor: pointer;
     box-shadow: var(--sbt-box-shadow-6px)!important;
     padding: 0;
+    border-radius: 1rem;
     .mat-card-header{
       margin-bottom: 0;
       display: flex;
@@ -65,10 +66,10 @@
       }
       .menu {
         position: absolute;
-        right: 1rem;
+        right: 0.5rem;
         html[dir='rtl'] & {
           right: auto;
-          left: 1rem;
+          left: 0.5rem;
         }
         &::after {
           content: '\2807';
@@ -93,7 +94,11 @@
       }
     }
     .mat-card-info{
-      padding: 0 0.5rem 0.5rem;
+      padding: 0 0 0.5rem 0.5rem;
+      min-height: 3.5rem;
+      html[dir='rtl'] & {
+        padding: 0 0.5rem 0.5rem 0;
+      }
     }
     .mat-card-content{
       margin-bottom: 1.5rem;
@@ -147,6 +152,10 @@
     &.offline{
       opacity: 0.5;
       cursor:initial
+    }
+    &:hover{
+      transform: translate(0);
+      box-shadow: 0 0.125rem 0.4375rem 0 rgba(var(--rc-rgba-black),.16) !important;
     }
   } 
 }
