@@ -95,9 +95,15 @@
   .mat-banner-card{
     width: 9.375rem;
     height: 12.125rem;
-    box-shadow: none !important;
+    box-shadow: var(--sbt-box-shadow-6px);
     padding: 2rem 1rem;
     border-radius: 1rem;
+    transition: .3s ease-in-out;
+    &:hover{
+      transform: translate(0, 0px) scale(0.95);
+      z-index: 99;
+      cursor: pointer;
+    }
     .mat-card-title{
       width: 100%;
       overflow: hidden;

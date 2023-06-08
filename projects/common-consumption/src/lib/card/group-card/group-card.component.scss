@@ -10,6 +10,10 @@
 ::ng-deep {
   .mat-card{
     &.group-card{
+      &:hover{
+        transform: translate(0);
+        box-shadow: 0 0.125rem 0.4375rem 0 rgba(var(--rc-rgba-black),.16) !important;
+      }
       cursor: pointer;
       position: relative;
       border-radius: 1rem;
