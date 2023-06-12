@@ -126,3 +126,11 @@
 
   }
 }
+
+::ng-deep{
+  .sb-avatar-cc .mat-button-wrapper {
+    scale: 3;
+    padding:0;
+    line-height: normal;
+  }
+}

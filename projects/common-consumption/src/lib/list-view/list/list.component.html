@@ -2,9 +2,8 @@
 <div class="mat-body-2" *ngIf="subTitle">{{subTitle}}</div>
 <mat-selection-list [multiple]="false">
   <mat-list-option class="selected-item" attr.aria-label="{{item.name}}" *ngFor="let item of listData; let i = index"
-    [ngClass]="{'selected-item': (i===selectedIndex)}" (click)="onItemSelect($event, item, i)" tabindex="0">
-    {{item.name}}
-    <!-- <mat-icon *ngIf="showRightArrow" class="ml-auto">arrow_drop_down</mat-icon> -->
+    [ngClass]="{'selected-item': (i===selectedIndex)}" (click)="onItemSelect($event, item, i)">
+    {{item.name}} <mat-icon *ngIf="showRightArrow" class="ml-auto">arrow_drop_down</mat-icon>
   </mat-list-option>
 </mat-selection-list>
 <button *ngIf="btnText" mat-raised-button class="mt-24 button-rounded w-100 color-accent hover-bgcolor-accent" (click)="onBtnClick($event)"

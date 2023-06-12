@@ -42,10 +42,10 @@
     }
   
     .status {
-      border: calculateRem(1px) solid var(--cc-members-list-item-status-br);
+      border: calculateRem(1px) solid;
       border-radius: calculateRem(2px);
       font-size: calculateRem(11px);
-      color: var(--cc-members-list-item-status-text);
+      // color: var(--cc-members-list-item-status-text);
       background-color: var(--cc-members-list-item-status-bg);
       padding: calculateRem(4px) calculateRem(8px);
     }
@@ -189,7 +189,14 @@
         display: flex;
         align-items: center;
       }
-
+      .status {
+        border: calculateRem(1px) solid;
+        border-radius: calculateRem(2px);
+        font-size: calculateRem(11px);
+        // color: var(--cc-members-list-item-status-text);
+        // background-color: var(--cc-members-list-item-status-bg);
+        padding: 0px calculateRem(8px);
+      }
       .mat-card-avatar {
         display: flex;
         align-items: center;

@@ -32,6 +32,7 @@ export class FaqComponent implements OnInit {
   ngOnInit() {
     this.constants = this.data.constants;
     this.faqs = this.data.faqs;
+    console.log(this.faqs);
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.data.faqs.length; i++) {
       if (this.data.faqs[i].topic.includes('{{APP_NAME}}')) {
@@ -76,6 +77,7 @@ isGroupShown(group) {
   }
 
 noClicked(i,event:MouseEvent) {
+  console.log(i);
     this.value = {};
     if (!this.isNoClicked) {
       this.isNoClicked = true;
@@ -92,6 +94,7 @@ noClicked(i,event:MouseEvent) {
   }
 
 yesClicked(i,event:MouseEvent) {
+  console.log(i);
   this.value = {};
   if (!this.isYesClicked) {
     this.isYesClicked = true;
