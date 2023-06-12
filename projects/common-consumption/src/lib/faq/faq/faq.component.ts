@@ -27,7 +27,6 @@ export class FaqComponent implements OnInit {
   value: any;
   textValue: any;
   panelOpenState = false;
-  expandStatus = false;
   constructor() { }
 
   ngOnInit() {
