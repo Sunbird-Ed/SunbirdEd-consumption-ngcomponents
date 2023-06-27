@@ -1,29 +1,25 @@
 <div class="select-template-container d-flex flex-ai-center flex-jc-center flex-dc mb-16">
   <div class="select-template-container__content">
     <div class="template-checkbox">
-      <img *ngIf="isSelectedTemplate" src="assets/common-consumption/images/checked-icon.svg" width="18px" height="18px" alt="">
+      <mat-icon *ngIf="isSelectedTemplate" class="color-success">check_box</mat-icon>
     </div>
     <div class="template-image">
       <embed [src]="templateUrl" class="template-img" type="image/svg+xml" /></div>
   </div>
   <div [ngClass]="{'overlay-container': showOverlay}">
     <div class="d-flex flex-ai-center flex-jc-center flex-dc overlay-buttons">
-      <button type="button" *ngIf="select?.show" (click)="onButtonClick($event, select?.name)" tabindex="0"
-        class="d-flex sb-btn sb-btn-normal sb-btn-no-border mb-16">
-        <img src="assets/common-consumption/images/select-icon.svg" width="16px" height="16px" class="mr-8" alt="">
-        <span class="sb-color-primary font-weight-bold">{{select?.label}}</span>
+      <button type="button" mat-raised-button color="accent" *ngIf="select?.show" (click)="onButtonClick($event, select?.name)" tabindex="0"
+        class="button-rounded mb-16"><mat-icon class="mr-8" fontIcon="verified"></mat-icon>{{select?.label}}
       </button>
 
-      <button type="button" *ngIf="remove?.show" (click)="onButtonClick($event, remove?.name)" tabindex="0"
-        class="d-flex sb-btn sb-btn-normal sb-btn-no-border mb-16">
-        <img src="assets/common-consumption/images/bin.svg" width="16px" height="16px" class="mr-8" alt="">
-        <span class="sb-color-error font-weight-bold">{{remove?.label}}</span>
+      <button type="button" mat-raised-button color="warn" *ngIf="remove?.show" (click)="onButtonClick($event, remove?.name)" tabindex="0"
+        class="button-rounded mb-16">
+        <mat-icon class="mr-8" fontIcon="delete"></mat-icon>{{remove?.label}}
       </button>
 
-      <button type="button" *ngIf="preview?.show" (click)="onButtonClick($event, preview?.name)" tabindex="0"
-        class="d-flex sb-btn sb-btn-normal sb-btn-no-border">
-        <img src="assets/common-consumption/images/preview-icon.svg" width="14px" height="14px" class="mr-8" alt="">
-        <span class="sb-color-primary font-weight-bold">{{preview?.label}}</span></button>
+      <button type="button" *ngIf="preview?.show"  color="accent" (click)="onButtonClick($event, preview?.name)" tabindex="0"
+        class="button-rounded">
+        <mat-icon class="mr-8" fontIcon="fullscreen"></mat-icon>{{preview?.label}}</button>
     </div>
   </div>
 </div>

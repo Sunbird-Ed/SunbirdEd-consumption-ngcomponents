@@ -1,7 +1,78 @@
 <div *ngFor="let item of tocData?.children; let index = index;">
   <ng-container *ngIf="(item | hasMimeType: activeMimeTypeFilter) || this.accordianConfig.expandBehavior === ExpandBehavior.NONE">
   <div *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && !(item?.contentData?.trackable?.enabled === 'Yes' || item?.trackable?.enabled === 'Yes')">
-    <sb-accordion [multi]="false" [id]="item.identifier">
+   
+
+<mat-accordion [id]="item.identifier">
+  <mat-expansion-panel class="mat-app-background mb-16" role="button">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div class="mr-8 progress-circle progress-circle--xs hide" data-percentage="35">
+          <svg class="progress-circle__svg" viewport="0 0 2000 2000">
+            <circle class="progress-circle__stroke" r="50%" cx="50%" cy="50%"></circle>
+            <circle class="progress-circle__stroke" r="50%" cx="50%" cy="50%"></circle>
+          </svg>
+          <span></span>
+        </div>
+        <mat-checkbox color="accent" *ngIf="selectMode" (change)="onItemSelect(item)" [(ngModel)]="item.selected" type="checkbox" name="example"><span class="mat-subheading-1 mb-0">{{item?.name}}</span></mat-checkbox>
+      <span *ngIf="!selectMode" class="mat-subheading-1 mb-0">{{item?.name}}</span>
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <div *ngIf="isShowBody(item, index)">
+      <div *ngIf="item && (item | hasMimeType: activeMimeTypeFilter);else noContent" #chapterContainer>
+        <ng-container *ngIf="item?.children?.length">
+          <ng-container *ngFor="let child of item?.children; let j = index;">
+            {{ createUniqueId(item, child) }}
+            <div class="sbchapter"
+              *ngIf="recogniseCollection && filterChildren(child) && child.item?.contentType === 'TextBook'">
+              <sb-my-course-card [type]="'recently_viewed'"></sb-my-course-card>
+            </div>
+            <div class="sbchapter"
+              *ngIf="recogniseCollection && filterChildren(child) && child.item?.contentType === 'Course'">
+              <sb-my-course-card [type]="'recently_viewed'"></sb-my-course-card>
+            </div>
+            <div class="list-container" *ngIf="filterChildren(child)" [id]="child.identifier">
+              <ng-container *ngIf="isFlattenedType(child) === FlattenedType.EXPAND">
+                <sb-toc-child-item *ngIf="type" [type]="type" [contentStatus]="contentStatus" [childData]="child"
+                  [activeMimeTypeFilter]="activeMimeTypeFilter" [activeContent]="activeContent" [platform]="platform"
+                  (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+                  [trackableDefaultImage]="trackableDefaultImage">
+                </sb-toc-child-item>
+                <sb-toc-child-item *ngIf="!type" [childData]="child" [activeMimeTypeFilter]="activeMimeTypeFilter"
+                  [activeContent]="activeContent" (tocCardClick)="onTocCardClick($event)" [playBtnConfig]="playBtnConfig"
+                  (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
+                </sb-toc-child-item>
+              </ng-container>
+
+              <ng-container *ngIf="isFlattenedType(child) === FlattenedType.COLLAPSE">
+                <sb-toc-card *ngIf="type" [type]="type" [content]="child" (tocCardClick)="onTocCardClick($event)"
+                  [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+                  [trackableDefaultImage]="trackableDefaultImage" [platform]="platform">
+                </sb-toc-card>
+                <sb-toc-card *ngIf="!type" [content]="child" (tocCardClick)="onTocCardClick($event)"
+                  [activeContent]="activeContent" [playBtnConfig]="playBtnConfig" (playButtonClick)="onPlayButtonClick($event)"
+                  [trackableDefaultImage]="trackableDefaultImage" [platform]="platform">
+                </sb-toc-card>
+              </ng-container>
+
+            </div>
+          </ng-container>
+        </ng-container>
+        <ng-container *ngIf="item?.mimeType === MimeTypeMasterData?.COLLECTION && !item?.children?.length">
+          <div class="mat-body-2 sb-color-gray-400 text-center">{{noContentMessage}}</div>
+        </ng-container>
+      </div>
+      <ng-template #noContent>
+        <div class="mat-body-2 sb-color-gray-400 text-center">{{noContentMessage}}</div>
+      </ng-template>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+    <sb-accordion class="hide hidden" [multi]="false" [id]="item.identifier">
       <sb-accordion-item #sbAccordionItem [expanded]="isExpanded(index, item)" (collapsedChange)="collapsedChangeHandler($event, sbAccordionItem);">
         {{ createUniqueId(tocData, item) }}
         <sb-accordion-header>
