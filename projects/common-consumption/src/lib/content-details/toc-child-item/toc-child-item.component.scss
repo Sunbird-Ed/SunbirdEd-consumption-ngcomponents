@@ -1,7 +1,6 @@
 @use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 
 .sbchapter__title {
-    font-size: calculateRem(14px);
     line-height: calculateRem(22px);
 }
 

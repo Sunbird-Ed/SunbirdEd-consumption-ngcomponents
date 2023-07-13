@@ -67,7 +67,7 @@
       .menu {
         position: absolute;
         right: 0.5rem;
-        html[dir='rtl'] & {
+        ::ng-deep html[dir='rtl'] & {
           right: auto;
           left: 0.5rem;
         }
@@ -96,7 +96,7 @@
     .mat-card-info{
       padding: 0 0 0.5rem 0.5rem;
       min-height: 3.5rem;
-      html[dir='rtl'] & {
+      ::ng-deep html[dir='rtl'] & {
         padding: 0 0.5rem 0.5rem 0;
       }
     }

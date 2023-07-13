@@ -13,7 +13,7 @@
 
 
 <mat-list class="1" role="list" *ngIf="type === TocCardType.TEXTBOOK">
-  <mat-list-item role="listitem" class="" (click)="onTocCardClick($event)"
+  <mat-list-item role="listitem" class="text-left" (click)="onTocCardClick($event)"
     attr.aria-pressed="{{activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}}" tabindex="0"
     [ngClass]="{'active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
 
@@ -53,7 +53,7 @@
 </div> -->
 
 <mat-list *ngIf="type === TocCardType.TRACKABLE" class="2" role="list">
-  <mat-list-item role="listitem" class=""
+  <mat-list-item role="listitem" class="text-left"
     attr.aria-pressed="{{activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}}"
     (click)="onTocCardClick($event)" tabindex="0"
     [ngClass]="{'active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier, 'sb-card-swap': swapCard(content)}">
@@ -99,7 +99,7 @@
 </div> -->
 
 <mat-list *ngIf="type === TocCardType.COURSE" class="3" role="list">
-  <mat-list-item role="listitem" (click)="onTocCardClick($event)" tabindex="0" class=""
+  <mat-list-item role="listitem" class="text-left" (click)="onTocCardClick($event)" tabindex="0"
     [ngClass]="[(activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier) ? 'active': '', isDisabled ? disabled: '']">
     <div class="sbchapter__img background-transparent" mat-list-icon
       [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">
@@ -151,7 +151,7 @@
 </div> -->
 
 <mat-list *ngIf="type === TocCardType.NON_TRACKABLE" class="4" role="list">
-  <mat-list-item role="listitem" (click)="onTocCardClick($event)" tabindex="0" class=""
+  <mat-list-item role="listitem" class="text-left" (click)="onTocCardClick($event)" tabindex="0"
     [ngClass]="[(activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier) ? 'active': '', isDisabled ? disabled: '']">
     <div class="sbchapter__img background-transparent" mat-list-icon
       [ngClass]="{'sbchapter__img--inprogress':isContentStarted}">

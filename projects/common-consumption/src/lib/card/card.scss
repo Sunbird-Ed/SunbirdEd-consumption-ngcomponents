@@ -216,17 +216,17 @@
     /* recently viewed card css */
     &--recently-viewed {
       .sb--card__img {
-        height: calculateRem(88px);
-        width: calculateRem(88px);
-        flex: 0 0 calculateRem(88px);
+        height: calculateRem(72px);
+        width: calculateRem(72px);
+        flex: 0 0 calculateRem(72px);
         margin: 0;
   
         .img-container {
           display: flex;
           align-items: center;
           background-color: var(--cc-sbcard-rv-img-container-bg);
-          height: calculateRem(88px);
-          width: calculateRem(88px);
+          height: calculateRem(72px);
+          width: calculateRem(72px);
           border-radius: 0rem;
         }
       }
