@@ -1,6 +1,6 @@
 <ng-container *ngIf="childData | hasMimeType: activeMimeTypeFilter">
   <div *ngIf="childData?.mimeType === 'application/vnd.ekstep.content-collection' && childData?.children" class="heading">
-    <h4 class="sbchapter__title text-left sb__ellipsis sb__ellipsis--two ml-16 mb-8" title="{{childData?.name}}">{{childData?.name}}</h4>
+    <h4 class="sbchapter__title text-left sb__ellipsis sb__ellipsis--two ml-16 mb-8 mat-body-2" title="{{childData?.name}}">{{childData?.name}}</h4>
   </div>
 </ng-container>
 
@@ -12,7 +12,7 @@
   </sb-toc-card>
 </ng-container>
 
-<div *ngIf="childData?.children && !(childData?.contentData?.trackable?.enabled === 'Yes' || childData?.trackable?.enabled === 'Yes')" class="content">
+<div *ngIf="childData?.children && !(childData?.contentData?.trackable?.enabled === 'Yes' || childData?.trackable?.enabled === 'Yes')" class="content mt-16">
   <div *ngFor="let child of childData?.children; let j = index;" [id]="child.identifier" class="content-child">
     <div *ngIf="child?.mimeType !== 'application/vnd.sunbird.question' && child?.mimeType !== 'application/vnd.sunbird.questionset'">
       {{ createUniqueId(childData, child) }}

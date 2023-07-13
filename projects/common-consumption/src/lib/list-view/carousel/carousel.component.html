@@ -1,5 +1,5 @@
 
-  <div class="mat-title mb-8" *ngIf="title">{{title}}</div>
+  <div class="mat-title mb-8 text-left" *ngIf="title">{{title}}</div>
   <div class="mat-body-2" *ngIf="subTitle">{{subTitle}}</div>
   <div #carouselContainer class="carousel-container">
     <div class="carousel-scroller">
@@ -7,7 +7,7 @@
         <div class="black-layer"></div>
         <img *ngIf="item?.thumbnail" src="{{item?.thumbnail}}" alt="">
         <div class="carousel-meta">
-          <p class="sb__ellipsis sb__ellipsis--one mat-body-2" *ngIf="item?.name">{{item?.name}}</p>
+          <p class="sb__ellipsis sb__ellipsis--one mat-body-2 text-left" *ngIf="item?.name">{{item?.name}}</p>
           <button mat-mini-fab class="play-btn" attr.aria-label="play {{item?.name}}"><mat-icon>play_arrow</mat-icon></button>
         </div>
       </div>

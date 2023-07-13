@@ -20,6 +20,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+
 @NgModule({
   declarations: [
     LibraryCardComponent,
@@ -44,7 +46,8 @@ import { MatListModule } from '@angular/material/list';
     MatChipsModule,
     MatButtonModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   exports: [
     LibraryCardComponent,

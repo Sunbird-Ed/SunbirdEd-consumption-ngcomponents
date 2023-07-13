@@ -3,31 +3,31 @@
     <div class="action-container w-100 h-100 d-flex flex-ai-center">
         <ng-container *ngFor="let item of hoverData?.actions">
             <div class="action-item" *ngIf="item.type === 'save'" [title]="item?.title ? item.title : ''">
-                <button mat-raised-button color="primary" class="card-hover-mat-btn" (click)="actionClick(item, content, $event);" [disabled]="item.disabled" tabindex="0">
+                <button mat-button color="primary" (click)="actionClick(item, content, $event);" [disabled]="item.disabled" tabindex="0">
                     <mat-icon>save</mat-icon>
                   <span class="sb__ellipsis">{{item.label}}</span>
                 </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'download'" [title]="item?.title ? item.title : ''">
-                <button mat-raised-button color="primary" class="card-hover-mat-btn" (click)="actionClick(item, content, $event);" [disabled]="item.disabled" tabindex="0">
+                <button mat-button color="primary" (click)="actionClick(item, content, $event);" [disabled]="item.disabled" tabindex="0">
                     <mat-icon>cloud_download</mat-icon>
                     <span class="sb__ellipsis">{{item.label}}</span>
                   </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'open'" [title]="item?.title ? item.title : ''">
-                <button mat-raised-button color="primary" class="card-hover-mat-btn" (click)="actionClick(item, content, $event);" [disabled]="item.disabled" tabindex="0">
+                <button mat-button color="primary" (click)="actionClick(item, content, $event);" [disabled]="item.disabled" tabindex="0">
                     <mat-icon>import_contacts</mat-icon>
                     <span class="sb__ellipsis">{{item.label}}</span>
                   </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'view'" [title]="item?.title ? item.title : ''">
-                <button mat-raised-button color="primary" class="card-hover-mat-btn" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
+                <button mat-button color="primary" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
                     <mat-icon>visibility</mat-icon>
                     <span class="sb__ellipsis">{{item.label}}</span>
                   </button>
             </div>
             <div class="action-item" *ngIf="item.type === 'addToGroup'" [title]="item?.title ? item.title : ''">
-                <button mat-raised-button color="primary" class="card-hover-mat-btn" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
+                <button mat-button color="primary" (click)="actionClick(item, content, $event);" tabindex="0" [disabled]="item.disabled">
                     <mat-icon>add_circle</mat-icon>
                     <span class="sb__ellipsis">{{item.label}}</span>
                   </button>

@@ -91,7 +91,7 @@
     // grade filter pill styles
     .sb-grade-pills-container {
       min-height: calculateRem(48px);
-      background: transparent; //var(--cc-grade-pill-container-bg);
+      background: var(--cc-grade-pill-container-bg);
       min-width: 100%;
 
       .pill {

@@ -2,7 +2,7 @@
 @use "~@project-sunbird/sb-styles/assets/buttons" as *;
 
 // modal component variables
-$sb-modal-header-bg: var(--primary-400);
+$sb-modal-header-bg: var(--primary-color);
 $sb-modal-header-color: var(--white);
 $sb-modal-header-padding:  calculateRem(4px) calculateRem(16px);
 $sb-modal-header-height: calculateRem(40px);

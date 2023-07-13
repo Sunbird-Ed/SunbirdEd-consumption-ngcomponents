@@ -19,6 +19,7 @@
   --cc-mat-card-menu-hover:#f2f2f2;
   --cc-mat-card-img-container-bg:#ccc;
   --cc-mat-card-svg-flower: #024f9d;
+  --cc-mat-card-img-container-border: white;
 }
 
 //default material card styles
@@ -34,6 +35,7 @@
         align-items: center;
         overflow: hidden;
         background-color: var(--cc-mat-card-img-container-bg);
+        border: 0.25rem solid var(--cc-mat-card-img-container-border);
         img{
           width: auto;
           min-height: 100%;
@@ -136,15 +138,16 @@
         background: var(--cc-mat-card-type-bg);
         color: var(--cc-mat-card-type);
         margin: 0 0 0 -1rem;
+        ::ng-deep html[dir='rtl'] & {
+          margin: 0 -1rem 0 0;
+        }
         max-width: 7.5rem;
         position: absolute;
         bottom: 0.5rem;
         height: 1.25rem;
         font-size: .6875rem;
         text-transform: capitalize;
-        html[dir='rtl'] & {
-          margin: 0 -1rem 0 0;
-        }
+
         &::before{
           content: "";
           width: 0;
@@ -192,8 +195,6 @@
 //for local demo add 'joy' class for 'mat-card'
 :host{
   .joy {
-    //$mat-card-palette: mat.define-palette($sb-mat-joy-primary);
-  
    &.mat-card.mat-card-v2{
       cursor: pointer;
       position: relative;
@@ -259,6 +260,11 @@
       }
       .mat-card-info{
         padding: 0 1rem 1rem;
+        ::ng-deep html[dir='rtl'] & {
+          padding-left:1rem;
+          padding-right:unset;
+        }
+        
       }
       .mat-card-chips-list{
         padding: 0 1rem;
@@ -285,9 +291,9 @@
       }
       &.recently-viewed{
         .mat-card-header .mat-card-avatar{
-          height: 5.5rem;
-          width: 5.5rem;
-          right: 2.5rem;
+          height: 4.5rem;
+          width: 4.5rem;
+          right: 1.5rem;
         }
       }
     }

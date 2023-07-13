@@ -2,7 +2,7 @@
 [ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}" (click)="onClick($event)" *ngIf="!isLoading">
   <mat-card-header>
     <div mat-card-avatar> <img [src]="cardImg"> </div>
-    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two">{{content?.name}}</mat-card-title>
+    <mat-card-title class="sb__ellipsis sb__ellipsis--two text-left">{{content?.name}}</mat-card-title>
     <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
   </mat-card-header>
   <div class="mat-card-banner">
@@ -11,7 +11,7 @@
   <mat-card-content>
     <!-- card mobile view details -->
    <div class="d-flex flex-w-wrap mat-card-chips-list">
-    <mat-chip-list aria-label="data selection" *ngIf="content?.organisation && content?.organisation.length > 0">
+    <mat-chip-list aria-label="data selection" *ngIf="content?.organisation && content?.organisation.length > 0" tabindex="-1">
       <mat-chip class="data_0" title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</mat-chip>
       <mat-chip class="data_0" *ngIf="content?.organisation.length > 1" title="{{content?.organisation}}">+{{content?.organisation.length-1}}</mat-chip>
     </mat-chip-list>

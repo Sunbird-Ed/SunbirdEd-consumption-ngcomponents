@@ -17,7 +17,7 @@
         <mat-icon class="mr-8" fontIcon="delete"></mat-icon>{{remove?.label}}
       </button>
 
-      <button type="button" *ngIf="preview?.show"  color="accent" (click)="onButtonClick($event, preview?.name)" tabindex="0"
+      <button type="button" *ngIf="preview?.show" mat-raised-button (click)="onButtonClick($event, preview?.name)" tabindex="0"
         class="button-rounded">
         <mat-icon class="mr-8" fontIcon="fullscreen"></mat-icon>{{preview?.label}}</button>
     </div>

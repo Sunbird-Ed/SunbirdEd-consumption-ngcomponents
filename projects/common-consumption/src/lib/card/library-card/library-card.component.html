@@ -10,7 +10,25 @@
       <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
       <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
     </mat-card-subtitle>
-    <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
+    
+    <!-- <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a> -->
+
+    <button mat-icon-button [matMenuTriggerFor]="lbcardmenu" *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #lbcardmenu="matMenu">
+      <!-- <div class="kabab-menu-dropdown-content" *ngIf="showMenu &&
+      selectedActivity?.identifier === activity?.identifier">
+        <div class="mat-caption color-error" tabindex="0" (click)="toggleModal(true)">
+          <span>{{resourceService?.frmelmnts?.lbl?.removeActivity}}</span>
+        </div>
+      </div> -->
+      <button mat-menu-item color="warn">
+        <mat-icon>playlist_remove</mat-icon>
+        <span>Remove activity</span>
+      </button>
+    </mat-menu>
+
   </mat-card-header>
   <mat-card-content>
     <!-- content for only desktop -->
