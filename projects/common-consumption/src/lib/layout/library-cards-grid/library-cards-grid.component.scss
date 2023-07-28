@@ -4,7 +4,7 @@
 ::ng-deep :root {
   --cc-badge-bg: var(--rc-d4d3d3);
   --cc-badge-text: var(--gray-800);
-  --cc-lb-card-grid-title:var(--primary-color);
+  --cc-lb-card-grid-title:var(--color-accent);
   
 }
 
@@ -46,8 +46,8 @@
 
       .badge {
         display: inline-block;
-        background: var(--cc-badge-bg);
-        color: var(--cc-badge-text);
+        // background: var(--cc-badge-bg);
+        // color: var(--cc-badge-text);
         text-align: center;
         padding: calculateRem(0px) calculateRem(12px);
         border-radius: calculateRem(4px);

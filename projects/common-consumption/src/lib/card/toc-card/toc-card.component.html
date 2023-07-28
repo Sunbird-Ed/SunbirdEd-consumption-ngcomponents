@@ -17,8 +17,8 @@
     attr.aria-pressed="{{activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}}" tabindex="0"
     [ngClass]="{'active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
 
-    <div mat-line title="{{content?.name}}">{{content?.name}}</div>
-    <img width="32" height="32" [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" alt="{{content?.name}} Image" #img />
+    <div mat-line>{{content?.name}}</div>
+    <img width="32" height="32" [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" alt="" #img />
 
   </mat-list-item>
 </mat-list>
@@ -62,8 +62,8 @@
       class="sb_success_check" alt="Complated Icon" mat-list-icon>
     <img width="32" height="32" [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg"
       alt="{{content?.name}} Image" #img mat-list-icon />
-    <div mat-line title="{{content?.name}}">{{content?.name}}</div>
-    <div mat-line *ngIf="bestScoreLabel" title="{{bestScoreLabel}}">{{bestScoreLabel}}</div>
+    <div mat-line>{{content?.name}}</div>
+    <div mat-line *ngIf="bestScoreLabel">{{bestScoreLabel}}</div>
     <button class="sbchapter__play__btn" *ngIf="!isTrackable(content) && playBtnConfig.show"
       (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)" tabindex="0">
       <svg class="icon icon-svg--primary">
@@ -109,10 +109,10 @@
           <use [attr.xlink:href]="content?.appIcon"></use>
         </svg>
       </i>
-      <img [src]="fallbackImg" width="32" height="32" *ngIf="!content?.appIcon" alt="" #img />
+      <img [src]="fallbackImg" width="32" height="32" *ngIf="!content?.appIcon" alt="image" #img />
     </div>
-    <div mat-line title="{{content?.name}}">{{content?.name}}</div>
-    <div mat-line *ngIf="bestScoreLabel && displayScore" title="{{bestScoreLabel}}">{{bestScoreLabel}}</div>
+    <div mat-line>{{content?.name}}</div>
+    <div mat-line *ngIf="bestScoreLabel && displayScore">{{bestScoreLabel}}</div>
 
   </mat-list-item>
 </mat-list>
@@ -161,10 +161,10 @@
           <use [attr.xlink:href]="content?.appIcon"></use>
         </svg>
       </i>
-      <img [src]="fallbackImg" width="32" height="32" *ngIf="!content?.appIcon" alt="" #img />
+      <img [src]="fallbackImg" width="32" height="32" *ngIf="!content?.appIcon" alt="image" #img />
     </div>
-    <div mat-line title="{{content?.name}}">{{content?.name}}</div>
-    <div mat-line *ngIf="bestScoreLabel && displayScore" title="{{bestScoreLabel}}">{{bestScoreLabel}}</div>
+    <div >{{content?.name}}</div>
+    <div mat-line *ngIf="bestScoreLabel && displayScore">{{bestScoreLabel}}</div>
     <button class="sbchapter__play__btn"
       *ngIf="!(content?.contentData?.trackable?.enabled === 'Yes') && playBtnConfig.show"
       (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)" tabindex="0">

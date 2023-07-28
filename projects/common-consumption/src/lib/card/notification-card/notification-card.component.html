@@ -11,7 +11,7 @@
   </div>
   <div class="sb-notification-data d-flex flex-ai-center">
     <div class="logo" *ngIf="notification?.data?.actionData?.appIcon">
-      <img [src]="notification?.data?.actionData?.appIcon" width="20px">
+      <img [src]="notification?.data?.actionData?.appIcon" width="20px" alt="icon">
     </div>
     <div class="ml-12 notification-content">
       <div class="title" *ngIf="notification?.data?.actionData?.title" [ngClass]="{'active': !notification?.isRead}">{{notification?.data?.actionData?.title}}</div>

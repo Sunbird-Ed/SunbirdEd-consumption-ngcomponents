@@ -1,5 +1,5 @@
 <div class="header" *ngIf="platform === 'portal' && pillItems?.length > 0">
-  <div class="mat-title font-weight-bold m-0">{{title}}</div>
+  <div class="mat-title font-weight-bold m-0" attr.aria-label="{{title}}">{{title}}</div>
   <div *ngIf="minDisplayCount && (pillItems?.length > minDisplayCount)">
     <button mat-raised-button class="button-rounded color-accent" role="button" *ngIf="showMoreViewType===ShowMoreViewType.EXPAND && viewCount < pillItems?.length"
      (click)="viewMore()" tabindex="0">{{viewMoreText}}</button>
