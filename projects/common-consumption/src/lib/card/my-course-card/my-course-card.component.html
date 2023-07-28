@@ -1,8 +1,8 @@
 <mat-card role="link" tabindex="0" class="my-course-card" [ngClass]="{'recently-viewed': type === CourseCardTypes.RECENTLY_VIEWED, 'offline': isOffline}"
   (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
   <mat-card-header>
-    <div mat-card-avatar> <img [src]="cardImg"> </div>
-    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two mb-4" title="{{course?.courseName}}">{{course?.courseName}}</mat-card-title>
+    <div mat-card-avatar> <img [src]="cardImg" alt=""> </div>
+    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two mb-4">{{course?.courseName}}</mat-card-title>
     <mat-card-subtitle class="mat-body-1 sb__ellipsis sb__ellipsis--two m-0" *ngIf="course?.content?.orgDetails?.orgName">
       <span *ngIf="publishedByText">{{publishedByText}} : </span> {{course?.content?.orgDetails?.orgName}}
     </mat-card-subtitle>

@@ -1,8 +1,8 @@
 <mat-card role="link" tabindex="0" class="course-card" (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
   <mat-card-header>
-    <div mat-card-avatar> <img [src]="cardImg"> </div>
-    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two mb-4" title="{{course?.name}}">{{course?.name}}</mat-card-title>
-    <mat-card-subtitle class="data_1 sb__ellipsis sb__ellipsis--two m-0" title="{{course?.orgDetails?.orgName}}">{{course?.orgDetails?.orgName || course?.organisation?.join(', ')}}</mat-card-subtitle>
+    <div mat-card-avatar> <img [src]="cardImg" alt=""></div>
+    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two mb-4">{{course?.name}}</mat-card-title>
+    <mat-card-subtitle class="data_1 sb__ellipsis sb__ellipsis--two m-0">{{course?.orgDetails?.orgName || course?.organisation?.join(', ')}}</mat-card-subtitle>
     <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
   </mat-card-header>
   <mat-card-content>

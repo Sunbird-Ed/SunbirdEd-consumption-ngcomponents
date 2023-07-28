@@ -15,12 +15,12 @@
   <div class="sb--card__info">
     <div class="data_3 ellipsis" *ngIf="content?.tagName">{{content?.tagName}}</div>
     <div class="sb--card__meta1">
-      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1" title="{{content?.name}}">
+      <h4 class="sb--card__title sb__ellipsis sb__ellipsis--two text-left flex-basis-1">
         <bdi>{{content?.name}}</bdi></h4>
       <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="$event.stopPropagation()"></a>
     </div>
     <div class="sb--card__details sb__ellipsis sb__ellipsis--two" *ngIf="content?.subject?.length">
-      <span  title="{{content?.subject}}">{{content?.subject}}</span>
+      <span>{{content?.subject}}</span>
     </div>
     <div class="sb--card__meta1 text-left" *ngIf="frameworkDetailsList && frameworkDetailsList.length">
       <app-truncated-ellipsis 

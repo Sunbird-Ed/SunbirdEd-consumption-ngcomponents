@@ -1,8 +1,7 @@
 <div class="sb-avatar-cc text-left d-flex flex-ai-center">
   <button 
 *ngIf="!isLoading" mat-fab color="white" class="mat-icon-guest-profile box-shadow-6px"><span class="sb-avatar__initial" [ngStyle]="fetchStyle()">{{initial}}</span></button>
-<label *ngIf="config.isTitle" class="mat-body-2 sb__ellipsis sb__ellipsis--two ml-8"
-      title="{{title}}"><span>{{title}}&lrm;</span></label>
+<label *ngIf="config.isTitle" class="mat-body-2 sb__ellipsis sb__ellipsis--two ml-8"><span>{{title}}&lrm;</span></label>
 </div>
 
 <!-- <div
