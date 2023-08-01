@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import { SummaryCardComponent } from './summary-card/summary-card.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatMenuModule} from '@angular/material/menu';
     NotificationCardComponent,
     BannerCardComponent,
     TruncatedEllipsisComponent,
-    CqubeCardComponent
+    CqubeCardComponent,
+    SummaryCardComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +66,8 @@ import {MatMenuModule} from '@angular/material/menu';
     NotificationCardComponent,
     BannerCardComponent,
     TruncatedEllipsisComponent,
-    CqubeCardComponent
+    CqubeCardComponent,
+    SummaryCardComponent
   ]
 })
 export class CardModule { }
