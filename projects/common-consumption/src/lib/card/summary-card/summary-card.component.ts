@@ -16,6 +16,7 @@ export class SummaryCardComponent implements OnInit {
   @Input() cardInfo: CardInfo;
   constructor() { }
   ngOnInit(): void {
+    console.log(this.cardInfo);
   }
 
 }
