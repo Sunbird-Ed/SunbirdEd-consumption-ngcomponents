@@ -4,6 +4,7 @@ interface CardInfo {
   iconUrl: string;
   title: string;
   count: string;
+  commonIconUrl: string;
 }
 
 @Component({

@@ -11,7 +11,8 @@ export class CompassLandingPageComponent implements OnInit {
     summaryCardData: {
       iconUrl: "assets/common-consumption/images/courses.svg",
       title: "Courses",
-      count: "1000+"
+      count: "1000+",
+      commonIconUrl: "assets/common-consumption/images/arrow.svg"
     }
   };
 

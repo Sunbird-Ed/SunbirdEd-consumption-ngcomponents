@@ -70,6 +70,9 @@
     border-radius: 16px;
     opacity: 1;
     background-color: rgba(35,134,252, 1);
+    display: flex;
+    padding: 13%;
+    justify-content: space-around;
 }
 @media only screen and (max-width:992px) {
     .boxContainer{
