@@ -13,6 +13,11 @@ export class CompassLandingPageComponent implements OnInit {
       title: "Courses",
       count: "1000+",
       commonIconUrl: "assets/common-consumption/images/arrow.svg"
+    },
+    exploreData: {
+      iconUrl: "assets/common-consumption/images/group24.png",
+      title: "Learn",
+      content: "Sharpen your skills with hundreds-of online courses",
     }
   };
 

@@ -69,3 +69,4 @@ export * from './lib/card/truncated-ellipsis/truncated-ellipsis.component';
 export * from  './lib/card/cqube-card/cqube-card.component';
 export { AccordionItemComponent } from './lib/accordion/accordion-item/accordion-item.component'
 export * from './lib/card/summary-card/summary-card.component';
+export * from './lib/card/explore-compass-card/explore-compass-card.component';
