@@ -62,7 +62,9 @@
       class="sb_success_check" alt="Complated Icon" mat-list-icon>
     <img width="32" height="32" [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg"
       alt="{{content?.name}} Image" #img mat-list-icon />
+      <div *ngIf="content?.relationalMetadata?.optional">Optional</div>
     <div mat-line>{{content?.name}}</div>
+    <div mat-line *ngIf="content?.relationalMetadata?.optional" style="color: gray; font-size: smaller;"> This material is optional and will not impact your course progress</div>
     <div mat-line *ngIf="bestScoreLabel">{{bestScoreLabel}}</div>
     <button class="sbchapter__play__btn" *ngIf="!isTrackable(content) && playBtnConfig.show"
       (click)="$event.stopImmediatePropagation(); $event.preventDefault(); onPlayButtonClick($event)" tabindex="0">
