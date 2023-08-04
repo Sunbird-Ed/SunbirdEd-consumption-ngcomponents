@@ -18,6 +18,11 @@ export class CompassLandingPageComponent implements OnInit {
       iconUrl: "assets/common-consumption/images/group24.png",
       title: "Learn",
       content: "Sharpen your skills with hundreds-of online courses",
+    },
+    footerData: {
+      links: ["Learn", "Connections", "Discussion", "Jobs", "Competencies", "Events"],
+      logoLink: "assets/common-consumption/images/Logo-ss-white.png",
+      footerText: "2022 Copyright [Company Name]"
     }
   };
 

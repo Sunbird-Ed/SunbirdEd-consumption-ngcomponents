@@ -70,3 +70,5 @@ export * from  './lib/card/cqube-card/cqube-card.component';
 export { AccordionItemComponent } from './lib/accordion/accordion-item/accordion-item.component'
 export * from './lib/card/summary-card/summary-card.component';
 export * from './lib/card/explore-compass-card/explore-compass-card.component';
+export * from './lib/footer/main-footer/main-footer.component';
+export * from './lib/footer/footer.module';
