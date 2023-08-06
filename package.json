@@ -31,6 +31,7 @@
     "@angular/platform-browser-dynamic": "^14.3.0",
     "@angular/router": "^14.3.0",
     "@project-sunbird/sb-styles": "0.0.11",
+    "compass-sb-styles": "^0.0.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.6.7",
     "sass": "^1.56.1",
