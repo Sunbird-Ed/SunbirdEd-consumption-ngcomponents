@@ -27,7 +27,7 @@ import { MyCourseCardComponent } from './components/my-course-card/my-course-car
     MemberCardComponent,
     CourseCardComponent,
     CourseCuriculumCardComponent,
-    MyCourseCardComponent
+    MyCourseCardComponent 
   ],
   imports: [
     BrowserModule,
