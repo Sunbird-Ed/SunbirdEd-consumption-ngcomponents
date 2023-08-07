@@ -30,6 +30,8 @@ export * from './lib/card/card.module';
 export * from './lib/card/library-card/library-card.component';
 export * from './lib/card/course-card/course-card.component';
 export * from './lib/card/banner-card/banner-card.component';
+export * from './lib/card/compass-banner-card/compass-banner-card.component';
+export * from './lib/card/goal-oriented-hr-card/goal-oriented-hr-card.component';
 export * from './lib/card/card-hover/card-hover.component';
 export * from './lib/card/course-curiculum-card/course-curiculum-card.component';
 export * from './lib/card/library-card-v2/library-card-v2.component';
