@@ -1,27 +1,27 @@
 <mat-card role="link" tabindex="0" class="mat-card-v2"
 [ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}" (click)="onClick($event)" *ngIf="!isLoading">
   <mat-card-header>
-    <div mat-card-avatar> <img [src]="cardImg"> </div>
+    <div mat-card-avatar> <img [src]="cardImg" alt=""></div>
     <mat-card-title class="sb__ellipsis sb__ellipsis--two text-left">{{content?.name}}</mat-card-title>
     <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
   </mat-card-header>
   <div class="mat-card-banner">
-    <img mat-card-image [src]="svgToDisplay" alt="card banner image"/>
+    <img mat-card-image [src]="svgToDisplay" alt=""/>
   </div>
   <mat-card-content>
     <!-- card mobile view details -->
    <div class="d-flex flex-w-wrap mat-card-chips-list">
     <mat-chip-list aria-label="data selection" *ngIf="content?.organisation && content?.organisation.length > 0" tabindex="-1">
-      <mat-chip class="data_0" title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</mat-chip>
-      <mat-chip class="data_0" *ngIf="content?.organisation.length > 1" title="{{content?.organisation}}">+{{content?.organisation.length-1}}</mat-chip>
+      <mat-chip class="data_0">{{content?.organisation[0]}}</mat-chip>
+      <mat-chip class="data_0" *ngIf="content?.organisation.length > 1">+{{content?.organisation.length-1}}</mat-chip>
     </mat-chip-list>
     <mat-chip-list aria-label="data selection" *ngIf="content?.medium && content?.medium.length > 0">
-      <mat-chip class="data_1" title="{{content?.medium[0]}}">{{content?.medium[0]}}</mat-chip>
-      <mat-chip class="data_1" *ngIf="content?.medium.length > 1" title="{{content?.medium}}">+{{content?.medium.length-1}}</mat-chip>
+      <mat-chip class="data_1">{{content?.medium[0]}}</mat-chip>
+      <mat-chip class="data_1" *ngIf="content?.medium.length > 1">+{{content?.medium.length-1}}</mat-chip>
     </mat-chip-list>
     <mat-chip-list aria-label="data selection" *ngIf="content?.gradeLevel && content?.gradeLevel.length > 0">
-      <mat-chip class="data_2" title="{{content?.gradeLevel[0]}}">{{content?.gradeLevel[0]}}</mat-chip>
-      <mat-chip class="data_2" *ngIf="content?.gradeLevel.length > 1" title="{{content?.gradeLevel}}">+{{content?.gradeLevel.length-1}}</mat-chip>
+      <mat-chip class="data_2">{{content?.gradeLevel[0]}}</mat-chip>
+      <mat-chip class="data_2" *ngIf="content?.gradeLevel.length > 1">+{{content?.gradeLevel.length-1}}</mat-chip>
     </mat-chip-list>
    </div>
    <!-- content for only desktop -->
@@ -31,21 +31,21 @@
       <div class="text-left mat-small">
         <ng-container *ngIf="content?.subject && content?.subject.length > 0">
           <div class="sb__ellipsis">
-            <span>Subject: </span> <span title="{{content?.subject[0]}}">{{content?.subject[0]}}</span> <span class="mr-8" title="{{content?.subject}}" *ngIf="content?.subject.length > 1"> +{{content?.subject.length-1}}
+            <span>Subject: </span> <span>{{content?.subject[0]}}</span> <span class="mr-8" *ngIf="content?.subject.length > 1"> +{{content?.subject.length-1}}
             </span>
           </div>
         </ng-container>
         <ng-container *ngIf="content?.organisation && content?.organisation.length > 0">
           <div class="sb__ellipsis">
-            <span>Publisher: </span> <span title="{{content?.organisation[0]}}">{{content?.organisation[0]}}</span>
-            <span class="mr-8" title="{{content?.organisation}}" *ngIf="content?.organisation.length > 1"> +{{content?.organisation.length-1}}
+            <span>Publisher: </span> <span>{{content?.organisation[0]}}</span>
+            <span class="mr-8" *ngIf="content?.organisation.length > 1"> +{{content?.organisation.length-1}}
             </span>
           </div>
         </ng-container>
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
       <div class="mat-card__badge mr-16" *ngIf="content?.badgeAssertions">
-        <img [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" />
+        <img [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" />
       </div>
     </div>
     <div *ngIf="type === LibraryCardTypes.PORTAL_QRCODE_FLATRESULT">
@@ -70,7 +70,7 @@
     class="card-hover">
   </ng-container>
   <div class="mat-card__type px-8 d-flex flex-ai-center flex-jc-center" *ngIf="content?.primaryCategory || content?.contentType">
-    <span class="sb__ellipsis" title="{{content?.primaryCategory || content?.contentType}}">{{content?.primaryCategory || content?.contentType}}</span>
+    <span class="sb__ellipsis">{{content?.primaryCategory || content?.contentType}}</span>
   </div>
   <svg width="79px" class="mat-card-svg-tail" align="end" height="36px" viewBox="0 0 79 36" version="1.1"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

@@ -3,12 +3,12 @@
   <mat-card role="link" tabindex="0" class="mat-card-v1" [ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading" tabindex="0">
   <mat-card-header>
-    <div mat-card-avatar> <img [src]="cardImg"> </div>
-    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two">{{content?.name}}</mat-card-title>
+    <div mat-card-avatar> <img [src]="cardImg" alt=""> </div>
+    <mat-card-title class="mat-body-1 sb__ellipsis sb__ellipsis--two text-left">{{content?.name}}</mat-card-title>
     <mat-card-subtitle class="mat-small sb__ellipsis sb__ellipsis--two m-0" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-      <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
+      <span class="data_1 ellipsis">{{content?.subject}}</span>
       <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
-      <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
+      <span class="data_2 ellipsis">{{content?.gradeLevel}}</span>
     </mat-card-subtitle>
     <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
   </mat-card-header>
@@ -26,9 +26,9 @@
       <!-- other meta info Badge and card category Book, learn, practice -->
       <div class="mat-card__badge d-flex">
         <img *ngIf="content?.badgeAssertions" class="mr-8"
-            [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" title="" />
+            [src]="content?.badgeAssertions[0]?.badgeClassImage" alt="" />
         <span class="mat-card__type" *ngIf="content?.resourceType">
-         <span class="sb__ellipsis" title="{{content?.resourceType}}">{{content?.resourceType}}</span>
+         <span class="sb__ellipsis">{{content?.resourceType}}</span>
         </span>
       </div>
     </div>

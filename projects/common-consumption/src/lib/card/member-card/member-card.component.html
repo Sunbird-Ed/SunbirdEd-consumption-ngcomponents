@@ -48,7 +48,7 @@
     <mat-card-title>{{title}}</mat-card-title>
     <div class="d-flex flex-ai-center pr-8 ml-auto" *ngIf="config.view == 'horizontal'">
       <div *ngIf="isAdmin || isMenu" class="d-flex flex-ai-center">
-        <div [style.visibility]="isAdmin ? 'visible' : 'hidden'" class="color-success border-success status"
+        <div [style.visibility]="isAdmin ? 'visible' : 'hidden'" class="color-success border-success status mat-bg-white"
           (click)="onClick($event);$event.stopPropagation();">Admin</div>
         <div [style.visibility]="isMenu ? 'visible' : 'hidden'" class="menu ml-8" tabindex="0"
           (click)="onMenuClick($event);$event.stopPropagation();"></div>

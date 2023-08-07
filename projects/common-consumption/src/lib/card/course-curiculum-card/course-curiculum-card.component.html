@@ -1,12 +1,12 @@
 <!-- card component -->
 <mat-card class="mat-curiculum-card p-0 w-100" [ngStyle]="fetchStyles()" attr.aria-label="{{title}}" (click)="onClick($event)" *ngIf="!isLoading" tabindex="0">
   <mat-card-content class="d-flex flex-dr flex-ai-center" *ngIf="isActivityTypeCard">
-    <h4 class="mat-curiculum-card__title text-center font-weight-bold mat-body-1 m-0 sb__ellipsis" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
+    <h4 class="mat-curiculum-card__title text-center font-weight-bold mat-body-1 m-0 sb__ellipsis" [ngStyle]="fetchTextStyles()" >{{title}}</h4>
   </mat-card-content>
   <mat-card-content class="d-flex flex-dr flex-ai-center" *ngIf="!isActivityTypeCard">
     <div class="mat-curiculum-card__title">
-      <h4 class="mat-body-1 m-0 sb__ellipsis" [ngStyle]="fetchTextStyles()" title="{{title}}">{{title}}</h4>
-      <span class="mat-small sb__ellipsis" title="{{subTitle}}">{{subTitle}}</span>
+      <h4 class="mat-body-1 m-0 sb__ellipsis" [ngStyle]="fetchTextStyles()">{{title}}</h4>
+      <span class="mat-small sb__ellipsis">{{subTitle}}</span>
     </div>
     <div class="mat-curiculum-card__img">
       <div class="img-container">
