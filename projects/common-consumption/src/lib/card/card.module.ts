@@ -15,6 +15,8 @@ import { NotificationCardComponent } from './notification-card/notification-card
 import {BannerCardComponent} from './banner-card/banner-card.component';
 import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
 import { CqubeCardComponent } from './cqube-card/cqube-card.component';
+import { InfoCardComponent } from './info-card/info-card.component'
+
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule} from '@angular/material/button';
@@ -23,6 +25,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { SummaryCardComponent } from './summary-card/summary-card.component';
 import { ExploreCompassCardComponent } from './explore-compass-card/explore-compass-card.component';
+import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,8 @@ import { ExploreCompassCardComponent } from './explore-compass-card/explore-comp
     CqubeCardComponent,
     SummaryCardComponent,
     ExploreCompassCardComponent
+    InfoCardComponent,
+    RegisterBtnCardComponent
   ],
   imports: [
     CommonModule,
@@ -71,6 +76,8 @@ import { ExploreCompassCardComponent } from './explore-compass-card/explore-comp
     CqubeCardComponent,
     SummaryCardComponent,
     ExploreCompassCardComponent
+    InfoCardComponent,
+    RegisterBtnCardComponent
   ]
 })
 export class CardModule { }
