@@ -23,6 +23,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import { SummaryCardComponent } from './summary-card/summary-card.component';
+import { ExploreCompassCardComponent } from './explore-compass-card/explore-compass-card.component';
 import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.component';
 
 @NgModule({
@@ -42,6 +44,8 @@ import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.
     BannerCardComponent,
     TruncatedEllipsisComponent,
     CqubeCardComponent,
+    SummaryCardComponent,
+    ExploreCompassCardComponent
     InfoCardComponent,
     RegisterBtnCardComponent
   ],
@@ -70,6 +74,8 @@ import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.
     BannerCardComponent,
     TruncatedEllipsisComponent,
     CqubeCardComponent,
+    SummaryCardComponent,
+    ExploreCompassCardComponent
     InfoCardComponent,
     RegisterBtnCardComponent
   ]

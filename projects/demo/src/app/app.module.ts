@@ -14,6 +14,7 @@ import { MemberCardComponent } from './components/member-card/member-card.compon
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { CourseCuriculumCardComponent } from './components/course-curiculum-card/course-curiculum-card.component';
 import { MyCourseCardComponent } from './components/my-course-card/my-course-card.component';
+import { CompassLandingPageComponent } from './components/compass-landing-page/compass-landing-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MyCourseCardComponent } from './components/my-course-card/my-course-car
     MemberCardComponent,
     CourseCardComponent,
     CourseCuriculumCardComponent,
-    MyCourseCardComponent 
+    MyCourseCardComponent,
+    CompassLandingPageComponent
   ],
   imports: [
     BrowserModule,

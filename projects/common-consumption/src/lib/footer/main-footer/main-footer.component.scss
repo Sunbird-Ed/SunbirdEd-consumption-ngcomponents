@@ -1,0 +1,86 @@
+@use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+.new-layout-footer{
+    margin-top:calculateRem(24px);
+    background-color: rgba(55,52,52, 1);
+    color: rgba(255,255,255,0.95);
+    justify-content: center;
+    font-size: 14px;
+    }
+    .sbt-top-footer-container {
+      margin-top:30px;
+      height: calculateRem(116px);
+      width: 100%;
+      align-items: center;
+      margin: auto;
+      padding: 20px 0;
+    }
+    .link{
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      text-align: left;
+      line-height: 20px;
+    }
+
+    a{
+      text-decoration: none;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .sbt-bottom-footer-container {
+      width: 87%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .outer-container{
+      background-color: rgba(255,255,255, 0.08);
+      display: flex;
+      flex-direction: column;
+      height: 72px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .footer-text{
+      text-align: end;
+      width: 84%;
+    }
+
+    .logo{
+      display: flex;
+      justify-content: left;
+    }
+
+   @media only screen and (max-width:768px) {
+    .sbt-bottom-footer-container {
+      width: 77%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+    }
+    .sbt-top-footer-container, .link{
+      font-size: 12px;
+    }
+  }
+
+  @media only screen and (max-width:518px) {
+    .new-layout-footer, .sbt-top-footer-container{
+      font-size: 12px;
+    }
+  }
+
+  @media only screen and (max-width:610px) {
+    .sbt-bottom-footer-container {
+      flex-direction: column;
+    }
+    .logo{
+      justify-content: center;
+    }
+    .footer-text{
+      width: 100%;
+      text-align: center;
+    }
+  }

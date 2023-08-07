@@ -12,6 +12,7 @@ import { CertificateActionsModule } from './certificate/certificate-actions/cert
 import { PillsGridModule } from './pills-grid/pills-grid.module';
 import { ListViewModule } from './list-view/list-view.module';
 import { AvatarModule } from './avatar/avatar.module';
+import { FooterModule } from './footer/footer.module';
 @NgModule({
   declarations: [],
   imports: [
@@ -27,7 +28,8 @@ import { AvatarModule } from './avatar/avatar.module';
     CertificateActionsModule,
     PillsGridModule,
     ListViewModule,
-    AvatarModule
+    AvatarModule,
+    FooterModule
   ],
   exports: [
     CardModule,
@@ -42,7 +44,8 @@ import { AvatarModule } from './avatar/avatar.module';
     CertificateActionsModule,
     PillsGridModule,
     ListViewModule,
-    AvatarModule
+    AvatarModule,
+    FooterModule
   ]
 })
 export class CommonConsumptionModule { }
