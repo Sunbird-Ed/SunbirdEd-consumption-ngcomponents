@@ -1,31 +1,41 @@
+<div class="mb-16">
+    <h3 class="mat-h3 font-weight-bold">Library Card</h3>
+    <sb-library-card [content]="VCardData.content" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
+    </sb-library-card>
+</div>
 
+<div class="mb-16">
+    <h3 class="mat-h3 font-weight-bold">Library Card -- V2</h3>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]"
+        [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel">
+    </sb-library-card-v2>
+</div>
 
-<h4>Library Card</h4>
-<sb-library-card [content]="VCardData.content" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" [hover-template]="hoverTemplate">
-</sb-library-card>
-<br><br>
- 
-<h4>Library Card -- V2</h4>
-<sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
-<br><br>
- 
-<h4>Library Card -- V3</h4>
-<sb-library-card-v3 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v3>
-<br><br>
+<div class="mb-16">
+    <h3 class="mat-h3 font-weight-bold">Library Card -- V3</h3>
+    <sb-library-card-v3 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]"
+      [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel">
+    </sb-library-card-v3>
+</div>
 
-<h4>Library Card -- V4</h4>
-<sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[2]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
-<br><br>
+<div class="mb-16">
+    <h3 class="mat-h3 font-weight-bold">Library Card -- V4</h3>
+    <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[2]"
+      [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel">
+    </sb-library-card-v4>
+</div>
 
-<br><br>
-<h4>Library Card -- hover</h4>
-<sb-library-card-v2 [layoutConfig]="layoutConfig" [hover-template]="hoverTemplate" [content]="VCardData.content" [type]="VCardData.type[2]"  [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel" 
-[content]="content" [type]="recentlyViewedCard">
-    <ng-template #hoverTemplate let-hoverData="hoverData" 
-    let-content="content">
-        <sb-card-hover class="card-hover" [hoverData]="hoverData"
-        [content]="content" (hoverActionClick)="hoverActionClicked($event)">
+<div class="mb-16">
+    <h3 class="mat-h3 font-weight-bold">Library Card -- hover</h3>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" [hover-template]="hoverTemplate" [content]="VCardData.content"
+      [type]="VCardData.type[2]" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"
+      [content]="content" [type]="recentlyViewedCard">
+      <ng-template #hoverTemplate let-hoverData="hoverData" let-content="content">
+        <sb-card-hover class="card-hover" [hoverData]="hoverData" [content]="content"
+          (hoverActionClick)="hoverActionClicked($event)">
         </sb-card-hover>
-    </ng-template>
-</sb-library-card-v2>
+      </ng-template>
+    </sb-library-card-v2>
+</div>
+
 

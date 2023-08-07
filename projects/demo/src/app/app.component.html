@@ -1,19 +1,93 @@
-<div class="wrapper">
-        <ul>
-            <li [routerLink]="['home']" #rla8="routerLinkActive"  routerLinkActive [ngStyle]="rla8.isActive ? {'color': 'red'} : {'color': 'black'}">All Cards</li>
-            <li [routerLink]="['group-card']" #rla="routerLinkActive"  routerLinkActive [ngStyle]="rla.isActive ? {'color': 'red'} : {'color': 'black'}">Group card</li>
-            <li [routerLink]="['library-card']" #rla1="routerLinkActive"  routerLinkActive [ngStyle]="rla1.isActive ? {'color': 'red'} : {'color': 'black'}">Library card</li>
-            <li [routerLink]="['library-card-v2']" #rla2="routerLinkActive"  routerLinkActive [ngStyle]="rla2.isActive ? {'color': 'red'} : {'color': 'black'}">Library card v2</li>
-            <li [routerLink]="['library-card-v3']" #rla3="routerLinkActive"  routerLinkActive [ngStyle]="rla3.isActive ? {'color': 'red'} : {'color': 'black'}">Library card v3</li>
-            <li [routerLink]="['library-card-v4']" #rla4="routerLinkActive"  routerLinkActive [ngStyle]="rla4.isActive ? {'color': 'red'} : {'color': 'black'}">Library card v4</li>
-            <li [routerLink]="['member-card']" #rla5="routerLinkActive"  routerLinkActive [ngStyle]="rla5.isActive ? {'color': 'red'} : {'color': 'black'}">Member card</li>
-            <li [routerLink]="['course-card']" #rla6="routerLinkActive"  routerLinkActive [ngStyle]="rla6.isActive ? {'color': 'red'} : {'color': 'black'}">Course card</li>
-            <li [routerLink]="['course-curiculum-card']" routerLinkActive="active" #rla7="routerLinkActive"  [ngStyle]="rla7.isActive ? {'color': 'red'} : {'color': 'black'}">Course curiculum card</li>
-            <li [routerLink]="['my-course-card']" #rla9="routerLinkActive"  routerLinkActive [ngStyle]="rla9.isActive ? {'color': 'red'} : {'color': 'black'}">My Course card</li>
-          </ul>
-    <!-- <div class="" style="flex:1">
-        <app-home></app-home>
-    </div> -->
-</div>
 
-<router-outlet></router-outlet>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+      (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- <span>My App</span> -->
+    <span class="example-spacer"></span>
+    <div role="navigation" aria-label="Font Size" class="pl-4-min-xs d-flex flex-ai-center">
+      <button mat-icon-button id="theme-selector" class="hover-bgcolor-primary" [mat-menu-trigger-for]="themeMenu"
+        matTooltip="Select a theme!" tabindex="0">
+        <mat-icon class="auto-flip">format_color_fill</mat-icon>
+      </button>
+      <mat-menu #themeMenu="matMenu" class="themeMenuDropdown">
+        <button mat-menu-item *ngFor="let theme of themes; let i = index"
+          (click)="$event.stopPropagation(); setMatTheme(theme)" class="d-flex flex-ai-center flex-jc-space-between">
+          <div><mat-icon *ngIf="activeTheme === theme" class="mr-0">radio_button_checked</mat-icon>
+            <mat-icon *ngIf="activeTheme != theme" class="mr-0">radio_button_unchecked</mat-icon>
+            <span class="mx-8">{{ theme }}</span>
+          </div>
+          <mat-icon role="img" svgicon="theme-example" class="mat-icon {{ theme }} ml-16 mr-0" aria-hidden="true"
+            data-mat-icon-type="svg" data-mat-icon-name="theme-example"><svg xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 80 80" fit=""
+              preserveAspectRatio="xMidYMid meet" focusable="false">
+              <defs>
+                <path
+                  d="M77.87 0C79.05 0 80 .95 80 2.13v75.74c0 1.17-.95 2.13-2.13 2.13H2.13C.96 80 0 79.04 0 77.87V2.13C0 .95.96 0 2.13 0h75.74z"
+                  id="a"></path>
+                <path
+                  d="M54 40c3.32 0 6 2.69 6 6 0 1.2 0-1.2 0 0 0 3.31-2.68 6-6 6H26c-3.31 0-6-2.69-6-6 0-1.2 0 1.2 0 0 0-3.31 2.69-6 6-6h28z"
+                  id="b"></path>
+                <path d="M0 0h80v17.24H0V0z" id="c"></path>
+              </defs>
+              <use xlink:href="#a" fill="#fff" class="docs-theme-icon-background"></use>
+              <use xlink:href="#b" class="docs-theme-icon-button"></use>
+              <use xlink:href="#c" class="docs-theme-icon-toolbar"></use>
+              <use xlink:href="#d" class="docs-theme-icon-toolbar"></use>
+            </svg></mat-icon>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer #drawer>
+    <mat-nav-list class="pt-0">
+      <mat-list-item tabindex="0" role="navigation" [routerLink]="['home']" #rla8="routerLinkActive" routerLinkActive
+      [ngStyle]="rla8.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>All Cards</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['group-card']" #rla="routerLinkActive" routerLinkActive
+      [ngStyle]="rla.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>Group card</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['library-card']" #rla1="routerLinkActive" routerLinkActive
+      [ngStyle]="rla1.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>Library card</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['library-card-v2']" #rla2="routerLinkActive" routerLinkActive
+      [ngStyle]="rla2.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>Library card v2</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['library-card-v3']" #rla3="routerLinkActive" routerLinkActive
+      [ngStyle]="rla3.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>Library card v3</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['library-card-v4']" #rla4="routerLinkActive" routerLinkActive
+      [ngStyle]="rla4.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>Library card v4</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['member-card']" #rla5="routerLinkActive" routerLinkActive
+      [ngStyle]="rla5.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>Member card</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['course-card']" #rla6="routerLinkActive" routerLinkActive
+      [ngStyle]="rla6.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>Course card</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['course-curiculum-card']" routerLinkActive="active" #rla7="routerLinkActive"
+      [ngStyle]="rla7.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line>Course curiculum card</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['my-course-card']" #rla9="routerLinkActive" routerLinkActive
+      [ngStyle]="rla9.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line> My Course card</div>
+    </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <div style="display: inline;">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
