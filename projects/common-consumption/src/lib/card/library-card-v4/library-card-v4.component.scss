@@ -5,6 +5,7 @@
 :host {
   .sb--card {
     &__image-pos {
+      position: absolute;
       top: 0px;
       right: calculateRem(16px);
     }

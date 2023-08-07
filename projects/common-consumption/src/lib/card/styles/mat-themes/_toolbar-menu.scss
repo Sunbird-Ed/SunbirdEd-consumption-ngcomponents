@@ -1,0 +1,49 @@
+@use "@angular/material" as mat;
+@use "sass:map";
+@use "./palette" as *;
+@use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+
+@mixin toolbar-menu($theme) {
+
+     // Get the color config from the theme.
+     $color-config: mat.get-color-config($theme);
+     // Get the primary color palette from the color-config.
+     $primary: map.get($color-config, 'primary');
+     $accent: map.get($color-config, 'accent');
+     $warn: map.get($color-config, 'warn');
+     $background: map.get($color-config, 'background');
+
+     // $minimum-height: 5rem !default;
+     // $height-desktop: 5rem !default;
+     // $height-mobile: 5rem !default;
+
+     .mat-toolbar.toolbar-menu {
+          // background: theming.get-color-from-palette($background, app-bar);
+          // color: theming.get-color-from-palette($foreground, text);
+          border-radius: 1.5rem 1.5rem 0 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+          width: 90%;
+          @include respond-below(sm) {
+               display: list-item;
+               padding-top: 0.75rem;
+               overflow-x: auto;
+               width: 100%;
+          }
+          @include respond-below(xs) {
+               padding-top: 0.5rem;
+          }
+          @include respond-between(sm,md) {
+               overflow-x: auto;
+               justify-content: flex-start;
+          }
+          .mat-raised-button {
+               @include respond-between(sm,md) {
+               min-width: auto;
+               }
+          }
+     }
+
+}

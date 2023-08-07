@@ -1,7 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-@import url( 'https://fonts.googleapis.com/css?family=Material+Icons');
 
-body {
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins"as *;
+@import url( 'https://fonts.googleapis.com/css?family=Material+Icons');
+@import "../../common-consumption/src/lib/card/styles/mat-themes/themes.scss";
+// body {
+//     padding:5%;
+//     padding-top:4rem;
+// }
+.mat-drawer-content{
     padding:5%;
-    padding-top:4rem;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+    position: fixed;
+    z-index: 9999;
+}
+.mat-drawer-container{
+    background: none !important;
+    top: 64px !important;
+    height: calc(100vh - 64px) !important;
+    @include respond-below(sm) {
+        top: 56px !important;
+        height: calc(100vh - 56px) !important;
+    }
+}
+.pink-bluegrey .sb--card.sb--card--theme2{
+    background-color: #424242 !important;
 }

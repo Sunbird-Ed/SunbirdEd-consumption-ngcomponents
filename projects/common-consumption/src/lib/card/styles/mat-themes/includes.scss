@@ -1,0 +1,28 @@
+@use "@angular/material" as mat;
+@use "sass:map";
+
+// @import './accessbilityBar';
+// @use "./button-variants" as button-variants;
+
+@use './template_bg' as *;
+@import "./toolbar-menu";
+@import "./toolbar-pageback";
+@import './mat-card';
+@import './mat-sidebar';
+@import './mat-expansion-panel';
+// @import './darkBgTheme';
+@import './mat-dialog';
+// @import './customBtnColor';
+@import "./typography";
+@import "./buttons";
+@import "./colors";
+@import './mat-form-field';
+@import './mat-list';
+@import './mat-badge';
+@import './search';
+@import './mat-chips';
+@import './mat-tab-group';
+
+// from component styles
+//@import './../../../app/modules/shared/components/app-loader/app-loader.component.scss.theme';
+// @import './../../../app/app.component.scss-theme';

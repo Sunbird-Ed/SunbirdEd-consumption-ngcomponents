@@ -4,7 +4,7 @@ align-items: center;
 justify-content: flex-start;
 position: fixed;
 width: 100%;
-top: 0;
+top: 52px;
 left: 0;
 right: 0;z-index:9;
 display:flex;
@@ -20,4 +20,27 @@ ul {
         white-space: nowrap;
     }
 }
+}
+.accessibility-cc-toolbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+.mat-wrapper{
+    background-color: lightblue;
+    position: fixed;
+    width: 100%;
+    max-width: 200px;
+    top: 52px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+.mat-list-base .mat-list-item.mat-list-item-with-avatar, .mat-list-base .mat-list-option.mat-list-item-with-avatar {
+    height: 56px;
 }

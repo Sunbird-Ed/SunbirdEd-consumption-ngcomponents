@@ -1,0 +1,387 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '@angular/material' as mat;
+@use "./palette" as *;
+// @use './import-component-theme-config';
+
+@mixin color-success {
+  $success: mat.define-palette(mat.$green-palette);
+  color: mat.get-color-from-palette($success, 500) !important;
+}
+
+@mixin color-info {
+  $info: mat.define-palette(mat.$blue-palette);
+  color: mat.get-color-from-palette($info, 900) !important;
+}
+
+@mixin color-error {
+  $error: mat.define-palette(mat.$orange-palette);
+  color: mat.get-color-from-palette($error, 900) !important;
+}
+@mixin color-gray {
+  $gray: mat.define-palette(mat.$grey-palette);
+  color: mat.get-color-from-palette($gray, 500) !important;
+}
+
+@mixin theme-var-colors($theme) {
+
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+  // Get the primary color palette from the color-config.
+  $primary: map.get($color-config, 'primary');
+  $accent: map.get($color-config, 'accent');
+  $warn: map.get($color-config, 'warn');
+  $background: map.get($color-config, 'background');
+  $foreground: map.get($color-config, 'foreground');
+  $info: mat.define-palette(mat.$blue-palette);
+  $success: mat.define-palette(mat.$green-palette);
+  $error: mat.define-palette(mat.$orange-palette);
+  $gray: mat.define-palette(mat.$grey-palette);
+
+  $color-primary: mat.get-color-from-palette($primary);
+  $color-accent: mat.get-color-from-palette($accent);
+  $color-warn: mat.get-color-from-palette($warn);
+  $color-success: mat.get-color-from-palette($success);
+  $color-info: mat.get-color-from-palette($info);
+  $color-error: mat.get-color-from-palette($error);
+  $color-gray: mat.get-color-from-palette($gray);
+  --color-primary: #{$color-primary};
+  --color-accent: #{$color-accent};
+  --color-warn: #{$color-warn};
+  --color-success: #{$color-success};
+  --color-info: #{$color-info};
+  --color-error: #{$color-error};
+  --color-gray: #{$color-gray};
+
+  // $color-values: 50, 100, 200, 300, 400, 600, 800;
+
+  // @each $value in $color-values {
+  //   $color-accent-#{$value}: mat.get-color-from-palette($accent, $value);
+  //   --color-accent-#{$value}: #{$color-accent-#{$value}};
+  // }
+
+  // Primary color variations
+  $color-primary-50: mat.get-color-from-palette($primary, 50);
+  $color-primary-100: mat.get-color-from-palette($primary, 100);
+  $color-primary-200: mat.get-color-from-palette($primary, 200);
+  $color-primary-300: mat.get-color-from-palette($primary, 300);
+  $color-primary-400: mat.get-color-from-palette($primary, 400);
+  $color-primary-500: mat.get-color-from-palette($primary, 500);
+  $color-primary-600: mat.get-color-from-palette($primary, 600);
+  $color-primary-700: mat.get-color-from-palette($primary, 700);
+  $color-primary-800: mat.get-color-from-palette($primary, 800);
+  $color-primary-900: mat.get-color-from-palette($primary, 900);
+  --color-primary-50: #{$color-primary-50};
+  --color-primary-100: #{$color-primary-100};
+  --color-primary-200: #{$color-primary-200};
+  --color-primary-300: #{$color-primary-300};
+  --color-primary-400: #{$color-primary-400};
+  --color-primary-500: #{$color-primary-500};
+  --color-primary-600: #{$color-primary-600};
+  --color-primary-700: #{$color-primary-700};
+  --color-primary-800: #{$color-primary-800};
+  --color-primary-900: #{$color-primary-900};
+
+  // Accent color variations
+  $color-accent-50: mat.get-color-from-palette($accent, 50);
+  $color-accent-100: mat.get-color-from-palette($accent, 100);
+  $color-accent-200: mat.get-color-from-palette($accent, 200);
+  $color-accent-300: mat.get-color-from-palette($accent, 300);
+  $color-accent-400: mat.get-color-from-palette($accent, 400);
+  $color-accent-500: mat.get-color-from-palette($accent, 500);
+  $color-accent-600: mat.get-color-from-palette($accent, 600);
+  $color-accent-700: mat.get-color-from-palette($accent, 700);
+  $color-accent-800: mat.get-color-from-palette($accent, 800);
+  $color-accent-900: mat.get-color-from-palette($accent, 900);
+  --color-accent-50: #{$color-accent-50};
+  --color-accent-100: #{$color-accent-100};
+  --color-accent-200: #{$color-accent-200};
+  --color-accent-300: #{$color-accent-300};
+  --color-accent-400: #{$color-accent-400};
+  --color-accent-500: #{$color-accent-500};
+  --color-accent-600: #{$color-accent-600};
+  --color-accent-700: #{$color-accent-700};
+  --color-accent-800: #{$color-accent-800};
+  --color-accent-900: #{$color-accent-900};
+
+  // Success color variations
+  $color-success-50:  mat.get-color-from-palette($success, 50);
+  $color-success-100: mat.get-color-from-palette($success, 100);
+  $color-success-200: mat.get-color-from-palette($success, 200);
+  $color-success-300: mat.get-color-from-palette($success, 300);
+  $color-success-400: mat.get-color-from-palette($success, 400);
+  $color-success-500: mat.get-color-from-palette($success, 500);
+  $color-success-600: mat.get-color-from-palette($success, 600);
+  $color-success-700: mat.get-color-from-palette($success, 700);
+  $color-success-800: mat.get-color-from-palette($success, 800);
+  $color-success-900: mat.get-color-from-palette($success, 900);
+  --color-success-50:  #{$color-success-50};
+  --color-success-100: #{$color-success-100};
+  --color-success-200: #{$color-success-200};
+  --color-success-300: #{$color-success-300};
+  --color-success-400: #{$color-success-400};
+  --color-success-500: #{$color-success-500};
+  --color-success-600: #{$color-success-600};
+  --color-success-700: #{$color-success-700};
+  --color-success-800: #{$color-success-800};
+  --color-success-900: #{$color-success-900};
+
+  // Warning color variations
+  $color-warn-50:  mat.get-color-from-palette($warn, 50);
+  $color-warn-100: mat.get-color-from-palette($warn, 100);
+  $color-warn-200: mat.get-color-from-palette($warn, 200);
+  $color-warn-300: mat.get-color-from-palette($warn, 300);
+  $color-warn-400: mat.get-color-from-palette($warn, 400);
+  $color-warn-500: mat.get-color-from-palette($warn, 500);
+  $color-warn-600: mat.get-color-from-palette($warn, 600);
+  $color-warn-700: mat.get-color-from-palette($warn, 700);
+  $color-warn-800: mat.get-color-from-palette($warn, 800);
+  $color-warn-900: mat.get-color-from-palette($warn, 900);
+  --color-warn-50:  #{$color-warn-50};
+  --color-warn-100: #{$color-warn-100};
+  --color-warn-200: #{$color-warn-200};
+  --color-warn-300: #{$color-warn-300};
+  --color-warn-400: #{$color-warn-400};
+  --color-warn-500: #{$color-warn-500};
+  --color-warn-600: #{$color-warn-700};
+  --color-warn-700: #{$color-warn-700};
+  --color-warn-800: #{$color-warn-800};
+  --color-warn-900: #{$color-warn-900};
+
+  // Error color variations
+  $color-error-50:  mat.get-color-from-palette($error, 50);
+  $color-error-100: mat.get-color-from-palette($error, 100);
+  $color-error-200: mat.get-color-from-palette($error, 200);
+  $color-error-300: mat.get-color-from-palette($error, 300);
+  $color-error-400: mat.get-color-from-palette($error, 400);
+  $color-error-500: mat.get-color-from-palette($error, 500);
+  $color-error-600: mat.get-color-from-palette($error, 600);
+  $color-error-700: mat.get-color-from-palette($error, 700);
+  $color-error-800: mat.get-color-from-palette($error, 800);
+  $color-error-900: mat.get-color-from-palette($error, 900);
+  --color-error-50:  #{$color-error-50};
+  --color-error-100: #{$color-error-100};
+  --color-error-200: #{$color-error-200};
+  --color-error-300: #{$color-error-300};
+  --color-error-400: #{$color-error-400};
+  --color-error-500: #{$color-error-500};
+  --color-error-600: #{$color-error-600};
+  --color-error-700: #{$color-error-700};
+  --color-error-800: #{$color-error-800};
+  --color-error-900: #{$color-error-900};
+
+  /* color starts */
+  .color-primary,
+  .hover-color-primary:hover {
+    color: var(--color-primary);
+  }
+
+  .color-accent,
+  .hover-color-accent:hover {
+    color: var(--color-accent);
+  }
+
+  .color-warn,
+  .hover-color-warn:hover {
+    color: var(--color-warn);
+  }
+
+  .color-success,
+  .hover-color-success:hover {
+    color: var(--color-success);
+  }
+
+  .color-info,
+  .hover-color-info:hover {
+    color: var(--color-info);
+  }
+
+  .color-error,
+  .hover-color-error:hover {
+    color: var(--color-error);
+  }
+  .color-white{
+    color: mat.get-color-from-palette($background, background);
+  }
+  .color-gray{
+    color:var(--color-gray)
+  }
+  /* color ends */
+
+  /* bg color starts */
+  .bgcolor-primary,
+  .hover-bgcolor-primary:hover {
+    background-color: var(--color-primary);
+    color: mat.get-color-from-palette($primary, 500-contrast);
+  }
+
+  .bgcolor-accent,
+  .hover-bgcolor-accent:hover {
+    background-color: var(--color-accent) !important;
+    color: mat.get-color-from-palette($accent, 500-contrast);
+  }
+
+  .bgcolor-warn,
+  .hover-bgcolor-warn:hover {
+    background-color: var(--color-warn);
+    color: mat.get-color-from-palette($warn, 500-contrast);
+  }
+
+  .bgcolor-success,
+  .hover-bgcolor-success:hover {
+    background-color: var(--color-success);
+    color: mat.get-color-from-palette($success, 500-contrast);
+  }
+
+  .bgcolor-info,
+  .hover-bgcolor-info:hover {
+    background-color: var(--color-info);
+    color: mat.get-color-from-palette($info, 500-contrast);
+  }
+
+  .bgcolor-error,
+  .hover-bgcolor-error:hover {
+    background-color: var(--color-error);
+    color: mat.get-color-from-palette($error, 500-contrast);
+  }
+
+  .bgcolor-primary100,
+  .hover-bgcolor-primary100:hover {
+    background-color: mat.get-color-from-palette($primary, 100);
+    color: mat.get-color-from-palette($primary, 100-contrast);
+  }
+
+  .bgcolor-primary200,
+  .hover-bgcolor-primary200:hover {
+    background-color: mat.get-color-from-palette($primary, 200);
+    color: mat.get-color-from-palette($primary, 200-contrast);
+  }
+
+  .mat-bg-white,
+  .hover-bgcolor-white:hover {
+    background-color: mat.get-color-from-palette($background, background);
+    // color: mat.get-color-from-palette($accent, 500-contrast);
+  }
+
+  /* bg color ends */
+
+}
+
+/* color mixin ends here */
+
+
+/* buttons custom color info, error, success */
+$_ripple-opacity: 0.1;
+
+// Applies a focus style to an mat-button element for each of the supported palettes.
+@mixin _focus-overlay-color($config-or-theme, $variants) {
+  $config: mat.get-color-config($config-or-theme);
+
+  @each $variant,
+  $variant-palette in $variants {
+    &.mat-#{$variant} .mat-button-focus-overlay {
+      background-color: mat.get-color-from-palette($variant-palette);
+    }
+  }
+}
+
+@mixin _ripple-background($palette, $hue, $opacity) {
+  $background-color: mat.get-color-from-palette($palette, $hue, $opacity);
+  background-color: $background-color;
+
+  @if (meta.type-of($background-color) !=color) {
+    opacity: $opacity;
+  }
+}
+
+@mixin _ripple-color($theme, $hue, $opacity, $variants) {
+
+  @each $variant,
+  $variant-palette in $variants {
+    &.mat-#{$variant} .mat-ripple-element {
+      @include _ripple-background($variant-palette, $hue, $opacity);
+    }
+  }
+}
+
+// Applies a property to an mat-button element for each of the supported palettes.
+@mixin _theme-property($theme, $property, $hue, $variants) {
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+
+  @each $variant,
+  $variant-palette in $variants {
+    &.mat-#{$variant} {
+      #{$property}: mat.get-color-from-palette($variant-palette, $hue);
+    }
+
+    &.mat-#{$variant} {
+      &.mat-button-disabled {
+        $palette: if($property =='color', $foreground, $background);
+        #{$property}: mat.get-color-from-palette($palette, disabled-button);
+      }
+    }
+  }
+}
+
+@mixin color($config-or-theme, $variants) {
+  $config: mat.get-color-config($config-or-theme);
+  $foreground: map.get($config, foreground);
+  $background: map.get($config, background);
+
+  .button:not(:disabled),
+  .mat-icon-button:not(:disabled),
+  .mat-stroked-button:not(:disabled) {
+    @include _theme-property($config, 'color', text, $variants);
+    @include _focus-overlay-color($config, $variants);
+  }
+
+  .mat-flat-button:not(:disabled),
+  .mat-raised-button:not(:disabled),
+  .mat-unelevated-button:not(:disabled),
+  .mat-fab:not(:disabled),
+  .mat-mini-fab:not(:disabled) {
+    @include _theme-property($config, 'color', default-contrast, $variants);
+    @include _theme-property($config, 'background-color', default, $variants);
+    @include _ripple-color($config, default-contrast, $_ripple-opacity, $variants);
+  }
+}
+
+$theme-success: mat.define-palette(mat.$green-palette);
+$theme-info: mat.define-palette(mat.$blue-palette);
+$theme-error: mat.define-palette(mat.$orange-palette);
+$theme-black: mat.define-palette(mat.$grey-palette);
+$variants-theme: (
+  success: $theme-success,
+  info: $theme-info,
+  error: $theme-error,
+);
+// and include mixin above
+
+
+
+/* css variables */
+// border theme classes starts
+.border-primary, .border-primary:hover {
+  border-color: var(--color-primary) !important;
+}
+
+.border-accent, .border-accent:hover {
+  border-color: var(--color-accent) !important;
+}
+
+.border-warn, .border-warn:hover {
+  border-color: var(--color-warn) !important;
+}
+
+.border-success, .border-success:hover {
+  border-color: var(--color-success) !important;
+}
+
+.border-info, .border-info:hover {
+  border-color: var(--color-info) !important;
+}
+
+.border-error, .border-error:hover {
+  border-color: var(--color-error) !important;
+}

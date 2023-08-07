@@ -1,0 +1,65 @@
+@use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+
+.mat-page-container {
+    margin: 0 auto;
+    width: 90%;
+
+    @include respond-below(sm) {
+        width: 95%;
+    }
+}
+
+.mat-inside-page-container {
+    padding: 2rem 5% 2rem 3%;
+    margin: 0 0 0 2%;
+    border-radius: 2rem 0 0 2rem;
+    min-height: calc(100vh - 31.25rem);
+    @include respond-below(sm) {
+        margin-top: -1.5rem;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.mat-app-background2 {
+    background: var(--sbt-body-bg2) !important;
+}
+.mat-footer-bg {
+    background: var(--mat-footer-bg) !important;
+}
+.sb-single-resource {
+    max-width: 60rem;
+    margin: 0 auto;
+      @include respond-above(xl) {
+        max-width: calculateRem(1024px);
+      }
+      @include respond-above(xxxl) {
+        max-width: calculateRem(1088px);
+      }
+}
+.box-shadow-6px {
+    box-shadow: var(--sbt-box-shadow-6px) !important;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.list-style-dotted {
+    list-style: disc;
+}
+
+.whitespace-initial {
+    white-space: initial;
+}
+
+.checkbox-font-normal {
+    .mat-checkbox-layout {
+        white-space: unset;
+        font-size: inherit;
+        font-weight: inherit;
+        .mat-checkbox-label {
+            line-height: normal !important;
+        }
+    }
+}
