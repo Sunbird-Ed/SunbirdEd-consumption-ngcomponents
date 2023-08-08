@@ -45,7 +45,7 @@ import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.
     TruncatedEllipsisComponent,
     CqubeCardComponent,
     SummaryCardComponent,
-    ExploreCompassCardComponent
+    ExploreCompassCardComponent,
     InfoCardComponent,
     RegisterBtnCardComponent
   ],
@@ -75,7 +75,7 @@ import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.
     TruncatedEllipsisComponent,
     CqubeCardComponent,
     SummaryCardComponent,
-    ExploreCompassCardComponent
+    ExploreCompassCardComponent,
     InfoCardComponent,
     RegisterBtnCardComponent
   ]

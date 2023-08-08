@@ -72,7 +72,8 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/demo/src/styles.scss",
-              "node_modules/@project-sunbird/sb-styles/assets/styles.scss"
+              "node_modules/@project-sunbird/sb-styles/assets/styles.scss",
+              "node_modules/compass-sb-styles/assets/styles.scss"
             ],
             "scripts": []
           },
