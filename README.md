@@ -1,10 +1,43 @@
 # Common angular components for Sunbird consumption!
 Contains common UI components powered by angular. These components are designed to be used in sunbird consumption platforms *(mobile app, web portal, offline desktop app)* to drive reusability, maintainability hence reducing the redundant development effort significantly.
 
-# Getting Started
-For help getting started with a new Angular app, check out the Angular CLI.
-For existing apps, follow these steps to begin using .
+<p>
+  <img alt="angular" src="https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white" height=25 />
+  <img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" height=25 />
+</p>
 
+---
+## Getting started
+How to use @project-sunbird/common-consumption in your projects
+
+## Table of Contents
+
+- [Using library locally](#Using-library-locally)
+- [Step 1: Install the package](#step-1-install-the-package)
+- [Step 2: Include the sb-styles and assets in angular.json](#step-2-include-the-sb-styles-and-assets-in-angularjson)
+- [Step 3: Import the modules and components](#step-3-import-the-modules-and-components)
+- [Step 3: Import the modules and components](#step-3-import-the-modules-and-components)
+- [Available components](#available-components)
+- [Available directives](#available-directives)
+- [Versions](#versions)
+---
+
+## Using library locally 
+
+1. Build library
+```console
+npm run build-lib
+```
+2. link library
+   -> cd dist/common-consumption
+```console
+npm link
+```
+3. Link the library to your project
+```console
+npm link @project-sunbird/common-consumption
+```
+---
 ## Step 1: Install the package
 
     npm install @project-sunbird/common-consumption --save
