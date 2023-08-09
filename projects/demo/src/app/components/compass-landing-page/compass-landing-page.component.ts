@@ -26,6 +26,52 @@ export class CompassLandingPageComponent implements OnInit {
     }
   };
 
+  // popularData = {
+  //   competencyData: {
+  //     data: [
+  //       {
+  //         title: "Communication",
+  //         type: "Behavioural",
+  //         icon: "assets/common-consumption/images/course.svg",
+  //         noOfCourse: 4
+  //       },
+  //       {
+  //         title: "Palnning",
+  //         type: "Domain",
+  //         icon: "assets/common-consumption/images/course.svg",
+  //         noOfCourse: 4 
+  //       },
+  //       {
+  //         title: "Design thinking",
+  //         type: "Behavioural",
+  //         icon: "assets/common-consumption/images/course.svg",
+  //         noOfCourse: 4 
+  //       }
+  //     ]
+  //   },
+  //   topicsData: {
+  //     data: [
+  //       {
+  //         name: "COVID 19"
+  //       },
+  //       {
+  //         name: "Social Science"
+  //       }
+  //     ]
+  //   }
+  // }
+
+  competencyData = {
+    title: "Communication",
+    type: "Behavioural",
+    icon: "assets/common-consumption/images/course.svg",
+    noOfCourse: 4
+  }
+
+  topicsData = {
+    name: "COVID 19"
+  }
+
   constructor() { }
 
   ngOnInit(): void {

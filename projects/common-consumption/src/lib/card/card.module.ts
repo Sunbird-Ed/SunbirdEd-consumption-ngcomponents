@@ -26,6 +26,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { SummaryCardComponent } from './summary-card/summary-card.component';
 import { ExploreCompassCardComponent } from './explore-compass-card/explore-compass-card.component';
 import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.component';
+import { PopularCardComponent } from './popular-card/popular-card.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.
     SummaryCardComponent,
     ExploreCompassCardComponent,
     InfoCardComponent,
-    RegisterBtnCardComponent
+    RegisterBtnCardComponent,
+    PopularCardComponent
   ],
   imports: [
     CommonModule,
@@ -77,7 +79,8 @@ import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.
     SummaryCardComponent,
     ExploreCompassCardComponent,
     InfoCardComponent,
-    RegisterBtnCardComponent
+    RegisterBtnCardComponent,
+    PopularCardComponent
   ]
 })
 export class CardModule { }

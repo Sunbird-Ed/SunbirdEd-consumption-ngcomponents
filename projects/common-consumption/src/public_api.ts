@@ -74,3 +74,4 @@ export * from './lib/footer/main-footer/main-footer.component';
 export * from './lib/footer/footer.module';
 export * from './lib/card/info-card/info-card.component';
 export * from './lib/card/register-btn-card/register-btn-card.component';
+export * from './lib/card/popular-card/popular-card.component';
