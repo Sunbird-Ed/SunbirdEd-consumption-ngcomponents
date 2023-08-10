@@ -38,6 +38,10 @@
 
     .buttons-section {
         margin-top: 30px;
+        display: flex;
+        button{
+            margin-right: 15px;
+        }
     }
 
     .sb-btn {
