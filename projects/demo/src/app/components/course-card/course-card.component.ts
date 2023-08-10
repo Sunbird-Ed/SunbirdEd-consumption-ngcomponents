@@ -46,15 +46,6 @@ export class CourseCardComponent implements OnInit {
     ],
     "resourceType": "Course"
   };
-  regCardData = {
-    "imgUrl": "assets/common-consumption/images/reg-button-bg.svg",
-    "title":"Register for a Successful Government Experience",
-    "content": "Register now for a successful government experience. Join a community driving positive change.",
-    "button": {
-      "type":"com-primary-btn",
-      "text":"Register"
-     }
-  }
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,28 @@
+.container{
+    padding-top:15px;
+    display: flex;
+    flex-direction: column;
+    h3 {
+        color: var(--com-primary-color);
+        font-family: var(--font-com-en);
+    }
+    .section{
+        margin-top:20px;
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            li {
+                padding: 0 20px;
+                margin: 0;
+                list-style-type: none;
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: right;
+                align-items: center;
+            }
+        }   
+    }   
+}
+

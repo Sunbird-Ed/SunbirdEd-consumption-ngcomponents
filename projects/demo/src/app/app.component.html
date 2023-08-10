@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="!hideMainNav">
         <ul>
             <li [routerLink]="['home']" #rla8="routerLinkActive"  routerLinkActive [ngStyle]="rla8.isActive ? {'color': 'red'} : {'color': 'black'}">All Cards</li>
             <li [routerLink]="['group-card']" #rla="routerLinkActive"  routerLinkActive [ngStyle]="rla.isActive ? {'color': 'red'} : {'color': 'black'}">Group card</li>
@@ -10,8 +10,8 @@
             <li [routerLink]="['course-card']" #rla6="routerLinkActive"  routerLinkActive [ngStyle]="rla6.isActive ? {'color': 'red'} : {'color': 'black'}">Course card</li>
             <li [routerLink]="['course-curiculum-card']" routerLinkActive="active" #rla7="routerLinkActive"  [ngStyle]="rla7.isActive ? {'color': 'red'} : {'color': 'black'}">Course curiculum card</li>
             <li [routerLink]="['my-course-card']" #rla9="routerLinkActive"  routerLinkActive [ngStyle]="rla9.isActive ? {'color': 'red'} : {'color': 'black'}">My Course card</li>
-            <li [routerLink]="['compass-landing-page']" #rla10="routerLinkActive" routerLinkActive
-                [ngStyle]="rla10.isActive ? {'color': 'red'} : {'color': 'black'}">Compass Landing Page</li>
+            <li [routerLink]="['compass']" #rla10="routerLinkActive" routerLinkActive
+                [ngStyle]="rla10.isActive ? {'color': 'red'} : {'color': 'black'}">Compass Components</li>
         </ul>
     <!-- <div class="" style="flex:1">
         <app-home></app-home>
