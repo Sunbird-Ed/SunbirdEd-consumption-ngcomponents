@@ -74,3 +74,6 @@ export * from './lib/footer/main-footer/main-footer.component';
 export * from './lib/footer/footer.module';
 export * from './lib/card/info-card/info-card.component';
 export * from './lib/card/register-btn-card/register-btn-card.component';
+export * from './lib/card/compass-banner-card/compass-banner-card.component';
+export * from './lib/card/compass-course-card/compass-course-card.component';
+export * from './lib/card/goal-oriented-hr-card/goal-oriented-hr-card.component';
