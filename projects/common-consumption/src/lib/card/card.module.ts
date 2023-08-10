@@ -12,21 +12,24 @@ import { LibraryCardV2Component } from './library-card-v2/library-card-v2.compon
 import { LibraryCardV3Component } from './library-card-v3/library-card-v3.component';
 import { LibraryCardV4Component } from './library-card-v4/library-card-v4.component';
 import { NotificationCardComponent } from './notification-card/notification-card.component';
-import {BannerCardComponent} from './banner-card/banner-card.component';
+import { BannerCardComponent } from './banner-card/banner-card.component';
 import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
 import { CqubeCardComponent } from './cqube-card/cqube-card.component';
 import { InfoCardComponent } from './info-card/info-card.component'
 
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { SummaryCardComponent } from './summary-card/summary-card.component';
 import { ExploreCompassCardComponent } from './explore-compass-card/explore-compass-card.component';
 import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.component';
 import { PopularCardComponent } from './popular-card/popular-card.component';
+import { CompassBannerCardComponent } from './compass-banner-card/compass-banner-card.component';
+import { CompassCourseCardComponent } from './compass-course-card/compass-course-card.component';
+import { GoalOrientedHrCardComponent } from './goal-oriented-hr-card/goal-oriented-hr-card.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { PopularCardComponent } from './popular-card/popular-card.component';
     ExploreCompassCardComponent,
     InfoCardComponent,
     RegisterBtnCardComponent,
-    PopularCardComponent
+    PopularCardComponent,
+    CompassBannerCardComponent,
+    CompassCourseCardComponent,
+    GoalOrientedHrCardComponent
   ],
   imports: [
     CommonModule,
@@ -80,7 +86,10 @@ import { PopularCardComponent } from './popular-card/popular-card.component';
     ExploreCompassCardComponent,
     InfoCardComponent,
     RegisterBtnCardComponent,
-    PopularCardComponent
+    PopularCardComponent,
+    CompassBannerCardComponent,
+    CompassCourseCardComponent,
+    GoalOrientedHrCardComponent
   ]
 })
 export class CardModule { }

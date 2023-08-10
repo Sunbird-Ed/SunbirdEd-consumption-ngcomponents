@@ -3,6 +3,9 @@
     opacity: 1;
     background-color: rgba(245,245,245, 1);
     padding: 6%;
+    margin: 12px 0;
+    width: 100%;
+    height:auto;
 }
 .title{
     opacity: 1;
@@ -26,4 +29,16 @@
 }
 .icon{
     margin-bottom: 6%
+}
+@media only screen and (max-width:992px) {
+    .explore-compass-card{
+        margin-left: calc((100% - (5 * (100% / 12))) / 2);
+        margin-right: calc((100% - (5 * (100% / 12))) / 2);
+    }
+}
+@media only screen and (max-width:768px) {
+    .explore-compass-card{
+        margin-left: calc((100% - (10 * (100% / 12))) / 2);
+        margin-right: calc((100% - (10 * (100% / 12))) / 2);
+    }
 }
