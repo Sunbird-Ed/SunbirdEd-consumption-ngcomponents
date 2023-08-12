@@ -7,7 +7,7 @@ const REG_BTN_DATA = [
       selector:'<register-btn-card></register-btn-card>',
       input: "{imgUrl:string, title:string, content:string, button:{ type:string, text:string }}"
   }
-]
+];
 @Component({
   selector: 'app-compass-landing-page',
   templateUrl: './compass-landing-page.component.html',
