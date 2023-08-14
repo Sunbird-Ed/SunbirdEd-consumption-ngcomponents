@@ -8,6 +8,24 @@ const REG_BTN_DATA = [
       input: "{imgUrl:string, title:string, content:string, button:{ type:string, text:string }}"
   }
 ];
+const EXPLORE_DATA = [
+  { 
+      selector:'<explore-compass-card></explore-compass-card>',
+      input: "{iconUrl:string, title:string, content:string}"
+  }
+];
+const SUMMARY_DATA = [
+  { 
+      selector:'<summary-card></summary-card>',
+      input: "{iconUrl:string, title:string, count:string, commonIconUrl:string}"
+  }
+];
+const BROWSE_BY_DATA = [
+  {
+    selector: '<browse-by-card></browse-by-card>',
+    input: "{iconUrl:string, title:string}"
+  }
+];
 @Component({
   selector: 'app-compass-landing-page',
   templateUrl: './compass-landing-page.component.html',
@@ -17,6 +35,9 @@ export class CompassLandingPageComponent implements OnInit {
   displayedColumns: string[] = ['selector', 'input'];
   dataSource = INFO_DATA;
   regDataSource = REG_BTN_DATA;
+  browseByDataSource = BROWSE_BY_DATA;
+  exploreCardDataSource = EXPLORE_DATA;
+  summaryDataSource = SUMMARY_DATA;
   landingPageData = {
     cardsData: {
         imageUrl: "assets/common-consumption/images/info-card_1.jpg",
