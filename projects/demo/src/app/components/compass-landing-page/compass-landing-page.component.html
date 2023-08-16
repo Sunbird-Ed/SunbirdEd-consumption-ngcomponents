@@ -5,17 +5,10 @@
         <br><br>
         <explore-compass-card [cardInfo]="landingPageData.exploreData"></explore-compass-card>
         <br><br>
+        <sb-popular-card [data]="competencyData"></sb-popular-card>
+        <br><br>
+        <sb-popular-card [data]="topicsData"></sb-popular-card>
+        <br><br>
     </div>
-    <!-- <div class="popular-topics">
-        <div [style.width]="popularData.competencyData.data.length > 4 ? 100 / popularData.competencyData.data.length + '%': '25%'" *ngFor="let data of popularData.competencyData.data; let i=index">
-            <ng-container>
-                <sb-popular-card [data]="data"></sb-popular-card>
-            </ng-container>
-        </div>
-    </div> -->
-    <sb-popular-card [data]="competencyData"></sb-popular-card>
-    <br><br>
-    <sb-popular-card [data]="topicsData"></sb-popular-card>
     <main-footer [footerData]="landingPageData.footerData"></main-footer>
-    <br><br>
 </div>

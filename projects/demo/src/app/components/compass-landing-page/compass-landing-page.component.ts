@@ -65,7 +65,7 @@ export class CompassLandingPageComponent implements OnInit {
     title: "Communication",
     type: "Behavioural",
     icon: "assets/common-consumption/images/course.svg",
-    noOfCourse: 4
+    noOfCourses: 4
   }
 
   topicsData = {
