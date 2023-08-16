@@ -4,13 +4,15 @@ import { CompassLandingPageComponent } from './compass-landing-page/compass-land
 import { BasicComponentsComponent } from './basic-components/basic-components.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TypographyComponent } from './typography/typography.component';
+import { LernLandingPageComponent } from './lern-landing-page/lern-landing-page.component';
 
 const routes: Routes = [
   { path:'', component:DashboardComponent, 
     children:[
         { path:'typography', component: TypographyComponent},
         { path:'basic', component:BasicComponentsComponent },
-        { path:'landing', component: CompassLandingPageComponent }
+        { path:'landing', component: CompassLandingPageComponent },
+        { path: 'lern', component: LernLandingPageComponent}
     ]
   }
   

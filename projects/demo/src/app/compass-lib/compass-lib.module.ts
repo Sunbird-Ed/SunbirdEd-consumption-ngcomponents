@@ -15,13 +15,15 @@ import {MatDividerModule} from '@angular/material/divider';
 
 import { BasicComponentsComponent } from './basic-components/basic-components.component';
 import { TypographyComponent } from './typography/typography.component';
+import { LernLandingPageComponent } from './lern-landing-page/lern-landing-page.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     BasicComponentsComponent,
     TypographyComponent,
-    CompassLandingPageComponent
+    CompassLandingPageComponent,
+    LernLandingPageComponent
   ],
   imports: [
     CommonModule,
