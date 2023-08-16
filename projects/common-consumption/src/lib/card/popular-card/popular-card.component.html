@@ -1,12 +1,12 @@
 <div class="popular-card">
-    <ng-container *ngIf="!data.name">
+    <ng-container *ngIf="pillName == 'Competency'">
         <div class="popular-card-competency-name">{{data.title}}</div>
         <div class="popular-card-competency-type">{{data.type}}</div>
         <div class="popular-card-competency-content"><img class="icon" src="{{data.icon}}" />
             <span>Associated courses: {{data.noOfCourses}}</span>
         </div>
     </ng-container>
-    <ng-container *ngIf="data.name">
+    <ng-container *ngIf="pillName == 'Topic'">
         <div class="popular-card-topic-name">{{data.name}}</div>
     </ng-container>
 </div>

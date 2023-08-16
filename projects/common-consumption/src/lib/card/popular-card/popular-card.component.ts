@@ -13,6 +13,7 @@ interface cardInfo {
 })
 export class PopularCardComponent implements OnInit {
   @Input() data: cardInfo;
+  @Input() pillName: string;
   constructor() { }
 
   ngOnInit(): void {
