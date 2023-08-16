@@ -1,0 +1,39 @@
+@import "compass-sb-styles/assets/mixins/mixins";
+
+.popular-card {
+    @include border(border,1px,var(--com-grey-border) !important);
+    opacity: 1;
+    padding: calculateRem(24px) calculateRem(20px);
+    text-align: left;
+    &-competency-name {
+        @include typography(var(--font-com-en), 16px, 600, 0.12px, 24px);
+        font-style: normal;
+        margin-bottom: calculateRem(4px);
+    }
+    &-competency-type, &-competency-content {
+        @include typography(var(--font-com-lato), 12px, 400, 0.25px, 16px);
+    }
+    &-competency-content {
+        opacity: 1;
+        font-style: normal;
+        color: var(--primary-color);
+        margin-top: calculateRem(16px);
+        display: flex;
+        align-items: center;
+        img {
+            width: calculateRem(13px);
+            height: calculateRem(13px);
+        }
+        span {
+            margin-left: calculateRem(9px);
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &-topic-name {
+        @include typography(var(--font-com-lato), 14px, 700, 0.25px, 20px);
+        opacity: 1;
+        font-style: normal;
+    }
+}

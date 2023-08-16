@@ -42,7 +42,7 @@ export class CompassLandingPageComponent implements OnInit {
       commonIconUrl: "assets/common-consumption/images/arrow.svg"
     },
     exploreData: {
-      iconUrl: "assets/common-consumption/images/group24.png",
+      iconUrl: "assets/common-consumption/imageelements/group24.png",
       title: "Learn",
       content: "Sharpen your skills with hundreds-of online courses",
     },

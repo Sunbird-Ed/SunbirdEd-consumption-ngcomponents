@@ -26,6 +26,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SummaryCardComponent } from './summary-card/summary-card.component';
 import { ExploreCompassCardComponent } from './explore-compass-card/explore-compass-card.component';
 import { RegisterBtnCardComponent } from './register-btn-card/register-btn-card.component';
+import { PopularCardComponent } from './popular-card/popular-card.component';
 import { CompassBannerCardComponent } from './compass-banner-card/compass-banner-card.component';
 import { CompassCourseCardComponent } from './compass-course-card/compass-course-card.component';
 import { GoalOrientedHrCardComponent } from './goal-oriented-hr-card/goal-oriented-hr-card.component';
@@ -51,6 +52,7 @@ import { GoalOrientedHrCardComponent } from './goal-oriented-hr-card/goal-orient
     ExploreCompassCardComponent,
     InfoCardComponent,
     RegisterBtnCardComponent,
+    PopularCardComponent,
     CompassBannerCardComponent,
     CompassCourseCardComponent,
     GoalOrientedHrCardComponent
@@ -84,6 +86,7 @@ import { GoalOrientedHrCardComponent } from './goal-oriented-hr-card/goal-orient
     ExploreCompassCardComponent,
     InfoCardComponent,
     RegisterBtnCardComponent,
+    PopularCardComponent,
     CompassBannerCardComponent,
     CompassCourseCardComponent,
     GoalOrientedHrCardComponent
