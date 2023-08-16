@@ -2,10 +2,12 @@
 
 .course-card {
     background-color: #ffffff;
-
+    .course-icon {
+        display: inline !important;
+    }
     .text-section {
         margin-top: 20px;
-        .icon, .course-dd {
+        .course-icon, .course-dd {
             height: 24px;
         }
         .item-name {
