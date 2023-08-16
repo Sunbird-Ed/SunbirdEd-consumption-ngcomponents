@@ -5,9 +5,13 @@
     border-radius: 4px;
     background-image: linear-gradient(270deg, var(--com-bright-orange) 0%, var( --com-peach-orange) 100%);
     display: flex;
-    flex-direction: row;
-    padding:calculateRem(26px) calculateRem(59px);
+    flex-direction: column;
+    padding:calculateRem(26px) 0;
     align-items: center;
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+        padding:calculateRem(26px) calculateRem(59px);
+    }
     .content{
         padding:calculateRem(49px);
         // font-family: var(--font-com-en);
