@@ -1,0 +1,22 @@
+// @if $theme-name == joy {
+//     @import 'joy';
+//   } @else if $theme-name == aquapurple {
+//     @import 'aquapurple';
+//   }
+
+@use './../fonts' as * ;
+@import 'joy';
+@import 'aquapurple';
+@import 'pink-bluegrey';
+@import 'deeppurple-amber';
+@import 'indigo-pink';
+@import 'sb-mat-grey';
+
+$app-themes: (
+  deeppurple-amber: $theme-deeppurple-amber,
+  joy: $theme-joy,
+  aquapurple: $theme-aquapurple,
+  pink-bluegrey: $theme-pink-bluegrey,
+  indigo-pink: $theme-indigo-pink,
+  // ... other theme imports
+);

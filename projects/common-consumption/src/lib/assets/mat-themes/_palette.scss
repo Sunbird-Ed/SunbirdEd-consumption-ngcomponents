@@ -1,0 +1,187 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use './fonts' as * ;
+@use './theme-palettes/index' as *;
+
+
+// Global color palettes
+// $app-primary: mat.palette($mat-joy);
+// $app-accent: mat.palette($mat-joy-accent); //, 500, A200, A100, A400
+// $app-warn: mat.palette($mat-red);
+
+// $sb-mat-grey: (
+//   50: #e7e7e7,
+//   100: #c2c2c2,
+//   200: #999999,
+//   300: #707070,
+//   400: #525252,
+//   500: #333333,
+//   600: #2e2e2e,
+//   700: #272727,
+//   800: #202020,
+//   900: #141414,
+//   A100: #ef6e6e,
+//   A200: #ea4040,
+//   A400: #f60000,
+//   A700: #dd0000,
+//   contrast: (
+//     50: #000000,
+//     100: #000000,
+//     200: #000000,
+//     300: #ffffff,
+//     400: #ffffff,
+//     500: #ffffff,
+//     600: #ffffff,
+//     700: #ffffff,
+//     800: #ffffff,
+//     900: #ffffff,
+//     A100: #000000,
+//     A200: #ffffff,
+//     A400: #ffffff,
+//     A700: #ffffff,
+//   ),
+// );
+
+// $sb-mat-green: (
+//   50: #edf5ea,
+//   100: #d2e5ca,
+//   200: #b5d4a7,
+//   300: #97c284,
+//   400: #80b569,
+//   500: #6aa84f,
+//   600: #62a048,
+//   700: #57973f,
+//   800: #4d8d36,
+//   900: #3c7d26,
+//   A100: #cdffbe,
+//   A200: #a6ff8b,
+//   A400: #7fff58,
+//   A700: #6cff3f,
+//   contrast: (
+//     50: #000000,
+//     100: #000000,
+//     200: #000000,
+//     300: #000000,
+//     400: #000000,
+//     500: #000000,
+//     600: #000000,
+//     700: #ffffff,
+//     800: #ffffff,
+//     900: #ffffff,
+//     A100: #000000,
+//     A200: #000000,
+//     A400: #000000,
+//     A700: #000000,
+//   ),
+// );
+
+
+
+/* custom mixins ends here */
+/**
+* Define your custom themes in this map. 
+* The `key` of each member is the name of CSS class for that theme. 
+* To better understanding the schema of the map, see `@each` loop below and especially pay attention to 
+* `map-has-key()` functions.
+*/
+
+$app-themes: (
+  
+  // deeppurple-amber: (
+  //   primary-base: mat.$deep-purple-palette,
+  //   accent-base: mat.$amber-palette,
+  //   success: mat.$green-palette,
+  //   is-dark: false,
+  //   foreground: mat.$light-theme-foreground-palette,
+  //   background: mat.$light-theme-background-palette,
+  //   typography:
+  //     mat.define-typography-config(
+  //       $font-family: "Arimo",
+  //     ),
+  // ),
+  // indigo-pink: (
+  //   primary-base: mat.$indigo-palette,
+  //   accent-base: mat.$pink-palette,
+  //   success: mat.$green-palette,
+  //   is-dark: false,
+  //   foreground: mat.$light-theme-foreground-palette,
+  //   background: mat.$light-theme-background-palette,
+  //   typography:
+  //     mat.define-typography-config(
+  //       $font-family: "Cabin",
+
+  //     ),
+  // ),
+  // pink-bluegrey: (
+  //   primary-base: mat.$pink-palette,
+  //   accent-base: $sbmat-lemongreen,
+  //   success: mat.$red-palette,
+  //   is-dark: true,
+  //   foreground: mat.$dark-theme-foreground-palette,
+  //   background: mat.$dark-theme-background-palette,
+  //   typography:
+  //     mat.define-typography-config(
+  //       $font-family: "Poppins",
+  //     ),
+  // ),
+  // purple-green: (
+  //   primary-base: mat.$purple-palette,
+  //   accent-base: mat.$green-palette,
+  //   success: mat.$green-palette,
+  //   is-dark: true,
+  //   foreground: mat.$dark-theme-foreground-palette,
+  //   background: mat.$dark-theme-background-palette,
+  //   typography:
+  //     mat.define-typography-config(
+  //       $font-family: "Quicksand",
+  //     ),
+  // ),
+  // joy: (
+  //   primary-base: $sb-mat-joy-primary,
+  //   accent-base: $sb-mat-joy-accent,
+  //   success: mat.$green-palette,
+  //   is-dark: false,
+  //   foreground: mat.$light-theme-foreground-palette,
+  //   background: mat.$light-theme-background-palette,
+  //   typography:
+  //     mat.define-typography-config(
+  //       $font-family: var(--font-stack-en),
+  //     ),
+  // ),
+  // aquapurple: (
+  //   primary-base: $sbmat-aqua,
+  //   accent-base: $sbmat-purple,
+  //   success: mat.$green-palette,
+  //   is-dark: false,
+  //   foreground: mat.$light-theme-foreground-palette,
+  //   background: mat.$light-theme-background-palette,
+  //   typography:
+  //     mat.define-typography-config(
+  //       $font-family: var(--font-stack-en),
+  //     ),
+  // ),  
+  // aquagun: (
+  //   primary-base: $sbmat-gunmetal,
+  //   accent-base: $sbmat-aqua,
+  //   success: mat.$green-palette,
+  //   is-dark: true,
+  //   foreground: mat.$dark-theme-foreground-palette,
+  //   background: mat.$dark-theme-background-palette,
+  //   typography:
+  //     mat.define-typography-config(
+  //       $font-family: var(--font-stack-en),
+  //     ),
+  // ),
+  // green-grey: (
+  //   primary-base: $sb-mat-green,
+  //   accent-base: mat.$orange-palette,
+  //   success: mat.$green-palette,
+  //   is-dark: true,
+  //   foreground: mat.$dark-theme-foreground-palette,
+  //   background: mat.$dark-theme-background-palette,
+  //   typography:
+  //     mat.define-typography-config(
+  //       $font-family: "Roboto Slab",
+  //     ),
+  // ),
+);

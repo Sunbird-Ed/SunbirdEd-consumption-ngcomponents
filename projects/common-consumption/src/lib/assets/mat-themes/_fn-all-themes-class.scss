@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "@angular/material" as mat;
-@use './palette' as *;
+// @use './palette' as *;
+@use './theme-palettes/index' as *;
 
 @mixin make-stylesheets($app-themes) {
 @each $css-class, $theme in $app-themes {

@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+$theme-indigo-pink: (
+  primary-base: mat.$indigo-palette,
+  accent-base: mat.$pink-palette,
+  success: mat.$green-palette,
+  is-dark: false,
+  foreground: mat.$light-theme-foreground-palette,
+  background: mat.$light-theme-background-palette,
+  typography:
+    mat.define-typography-config(
+      $font-family: "Cabin",
+    ),
+);

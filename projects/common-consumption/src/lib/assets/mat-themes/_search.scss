@@ -1,6 +1,7 @@
 @use "@angular/material" as mat;
 @use "sass:map";
-@forward "./palette";
+// @forward "./palette";
+@use './theme-palettes/index' as *;
 @forward './buttons';
 @use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 

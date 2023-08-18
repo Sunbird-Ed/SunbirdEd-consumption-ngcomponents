@@ -6,7 +6,7 @@
 ::ng-deep :root {
   --cc-mat-card-type-bg:#000;
   --cc-mat-card-type:#fff;
-  --cc-mat-card-title: #024f9d;
+  // --cc-mat-card-title: #024f9d;
   --cc-mat-card-selected-bg: rgba(2, 79, 157, 0.2);
   --cc-mat-card-selected-border:#024f9d;
   --cc-mat-card-data2-bg: #E5EDF5;
@@ -47,7 +47,7 @@
       }
       .mat-card-title{
         margin: 0;
-        color: var(--cc-mat-card-title);
+        // color: var(--cc-mat-card-title);
         font-weight: bold !important;
         line-height: normal;
         font-size: 0.875rem;
@@ -127,7 +127,7 @@
         right: 1rem;
         .svg-tail__rc{
           fill: transparent;
-          stroke: var(--cc-mat-card-svg-flower);
+          // stroke: var(--cc-mat-card-svg-flower);
         }
         html[dir='rtl'] & {
           right: auto;
@@ -190,112 +190,4 @@
       cursor:initial
     }
   } 
-}
-
-//for local demo add 'joy' class for 'mat-card'
-:host{
-  .joy {
-   &.mat-card.mat-card-v2{
-      cursor: pointer;
-      position: relative;
-      border-radius: 1.5rem;
-      box-shadow: var(--sbt-box-shadow-6px) !important;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      padding: 0;
-      flex-direction: column;
-      .mat-card-header {
-        display: block;
-        z-index: 2;
-        order: 2;
-        width: 100%;
-        justify-content: space-between;
-        padding: 0 1rem;
-        margin-bottom: 0 !important;
-        .mat-card-avatar {
-          width: 4.5rem;
-          height: 4.5rem;
-          border-radius: 50%;
-          position: absolute;
-          top: 3rem;
-          right: 2rem;
-          border: 0.1875rem solid var(--cc-mat-card-avatar-border);
-          z-index: 1;
-          img {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
-          }
-          html[dir='rtl'] & {
-            right: auto;
-            left: 2rem;
-          }
-        }
-        .mat-card-header-text{
-          margin: 0;
-          width: 100%;
-        }
-        .mat-card-title{
-          width: 70%;
-        }
-      }
-      .mat-card-banner{
-        height: 4.5rem;
-        border-radius: 1rem;
-        overflow: hidden;
-        margin: 1rem;
-        img{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          margin: 0;
-        }
-      }
-      .mat-card-content {
-        order: 3;
-        margin: 0 !important;
-      }
-      .mat-card-info{
-        padding: 0 1rem 1rem;
-        ::ng-deep html[dir='rtl'] & {
-          padding-left:1rem;
-          padding-right:unset;
-        }
-        
-      }
-      .mat-card-chips-list{
-        padding: 0 1rem;
-      }
-      .mat-card__type {
-        top: 2.625rem;
-        left: 0;
-        margin: 0 !important;
-        html[dir='rtl'] & {
-          right: 0;
-          left: auto;
-        }
-        &::before {
-          left: auto !important;
-          html[dir='rtl'] & {
-            left: -0.5rem !important;
-            transform: rotatex(180deg);
-            right: auto;
-          }
-        }
-      }
-      &.selected{
-        border-radius: 1.5rem;
-      }
-      &.recently-viewed{
-        .mat-card-header .mat-card-avatar{
-          height: 4.5rem;
-          width: 4.5rem;
-          right: 1.5rem;
-        }
-      }
-    }
-  }
 }

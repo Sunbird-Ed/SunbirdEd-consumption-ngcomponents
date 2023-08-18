@@ -1,7 +1,8 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use '@angular/material' as mat;
-@use "./palette" as *;
+// @use "./palette" as *;
+@use './theme-palettes/index' as *;
 // @use './import-component-theme-config';
 
 @mixin color-success {

@@ -1,0 +1,89 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+/* custom mixins ends here */
+/**
+* Define your custom themes in this map. 
+* The `key` of each member is the name of CSS class for that theme. 
+* To better understanding the schema of the map, see `@each` loop below and especially pay attention to 
+* `map-has-key()` functions.
+*/
+
+$sb-mat-joy-primary: (
+  50:  #e9e8d9, // #fffaea, 
+  100: #f3f3e5, // #fff4cc,
+  200: #ffecaa, 
+  300: #ffe487,
+  400: #ffdf6e,
+  500: #ffd954,
+  600: #ffd54d,
+  700: #ffcf43,
+  800: #ffca3a,
+  900: #ffc029,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #fff2d6,
+  A700: #ffeabd,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$sb-mat-joy-accent: (
+  50: #e1eaf3,
+  100: #b3cae2,
+  200: #81a7ce,
+  300: #4e84ba,
+  400: #2869ac,
+  500: #024f9d,
+  600: #024895,
+  700: #013f8b,
+  800: #013681,
+  900: #01266f,
+  A100: #9eb6ff,
+  A200: #6b90ff,
+  A400: #386aff,
+  A700: #1f57ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$theme-joy: (
+  primary-base: $sb-mat-joy-primary,
+  accent-base: $sb-mat-joy-accent,
+  success: mat.$green-palette,
+  is-dark: false,
+  foreground: mat.$light-theme-foreground-palette,
+  background: mat.$light-theme-background-palette,
+  typography:
+    mat.define-typography-config(
+      $font-family: var(--font-stack-en),
+    ),
+);

@@ -5,6 +5,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <!-- <span>My App</span> -->
+    <h3 class="mat-h3 font-weight-bold mt-16"></h3> 
     <span class="example-spacer"></span>
     <div role="navigation" aria-label="Font Size" class="pl-4-min-xs d-flex flex-ai-center">
       <button mat-icon-button id="theme-selector" class="hover-bgcolor-primary" [mat-menu-trigger-for]="themeMenu"
@@ -80,9 +81,13 @@
       [ngStyle]="rla7.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
       <div mat-line>Course curiculum card</div>
     </mat-list-item>
-    <mat-list-item [routerLink]="['my-course-card']" #rla9="routerLinkActive" routerLinkActive
-      [ngStyle]="rla9.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+    <mat-list-item [routerLink]="['my-course-card']" #rla8="routerLinkActive" routerLinkActive
+      [ngStyle]="rla8.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
       <div mat-line> My Course card</div>
+    </mat-list-item>
+    <mat-list-item [routerLink]="['menu-links']" #rla9="routerLinkActive" routerLinkActive
+      [ngStyle]="rla9.isActive ? {'color': 'var(--color-accent)'} : {'color': 'inherit'}">
+      <div mat-line> Menu Links</div>
     </mat-list-item>
     </mat-nav-list>
   </mat-drawer>

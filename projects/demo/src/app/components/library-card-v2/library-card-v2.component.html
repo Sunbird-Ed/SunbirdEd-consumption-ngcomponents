@@ -1,6 +1,35 @@
 <div class="mb-16">
-    <h3 class="mat-h3 font-weight-bold">Library Card V2</h3>
+   
+    <!-- <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card> -->
+      <h5 class="mat-h3 font-weight-bold">Default card</h5> 
     <sb-library-card-v2 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <h5 class="mat-h3 font-weight-bold">Joy card</h5> 
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" layout='v2-type4' [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" layout='v2-type1' [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" layout='v2-type2' [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
+    <br><br>
+    <sb-library-card-v2 [layoutConfig]="layoutConfig" layout='v2-type3' [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v2>
 </div>
 <!-- 
 <div class="mb-16">

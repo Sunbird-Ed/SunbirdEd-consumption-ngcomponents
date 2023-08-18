@@ -10,6 +10,7 @@ import { LibraryCardV4Component } from './components/library-card-v4/library-car
 import { LibraryCardComponent } from './components/library-card/library-card.component';
 import { MemberCardComponent } from './components/member-card/member-card.component';
 import { MyCourseCardComponent } from './components/my-course-card/my-course-card.component';
+import { MenuLinksComponent } from './components/menu-links/menu-links.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MyCourseCardComponent } from './components/my-course-card/my-course-car
       { path: 'course-curiculum-card', component: CourseCuriculumCardComponent },
       { path: 'home', component: HomeComponent },
       { path: 'my-course-card', component: MyCourseCardComponent },
+      { path: 'menu-links', component: MenuLinksComponent },
       { path: '**', redirectTo: 'home' },
       
     ])

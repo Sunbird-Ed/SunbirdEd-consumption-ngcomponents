@@ -2,7 +2,7 @@
 @use "@angular/material" as mat;
 @use 'sass:map';
 @forward "../lazy-loading.scss";
-@use "../card.scss";
+// @use "../card.scss";
 .dot-divider{
   width: 0.25rem;
   height: 0.25rem;
@@ -19,7 +19,7 @@
 ::ng-deep :root {
   --cc-mat-card-type-bg:#000;
   --cc-mat-card-type:#fff;
-  --cc-mat-card-title: #024f9d;
+  // --cc-mat-card-title: #024f9d;
   --cc-mat-card-selected-bg: rgba(2, 79, 157, 0.2);
   --cc-mat-card-menu:#999;
   --cc-mat-card-menu-hover:#f2f2f2;
@@ -27,8 +27,8 @@
 }
 
 //default material card styles
-::ng-deep{
-  .mat-card.mat-card-v1{
+:host{
+  .mat-card{
     cursor: pointer;
     box-shadow: var(--sbt-box-shadow-6px)!important;
     padding: 0;
@@ -60,7 +60,7 @@
       }
       .mat-card-title{
         margin: 0;
-        color: var(--cc-mat-card-title);
+        // color: var(--cc-mat-card-title);
         font-weight: bold !important;
         line-height: normal;
         font-size: 0.875rem;
