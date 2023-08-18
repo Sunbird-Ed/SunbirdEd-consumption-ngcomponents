@@ -1,18 +1,17 @@
 @use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 .new-layout-footer{
     margin-top:calculateRem(24px);
-    background-color: rgba(55,52,52, 1);
     color: rgba(255,255,255,0.95);
     justify-content: center;
     font-size: 14px;
     }
+    .bg-grey{
+      background-color: rgba(55,52,52, 1);
+    }
     .sbt-top-footer-container {
-      margin-top:30px;
       height: calculateRem(116px);
-      width: 87%;
       align-items: center;
       margin: auto;
-      padding: 20px 0;
       display: flex;
       justify-content: space-between;
     }
@@ -30,7 +29,6 @@
     }
 
     .sbt-bottom-footer-container {
-      width: 87%;
       margin: auto;
       display: flex;
       flex-direction: row;
@@ -38,7 +36,7 @@
     }
 
     .outer-container{
-      background-color: rgba(255,255,255, 0.08);
+      background-color: #474444;
       display: flex;
       flex-direction: column;
       height: 72px;
