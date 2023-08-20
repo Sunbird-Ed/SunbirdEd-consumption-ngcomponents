@@ -1,6 +1,7 @@
 @use "@angular/material" as mat;
 @use 'sass:map';
-@use './palette'as *;
+@use './theme-palettes/index' as *;
+// @use './palette' as *;
 
 @mixin theme-mat-card($theme) {
   // Get the color config from the theme.
@@ -22,6 +23,18 @@
   --cc-mat-card-selected-border:#{$color-accent};
   --cc-mat-card-selected-bg:#{$color-accent-100};
 
+
+  .mat-card-title {
+    color: mat.get-color-from-palette($accent);
+  }
+  // .mat-card-avatar{
+  //   background-color: var(--cc-mat-card-img-container-bg);
+  // }
+  .mat-card-svg-tail{
+    .svg-tail__rc{
+      stroke: var(--cc-mat-card-svg-flower);
+    }
+  }
   .mat-card .mat-chip-list-wrapper {
     justify-content: flex-start;
     margin: 0;
@@ -44,16 +57,6 @@
   //   -webkit-line-clamp: 2 !important;
   // }
 
-  //themes 
-  .deeppurple-amber .mat-card.mat-card-v2.selected .mat-card-header{
-    background-color: var(--cc-mat-card-selected-bg);
-  }
-  .deeppurple-amber .mat-card.mat-card-v2 .mat-card-header{
-    background-color: mat.get-color-from-palette($background, background);
-  }
-  .pink-bluegrey .mat-card-header .mat-card-title{
-    color: mat.get-color-from-palette($background, background) !important;
-  }
   .mat-card.member-card:hover {
     background-color: mat.get-color-from-palette($accent, 500) !important;
     color: mat.get-color-from-palette($accent, 500-contrast);
@@ -61,7 +64,7 @@
 }
 
 //themes styles
-.deeppurple-amber {
+[layout='v2-type1'] {
   $mat-card-palette: mat.define-palette(mat.$deep-purple-palette);
   .mat-card.mat-card-v2 {
     width: 100%;
@@ -131,7 +134,7 @@
   }
 }
 
-.indigo-pink {
+[layout='v2-type2'] {
   $mat-card-palette: mat.define-palette(mat.$indigo-palette);
   .mat-card.mat-card-v2 {
     display: flex;
@@ -197,7 +200,7 @@
   }
 }
 
-.pink-bluegrey {
+[layout='v2-type3'] {
   $mat-card-palette: mat.define-palette(mat.$deep-purple-palette);
   .mat-card.mat-card-v2 {
     .mat-card-banner img,
@@ -235,12 +238,7 @@
   }
 }
 
-.purple-green,
-.deeppurple-amber {
-  // $mat-card-palette: mat.define-palette(mat.$indigo-palette);
-}
-
-.joy {
+[layout='v2-type4'] {
   $mat-card-palette: mat.define-palette($sb-mat-joy-primary);
 
  .mat-card.mat-card-v2{
@@ -342,47 +340,6 @@
     &:hover{
       transform: translate(0);
       box-shadow: 0 0.125rem 0.4375rem 0 rgba(var(--rc-rgba-black),.16) !important;
-    }
-  }
-}
-
-.green-grey {
-  .mat-card.mat-card-v2 {
-    .mat-card-header {
-      flex-direction: column;
-      align-items: center;
-    }
-    .mat-card-banner img,
-    .mat-card-svg-tail {
-      display: none;
-    }
-    .mat-card-avatar {
-      border-radius: 50%;
-      overflow: hidden;
-      border: 0;
-      height: 4rem;
-      width: 4rem;
-    }
-    .mat-card-header-text {
-      text-align: center;
-      margin-top: 0.5rem;
-    }
-    .mat-card__type {
-      right: 0;
-      ::ng-deep html[dir="rtl"] & {
-        left: 0;
-        right: unset;
-      }
-      &::before {
-        transform: rotatey(0) !important;
-        content: "";
-        left: -0.625rem !important;
-      }
-    }
-  }
-  .mat-card.mat-banner-card{
-    .mat-card-content>:first-child {
-      margin: 0;
     }
   }
 }

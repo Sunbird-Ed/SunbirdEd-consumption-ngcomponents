@@ -1,6 +1,8 @@
 @use "@angular/material" as mat;
 @use 'sass:map';
-@use './palette'as *;
+// @use './palette'as *;
+@use './theme-palettes/index' as *;
+
 // mixin name will be used in main style.scss
 @mixin theme-mat-chips($theme) {
   // Get the color config from the theme.

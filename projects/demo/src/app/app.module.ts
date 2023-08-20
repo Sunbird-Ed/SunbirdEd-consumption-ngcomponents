@@ -16,6 +16,7 @@ import { CourseCuriculumCardComponent } from './components/course-curiculum-card
 import { MyCourseCardComponent } from './components/my-course-card/my-course-card.component';
 import { MaterialExampleModule } from "./material.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuLinksComponent } from './components/menu-links/menu-links.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MemberCardComponent,
     CourseCardComponent,
     CourseCuriculumCardComponent,
-    MyCourseCardComponent
+    MyCourseCardComponent,
+    MenuLinksComponent
   ],
   imports: [
     BrowserModule,

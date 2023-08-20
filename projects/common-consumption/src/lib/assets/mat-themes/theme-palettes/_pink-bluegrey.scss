@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+$sbmat-lemongreen: (
+  50: #f9fbe7,
+  100: #f0f5c4,
+  200: #e6ee9c,
+  300: #dce774,
+  400: #d5e157,
+  500: #cddc39,
+  600: #c8d833,
+  700: #c1d32c,
+  800: #bace24,
+  900: #aec517,
+  A100: #fefff7,
+  A200: #f7ffc4,
+  A400: #f0ff91,
+  A700: #ecff78,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$theme-pink-bluegrey: (
+  primary-base: mat.$pink-palette,
+  accent-base: $sbmat-lemongreen,
+  success: mat.$red-palette,
+  is-dark: true,
+  foreground: mat.$dark-theme-foreground-palette,
+  background: mat.$dark-theme-background-palette,
+  typography:
+    mat.define-typography-config(
+      $font-family: "Poppins",
+    ),
+);

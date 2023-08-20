@@ -1,6 +1,6 @@
 <!-- card component -->
 <span *ngIf="!layoutConfig">
-  <mat-card role="link" tabindex="0" class="mat-card-v1" [ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
+  <mat-card role="link" tabindex="0" [ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading" tabindex="0">
   <mat-card-header>
     <div mat-card-avatar> <img [src]="cardImg" alt=""> </div>

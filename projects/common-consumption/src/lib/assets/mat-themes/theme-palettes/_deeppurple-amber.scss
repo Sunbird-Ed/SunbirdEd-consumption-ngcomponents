@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+$theme-deeppurple-amber: (
+    primary-base: mat.$deep-purple-palette,
+    accent-base: mat.$amber-palette,
+    success: mat.$green-palette,
+    is-dark: false,
+    foreground: mat.$light-theme-foreground-palette,
+    background: mat.$light-theme-background-palette,
+    typography:
+      mat.define-typography-config(
+        $font-family: "Arimo",
+      ),
+);

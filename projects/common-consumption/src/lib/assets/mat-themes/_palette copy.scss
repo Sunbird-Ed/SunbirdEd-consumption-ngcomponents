@@ -256,18 +256,18 @@ $sb-mat-green: (
 */
 
 $app-themes: (
-  // deeppurple-amber: (
-  //   primary-base: mat.$deep-purple-palette,
-  //   accent-base: mat.$amber-palette,
-  //   success: mat.$green-palette,
-  //   is-dark: false,
-  //   foreground: mat.$light-theme-foreground-palette,
-  //   background: mat.$light-theme-background-palette,
-  //   typography:
-  //     mat.define-typography-config(
-  //       $font-family: "Arimo",
-  //     ),
-  // ),
+  deeppurple-amber: (
+    primary-base: mat.$deep-purple-palette,
+    accent-base: mat.$amber-palette,
+    success: mat.$green-palette,
+    is-dark: false,
+    foreground: mat.$light-theme-foreground-palette,
+    background: mat.$light-theme-background-palette,
+    typography:
+      mat.define-typography-config(
+        $font-family: "Arimo",
+      ),
+  ),
   indigo-pink: (
     primary-base: mat.$indigo-palette,
     accent-base: mat.$pink-palette,

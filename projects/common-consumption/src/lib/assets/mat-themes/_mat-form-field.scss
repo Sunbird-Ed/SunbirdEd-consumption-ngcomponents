@@ -1,6 +1,7 @@
 @use "@angular/material" as mat;
 @use 'sass:map';
-@use './palette' as *;
+// @use './palette' as *;
+@use './theme-palettes/index' as *;
 @use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 
 @mixin mat-form-field($theme) {

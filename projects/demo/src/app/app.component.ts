@@ -18,13 +18,11 @@ export class AppComponent {
   title = 'demo';
   /* angular material theme  */
   themes: string[] = [
-  // "deeppurple-amber",
+    "deeppurple-amber",
     "indigo-pink",
     "pink-bluegrey",
-    // "purple-green",
     "joy",
-    "aquapurple",
-    // "green-grey",
+    "aquapurple"
   ];
 
   @HostBinding('class') activeThemeCssClass: string;
