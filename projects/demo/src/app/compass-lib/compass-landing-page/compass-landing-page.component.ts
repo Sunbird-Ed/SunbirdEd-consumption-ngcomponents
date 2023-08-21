@@ -26,6 +26,12 @@ const BROWSE_BY_DATA = [
     input: "{iconUrl:string, title:string}"
   }
 ];
+const FOOTER_DATA = [
+  {
+    selector: '<main-footer></main-footer>',
+    input: "{ links: any[],logoLink: string,footerText: string}"
+  }
+];
 @Component({
   selector: 'app-compass-landing-page',
   templateUrl: './compass-landing-page.component.html',
@@ -38,6 +44,7 @@ export class CompassLandingPageComponent implements OnInit {
   browseByDataSource = BROWSE_BY_DATA;
   exploreCardDataSource = EXPLORE_DATA;
   summaryDataSource = SUMMARY_DATA;
+  footerDataSource = FOOTER_DATA;
   landingPageData = {
     cardsData: {
         imageUrl: "assets/common-consumption/images/info-card_1.jpg",
@@ -63,7 +70,7 @@ export class CompassLandingPageComponent implements OnInit {
       commonIconUrl: "assets/common-consumption/images/arrow.svg"
     },
     exploreData: {
-      iconUrl: "assets/common-consumption/imageelements/group24.png",
+      iconUrl: "assets/common-consumption/images/group24.png",
       title: "Learn",
       content: "Sharpen your skills with hundreds-of online courses",
     },
