@@ -1,14 +1,17 @@
 <div class="course-card grid">
-    <img class="ui centered image" src="{{data['image']}}" alt="course-img" />
+    <img class="ui centered image" src="{{data['image'] ?? '/assets/images/course-1.png'}}" alt='{{data["name"]}}' />
     <div class="text-section">
-        <img class="icon" src="/assets/images/course-icon.png" alt="course-icon" /> <span class="item-name">COURSE</span>
-        <p class="course-title">{{data["title"]}}</p>
-        <p class="category">{{data["category"]}}</p>
-        <span class="rating">{{data["rating"]}}</span> <i class="star icon"></i> <span class="dot">.</span> 
-        <i class="clock icon"></i> <span class="duration">{{data["duration"]}}</span>
-        <img *ngIf="data['showDD']" class="ui image right floated course-dd" src="/assets/images/course-dd.png" alt="course-img" />
+        <img class="course-icon" src="/assets/images/course-icon.png" alt="course-icon" /> <span
+            class="item-name">COURSE</span>
+        <p class="course-title">{{data["name"]}}</p>
+        <p class="category">{{data["primaryCategory"]}}</p>
+        <span *ngIf='data["rating"]' class="rating">{{data["rating"]}}</span> <i *ngIf='data["rating"]'
+            class="star icon"></i> <span *ngIf='data["rating"]' class="dot">.</span>
+        <i *ngIf='data["duration"]' class="clock icon"></i> <span *ngIf='data["duration"]' class="duration">{{data["duration"]}}</span>
+        <img *ngIf="data['showDD']" class="ui image right floated course-dd" src="/assets/images/course-dd.png"
+            alt="course-img" />
     </div>
-    <div class="progress">
+    <!-- <div class="progress">
         <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
+    </div> -->
 </div>
