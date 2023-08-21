@@ -78,3 +78,4 @@ export * from './lib/card/popular-card/popular-card.component';
 export * from './lib/card/compass-banner-card/compass-banner-card.component';
 export * from './lib/card/compass-course-card/compass-course-card.component';
 export * from './lib/card/goal-oriented-hr-card/goal-oriented-hr-card.component';
+export * from './lib/card/browse-by-card/browse-by-card.component';

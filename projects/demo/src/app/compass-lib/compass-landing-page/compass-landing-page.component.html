@@ -18,35 +18,112 @@
                       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
             </div>
-        </section>
-        <mat-divider></mat-divider>
-        <section class="section">
-            <h2 class="headline">Register card</h2>
-            <register-btn-card [regCardData]="landingPageData.regCardData"></register-btn-card>
-            <div class="section-info">
-                <h2 class="sub-heading-one">Register card Information</h2>
-                <table mat-table [dataSource]="regDataSource" class="mat-elevation-z8">
-                    <ng-container matColumnDef="selector">
-                        <th mat-header-cell *matHeaderCellDef> Selector</th>
-                        <td mat-cell *matCellDef="let element"> {{element.selector}} </td>
-                      </ng-container>
-                      <ng-container matColumnDef="input">
-                        <th mat-header-cell *matHeaderCellDef> Input </th>
-                        <td mat-cell *matCellDef="let element"> {{element.input}} </td>
-                      </ng-container>
-                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                </table>
-            </div>
-        </section>
-        <mat-divider></mat-divider>
+    </section>
+    <mat-divider></mat-divider>
+    <section class="section">
+        <h2 class="headline">Register card</h2>
+        <register-btn-card [regCardData]="landingPageData.regCardData"></register-btn-card>
+        <div class="section-info">
+            <h2 class="sub-heading-one">Register card Information</h2>
+            <table mat-table [dataSource]="regDataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="selector">
+                    <th mat-header-cell *matHeaderCellDef> Selector</th>
+                    <td mat-cell *matCellDef="let element"> {{element.selector}} </td>
+                </ng-container>
+                <ng-container matColumnDef="input">
+                    <th mat-header-cell *matHeaderCellDef> Input </th>
+                    <td mat-cell *matCellDef="let element"> {{element.input}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </section>
+    <mat-divider></mat-divider>
+
+    <section class="section">
+        <h2 class="headline">Summary card</h2>
+        <summary-card [cardInfo]="landingPageData.summaryCardData" class="cardContainer"></summary-card>
+        <div class="section-info">
+            <h2 class="sub-heading-one">Summary card Information</h2>
+            <table mat-table [dataSource]="summaryDataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="selector">
+                    <th mat-header-cell *matHeaderCellDef> Selector</th>
+                    <td mat-cell *matCellDef="let element"> {{element.selector}} </td>
+                </ng-container>
+                <ng-container matColumnDef="input">
+                    <th mat-header-cell *matHeaderCellDef> Input </th>
+                    <td mat-cell *matCellDef="let element"> {{element.input}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </section>
+    <mat-divider></mat-divider>
         
-       <section class="section-cards">
-        <summary-card [cardInfo]="landingPageData.summaryCardData"></summary-card>
-        <br><br>
+    <section class="section">
+        <h2 class="headline">Explore compass card</h2>
         <explore-compass-card [cardInfo]="landingPageData.exploreData"></explore-compass-card>
-        <br><br>
-        </section>
+        <div class="section-info">
+            <h2 class="sub-heading-one">Explore compass card Information</h2>
+            <table mat-table [dataSource]="exploreCardDataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="selector">
+                    <th mat-header-cell *matHeaderCellDef> Selector</th>
+                    <td mat-cell *matCellDef="let element"> {{element.selector}} </td>
+                </ng-container>
+                <ng-container matColumnDef="input">
+                    <th mat-header-cell *matHeaderCellDef> Input </th>
+                    <td mat-cell *matCellDef="let element"> {{element.input}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </section>
+    <mat-divider></mat-divider>
+            
+    <section class="section">
+        <h2 class="headline">Browse by card</h2>
+        <browse-by-card [cardInfo]="landingPageData.browseData" class="cardContainer"></browse-by-card>
+        <div class="section-info">
+            <h2 class="sub-heading-one">Browse by card Information</h2>
+            <table mat-table [dataSource]="browseByDataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="selector">
+                    <th mat-header-cell *matHeaderCellDef> Selector</th>
+                    <td mat-cell *matCellDef="let element"> {{element.selector}} </td>
+                </ng-container>
+                <ng-container matColumnDef="input">
+                    <th mat-header-cell *matHeaderCellDef> Input </th>
+                    <td mat-cell *matCellDef="let element"> {{element.input}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section class="section">
+        <h2 class="headline">Main footer</h2>
+        <main-footer [footerData]="landingPageData.footerData" class="footer"></main-footer>
+        <div class="section-info">
+            <h2 class="sub-heading-one">Main footer Information</h2>
+            <table mat-table [dataSource]="footerDataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="selector">
+                    <th mat-header-cell *matHeaderCellDef> Selector</th>
+                    <td mat-cell *matCellDef="let element"> {{element.selector}} </td>
+                </ng-container>
+                <ng-container matColumnDef="input">
+                    <th mat-header-cell *matHeaderCellDef> Input </th>
+                    <td mat-cell *matCellDef="let element"> {{element.input}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section class="section-cards">
+    </section>
 </div>
-    <main-footer [footerData]="landingPageData.footerData"></main-footer>
-    <br><br>
+<br><br>
