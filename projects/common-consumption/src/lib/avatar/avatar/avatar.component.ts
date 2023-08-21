@@ -18,6 +18,9 @@ export class AvatarComponent implements OnInit {
   @Input() progressSize;
   @Input() isLoading: boolean;
   @Input() config = { size: 'medium', view: "vertical", isTitle: true }
+  @Input() instance: string = 'sunbird';
+  @Input() memberName: string = "Somorjit Phuritshabam";
+  @Input() memberRole: string = 'Author';
 
   constructor() { }
   /**

@@ -134,3 +134,32 @@
     line-height: normal;
   }
 }
+
+.member {
+  @include border(border,1px,var(--com-grey-border) !important);
+  padding: calculateRem(24px);
+  position: relative;
+  &-initials {
+    width: calculateRem(60px);
+    height: calculateRem(60px);
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    border-radius: calculateRem(6px);;
+    opacity: 1;
+    background-color: rgba(28,29,31, 1);
+    color: #ffffff;
+    padding: calculateRem(19px);
+    text-align: center;
+  }
+  &-name {
+    padding-left: calculateRem(76px);
+    span {
+      display: block;
+      &:nth-child(2) {
+        color: var(--black);
+        opacity: 0.6;
+      }
+    }
+  }
+}
