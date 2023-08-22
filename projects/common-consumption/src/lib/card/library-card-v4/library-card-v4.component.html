@@ -1,5 +1,38 @@
 <!-- card component -->
-<div class="sb--card sb--card--theme2" tabindex="0"
+<mat-card role="link" tabindex="0" (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading"
+[ngClass]="{'recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}">
+  <mat-card-header class="flex-ai-center">
+    <div mat-card-avatar>
+      <img [src]="cardImg" alt="avatar-logo" class="w-100 h-100">
+    </div>
+    <mat-card-title class="sb__ellipsis color-accent">{{content?.name}}</mat-card-title>
+    <mat-card-subtitle *ngIf="displaySubject?.length" class="sb__ellipsis mb-0">
+      Subject : 
+      <app-truncated-ellipsis class="d-inline-block" [arrayList]= "displaySubject" [showCount]="1" [separatorText]="', '"></app-truncated-ellipsis>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+   <div class="">
+    <mat-chip-list>
+      <mat-chip class="data_0" *ngIf="content?.se_boards && content?.se_boards.length > 0">
+        <app-truncated-ellipsis [arrayList]= "se_boards" [showCount]="1" [separatorText]="', '"></app-truncated-ellipsis>
+      </mat-chip>
+      <mat-chip class="data_1" *ngIf="content?.se_mediums && content?.se_mediums.length > 0">
+        <app-truncated-ellipsis [arrayList]= "se_mediums" [showCount]="1" [separatorText]="', '"></app-truncated-ellipsis>
+      </mat-chip>
+      <mat-chip class="data_2" *ngIf="content?.se_gradeLevels && content?.se_gradeLevels.length > 0">
+        <app-truncated-ellipsis [arrayList]= "se_gradeLevels" [showCount]="1" [separatorText]="', '"></app-truncated-ellipsis>
+      </mat-chip>
+    </mat-chip-list>
+    <div class="mat-card-info" *ngIf="content?.creator">Published by : {{content?.creator}}</div>
+   </div>
+    <div class="mat-card__type" *ngIf="content?.contentType">{{content?.contentType}}</div>
+  </mat-card-content>
+</mat-card>
+
+
+
+<div class="sb--card sb--card--theme2 mt-32 hide" tabindex="0"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading">
   <div class="sb--card__main-area">

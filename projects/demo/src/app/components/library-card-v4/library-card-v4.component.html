@@ -1,8 +1,19 @@
 <div class="mb-16">
-    <h3 class="mat-h3 font-weight-bold">Library Card V4</h3>
+    <h3 class="mat-h3 font-weight-bold">Library Card V4 - Default</h3>
     <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
 </div>
-    
+<div class="mb-16">
+    <h3 class="mat-h3 font-weight-bold">Library Card V4 - Type 1</h3>
+    <sb-library-card-v4 [layoutConfig]="layoutConfig" layout="V4card-type1" [content]="VCardData.content" [type]="VCardData.type[0]" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
+</div>
+
+<!-- <sb-toc-child-item
+*ngIf="child?.contentType === 'SelfAssess' || child?.mimeType === 'application/vnd.sunbird.questionset'"
+[childData]="child" class=""
+(tocCardClick)="navigateToContent($event, item, 'child-item')" [contentStatus]="contentStatus"
+[type]="cardType" [maxAttempts]="child?.maxAttempts" [scoreLabel]="'Best Score'">
+</sb-toc-child-item> -->
+<!--     
 <div class="mb-16">
     <h3 class="mat-h3 font-weight-bold">Library Card V4 -- selected</h3>
     <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[0]" [isSelected]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
@@ -32,4 +43,4 @@
     <h3 class="mat-h3 font-weight-bold">Library Card V4 -- Offline View</h3>
     <sb-library-card-v4 [layoutConfig]="layoutConfig" [content]="VCardData.content" [type]="VCardData.type[4]" [isOffline]="true" [isMenu]="true" [cardImg]="VCardData.cardImg" [btnlabel]="VCardData.btnlabel"></sb-library-card-v4>
 </div>
-
+ -->
