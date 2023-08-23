@@ -1,0 +1,216 @@
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "@angular/material" as mat;
+@use 'sass:map';
+
+::ng-deep :root {
+    --cc-mat-card-type-bg:#000;
+    --cc-mat-card-type:#fff;
+    --cc-mat-card-data2-bg: #E5EDF5;
+    --cc-mat-card-data2-bg-active: #004A9F;
+    --cc-mat-card-data1-bg: #F0E5F5;
+    --cc-mat-card-data1-bg-active:#441ADD;
+    --cc-mat-card-data0-bg: #E0F5EA;
+    --cc-mat-card-data0-bg-active:#005D2B;
+}
+
+//default material card styles
+:host{
+  .mat-card{
+    cursor: pointer;
+    .mat-card-header{
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      .mat-card-title{
+        margin: 0;
+        font-weight: bold !important;
+        line-height: normal;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .mat-card-content{
+      .mat-card-chips-list{
+        height: 3.5rem;
+        overflow: hidden;
+        flex-direction: row;
+        align-items: center;
+      }
+      .mat-chip-list{
+        .mat-chip{
+          font-size: 0.75rem;
+          font-weight: 500;
+          padding: 0.125rem 0.5rem;
+          min-height: auto;
+          height: auto;
+          margin: 0 0.25rem 0.25rem 0;
+        }
+      }
+      .mat-card-info{
+        font-size: .8125rem;
+        letter-spacing: 0;
+        line-height: 1.25rem;
+        margin: 0.625rem 0 1rem 0;
+      }
+      .mat-card__type{
+        background: var(--cc-mat-card-type-bg);
+        color: var(--cc-mat-card-type);
+        margin: 0 0 0 -1rem;
+        ::ng-deep html[dir='rtl'] & {
+          margin: 0 -1rem 0 0;
+        }
+        max-width: 7.5rem;
+        position: absolute;
+        bottom: 0.5rem;
+        height: 1.25rem;
+        font-size: .6875rem;
+        text-transform: capitalize;
+        padding: 0 0.5rem;
+
+        &::before{
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 0.3125rem solid transparent;
+          border-bottom: 0.625rem solid var(--cc-mat-card-type-bg);
+          border-right: 0.3125rem solid var(--cc-mat-card-type-bg);
+          border-top: 0.625rem solid var(--cc-mat-card-type-bg);
+          position: absolute;
+          left: -0.625rem;
+          position: absolute;
+          right: -0.6rem;
+          transform: rotatey(-180deg);
+          left: inherit;
+          html[dir='rtl'] & {
+            left: -0.6rem;
+            right: auto;
+            transform: rotatey(0);
+          }
+        }
+      }
+    }
+    &.recently-viewed{
+      .mat-card-header .mat-card-avatar img {
+       border-radius: 0;
+      }
+    }
+    &.offline{
+      opacity: 0.5;
+    }
+    &.selected{
+      background-color: var(--cc-mat-card-selected-bg);
+      border: var(--cc-mat-card-selected-border);
+      box-shadow: none;
+    }
+  } 
+
+}
+::ng-deep{
+    [layout="V4card-type1"] {
+        .mat-card{
+          cursor: pointer;
+          border-radius: 1rem;
+          box-shadow: var(--sbt-box-shadow-6px) !important;
+          .mat-card-header{
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+              .mat-card-avatar{
+                  width: 3.5rem !important;
+                  height: 4.5rem !important;
+                  position: absolute;
+                  top: 1rem;
+                  right: 1rem;
+                  img{
+                      border-radius: 0.5rem;
+                  }
+              }
+            .mat-card-title{
+              margin: 0;
+              font-weight: bold !important;
+              line-height: normal;
+              font-size: 0.875rem;
+              margin-bottom: 0.5rem;
+            }
+          }
+          .mat-card-header-text{
+            margin: 2rem 0 0 0;
+          }
+          .mat-card-content{
+            .mat-card-chips-list{
+              height: 3.5rem;
+              overflow: hidden;
+              flex-direction: row;
+              align-items: center;
+            }
+            .mat-chip-list{
+              .mat-chip{
+                font-size: 0.75rem;
+                font-weight: 500;
+                padding: 0.125rem 0.5rem;
+                min-height: auto;
+                height: auto;
+                margin: 0 0.25rem 0.25rem 0;
+                &.data_0{
+                  background: var(--cc-mat-card-data0-bg);
+                  color: var(--cc-mat-card-data0-bg-active);
+                }
+                &.data_1{
+                  background: var(--cc-mat-card-data1-bg);
+                  color: var(--cc-mat-card-data1-bg-active);
+                }
+                &.data_2{
+                  background: var(--cc-mat-card-data2-bg);
+                  color: var(--cc-mat-card-data2-bg-active);
+                }
+              }
+            }
+            .mat-card-info{
+              font-size: .8125rem;
+              letter-spacing: 0;
+              line-height: 1.25rem;
+              margin: 0 !important;
+              margin-top: 0.5rem !important;
+            }
+            .mat-card__type{
+              background: var(--cc-mat-card-type-bg);
+              color: var(--cc-mat-card-type);
+              margin: 0 0 0 -1rem;
+              ::ng-deep html[dir='rtl'] & {
+                margin: 0 -1rem 0 0;
+              }
+              max-width: 7.5rem;
+              position: absolute;
+              bottom: 0.5rem;
+              height: 1.25rem;
+              font-size: .6875rem;
+              text-transform: capitalize;
+              padding: 0 0.5rem;
+              position: absolute;
+              top: 1rem;
+      
+              &::before{
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 0.3125rem solid transparent;
+                border-bottom: 0.625rem solid var(--cc-mat-card-type-bg);
+                border-right: 0.3125rem solid var(--cc-mat-card-type-bg);
+                border-top: 0.625rem solid var(--cc-mat-card-type-bg);
+                position: absolute;
+                left: -0.625rem;
+                position: absolute;
+                right: -0.6rem;
+                transform: rotatey(-180deg);
+                left: inherit;
+                html[dir='rtl'] & {
+                  left: -0.6rem;
+                  right: auto;
+                  transform: rotatey(0);
+                }
+              }
+            }
+          }
+        } 
+      }
+}
