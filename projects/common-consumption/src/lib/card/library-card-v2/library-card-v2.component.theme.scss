@@ -62,12 +62,11 @@
   }
 }
 
-
-
 ::ng-deep {
+  //joy card
   [layout='v2-type4'] {
     $mat-card-palette: mat.define-palette($sb-mat-joy-primary);
-   &.mat-card{
+   .mat-card{
       cursor: pointer;
       position: relative;
       border-radius: 1.5rem;
@@ -166,6 +165,177 @@
       &:hover{
         transform: translate(0);
         box-shadow: 0 0.125rem 0.4375rem 0 rgba(var(--rc-rgba-black),.16) !important;
+      }
+    }
+  }
+  [layout='v2-type1'] {
+    $mat-card-palette: mat.define-palette(mat.$deep-purple-palette);
+    .mat-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+      overflow: hidden;
+      position: relative;
+      border-radius: 1rem;
+      box-shadow: var(--sbt-box-shadow-6px) !important;
+      padding: 0;
+      .mat-card-header {
+        border-radius: 1rem 1rem 0 0;
+        order: 2;
+        z-index: 2;
+        padding-top: 2rem;
+        display: block;
+        margin-top: 3rem;
+        .mat-card-avatar {
+          height: 4rem;
+          width: 4rem;
+          justify-content: center;
+          border-radius: 50%;
+          position: absolute;
+          top: 0.75rem;
+          z-index: 1;
+          left: 1rem;
+          border: 0.1875rem solid var(--white);
+        }
+      }
+      .mat-card-banner img {
+        position: absolute;
+        top: -2.25rem;
+        left: 0;
+        max-width: 100%;
+        z-index: 1;
+        order: 1;
+        width: 100% !important;
+        margin: 0;
+      }
+      .mat-card-content {
+        padding: 0 1rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem !important;
+        order: 3;
+        &>:first-child {
+          min-height: 3.5rem;
+        }
+      }
+      .mat-card__type {
+        top: 1rem;
+        right: 0.5em;
+        ::ng-deep html[dir="rtl"] & {
+          left: 0.5em;
+          right: unset;
+        }
+        border-radius: 1.5rem;
+        z-index: 2;
+        bottom: unset !important;
+        &::before {
+          content: none !important;
+        }
+      }
+      .mat-card-svg-tail {
+        display: none;
+      }
+    }
+  }
+  [layout='v2-type2'] {
+    $mat-card-palette: mat.define-palette(mat.$indigo-palette);
+    .mat-card {
+      display: flex;
+      border-radius: 1rem;
+      box-shadow: 0.375rem 0.375rem 0.125rem 0 var(--sbt-box-shadow-black) !important;
+      padding: 0rem;
+      height: 100%;
+      min-height: 12rem;
+      .mat-card-header {
+        width: 40%;
+        margin-bottom: 0 !important;
+        .mat-card-avatar {
+          height: 100%;
+          width: 100%;
+          border-radius: 1rem 0 0 1rem;
+        }
+        .mat-card-header-text {
+          position: absolute;
+          left: 40%;
+          width: 60%;
+          padding: 1rem;
+          margin: 0;
+          top: 0;
+        }
+      }
+      .mat-card-content {
+        width: 60%;
+        padding: 3.75rem 1rem 1rem 1rem;
+        margin: 0;
+        .text-left {
+          position: absolute;
+          bottom: 0.5rem;
+        }
+      }
+      .mat-card__type {
+        margin: 0 !important;
+        border-radius: 0 0.5rem 0.5rem 0;
+        top: 1rem;
+        left: 0;
+        ::ng-deep html[dir="rtl"] & {
+          right: 0;
+          left: unset;
+        }
+        text-align: center;
+        bottom: unset !important;
+        &::before {
+          content: none !important;
+        }
+      }
+      .mat-card-banner img,
+      .mat-card-svg-tail {
+        display: none;
+      }
+    }
+  
+    //banner card
+    .mat-card.mat-banner-card{
+      min-height: auto;
+      .mat-card-content{
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+  [layout='v2-type3'] {
+    $mat-card-palette: mat.define-palette(mat.$deep-purple-palette);
+    .mat-card {
+      .mat-card-banner img,
+      .mat-card-svg-tail {
+        display: none;
+      }
+      .mat-card-avatar {
+        border-radius: 0;
+        overflow: hidden;
+        border: 0;
+        height: 4rem;
+        width: 4rem;
+      }
+      .mat-card-header-text {
+        margin-top: 0.5rem;
+      }
+      .mat-card__type {
+        right: 0;
+        bottom: 1rem;
+        ::ng-deep html[dir="rtl"] & {
+          left: 0;
+          right: unset;
+        }
+        &::before {
+          transform: rotatey(0) !important;
+          content: "";
+          left: -0.625rem !important;
+        }
+      }
+    }
+    .mat-card.mat-banner-card{
+      .mat-card-content>:first-child {
+        margin: 0;
       }
     }
   }
