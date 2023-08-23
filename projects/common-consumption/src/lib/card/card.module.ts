@@ -13,6 +13,8 @@ import { LibraryCardV3Component } from './library-card-v3/library-card-v3.compon
 import { LibraryCardV4Component } from './library-card-v4/library-card-v4.component';
 import { NotificationCardComponent } from './notification-card/notification-card.component';
 import {BannerCardComponent} from './banner-card/banner-card.component';
+import {CompassBannerCardComponent} from './compass-banner-card/compass-banner-card.component';
+import {GoalOrientedHrCardComponent} from './goal-oriented-hr-card/goal-oriented-hr-card.component';
 import { TruncatedEllipsisComponent } from './truncated-ellipsis/truncated-ellipsis.component';
 import { CqubeCardComponent } from './cqube-card/cqube-card.component';
 import {MatCardModule} from '@angular/material/card';
@@ -37,6 +39,8 @@ import {MatMenuModule} from '@angular/material/menu';
     LibraryCardV4Component,
     NotificationCardComponent,
     BannerCardComponent,
+    GoalOrientedHrCardComponent,
+    CompassBannerCardComponent,
     TruncatedEllipsisComponent,
     CqubeCardComponent
   ],
@@ -63,6 +67,8 @@ import {MatMenuModule} from '@angular/material/menu';
     LibraryCardV4Component,
     NotificationCardComponent,
     BannerCardComponent,
+    GoalOrientedHrCardComponent,
+    CompassBannerCardComponent,
     TruncatedEllipsisComponent,
     CqubeCardComponent
   ]
