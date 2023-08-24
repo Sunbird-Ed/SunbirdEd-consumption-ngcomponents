@@ -21,6 +21,7 @@ export class LernLandingPageComponent implements OnInit {
     title: "Communication",
     type: "Behavioural",
     icon: "assets/common-consumption/images/course.svg",
+    description: "Planning vigilance activities in accordance with procedures that balance the needs of maintaining a fraud free environment and business objectives",
     noOfCourses: 4
   }
 

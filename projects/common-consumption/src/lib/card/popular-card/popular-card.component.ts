@@ -3,6 +3,7 @@ interface cardInfo {
   title?: string,
   type?: string,
   icon?: any,
+  description?: string,
   noOfCourses?: number,
   name?: string
 }

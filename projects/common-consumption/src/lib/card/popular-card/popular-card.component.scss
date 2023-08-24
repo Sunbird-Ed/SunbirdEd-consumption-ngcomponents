@@ -36,4 +36,7 @@
         opacity: 1;
         font-style: normal;
     }
+    &-competency-description{
+        @include typography(var(--font-com-lato), 14px, 400, 0.25px, 16px);
+    }
 }
