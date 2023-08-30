@@ -5,7 +5,8 @@ interface cardInfo {
   icon?: any,
   description?: string,
   noOfCourses?: number,
-  name?: string
+  name?: string,
+  btnText? : string
 }
 @Component({
   selector: 'sb-popular-card',

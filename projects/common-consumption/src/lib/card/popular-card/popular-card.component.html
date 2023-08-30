@@ -2,9 +2,14 @@
     <ng-container *ngIf="pillName == 'Competency'">
         <div class="popular-card-competency-name">{{data.title}}</div>
         <div class="popular-card-competency-type">{{data.type}}</div>
-        <div class="popular-card-competency-description">{{data.description}}</div>
-        <div class="popular-card-competency-content"><img class="icon" src="{{data.icon}}" />
-            <span>Associated courses: {{data.noOfCourses}}</span>
+        <div *ngIf="data.description" class="popular-card-competency-description">{{data.description}}</div>
+        <div class="popular-card-competency-content">
+            <div class="w-50">
+                <img class="icon" src="{{data.icon}}" />
+                <span>Associated courses: {{data.noOfCourses}}</span>
+            </div>
+            <span *ngIf="data.description" class="w-50 d-flex flex-jc-flex-end"><button class="com-tertiary-btn">{{data.btnText}} <mat-icon>keyboard_arrow_down</mat-icon>
+            </button></span>
         </div>
     </ng-container>
     <ng-container *ngIf="pillName == 'Topic'">
