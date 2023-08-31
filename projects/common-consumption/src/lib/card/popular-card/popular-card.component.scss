@@ -40,3 +40,12 @@
         @include typography(var(--font-com-lato), 14px, 400, 0.25px, 16px);
     }
 }
+.expandContainer{
+    flex-wrap: wrap;
+}
+.cardWidth{
+    width:420px;
+    max-width: 420px;
+    box-sizing: border-box;
+    margin: 16px;
+}

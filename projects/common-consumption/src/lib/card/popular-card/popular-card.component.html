@@ -8,8 +8,15 @@
                 <img class="icon" src="{{data.icon}}" />
                 <span>Associated courses: {{data.noOfCourses}}</span>
             </div>
-            <span *ngIf="data.description" class="w-50 d-flex flex-jc-flex-end"><button class="com-tertiary-btn">{{data.btnText}} <mat-icon>keyboard_arrow_down</mat-icon>
-            </button></span>
+            <span *ngIf="data.description" class="w-50 d-flex flex-jc-flex-end">
+                <button class="com-tertiary-btn" (click)="setDisplay()">{{data.btnText}}<mat-icon *ngIf="!display">keyboard_arrow_down</mat-icon>
+                    <mat-icon *ngIf="display">keyboard_arrow_up</mat-icon>
+                </button></span>
+        </div>
+        <div *ngIf="data.expand && data.expandData" class="mt-30">
+            <div *ngIf="display" class="expandContainer d-flex flex-jc-flex-start w-100">
+                <compass-course-card *ngFor="let item of data.expandData" [data]="item" class="cardWidth"></compass-course-card>
+            </div>
         </div>
     </ng-container>
     <ng-container *ngIf="pillName == 'Topic'">
