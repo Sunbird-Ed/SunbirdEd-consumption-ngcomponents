@@ -17,7 +17,7 @@
     attr.aria-pressed="{{activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}}" tabindex="0"
     [ngClass]="{'active': activeContent?.sbUniqueIdentifier === content?.sbUniqueIdentifier}">
 
-    <div mat-line>{{content?.relationalMetadata?.optional? "Addition Material: ":""}}{{content?.name}}</div>
+    <div mat-line>{{ content?.relationalMetadata?.optional ? "Addition Material: " + content?.name : content?.name }}</div>
     <div mat-line *ngIf="content?.relationalMetadata?.optional" style="color: gray; font-size: smaller;"> This material is optional and will not impact your course progress% or final score</div>
     <img width="32" height="32" [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg" alt="" #img />
 
@@ -63,7 +63,7 @@
       class="sb_success_check" alt="Complated Icon" mat-list-icon>
     <img width="32" height="32" [src]="content?.appIcon || fallbackImg" (error)="img.src = fallbackImg"
       alt="{{content?.name}} Image" #img mat-list-icon />
-      <div mat-line>{{content?.relationalMetadata?.optional? "Addition Material: ":""}}{{content?.name}}</div>
+      <div mat-line>{{ content?.relationalMetadata?.optional ? "Addition Material: " + content?.name : content?.name }}</div>
       <div mat-line *ngIf="content?.relationalMetadata?.optional" style="color: gray; font-size: smaller;"> This material is optional and will not impact your course progress% or final score</div>
     <div mat-line *ngIf="bestScoreLabel">{{bestScoreLabel}}</div>
     <button class="sbchapter__play__btn" *ngIf="!isTrackable(content) && playBtnConfig.show"
@@ -113,7 +113,7 @@
       </i>
       <img [src]="fallbackImg" width="32" height="32" *ngIf="!content?.appIcon" alt="image" #img />
     </div>
-    <div mat-line>{{content?.relationalMetadata?.optional? "Addition Material: ":""}}{{content?.name}}</div>
+    <div mat-line>{{ content?.relationalMetadata?.optional ? "Addition Material: " + content?.name : content?.name }}</div>
     <div mat-line *ngIf="content?.relationalMetadata?.optional" style="color: gray; font-size: smaller;"> This material is optional and will not impact your course progress% or final score</div>
     <div mat-line *ngIf="bestScoreLabel && displayScore">{{bestScoreLabel}}</div>
 
@@ -166,7 +166,7 @@
       </i>
       <img [src]="fallbackImg" width="32" height="32" *ngIf="!content?.appIcon" alt="image" #img />
     </div>
-    <div mat-line>{{content?.relationalMetadata?.optional? "Addition Material: ":""}}{{content?.name}}</div>
+    <div mat-line>{{ content?.relationalMetadata?.optional ? "Addition Material: " + content?.name : content?.name }}</div>
     <div mat-line *ngIf="content?.relationalMetadata?.optional" style="color: gray; font-size: smaller;"> This material is optional and will not impact your course progress% or final score</div>
     <div mat-line *ngIf="bestScoreLabel && displayScore">{{bestScoreLabel}}</div>
     <button class="sbchapter__play__btn"
