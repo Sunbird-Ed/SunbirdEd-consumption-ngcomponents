@@ -278,4 +278,9 @@ Example :
 	
 </sb-library-card>
 ```
+## Versions
 
+| release branch    | npm package version | Angular Version |
+|-------------------|---------------------|-----------------|
+| v10_migration     |      4.11.0         |     Ng V10      |
+| release-5.1.0_v11 |      4.12.1         |     Ng V11      |
