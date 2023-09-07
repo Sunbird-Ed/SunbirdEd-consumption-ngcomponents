@@ -1,8 +1,12 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+::ng-deep :root {
+    --cc-sbcard-course-curi-title:var(--white);
+}
 
 .sb--card--course--curiculum {
     .sb--card__title {
-        color: var(--white);
+        
+        color: var(--cc-sbcard-course-curi-title);
     }
     .img-container {
         background-color: transparent !important;

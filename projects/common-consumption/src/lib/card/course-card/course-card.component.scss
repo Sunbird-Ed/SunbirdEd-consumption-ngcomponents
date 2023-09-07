@@ -1,4 +1,4 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 .sb--card {
   border-radius: calculateRem(2px);
   // margin-bottom: calculateRem(8px) !important;
@@ -14,14 +14,16 @@
   }*/
   
   .sb--card__meta1 {
-    color: var(--rc-979797);
+    --cc-sbcard-meta1:#555;
+    color: var(--cc-sbcard-meta1);
     font-size: calculateRem(12px);
     line-height: calculateRem(16px);
   }
   .sb--card__meta_c_data {
+    --cc-sbcard-metaC-data:var(--rc-FAFAFA);
       min-height: calculateRem(32px);
       padding: 0.5rem;
-      background-color: var(--rc-FAFAFA);
+      background-color: var(--cc-sbcard-metaC-data);
       font-size: .8rem;
   } 
   .data_1 {

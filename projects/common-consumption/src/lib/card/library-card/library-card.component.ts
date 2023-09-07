@@ -1,4 +1,4 @@
-import { IContent, LibraryCardTypes, ICardClick } from './../models';
+import { IContent, LibraryCardTypes, ICardClick, IEnterKeyPress } from './../models';
 import { Component, Input, OnInit, EventEmitter, Output, TemplateRef, AfterViewInit } from '@angular/core';
 import { staticContent } from '../library-card/library-card.data';
 @Component({
@@ -26,6 +26,7 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
+    @Output() enterKey: EventEmitter<IEnterKeyPress> = new EventEmitter();
 
     get LibraryCardTypes() { return LibraryCardTypes; }
 
@@ -40,6 +41,9 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
     }
     onMenuClick(event: MouseEvent) {
         this.menuClick.emit({ event: event, data: this.content });
+    }
+    onEnterKeyPress(event: KeyboardEvent) {
+        this.enterKey.emit({ event, data: this.content });
     }
 
     test() {

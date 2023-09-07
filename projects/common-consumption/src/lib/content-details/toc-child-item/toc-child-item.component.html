@@ -14,10 +14,19 @@
 
 <div *ngIf="childData?.children && !(childData?.contentData?.trackable?.enabled === 'Yes' || childData?.trackable?.enabled === 'Yes')">
   <div *ngFor="let child of childData?.children; let j = index;" [id]="child.identifier">
-    {{ createUniqueId(childData, child) }}
-    <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)"
-      [activeMimeTypeFilter]="activeMimeTypeFilter" [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" 
-      (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
-    </sb-toc-child-item>
+    <div *ngIf="child?.mimeType !== 'application/vnd.sunbird.question' && child?.mimeType !== 'application/vnd.sunbird.questionset'">
+      {{ createUniqueId(childData, child) }}
+      <sb-toc-child-item [childData]="child" [activeContent]="activeContent" (tocCardClick)="tocCardClickHandler($event)"
+        [activeMimeTypeFilter]="activeMimeTypeFilter" [type]="type" [contentStatus]="contentStatus" [playBtnConfig]="playBtnConfig" 
+        (playButtonClick)="onPlayButtonClick($event)" [platform]="platform" [trackableDefaultImage]="trackableDefaultImage">
+      </sb-toc-child-item>
+    </div>
+    <div *ngIf="child?.mimeType === 'application/vnd.sunbird.questionset'">
+      <div class="child-content-padding">
+        <sb-toc-card [content]="child" (tocCardClick)="tocCardClickHandler($event)" [type]="type"
+          [contentStatus]="contentStatus" [activeContent]="activeContent" [maxAttempts]="maxAttempts" [scoreLabel]="scoreLabel" [disabled]="disabled">
+        </sb-toc-card>
+      </div>
+    </div>
   </div>
 </div>

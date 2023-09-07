@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, AfterViewInit } from '@angular/core';
-import { IContent, LibraryCardTypes, ICardClick } from '../models';
+import { IContent, LibraryCardTypes, ICardClick, IEnterKeyPress } from '../models';
 
 
 @Component({
@@ -28,6 +28,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
+    @Output() enterKeyPress: EventEmitter<IEnterKeyPress> = new EventEmitter();
 
     get LibraryCardTypes() { return LibraryCardTypes; }
 
@@ -42,14 +43,19 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     onClick(event: MouseEvent) {
         this.cardClick.emit({ event: event, data: this.content });
     }
+    onEnterKeyPress(event: KeyboardEvent) {
+        this.enterKeyPress.emit({ event: event, data: this.content });
+    }
     splitGradeMedium() {
         if(this.content && this.content.gradeLevel) {
             this.content.gradeLevel = typeof this.content.gradeLevel === "string"?this.content.gradeLevel.split(","):this.content.gradeLevel;
         }
     }
-   /* onMenuClick(event: MouseEvent) {
+
+    onMenuClick(event: MouseEvent) {
         this.menuClick.emit({ event: event, data: this.content });
-    }*/
+    }
+
     getClassForImage() {
         if(this.layoutConfig!=null && this.layoutConfig.cardImgStyle != null) {
             return "sb--card__img sb--card__image-pos-"+this.layoutConfig.cardImgStyle;

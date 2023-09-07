@@ -3,23 +3,23 @@
     <div *ngIf="layout === LibraryFiltersLayout.SQUARE" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-medium-pills-container" id="mediumScroll">
             <div class="pill" *ngFor="let item of filterList; let i = index;" [ngClass]="{'active': item?.selected}"
-                attr.id="medium{{i}}" (click)="selectPill($event, i)">{{item.text}} medium
+                attr.id="medium{{i}}" (click)="selectPill($event, i)" tabindex="0" role="tab" attr.aria-selected="{{item?.selected}}"> {{item.text}} medium
             </div>
         </div>
     </div>
     <!-- Library class/grade filter -->
     <div *ngIf="layout === LibraryFiltersLayout.ROUND" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-grade-pills-container" id="gradeScroll">
-            <div class="pill rounded" *ngFor="let item of filterList; let i = index;"
-                [ngClass]="{'active': item?.selected}" attr.id="class{{i}}" (click)="selectPill($event, i)">
+            <div class="pill rounded" *ngFor="let item of filterList; let i = index;" role="tab" attr.aria-selected="{{item?.selected}}"
+                [ngClass]="{'active': item?.selected}" attr.id="class{{i}}" (click)="selectPill($event, i)" tabindex="0">
                 {{item.text}}</div>
         </div>
     </div>
-    <!-- Player page content filters -->
+        <!-- Player page content filters -->
     <div *ngIf="layout === LibraryFiltersLayout.ROUND_WITH_ICONS" class="sb-slider-pills-container">
         <div class="sb-pills-container sb-grade-pills-container" id="gradeScroll">
-            <div class="pill rounded rounded-with-icon" *ngFor="let item of filterList; let i = index;"
-                [ngClass]="{'active': item?.selected}" attr.id="mimeType{{i}}" (click)="selectMimeFilter($event, i)">
+            <div class="pill rounded rounded-with-icon" *ngFor="let item of filterList; let i = index;" role="tab" attr.aria-selected="{{item?.selected}}"
+                [ngClass]="{'active': item?.selected}" attr.id="mimeType{{i}}" (click)="selectMimeFilter($event, i)" tabindex="0">
                 <ng-container *ngIf="item?.type === TocMimeTypes.VIDEO ">
                     <i class="icon-svg icon-svg--xs icon-videos" >
                         <svg class="icon icon-svg--primary">

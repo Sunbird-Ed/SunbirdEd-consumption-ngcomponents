@@ -126,3 +126,10 @@ Group Card. |sb-group-card|
 |--|--|--|------------------------------------------------------------------------------------------|
 | CertificateDownloadAsImageDirective | Can be used on any DOM element to make it download certificate as image on click| sbCertificateDownloadAsImage| *`<button sbCertificateDownloadAsImage [template]="'<svg some-attr="$SOME_VAR"></svg>'" [metadata]="{$SOME_VAR: 'SOME_VALUE'}" [baseUrl]="'SAMPLE_BASE_URL'"></button>`*|
 | CertificateDownloadAsPdfDirective | Can be used on any DOM element to make it download certificate as PDF on click| sbCertificateDownloadAsPdf| *`<button sbCertificateDownloadAsImage [template]="'<svg some-attr="$SOME_VAR"></svg>'" [metadata]="{$SOME_VAR: 'SOME_VALUE'}" [baseUrl]="'SAMPLE_BASE_URL'"></button>`*|
+
+## Versions
+
+| release branch    | npm package version | Angular Version |
+|-------------------|---------------------|-----------------|
+| v10_migration     |      4.11.0         |     Ng V10      |
+| release-5.1.0_v11 |      4.12.1         |     Ng V11      |

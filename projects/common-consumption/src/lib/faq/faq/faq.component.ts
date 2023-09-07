@@ -88,6 +88,7 @@ noClicked(i,event:MouseEvent) {
     window.parent.postMessage(this.value, '*');
     this.noClickedEvent.emit({event: event,data: this.value});
 
+    this.setAccessibilityFocus('no-clicked');
   }
 
 yesClicked(i,event:MouseEvent) {
@@ -103,6 +104,8 @@ yesClicked(i,event:MouseEvent) {
   this.value.value.description = this.data.faqs[i].description;
   window.parent.postMessage(this.value, '*');
   this.yesClickedEvent.emit({event: event,data: this.value});
+
+  this.setAccessibilityFocus('yes-clicked');
 }
 
 submitClicked(textValue, i,event:MouseEvent) {
@@ -118,5 +121,13 @@ submitClicked(textValue, i,event:MouseEvent) {
   this.submitClickedEvent.emit({event: event,data: this.value});
   this.textValue = '';
   
+  this.setAccessibilityFocus('yes-clicked');
 }
+
+  private setAccessibilityFocus(id){
+    setTimeout(() => {
+      const ele = document.getElementById(id);
+      ele ? ele.focus() : null;
+    }, 100);
+  }
 }

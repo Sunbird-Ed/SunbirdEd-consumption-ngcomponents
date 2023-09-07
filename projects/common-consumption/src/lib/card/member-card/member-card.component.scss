@@ -1,20 +1,27 @@
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/mixins/mixins";
-@import "../../../../../../node_modules/@project-sunbird/sb-styles/assets/loadingshadows";
-
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "~@project-sunbird/sb-styles/assets/loadingshadows" as *;
+::ng-deep :root {
+  --cc-members-list-item-selected:var(--sbt-body-bg)
+  --cc-members-list-item-selected-border:var(--sbt-body-bg2)
+  --cc-members-list-item-menu-text:var(--gray-200);
+  --cc-members-list-item-status-text:var(--secondary-200);
+    --cc-members-list-item-status-br:var(--secondary-200);
+    --cc-members-list-item-status-bg:var(--white);
+}
 .sb-members-list-item {
   display: flex;
   align-items: center;
   border: calculateRem(1px) solid transparent;
   position: relative;
   &:hover,&.selectElement {
-    background-color: var(--rc-E0EFFF);
-    border: calculateRem(1px) solid var(--rc-007AFF);
+    background-color: var(--cc-members-list-item-selected);
+    border: calculateRem(1px) solid var(--cc-members-list-item-selected-border);
     cursor: pointer;
   }
   .menu::after {
     content: '\2807';
     font-size: calculateRem(24px);
-    color: var(--gray-200);
+    color: var(--cc-members-list-item-menu-text);
     text-align: center;
     align-items: center;
     display: flex;
@@ -34,11 +41,11 @@
   }
 
   .status {
-    border: calculateRem(1px) solid var(--secondary-200);
+    border: calculateRem(1px) solid var(--cc-members-list-item-status-br);
     border-radius: calculateRem(2px);
-    font-size: calculateRem(10px);
-    color: var(--secondary-200);
-    background-color: var(--white);
+    font-size: calculateRem(11px);
+    color: var(--cc-members-list-item-status-text);
+    background-color: var(--cc-members-list-item-status-bg);
     padding: calculateRem(4px) calculateRem(8px);
   }
 
