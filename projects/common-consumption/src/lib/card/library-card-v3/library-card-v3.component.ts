@@ -25,6 +25,7 @@ export class LibraryCardV3Component implements OnInit, AfterViewInit {
     @Input() indexToDisplay: number;
     @Input() svgToDisplay;
     @Input() isSelected = false;
+    @Input() categoryKeys= [];
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
@@ -32,6 +33,7 @@ export class LibraryCardV3Component implements OnInit, AfterViewInit {
 
     get LibraryCardTypes() { return LibraryCardTypes; }
     frameworkDetailsList = [];
+    publisher: any;
 
     ngOnInit() {
         this.fetchSvg();
@@ -48,25 +50,24 @@ export class LibraryCardV3Component implements OnInit, AfterViewInit {
         this.enterKeyPress.emit({ event: event, data: this.content });
     }
 
+    getFormatedData(frameworkData){
+        if (typeof frameworkData === 'string') {
+            return [[frameworkData]];
+        } else if (Array.isArray(frameworkData)) {
+            return [frameworkData];
+        }
+        return [];
+    }
+
     arrangeFrameworkDetails() {
         this.frameworkDetailsList = [];
-        if (typeof this.content.board === 'string') {
-            this.frameworkDetailsList.push([this.content.board]);
-        } else if (Array.isArray(this.content.board)) {
-            this.frameworkDetailsList.push(this.content.board);
-        }
-
-        if (typeof this.content.medium === 'string') {
-            this.frameworkDetailsList.push([this.content.medium]);
-        } else if (Array.isArray(this.content.medium)) {
-            this.frameworkDetailsList.push(this.content.medium  );
-        }
-
-        if (typeof this.content.gradeLevel === 'string') {
-            this.frameworkDetailsList.push([this.content.gradeLevel]);
-        } else if (Array.isArray(this.content.gradeLevel)) {
-            this.frameworkDetailsList.push(this.content.gradeLevel);
-        }
+        this.categoryKeys.forEach((data) => {
+            if (data.identifier) {
+                this.frameworkDetailsList.push(this.getFormatedData(this.content[data.code]));
+            } else {
+                this.publisher = data;
+            }
+        });
     }
    /* onMenuClick(event: MouseEvent) {
         this.menuClick.emit({ event: event, data: this.content });

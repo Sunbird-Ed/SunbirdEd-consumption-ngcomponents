@@ -10,6 +10,7 @@ import { IContent, LibraryCardTypes, ICardClick, IEnterKeyPress } from '../model
 export class LibraryCardV4Component implements OnInit, AfterViewInit {
 
     @Input() content: IContent|any;
+    @Input() categoryKeys = [];
     @Input() isMobile = false;
     @Input() isOffline = false;
     @Input() cardImg = '';
@@ -30,22 +31,22 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
     @Output() enterKeyPress: EventEmitter<IEnterKeyPress> = new EventEmitter();
 
     get LibraryCardTypes() { return LibraryCardTypes; }
-    frameworkDetailsList = [];
-    displaySubject = [];
-    se_boards = [];
-    se_mediums = [];
-    se_gradeLevels = [];
+    categoryValues = [];
+    publisher: any;
 
     ngOnInit() {
         this.fetchBMGS();
-        this.arrangeFrameworkDetails();
+      //  this.arrangeFrameworkDetails();
     }
 
     fetchBMGS () {
-        this.content['se_subjects'] = this.content.se_subjects ? this.content.se_subjects : this.content.subject;
-        this.content['se_boards'] = this.content.se_boards ? this.content.se_boards : this.content.board;
-        this.content['se_mediums'] = this.content.se_mediums ? this.content.se_mediums : this.content.medium;
-        this.content['se_gradeLevels'] = this.content.se_gradeLevels ? this.content.se_gradeLevels : this.content.gradeLevel;
+        this.categoryKeys.forEach((data) => {
+            if (data.identifier) {
+                this.categoryValues.push(this.getFormatedData(this.content[data.code]));
+            } else {
+                this.publisher = data;
+            }
+        });
     }
 
     ngAfterViewInit(): void {
@@ -58,12 +59,12 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
         this.enterKeyPress.emit({ event: event, data: this.content });
     }
 
-    arrangeFrameworkDetails() {
-        this.se_boards = this.getFormatedData(this.content.se_boards);
-        this.se_mediums = this.getFormatedData(this.content.se_mediums);
-        this.se_gradeLevels = this.getFormatedData(this.content.se_gradeLevels);
-        this.displaySubject = this.getFormatedData(this.content.se_subjects);
-    }
+    // arrangeFrameworkDetails() {
+    //     this.se_boards = this.getFormatedData(this.content.se_boards);
+    //     this.se_mediums = this.getFormatedData(this.content.se_mediums);
+    //     this.se_gradeLevels = this.getFormatedData(this.content.se_gradeLevels);
+    //     this.displaySubject = this.getFormatedData(this.content.se_subjects);
+    // }
 
     getFormatedData(frameworkData){
         if (typeof frameworkData === 'string') {

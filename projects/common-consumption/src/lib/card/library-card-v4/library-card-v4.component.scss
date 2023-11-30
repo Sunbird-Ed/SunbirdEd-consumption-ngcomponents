@@ -200,6 +200,22 @@
         max-width: 32ch
       }
 
+      .container span:nth-child(1) {
+        background: #E0F5EA;
+        color: #008840;
+        width: auto;
+      }
+
+      span:nth-child(2) {
+        background: #F0E5F5;
+        color: #6236FF;
+      }
+
+      span:nth-child(3) {
+        color: #788594;
+        background: #E5EDF5;
+      }
+
       .data_1 {
         background: #E0F5EA;
         color: #008840;

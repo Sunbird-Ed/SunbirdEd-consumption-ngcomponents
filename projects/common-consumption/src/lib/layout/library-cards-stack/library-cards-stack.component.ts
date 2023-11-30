@@ -10,6 +10,7 @@ import { LibraryCardTypes, ICardClick } from '../../card/models';
 
 export class LibraryCardsStackComponent {
     @Input() contentList = defaultLibraryCardsGrid.contentList;
+    @Input() categoryKeys = [];
     @Input() title: string;
     @Input() isOffline = false;
     @Input() viewMoreButtonText: string = defaultLibraryCardsGrid.viewMoreButtonText;
