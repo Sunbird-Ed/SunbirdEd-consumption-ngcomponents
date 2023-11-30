@@ -85,7 +85,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     fetchFrameworkDetails() {
         this.categoryValues = [];
         this.categoryKeys.forEach((data) => {
-            if (data.identifier) {
+            if (data.label) {
                 let code = (this.content[data.alterNativeCode] || this.content[data.code])
                 this.categoryValues.push(this.getFormatedData(code));
             }else {
