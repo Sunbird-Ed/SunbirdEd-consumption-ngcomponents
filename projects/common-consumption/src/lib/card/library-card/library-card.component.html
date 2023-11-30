@@ -113,7 +113,7 @@
     <ng-container *ngIf="(layoutConfig && !layoutConfig.layout) || layoutConfig.layout === 'v2'">
       <sb-library-card-v2 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
       [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel" [isSelected]="isSelected"
-      [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
+      [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon" [categoryKeys]="categoryKeys"
       [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" (enterKeyPress)="onEnterKeyPress($event)"
       (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
       ></sb-library-card-v2>
@@ -121,7 +121,7 @@
     <ng-container *ngIf="layoutConfig.layout === 'v3'">
       <sb-library-card-v3 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
       [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel" [isSelected]="isSelected"
-      [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
+      [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon" [categoryKeys]="categoryKeys"
       [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" (enterKeyPress)="onEnterKeyPress($event)"
       (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
       ></sb-library-card-v3>
@@ -129,7 +129,7 @@
     <ng-container *ngIf="layoutConfig.layout === 'v4'">
       <sb-library-card-v4 [indexToDisplay]="indexToDisplay" [isLoading]="isLoading" [content]="content" [isMobile]="isMobile"
       [isOffline]="isOffline" [cardImg]="cardImg" [type]="type" [moreInfoLabel]="moreInfoLabel" [isSelected]="isSelected"
-      [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon"
+      [section]="section" [btnlabel]="btnlabel" [btnicon]="btnicon" [categoryKeys]="categoryKeys"
       [layoutConfig]="layoutConfig" [isMenu]="isMenu" (cardClick)="onClick($event)" (enterKeyPress)="onEnterKeyPress($event)"
       (menuClick)="onMenuClick($event);$event.stopPropagation()" [hover-template]="gridTemplate"
       ></sb-library-card-v4>

@@ -25,14 +25,18 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     @Input() indexToDisplay: number;
     @Input() svgToDisplay;
     @Input() isSelected = false;
+    @Input() categoryKeys= [];
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() enterKeyPress: EventEmitter<IEnterKeyPress> = new EventEmitter();
+    categoryValues = [];
+    publisher: any;
 
     get LibraryCardTypes() { return LibraryCardTypes; }
 
     ngOnInit() {
+        this.fetchFrameworkDetails();
         this.fetchSvg();
         this.splitGradeMedium();
     }
@@ -67,5 +71,26 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     fetchSvg() {
         var indexToDisplay = this.indexToDisplay!=null ? (this.indexToDisplay % 9)+1:2;
         this.svgToDisplay =  "assets/common-consumption/images/abstract_0"+indexToDisplay+".svg";
+    }
+
+    getFormatedData(frameworkData){
+        if (typeof frameworkData === 'string') {
+            return [[frameworkData]];
+        } else if (Array.isArray(frameworkData)) {
+            return [frameworkData];
+        }
+        return [];
+    }
+
+    fetchFrameworkDetails() {
+        this.categoryValues = [];
+        this.categoryKeys.forEach((data) => {
+            if (data.identifier) {
+                let code = (this.content[data.alterNativeCode] || this.content[data.code])
+                this.categoryValues.push(this.getFormatedData(code));
+            }else {
+                this.publisher = data;
+            }
+        });
     }
 }

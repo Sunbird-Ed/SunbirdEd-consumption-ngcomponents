@@ -19,43 +19,22 @@
       <div class="sb__ellipsis sb__ellipsis--two text-left flex-basis-1 title-info" title="{{content?.name}}">
         <bdi>{{content?.name}}</bdi></div>
     </div>
-    <div class="subject-info" *ngIf="displaySubject?.length">
-      Subject : 
+    <div class="subject-info" *ngIf="categoryKeys?.length">
+      {{categoryKeys[categoryKeys.length-2].label}} : 
       <app-truncated-ellipsis class="d-inline-block"
-        [arrayList]= "displaySubject"
+        [arrayList]= "categoryValues[categoryValues.length-1]"
         [showCount]="1"
         [separatorText]="', '">
       </app-truncated-ellipsis></div>
     <div class="sb--card__meta1 text-left">
-      <ng-container *ngIf="content?.se_boards && content?.se_boards.length > 0">
-        <span class="data_1 mr-8" title="{{content?.se_boards[0]}}">
-          <app-truncated-ellipsis 
-            [arrayList]= "se_boards"
-            [showCount]="1"
-            [separatorText]="', '">
-          </app-truncated-ellipsis>
-        </span>
-      </ng-container>
-      <ng-container *ngIf="content?.se_mediums && content?.se_mediums.length > 0">
-        <span class="data_2" title="{{content?.se_mediums[0]}}">
-          <app-truncated-ellipsis 
-            [arrayList]= "se_mediums"
-            [showCount]="1"
-            [separatorText]="', '">
-          </app-truncated-ellipsis>
-        </span>
-      </ng-container>
-      <ng-container *ngIf="content?.se_gradeLevels && content?.se_gradeLevels.length > 0">
-        <span class="data_3" title="{{content?.se_gradeLevels[0]}}">
-          <app-truncated-ellipsis 
-            [arrayList]= "se_gradeLevels"
-            [showCount]="1"
-            [separatorText]="', '">
+      <ng-container *ngFor="let category of categoryValues;let i=index">
+        <span [ngClass]="(i>2 && i%2===0) ? 'data_1' : 'data_2'" title="{{category[0]}}" *ngIf="i!==(categoryValues.length-1)">
+          <app-truncated-ellipsis [arrayList]="category" [showCount]="1" [separatorText]="', '">
           </app-truncated-ellipsis>
         </span>
       </ng-container>
     </div>
-    <div class="subject-info text-info" *ngIf="content?.creator">Published by : {{content?.creator}}</div>
+    <div class="subject-info text-info" *ngIf="content[publisher.code]">{{publisher.name}} : {{content[publisher.code]}}</div>
   </div>
 
 <div class="sb--card sb--card--theme2" *ngIf="isLoading">

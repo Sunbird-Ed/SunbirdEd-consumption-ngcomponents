@@ -12,6 +12,7 @@ export class CourseCardComponent implements OnInit {
 
   @Input() course: ICourse|any = courseData;
   @Input() isMobile = false;
+  @Input() categoryKeys;
   @Input() isOffline = false;
   @Input() cardImg = courseData.appIcon;
   @Input() section = '';
