@@ -42,7 +42,9 @@ export class LibraryCardV4Component implements OnInit, AfterViewInit {
     fetchBMGS () {
         this.categoryKeys.forEach((data) => {
             if (data.identifier) {
-                this.categoryValues.push(this.getFormatedData(this.content[data.code]));
+                
+                let code = (this.content[data.alterNativeCode] || this.content[data.code])
+                this.categoryValues.push(this.getFormatedData(code));
             } else {
                 this.publisher = data;
             }

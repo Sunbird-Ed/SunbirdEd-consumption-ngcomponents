@@ -63,7 +63,8 @@ export class LibraryCardV3Component implements OnInit, AfterViewInit {
         this.frameworkDetailsList = [];
         this.categoryKeys.forEach((data) => {
             if (data.identifier) {
-                this.frameworkDetailsList.push(this.getFormatedData(this.content[data.code]));
+                let code = (this.content[data.alterNativeCode] || this.content[data.code])
+                this.frameworkDetailsList.push(this.getFormatedData(code));
             } else {
                 this.publisher = data;
             }

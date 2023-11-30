@@ -37,9 +37,9 @@
       <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
     </div>
     <div class="sb--card__meta1 text-left">
-      <ng-container *ngFor="let category of categoryKeys; let i=index">
-        <span [ngClass]="i%2===0 ? 'data_0 mr-8 organisation' : 'data_1 mr-8 medium'" *ngIf="categoryKeys.length-1 > i" title="{{category.label}}">{{content[category.label]}}</span>
-        <span [ngClass]="i%2===0 ? 'data_0 mr-8' : 'data_1 mr-8'" title="{{content[category.label]}}" *ngIf="(content[category.label] > 1 && categoryKeys.length-1 > i)">+{{categoryValues[i].length-1}}</span>
+      <ng-container *ngFor="let category of categoryValues; let i=index">
+        <span [ngClass]="i%2===0 ? 'data_0 mr-8 organisation' : 'data_1 mr-8 medium'" *ngIf="categoryValues.length-1 > i" title="{{category[0]}}">{{category}}</span>
+        <span [ngClass]="i%2===0 ? 'data_0 mr-8' : 'data_1 mr-8'" title="{{category[0]}}" *ngIf="(category.length > 1)">+{{category.length-1}}</span>
       </ng-container>
 
     </div>
@@ -52,8 +52,8 @@
         <ng-container >
           <div class="sb--card__meta2_data sb__ellipsis subject">
             <span>{{categoryKeys[categoryKeys.length-2].label}} : </span> 
-              <span title="{{categoryValues[categoryValues.length-2][0]}}">{{categoryValues[categoryValues.length-2]}}</span> 
-                <span class="data_1 mr-8" title="{{categoryValues[categoryValues.length-2] > 1" *ngIf="categoryValues[categoryValues.length-2] > 1"> +{{categoryValues[categoryValues.length-2].length-1}}
+              <span title="{{categoryValues[categoryValues.length-2][0]}}">{{categoryValues[categoryValues.length-1]}}</span> 
+                <span class="data_1 mr-8" title="{{categoryValues[categoryValues.length-1] > 1" *ngIf="categoryValues[categoryValues.length-2] > 1"> +{{categoryValues[categoryValues.length-1].length-1}}
             </span>
           </div>
         </ng-container>
