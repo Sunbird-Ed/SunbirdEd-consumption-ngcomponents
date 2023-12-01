@@ -25,6 +25,7 @@ export class LibraryCardsGridComponent {
 
     @Input() isLoading:boolean;
     @Input() viewMore = false;
+    @Input() categoryKeys = [];
 
 
     /* Show Menu on each card */
