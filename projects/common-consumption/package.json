@@ -1,6 +1,7 @@
 {
     "name": "@project-sunbird/common-consumption",
-    "version": "7.0.1",
+    "version": "7.0.2",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents.git"
