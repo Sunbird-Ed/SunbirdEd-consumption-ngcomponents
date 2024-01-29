@@ -37,10 +37,13 @@
       <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()"></a>
     </div>
     <div class="sb--card__meta1 text-left">
-      <ng-container *ngFor="let category of categoryValues; let i=index">
-        <span [ngClass]="i%2===0 ? 'data_0 mr-8 organisation' : 'data_1 mr-8 medium'" *ngIf="categoryValues.length-1 > i" title="{{category[0]}}">{{category}}</span>
-        <span [ngClass]="i%2===0 ? 'data_0 mr-8' : 'data_1 mr-8'" title="{{category[0]}}" *ngIf="(category.length > 1)">+{{category.length-1}}</span>
-      </ng-container>
+      <ng-container *ngFor="let category of categoryValues.slice(0, 3); let i=index">
+        <span [ngClass]="i%2===0 ? 'data_0 mr-8 organisation' : 'data_1 mr-8 medium'" *ngIf="category && category?.length > 0 && category[0]?.length === 1" title="{{category[0]}}">{{category[0]}}</span>
+        <span *ngIf="category && category?.length > 0 && category[0] && category[0]?.length > 1" class="box">
+          <span [ngClass]="i%2===0 ? 'data_0 mr-8 organisation' : 'data_1 mr-8 medium'"  title="{{category[0]}}">{{category[0][0]}}</span>
+          <span [ngClass]="i%2===0 ? 'data_0 mr-8 organisation' : 'data_1 mr-8 medium'"  title="{{category[0]}}"> +{{category[0].length-1}}</span>
+        </span>
+       </ng-container>
 
     </div>
   </div>
@@ -51,15 +54,18 @@
       <div class="sb--card__meta2 text-left">
         <ng-container >
           <div class="sb--card__meta2_data sb__ellipsis subject">
-            <span>{{categoryKeys[categoryKeys.length-2].label}} : </span> 
-              <span title="{{categoryValues[categoryValues.length-2][0]}}">{{categoryValues[categoryValues.length-1]}}</span> 
-                <span class="data_1 mr-8" title="{{categoryValues[categoryValues.length-1] > 1" *ngIf="categoryValues[categoryValues.length-2] > 1"> +{{categoryValues[categoryValues.length-1].length-1}}
+            <span>{{categoryKeys[categoryKeys.length-1].label |  titlecase}} : </span> 
+              <span title="{{categoryValues[categoryValues.length-1][0]}}">{{categoryValues[categoryValues.length-1]}}</span> 
+                <span class="data_1 mr-8" title="{{categoryValues[categoryValues.length-1] > 1}}" *ngIf="categoryValues && categoryValues[categoryValues.length-2] > 1"> +{{categoryValues[categoryValues.length-1].length-1}}
             </span>
           </div>
         </ng-container>
         <ng-container>
           <div class="sb--card__meta2_data sb__ellipsis organisation">
-            <span>{{publisher.name}}: </span> <span title="{{content[publisher.code]}}">{{content[publisher.code]}}</span>
+            <span>{{publisher.name}}: </span>
+            <span *ngIf="content && content[publisher?.code]" title="{{content[publisher?.code][0]}}">
+              {{content[publisher?.code][0]}}
+            </span> 
             <!-- <span class="data_1 mr-8" title="{{content[publisher.code]}}" *ngIf="content[publisher.code].length> 1"> +{{content[publisher.code]}}
             </span> -->
           </div>
