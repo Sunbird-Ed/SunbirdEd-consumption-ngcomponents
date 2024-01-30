@@ -52,18 +52,18 @@
     <div class="sb--card__moreinfo">
       <!-- other meta info subject, publisher/organizer etc -->
       <div class="sb--card__meta2 text-left">
-        <ng-container >
+        <ng-container *ngIf="categoryValues && categoryValues[3].length>0">
           <div class="sb--card__meta2_data sb__ellipsis subject">
-            <span>{{categoryKeys[categoryKeys.length-1].label |  titlecase}} : </span> 
-              <span title="{{categoryValues[categoryValues.length-1][0]}}">{{categoryValues[categoryValues.length-1]}}</span> 
-                <span class="data_1 mr-8" title="{{categoryValues[categoryValues.length-1] > 1}}" *ngIf="categoryValues && categoryValues[categoryValues.length-2] > 1"> +{{categoryValues[categoryValues.length-1].length-1}}
+            <span>{{categoryKeys[4].label |  titlecase}} : </span> 
+              <span *ngIf="categoryValues && categoryValues[3][0] && categoryValues[3][0].length===1" title="{{categoryValues[3][0]}}">{{categoryValues[3][0]}}</span> 
+              <span *ngIf="categoryValues && categoryValues[3][0] && categoryValues[3][0].length>1" class="data_1 mr-8" title="{{categoryValues[3][0]}}"> {{categoryValues[3][0][0]}} +{{categoryValues[3][0].length-1}}
             </span>
           </div>
         </ng-container>
-        <ng-container>
+        <ng-container *ngIf="content && content[publisher?.code]">
           <div class="sb--card__meta2_data sb__ellipsis organisation">
             <span>{{publisher.name}}: </span>
-            <span *ngIf="content && content[publisher?.code]" title="{{content[publisher?.code][0]}}">
+            <span  title="{{content[publisher?.code][0]}}">
               {{content[publisher?.code][0]}}
             </span> 
             <!-- <span class="data_1 mr-8" title="{{content[publisher.code]}}" *ngIf="content[publisher.code].length> 1"> +{{content[publisher.code]}}
