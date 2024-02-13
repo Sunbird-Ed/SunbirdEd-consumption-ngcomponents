@@ -7,7 +7,7 @@
                 </svg>
             </i>
             {{title}}
-            <span class="badge">{{contentList?.length}}</span>
+            <span class="badge">{{contentCount?contentCount:contentList?.length}}</span>
         </div>
         <button class="sb-btn sb-btn-normal sb-btn-outline-secondary sb-btn-white"
             *ngIf="(type !== LibraryCardGridTypes.INFINITE_CARD_GRID && type !== LibraryCardGridTypes.INFINITE_CARD_GRID_WITH_HOVER) && maxCardCount && contentList?.length >maxCardCount"
