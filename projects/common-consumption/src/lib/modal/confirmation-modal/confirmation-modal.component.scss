@@ -1,5 +1,5 @@
-@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "~@project-sunbird/sb-styles/assets/buttons" as *;
+@use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "@project-sunbird/sb-styles/assets/buttons" as *;
 
 // modal component variables
 $sb-modal-header-bg: var(--primary-400);
