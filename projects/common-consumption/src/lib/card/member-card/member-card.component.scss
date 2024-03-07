@@ -1,5 +1,5 @@
-@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
-@use "~@project-sunbird/sb-styles/assets/loadingshadows" as *;
+@use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "@project-sunbird/sb-styles/assets/loadingshadows" as *;
 ::ng-deep :root {
   --cc-members-list-item-selected:var(--sbt-body-bg)
   --cc-members-list-item-selected-border:var(--sbt-body-bg2)

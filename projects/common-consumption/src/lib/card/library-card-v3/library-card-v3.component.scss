@@ -1,4 +1,4 @@
-@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 ::ng-deep :root {
   --sbt-pill-hs: 212, 100%;
   --cc-sbcard-data2-bg:hsl(var(--sbt-pill-hs), 90%);

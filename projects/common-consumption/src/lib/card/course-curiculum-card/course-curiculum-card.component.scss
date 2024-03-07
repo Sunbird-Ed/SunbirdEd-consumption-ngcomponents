@@ -1,4 +1,4 @@
-@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 ::ng-deep :root {
     --cc-sbcard-course-curi-title:var(--white);
 }

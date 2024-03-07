@@ -1,4 +1,4 @@
-@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use "@project-sunbird/sb-styles/assets/mixins/mixins" as *;
 .sb--card {
   border-radius: calculateRem(2px);
   // margin-bottom: calculateRem(8px) !important;
