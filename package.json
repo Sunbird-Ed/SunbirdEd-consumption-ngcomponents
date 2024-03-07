@@ -14,6 +14,10 @@
     "test:ci": "ng test --code-coverage --watch=false --browsers=ChromeHeadless",
     "sonar-scanner": "sonar-scanner"
   },
+  "engines": {
+    "node": ">=16.13",
+    "npm": ">=8.19.3"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "15.2.10",
