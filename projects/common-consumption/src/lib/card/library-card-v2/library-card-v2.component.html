@@ -2,7 +2,7 @@
 <div class="sb--card sb--card--theme2" role="link" tabindex="0"
   [ngClass]="{'sb--card--recently-viewed': type === LibraryCardTypes.RECENTLY_VIEWED, 'offline': isOffline, 'selected': isSelected}"
   (click)="onClick($event)" (keydown.enter)="onEnterKeyPress($event)" *ngIf="!isLoading">
-  <svg width="79px" class="sb--card-svg-tail" height="36px" viewBox="0 0 79 36" version="1.1"
+  <!-- <svg width="79px" class="sb--card-svg-tail" height="36px" viewBox="0 0 79 36" version="1.1"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g class="sb--card-svg-tail__rc" transform="translate(-735.000000, -524.000000)">
@@ -15,7 +15,7 @@
         </g>
       </g>
     </g>
-  </svg>
+  </svg> -->
   <div class="sb--card__main-area">
     <!-- card img -->
     <div [ngClass]="getClassForImage()">
@@ -23,8 +23,8 @@
         <img [src]="cardImg" alt="">
       </div>
     </div>
-    <div class="sb--card__svg-area">
-      <img [src]="svgToDisplay" alt="" />
+    <div class="sb--card__svg-area" [style.background-color]="color">
+      <img [src]="svgToDisplay" alt="" hidden/>
     </div>
     <div class="sb--card__type" *ngIf="content?.primaryCategory || content?.contentType">{{content?.primaryCategory ||
       content?.contentType}}</div>

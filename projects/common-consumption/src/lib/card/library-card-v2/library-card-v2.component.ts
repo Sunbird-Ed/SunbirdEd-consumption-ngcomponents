@@ -3,20 +3,20 @@ import { IContent, LibraryCardTypes, ICardClick, IEnterKeyPress } from '../model
 
 
 @Component({
-  selector: 'sb-library-card-v2',
-  templateUrl: './library-card-v2.component.html',
-  styleUrls: ['./library-card-v2.component.scss','../library-card/library-card.component.scss']
+    selector: 'sb-library-card-v2',
+    templateUrl: './library-card-v2.component.html',
+    styleUrls: ['./library-card-v2.component.scss', '../library-card/library-card.component.scss']
 })
 export class LibraryCardV2Component implements OnInit, AfterViewInit {
 
-    @Input() content: IContent|any;
+    @Input() content: IContent | any;
     @Input() isMobile = false;
     @Input() isOffline = false;
     @Input() cardImg = '';
     @Input() type: LibraryCardTypes = LibraryCardTypes.DESKTOP_TEXTBOOK;
     @Input() moreInfoLabel = 'Medium';
     @Input() section = '';
-    @Input() isLoading:boolean;
+    @Input() isLoading: boolean;
     @Input('hover-template') gridTemplate: TemplateRef<any>;
     @Input() btnlabel = '';
     @Input() btnicon = '';
@@ -25,20 +25,23 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     @Input() indexToDisplay: number;
     @Input() svgToDisplay;
     @Input() isSelected = false;
-    @Input() categoryKeys= [];
+    @Input() categoryKeys = [];
 
     @Output() cardClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() menuClick: EventEmitter<ICardClick> = new EventEmitter();
     @Output() enterKeyPress: EventEmitter<IEnterKeyPress> = new EventEmitter();
     categoryValues = [];
     publisher: any;
-
+    letters = '0123456789ABCDEF';
+    color = "#";
+    colorsList = ["#aec7e8", "#ffbb78", "#98df8a", "#ff9896", "#c5b0d5", "#ca3c4a", "#ef7546", "#f2c665", "#99beb7", "#e3dec8"]
     get LibraryCardTypes() { return LibraryCardTypes; }
 
     ngOnInit() {
         this.fetchFrameworkDetails();
         this.fetchSvg();
         this.splitGradeMedium();
+        this.setRandomColor()
     }
 
     ngAfterViewInit(): void {
@@ -51,8 +54,8 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
         this.enterKeyPress.emit({ event: event, data: this.content });
     }
     splitGradeMedium() {
-        if(this.content && this.content.gradeLevel) {
-            this.content.gradeLevel = typeof this.content.gradeLevel === "string"?this.content.gradeLevel.split(","):this.content.gradeLevel;
+        if (this.content && this.content.gradeLevel) {
+            this.content.gradeLevel = typeof this.content.gradeLevel === "string" ? this.content.gradeLevel.split(",") : this.content.gradeLevel;
         }
     }
 
@@ -61,19 +64,26 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     }
 
     getClassForImage() {
-        if(this.layoutConfig!=null && this.layoutConfig.cardImgStyle != null) {
-            return "sb--card__img sb--card__image-pos-"+this.layoutConfig.cardImgStyle;
+        if (this.layoutConfig != null && this.layoutConfig.cardImgStyle != null) {
+            return "sb--card__img sb--card__image-pos-" + this.layoutConfig.cardImgStyle;
         } else {
             return "sb--card__img sb--card__image-pos";
         }
-       
+
     }
     fetchSvg() {
-        var indexToDisplay = this.indexToDisplay!=null ? (this.indexToDisplay % 9)+1:2;
-        this.svgToDisplay =  "assets/common-consumption/images/abstract_0"+indexToDisplay+".svg";
+        var indexToDisplay = this.indexToDisplay != null ? (this.indexToDisplay % 9) + 1 : 2;
+        this.svgToDisplay = "assets/common-consumption/images/abstract_0" + indexToDisplay + ".svg";
     }
 
-    getFormatedData(frameworkData){
+
+    setRandomColor() {
+        const indexToDisplay = this.indexToDisplay != null ? (this.indexToDisplay % 9) + 1 : 2;
+        this.color = this.colorsList[indexToDisplay]
+        
+    }
+
+    getFormatedData(frameworkData) {
         if (typeof frameworkData === 'string') {
             return [[frameworkData]];
         } else if (Array.isArray(frameworkData)) {
@@ -88,7 +98,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
             if (data.label) {
                 let code = (this.content[data.alterNativeCode] || this.content[data.code])
                 this.categoryValues.push(this.getFormatedData(code));
-            }else {
+            } else {
                 this.publisher = data;
             }
         });
