@@ -32,9 +32,8 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
     @Output() enterKeyPress: EventEmitter<IEnterKeyPress> = new EventEmitter();
     categoryValues = [];
     publisher: any;
-    letters = '0123456789ABCDEF';
     color = "#";
-    colorsList = ["#aec7e8", "#ffbb78", "#98df8a", "#ff9896", "#c5b0d5", "#ca3c4a", "#ef7546", "#f2c665", "#99beb7", "#e3dec8"]
+    colorsList = ["#f2c665", "#ef7546", "#ca3c4a", "#f2c665", "#ef7546", "#ca3c4a", "#f2c665", "#ef7546", "#ca3c4a", "#ef7546"]
     get LibraryCardTypes() { return LibraryCardTypes; }
 
     ngOnInit() {
