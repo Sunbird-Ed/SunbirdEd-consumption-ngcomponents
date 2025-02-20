@@ -171,6 +171,8 @@ Group Card. |sb-group-card|
 | 8.0.0_v14         |      8.0.0          |     Ng V14      |
 | 8.0.0_v15         |      8.0.1          |     Ng V15      |
 | 8.0.0_v16         |      8.0.2          |     Ng V16      |
+| release-7.6.0     |      8.0.3          |     Ng V17      |
+| release-7.6.0     |      8.0.4          |     Ng V18      |
 
 
 
