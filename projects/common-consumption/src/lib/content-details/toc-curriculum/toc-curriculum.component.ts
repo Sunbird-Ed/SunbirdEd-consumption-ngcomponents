@@ -4,11 +4,12 @@ import {staticData} from './toc-data';
 import { isNgTemplate } from '@angular/compiler';
 
 @Component({
-  selector: 'sb-toc-curriculum',
-  templateUrl: './toc-curriculum.component.html',
-  styleUrls: ['./toc-curriculum.component.scss',
-  '../../layout/library-cards-grid/library-cards-grid.component.scss',
-  '../../card/library-card/library-card.component.scss']
+    selector: 'sb-toc-curriculum',
+    templateUrl: './toc-curriculum.component.html',
+    styleUrls: ['./toc-curriculum.component.scss',
+        '../../layout/library-cards-grid/library-cards-grid.component.scss',
+        '../../card/library-card/library-card.component.scss'],
+    standalone: false
 })
 export class TocCurriculumComponent implements OnInit {
 

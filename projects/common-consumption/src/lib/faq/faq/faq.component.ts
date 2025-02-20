@@ -3,9 +3,10 @@ import { IClick } from '../../card/models';
 import { staticData } from './faq.component.data';
 
 @Component({
-  selector: 'sb-faq',
-  templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.scss']
+    selector: 'sb-faq',
+    templateUrl: './faq.component.html',
+    styleUrls: ['./faq.component.scss'],
+    standalone: false
 })
 export class FaqComponent implements OnInit {
 

@@ -10,9 +10,10 @@ const DEFAULT_BUTTON: IActionButton = {
 };
 
 @Component({
-  selector: 'sb-player-actions',
-  templateUrl: './player-actions.component.html',
-  styleUrls: ['./player-actions.component.scss']
+    selector: 'sb-player-actions',
+    templateUrl: './player-actions.component.html',
+    styleUrls: ['./player-actions.component.scss'],
+    standalone: false
 })
 export class PlayerActionsComponent implements OnInit {
 

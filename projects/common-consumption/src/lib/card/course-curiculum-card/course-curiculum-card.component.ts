@@ -3,9 +3,10 @@ import { ICardClick } from '../../layout/models';
 
 
 @Component({
-  selector: 'sb-course-curiculum-card',
-  templateUrl: './course-curiculum-card.component.html',
-  styleUrls: ['./course-curiculum-card.component.scss','../library-card/library-card.component.scss']
+    selector: 'sb-course-curiculum-card',
+    templateUrl: './course-curiculum-card.component.html',
+    styleUrls: ['./course-curiculum-card.component.scss', '../library-card/library-card.component.scss'],
+    standalone: false
 })
 export class CourseCuriculumCardComponent implements OnInit {
 

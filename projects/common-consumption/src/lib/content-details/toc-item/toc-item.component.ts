@@ -6,10 +6,11 @@ import { MimeTypePipe, MimeTypeMasterData } from '../../pipes-module/mime-type';
 import {AccordionItemComponent} from '../../accordion/accordion-item/accordion-item.component';
 import { Subscription } from 'rxjs';
 @Component({
-  selector: 'sb-toc-item',
-  templateUrl: './toc-item.component.html',
-  styleUrls: ['./toc-item.component.scss'],
-  providers: [MimeTypePipe]
+    selector: 'sb-toc-item',
+    templateUrl: './toc-item.component.html',
+    styleUrls: ['./toc-item.component.scss'],
+    providers: [MimeTypePipe],
+    standalone: false
 })
 export class TocItemComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
   @Input() accordianConfig: IAccordianConfig = {

@@ -3,9 +3,10 @@ import { NotificationViewConfig } from '../../card/models';
 import { notificationViewConfig } from './in-app-notification-data';
 
 @Component({
-  selector: 'sb-in-app-notification',
-  templateUrl: './in-app-notification.component.html',
-  styleUrls: ['./in-app-notification.component.scss']
+    selector: 'sb-in-app-notification',
+    templateUrl: './in-app-notification.component.html',
+    styleUrls: ['./in-app-notification.component.scss'],
+    standalone: false
 })
 export class InAppNotificationComponent implements OnInit {
 

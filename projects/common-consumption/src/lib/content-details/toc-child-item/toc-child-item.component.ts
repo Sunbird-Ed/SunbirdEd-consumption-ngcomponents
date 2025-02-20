@@ -2,9 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TocCardType } from '../../card/models';
 
 @Component({
-  selector: 'sb-toc-child-item',
-  templateUrl: './toc-child-item.component.html',
-  styleUrls: ['./toc-child-item.component.scss']
+    selector: 'sb-toc-child-item',
+    templateUrl: './toc-child-item.component.html',
+    styleUrls: ['./toc-child-item.component.scss'],
+    standalone: false
 })
 export class TocChildItemComponent implements OnInit {
   @Input() childData;

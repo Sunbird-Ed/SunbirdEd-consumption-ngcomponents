@@ -4,7 +4,8 @@ import { PillsColorTheme } from '../models';
 @Component({
     selector: 'sb-pill-item',
     templateUrl: './pill-item.component.html',
-    styleUrls: ['./pill-item.component.scss']
+    styleUrls: ['./pill-item.component.scss'],
+    standalone: false
 })
 
 export class PillItemComponent {

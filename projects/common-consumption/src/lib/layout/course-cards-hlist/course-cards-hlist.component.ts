@@ -5,9 +5,10 @@ import { ICourse, CourseCardGridTypes, CourseCardTypes, ButtonPosition } from '.
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
-  selector: 'sb-course-cards-hlist',
-  templateUrl: './course-cards-hlist.component.html',
-  styleUrls: ['./course-cards-hlist.component.scss']
+    selector: 'sb-course-cards-hlist',
+    templateUrl: './course-cards-hlist.component.html',
+    styleUrls: ['./course-cards-hlist.component.scss'],
+    standalone: false
 })
 export class CourseCardsHlistComponent implements OnInit {
 

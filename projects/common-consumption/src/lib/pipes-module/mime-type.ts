@@ -20,7 +20,8 @@ export class MimeTypeMasterData {
 
 
 @Pipe({
-  name: 'hasMimeType',
+    name: 'hasMimeType',
+    standalone: false
 })
 export class MimeTypePipe implements PipeTransform {
   transform(item?: any, mimeTypes: string[] = ['all'], isTextbookTocPage: boolean = false): boolean {

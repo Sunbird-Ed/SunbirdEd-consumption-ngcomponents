@@ -2,9 +2,10 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ICardClick } from '../models';
 
 @Component({
-  selector: 'sb-member-list',
-  templateUrl: './member-list.component.html',
-  styleUrls: ['./member-list.component.scss']
+    selector: 'sb-member-list',
+    templateUrl: './member-list.component.html',
+    styleUrls: ['./member-list.component.scss'],
+    standalone: false
 })
 export class MemberListComponent implements OnInit {
 
