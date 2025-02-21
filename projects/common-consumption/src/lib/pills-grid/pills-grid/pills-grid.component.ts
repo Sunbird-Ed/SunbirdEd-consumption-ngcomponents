@@ -6,7 +6,8 @@ import { PillItemComponent } from '../pill-item/pill-item.component';
 @Component({
     selector: 'sb-pills-grid',
     templateUrl: './pills-grid.component.html',
-    styleUrls: ['./pills-grid.component.scss']
+    styleUrls: ['./pills-grid.component.scss'],
+    standalone: false
 })
 
 export class PillsGridComponent implements AfterContentInit, OnInit {

@@ -23,10 +23,11 @@ const accordionItemBodyTrigger = trigger('accordionItemBody', [
 ]);
 
 @Component({
-  selector: 'sb-accordion-body',
-  templateUrl: './accordion-body.component.html',
-  styleUrls: ['./accordion-body.component.scss'],
-  animations: [accordionItemBodyTrigger],
+    selector: 'sb-accordion-body',
+    templateUrl: './accordion-body.component.html',
+    styleUrls: ['./accordion-body.component.scss'],
+    animations: [accordionItemBodyTrigger],
+    standalone: false
 })
 export class AccordionBodyComponent {
 

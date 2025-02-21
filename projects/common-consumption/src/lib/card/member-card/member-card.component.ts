@@ -3,9 +3,10 @@ import { ICardClick } from '../models';
 import { config } from 'rxjs';
 
 @Component({
-  selector: 'sb-member-card',
-  templateUrl: './member-card.component.html',
-  styleUrls: ['./member-card.component.scss']
+    selector: 'sb-member-card',
+    templateUrl: './member-card.component.html',
+    styleUrls: ['./member-card.component.scss'],
+    standalone: false
 })
 export class MemberCardComponent implements OnInit {
 

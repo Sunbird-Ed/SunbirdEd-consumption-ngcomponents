@@ -4,9 +4,10 @@ import { IContent, LibraryCardTypes, CardGridTypes } from '../../card/models';
 import { IViewMoreClick, ICardClick } from '../models';
 
 @Component({
-  selector: 'sb-cards-grid',
-  templateUrl: './cards-grid.component.html',
-  styleUrls: ['./cards-grid.component.scss','../library-cards-grid/library-cards-grid.component.scss']
+    selector: 'sb-cards-grid',
+    templateUrl: './cards-grid.component.html',
+    styleUrls: ['./cards-grid.component.scss', '../library-cards-grid/library-cards-grid.component.scss'],
+    standalone: false
 })
 export class CardsGridComponent {
 

@@ -13,9 +13,10 @@ export interface IPreviewActionButtonClick {
 }
 
 @Component({
-  selector: 'sb-certificate-actions',
-  templateUrl: './certificate-actions.component.html',
-  styleUrls: ['./certificate-actions.component.scss']
+    selector: 'sb-certificate-actions',
+    templateUrl: './certificate-actions.component.html',
+    styleUrls: ['./certificate-actions.component.scss'],
+    standalone: false
 })
 
 export class CertificateActionsComponent implements OnInit {

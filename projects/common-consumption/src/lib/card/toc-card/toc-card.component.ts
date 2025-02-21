@@ -4,9 +4,10 @@ import { COMMON_CONSUMPTION_CONSTANTS } from '../../common-consumption.constants
 import { IButtonConfig, PlatformType, TocCardType } from '../models';
 
 @Component({
-  selector: 'sb-toc-card',
-  templateUrl: './toc-card.component.html',
-  styleUrls: ['./toc-card.component.scss']
+    selector: 'sb-toc-card',
+    templateUrl: './toc-card.component.html',
+    styleUrls: ['./toc-card.component.scss'],
+    standalone: false
 })
 export class TocCardComponent implements OnInit, OnChanges {
   @Input() content;

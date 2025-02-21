@@ -5,7 +5,8 @@ import { LibraryCardTypes, ICardClick } from '../../card/models';
 @Component({
     selector: 'sb-library-cards-stack',
     templateUrl: './library-cards-stack.component.html',
-    styleUrls: ['./library-cards-stack.component.scss']
+    styleUrls: ['./library-cards-stack.component.scss'],
+    standalone: false
 })
 
 export class LibraryCardsStackComponent {

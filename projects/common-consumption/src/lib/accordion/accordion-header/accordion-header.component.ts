@@ -3,21 +3,19 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { AccordionItemComponent } from '../accordion-item/accordion-item.component';
 
 @Component({
-  selector: 'sb-accordion-header',
-  templateUrl: './accordion-header.component.html',
-  styleUrls: ['./accordion-header.component.scss'],
-  animations: [
-    trigger('expansionIndicator', [
-      state(
-        'expanded',
-        style({
-          transform: 'rotate(180deg)',
-        }),
-      ),
-      transition('collapsed => expanded', animate('100ms ease-in')),
-      transition('expanded => collapsed', animate('100ms ease-out')),
-    ]),
-  ],
+    selector: 'sb-accordion-header',
+    templateUrl: './accordion-header.component.html',
+    styleUrls: ['./accordion-header.component.scss'],
+    animations: [
+        trigger('expansionIndicator', [
+            state('expanded', style({
+                transform: 'rotate(180deg)',
+            })),
+            transition('collapsed => expanded', animate('100ms ease-in')),
+            transition('expanded => collapsed', animate('100ms ease-out')),
+        ]),
+    ],
+    standalone: false
 })
 export class AccordionHeaderComponent {
   @Input() title = '';

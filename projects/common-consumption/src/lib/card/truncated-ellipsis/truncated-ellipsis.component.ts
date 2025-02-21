@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-truncated-ellipsis',
-  templateUrl: './truncated-ellipsis.component.html',
-  styleUrls: ['./truncated-ellipsis.component.scss'],
+    selector: 'app-truncated-ellipsis',
+    templateUrl: './truncated-ellipsis.component.html',
+    styleUrls: ['./truncated-ellipsis.component.scss'],
+    standalone: false
 })
 export class TruncatedEllipsisComponent implements OnInit {
   @Input() arrayList: Array<Array<string>> = [];

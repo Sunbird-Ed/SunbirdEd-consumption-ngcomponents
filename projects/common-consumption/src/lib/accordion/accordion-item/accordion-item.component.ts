@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, HostBinding, Host, Output, EventEmitter } from '@angular/core';
 import { AccordionComponent } from '../accordion.component';
 @Component({
-  selector: 'sb-accordion-item',
-  templateUrl: './accordion-item.component.html',
-  styleUrls: ['./accordion-item.component.scss']
+    selector: 'sb-accordion-item',
+    templateUrl: './accordion-item.component.html',
+    styleUrls: ['./accordion-item.component.scss'],
+    standalone: false
 })
 export class AccordionItemComponent implements OnInit {
   private collapsedValue = true;
