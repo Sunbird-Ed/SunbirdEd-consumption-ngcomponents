@@ -4,7 +4,8 @@ import { staticContent } from '../library-card/library-card.data';
 @Component({
     selector: 'sb-library-card',
     templateUrl: './library-card.component.html',
-    styleUrls: ['./library-card.component.scss']
+    styleUrls: ['./library-card.component.scss'],
+    standalone: false
 })
 export class LibraryCardComponent implements OnInit, AfterViewInit {
 

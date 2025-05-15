@@ -2,9 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ICardClick } from '../../layout/models';
 import { groupData } from './group-data';
 @Component({
-  selector: 'sb-group-card',
-  templateUrl: './group-card.component.html',
-  styleUrls: ['./group-card.component.scss','../library-card/library-card.component.scss']
+    selector: 'sb-group-card',
+    templateUrl: './group-card.component.html',
+    styleUrls: ['./group-card.component.scss', '../library-card/library-card.component.scss'],
+    standalone: false
 })
 export class GroupCardComponent implements OnInit {
 

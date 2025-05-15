@@ -4,7 +4,8 @@ import { LibraryFiltersLayout, IFilterItem, ISelectedFilter, TocMimeTypes } from
 @Component({
     selector: 'sb-library-filters',
     templateUrl: './library-filters.component.html',
-    styleUrls: ['./library-filters.component.scss']
+    styleUrls: ['./library-filters.component.scss'],
+    standalone: false
 })
 
 export class LibraryFiltersComponent implements OnChanges {

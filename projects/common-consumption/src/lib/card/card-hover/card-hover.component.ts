@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, AfterViewInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'sb-card-hover',
-  templateUrl: './card-hover.component.html',
-  styleUrls: ['./card-hover.component.scss']
+    selector: 'sb-card-hover',
+    templateUrl: './card-hover.component.html',
+    styleUrls: ['./card-hover.component.scss'],
+    standalone: false
 })
 export class CardHoverComponent implements OnInit, AfterViewInit {
 

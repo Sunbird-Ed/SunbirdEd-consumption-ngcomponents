@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sb-cqube-card',
-  templateUrl: './cqube-card.component.html',
-  styleUrls: ['./cqube-card.component.scss']
+    selector: 'sb-cqube-card',
+    templateUrl: './cqube-card.component.html',
+    styleUrls: ['./cqube-card.component.scss'],
+    standalone: false
 })
 export class CqubeCardComponent implements OnInit {
 

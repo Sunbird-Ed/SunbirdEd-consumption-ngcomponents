@@ -3,9 +3,10 @@ import { IContent, ICardClick, PlatformType } from '../models';
 
 
 @Component({
-  selector: 'sb-banner-card-hlist',
-  templateUrl: './banner-card.component.html',
-  styleUrls: ['./banner-card.component.scss']
+    selector: 'sb-banner-card-hlist',
+    templateUrl: './banner-card.component.html',
+    styleUrls: ['./banner-card.component.scss'],
+    standalone: false
 })
 export class BannerCardComponent {
 

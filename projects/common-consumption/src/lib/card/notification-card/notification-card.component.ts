@@ -3,9 +3,10 @@ import { notificationData } from './notification-card-data';
 import { NotificationStatus } from '../models';
 
 @Component({
-  selector: 'sb-notification-card',
-  templateUrl: './notification-card.component.html',
-  styleUrls: ['./notification-card.component.scss']
+    selector: 'sb-notification-card',
+    templateUrl: './notification-card.component.html',
+    styleUrls: ['./notification-card.component.scss'],
+    standalone: false
 })
 export class NotificationCardComponent implements OnInit {
 

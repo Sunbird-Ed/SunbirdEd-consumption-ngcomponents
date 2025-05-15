@@ -6,7 +6,8 @@ import { IViewMoreClick, ICardClick } from '../models';
 @Component({
     selector: 'sb-library-cards-grid',
     templateUrl: './library-cards-grid.component.html',
-    styleUrls: ['./library-cards-grid.component.scss']
+    styleUrls: ['./library-cards-grid.component.scss'],
+    standalone: false
 })
 export class LibraryCardsGridComponent {
 

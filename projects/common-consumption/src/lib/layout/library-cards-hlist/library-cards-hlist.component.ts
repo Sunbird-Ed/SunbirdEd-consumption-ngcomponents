@@ -6,7 +6,8 @@ import { staticContent } from './library-cards-hlist.data';
 @Component({
     selector: 'sb-library-cards-hlist',
     templateUrl: './library-cards-hlist.component.html',
-    styleUrls: ['./library-cards-hlist.component.scss']
+    styleUrls: ['./library-cards-hlist.component.scss'],
+    standalone: false
 })
 
 export class LibraryCardsHlistComponent {

@@ -1,6 +1,6 @@
 {
     "name": "@project-sunbird/common-consumption",
-    "version": "8.0.2",
+    "version": "8.0.5",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -16,7 +16,7 @@
     },
     "homepage": "https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents.git#readme",
     "peerDependencies": {
-      "@angular/common": "16.2.12",
-      "@angular/core": "16.2.12"
+      "@angular/common": "19.1.7",
+       "@angular/core": "19.1.7"
     }
 }
