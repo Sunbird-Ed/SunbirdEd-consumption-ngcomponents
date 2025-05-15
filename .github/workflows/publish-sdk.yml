@@ -29,12 +29,12 @@ jobs:
       - name: Install dependencies
         run: |
           if [ ! -d "node_modules" ]; then
-            npm i --legacy-peer-deps
+            npm ci 
           fi
 
       - name: Build and Pack
         run: |
-          npm run build:prod
+          npm run build-lib
           npm pack ./dist/common-consumption
 
       - name: Publish to NPM
