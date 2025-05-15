@@ -1,0 +1,53 @@
+name: PR Build
+
+on:
+  pull_request:
+
+jobs:
+  build-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          cache: 'npm'
+
+      - name: Check installed versions
+        run: |
+          node -v
+
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: |
+          if [ ! -d "node_modules" ]; then
+            npm i --legacy-peer-deps
+          fi
+
+      - name: Install SonarQube scanner
+        run: npm install -g sonarqube-scanner
+
+      - name: Run SonarScanner
+        run: sonar-scanner    
+
+      - name: Build project and Pack (PR)
+        run: |
+          npm run build-lib
+          npm pack ./dist/common-consumption
+
+      - name: Fix Linting Errors
+        run: |
+          npm run lint
+
+      - name: Run Tests
+        run: |
+          npm run test
+
+  
+  
