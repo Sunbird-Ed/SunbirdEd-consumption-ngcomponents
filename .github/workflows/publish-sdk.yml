@@ -1,0 +1,45 @@
+name: Create Tag on Push
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          cache: 'npm'
+        
+      - name: Check installed versions
+        run: |
+          node -v
+
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: |
+          if [ ! -d "node_modules" ]; then
+            npm ci
+          fi
+
+      - name: Build and Pack
+        run: |
+          npm run build:prod
+          npm pack ./dist/common-consumption
+
+      - name: Publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm pack ./dist
+    
