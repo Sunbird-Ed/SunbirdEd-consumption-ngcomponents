@@ -15,21 +15,31 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.15.0'
-          cache: 'npm'
 
       - name: Check installed versions
         run: |
           node -v
 
-      - name: Clean npm cache
-        run: npm cache clean --force
+      - name: Restore node_modules cache
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
 
       - name: Install dependencies
         run: |
-          if [ ! -d "node_modules" ]; then
-            npm i --legacy-peer-deps
-          fi
+            npm ci --legacy-peer-deps
 
+      - name: Save node_modules cache
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          
       - name: Install SonarQube scanner
         run: npm install -g sonarqube-scanner
 
@@ -41,7 +51,7 @@ jobs:
           npm run build-lib
           npm pack ./dist/common-consumption
 
-      - name: Fix Linting Errors
+      - name: Lint code
         run: |
           npm run lint
 
