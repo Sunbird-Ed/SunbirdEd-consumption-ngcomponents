@@ -69,7 +69,7 @@
       <div class="sb--card__meta2 text-left">
         <ng-container *ngIf="categoryValues && categoryValues[3].length>0">
           <div class="sb--card__meta2_data sb__ellipsis subject">
-            <span>{{categoryKeys[4].label | titlecase}} : </span>
+            <span>{{content?.labels?.category || "Category"}}: </span>
             <span *ngIf="categoryValues && categoryValues[3][0] && categoryValues[3][0].length===1"
               title="{{categoryValues[3][0]}}">{{categoryValues[3][0]}}</span>
             <span *ngIf="categoryValues && categoryValues[3][0] && categoryValues[3][0].length>1" class="data_1 mr-8"
@@ -79,7 +79,7 @@
         </ng-container>
         <ng-container *ngIf="content && content[publisher?.code]">
           <div class="sb--card__meta2_data sb__ellipsis organisation">
-            <span>{{publisher.name}}: </span>
+            <span>{{content?.labels?.publisher || "Publisher"}}: </span>
             <span title="{{content[publisher?.code][0]}}">
               {{content[publisher?.code][0]}}
             </span>
