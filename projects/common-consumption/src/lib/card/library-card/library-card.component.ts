@@ -9,7 +9,7 @@ import { staticContent } from '../library-card/library-card.data';
 export class LibraryCardComponent implements OnInit, AfterViewInit {
 
     @Input() content: IContent|any = staticContent;
-    @Input() categoryKeys= [];
+    @Input() categoryKeys = [];
     @Input() contentList: any;
     @Input() isMobile = false;
     @Input() isOffline = false;
@@ -55,7 +55,7 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
 
     }
 
-    getFormatedData(frameworkData){
+    getFormattedData(frameworkData) {
         if (typeof frameworkData === 'string') {
             return [[frameworkData]];
         } else if (Array.isArray(frameworkData)) {
@@ -69,8 +69,8 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
 
         this.categoryKeys.forEach((data) => {
             if (data.label) {
-                let code = this.content[data.alterNativeCode] || this.content[data.code];
-                let formattedValue = this.getFormatedData(code);
+                let code = this.content[data.alternativeCode] || this.content[data.code];
+                let formattedValue = this.getFormattedData(code);
                 let capitalizedLabel = data.label.charAt(0).toUpperCase() + data.label.slice(1);
 
                 this.categoryValues.push({
