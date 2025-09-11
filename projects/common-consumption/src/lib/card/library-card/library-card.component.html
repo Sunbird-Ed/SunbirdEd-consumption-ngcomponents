@@ -22,7 +22,7 @@
             <span [ngClass]="i%2===0 ? 'data_1 ellipsis' : 'data_2 ellipsis'"
               *ngIf="category && category?.value?.length > 0"
               title="{{category?.value}}">{{category?.value}}</span>
-            <span *ngIf="category && category?.value?.length > 0 && !categorySliceEndIndex && categoryValues[i+2]?.value?.length > 0" class="dot-divider"></span>
+            <span *ngIf="category && category?.value?.length > 0 && !categorySliceEndIndex && (categoryValues.length > i+2) && categoryValues[i+2]?.value?.length > 0" class="dot-divider"></span>
           </ng-container>
         </div>
     </div>
