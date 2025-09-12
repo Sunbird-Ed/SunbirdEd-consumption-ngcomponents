@@ -9,7 +9,10 @@ import { IContent, LibraryCardTypes, ICardClick, IEnterKeyPress } from '../model
     standalone: false
 })
 export class LibraryCardV2Component implements OnInit, AfterViewInit {
-
+    isArray(value: any): boolean {
+        return Array.isArray(value);
+    }
+    
     @Input() content: IContent|any;
     @Input() isMobile = false;
     @Input() isOffline = false;

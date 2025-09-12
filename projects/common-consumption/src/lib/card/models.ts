@@ -62,14 +62,11 @@ export interface IBadge {
     status: string;
 }
 
-export interface IContent {
+export interface IContentBase {
     appIcon: string;
     name: string;
-    subject: string | string[];
-    gradeLevel: string[];
     badgeAssertions: IBadge[];
     resourceType: string;
-    medium?: string | string[];
     creator?: string;
     organisation?: string[];
     body?: any;
@@ -108,82 +105,88 @@ export interface IContent {
     primaryCategory?: string;
 }
 
-export interface ICourse {
-        ownershipType: string[];
-        copyright: string;
-        board?: string;
-        channel: string;
-        downloadUrl: string;
-        organisation: string[];
-        language: string[];
-        mimeType: string;
-        variants: any;
-        leafNodes: string[];
-        objectType: string;
-        appIcon: string;
-        children: string[];
-        appId: string;
-        contentEncoding: string;
-        lockKey: string;
-        totalCompressedSize: number;
-        mimeTypesCount: string;
-        contentType: string;
-        contentCredits: string;
-        identifier: string;
-        lastUpdatedBy: string;
-        audience: string[];
-        visibility: string;
-        toc_url: string;
-        contentTypesCount: string;
-        consumerId: string;
-        childNodes: string[];
-        mediaType: string;
-        osId: string;
-        graph_id: string;
-        nodeType: string;
-        lastPublishedBy: string;
-        version: number;
-        license: string;
-        prevState: string;
-        lastPublishedOn: string;
-        size: number;
-        IL_FUNC_OBJECT_TYPE: string;
-        name: string;
-        topic: string[];
-        c_diksha_load_open_batch_count: number;
-        status: string;
-        code: string;
-        purpose: string;
-        prevStatus: string;
-        description: string;
-        medium: string;
-        idealScreenSize: string;
-        createdOn: string;
-        reservedDialcodes: string;
-        copyrightYear: number;
-        contentDisposition: string;
-        lastUpdatedOn: string;
-        SYS_INTERNAL_LAST_UPDATED_ON: string;
-        dialcodeRequired: string;
-        creator: string;
-        createdFor: string[];
-        lastStatusChangedOn: string;
-        IL_SYS_NODE_TYPE: string;
-        os: string[];
-        pkgVersion: number;
-        versionKey: string;
-        idealScreenDensity: string;
-        framework: string;
-        depth: number;
-        s3Key: string;
-        dialcodes: string[];
-        lastSubmittedOn: string;
-        createdBy: string;
-        compatibilityLevel: number;
-        leafNodesCount: number;
-        IL_UNIQUE_ID: string;
-        resourceType: string;
-        node_id: number;
+export interface IContent extends IContentBase {
+    [key: string]: any;
+}
+
+export interface ICourseBase {
+    ownershipType: string[];
+    copyright: string;
+    channel: string;
+    downloadUrl: string;
+    organisation: string[];
+    language: string[];
+    mimeType: string;
+    variants: any;
+    leafNodes: string[];
+    objectType: string;
+    appIcon: string;
+    children: string[];
+    appId: string;
+    contentEncoding: string;
+    lockKey: string;
+    totalCompressedSize: number;
+    mimeTypesCount: string;
+    contentType: string;
+    contentCredits: string;
+    identifier: string;
+    lastUpdatedBy: string;
+    audience: string[];
+    visibility: string;
+    toc_url: string;
+    contentTypesCount: string;
+    consumerId: string;
+    childNodes: string[];
+    mediaType: string;
+    osId: string;
+    graph_id: string;
+    nodeType: string;
+    lastPublishedBy: string;
+    version: number;
+    license: string;
+    prevState: string;
+    lastPublishedOn: string;
+    size: number;
+    IL_FUNC_OBJECT_TYPE: string;
+    name: string;
+    topic: string[];
+    c_diksha_load_open_batch_count: number;
+    status: string;
+    code: string;
+    purpose: string;
+    prevStatus: string;
+    description: string;
+    idealScreenSize: string;
+    createdOn: string;
+    reservedDialcodes: string;
+    copyrightYear: number;
+    contentDisposition: string;
+    lastUpdatedOn: string;
+    SYS_INTERNAL_LAST_UPDATED_ON: string;
+    dialcodeRequired: string;
+    creator: string;
+    createdFor: string[];
+    lastStatusChangedOn: string;
+    IL_SYS_NODE_TYPE: string;
+    os: string[];
+    pkgVersion: number;
+    versionKey: string;
+    idealScreenDensity: string;
+    framework: string;
+    depth: number;
+    s3Key: string;
+    dialcodes: string[];
+    lastSubmittedOn: string;
+    createdBy: string;
+    compatibilityLevel: number;
+    leafNodesCount: number;
+    IL_UNIQUE_ID: string;
+    resourceType: string;
+    node_id: number;
+}
+
+export interface ICourse extends ICourseBase {
+    [key: string]: any;
 }
 
 export interface IHoverData {
