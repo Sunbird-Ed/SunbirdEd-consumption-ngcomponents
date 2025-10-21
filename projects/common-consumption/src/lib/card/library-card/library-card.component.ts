@@ -69,9 +69,9 @@ export class LibraryCardComponent implements OnInit, AfterViewInit {
 
         this.categoryKeys.forEach((data) => {
             if (data.label) {
-                let code = this.content[data.alternativeCode] || this.content[data.code];
-                let formattedValue = this.getFormattedData(code);
-                let capitalizedLabel = data.label.charAt(0).toUpperCase() + data.label.slice(1);
+                const code = this.content[data.alternativeCode] || this.content[data.code];
+                const formattedValue = this.getFormattedData(code);
+                const capitalizedLabel = data.label.charAt(0).toUpperCase() + data.label.slice(1);
 
                 this.categoryValues.push({
                     label: capitalizedLabel,
