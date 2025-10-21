@@ -59,7 +59,10 @@
             +{{category[0].length-1}}</span>
         </span>
       </ng-container>
-
+    </div>
+    <div *ngIf="content?.batchName" class="sb--card__meta2_data sb__ellipsis organisation text-left">
+      <span>{{content?.labels?.batch || "Batch"}}: </span>
+      <span class="text-bold" title="{{content?.batchName}}">{{content?.batchName}}</span>
     </div>
   </div>
   <!-- content for only desktop -->
