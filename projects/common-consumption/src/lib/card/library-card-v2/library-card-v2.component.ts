@@ -8,6 +8,9 @@ import { IContent, LibraryCardTypes, ICardClick, IEnterKeyPress } from '../model
   styleUrls: ['./library-card-v2.component.scss','../library-card/library-card.component.scss']
 })
 export class LibraryCardV2Component implements OnInit, AfterViewInit {
+  isArray(value: any): boolean {
+    return Array.isArray(value);
+  }
 
     @Input() content: IContent|any;
     @Input() isMobile = false;
@@ -86,7 +89,7 @@ export class LibraryCardV2Component implements OnInit, AfterViewInit {
         this.categoryValues = [];
         this.categoryKeys.forEach((data) => {
             if (data.label) {
-                let code = (this.content[data.alterNativeCode] || this.content[data.code])
+                let code = (this.content[data.alternativeCode] || this.content[data.code])
                 this.categoryValues.push(this.getFormatedData(code));
             }else {
                 this.publisher = data;

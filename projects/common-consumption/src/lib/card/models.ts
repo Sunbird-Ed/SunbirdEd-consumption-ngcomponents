@@ -62,14 +62,11 @@ export interface IBadge {
     status: string;
 }
 
-export interface IContent {
+export interface IContentBase {
     appIcon: string;
     name: string;
-    subject: string | string[];
-    gradeLevel: string[];
     badgeAssertions: IBadge[];
     resourceType: string;
-    medium?: string | string[];
     creator?: string;
     organisation?: string[];
     body?: any;
@@ -108,10 +105,13 @@ export interface IContent {
     primaryCategory?: string;
 }
 
-export interface ICourse {
+export interface IContent extends IContentBase {
+    [key: string]: any;
+}
+
+export interface ICourseBase {
         ownershipType: string[];
         copyright: string;
-        board?: string;
         channel: string;
         downloadUrl: string;
         organisation: string[];
@@ -156,7 +156,6 @@ export interface ICourse {
         purpose: string;
         prevStatus: string;
         description: string;
-        medium: string;
         idealScreenSize: string;
         createdOn: string;
         reservedDialcodes: string;
@@ -184,6 +183,10 @@ export interface ICourse {
         IL_UNIQUE_ID: string;
         resourceType: string;
         node_id: number;
+}
+
+export interface ICourse extends ICourseBase {
+    [key: string]: any;
 }
 
 export interface IHoverData {
