@@ -19,14 +19,14 @@
       <div class="sb__ellipsis sb__ellipsis--two text-left flex-basis-1 title-info" title="{{content?.name}}">
         <bdi>{{content?.name}}</bdi></div>
     </div>
-    <div class="subject-info" *ngIf="categoryKeys?.length">
+    <div class="subject-info" *ngIf="categoryKeys?.length && categoryValues.length">
       {{categoryKeys[categoryKeys.length-2].label}} : 
       <app-truncated-ellipsis class="d-inline-block"
         [arrayList]= "categoryValues[categoryValues.length-1]"
         [showCount]="1"
         [separatorText]="', '">
       </app-truncated-ellipsis></div>
-    <div class="sb--card__meta1 text-left">
+    <div class="sb--card__meta1 text-left" *ngIf="categoryValues.length">
       <ng-container *ngFor="let category of categoryValues;let i=index">
         <span [ngClass]="(i>2 && i%2===0) ? 'data_1' : 'data_2'" title="{{category[0]}}" *ngIf="i!==(categoryValues.length-1)">
           <app-truncated-ellipsis [arrayList]="category" [showCount]="1" [separatorText]="', '">

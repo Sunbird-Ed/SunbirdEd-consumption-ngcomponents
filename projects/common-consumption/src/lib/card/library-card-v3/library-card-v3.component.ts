@@ -61,14 +61,16 @@ export class LibraryCardV3Component implements OnInit, AfterViewInit {
 
     arrangeFrameworkDetails() {
         this.frameworkDetailsList = [];
-        this.categoryKeys.forEach((data) => {
-            if (data.label) {
-                let code = (this.content[data.alterNativeCode] || this.content[data.code])
-                this.frameworkDetailsList.push(this.getFormatedData(code));
-            } else {
-                this.publisher = data;
-            }
-        });
+        if (this.categoryKeys.length) {
+            this.categoryKeys.forEach((data) => {
+                if (data.label) {
+                    let code = (this.content[data.alternativeCode] || this.content[data.code])
+                    this.frameworkDetailsList.push(this.getFormatedData(code));
+                } else {
+                    this.publisher = data;
+                }
+            });
+        }
     }
    /* onMenuClick(event: MouseEvent) {
         this.menuClick.emit({ event: event, data: this.content });
