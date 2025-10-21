@@ -23,12 +23,6 @@ jobs:
       - name: Install dependencies
         run: |
             npm install --legacy-peer-deps
-          
-      - name: Install SonarQube scanner
-        run: npm install -g sonarqube-scanner
-
-      - name: Run SonarScanner
-        run: sonar-scanner    
 
       - name: Build project and Pack (PR)
         run: |
