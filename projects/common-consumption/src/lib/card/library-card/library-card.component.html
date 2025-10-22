@@ -17,11 +17,14 @@
           <a *ngIf="isMenu" role="button" aria-label="View more actions menu" class="menu" (click)="onMenuClick($event);$event.stopPropagation()" tabindex="0"></a>
         </div>
       
-      <div class="sb--card__meta1 text-left" *ngIf="content?.subject?.length || content?.gradeLevel?.length">
-        <span class="data_1 ellipsis" title="{{content?.subject}}">{{content?.subject}}</span>
-        <span *ngIf="content?.subject?.length && content?.gradeLevel?.length" class="dot-divider"></span>
-        <span class="data_2 ellipsis" title="{{content?.gradeLevel}}">{{content?.gradeLevel}}</span>
-      </div>
+        <div class="sb--card__meta1">
+          <ng-container *ngFor="let category of categoryValues.slice(1, 3); let i=index; let categorySliceEndIndex = last">
+            <span [ngClass]="i%2===0 ? 'data_1 ellipsis' : 'data_2 ellipsis'"
+              *ngIf="category && category?.value?.length > 0"
+              title="{{category?.value}}">{{category?.value}}</span>
+            <span *ngIf="category && category?.value?.length > 0 && !categorySliceEndIndex && (categoryValues.length > i+2) && categoryValues[i+2]?.value?.length > 0" class="dot-divider"></span>
+          </ng-container>
+        </div>
     </div>
   </div>
 
@@ -30,8 +33,8 @@
     <div class="sb--card__moreinfo">
       <!-- other meta info Medium, Organization etc -->
       <div class="sb--card__meta2 text-left">
-        <div class="sb--card__meta2_data" *ngIf="content?.medium"><span class="">{{moreInfoLabel}}:
-            {{content?.medium}}</span></div>
+        <div class="sb--card__meta2_data" *ngIf="categoryValues.length > 0 && categoryValues[categoryValues.length - 1]?.value?.length > 0"><span class="">{{categoryValues[categoryValues.length - 1]?.label}}:
+            {{categoryValues[categoryValues.length - 1]?.value}}</span></div>
         <div class="sb--card__org sb__ellipsis" *ngIf="content?.organisation"><bdi>{{content?.organisation}}</bdi></div>
       </div>
       <!-- other meta info Badge and card category Book, learn, practice -->
